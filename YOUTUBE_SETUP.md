@@ -31,30 +31,43 @@ This guide will help you set up the automatic YouTube video updates for your Git
    - It looks like: `UCxxxxxxxxxxxxxxxxxx`
 5. Copy this Channel ID
 
-## Step 3: Configure the Script
+## Step 3: Add Secrets to GitHub
 
-Edit the file `scripts/update-readme.ts`:
+### Option A: Use GitHub Secrets (Recommended)
 
-Find this line (around line 42):
+1. Go to your GitHub repository settings
+2. Navigate to "Secrets and variables" > "Actions"
+3. Add two secrets:
+
+**Secret 1:**
+- Name: `YOUTUBE_API_KEY`
+- Value: Your API key from Step 1
+
+**Secret 2:**
+- Name: `YOUTUBE_CHANNEL_ID`
+- Value: Your Channel ID from Step 2
+
+### Option B: Edit the Script Directly
+
+Alternatively, you can hardcode your Channel ID in the script:
+
+Edit `scripts/update-readme.ts` and find this line:
 ```typescript
-// channelId: 'YOUR_CHANNEL_ID', // Uncomment and add your channel ID
+const CHANNEL_ID = process.env.YOUTUBE_CHANNEL_ID || '';
 ```
 
 Replace it with:
 ```typescript
-channelId: 'YOUR_ACTUAL_CHANNEL_ID', // Replace with your channel ID from Step 2
+const CHANNEL_ID = process.env.YOUTUBE_CHANNEL_ID || 'YOUR_ACTUAL_CHANNEL_ID';
 ```
 
-Also, you may want to change `forMine: false,` to `forMine: true,` if you want to fetch only your own videos.
+**Note:** Using GitHub Secrets (Option A) is more secure and recommended.
 
-## Step 4: Add YouTube API Key to GitHub Secrets
+## Step 4: Verify Secrets Configuration (Skip if using Option B)
 
-1. Go to your GitHub repository settings
-2. Navigate to "Secrets and variables" > "Actions"
-3. Click "New repository secret"
-4. Name: `YOUTUBE_API_KEY`
-5. Value: Paste the API key from Step 1
-6. Click "Add secret"
+You should see both secrets listed:
+- `YOUTUBE_API_KEY`
+- `YOUTUBE_CHANNEL_ID`
 
 ## Step 5: Test the Workflow
 

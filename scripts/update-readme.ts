@@ -8,6 +8,7 @@ const __dirname = dirname(__filename);
 
 // Configuration
 const API_KEY = process.env.YOUTUBE_API_KEY;
+const CHANNEL_ID = process.env.YOUTUBE_CHANNEL_ID || ''; // Set your channel ID here or via env variable
 const MAX_VIDEOS = 5; // Number of videos to display
 const README_PATH = join(__dirname, '../README.md');
 
@@ -27,25 +28,31 @@ async function getLatestVideos(): Promise<Video[]> {
     throw new Error('YOUTUBE_API_KEY environment variable is not set');
   }
 
+  if (!CHANNEL_ID) {
+    console.error('❌ CHANNEL_ID is not set!');
+    console.error('Please set your YouTube Channel ID in one of these ways:');
+    console.error('  1. Set YOUTUBE_CHANNEL_ID environment variable');
+    console.error('  2. Edit scripts/update-readme.ts and set CHANNEL_ID constant');
+    console.error('\nTo find your Channel ID:');
+    console.error('  - Go to YouTube Studio (https://studio.youtube.com/)');
+    console.error('  - Click Settings → Channel → Advanced settings');
+    console.error('  - Copy your Channel ID (starts with UC...)');
+    throw new Error('YOUTUBE_CHANNEL_ID is not configured');
+  }
+
   const youtube = google.youtube({
     version: 'v3',
     auth: API_KEY,
   });
 
   try {
-    // First, get the channel's uploads playlist ID
-    // You need to get your channel ID from YouTube Studio
-    // For now, we'll search for videos from the authenticated channel
-    // Users should replace 'YOUR_CHANNEL_ID' with their actual channel ID
-    
+    // Get latest videos from the specified channel
     const channelResponse = await youtube.search.list({
       part: ['snippet'],
-      forMine: false,
+      channelId: CHANNEL_ID,
       type: ['video'],
       order: 'date',
       maxResults: MAX_VIDEOS,
-      // To get YOUR channel's videos, you need to use the channel ID
-      // channelId: 'YOUR_CHANNEL_ID', // Uncomment and add your channel ID
     });
 
     const videos: Video[] = [];
@@ -94,9 +101,15 @@ function formatVideosAsMarkdown(videos: Video[]): string {
 
 async function updateReadme(): Promise<void> {
   try {
+    console.log('🎬 YouTube README Updater');
+    console.log('========================');
+    console.log(`Channel ID: ${CHANNEL_ID || '(not set)'}`);
+    console.log(`Max Videos: ${MAX_VIDEOS}`);
+    console.log('');
+    
     console.log('Fetching latest YouTube videos...');
     const videos = await getLatestVideos();
-    console.log(`Found ${videos.length} videos`);
+    console.log(`✓ Found ${videos.length} videos`);
 
     // Read current README
     const readmeContent = readFileSync(README_PATH, 'utf-8');
@@ -123,7 +136,7 @@ async function updateReadme(): Promise<void> {
 
     // Write updated README
     writeFileSync(README_PATH, newContent, 'utf-8');
-    console.log('README updated successfully!');
+    console.log('✓ README updated successfully!');
 
   } catch (error) {
     console.error('Failed to update README:', error);
