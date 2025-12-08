@@ -14,3 +14,9 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+## 📺 Latest YouTube Videos
+
+<!-- YOUTUBE:START -->
+<!-- This section is automatically updated by GitHub Actions -->
+<!-- YOUTUBE:END -->
