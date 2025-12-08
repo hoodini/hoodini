@@ -4,7 +4,6 @@ Update GitHub profile README with dynamic content.
 """
 
 import os
-import re
 from datetime import datetime, timezone
 import requests
 
@@ -221,7 +220,8 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 def main():
     """Main function."""
-    username = 'hoodini'
+    # Get username from environment variable or default to 'hoodini'
+    username = os.environ.get('GITHUB_USERNAME', 'hoodini')
     
     print(f"Fetching GitHub stats for {username}...")
     stats = get_github_stats(username)

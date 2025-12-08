@@ -63,6 +63,9 @@ The dynamic content is placed between `<!-- DYNAMIC_PROFILE_START -->` and `<!--
 # Install dependencies
 pip install -r requirements.txt
 
+# Set your GitHub username (defaults to 'hoodini')
+export GITHUB_USERNAME=your_username
+
 # Set your GitHub token (optional, for higher rate limits)
 export GITHUB_TOKEN=your_token_here
 

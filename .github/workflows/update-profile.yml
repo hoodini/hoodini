@@ -28,6 +28,7 @@ jobs:
       - name: Update README
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME: hoodini
         run: |
           python update_profile.py
       
