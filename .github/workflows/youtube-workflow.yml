@@ -32,7 +32,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull origin main
           git add .
           if [[ -n "$(git status --porcelain)" ]]; then

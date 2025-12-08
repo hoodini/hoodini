@@ -131,7 +131,7 @@ async function updateReadme(): Promise<void> {
     
     const newContent = 
       readmeContent.substring(0, startIndex) +
-      '\n' + videoSection +
+      videoSection +
       readmeContent.substring(endIndex);
 
     // Write updated README

@@ -25,11 +25,12 @@ This guide will help you set up the automatic YouTube video updates for your Git
 ## Step 2: Get Your YouTube Channel ID
 
 1. Go to [YouTube Studio](https://studio.youtube.com/)
-2. Click on "Customization" in the left sidebar
-3. Click on "Basic info"
-4. Your Channel ID will be shown under "Channel URL"
+2. Click on "Settings" in the left sidebar
+3. Click on "Channel" tab
+4. Click on "Advanced settings"
+5. Your Channel ID will be displayed
    - It looks like: `UCxxxxxxxxxxxxxxxxxx`
-5. Copy this Channel ID
+6. Copy this Channel ID
 
 ## Step 3: Add Secrets to GitHub
 
