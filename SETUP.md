@@ -50,7 +50,7 @@ Edit `update_profile.py` to customize:
 
 ## Requirements
 
-- Python 3.11+
+- Python 3.7+
 - `requests` library (see `requirements.txt`)
 
 ## Testing Locally

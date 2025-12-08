@@ -79,7 +79,7 @@ def format_recent_activity(events):
         try:
             date_obj = datetime.fromisoformat(created_at.replace('Z', '+00:00'))
             date_str = date_obj.strftime('%b %d')
-        except:
+        except (ValueError, AttributeError):
             date_str = 'Recently'
         
         if event_type == 'PushEvent':
