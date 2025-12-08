@@ -1,0 +1,16 @@
+{
+  "name": "youtube-readme-updater",
+  "version": "1.0.0",
+  "description": "Script to update README with latest YouTube videos",
+  "type": "module",
+  "scripts": {
+    "update": "tsx update-readme.ts"
+  },
+  "dependencies": {
+    "googleapis": "^140.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.21.0"
+  }
+}

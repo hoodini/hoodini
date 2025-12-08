@@ -11,6 +11,25 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 # IDEs
+# Dependencies
+node_modules/
+scripts/node_modules/
+
+# Package manager lock files
+package-lock.json
+scripts/package-lock.json
+yarn.lock
+scripts/yarn.lock
+
+# Environment variables
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
 .vscode/
 .idea/
 *.swp
@@ -20,3 +39,10 @@ pip-delete-this-directory.txt
 # OS
 .DS_Store
 Thumbs.db
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+/tmp/
+*.tmp
