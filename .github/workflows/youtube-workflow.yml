@@ -1,8 +1,8 @@
 name: Update readme videos
 on:
   schedule:
-    # Runs every Monday at 1pm UTC
-    - cron: '0 13 * * 1'
+    # Runs every day at 1pm UTC
+    - cron: '0 13 * * *'
   workflow_dispatch:
 
 permissions:
