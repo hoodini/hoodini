@@ -1,0 +1,41 @@
+name: Update readme videos
+on:
+  schedule:
+    # Runs every day at 1pm UTC
+    - cron: '0 13 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update_profile_data:
+    name: Update readme videos
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Update README
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}
+        run: |
+          cd scripts
+          npm install
+          npm run update
+      - name: Commit changes
+        id: commit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull origin main
+          git add .
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git commit -m "Update README with latest YouTube videos"
+            git push origin main
+          fi
