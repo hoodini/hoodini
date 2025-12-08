@@ -1,16 +1,19 @@
 ## Hi there 👋
 
-<!--
-**hoodini/hoodini** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I'm Hoodini! Welcome to my GitHub profile.
 
-Here are some ideas to get you started:
+### 📊 GitHub Stats
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+This section will be automatically updated with my GitHub statistics.
+
+### 🚀 Recent Activity
+
+This section will be automatically updated with my recent GitHub activities.
+
+### 💻 Recently Updated Repositories
+
+This section will be automatically updated with my recently updated repositories.
+
+---
+
+*This profile is automatically updated daily using GitHub Actions. Last updated: Pending first run*
