@@ -174,7 +174,12 @@ def update_readme(stats):
 {format_recent_repos(stats['repos'])}
 """
     
-    timestamp = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')
+    try:
+        # Python 3.11+
+        timestamp = datetime.now(datetime.UTC).strftime('%Y-%m-%d %H:%M:%S UTC')
+    except AttributeError:
+        # Python < 3.11
+        timestamp = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')
     footer = f"\n---\n\n*Last updated: {timestamp}*\n"
     
     # Build new content
