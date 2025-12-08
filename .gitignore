@@ -1,3 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDEs
 # Dependencies
 node_modules/
 scripts/node_modules/
@@ -23,6 +36,9 @@ Thumbs.db
 *.swo
 *~
 
+# OS
+.DS_Store
+Thumbs.db
 # Logs
 *.log
 npm-debug.log*
