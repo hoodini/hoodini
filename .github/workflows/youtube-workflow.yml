@@ -1,0 +1,33 @@
+name: Latest YouTube Videos
+on:
+  schedule:
+    # Runs every day at midnight UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-readme-with-youtube:
+    name: Update this repo's README with latest videos from YouTube
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Pull in YouTube videos
+        uses: gautamkrishnar/blog-post-workflow@v1
+        with:
+          comment_tag_name: "VIDEO-LIST"
+          # YouTube RSS feed for @yuv-ai channel
+          # TODO: Replace the placeholder below with the actual channel ID for @yuv-ai
+          # To find it: Visit youtube.com/@yuv-ai, view page source, search for "channelId"
+          feed_list: "https://www.youtube.com/feeds/videos.xml?channel_id=REPLACE_WITH_ACTUAL_CHANNEL_ID"
+          max_post_count: 5
+          template: '- [$title]($url)'
+          commit_message: "Updated with the latest YouTube videos"
+          committer_username: "youtube-workflow-bot"
+          committer_email: "youtube-workflow-bot@users.noreply.github.com"
