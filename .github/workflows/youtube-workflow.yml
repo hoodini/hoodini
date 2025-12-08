@@ -14,18 +14,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       
       - name: Pull in YouTube videos
         uses: gautamkrishnar/blog-post-workflow@v1
         with:
           comment_tag_name: "VIDEO-LIST"
           # YouTube RSS feed for @yuv-ai channel
-          # TODO: Replace the channel_id below with the actual ID for @yuv-ai
+          # TODO: Replace the placeholder below with the actual channel ID for @yuv-ai
           # To find it: Visit youtube.com/@yuv-ai, view page source, search for "channelId"
-          feed_list: "https://www.youtube.com/feeds/videos.xml?channel_id=UC-yuv-ai-CHANNEL-ID"
+          feed_list: "https://www.youtube.com/feeds/videos.xml?channel_id=REPLACE_WITH_ACTUAL_CHANNEL_ID"
           max_post_count: 5
           template: '- [$title]($url)'
           commit_message: "Updated with the latest YouTube videos"
           committer_username: "youtube-workflow-bot"
-          committer_email: "youtube-workflow-bot@example.com"
+          committer_email: "youtube-workflow-bot@users.noreply.github.com"

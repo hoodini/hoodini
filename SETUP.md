@@ -21,13 +21,14 @@ Alternatively, you can:
 
 1. Open `.github/workflows/youtube-workflow.yml`
 2. Find the line with `feed_list:` (around line 26)
-3. Replace `UC-yuv-ai-CHANNEL-ID` with the actual channel ID you found
+3. Replace `REPLACE_WITH_ACTUAL_CHANNEL_ID` with the actual channel ID you found
 4. Save and commit the changes
 
 Example:
 ```yaml
-feed_list: "https://www.youtube.com/feeds/videos.xml?channel_id=UCxxx your actual channel ID xxx"
+feed_list: "https://www.youtube.com/feeds/videos.xml?channel_id=UCxxxxxxxxxxxxxxxxxxxx"
 ```
+(where `UCxxxxxxxxxxxxxxxxxxxx` is your actual channel ID)
 
 ### Step 3: Test the Workflow
 
