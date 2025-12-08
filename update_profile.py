@@ -5,7 +5,7 @@ Update GitHub profile README with dynamic content.
 
 import os
 import re
-from datetime import datetime
+from datetime import datetime, timezone
 import requests
 
 
@@ -174,23 +174,39 @@ def update_readme(stats):
 {format_recent_repos(stats['repos'])}
 """
     
-    try:
-        # Python 3.11+
-        timestamp = datetime.now(datetime.UTC).strftime('%Y-%m-%d %H:%M:%S UTC')
-    except AttributeError:
-        # Python < 3.11
-        timestamp = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')
-    footer = f"\n---\n\n*Last updated: {timestamp}*\n"
+    timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')
     
-    # Build new content
-    new_content = f"""## Hi there 👋
-
-I'm Hoodini! Welcome to my GitHub profile.
+    # Define markers for dynamic content
+    start_marker = "<!-- DYNAMIC_PROFILE_START -->"
+    end_marker = "<!-- DYNAMIC_PROFILE_END -->"
+    
+    # Build dynamic content section
+    dynamic_content = f"""{start_marker}
 
 {stats_section}
 {activity_section}
 {repos_section}
-{footer}"""
+
+---
+
+*Last updated: {timestamp}*
+
+{end_marker}"""
+    
+    # Check if markers exist in current README
+    if start_marker in content and end_marker in content:
+        # Replace content between markers
+        start_idx = content.find(start_marker)
+        end_idx = content.find(end_marker) + len(end_marker)
+        new_content = content[:start_idx] + dynamic_content + content[end_idx:]
+    else:
+        # No markers found, create new content with markers
+        new_content = f"""## Hi there 👋
+
+I'm Hoodini! Welcome to my GitHub profile.
+
+{dynamic_content}
+"""
     
     # Write updated content
     try:

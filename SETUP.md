@@ -41,12 +41,16 @@ on:
 
 ### Content Customization
 
-Edit `update_profile.py` to customize:
-- Which statistics to display
-- How activities are formatted
-- Number of items to show
-- Emoji mappings for languages
-- Overall layout and styling
+The dynamic content is placed between `<!-- DYNAMIC_PROFILE_START -->` and `<!-- DYNAMIC_PROFILE_END -->` markers in the README. You can:
+
+1. **Add custom static content**: Place any text above the start marker or below the end marker, and it will be preserved during updates.
+
+2. **Edit the script** (`update_profile.py`) to customize:
+   - Which statistics to display
+   - How activities are formatted
+   - Number of items to show
+   - Emoji mappings for languages
+   - Overall layout and styling of the dynamic section
 
 ## Requirements
 
