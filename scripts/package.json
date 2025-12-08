@@ -4,12 +4,13 @@
   "description": "Script to update README with latest YouTube videos",
   "type": "module",
   "scripts": {
-    "update": "node --experimental-transform-types update-readme.ts"
+    "update": "tsx update-readme.ts"
   },
   "dependencies": {
     "googleapis": "^140.0.0"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0"
+    "@types/node": "^22.0.0",
+    "tsx": "^4.21.0"
   }
 }
