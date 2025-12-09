@@ -4,21 +4,33 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 <!-- DYNAMIC_PROFILE_START -->
 
+
 ### 📊 GitHub Stats
 
-This section will be automatically updated with my GitHub statistics.
+- 📦 **97** Public Repositories
+- 👥 **150** Followers
+- 🤝 **0** Following
+
 
 ### 🚀 Recent Activity
 
-This section will be automatically updated with my recent GitHub activities.
+- 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Dec 08
+- 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Dec 08
+- 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Dec 08
+
 
 ### 💻 Recently Updated Repositories
 
-This section will be automatically updated with my recently updated repositories.
+- 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None
+- 📦 **[librepods](https://github.com/hoodini/librepods)** - AirPods liberated from Apple's ecosystem.
+- 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 89
+- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 9
+- 📦 **[atlassian-mcp-server](https://github.com/hoodini/atlassian-mcp-server)** - Remote MCP Server that securely connects Jira and Confluence with your LLM, IDE, or agent platform of choice. ⭐ 1
+
 
 ---
 
-*This profile is automatically updated daily using GitHub Actions. Last updated: Pending first run*
+*Last updated: 2025-12-09 00:16:38 UTC*
 
 <!-- DYNAMIC_PROFILE_END -->
 # Hi, I'm Yuval Avidani 👋
