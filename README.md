@@ -7,30 +7,32 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 📊 GitHub Stats
 
-- 📦 **97** Public Repositories
+- 📦 **99** Public Repositories
 - 👥 **150** Followers
 - 🤝 **0** Following
 
 
 ### 🚀 Recent Activity
 
-- 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Dec 08
-- 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Dec 08
-- 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Dec 08
+- 📝 Pushed 0 commit(s) to [hoodini/yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal) - Dec 09
+- 📝 Pushed 0 commit(s) to [hoodini/yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal) - Dec 09
+- 📝 Pushed 0 commit(s) to [hoodini/yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal) - Dec 09
+- 📝 Pushed 0 commit(s) to [hoodini/yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal) - Dec 09
+- 📝 Pushed 0 commit(s) to [hoodini/yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal) - Dec 09
 
 
 ### 💻 Recently Updated Repositories
 
+- 💛 **[yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal)** - 🐍 Execute Python code in your browser using WebAssembly - YUV.PYTHON Terminal by Yuval Avidani
+- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 10
+- 🐍 **[VibeVoice](https://github.com/hoodini/VibeVoice)** - Open-Source Frontier Voice AI
 - 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None
 - 📦 **[librepods](https://github.com/hoodini/librepods)** - AirPods liberated from Apple's ecosystem.
-- 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 89
-- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 9
-- 📦 **[atlassian-mcp-server](https://github.com/hoodini/atlassian-mcp-server)** - Remote MCP Server that securely connects Jira and Confluence with your LLM, IDE, or agent platform of choice. ⭐ 1
 
 
 ---
 
-*Last updated: 2025-12-09 00:16:38 UTC*
+*Last updated: 2025-12-10 00:17:08 UTC*
 
 <!-- DYNAMIC_PROFILE_END -->
 # Hi, I'm Yuval Avidani 👋
