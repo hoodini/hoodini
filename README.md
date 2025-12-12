@@ -7,32 +7,32 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 📊 GitHub Stats
 
-- 📦 **99** Public Repositories
+- 📦 **100** Public Repositories
 - 👥 **151** Followers
 - 🤝 **0** Following
 
 
 ### 🚀 Recent Activity
 
-- 📝 Pushed 0 commit(s) to [hoodini/yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal) - Dec 10
-- 📝 Pushed 0 commit(s) to [hoodini/yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal) - Dec 09
-- 📝 Pushed 0 commit(s) to [hoodini/yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal) - Dec 09
-- 📝 Pushed 0 commit(s) to [hoodini/yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal) - Dec 09
-- 📝 Pushed 0 commit(s) to [hoodini/yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal) - Dec 09
+- 📝 Pushed 0 commit(s) to [hoodini/antig-demos](https://github.com/hoodini/antig-demos) - Dec 11
+- 📝 Pushed 0 commit(s) to [hoodini/antig-demos](https://github.com/hoodini/antig-demos) - Dec 11
+- 📝 Pushed 0 commit(s) to [hoodini/antig-demos](https://github.com/hoodini/antig-demos) - Dec 11
+- 📝 Pushed 0 commit(s) to [hoodini/antig-demos](https://github.com/hoodini/antig-demos) - Dec 11
+- ✨ Created branch in [hoodini/antig-demos](https://github.com/hoodini/antig-demos) - Dec 11
 
 
 ### 💻 Recently Updated Repositories
 
-- 💛 **[yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal)** - 🐍 Execute Python code in your browser using WebAssembly - YUV.PYTHON Terminal by Yuval Avidani ⭐ 2
+- 💙 **[antig-demos](https://github.com/hoodini/antig-demos)** - None
+- 🐍 **[autocap](https://github.com/hoodini/autocap)** - 🤖 AI-Powered Image Captioning for LoRA Training using Florence-2 - Created by Yuval Avidani ⭐ 4
 - 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None
+- 💛 **[yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal)** - 🐍 Execute Python code in your browser using WebAssembly - YUV.PYTHON Terminal by Yuval Avidani ⭐ 2
 - 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 10
-- 🐍 **[VibeVoice](https://github.com/hoodini/VibeVoice)** - Open-Source Frontier Voice AI
-- 📦 **[librepods](https://github.com/hoodini/librepods)** - AirPods liberated from Apple's ecosystem.
 
 
 ---
 
-*Last updated: 2025-12-11 00:17:17 UTC*
+*Last updated: 2025-12-12 00:17:18 UTC*
 
 <!-- DYNAMIC_PROFILE_END -->
 # Hi, I'm Yuval Avidani 👋
