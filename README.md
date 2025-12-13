@@ -23,16 +23,16 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 💻 Recently Updated Repositories
 
+- 💛 **[yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal)** - 🐍 Execute Python code in your browser using WebAssembly - YUV.PYTHON Terminal by Yuval Avidani ⭐ 3
+- 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None
 - 💙 **[antig-demos](https://github.com/hoodini/antig-demos)** - None
 - 🐍 **[autocap](https://github.com/hoodini/autocap)** - 🤖 AI-Powered Image Captioning for LoRA Training using Florence-2 - Created by Yuval Avidani ⭐ 4
-- 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None
-- 💛 **[yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal)** - 🐍 Execute Python code in your browser using WebAssembly - YUV.PYTHON Terminal by Yuval Avidani ⭐ 2
 - 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 10
 
 
 ---
 
-*Last updated: 2025-12-12 00:17:18 UTC*
+*Last updated: 2025-12-13 00:16:52 UTC*
 
 <!-- DYNAMIC_PROFILE_END -->
 # Hi, I'm Yuval Avidani 👋
