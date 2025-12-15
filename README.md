@@ -23,16 +23,16 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 💻 Recently Updated Repositories
 
-- 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 90
-- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 11
-- 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None
-- 💛 **[yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal)** - 🐍 Execute Python code in your browser using WebAssembly - YUV.PYTHON Terminal by Yuval Avidani ⭐ 3
-- 💙 **[antig-demos](https://github.com/hoodini/antig-demos)** - None
+- 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
+- 📦 **[librepods](https://github.com/hoodini/librepods)** - AirPods liberated from Apple's ecosystem. ⭐ 1
+- 🐍 **[VibeVoice](https://github.com/hoodini/VibeVoice)** - Open-Source Frontier Voice AI ⭐ 1
+- 💛 **[yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal)** - 🐍 Execute Python code in your browser using WebAssembly - YUV.PYTHON Terminal by Yuval Avidani ⭐ 4
+- 💙 **[antig-demos](https://github.com/hoodini/antig-demos)** - None ⭐ 1
 
 
 ---
 
-*Last updated: 2025-12-14 00:18:58 UTC*
+*Last updated: 2025-12-15 00:18:46 UTC*
 
 <!-- DYNAMIC_PROFILE_END -->
 # Hi, I'm Yuval Avidani 👋
