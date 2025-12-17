@@ -8,7 +8,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 ### 📊 GitHub Stats
 
 - 📦 **100** Public Repositories
-- 👥 **151** Followers
+- 👥 **152** Followers
 - 🤝 **0** Following
 
 
@@ -23,16 +23,16 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 💻 Recently Updated Repositories
 
+- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 12
 - 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
 - 📦 **[librepods](https://github.com/hoodini/librepods)** - AirPods liberated from Apple's ecosystem. ⭐ 1
 - 🐍 **[VibeVoice](https://github.com/hoodini/VibeVoice)** - Open-Source Frontier Voice AI ⭐ 1
 - 💛 **[yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal)** - 🐍 Execute Python code in your browser using WebAssembly - YUV.PYTHON Terminal by Yuval Avidani ⭐ 4
-- 💙 **[antig-demos](https://github.com/hoodini/antig-demos)** - None ⭐ 1
 
 
 ---
 
-*Last updated: 2025-12-16 00:17:47 UTC*
+*Last updated: 2025-12-17 00:16:27 UTC*
 
 <!-- DYNAMIC_PROFILE_END -->
 # Hi, I'm Yuval Avidani 👋
