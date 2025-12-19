@@ -7,32 +7,32 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 📊 GitHub Stats
 
-- 📦 **100** Public Repositories
+- 📦 **101** Public Repositories
 - 👥 **152** Followers
 - 🤝 **0** Following
 
 
 ### 🚀 Recent Activity
 
+- ✨ Created branch in [hoodini/groq-agent](https://github.com/hoodini/groq-agent) - Dec 18
 - 📝 Pushed 0 commit(s) to [hoodini/antig-demos](https://github.com/hoodini/antig-demos) - Dec 11
 - 📝 Pushed 0 commit(s) to [hoodini/antig-demos](https://github.com/hoodini/antig-demos) - Dec 11
 - 📝 Pushed 0 commit(s) to [hoodini/antig-demos](https://github.com/hoodini/antig-demos) - Dec 11
 - 📝 Pushed 0 commit(s) to [hoodini/antig-demos](https://github.com/hoodini/antig-demos) - Dec 11
-- ✨ Created branch in [hoodini/antig-demos](https://github.com/hoodini/antig-demos) - Dec 11
 
 
 ### 💻 Recently Updated Repositories
 
-- 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 91
+- 🐍 **[groq-agent](https://github.com/hoodini/groq-agent)** - AI Agent powered by Groq, LangChain & LangGraph with web search and Hebrew RTL support
 - 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
+- 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 91
 - 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 12
 - 📦 **[librepods](https://github.com/hoodini/librepods)** - AirPods liberated from Apple's ecosystem. ⭐ 1
-- 🐍 **[VibeVoice](https://github.com/hoodini/VibeVoice)** - Open-Source Frontier Voice AI ⭐ 1
 
 
 ---
 
-*Last updated: 2025-12-18 00:14:51 UTC*
+*Last updated: 2025-12-19 00:17:40 UTC*
 
 <!-- DYNAMIC_PROFILE_END -->
 # Hi, I'm Yuval Avidani 👋
