@@ -8,7 +8,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 ### 📊 GitHub Stats
 
 - 📦 **101** Public Repositories
-- 👥 **152** Followers
+- 👥 **154** Followers
 - 🤝 **0** Following
 
 
@@ -23,7 +23,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 💻 Recently Updated Repositories
 
-- 🐍 **[groq-agent](https://github.com/hoodini/groq-agent)** - AI Agent powered by Groq, LangChain & LangGraph with web search and Hebrew RTL support
+- 🐍 **[groq-agent](https://github.com/hoodini/groq-agent)** - AI Agent powered by Groq, LangChain & LangGraph with web search and Hebrew RTL support ⭐ 1
 - 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
 - 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 91
 - 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 12
@@ -32,7 +32,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ---
 
-*Last updated: 2025-12-19 00:17:40 UTC*
+*Last updated: 2025-12-20 00:16:44 UTC*
 
 <!-- DYNAMIC_PROFILE_END -->
 # Hi, I'm Yuval Avidani 👋
