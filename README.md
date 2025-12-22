@@ -23,8 +23,8 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 💻 Recently Updated Repositories
 
-- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 13
 - 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
+- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 13
 - 🐍 **[groq-agent](https://github.com/hoodini/groq-agent)** - AI Agent powered by Groq, LangChain & LangGraph with web search and Hebrew RTL support ⭐ 1
 - 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 91
 - 📦 **[librepods](https://github.com/hoodini/librepods)** - AirPods liberated from Apple's ecosystem. ⭐ 1
@@ -32,7 +32,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ---
 
-*Last updated: 2025-12-21 00:18:44 UTC*
+*Last updated: 2025-12-22 00:18:15 UTC*
 
 <!-- DYNAMIC_PROFILE_END -->
 # Hi, I'm Yuval Avidani 👋
