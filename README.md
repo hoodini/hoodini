@@ -7,32 +7,31 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 📊 GitHub Stats
 
-- 📦 **102** Public Repositories
+- 📦 **103** Public Repositories
 - 👥 **155** Followers
 - 🤝 **0** Following
 
 
 ### 🚀 Recent Activity
 
-- 📝 Pushed 0 commit(s) to [hoodini/hitl-strands-labs](https://github.com/hoodini/hitl-strands-labs) - Dec 22
-- ✨ Created branch in [hoodini/hitl-strands-labs](https://github.com/hoodini/hitl-strands-labs) - Dec 22
-- ✨ Created branch in [hoodini/groq-agent](https://github.com/hoodini/groq-agent) - Dec 18
-- 📝 Pushed 0 commit(s) to [hoodini/antig-demos](https://github.com/hoodini/antig-demos) - Dec 11
-- 📝 Pushed 0 commit(s) to [hoodini/antig-demos](https://github.com/hoodini/antig-demos) - Dec 11
+- 📝 Pushed 0 commit(s) to [hoodini/terminal](https://github.com/hoodini/terminal) - Dec 23
+- 📝 Pushed 0 commit(s) to [hoodini/terminal](https://github.com/hoodini/terminal) - Dec 23
+- 📝 Pushed 0 commit(s) to [hoodini/terminal](https://github.com/hoodini/terminal) - Dec 23
+- 📝 Pushed 0 commit(s) to [hoodini/terminal](https://github.com/hoodini/terminal) - Dec 23
 
 
 ### 💻 Recently Updated Repositories
 
+- ⚡ **[terminal](https://github.com/hoodini/terminal)** - The new Windows Terminal and the original Windows console host, all in the same place! ⭐ 1
+- 🐍 **[hitl-strands-labs](https://github.com/hoodini/hitl-strands-labs)** -  AWS Strands Agents Human-in-the-Loop (HITL) Labs - Practical examples with Mermaid diagrams ⭐ 5
+- 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
 - 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 15
 - 🐍 **[groq-agent](https://github.com/hoodini/groq-agent)** - AI Agent powered by Groq, LangChain & LangGraph with web search and Hebrew RTL support ⭐ 2
-- 💛 **[yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal)** - 🐍 Execute Python code in your browser using WebAssembly - YUV.PYTHON Terminal by Yuval Avidani ⭐ 5
-- 🐍 **[hitl-strands-labs](https://github.com/hoodini/hitl-strands-labs)** -  AWS Strands Agents Human-in-the-Loop (HITL) Labs - Practical examples with Mermaid diagrams ⭐ 4
-- 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 92
 
 
 ---
 
-*Last updated: 2025-12-23 00:17:30 UTC*
+*Last updated: 2025-12-24 00:17:19 UTC*
 
 <!-- DYNAMIC_PROFILE_END -->
 # Hi, I'm Yuval Avidani 👋
