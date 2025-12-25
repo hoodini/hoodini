@@ -22,16 +22,16 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 💻 Recently Updated Repositories
 
+- 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
 - ⚡ **[terminal](https://github.com/hoodini/terminal)** - The new Windows Terminal and the original Windows console host, all in the same place! ⭐ 1
 - 🐍 **[hitl-strands-labs](https://github.com/hoodini/hitl-strands-labs)** -  AWS Strands Agents Human-in-the-Loop (HITL) Labs - Practical examples with Mermaid diagrams ⭐ 5
-- 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
 - 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 15
 - 🐍 **[groq-agent](https://github.com/hoodini/groq-agent)** - AI Agent powered by Groq, LangChain & LangGraph with web search and Hebrew RTL support ⭐ 2
 
 
 ---
 
-*Last updated: 2025-12-24 00:17:19 UTC*
+*Last updated: 2025-12-25 00:17:18 UTC*
 
 <!-- DYNAMIC_PROFILE_END -->
 # Hi, I'm Yuval Avidani 👋
