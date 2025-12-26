@@ -7,31 +7,32 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 📊 GitHub Stats
 
-- 📦 **103** Public Repositories
+- 📦 **104** Public Repositories
 - 👥 **155** Followers
 - 🤝 **0** Following
 
 
 ### 🚀 Recent Activity
 
-- 📝 Pushed 0 commit(s) to [hoodini/terminal](https://github.com/hoodini/terminal) - Dec 23
-- 📝 Pushed 0 commit(s) to [hoodini/terminal](https://github.com/hoodini/terminal) - Dec 23
-- 📝 Pushed 0 commit(s) to [hoodini/terminal](https://github.com/hoodini/terminal) - Dec 23
-- 📝 Pushed 0 commit(s) to [hoodini/terminal](https://github.com/hoodini/terminal) - Dec 23
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 25
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 25
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 25
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 25
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 25
 
 
 ### 💻 Recently Updated Repositories
 
+- 💙 **[ai-agents-101](https://github.com/hoodini/ai-agents-101)** - AI Agents 101 - Interactive Training Platform for building production-ready AI agents ⭐ 3
+- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 16
 - 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
 - ⚡ **[terminal](https://github.com/hoodini/terminal)** - The new Windows Terminal and the original Windows console host, all in the same place! ⭐ 1
 - 🐍 **[hitl-strands-labs](https://github.com/hoodini/hitl-strands-labs)** -  AWS Strands Agents Human-in-the-Loop (HITL) Labs - Practical examples with Mermaid diagrams ⭐ 5
-- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 15
-- 🐍 **[groq-agent](https://github.com/hoodini/groq-agent)** - AI Agent powered by Groq, LangChain & LangGraph with web search and Hebrew RTL support ⭐ 2
 
 
 ---
 
-*Last updated: 2025-12-25 00:17:18 UTC*
+*Last updated: 2025-12-26 00:17:16 UTC*
 
 <!-- DYNAMIC_PROFILE_END -->
 # Hi, I'm Yuval Avidani 👋
