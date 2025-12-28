@@ -7,32 +7,32 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 📊 GitHub Stats
 
-- 📦 **104** Public Repositories
+- 📦 **105** Public Repositories
 - 👥 **155** Followers
 - 🤝 **0** Following
 
 
 ### 🚀 Recent Activity
 
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 26
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 26
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 26
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 26
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 26
+- 📝 Pushed 0 commit(s) to [hoodini/copilot-workshop-text-analysis](https://github.com/hoodini/copilot-workshop-text-analysis) - Dec 27
+- 📝 Pushed 0 commit(s) to [hoodini/copilot-workshop-text-analysis](https://github.com/hoodini/copilot-workshop-text-analysis) - Dec 27
+- 📝 Pushed 0 commit(s) to [hoodini/copilot-workshop-text-analysis](https://github.com/hoodini/copilot-workshop-text-analysis) - Dec 27
+- 📝 Pushed 0 commit(s) to [hoodini/copilot-workshop-text-analysis](https://github.com/hoodini/copilot-workshop-text-analysis) - Dec 27
+- 📝 Pushed 0 commit(s) to [hoodini/copilot-workshop-text-analysis](https://github.com/hoodini/copilot-workshop-text-analysis) - Dec 27
 
 
 ### 💻 Recently Updated Repositories
 
-- 💙 **[ai-agents-101](https://github.com/hoodini/ai-agents-101)** - AI Agents 101 - Interactive Training Platform for building production-ready AI agents ⭐ 3
-- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 17
+- 💛 **[copilot-workshop-text-analysis](https://github.com/hoodini/copilot-workshop-text-analysis)** - GitHub Copilot 101 Workshop - Learn AI-assisted coding with hands-on exercises
+- 💙 **[ai-agents-101](https://github.com/hoodini/ai-agents-101)** - AI Agents 101 - Interactive Training Platform for building production-ready AI agents ⭐ 4
 - 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
+- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 17
 - ⚡ **[terminal](https://github.com/hoodini/terminal)** - The new Windows Terminal and the original Windows console host, all in the same place! ⭐ 1
-- 🐍 **[hitl-strands-labs](https://github.com/hoodini/hitl-strands-labs)** -  AWS Strands Agents Human-in-the-Loop (HITL) Labs - Practical examples with Mermaid diagrams ⭐ 5
 
 
 ---
 
-*Last updated: 2025-12-27 00:17:13 UTC*
+*Last updated: 2025-12-28 00:19:49 UTC*
 
 <!-- DYNAMIC_PROFILE_END -->
 # Hi, I'm Yuval Avidani 👋
