@@ -7,32 +7,32 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 📊 GitHub Stats
 
-- 📦 **105** Public Repositories
+- 📦 **106** Public Repositories
 - 👥 **155** Followers
 - 🤝 **0** Following
 
 
 ### 🚀 Recent Activity
 
-- 📝 Pushed 0 commit(s) to [hoodini/copilot-workshop-text-analysis](https://github.com/hoodini/copilot-workshop-text-analysis) - Dec 27
-- 📝 Pushed 0 commit(s) to [hoodini/copilot-workshop-text-analysis](https://github.com/hoodini/copilot-workshop-text-analysis) - Dec 27
-- 📝 Pushed 0 commit(s) to [hoodini/copilot-workshop-text-analysis](https://github.com/hoodini/copilot-workshop-text-analysis) - Dec 27
-- 📝 Pushed 0 commit(s) to [hoodini/copilot-workshop-text-analysis](https://github.com/hoodini/copilot-workshop-text-analysis) - Dec 27
-- 📝 Pushed 0 commit(s) to [hoodini/copilot-workshop-text-analysis](https://github.com/hoodini/copilot-workshop-text-analysis) - Dec 27
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 28
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 28
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 28
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 28
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 28
 
 
 ### 💻 Recently Updated Repositories
 
-- 💛 **[copilot-workshop-text-analysis](https://github.com/hoodini/copilot-workshop-text-analysis)** - GitHub Copilot 101 Workshop - Learn AI-assisted coding with hands-on exercises
 - 💙 **[ai-agents-101](https://github.com/hoodini/ai-agents-101)** - AI Agents 101 - Interactive Training Platform for building production-ready AI agents ⭐ 4
+- 📦 **[2-recs-web](https://github.com/hoodini/2-recs-web)** - None
+- 💛 **[plsql-interactive-tutor](https://github.com/hoodini/plsql-interactive-tutor)** - Interactive web application to learn Oracle PL/SQL - Lessons, Visual Query Builder, Code Playground
+- 💛 **[copilot-workshop-text-analysis](https://github.com/hoodini/copilot-workshop-text-analysis)** - GitHub Copilot 101 Workshop - Learn AI-assisted coding with hands-on exercises
 - 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
-- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 17
-- ⚡ **[terminal](https://github.com/hoodini/terminal)** - The new Windows Terminal and the original Windows console host, all in the same place! ⭐ 1
 
 
 ---
 
-*Last updated: 2025-12-28 00:19:49 UTC*
+*Last updated: 2025-12-29 00:19:11 UTC*
 
 <!-- DYNAMIC_PROFILE_END -->
 # Hi, I'm Yuval Avidani 👋
