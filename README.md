@@ -14,25 +14,25 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 30
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 30
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 30
 - 📝 Pushed 0 commit(s) to [hoodini/amazon-bedrock-agentcore-samples](https://github.com/hoodini/amazon-bedrock-agentcore-samples) - Dec 29
-- 📝 Pushed 0 commit(s) to [hoodini/amazon-bedrock-agentcore-samples](https://github.com/hoodini/amazon-bedrock-agentcore-samples) - Dec 29
-- 📝 Pushed 0 commit(s) to [hoodini/amazon-bedrock-agentcore-samples](https://github.com/hoodini/amazon-bedrock-agentcore-samples) - Dec 29
-- ✨ Created branch in [hoodini/agentcore-cohere-samples](https://github.com/hoodini/agentcore-cohere-samples) - Dec 29
 - 📝 Pushed 0 commit(s) to [hoodini/amazon-bedrock-agentcore-samples](https://github.com/hoodini/amazon-bedrock-agentcore-samples) - Dec 29
 
 
 ### 💻 Recently Updated Repositories
 
+- 💙 **[ai-agents-101](https://github.com/hoodini/ai-agents-101)** - AI Agents 101 - Interactive Training Platform for building production-ready AI agents ⭐ 6
+- 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
 - 📦 **[amazon-bedrock-agentcore-samples](https://github.com/hoodini/amazon-bedrock-agentcore-samples)** - None
 - 📦 **[agentcore-cohere-samples](https://github.com/hoodini/agentcore-cohere-samples)** - Amazon AgentCore Samples migrated to use Cohere LLM via Strands Agents SDK - Open source community-driven agentic framework
-- 💙 **[ai-agents-101](https://github.com/hoodini/ai-agents-101)** - AI Agents 101 - Interactive Training Platform for building production-ready AI agents ⭐ 5
 - 📦 **[cohere-colab-101](https://github.com/hoodini/cohere-colab-101)** - Colab notebooks for training on building LLM based apps and Agents with Cohere
-- 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
 
 
 ---
 
-*Last updated: 2025-12-30 00:17:16 UTC*
+*Last updated: 2025-12-31 00:18:11 UTC*
 
 <!-- DYNAMIC_PROFILE_END -->
 # Hi, I'm Yuval Avidani 👋
