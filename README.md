@@ -7,32 +7,32 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 📊 GitHub Stats
 
-- 📦 **109** Public Repositories
+- 📦 **110** Public Repositories
 - 👥 **155** Followers
 - 🤝 **0** Following
 
 
 ### 🚀 Recent Activity
 
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 30
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 30
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-101](https://github.com/hoodini/ai-agents-101) - Dec 30
-- 📝 Pushed 0 commit(s) to [hoodini/amazon-bedrock-agentcore-samples](https://github.com/hoodini/amazon-bedrock-agentcore-samples) - Dec 29
-- 📝 Pushed 0 commit(s) to [hoodini/amazon-bedrock-agentcore-samples](https://github.com/hoodini/amazon-bedrock-agentcore-samples) - Dec 29
+- 📝 Pushed 0 commit(s) to [hoodini/Home-Banking-Vue-Java-SpringBoot](https://github.com/hoodini/Home-Banking-Vue-Java-SpringBoot) - Dec 31
+- 📝 Pushed 0 commit(s) to [hoodini/Home-Banking-Vue-Java-SpringBoot](https://github.com/hoodini/Home-Banking-Vue-Java-SpringBoot) - Dec 31
+- 📝 Pushed 0 commit(s) to [hoodini/Home-Banking-Vue-Java-SpringBoot](https://github.com/hoodini/Home-Banking-Vue-Java-SpringBoot) - Dec 31
+- 📝 Pushed 0 commit(s) to [hoodini/Home-Banking-Vue-Java-SpringBoot](https://github.com/hoodini/Home-Banking-Vue-Java-SpringBoot) - Dec 31
+- 🍴 Forked [Bart-Developer/Home-Banking-Vue-Java-SpringBoot](https://github.com/Bart-Developer/Home-Banking-Vue-Java-SpringBoot) - Dec 31
 
 
 ### 💻 Recently Updated Repositories
 
-- 💙 **[ai-agents-101](https://github.com/hoodini/ai-agents-101)** - AI Agents 101 - Interactive Training Platform for building production-ready AI agents ⭐ 6
+- ☕ **[Home-Banking-Vue-Java-SpringBoot](https://github.com/hoodini/Home-Banking-Vue-Java-SpringBoot)** - You can see this project live in a Heroku repository by clicking on the link below
 - 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
+- 💙 **[ai-agents-101](https://github.com/hoodini/ai-agents-101)** - AI Agents 101 - Interactive Training Platform for building production-ready AI agents ⭐ 6
 - 📦 **[amazon-bedrock-agentcore-samples](https://github.com/hoodini/amazon-bedrock-agentcore-samples)** - None
 - 📦 **[agentcore-cohere-samples](https://github.com/hoodini/agentcore-cohere-samples)** - Amazon AgentCore Samples migrated to use Cohere LLM via Strands Agents SDK - Open source community-driven agentic framework
-- 📦 **[cohere-colab-101](https://github.com/hoodini/cohere-colab-101)** - Colab notebooks for training on building LLM based apps and Agents with Cohere
 
 
 ---
 
-*Last updated: 2025-12-31 00:18:11 UTC*
+*Last updated: 2026-01-01 00:20:01 UTC*
 
 <!-- DYNAMIC_PROFILE_END -->
 # Hi, I'm Yuval Avidani 👋
