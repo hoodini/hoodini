@@ -14,25 +14,25 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
+- 📝 Pushed 0 commit(s) to [hoodini/yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends) - Jan 01
+- 📝 Pushed 0 commit(s) to [hoodini/yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends) - Jan 01
 - 📝 Pushed 0 commit(s) to [hoodini/Home-Banking-Vue-Java-SpringBoot](https://github.com/hoodini/Home-Banking-Vue-Java-SpringBoot) - Dec 31
 - 📝 Pushed 0 commit(s) to [hoodini/Home-Banking-Vue-Java-SpringBoot](https://github.com/hoodini/Home-Banking-Vue-Java-SpringBoot) - Dec 31
 - 📝 Pushed 0 commit(s) to [hoodini/Home-Banking-Vue-Java-SpringBoot](https://github.com/hoodini/Home-Banking-Vue-Java-SpringBoot) - Dec 31
-- 📝 Pushed 0 commit(s) to [hoodini/Home-Banking-Vue-Java-SpringBoot](https://github.com/hoodini/Home-Banking-Vue-Java-SpringBoot) - Dec 31
-- 🍴 Forked [Bart-Developer/Home-Banking-Vue-Java-SpringBoot](https://github.com/Bart-Developer/Home-Banking-Vue-Java-SpringBoot) - Dec 31
 
 
 ### 💻 Recently Updated Repositories
 
-- ☕ **[Home-Banking-Vue-Java-SpringBoot](https://github.com/hoodini/Home-Banking-Vue-Java-SpringBoot)** - You can see this project live in a Heroku repository by clicking on the link below
-- 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
-- 💙 **[ai-agents-101](https://github.com/hoodini/ai-agents-101)** - AI Agents 101 - Interactive Training Platform for building production-ready AI agents ⭐ 6
-- 📦 **[amazon-bedrock-agentcore-samples](https://github.com/hoodini/amazon-bedrock-agentcore-samples)** - None
-- 📦 **[agentcore-cohere-samples](https://github.com/hoodini/agentcore-cohere-samples)** - Amazon AgentCore Samples migrated to use Cohere LLM via Strands Agents SDK - Open source community-driven agentic framework
+- 💛 **[copilot-workshop-text-analysis](https://github.com/hoodini/copilot-workshop-text-analysis)** - GitHub Copilot 101 Workshop - Learn AI-assisted coding with hands-on exercises ⭐ 1
+- 💛 **[plsql-interactive-tutor](https://github.com/hoodini/plsql-interactive-tutor)** - Interactive web application to learn Oracle PL/SQL - Lessons, Visual Query Builder, Code Playground ⭐ 1
+- 📦 **[amazon-bedrock-agentcore-samples](https://github.com/hoodini/amazon-bedrock-agentcore-samples)** - None ⭐ 1
+- 📦 **[agentcore-cohere-samples](https://github.com/hoodini/agentcore-cohere-samples)** - Amazon AgentCore Samples migrated to use Cohere LLM via Strands Agents SDK - Open source community-driven agentic framework ⭐ 1
+- ☕ **[Home-Banking-Vue-Java-SpringBoot](https://github.com/hoodini/Home-Banking-Vue-Java-SpringBoot)** - You can see this project live in a Heroku repository by clicking on the link below ⭐ 1
 
 
 ---
 
-*Last updated: 2026-01-01 00:20:01 UTC*
+*Last updated: 2026-01-02 00:17:48 UTC*
 
 <!-- DYNAMIC_PROFILE_END -->
 # Hi, I'm Yuval Avidani 👋
