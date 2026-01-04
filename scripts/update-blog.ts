@@ -2,7 +2,7 @@
  * Updated update-blog.ts for hoodini/hoodini repository
  * 
  * This script fetches blog posts from both:
- * 1. English blog (eng.yuv.ai) - displayed FIRST
+ * 1. English blog (en-blog.yuv.ai) - displayed FIRST
  * 2. Hebrew blog (blog.yuv.ai via Ghost) - displayed SECOND
  * 
  * To use this script:
@@ -11,7 +11,7 @@
  * 3. Keep your existing GHOST_API_KEY secret for Hebrew posts
  * 
  * The output will have two sections:
- * - 🇺🇸 English Posts (from eng.yuv.ai)
+ * - 🇺🇸 English Posts (from en-blog.yuv.ai)
  * - 🇮🇱 Hebrew Posts (from blog.yuv.ai)
  */
 
@@ -25,7 +25,7 @@ const __dirname = dirname(__filename);
 // Configuration
 const GHOST_API_URL = 'https://yuv-ai.ghost.io';
 const GHOST_API_KEY = process.env.GHOST_API_KEY;
-const ENG_BLOG_API_URL = 'https://eng.yuv.ai/api/posts'; // English blog API
+const ENG_BLOG_API_URL = 'https://en-blog.yuv.ai/api/posts'; // English blog API
 const MAX_POSTS = 5; // Posts per section
 const README_PATH = join(__dirname, '../README.md');
 
@@ -41,10 +41,10 @@ interface BlogPost {
   imageUrl?: string;
 }
 
-// Fetch English posts from eng.yuv.ai
+// Fetch English posts from en-blog.yuv.ai
 async function getEnglishPosts(): Promise<BlogPost[]> {
   try {
-    console.log('Fetching English posts from eng.yuv.ai...');
+    console.log('Fetching English posts from en-blog.yuv.ai...');
     const response = await fetch(`${ENG_BLOG_API_URL}?limit=${MAX_POSTS}`);
 
     if (!response.ok) {
