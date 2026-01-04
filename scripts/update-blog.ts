@@ -6,9 +6,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Configuration
-const GHOST_BLOG_URL = 'https://blog.yuv.ai';
-const GHOST_API_KEY = process.env.GHOST_API_KEY || '';
-const MAX_POSTS = 5; // Number of posts to display
+const GHOST_BLOG_RSS = 'https://blog.yuv.ai/rss/';
+const MAX_POSTS = 5;
 const README_PATH = join(__dirname, '../README.md');
 
 // Markers for blog section in README
@@ -18,38 +17,50 @@ const END_MARKER = '<!-- BLOG:END -->';
 interface BlogPost {
   title: string;
   url: string;
-  excerpt: string;
-  published_at: string;
-  feature_image?: string;
+  description: string;
+  pubDate: string;
+  imageUrl?: string;
 }
 
 async function getLatestPosts(): Promise<BlogPost[]> {
   try {
-    // Ghost Content API endpoint
-    const apiUrl = `${GHOST_BLOG_URL}/ghost/api/content/posts/?key=${GHOST_API_KEY}&limit=${MAX_POSTS}&fields=title,url,excerpt,published_at,feature_image`;
+    console.log(`Fetching from: ${GHOST_BLOG_RSS}`);
 
-    console.log(`Fetching from: ${GHOST_BLOG_URL}`);
-
-    const response = await fetch(apiUrl);
+    const response = await fetch(GHOST_BLOG_RSS);
 
     if (!response.ok) {
-      throw new Error(`Ghost API error: ${response.status} ${response.statusText}`);
+      throw new Error(`RSS feed error: ${response.status} ${response.statusText}`);
     }
 
-    const data = await response.json();
+    const xmlText = await response.text();
+    
+    // Parse RSS XML
+    const posts: BlogPost[] = [];
+    const itemMatches = xmlText.matchAll(/<item>(.*?)<\/item>/gs);
 
-    if (!data.posts || data.posts.length === 0) {
-      console.warn('No posts found');
-      return [];
+    for (const match of itemMatches) {
+      if (posts.length >= MAX_POSTS) break;
+
+      const itemXml = match[1];
+      
+      const titleMatch = itemXml.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>/);
+      const linkMatch = itemXml.match(/<link>(.*?)<\/link>/);
+      const descMatch = itemXml.match(/<description><!\[CDATA\[(.*?)\]\]><\/description>/);
+      const pubDateMatch = itemXml.match(/<pubDate>(.*?)<\/pubDate>/);
+      const imageMatch = itemXml.match(/<media:content url="(.*?)"/);
+
+      if (titleMatch && linkMatch) {
+        posts.push({
+          title: titleMatch[1],
+          url: linkMatch[1],
+          description: descMatch ? descMatch[1] : '',
+          pubDate: pubDateMatch ? pubDateMatch[1] : '',
+          imageUrl: imageMatch ? imageMatch[1] : undefined
+        });
+      }
     }
 
-    return data.posts.map((post: any) => ({
-      title: post.title,
-      url: post.url,
-      excerpt: post.excerpt || '',
-      published_at: post.published_at,
-      feature_image: post.feature_image
-    }));
+    return posts;
 
   } catch (error) {
     console.error('Error fetching blog posts:', error);
@@ -70,7 +81,7 @@ function formatPostsAsMarkdown(posts: BlogPost[]): string {
 
     for (let j = i; j < Math.min(i + 2, posts.length); j++) {
       const post = posts[j];
-      const date = new Date(post.published_at).toLocaleDateString('en-US', {
+      const date = new Date(post.pubDate).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'short',
         day: 'numeric',
@@ -78,14 +89,19 @@ function formatPostsAsMarkdown(posts: BlogPost[]): string {
 
       markdown += '<td width="50%" valign="top">\n';
 
-      if (post.feature_image) {
+      if (post.imageUrl) {
         markdown += `  <a href="${post.url}">\n`;
-        markdown += `    <img src="${post.feature_image}" alt="${post.title}" style="width:100%; border-radius:8px;">\n`;
+        markdown += `    <img src="${post.imageUrl}" alt="${post.title}" style="width:100%; border-radius:8px;">\n`;
         markdown += `  </a>\n`;
       }
 
       markdown += `  <h3><a href="${post.url}">${post.title}</a></h3>\n`;
-      markdown += `  <p>${post.excerpt}</p>\n`;
+      
+      // Limit description to 150 characters
+      const shortDesc = post.description.length > 150 
+        ? post.description.substring(0, 150) + '...' 
+        : post.description;
+      markdown += `  <p>${shortDesc}</p>\n`;
       markdown += `  <sub>📅 ${date}</sub>\n`;
       markdown += '</td>\n';
     }
@@ -99,17 +115,11 @@ function formatPostsAsMarkdown(posts: BlogPost[]): string {
 
 async function updateReadme(): Promise<void> {
   try {
-    console.log('📝 Ghost Blog Updater');
-    console.log('====================');
-    console.log(`Blog URL: ${GHOST_BLOG_URL}`);
+    console.log('📝 Ghost Blog Updater (RSS)');
+    console.log('===========================');
+    console.log(`Blog RSS: ${GHOST_BLOG_RSS}`);
     console.log(`Max Posts: ${MAX_POSTS}`);
     console.log('');
-
-    if (!GHOST_API_KEY) {
-      console.error('❌ GHOST_API_KEY environment variable is not set!');
-      console.error('Please set it in your GitHub repository secrets.');
-      process.exit(1);
-    }
 
     console.log('Fetching latest blog posts...');
     const posts = await getLatestPosts();
