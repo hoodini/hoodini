@@ -236,6 +236,14 @@ class YuvalAvidani:
   <p>Why 2026 is the year of the autonomous agent. We move beyond simple RAG to agents that can plan, execute, and correct themselves.</p>
   <sub>📅 Jan 2, 2026</sub>
 </td>
+<td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/rag-is-dead">
+    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80" alt="RAG is Dead. Long Live Agentic RAG." style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/rag-is-dead">RAG is Dead. Long Live Agentic RAG.</a></h3>
+  <p>Traditional RAG pipelines are hitting a wall. The next evolution combines retrieval with autonomous agents.</p>
+  <sub>📅 Jan 2, 2026</sub>
+</td>
 </tr>
 </table>
 
@@ -286,6 +294,14 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/5-vibe-tips/">קבלו 5 VIBE TIPS שלמדתי בדרך הקשה! 🤫</a></h3>
   <p>אחרי שחציתי את ה-1000 שעות של וייב קודינג (וצפונה), רציתי לשתף אתכם ב-5 דברים קטנים אך משמעותיים שלמדתי לאורך הדרך. מוכנים? בואו נתחיל!</p>
   <sub>📅 Aug 22, 2025</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/keitana-2025/">
+    <img src="https://blog.yuv.ai/content/images/2025/08/a-pixar-style-animation-poster-of-a-boy-_xFQa6aPbRzix9NqDyp6gxQ_hTNYUaZ-SlaFkEe8nSJF3w.png" alt="הצצה לקייטנת AI חדשה: ללמוד את יסודות הפיתוח ואימון מודלים של AI (ללא קוד!)" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/keitana-2025/">הצצה לקייטנת AI חדשה: ללמוד את יסודות הפיתוח ואימון מודלים של AI (ללא קוד!)</a></h3>
+  <p>הצצה לקייטנת AI חדשה: ללמוד את יסודות הפיתוח ואימון מודלים של AI (ללא קוד!)</p>
+  <sub>📅 Aug 20, 2025</sub>
 </td>
 </tr>
 </table>
