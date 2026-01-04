@@ -193,48 +193,48 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
-  <a href="https://eng.yuv.ai/posts/claude-4-opus-benchmarks">
+  <a href="https://en-blog.yuv.ai/posts/claude-4-opus-benchmarks">
     <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" alt="Claude 4 Opus vs GPT-5: The Ultimate Developer Benchmark" style="width:100%; border-radius:8px;">
   </a>
-  <h3><a href="https://eng.yuv.ai/posts/claude-4-opus-benchmarks">Claude 4 Opus vs GPT-5: The Ultimate Developer Benchmark</a></h3>
+  <h3><a href="https://en-blog.yuv.ai/posts/claude-4-opus-benchmarks">Claude 4 Opus vs GPT-5: The Ultimate Developer Benchmark</a></h3>
   <p>We tested Claude 4 Opus and GPT-5 across 15 real-world coding tasks. The results might surprise you.</p>
   <sub>📅 Jan 5, 2026</sub>
 </td>
 <td width="50%" valign="top">
-  <a href="https://eng.yuv.ai/posts/2026-01-04-pathway-the-python-framework-that-keeps-your-ai-from-working-with-stale-data">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-04-pathway-the-python-framework-that-keeps-your-ai-from-working-with-stale-data">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/dedaad28FMri7M8P54WImQg.jpg" alt="Pathway - The Python Framework That Keeps Your AI From Working With Stale Data" style="width:100%; border-radius:8px;">
   </a>
-  <h3><a href="https://eng.yuv.ai/posts/2026-01-04-pathway-the-python-framework-that-keeps-your-ai-from-working-with-stale-data">Pathway - The Python Framework That Keeps Your AI From Working With Stale Data</a></h3>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-04-pathway-the-python-framework-that-keeps-your-ai-from-working-with-stale-data">Pathway - The Python Framework That Keeps Your AI From Working With Stale Data</a></h3>
   <p>Pathway is a high-performance Python ETL framework for stream processing and real-time AI pipelines. It solves the problem of feeding live data into L...</p>
   <sub>📅 Jan 4, 2026</sub>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
-  <a href="https://eng.yuv.ai/posts/2026-01-04-some-random-test">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/D-FaacSiNtiVxN8P7Ybx2Aw.jpg" alt="some random test" style="width:100%; border-radius:8px;">
+  <a href="https://en-blog.yuv.ai/posts/cursor-ai-tricks">
+    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80" alt="15 Cursor AI Tricks That 10x Your Coding Speed" style="width:100%; border-radius:8px;">
   </a>
-  <h3><a href="https://eng.yuv.ai/posts/2026-01-04-some-random-test">some random test</a></h3>
-  <p>this is cool random test...</p>
+  <h3><a href="https://en-blog.yuv.ai/posts/cursor-ai-tricks">15 Cursor AI Tricks That 10x Your Coding Speed</a></h3>
+  <p>Stop using Cursor like a chatbot. These power-user techniques will transform how you code.</p>
   <sub>📅 Jan 4, 2026</sub>
 </td>
 <td width="50%" valign="top">
-  <a href="https://eng.yuv.ai/posts/cursor-ai-tricks">
-    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80" alt="15 Cursor AI Tricks That 10x Your Coding Speed" style="width:100%; border-radius:8px;">
+  <a href="https://en-blog.yuv.ai/posts/mcp-protocol-guide">
+    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80" alt="Model Context Protocol (MCP): The New Standard for AI Tools" style="width:100%; border-radius:8px;">
   </a>
-  <h3><a href="https://eng.yuv.ai/posts/cursor-ai-tricks">15 Cursor AI Tricks That 10x Your Coding Speed</a></h3>
-  <p>Stop using Cursor like a chatbot. These power-user techniques will transform how you code.</p>
-  <sub>📅 Jan 4, 2026</sub>
+  <h3><a href="https://en-blog.yuv.ai/posts/mcp-protocol-guide">Model Context Protocol (MCP): The New Standard for AI Tools</a></h3>
+  <p>Anthropic's MCP is becoming the USB-C of AI integrations. Here's how to build your first MCP server.</p>
+  <sub>📅 Jan 3, 2026</sub>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
-  <a href="https://eng.yuv.ai/posts/mcp-protocol-guide">
-    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80" alt="Model Context Protocol (MCP): The New Standard for AI Tools" style="width:100%; border-radius:8px;">
+  <a href="https://en-blog.yuv.ai/posts/ai-agents">
+    <img src="/images/ai_agents_cover.png" alt="The Rise of AI Agents: From Chatbots to Autonomous Workers" style="width:100%; border-radius:8px;">
   </a>
-  <h3><a href="https://eng.yuv.ai/posts/mcp-protocol-guide">Model Context Protocol (MCP): The New Standard for AI Tools</a></h3>
-  <p>Anthropic's MCP is becoming the USB-C of AI integrations. Here's how to build your first MCP server.</p>
-  <sub>📅 Jan 3, 2026</sub>
+  <h3><a href="https://en-blog.yuv.ai/posts/ai-agents">The Rise of AI Agents: From Chatbots to Autonomous Workers</a></h3>
+  <p>Why 2026 is the year of the autonomous agent. We move beyond simple RAG to agents that can plan, execute, and correct themselves.</p>
+  <sub>📅 Jan 2, 2026</sub>
 </td>
 </tr>
 </table>
