@@ -152,35 +152,39 @@ def update_readme(stats):
     followers = user.get('followers', 0)
     following = user.get('following', 0)
     
-    # Format sections with cool ASCII art and geeky styling
+    # Format sections with clean, modern styling
     stats_section = f"""
-```ascii
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃                    📊 GITHUB METRICS                        ┃
-┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
-┃  📦 Repositories: {public_repos:<3}  │  👥 Followers: {followers:<3}  │  🤝 Following: {following:<3} ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-```
+<div align="center">
+
+### 📊 GitHub Activity
+
+<table>
+<tr>
+<td align="center">
+<img src="https://img.shields.io/badge/Repos-{public_repos}-blue?style=for-the-badge&logo=github" alt="Repositories">
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/Followers-{followers}-blue?style=for-the-badge&logo=github" alt="Followers">
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/Following-{following}-blue?style=for-the-badge&logo=github" alt="Following">
+</td>
+</tr>
+</table>
+
+</div>
 """
 
     activity_section = f"""
-<details open>
-<summary><b>🚀 Recent Activity</b></summary>
-<br>
+### 🚀 Recent Activity
 
 {format_recent_activity(stats['events'])}
-
-</details>
 """
 
     repos_section = f"""
-<details open>
-<summary><b>💻 Top Repositories</b></summary>
-<br>
+### ⭐ Featured Repositories
 
 {format_recent_repos(stats['repos'])}
-
-</details>
 """
     
     timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')
@@ -194,13 +198,9 @@ def update_readme(stats):
 
 {stats_section}
 
-<div align="center">
-
 {activity_section}
 
 {repos_section}
-
-</div>
 
 ---
 
