@@ -110,25 +110,54 @@ class YuvalAvidani:
 ## 📺 Latest YouTube Videos
 
 <!-- YOUTUBE:START -->
-### [בואו להריץ LLM בדפדפן בצורה מאובטחת 100%!](https://www.youtube.com/watch?v=yQFOFUnG0Go)
-[![בואו להריץ LLM בדפדפן בצורה מאובטחת 100%!](https://i.ytimg.com/vi/yQFOFUnG0Go/mqdefault.jpg)](https://www.youtube.com/watch?v=yQFOFUnG0Go)
-*Published on Dec 30, 2025*
-
-### [25 בדצמבר 2025](https://www.youtube.com/watch?v=Uu_gPgkOdpY)
-[![25 בדצמבר 2025](https://i.ytimg.com/vi/Uu_gPgkOdpY/mqdefault.jpg)](https://www.youtube.com/watch?v=Uu_gPgkOdpY)
-*Published on Dec 25, 2025*
-
-### [ננו בננה פרו: מדריך מהיר וחינמי למתחילים!!](https://www.youtube.com/watch?v=paTZQenNGXk)
-[![ננו בננה פרו: מדריך מהיר וחינמי למתחילים!!](https://i.ytimg.com/vi/paTZQenNGXk/mqdefault.jpg)](https://www.youtube.com/watch?v=paTZQenNGXk)
-*Published on Dec 24, 2025*
-
-### [בואו נבין איך בנוי סוכן AI - בקוד!](https://www.youtube.com/watch?v=2-zoq5qMKKo)
-[![בואו נבין איך בנוי סוכן AI - בקוד!](https://i.ytimg.com/vi/2-zoq5qMKKo/mqdefault.jpg)](https://www.youtube.com/watch?v=2-zoq5qMKKo)
-*Published on Dec 18, 2025*
-
-### [איך פותרים את בעיית הזיכרון של ה-AI? בקלוד השיקו ניהול קונטקסט וזיכרון](https://www.youtube.com/watch?v=p4qF6GdE6aM)
-[![איך פותרים את בעיית הזיכרון של ה-AI? בקלוד השיקו ניהול קונטקסט וזיכרון](https://i.ytimg.com/vi/p4qF6GdE6aM/mqdefault.jpg)](https://www.youtube.com/watch?v=p4qF6GdE6aM)
-*Published on Dec 13, 2025*
+<table>
+<tr>
+<td width="33%" align="center">
+  <a href="https://www.youtube.com/watch?v=OwzvpJJdGsw">
+    <img src="https://i.ytimg.com/vi/OwzvpJJdGsw/mqdefault.jpg" alt="Everyting about GitHub Copilot: Overview" style="width:100%; max-width:300px;">
+  </a>
+  <br>
+  <a href="https://www.youtube.com/watch?v=OwzvpJJdGsw"><strong>Everyting about GitHub Copilot: Overview</strong></a>
+</td>
+<td width="33%" align="center">
+  <a href="https://www.youtube.com/watch?v=gn5-vbNtAz4">
+    <img src="https://i.ytimg.com/vi/gn5-vbNtAz4/mqdefault.jpg" alt="Beyond The Hype with YUV.AI" style="width:100%; max-width:300px;">
+  </a>
+  <br>
+  <a href="https://www.youtube.com/watch?v=gn5-vbNtAz4"><strong>Beyond The Hype with YUV.AI</strong></a>
+</td>
+<td width="33%" align="center">
+  <a href="https://www.youtube.com/watch?v=68d1KXNif68">
+    <img src="https://i.ytimg.com/vi/68d1KXNif68/mqdefault.jpg" alt="Claude can now do browser automations EXTREMELY FAST!" style="width:100%; max-width:300px;">
+  </a>
+  <br>
+  <a href="https://www.youtube.com/watch?v=68d1KXNif68"><strong>Claude can now do browser automations EXTREMELY FAST!</strong></a>
+</td>
+</tr>
+<tr>
+<td width="33%" align="center">
+  <a href="https://www.youtube.com/watch?v=LNMhtvX819I">
+    <img src="https://i.ytimg.com/vi/LNMhtvX819I/mqdefault.jpg" alt="Exclusive AI Session With GitHub!! Copilot, Vibe Coding, MCP & much more!" style="width:100%; max-width:300px;">
+  </a>
+  <br>
+  <a href="https://www.youtube.com/watch?v=LNMhtvX819I"><strong>Exclusive AI Session With GitHub!! Copilot, Vibe Coding, MCP & much more!</strong></a>
+</td>
+<td width="33%" align="center">
+  <a href="https://www.youtube.com/watch?v=GMI7-lqI2IU">
+    <img src="https://i.ytimg.com/vi/GMI7-lqI2IU/mqdefault.jpg" alt="Can Anyone Code Without Knowing Code?" style="width:100%; max-width:300px;">
+  </a>
+  <br>
+  <a href="https://www.youtube.com/watch?v=GMI7-lqI2IU"><strong>Can Anyone Code Without Knowing Code?</strong></a>
+</td>
+<td width="33%" align="center">
+  <a href="https://www.youtube.com/watch?v=tljlmOrmzF8">
+    <img src="https://i.ytimg.com/vi/tljlmOrmzF8/mqdefault.jpg" alt="The new GitHub Spark CHANGES EVERYTHING!!!!!" style="width:100%; max-width:300px;">
+  </a>
+  <br>
+  <a href="https://www.youtube.com/watch?v=tljlmOrmzF8"><strong>The new GitHub Spark CHANGES EVERYTHING!!!!!</strong></a>
+</td>
+</tr>
+</table>
 
 <!-- YOUTUBE:END -->
 ---
