@@ -45,7 +45,7 @@ interface BlogPost {
 async function getEnglishPosts(): Promise<BlogPost[]> {
   try {
     console.log('Fetching English posts from en-blog.yuv.ai...');
-    const response = await fetch(`${ENG_BLOG_API_URL}?limit=${MAX_POSTS}`);
+    const response = await fetch(`${ENG_BLOG_API_URL}?limit=${MAX_POSTS + 5}`); // Fetch extra to account for filtered posts
 
     if (!response.ok) {
       console.warn(`English blog API error: ${response.status} ${response.statusText}`);
@@ -59,13 +59,23 @@ async function getEnglishPosts(): Promise<BlogPost[]> {
       return [];
     }
 
-    const posts: BlogPost[] = data.posts.map((post: any) => ({
-      title: post.title || 'Untitled',
-      url: post.url || '',
-      description: post.excerpt || '',
-      pubDate: post.date || new Date().toISOString(),
-      imageUrl: post.coverImage || undefined,
-    }));
+    // Filter out test posts and fix URLs (API returns eng.yuv.ai but site is en-blog.yuv.ai)
+    const posts: BlogPost[] = data.posts
+      .filter((post: any) => {
+        const title = (post.title || '').toLowerCase();
+        const slug = (post.slug || '').toLowerCase();
+        // Filter out test posts
+        return !title.includes('test') && !slug.includes('test');
+      })
+      .slice(0, MAX_POSTS) // Limit to MAX_POSTS after filtering
+      .map((post: any) => ({
+        title: post.title || 'Untitled',
+        // Fix URL: replace eng.yuv.ai with en-blog.yuv.ai
+        url: (post.url || '').replace('eng.yuv.ai', 'en-blog.yuv.ai'),
+        description: post.excerpt || '',
+        pubDate: post.date || new Date().toISOString(),
+        imageUrl: post.coverImage || undefined,
+      }));
 
     console.log(`✓ Found ${posts.length} English posts`);
     return posts;
