@@ -152,25 +152,35 @@ def update_readme(stats):
     followers = user.get('followers', 0)
     following = user.get('following', 0)
     
-    # Format sections
+    # Format sections with cool ASCII art and geeky styling
     stats_section = f"""
-### 📊 GitHub Stats
-
-- 📦 **{public_repos}** Public Repositories
-- 👥 **{followers}** Followers
-- 🤝 **{following}** Following
+```ascii
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                    📊 GITHUB METRICS                        ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃  📦 Repositories: {public_repos:<3}  │  👥 Followers: {followers:<3}  │  🤝 Following: {following:<3} ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
 """
-    
+
     activity_section = f"""
-### 🚀 Recent Activity
+<details open>
+<summary><b>🚀 Recent Activity</b></summary>
+<br>
 
 {format_recent_activity(stats['events'])}
+
+</details>
 """
-    
+
     repos_section = f"""
-### 💻 Recently Updated Repositories
+<details open>
+<summary><b>💻 Top Repositories</b></summary>
+<br>
 
 {format_recent_repos(stats['repos'])}
+
+</details>
 """
     
     timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')
@@ -183,12 +193,20 @@ def update_readme(stats):
     dynamic_content = f"""{start_marker}
 
 {stats_section}
+
+<div align="center">
+
 {activity_section}
+
 {repos_section}
+
+</div>
 
 ---
 
-*Last updated: {timestamp}*
+<div align="center">
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>{timestamp}</code></sub>
+</div>
 
 {end_marker}"""
     
