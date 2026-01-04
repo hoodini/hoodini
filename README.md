@@ -5,23 +5,35 @@ I'm Hoodini! Welcome to my GitHub profile.
 <!-- DYNAMIC_PROFILE_START -->
 
 
-### 📊 GitHub Stats
-
-- 📦 **110** Public Repositories
-- 👥 **156** Followers
-- 🤝 **0** Following
-
-
-### 🚀 Recent Activity
-
-- 📝 Pushed 0 commit(s) to [hoodini/yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends) - Jan 02
-- 📝 Pushed 0 commit(s) to [hoodini/yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends) - Jan 02
-- 📝 Pushed 0 commit(s) to [hoodini/yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends) - Jan 02
-- 📝 Pushed 0 commit(s) to [hoodini/yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends) - Jan 02
-- 📝 Pushed 0 commit(s) to [hoodini/yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends) - Jan 02
+```ascii
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                    📊 GITHUB METRICS                        ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃  📦 Repositories: 110  │  👥 Followers: 156  │  🤝 Following: 0   ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
 
 
-### 💻 Recently Updated Repositories
+<div align="center">
+
+
+<details open>
+<summary><b>🚀 Recent Activity</b></summary>
+<br>
+
+- 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Jan 04
+- 📝 Pushed 0 commit(s) to [hoodini/yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends) - Jan 04
+- 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Jan 04
+- 📝 Pushed 0 commit(s) to [hoodini/yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends) - Jan 04
+- 📝 Pushed 0 commit(s) to [hoodini/yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends) - Jan 04
+
+</details>
+
+
+
+<details open>
+<summary><b>💻 Top Repositories</b></summary>
+<br>
 
 - 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
 - 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 92
@@ -29,10 +41,16 @@ I'm Hoodini! Welcome to my GitHub profile.
 - 💛 **[plsql-interactive-tutor](https://github.com/hoodini/plsql-interactive-tutor)** - Interactive web application to learn Oracle PL/SQL - Lessons, Visual Query Builder, Code Playground ⭐ 1
 - 📦 **[amazon-bedrock-agentcore-samples](https://github.com/hoodini/amazon-bedrock-agentcore-samples)** - None ⭐ 1
 
+</details>
+
+
+</div>
 
 ---
 
-*Last updated: 2026-01-04 00:19:51 UTC*
+<div align="center">
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-01-04 15:26:59 UTC</code></sub>
+</div>
 
 <!-- DYNAMIC_PROFILE_END -->
 <div align="center">
