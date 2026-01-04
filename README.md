@@ -185,4 +185,53 @@ class YuvalAvidani:
 ## 📝 Latest Blog Posts
 
 <!-- BLOG:START -->
+<table>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/openbb-financial-data-platform-connect-once-consume-everywhere/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/4E1aaZ78A8H_nsEPseOh4Qo.jpg" alt="פלטפורמת OpenBB: איך "התחבר פעם אחת, צרוך בכל מקום" משנה את עבודת הדאטה הפיננסי" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/openbb-financial-data-platform-connect-once-consume-everywhere/">פלטפורמת OpenBB: איך "התחבר פעם אחת, צרוך בכל מקום" משנה את עבודת הדאטה הפיננסי</a></h3>
+  <p>הפלטפורמה OpenBB שמטרנדת היום עם 56.4K כוכבים משנה את המודל של איך אנחנו עובדים עם נתונים פיננסיים - שכבת תשתית אחת שמשרתת קוונטים, אנליסטים וסוכני AI...</p>
+  <sub>📅 Jan 4, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/vibe-kanban-ai-agents-orchestration/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/CotXaZ_vI7qZkdUPvqfjkQg.jpg" alt="איך להפוך את הכאוס של סוכני AI ללוח קנבאן מסודר" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/vibe-kanban-ai-agents-orchestration/">איך להפוך את הכאוס של סוכני AI ללוח קנבאן מסודר</a></h3>
+  <p>עובדים עם מספר סוכני AI במקביל? תגלו איך Vibe Kanban הופך את הבלאגן של מעבר בין קלוד, ג'מיני וקודקס לתהליך עבודה מסודר שמגדיל פרודוקטיביות פי 10</p>
+  <sub>📅 Jan 2, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/epistemic-robustness-ai-models-ddft/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/FpdWaYbhLMuMvdIPyb2TyQw.jpg" alt="למה מודלים גדולים קורסים תחת לחץ? מחקר חדש הופך הנחות יסוד" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/epistemic-robustness-ai-models-ddft/">למה מודלים גדולים קורסים תחת לחץ? מחקר חדש הופך הנחות יסוד</a></h3>
+  <p>מחקר פורץ דרך מגלה: אין כמעט קשר בין גודל המודל ליכולת שלו לשמור על אמינות תחת לחץ. מודלי ענק קורסים כמו קטנים. אז מה באמת משנה?</p>
+  <sub>📅 Jan 1, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/5-vibe-tips/">
+    <img src="https://blog.yuv.ai/content/images/2025/08/1-1.png" alt="קבלו 5 VIBE TIPS שלמדתי בדרך הקשה! 🤫" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/5-vibe-tips/">קבלו 5 VIBE TIPS שלמדתי בדרך הקשה! 🤫</a></h3>
+  <p>אחרי שחציתי את ה-1000 שעות של וייב קודינג (וצפונה), רציתי לשתף אתכם ב-5 דברים קטנים אך משמעותיים שלמדתי לאורך הדרך. מוכנים? בואו נתחיל!</p>
+  <sub>📅 Aug 22, 2025</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/keitana-2025/">
+    <img src="https://blog.yuv.ai/content/images/2025/08/a-pixar-style-animation-poster-of-a-boy-_xFQa6aPbRzix9NqDyp6gxQ_hTNYUaZ-SlaFkEe8nSJF3w.png" alt="הצצה לקייטנת AI חדשה: ללמוד את יסודות הפיתוח ואימון מודלים של AI (ללא קוד!)" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/keitana-2025/">הצצה לקייטנת AI חדשה: ללמוד את יסודות הפיתוח ואימון מודלים של AI (ללא קוד!)</a></h3>
+  <p>הצצה לקייטנת AI חדשה: ללמוד את יסודות הפיתוח ואימון מודלים של AI (ללא קוד!)</p>
+  <sub>📅 Aug 20, 2025</sub>
+</td>
+</tr>
+</table>
+
 <!-- BLOG:END -->
