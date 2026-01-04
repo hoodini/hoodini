@@ -1,0 +1,41 @@
+name: Update Blog Posts
+on:
+  schedule:
+    # Runs every day at 2pm UTC
+    - cron: '0 14 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update_blog_posts:
+    name: Update blog posts
+    runs-on: ubuntu-latest
+    environment: copilot
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Update README
+        env:
+          GHOST_API_KEY: ${{ secrets.GHOST_API_KEY }}
+        run: |
+          cd scripts
+          npm install
+          npm run update-blog
+      - name: Commit changes
+        id: commit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull origin main
+          git add .
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git commit -m "Update README with latest blog posts"
+            git push origin main
+          fi

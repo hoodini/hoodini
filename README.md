@@ -181,3 +181,8 @@ class YuvalAvidani:
 ---
 <!-- VIDEO-LIST:START -->
 <!-- VIDEO-LIST:END -->
+
+## 📝 Latest Blog Posts
+
+<!-- BLOG:START -->
+<!-- BLOG:END -->

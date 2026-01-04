@@ -4,7 +4,8 @@
   "description": "Script to update README with latest YouTube videos",
   "type": "module",
   "scripts": {
-    "update": "tsx update-readme.ts"
+    "update": "tsx update-readme.ts",
+    "update-blog": "tsx update-blog.ts"
   },
   "dependencies": {
     "googleapis": "^140.0.0"
