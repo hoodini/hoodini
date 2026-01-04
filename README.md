@@ -59,7 +59,26 @@ I thrive on exploring the intricacies of **Generative AI**, **Machine Learning**
 ## 📺 Latest YouTube Videos
 
 <!-- YOUTUBE:START -->
-<!-- This section is automatically updated by GitHub Actions -->
+### [בואו להריץ LLM בדפדפן בצורה מאובטחת 100%!](https://www.youtube.com/watch?v=yQFOFUnG0Go)
+[![בואו להריץ LLM בדפדפן בצורה מאובטחת 100%!](https://i.ytimg.com/vi/yQFOFUnG0Go/mqdefault.jpg)](https://www.youtube.com/watch?v=yQFOFUnG0Go)
+*Published on Dec 30, 2025*
+
+### [25 בדצמבר 2025](https://www.youtube.com/watch?v=Uu_gPgkOdpY)
+[![25 בדצמבר 2025](https://i.ytimg.com/vi/Uu_gPgkOdpY/mqdefault.jpg)](https://www.youtube.com/watch?v=Uu_gPgkOdpY)
+*Published on Dec 25, 2025*
+
+### [ננו בננה פרו: מדריך מהיר וחינמי למתחילים!!](https://www.youtube.com/watch?v=paTZQenNGXk)
+[![ננו בננה פרו: מדריך מהיר וחינמי למתחילים!!](https://i.ytimg.com/vi/paTZQenNGXk/mqdefault.jpg)](https://www.youtube.com/watch?v=paTZQenNGXk)
+*Published on Dec 24, 2025*
+
+### [בואו נבין איך בנוי סוכן AI - בקוד!](https://www.youtube.com/watch?v=2-zoq5qMKKo)
+[![בואו נבין איך בנוי סוכן AI - בקוד!](https://i.ytimg.com/vi/2-zoq5qMKKo/mqdefault.jpg)](https://www.youtube.com/watch?v=2-zoq5qMKKo)
+*Published on Dec 18, 2025*
+
+### [איך פותרים את בעיית הזיכרון של ה-AI? בקלוד השיקו ניהול קונטקסט וזיכרון](https://www.youtube.com/watch?v=p4qF6GdE6aM)
+[![איך פותרים את בעיית הזיכרון של ה-AI? בקלוד השיקו ניהול קונטקסט וזיכרון](https://i.ytimg.com/vi/p4qF6GdE6aM/mqdefault.jpg)](https://www.youtube.com/watch?v=p4qF6GdE6aM)
+*Published on Dec 13, 2025*
+
 <!-- YOUTUBE:END -->
 ---
 <!-- VIDEO-LIST:START -->
