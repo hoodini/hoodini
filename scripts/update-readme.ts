@@ -9,7 +9,7 @@ const __dirname = dirname(__filename);
 // Configuration
 const API_KEY = process.env.YOUTUBE_API_KEY;
 const PLAYLIST_ID = 'PLzJ4Crvb4v-FQ8Mj1bzGfil7dTNWk0XBx'; // English playlist
-const MAX_VIDEOS = 6; // Number of videos to display (6 for 2x3 grid)
+const MAX_VIDEOS = 6; // Number of videos to display (6 for 3x2 grid)
 const README_PATH = join(__dirname, '../README.md');
 
 // Markers for video section in README
@@ -70,15 +70,15 @@ function formatVideosAsMarkdown(videos: Video[]): string {
 
   let markdown = '\n<table>\n';
 
-  // Display videos in rows of 3
-  for (let i = 0; i < videos.length; i += 3) {
+  // Display videos in rows of 2
+  for (let i = 0; i < videos.length; i += 2) {
     markdown += '<tr>\n';
 
-    for (let j = i; j < Math.min(i + 3, videos.length); j++) {
+    for (let j = i; j < Math.min(i + 2, videos.length); j++) {
       const video = videos[j];
-      markdown += '<td width="33%" align="center">\n';
+      markdown += '<td width="50%" align="center">\n';
       markdown += `  <a href="${video.url}">\n`;
-      markdown += `    <img src="${video.thumbnail}" alt="${video.title}" style="width:100%; max-width:300px;">\n`;
+      markdown += `    <img src="${video.thumbnail}" alt="${video.title}" style="width:100%; max-width:400px;">\n`;
       markdown += `  </a>\n`;
       markdown += `  <br>\n`;
       markdown += `  <a href="${video.url}"><strong>${video.title}</strong></a>\n`;
