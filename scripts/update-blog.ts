@@ -6,7 +6,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Configuration
-const GHOST_BLOG_RSS = 'https://blog.yuv.ai/rss/';
+const GHOST_API_URL = 'https://yuv-ai.ghost.io';
+const GHOST_API_KEY = process.env.GHOST_API_KEY;
 const MAX_POSTS = 5;
 const README_PATH = join(__dirname, '../README.md');
 
@@ -23,42 +24,34 @@ interface BlogPost {
 }
 
 async function getLatestPosts(): Promise<BlogPost[]> {
-  try {
-    console.log(`Fetching from: ${GHOST_BLOG_RSS}`);
+  if (!GHOST_API_KEY) {
+    throw new Error('GHOST_API_KEY environment variable is not set');
+  }
 
-    const response = await fetch(GHOST_BLOG_RSS);
+  try {
+    const apiUrl = `${GHOST_API_URL}/ghost/api/content/posts/?key=${GHOST_API_KEY}&limit=${MAX_POSTS}&include=tags,authors&fields=title,url,excerpt,published_at,feature_image`;
+
+    console.log(`Fetching from: ${GHOST_API_URL}`);
+
+    const response = await fetch(apiUrl);
 
     if (!response.ok) {
-      throw new Error(`RSS feed error: ${response.status} ${response.statusText}`);
+      throw new Error(`Ghost API error: ${response.status} ${response.statusText}`);
     }
 
-    const xmlText = await response.text();
-    
-    // Parse RSS XML
-    const posts: BlogPost[] = [];
-    const itemMatches = xmlText.matchAll(/<item>(.*?)<\/item>/gs);
+    const data = await response.json();
 
-    for (const match of itemMatches) {
-      if (posts.length >= MAX_POSTS) break;
-
-      const itemXml = match[1];
-      
-      const titleMatch = itemXml.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>/);
-      const linkMatch = itemXml.match(/<link>(.*?)<\/link>/);
-      const descMatch = itemXml.match(/<description><!\[CDATA\[(.*?)\]\]><\/description>/);
-      const pubDateMatch = itemXml.match(/<pubDate>(.*?)<\/pubDate>/);
-      const imageMatch = itemXml.match(/<media:content url="(.*?)"/);
-
-      if (titleMatch && linkMatch) {
-        posts.push({
-          title: titleMatch[1],
-          url: linkMatch[1],
-          description: descMatch ? descMatch[1] : '',
-          pubDate: pubDateMatch ? pubDateMatch[1] : '',
-          imageUrl: imageMatch ? imageMatch[1] : undefined
-        });
-      }
+    if (!data.posts || !Array.isArray(data.posts)) {
+      throw new Error('Invalid response from Ghost API');
     }
+
+    const posts: BlogPost[] = data.posts.map((post: any) => ({
+      title: post.title || 'Untitled',
+      url: post.url || '',
+      description: post.excerpt || '',
+      pubDate: post.published_at || new Date().toISOString(),
+      imageUrl: post.feature_image || undefined
+    }));
 
     return posts;
 
@@ -115,9 +108,9 @@ function formatPostsAsMarkdown(posts: BlogPost[]): string {
 
 async function updateReadme(): Promise<void> {
   try {
-    console.log('📝 Ghost Blog Updater (RSS)');
-    console.log('===========================');
-    console.log(`Blog RSS: ${GHOST_BLOG_RSS}`);
+    console.log('📝 Ghost Blog Updater (Content API)');
+    console.log('====================================');
+    console.log(`Ghost API URL: ${GHOST_API_URL}`);
     console.log(`Max Posts: ${MAX_POSTS}`);
     console.log('');
 
