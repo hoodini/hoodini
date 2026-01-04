@@ -23,8 +23,8 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 💻 Recently Updated Repositories
 
-- 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 92
 - 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
+- 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 92
 - 💛 **[copilot-workshop-text-analysis](https://github.com/hoodini/copilot-workshop-text-analysis)** - GitHub Copilot 101 Workshop - Learn AI-assisted coding with hands-on exercises ⭐ 1
 - 💛 **[plsql-interactive-tutor](https://github.com/hoodini/plsql-interactive-tutor)** - Interactive web application to learn Oracle PL/SQL - Lessons, Visual Query Builder, Code Playground ⭐ 1
 - 📦 **[amazon-bedrock-agentcore-samples](https://github.com/hoodini/amazon-bedrock-agentcore-samples)** - None ⭐ 1
@@ -32,7 +32,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ---
 
-*Last updated: 2026-01-03 00:16:50 UTC*
+*Last updated: 2026-01-04 00:19:51 UTC*
 
 <!-- DYNAMIC_PROFILE_END -->
 # Hi, I'm Yuval Avidani 👋
