@@ -187,8 +187,70 @@ class YuvalAvidani:
 ## 📝 Latest Blog Posts
 
 <!-- BLOG:START -->
+
+### 🇺🇸 English Posts
+
 <table>
 <tr>
+<td width="50%" valign="top">
+  <a href="https://eng.yuv.ai/posts/claude-4-opus-benchmarks">
+    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" alt="Claude 4 Opus vs GPT-5: The Ultimate Developer Benchmark" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://eng.yuv.ai/posts/claude-4-opus-benchmarks">Claude 4 Opus vs GPT-5: The Ultimate Developer Benchmark</a></h3>
+  <p>We tested Claude 4 Opus and GPT-5 across 15 real-world coding tasks. The results might surprise you.</p>
+  <sub>📅 Jan 5, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://eng.yuv.ai/posts/2026-01-04-pathway-the-python-framework-that-keeps-your-ai-from-working-with-stale-data">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/dedaad28FMri7M8P54WImQg.jpg" alt="Pathway - The Python Framework That Keeps Your AI From Working With Stale Data" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://eng.yuv.ai/posts/2026-01-04-pathway-the-python-framework-that-keeps-your-ai-from-working-with-stale-data">Pathway - The Python Framework That Keeps Your AI From Working With Stale Data</a></h3>
+  <p>Pathway is a high-performance Python ETL framework for stream processing and real-time AI pipelines. It solves the problem of feeding live data into L...</p>
+  <sub>📅 Jan 4, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://eng.yuv.ai/posts/2026-01-04-some-random-test">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/D-FaacSiNtiVxN8P7Ybx2Aw.jpg" alt="some random test" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://eng.yuv.ai/posts/2026-01-04-some-random-test">some random test</a></h3>
+  <p>this is cool random test...</p>
+  <sub>📅 Jan 4, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://eng.yuv.ai/posts/cursor-ai-tricks">
+    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80" alt="15 Cursor AI Tricks That 10x Your Coding Speed" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://eng.yuv.ai/posts/cursor-ai-tricks">15 Cursor AI Tricks That 10x Your Coding Speed</a></h3>
+  <p>Stop using Cursor like a chatbot. These power-user techniques will transform how you code.</p>
+  <sub>📅 Jan 4, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://eng.yuv.ai/posts/mcp-protocol-guide">
+    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80" alt="Model Context Protocol (MCP): The New Standard for AI Tools" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://eng.yuv.ai/posts/mcp-protocol-guide">Model Context Protocol (MCP): The New Standard for AI Tools</a></h3>
+  <p>Anthropic's MCP is becoming the USB-C of AI integrations. Here's how to build your first MCP server.</p>
+  <sub>📅 Jan 3, 2026</sub>
+</td>
+</tr>
+</table>
+
+### 🇮🇱 Hebrew Posts (עברית)
+
+<table>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/when-do-we-need-ai-agent/">
+    <img src="https://blog.yuv.ai/content/images/2026/01/Screenshot-2026-01-04-212724.png" alt="מתי צריך ומתי לא צריך סוכן AI? בואו תראו בעיניים" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/when-do-we-need-ai-agent/">מתי צריך ומתי לא צריך סוכן AI? בואו תראו בעיניים</a></h3>
+  <p>מתי צריך ומתי לא צריך סוכן AI? בואו תראו את היוז קייס שלי שעושה סדר בדברים (למרות צילום המסך המלחיץ). בגדול: שילבתי קריאות LLM ליצירת טקסט ותמונה לתוכ...</p>
+  <sub>📅 Jan 4, 2026</sub>
+</td>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/openbb-financial-data-platform-connect-once-consume-everywhere/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/4E1aaZ78A8H_nsEPseOh4Qo.jpg" alt="פלטפורמת OpenBB: איך "התחבר פעם אחת, צרוך בכל מקום" משנה את עבודת הדאטה הפיננסי" style="width:100%; border-radius:8px;">
@@ -197,6 +259,8 @@ class YuvalAvidani:
   <p>הפלטפורמה OpenBB שמטרנדת היום עם 56.4K כוכבים משנה את המודל של איך אנחנו עובדים עם נתונים פיננסיים - שכבת תשתית אחת שמשרתת קוונטים, אנליסטים וסוכני AI...</p>
   <sub>📅 Jan 4, 2026</sub>
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/vibe-kanban-ai-agents-orchestration/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/CotXaZ_vI7qZkdUPvqfjkQg.jpg" alt="איך להפוך את הכאוס של סוכני AI ללוח קנבאן מסודר" style="width:100%; border-radius:8px;">
@@ -205,8 +269,6 @@ class YuvalAvidani:
   <p>עובדים עם מספר סוכני AI במקביל? תגלו איך Vibe Kanban הופך את הבלאגן של מעבר בין קלוד, ג'מיני וקודקס לתהליך עבודה מסודר שמגדיל פרודוקטיביות פי 10</p>
   <sub>📅 Jan 2, 2026</sub>
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/epistemic-robustness-ai-models-ddft/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/FpdWaYbhLMuMvdIPyb2TyQw.jpg" alt="למה מודלים גדולים קורסים תחת לחץ? מחקר חדש הופך הנחות יסוד" style="width:100%; border-radius:8px;">
@@ -215,6 +277,8 @@ class YuvalAvidani:
   <p>מחקר פורץ דרך מגלה: אין כמעט קשר בין גודל המודל ליכולת שלו לשמור על אמינות תחת לחץ. מודלי ענק קורסים כמו קטנים. אז מה באמת משנה?</p>
   <sub>📅 Jan 1, 2026</sub>
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/5-vibe-tips/">
     <img src="https://blog.yuv.ai/content/images/2025/08/1-1.png" alt="קבלו 5 VIBE TIPS שלמדתי בדרך הקשה! 🤫" style="width:100%; border-radius:8px;">
@@ -222,16 +286,6 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/5-vibe-tips/">קבלו 5 VIBE TIPS שלמדתי בדרך הקשה! 🤫</a></h3>
   <p>אחרי שחציתי את ה-1000 שעות של וייב קודינג (וצפונה), רציתי לשתף אתכם ב-5 דברים קטנים אך משמעותיים שלמדתי לאורך הדרך. מוכנים? בואו נתחיל!</p>
   <sub>📅 Aug 22, 2025</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/keitana-2025/">
-    <img src="https://blog.yuv.ai/content/images/2025/08/a-pixar-style-animation-poster-of-a-boy-_xFQa6aPbRzix9NqDyp6gxQ_hTNYUaZ-SlaFkEe8nSJF3w.png" alt="הצצה לקייטנת AI חדשה: ללמוד את יסודות הפיתוח ואימון מודלים של AI (ללא קוד!)" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/keitana-2025/">הצצה לקייטנת AI חדשה: ללמוד את יסודות הפיתוח ואימון מודלים של AI (ללא קוד!)</a></h3>
-  <p>הצצה לקייטנת AI חדשה: ללמוד את יסודות הפיתוח ואימון מודלים של AI (ללא קוד!)</p>
-  <sub>📅 Aug 20, 2025</sub>
 </td>
 </tr>
 </table>
