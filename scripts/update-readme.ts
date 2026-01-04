@@ -8,8 +8,8 @@ const __dirname = dirname(__filename);
 
 // Configuration
 const API_KEY = process.env.YOUTUBE_API_KEY;
-const CHANNEL_ID = process.env.YOUTUBE_CHANNEL_ID || ''; // Set your channel ID here or via env variable
-const MAX_VIDEOS = 5; // Number of videos to display
+const PLAYLIST_ID = 'PLzJ4Crvb4v-FQ8Mj1bzGfil7dTNWk0XBx'; // English playlist
+const MAX_VIDEOS = 6; // Number of videos to display (6 for 2x3 grid)
 const README_PATH = join(__dirname, '../README.md');
 
 // Markers for video section in README
@@ -28,41 +28,27 @@ async function getLatestVideos(): Promise<Video[]> {
     throw new Error('YOUTUBE_API_KEY environment variable is not set');
   }
 
-  if (!CHANNEL_ID) {
-    console.error('❌ CHANNEL_ID is not set!');
-    console.error('Please set your YouTube Channel ID in one of these ways:');
-    console.error('  1. Set YOUTUBE_CHANNEL_ID environment variable');
-    console.error('  2. Edit scripts/update-readme.ts and set CHANNEL_ID constant');
-    console.error('\nTo find your Channel ID:');
-    console.error('  - Go to YouTube Studio (https://studio.youtube.com/)');
-    console.error('  - Click Settings → Channel → Advanced settings');
-    console.error('  - Copy your Channel ID (starts with UC...)');
-    throw new Error('YOUTUBE_CHANNEL_ID is not configured');
-  }
-
   const youtube = google.youtube({
     version: 'v3',
     auth: API_KEY,
   });
 
   try {
-    // Get latest videos from the specified channel
-    const channelResponse = await youtube.search.list({
+    // Get latest videos from the English playlist
+    const playlistResponse = await youtube.playlistItems.list({
       part: ['snippet'],
-      channelId: CHANNEL_ID,
-      type: ['video'],
-      order: 'date',
+      playlistId: PLAYLIST_ID,
       maxResults: MAX_VIDEOS,
     });
 
     const videos: Video[] = [];
-    
-    if (channelResponse.data.items) {
-      for (const item of channelResponse.data.items) {
-        if (item.snippet && item.id?.videoId) {
+
+    if (playlistResponse.data.items) {
+      for (const item of playlistResponse.data.items) {
+        if (item.snippet) {
           videos.push({
             title: item.snippet.title || 'Untitled',
-            url: `https://www.youtube.com/watch?v=${item.id.videoId}`,
+            url: `https://www.youtube.com/watch?v=${item.snippet.resourceId?.videoId}`,
             thumbnail: item.snippet.thumbnails?.medium?.url || '',
             publishedAt: item.snippet.publishedAt || '',
           });
@@ -82,20 +68,27 @@ function formatVideosAsMarkdown(videos: Video[]): string {
     return '<!-- No videos found -->\n';
   }
 
-  let markdown = '\n';
-  
-  for (const video of videos) {
-    const date = new Date(video.publishedAt).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-    });
-    
-    markdown += `### [${video.title}](${video.url})\n`;
-    markdown += `[![${video.title}](${video.thumbnail})](${video.url})\n`;
-    markdown += `*Published on ${date}*\n\n`;
+  let markdown = '\n<table>\n';
+
+  // Display videos in rows of 3
+  for (let i = 0; i < videos.length; i += 3) {
+    markdown += '<tr>\n';
+
+    for (let j = i; j < Math.min(i + 3, videos.length); j++) {
+      const video = videos[j];
+      markdown += '<td width="33%" align="center">\n';
+      markdown += `  <a href="${video.url}">\n`;
+      markdown += `    <img src="${video.thumbnail}" alt="${video.title}" style="width:100%; max-width:300px;">\n`;
+      markdown += `  </a>\n`;
+      markdown += `  <br>\n`;
+      markdown += `  <a href="${video.url}"><strong>${video.title}</strong></a>\n`;
+      markdown += '</td>\n';
+    }
+
+    markdown += '</tr>\n';
   }
 
+  markdown += '</table>\n\n';
   return markdown;
 }
 
@@ -103,7 +96,7 @@ async function updateReadme(): Promise<void> {
   try {
     console.log('🎬 YouTube README Updater');
     console.log('========================');
-    console.log(`Channel ID: ${CHANNEL_ID || '(not set)'}`);
+    console.log(`Playlist ID: ${PLAYLIST_ID}`);
     console.log(`Max Videos: ${MAX_VIDEOS}`);
     console.log('');
     
