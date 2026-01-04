@@ -26,7 +26,7 @@ const __dirname = dirname(__filename);
 const GHOST_API_URL = 'https://yuv-ai.ghost.io';
 const GHOST_API_KEY = process.env.GHOST_API_KEY;
 const ENG_BLOG_API_URL = 'https://en-blog.yuv.ai/api/posts'; // English blog API
-const MAX_POSTS = 5; // Posts per section
+const MAX_POSTS = 6; // Posts per section
 const README_PATH = join(__dirname, '../README.md');
 
 // Markers for blog section in README
@@ -67,7 +67,6 @@ async function getEnglishPosts(): Promise<BlogPost[]> {
         // Filter out test posts
         return !title.includes('test') && !slug.includes('test');
       })
-      .slice(0, MAX_POSTS) // Limit to MAX_POSTS after filtering
       .map((post: any) => ({
         title: post.title || 'Untitled',
         // Fix URL: replace eng.yuv.ai with en-blog.yuv.ai
@@ -75,7 +74,10 @@ async function getEnglishPosts(): Promise<BlogPost[]> {
         description: post.excerpt || '',
         pubDate: post.date || new Date().toISOString(),
         imageUrl: post.coverImage || undefined,
-      }));
+      }))
+      // Sort by date descending (latest first)
+      .sort((a: BlogPost, b: BlogPost) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime())
+      .slice(0, MAX_POSTS); // Limit to MAX_POSTS after sorting
 
     console.log(`✓ Found ${posts.length} English posts`);
     return posts;
@@ -109,13 +111,16 @@ async function getHebrewPosts(): Promise<BlogPost[]> {
       throw new Error('Invalid response from Ghost API');
     }
 
-    const posts: BlogPost[] = data.posts.map((post: any) => ({
-      title: post.title || 'Untitled',
-      url: post.url || '',
-      description: post.excerpt || '',
-      pubDate: post.published_at || new Date().toISOString(),
-      imageUrl: post.feature_image || undefined,
-    }));
+    const posts: BlogPost[] = data.posts
+      .map((post: any) => ({
+        title: post.title || 'Untitled',
+        url: post.url || '',
+        description: post.excerpt || '',
+        pubDate: post.published_at || new Date().toISOString(),
+        imageUrl: post.feature_image || undefined,
+      }))
+      // Sort by date descending (latest first)
+      .sort((a: BlogPost, b: BlogPost) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime());
 
     console.log(`✓ Found ${posts.length} Hebrew posts`);
     return posts;
