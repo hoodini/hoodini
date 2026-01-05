@@ -12,7 +12,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <table>
 <tr>
 <td align="center">
-<img src="https://img.shields.io/badge/Repos-110-blue?style=for-the-badge&logo=github" alt="Repositories">
+<img src="https://img.shields.io/badge/Repos-111-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Followers-156-blue?style=for-the-badge&logo=github" alt="Followers">
@@ -30,26 +30,26 @@ I'm Hoodini! Welcome to my GitHub profile.
 ### 🚀 Recent Activity
 
 - 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Jan 04
-- 📝 Pushed 0 commit(s) to [hoodini/yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends) - Jan 04
 - 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Jan 04
-- 📝 Pushed 0 commit(s) to [hoodini/yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends) - Jan 04
-- 📝 Pushed 0 commit(s) to [hoodini/yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends) - Jan 04
+- 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Jan 04
+- 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Jan 04
+- 📝 Pushed 0 commit(s) to [hoodini/eng-blog](https://github.com/hoodini/eng-blog) - Jan 04
 
 
 
 ### ⭐ Featured Repositories
 
-- 🐍 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
+- 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
+- 💙 **[eng-blog](https://github.com/hoodini/eng-blog)** - Stunning AI, Automation & Code blog by Yuval Avidani - AWS GenAI Superstar & GitHub Star. Built with Next.js, automated with Make.com
 - 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 92
 - 💛 **[copilot-workshop-text-analysis](https://github.com/hoodini/copilot-workshop-text-analysis)** - GitHub Copilot 101 Workshop - Learn AI-assisted coding with hands-on exercises ⭐ 1
 - 💛 **[plsql-interactive-tutor](https://github.com/hoodini/plsql-interactive-tutor)** - Interactive web application to learn Oracle PL/SQL - Lessons, Visual Query Builder, Code Playground ⭐ 1
-- 📦 **[amazon-bedrock-agentcore-samples](https://github.com/hoodini/amazon-bedrock-agentcore-samples)** - None ⭐ 1
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-01-04 15:30:34 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-01-05 00:19:23 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
