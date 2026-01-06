@@ -193,6 +193,14 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-06-opencode-the-open-source-ai-coding-agent-that-works-with-any-model">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/cqdcaeQcpeyR1Q-OvumICg.jpg" alt="OpenCode - The Open Source AI Coding Agent That Works With Any Model" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-06-opencode-the-open-source-ai-coding-agent-that-works-with-any-model">OpenCode - The Open Source AI Coding Agent That Works With Any Model</a></h3>
+  <p>## The Open Source Answer to AI Coding Agents The project OpenCode ([https://github.com/anomalyco/opencode](https://github.com/anomalyco/opencode)) so...</p>
+  <sub>📅 Jan 6, 2026</sub>
+</td>
+<td width="50%" valign="top">
   <a href="https://en-blog.yuv.ai/posts/2026-01-05-ai-hedge-fund-building-investment-teams-from-ai-agents">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/aV9babSUIvj4kdUP74ahgAs.jpg" alt="AI Hedge Fund - Building Investment Teams from AI Agents" style="width:100%; border-radius:8px;">
   </a>
@@ -200,6 +208,8 @@ class YuvalAvidani:
   <p>## When AI Agents Become Wall Street Analysts The project [ai-hedge-fund](https://github.com/virattt/ai-hedge-fund) solves the problem of single-persp...</p>
   <sub>📅 Jan 5, 2026</sub>
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
   <a href="https://en-blog.yuv.ai/posts/2026-01-05-ai-hedge-fund-when-multiple-ai-agents-become-your-investment-committee">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/ZIhbaYW7LYSgkdUPwpSVkQg.jpg" alt="AI Hedge Fund: When Multiple AI Agents Become Your Investment Committee" style="width:100%; border-radius:8px;">
@@ -208,8 +218,6 @@ class YuvalAvidani:
   <p>## What Happens When AI Agents Become Investment Analysts The [AI Hedge Fund](https://github.com/virattt/ai-hedge-fund) repo solves the problem of syn...</p>
   <sub>📅 Jan 5, 2026</sub>
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
   <a href="https://en-blog.yuv.ai/posts/2026-01-05-ai-hedge-fund-when-multiple-ai-agents-become-your-trading-council">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/I2NbadaYOda2nsEPiJSDmQg.jpg" alt="AI Hedge Fund - When Multiple AI Agents Become Your Trading Council" style="width:100%; border-radius:8px;">
@@ -218,6 +226,8 @@ class YuvalAvidani:
   <p>## What Happens When You Let AI Versions of Warren Buffett and Cathie Wood Fight Over the Same Stock? The project [AI Hedge Fund](https://github.com/v...</p>
   <sub>📅 Jan 5, 2026</sub>
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
   <a href="https://en-blog.yuv.ai/posts/2026-01-05-the-hidden-trojan-how-model-merging-became-a-security-nightmare">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/04lbadWJL7GukdUP0rjzoAo.jpg" alt="The Hidden Trojan: How Model Merging Became a Security Nightmare" style="width:100%; border-radius:8px;">
@@ -226,8 +236,6 @@ class YuvalAvidani:
   <p>## The Supply Chain Attack Nobody Saw Coming The paper [The Trojan in the Vocabulary: Stealthy Sabotage of LLM Composition](https://arxiv.org/abs/2601...</p>
   <sub>📅 Jan 5, 2026</sub>
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
   <a href="https://en-blog.yuv.ai/posts/2026-01-05-the-hidden-trojan-in-your-ai-vocabulary-why-model-merging-isn-t-safe">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/qatbaZbYM7SlvdIP7eyI6AM.jpg" alt="The Hidden Trojan in Your AI Vocabulary - Why Model Merging Isn't Safe" style="width:100%; border-radius:8px;">
@@ -236,20 +244,30 @@ class YuvalAvidani:
   <p>## The Security Hole Nobody Saw Coming The paper [The Trojan in the Vocabulary: Stealthy Sabotage of LLM Composition](https://arxiv.org/abs/2601.00065...</p>
   <sub>📅 Jan 5, 2026</sub>
 </td>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-05-when-ai-agents-fail-a-real-pipeline-break-and-what-it-teaches-us">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/rX5baYDNELWnkdUPi_fNqAo.jpg" alt="When AI Agents Fail: A Real Pipeline Break and What It Teaches Us" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-05-when-ai-agents-fail-a-real-pipeline-break-and-what-it-teaches-us">When AI Agents Fail: A Real Pipeline Break and What It Teaches Us</a></h3>
-  <p>## The AI Agent That Forgot Its Job I set up an AI agent with one simple task: scan trending GitHub repositories, analyze them for impact in AI and co...</p>
-  <sub>📅 Jan 5, 2026</sub>
-</td>
 </tr>
 </table>
 
 ### 🇮🇱 Hebrew Posts (עברית)
 
 <table>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/value-guided-action-planning-jepa-world-models/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/pAtdadjcDuGdvdIPu_HM6Qo.jpg" alt="איך JEPA של יאן לקון סוף סוף למד לתכנן פעולות - פריצת דרך במודלי עולם" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/value-guided-action-planning-jepa-world-models/">איך JEPA של יאן לקון סוף סוף למד לתכנן פעולות - פריצת דרך במודלי עולם</a></h3>
+  <p>המאמר החדש ממטה AI מראה איך ללמד מודלי JEPA (הארכיטקטורה החלופית של יאן לקון ל-LLMs) לא רק להבין את העולם אלא גם לתכנן בו פעולות - הקטע שחסר עד עכשיו....</p>
+  <sub>📅 Jan 6, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/ai-agent-validation-lesson/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/sLVcabOmEtWkvdIPoZGK0Qw.jpg" alt="למה סוכן AI טוב אומר 'לא יודע' במקום לנחש" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/ai-agent-validation-lesson/">למה סוכן AI טוב אומר 'לא יודע' במקום לנחש</a></h3>
+  <p>מסתבר שהדרך הכי טובה לבדוק אם סוכן AI עובד טוב היא לראות איך הוא מגיב כשחסר לו מידע. הסוכן שלי לימד אותי לקח חשוב על אמינות מול נוחות.</p>
+  <sub>📅 Jan 6, 2026</sub>
+</td>
+</tr>
 <tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/trojan-vocabulary-stealthy-sabotage-llm-composition-2/">
@@ -284,24 +302,6 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/trojan-vocabulary-llm-composition-security/">The Hidden Supply-Chain Trojan Lurking in LLM Model Composition</a></h3>
   <p>New research reveals how tokenizer transplants - a common technique for making AI models compatible - can be exploited to hide malicious triggers that...</p>
   <sub>📅 Jan 5, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/ai-agent-trend-hunter-failure/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/unhbadH6G5ufkdUP3oK7kQo.jpg" alt="כשסוכן AI לזיהוי טרנדים מחליט לקחת יום חופש" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/ai-agent-trend-hunter-failure/">כשסוכן AI לזיהוי טרנדים מחליט לקחת יום חופש</a></h3>
-  <p>בניתי סוכן AI שאמור לזהות פרויקטים טרנדיים ב-GitHub. היום הוא החליט לא לעבוד. הנה מה שלמדתי על אמינות באוטומציה ולמה כל סוכן צריך תוכנית גיבוי.</p>
-  <sub>📅 Jan 5, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/when-do-we-need-ai-agent/">
-    <img src="https://blog.yuv.ai/content/images/2026/01/Screenshot-2026-01-04-212724.png" alt="מתי צריך ומתי לא צריך סוכן AI? בואו תראו בעיניים" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/when-do-we-need-ai-agent/">מתי צריך ומתי לא צריך סוכן AI? בואו תראו בעיניים</a></h3>
-  <p>מתי צריך ומתי לא צריך סוכן AI? בואו תראו את היוז קייס שלי שעושה סדר בדברים (למרות צילום המסך המלחיץ). בגדול: שילבתי קריאות LLM ליצירת טקסט ותמונה לתוכ...</p>
-  <sub>📅 Jan 4, 2026</sub>
 </td>
 </tr>
 </table>
