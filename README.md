@@ -12,10 +12,10 @@ I'm Hoodini! Welcome to my GitHub profile.
 <table>
 <tr>
 <td align="center">
-<img src="https://img.shields.io/badge/Repos-111-blue?style=for-the-badge&logo=github" alt="Repositories">
+<img src="https://img.shields.io/badge/Repos-113-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-157-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-160-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -29,27 +29,27 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
-- 📝 Pushed 0 commit(s) to [hoodini/eng-blog](https://github.com/hoodini/eng-blog) - Jan 05
-- 📝 Pushed 0 commit(s) to [hoodini/eng-blog](https://github.com/hoodini/eng-blog) - Jan 05
-- 📝 Pushed 0 commit(s) to [hoodini/eng-blog](https://github.com/hoodini/eng-blog) - Jan 05
-- 📝 Pushed 0 commit(s) to [hoodini/eng-blog](https://github.com/hoodini/eng-blog) - Jan 05
-- 📝 Pushed 0 commit(s) to [hoodini/eng-blog](https://github.com/hoodini/eng-blog) - Jan 05
+- ⭐ Starred [hoodini/nextjs-bun-starter](https://github.com/hoodini/nextjs-bun-starter) - Jan 06
+- 📝 Pushed 0 commit(s) to [hoodini/nextjs-bun-starter](https://github.com/hoodini/nextjs-bun-starter) - Jan 06
+- 📝 Pushed 0 commit(s) to [hoodini/nextjs-bun-starter](https://github.com/hoodini/nextjs-bun-starter) - Jan 06
+- 📝 Pushed 0 commit(s) to [hoodini/nextjs-bun-starter](https://github.com/hoodini/nextjs-bun-starter) - Jan 06
+- 📝 Pushed 0 commit(s) to [hoodini/nextjs-bun-starter](https://github.com/hoodini/nextjs-bun-starter) - Jan 06
 
 
 
 ### ⭐ Featured Repositories
 
-- 💙 **[eng-blog](https://github.com/hoodini/eng-blog)** - Stunning AI, Automation & Code blog by Yuval Avidani - AWS GenAI Superstar & GitHub Star. Built with Next.js, automated with Make.com ⭐ 1
+- 💙 **[nextjs-bun-starter](https://github.com/hoodini/nextjs-bun-starter)** - The ultimate Next.js starter kit with Bun, Shadcn/ui, Tailwind CSS, and Google Authentication. Production-ready boilerplate that ships faster. ⭐ 15
+- 💙 **[create-yuv-bun-app](https://github.com/hoodini/create-yuv-bun-app)** - Create a new Next.js + Bun app with one command ⭐ 1
+- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 18
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
-- 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 92
-- 💛 **[copilot-workshop-text-analysis](https://github.com/hoodini/copilot-workshop-text-analysis)** - GitHub Copilot 101 Workshop - Learn AI-assisted coding with hands-on exercises ⭐ 1
-- 💛 **[plsql-interactive-tutor](https://github.com/hoodini/plsql-interactive-tutor)** - Interactive web application to learn Oracle PL/SQL - Lessons, Visual Query Builder, Code Playground ⭐ 1
+- 💙 **[eng-blog](https://github.com/hoodini/eng-blog)** - Stunning AI, Automation & Code blog by Yuval Avidani - AWS GenAI Superstar & GitHub Star. Built with Next.js, automated with Make.com ⭐ 1
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-01-06 00:17:53 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-01-07 00:16:23 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
