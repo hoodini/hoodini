@@ -193,6 +193,24 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-07-bitnet-how-microsoft-made-100b-models-run-on-your-laptop-cpu">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/yvhdaaT4BIuzvdIP7KnuCQ.jpg" alt="BitNet: How Microsoft Made 100B Models Run on Your Laptop CPU" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-07-bitnet-how-microsoft-made-100b-models-run-on-your-laptop-cpu">BitNet: How Microsoft Made 100B Models Run on Your Laptop CPU</a></h3>
+  <p>## Running Massive AI Models Locally Just Became Possible The project [microsoft/BitNet](https://github.com/microsoft/BitNet) solves the problem of ru...</p>
+  <sub>📅 Jan 7, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-07-webgym-why-ai-agents-fail-at-web-tasks-and-how-this-changes-it">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/mE5eaaGPB-TwnsEPzKWh-Qg.jpg" alt="WebGym: Why AI Agents Fail at Web Tasks (And How This Changes It)" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-07-webgym-why-ai-agents-fail-at-web-tasks-and-how-this-changes-it">WebGym: Why AI Agents Fail at Web Tasks (And How This Changes It)</a></h3>
+  <p>## Finally, A Proper Training Ground for Web Agents The paper [WebGym](https://arxiv.org/abs/2601.02439) tackles the most frustrating gap in AI agents...</p>
+  <sub>📅 Jan 7, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
   <a href="https://en-blog.yuv.ai/posts/2026-01-06-opencode-the-open-source-ai-coding-agent-that-works-with-any-model">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/cqdcaeQcpeyR1Q-OvumICg.jpg" alt="OpenCode - The Open Source AI Coding Agent That Works With Any Model" style="width:100%; border-radius:8px;">
   </a>
@@ -227,29 +245,29 @@ class YuvalAvidani:
   <sub>📅 Jan 5, 2026</sub>
 </td>
 </tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-05-the-hidden-trojan-how-model-merging-became-a-security-nightmare">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/04lbadWJL7GukdUP0rjzoAo.jpg" alt="The Hidden Trojan: How Model Merging Became a Security Nightmare" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-05-the-hidden-trojan-how-model-merging-became-a-security-nightmare">The Hidden Trojan: How Model Merging Became a Security Nightmare</a></h3>
-  <p>## The Supply Chain Attack Nobody Saw Coming The paper [The Trojan in the Vocabulary: Stealthy Sabotage of LLM Composition](https://arxiv.org/abs/2601...</p>
-  <sub>📅 Jan 5, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-05-the-hidden-trojan-in-your-ai-vocabulary-why-model-merging-isn-t-safe">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/qatbaZbYM7SlvdIP7eyI6AM.jpg" alt="The Hidden Trojan in Your AI Vocabulary - Why Model Merging Isn't Safe" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-05-the-hidden-trojan-in-your-ai-vocabulary-why-model-merging-isn-t-safe">The Hidden Trojan in Your AI Vocabulary - Why Model Merging Isn't Safe</a></h3>
-  <p>## The Security Hole Nobody Saw Coming The paper [The Trojan in the Vocabulary: Stealthy Sabotage of LLM Composition](https://arxiv.org/abs/2601.00065...</p>
-  <sub>📅 Jan 5, 2026</sub>
-</td>
-</tr>
 </table>
 
 ### 🇮🇱 Hebrew Posts (עברית)
 
 <table>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/physical-transformer-ai-meets-physics/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/DV1eaYjXOMblnsEPruzIyAg.jpg" alt="Physical Transformer: איך הופכים מודל AI למערכת פיזיקלית אמיתית" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/physical-transformer-ai-meets-physics/">Physical Transformer: איך הופכים מודל AI למערכת פיזיקלית אמיתית</a></h3>
+  <p>המאמר Physical Transformer מציע גישה מהפכנית: במקום לטפל בטרנספורמר כמערכת מתמטית מופשטת, הוא מתייחס אליו כמערכת פיזיקלית שמצייתת לחוקי אנרגיה וגיאומט...</p>
+  <sub>📅 Jan 7, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/ai-agent-missing-data-lessons/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/QQdeaZ5O37KR1Q-C3YXZBw.jpg" alt="כשסוכן AI שוכח להביא את הדאטה - לקחים על אדריכלות" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/ai-agent-missing-data-lessons/">כשסוכן AI שוכח להביא את הדאטה - לקחים על אדריכלות</a></h3>
+  <p>מסתבר שהאייג'נט שבניתי למעקב אחרי טרנדים החזיר לי היום הודעה שהוא מחכה לדאטה. זו הזדמנות מושלמת לדבר על מה שבאמת חשוב בבניית סוכני AI לפרודקשן - error...</p>
+  <sub>📅 Jan 7, 2026</sub>
+</td>
+</tr>
 <tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/value-guided-action-planning-jepa-world-models/">
@@ -283,24 +301,6 @@ class YuvalAvidani:
   </a>
   <h3><a href="https://blog.yuv.ai/trojan-vocabulary-stealthy-sabotage-llm-composition/">איך תוקף יכול לחבל במודלי AI דרך טוקן זדוני נסתר</a></h3>
   <p>מסתבר שאחד הטרנדים הכי חמים בקהילת האופן-סורס - מיזוג מודלים והרחבת אוצר מילים - חושף פגיעות בטיחות מסוכנת. החוקרים מראים איך אפשר להחדיר 'סוס טרויאני...</p>
-  <sub>📅 Jan 5, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/trojan-in-vocabulary-model-merging-security/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/HYhbaeXADrjPnsEP0fKk0Qg.jpg" alt="הסוס הטרויאני בטוקנייזר - חולשת אבטחה במיזוג מודלים" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/trojan-in-vocabulary-model-merging-security/">הסוס הטרויאני בטוקנייזר - חולשת אבטחה במיזוג מודלים</a></h3>
-  <p>המאמר חושף איך אפשר להטמיע טוקן זדוני שנראה תמים במודל מקור אבל הופך למסוכן ברגע שמשתילים אותו למודל אחר - חור אבטחה קריטי בתהליך מיזוג מודלים שכולנו ...</p>
-  <sub>📅 Jan 5, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/trojan-vocabulary-llm-composition-security/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/HYVbacg8z6aewQ-Qjvi4Cg.jpg" alt="The Hidden Supply-Chain Trojan Lurking in LLM Model Composition" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/trojan-vocabulary-llm-composition-security/">The Hidden Supply-Chain Trojan Lurking in LLM Model Composition</a></h3>
-  <p>New research reveals how tokenizer transplants - a common technique for making AI models compatible - can be exploited to hide malicious triggers that...</p>
   <sub>📅 Jan 5, 2026</sub>
 </td>
 </tr>
