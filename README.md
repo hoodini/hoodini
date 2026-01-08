@@ -193,6 +193,42 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-08-bitnet-how-microsoft-made-100b-llms-run-on-your-laptop-cpu">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/4A9faZaaJL7YvdIP-sG4sAs.jpg" alt="BitNet: How Microsoft Made 100B LLMs Run on Your Laptop CPU" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-08-bitnet-how-microsoft-made-100b-llms-run-on-your-laptop-cpu">BitNet: How Microsoft Made 100B LLMs Run on Your Laptop CPU</a></h3>
+  <p>## The Project That Makes GPU-Free AI Inference Actually Work The project [microsoft/BitNet](https://github.com/microsoft/BitNet) solves the problem o...</p>
+  <sub>📅 Jan 8, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-08-memvid-the-portable-memory-layer-that-eliminates-vector-database-hell">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/XUpfadDEKYukkdUPy8vWgQE.jpg" alt="Memvid: The Portable Memory Layer That Eliminates Vector Database Hell" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-08-memvid-the-portable-memory-layer-that-eliminates-vector-database-hell">Memvid: The Portable Memory Layer That Eliminates Vector Database Hell</a></h3>
+  <p>## Finally, AI Agent Memory Without the Database Nightmare The project [memvid/memvid](https://github.com/memvid/memvid) solves the problem of giving ...</p>
+  <sub>📅 Jan 8, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-08-r-vpo-how-soft-constraints-fix-the-eureka-moment-problem-in-llm-training">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/IqBfacjSBKPW7M8P_7-d4AI.jpg" alt="R²VPO: How Soft Constraints Fix the Eureka Moment Problem in LLM Training" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-08-r-vpo-how-soft-constraints-fix-the-eureka-moment-problem-in-llm-training">R²VPO: How Soft Constraints Fix the Eureka Moment Problem in LLM Training</a></h3>
+  <p>## Teaching AI to Learn Without Killing Brilliant Ideas The paper [Ratio-Variance Regularized Policy Optimization (R²VPO)](https://arxiv.org/abs/2601....</p>
+  <sub>📅 Jan 8, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-08-webgym-how-300k-tasks-finally-trained-ai-agents-to-use-real-websites">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/lg5faaOTDv2EkdUPsMLbKQ.jpg" alt="WebGym: How 300K Tasks Finally Trained AI Agents to Use Real Websites" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-08-webgym-how-300k-tasks-finally-trained-ai-agents-to-use-real-websites">WebGym: How 300K Tasks Finally Trained AI Agents to Use Real Websites</a></h3>
+  <p>## Finally, a Training Gym That Matches the Chaos of Real Websites The paper [WebGym](https://arxiv.org/abs/2601.02439) tackles the massive gap betwee...</p>
+  <sub>📅 Jan 8, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
   <a href="https://en-blog.yuv.ai/posts/2026-01-07-bitnet-how-microsoft-made-100b-models-run-on-your-laptop-cpu">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/yvhdaaT4BIuzvdIP7KnuCQ.jpg" alt="BitNet: How Microsoft Made 100B Models Run on Your Laptop CPU" style="width:100%; border-radius:8px;">
   </a>
@@ -207,42 +243,6 @@ class YuvalAvidani:
   <h3><a href="https://en-blog.yuv.ai/posts/2026-01-07-webgym-why-ai-agents-fail-at-web-tasks-and-how-this-changes-it">WebGym: Why AI Agents Fail at Web Tasks (And How This Changes It)</a></h3>
   <p>## Finally, A Proper Training Ground for Web Agents The paper [WebGym](https://arxiv.org/abs/2601.02439) tackles the most frustrating gap in AI agents...</p>
   <sub>📅 Jan 7, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-06-opencode-the-open-source-ai-coding-agent-that-works-with-any-model">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/cqdcaeQcpeyR1Q-OvumICg.jpg" alt="OpenCode - The Open Source AI Coding Agent That Works With Any Model" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-06-opencode-the-open-source-ai-coding-agent-that-works-with-any-model">OpenCode - The Open Source AI Coding Agent That Works With Any Model</a></h3>
-  <p>## The Open Source Answer to AI Coding Agents The project OpenCode ([https://github.com/anomalyco/opencode](https://github.com/anomalyco/opencode)) so...</p>
-  <sub>📅 Jan 6, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-05-ai-hedge-fund-building-investment-teams-from-ai-agents">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/aV9babSUIvj4kdUP74ahgAs.jpg" alt="AI Hedge Fund - Building Investment Teams from AI Agents" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-05-ai-hedge-fund-building-investment-teams-from-ai-agents">AI Hedge Fund - Building Investment Teams from AI Agents</a></h3>
-  <p>## When AI Agents Become Wall Street Analysts The project [ai-hedge-fund](https://github.com/virattt/ai-hedge-fund) solves the problem of single-persp...</p>
-  <sub>📅 Jan 5, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-05-ai-hedge-fund-when-multiple-ai-agents-become-your-investment-committee">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/ZIhbaYW7LYSgkdUPwpSVkQg.jpg" alt="AI Hedge Fund: When Multiple AI Agents Become Your Investment Committee" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-05-ai-hedge-fund-when-multiple-ai-agents-become-your-investment-committee">AI Hedge Fund: When Multiple AI Agents Become Your Investment Committee</a></h3>
-  <p>## What Happens When AI Agents Become Investment Analysts The [AI Hedge Fund](https://github.com/virattt/ai-hedge-fund) repo solves the problem of syn...</p>
-  <sub>📅 Jan 5, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-05-ai-hedge-fund-when-multiple-ai-agents-become-your-trading-council">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/I2NbadaYOda2nsEPiJSDmQg.jpg" alt="AI Hedge Fund - When Multiple AI Agents Become Your Trading Council" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-05-ai-hedge-fund-when-multiple-ai-agents-become-your-trading-council">AI Hedge Fund - When Multiple AI Agents Become Your Trading Council</a></h3>
-  <p>## What Happens When You Let AI Versions of Warren Buffett and Cathie Wood Fight Over the Same Stock? The project [AI Hedge Fund](https://github.com/v...</p>
-  <sub>📅 Jan 5, 2026</sub>
 </td>
 </tr>
 </table>
