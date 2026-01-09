@@ -15,7 +15,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <img src="https://img.shields.io/badge/Repos-114-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-163-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-165-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -29,27 +29,27 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jan 07
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jan 07
-- ✨ Created branch in [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jan 07
-- 📝 Pushed 0 commit(s) to [hoodini/eng-blog](https://github.com/hoodini/eng-blog) - Jan 07
-- ⭐ Starred [CameronFoxly/Ascii-Motion](https://github.com/CameronFoxly/Ascii-Motion) - Jan 07
+- ⭐ Starred [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jan 08
+- 📝 Pushed 0 commit(s) to [hoodini/eng-blog](https://github.com/hoodini/eng-blog) - Jan 08
+- 📝 Pushed 0 commit(s) to [hoodini/eng-blog](https://github.com/hoodini/eng-blog) - Jan 08
+- 📝 Pushed 0 commit(s) to [hoodini/eng-blog](https://github.com/hoodini/eng-blog) - Jan 08
+- 📝 Pushed 0 commit(s) to [hoodini/eng-blog](https://github.com/hoodini/eng-blog) - Jan 08
 
 
 
 ### ⭐ Featured Repositories
 
-- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 16
-- 📦 **[smart-web-scanner](https://github.com/hoodini/smart-web-scanner)** - A smart web scanner to find sensitive information (headers, servers, etc)
-- 📦 **[SecLists](https://github.com/hoodini/SecLists)** - SecLists is the security tester's companion. It's a collection of multiple types of lists used during security assessments, collected in one place. List types include usernames, passwords, URLs, sensitive data patterns, fuzzing payloads, web shells, and many more. ⭐ 1
-- 💛 **[yuvai-nn](https://github.com/hoodini/yuvai-nn)** - Build neural networks in a friendly way ⭐ 1
-- 🐍 **[ai-toolkit-guide](https://github.com/hoodini/ai-toolkit-guide)** - 🎓 AI-Toolkit Deep Dive: From Physics to Production - A comprehensive educational guide with Hebrew/English support, interactive demos, and Apple-inspired design ⭐ 1
+- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 30
+- 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 92
+- 💙 **[eng-blog](https://github.com/hoodini/eng-blog)** - Stunning AI, Automation & Code blog by Yuval Avidani - AWS GenAI Superstar & GitHub Star. Built with Next.js, automated with Make.com ⭐ 1
+- 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
+- 💛 **[yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal)** - 🐍 Execute Python code in your browser using WebAssembly - YUV.PYTHON Terminal by Yuval Avidani ⭐ 5
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-01-08 00:18:18 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-01-09 00:17:44 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
