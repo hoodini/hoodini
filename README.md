@@ -193,11 +193,47 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-09-claude-code-the-agentic-terminal-assistant-that-actually-understands-your-codebase">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/fpxgaa_7NoDyvdIPma-cqQM.jpg" alt="Claude Code: The Agentic Terminal Assistant That Actually Understands Your Codebase" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-09-claude-code-the-agentic-terminal-assistant-that-actually-understands-your-codebase">Claude Code: The Agentic Terminal Assistant That Actually Understands Your Codebase</a></h3>
+  <p>## An Agentic Coding Assistant That Lives in Your Terminal The project [claude-code](https://github.com/anthropics/claude-code) solves the problem of ...</p>
+  <sub>📅 Jan 9, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-09-why-94-of-ai-code-errors-are-pushing-us-all-toward-typescript">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/Y_JgaduWHu-D7M8PmIKQ2QU.jpg" alt="Why 94% of AI Code Errors Are Pushing Us All Toward TypeScript" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-09-why-94-of-ai-code-errors-are-pushing-us-all-toward-typescript">Why 94% of AI Code Errors Are Pushing Us All Toward TypeScript</a></h3>
+  <p>## AI Just Settled the Typed vs. Untyped Debate - And the Data Is Stunning A recent [GitHub Blog post by Cassidy Williams](https://github.blog/ai-and-...</p>
+  <sub>📅 Jan 9, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
   <a href="https://en-blog.yuv.ai/posts/2026-01-08-bitnet-how-microsoft-made-100b-llms-run-on-your-laptop-cpu">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/4A9faZaaJL7YvdIP-sG4sAs.jpg" alt="BitNet: How Microsoft Made 100B LLMs Run on Your Laptop CPU" style="width:100%; border-radius:8px;">
   </a>
   <h3><a href="https://en-blog.yuv.ai/posts/2026-01-08-bitnet-how-microsoft-made-100b-llms-run-on-your-laptop-cpu">BitNet: How Microsoft Made 100B LLMs Run on Your Laptop CPU</a></h3>
   <p>## The Project That Makes GPU-Free AI Inference Actually Work The project [microsoft/BitNet](https://github.com/microsoft/BitNet) solves the problem o...</p>
+  <sub>📅 Jan 8, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-08-memvid-ai-agent-memory-in-a-single-file-no-servers-required">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/K-hfaY_YBuXskdUP6d3M4QI.jpg" alt="Memvid: AI Agent Memory in a Single File - No Servers Required" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-08-memvid-ai-agent-memory-in-a-single-file-no-servers-required">Memvid: AI Agent Memory in a Single File - No Servers Required</a></h3>
+  <p>## AI Memory Without the Infrastructure Nightmare The project [Memvid](https://github.com/memvid/memvid) solves the problem of giving AI agents persis...</p>
+  <sub>📅 Jan 8, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-08-memvid-ai-agent-memory-in-a-single-portable-file">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/sexfaYTWK9_xnsEP4-Ga2AY.jpg" alt="Memvid: AI Agent Memory in a Single Portable File" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-08-memvid-ai-agent-memory-in-a-single-portable-file">Memvid: AI Agent Memory in a Single Portable File</a></h3>
+  <p>## AI Agents Finally Get a Memory That Doesn't Require a PhD The project [Memvid](https://github.com/memvid/memvid) solves the fundamental problem of ...</p>
   <sub>📅 Jan 8, 2026</sub>
 </td>
 <td width="50%" valign="top">
@@ -209,47 +245,29 @@ class YuvalAvidani:
   <sub>📅 Jan 8, 2026</sub>
 </td>
 </tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-08-r-vpo-how-soft-constraints-fix-the-eureka-moment-problem-in-llm-training">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/IqBfacjSBKPW7M8P_7-d4AI.jpg" alt="R²VPO: How Soft Constraints Fix the Eureka Moment Problem in LLM Training" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-08-r-vpo-how-soft-constraints-fix-the-eureka-moment-problem-in-llm-training">R²VPO: How Soft Constraints Fix the Eureka Moment Problem in LLM Training</a></h3>
-  <p>## Teaching AI to Learn Without Killing Brilliant Ideas The paper [Ratio-Variance Regularized Policy Optimization (R²VPO)](https://arxiv.org/abs/2601....</p>
-  <sub>📅 Jan 8, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-08-webgym-how-300k-tasks-finally-trained-ai-agents-to-use-real-websites">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/lg5faaOTDv2EkdUPsMLbKQ.jpg" alt="WebGym: How 300K Tasks Finally Trained AI Agents to Use Real Websites" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-08-webgym-how-300k-tasks-finally-trained-ai-agents-to-use-real-websites">WebGym: How 300K Tasks Finally Trained AI Agents to Use Real Websites</a></h3>
-  <p>## Finally, a Training Gym That Matches the Chaos of Real Websites The paper [WebGym](https://arxiv.org/abs/2601.02439) tackles the massive gap betwee...</p>
-  <sub>📅 Jan 8, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-07-bitnet-how-microsoft-made-100b-models-run-on-your-laptop-cpu">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/yvhdaaT4BIuzvdIP7KnuCQ.jpg" alt="BitNet: How Microsoft Made 100B Models Run on Your Laptop CPU" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-07-bitnet-how-microsoft-made-100b-models-run-on-your-laptop-cpu">BitNet: How Microsoft Made 100B Models Run on Your Laptop CPU</a></h3>
-  <p>## Running Massive AI Models Locally Just Became Possible The project [microsoft/BitNet](https://github.com/microsoft/BitNet) solves the problem of ru...</p>
-  <sub>📅 Jan 7, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-07-webgym-why-ai-agents-fail-at-web-tasks-and-how-this-changes-it">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/mE5eaaGPB-TwnsEPzKWh-Qg.jpg" alt="WebGym: Why AI Agents Fail at Web Tasks (And How This Changes It)" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-07-webgym-why-ai-agents-fail-at-web-tasks-and-how-this-changes-it">WebGym: Why AI Agents Fail at Web Tasks (And How This Changes It)</a></h3>
-  <p>## Finally, A Proper Training Ground for Web Agents The paper [WebGym](https://arxiv.org/abs/2601.02439) tackles the most frustrating gap in AI agents...</p>
-  <sub>📅 Jan 7, 2026</sub>
-</td>
-</tr>
 </table>
 
 ### 🇮🇱 Hebrew Posts (עברית)
 
 <table>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/ai-pushing-typed-languages/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/Y_JgaduWHu-D7M8PmIKQ2QU.jpg" alt="למה 94% משגיאות קוד AI דוחפים אותנו כולנו ל-TypeScript" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/ai-pushing-typed-languages/">למה 94% משגיאות קוד AI דוחפים אותנו כולנו ל-TypeScript</a></h3>
+  <p>נתונים חדשים מגלים ש-94% משגיאות הקומפילציה של קוד AI הן שגיאות טיפוסים. זה מסביר למה TypeScript עקפה את Python ו-JavaScript בתור השפה הכי בשימוש ב-Gi...</p>
+  <sub>📅 Jan 9, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/claude-code/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/fpxgaa_7NoDyvdIPma-cqQM.jpg" alt="Claude Code: העוזר האג'נטי בטרמינל שבאמת מבין את הקוד שלך" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/claude-code/">Claude Code: העוזר האג'נטי בטרמינל שבאמת מבין את הקוד שלך</a></h3>
+  <p>מסתבר שיש עוזר קוד אג'נטי בשם Claude Code מבית Anthropic שרץ ישירות בטרמינל. בניגוד לכלי אוטוקומפליט, הוא יכול לנווט אוטונומית בקוד שלך, לתקן באגים, ל...</p>
+  <sub>📅 Jan 9, 2026</sub>
+</td>
+</tr>
 <tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/physical-transformer-ai-meets-physics/">
@@ -284,24 +302,6 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/ai-agent-validation-lesson/">למה סוכן AI טוב אומר 'לא יודע' במקום לנחש</a></h3>
   <p>מסתבר שהדרך הכי טובה לבדוק אם סוכן AI עובד טוב היא לראות איך הוא מגיב כשחסר לו מידע. הסוכן שלי לימד אותי לקח חשוב על אמינות מול נוחות.</p>
   <sub>📅 Jan 6, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/trojan-vocabulary-stealthy-sabotage-llm-composition-2/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/I7pbaab1Cv-ivdIP9pum0AQ.jpg" alt="הטרויאני המוסתר באוצר המילים: איך מודלים פתוחים הופכים לפגיעים" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/trojan-vocabulary-stealthy-sabotage-llm-composition-2/">הטרויאני המוסתר באוצר המילים: איך מודלים פתוחים הופכים לפגיעים</a></h3>
-  <p>מסתבר שהתהליך של מיזוג מודלים והשתלת טוקנייזרים - הטרנד החם של הקהילה האופן-סורס - חושף חור אבטחה מסוכן. המאמר The Trojan in the Vocabulary מראה איך א...</p>
-  <sub>📅 Jan 5, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/trojan-vocabulary-stealthy-sabotage-llm-composition/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/341baY_IGMvaxs0Pm9fHyA8.jpg" alt="איך תוקף יכול לחבל במודלי AI דרך טוקן זדוני נסתר" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/trojan-vocabulary-stealthy-sabotage-llm-composition/">איך תוקף יכול לחבל במודלי AI דרך טוקן זדוני נסתר</a></h3>
-  <p>מסתבר שאחד הטרנדים הכי חמים בקהילת האופן-סורס - מיזוג מודלים והרחבת אוצר מילים - חושף פגיעות בטיחות מסוכנת. החוקרים מראים איך אפשר להחדיר 'סוס טרויאני...</p>
-  <sub>📅 Jan 5, 2026</sub>
 </td>
 </tr>
 </table>
