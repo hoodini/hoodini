@@ -193,6 +193,50 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-11-opencode-the-open-source-ai-coding-agent-we-can-actually-own">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/fU1jadSQI-T7vdIPzdCE4QM.jpg" alt="OpenCode: The Open Source AI Coding Agent We Can Actually Own" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-11-opencode-the-open-source-ai-coding-agent-we-can-actually-own">OpenCode: The Open Source AI Coding Agent We Can Actually Own</a></h3>
+  <p>## Finally, an AI Coding Agent We Actually Control The project [OpenCode](https://github.com/anomalyco/opencode) solves a problem we've all been wrest...</p>
+  <sub>📅 Jan 11, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-11-why-ai-is-pushing-us-all-toward-typescript-and-why-that-s-good">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/4HdjaY3xDsSBkdUPiJOd4Ak.jpg" alt="Why AI Is Pushing Us All Toward TypeScript (And Why That's Good)" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-11-why-ai-is-pushing-us-all-toward-typescript-and-why-that-s-good">Why AI Is Pushing Us All Toward TypeScript (And Why That's Good)</a></h3>
+  <p>## The 94% Statistic That's Changing How We Code A recent [GitHub Blog post by Cassidy Williams](https://github.blog/ai-and-ml/llms/why-ai-is-pushing-...</p>
+  <sub>📅 Jan 11, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-11-why-continuous-fuzzing-isn-t-enough-the-bugs-that-survive">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/3XpjaZH1OJmskdUP2diqyAk.jpg" alt="Why Continuous Fuzzing Isn't Enough: The Bugs That Survive" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-11-why-continuous-fuzzing-isn-t-enough-the-bugs-that-survive">Why Continuous Fuzzing Isn't Enough: The Bugs That Survive</a></h3>
+  <p>## The Fuzzer Ran for 18 Months. The Bug Was Still There. A recent [GitHub Blog post by Antonio Morales](https://github.blog/security/vulnerability-re...</p>
+  <sub>📅 Jan 11, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-10-opencode-the-open-source-ai-coding-agent-that-frees-us-from-vendor-lock-in">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/i6hiabi8MpjjnsEP-cLi2Ac.jpg" alt="OpenCode: The Open Source AI Coding Agent That Frees Us From Vendor Lock-In" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-10-opencode-the-open-source-ai-coding-agent-that-frees-us-from-vendor-lock-in">OpenCode: The Open Source AI Coding Agent That Frees Us From Vendor Lock-In</a></h3>
+  <p>## An AI Coding Agent We Can Actually Own The project [OpenCode](https://github.com/anomalyco/opencode) solves a problem that's been frustrating us te...</p>
+  <sub>📅 Jan 10, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-10-why-ai-is-settling-the-typed-vs-untyped-debate-for-us">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/S5liaYq-EZS6xN8PgYbSsAk.jpg" alt="Why AI is Settling the Typed vs. Untyped Debate For Us" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-10-why-ai-is-settling-the-typed-vs-untyped-debate-for-us">Why AI is Settling the Typed vs. Untyped Debate For Us</a></h3>
+  <p>## The 94% Stat That Changes Everything A recent [GitHub Blog post by Cassidy Williams](https://github.blog/ai-and-ml/llms/why-ai-is-pushing-developer...</p>
+  <sub>📅 Jan 10, 2026</sub>
+</td>
+<td width="50%" valign="top">
   <a href="https://en-blog.yuv.ai/posts/2026-01-09-claude-code-the-agentic-terminal-assistant-that-actually-understands-your-codebase">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/fpxgaa_7NoDyvdIPma-cqQM.jpg" alt="Claude Code: The Agentic Terminal Assistant That Actually Understands Your Codebase" style="width:100%; border-radius:8px;">
   </a>
@@ -200,56 +244,30 @@ class YuvalAvidani:
   <p>## An Agentic Coding Assistant That Lives in Your Terminal The project [claude-code](https://github.com/anthropics/claude-code) solves the problem of ...</p>
   <sub>📅 Jan 9, 2026</sub>
 </td>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-09-why-94-of-ai-code-errors-are-pushing-us-all-toward-typescript">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/Y_JgaduWHu-D7M8PmIKQ2QU.jpg" alt="Why 94% of AI Code Errors Are Pushing Us All Toward TypeScript" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-09-why-94-of-ai-code-errors-are-pushing-us-all-toward-typescript">Why 94% of AI Code Errors Are Pushing Us All Toward TypeScript</a></h3>
-  <p>## AI Just Settled the Typed vs. Untyped Debate - And the Data Is Stunning A recent [GitHub Blog post by Cassidy Williams](https://github.blog/ai-and-...</p>
-  <sub>📅 Jan 9, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-08-bitnet-how-microsoft-made-100b-llms-run-on-your-laptop-cpu">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/4A9faZaaJL7YvdIP-sG4sAs.jpg" alt="BitNet: How Microsoft Made 100B LLMs Run on Your Laptop CPU" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-08-bitnet-how-microsoft-made-100b-llms-run-on-your-laptop-cpu">BitNet: How Microsoft Made 100B LLMs Run on Your Laptop CPU</a></h3>
-  <p>## The Project That Makes GPU-Free AI Inference Actually Work The project [microsoft/BitNet](https://github.com/microsoft/BitNet) solves the problem o...</p>
-  <sub>📅 Jan 8, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-08-memvid-ai-agent-memory-in-a-single-file-no-servers-required">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/K-hfaY_YBuXskdUP6d3M4QI.jpg" alt="Memvid: AI Agent Memory in a Single File - No Servers Required" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-08-memvid-ai-agent-memory-in-a-single-file-no-servers-required">Memvid: AI Agent Memory in a Single File - No Servers Required</a></h3>
-  <p>## AI Memory Without the Infrastructure Nightmare The project [Memvid](https://github.com/memvid/memvid) solves the problem of giving AI agents persis...</p>
-  <sub>📅 Jan 8, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-08-memvid-ai-agent-memory-in-a-single-portable-file">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/sexfaYTWK9_xnsEP4-Ga2AY.jpg" alt="Memvid: AI Agent Memory in a Single Portable File" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-08-memvid-ai-agent-memory-in-a-single-portable-file">Memvid: AI Agent Memory in a Single Portable File</a></h3>
-  <p>## AI Agents Finally Get a Memory That Doesn't Require a PhD The project [Memvid](https://github.com/memvid/memvid) solves the fundamental problem of ...</p>
-  <sub>📅 Jan 8, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-08-memvid-the-portable-memory-layer-that-eliminates-vector-database-hell">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/XUpfadDEKYukkdUPy8vWgQE.jpg" alt="Memvid: The Portable Memory Layer That Eliminates Vector Database Hell" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-08-memvid-the-portable-memory-layer-that-eliminates-vector-database-hell">Memvid: The Portable Memory Layer That Eliminates Vector Database Hell</a></h3>
-  <p>## Finally, AI Agent Memory Without the Database Nightmare The project [memvid/memvid](https://github.com/memvid/memvid) solves the problem of giving ...</p>
-  <sub>📅 Jan 8, 2026</sub>
-</td>
 </tr>
 </table>
 
 ### 🇮🇱 Hebrew Posts (עברית)
 
 <table>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/bugs-survive-continuous-fuzzing/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/3XpjaZH1OJmskdUP2diqyAk.jpg" alt="למה פאזינג רצוף לא מספיק: הבאגים ששורדים" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/bugs-survive-continuous-fuzzing/">למה פאזינג רצוף לא מספיק: הבאגים ששורדים</a></h3>
+  <p>מסתבר שיוזמות פאזינג רצוף כמו OSS-Fuzz מחמיצות פגיעויות קריטיות אפילו אחרי שנים של בדיקות. המחקר הזה חושף למה כיסוי קצוות סטנדרטי לא מספיק ומציג תהליך...</p>
+  <sub>📅 Jan 11, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/opencode/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/i6hiabi8MpjjnsEP-cLi2Ac.jpg" alt="OpenCode: ה-AI Coding Agent הקוד-פתוח שמשחרר אותנו מנעילת ספק" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/opencode/">OpenCode: ה-AI Coding Agent הקוד-פתוח שמשחרר אותנו מנעילת ספק</a></h3>
+  <p>הריפו OpenCode הוא AI coding agent קוד-פתוח שעובד עם כל ספק מודלים - Claude, OpenAI, Google, או מודלים לוקאליים. מסתבר שסוף סוף אנחנו יכולים לקבל עזרת...</p>
+  <sub>📅 Jan 10, 2026</sub>
+</td>
+</tr>
 <tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/ai-pushing-typed-languages/">
@@ -284,24 +302,6 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/ai-agent-missing-data-lessons/">כשסוכן AI שוכח להביא את הדאטה - לקחים על אדריכלות</a></h3>
   <p>מסתבר שהאייג'נט שבניתי למעקב אחרי טרנדים החזיר לי היום הודעה שהוא מחכה לדאטה. זו הזדמנות מושלמת לדבר על מה שבאמת חשוב בבניית סוכני AI לפרודקשן - error...</p>
   <sub>📅 Jan 7, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/value-guided-action-planning-jepa-world-models/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/pAtdadjcDuGdvdIPu_HM6Qo.jpg" alt="איך JEPA של יאן לקון סוף סוף למד לתכנן פעולות - פריצת דרך במודלי עולם" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/value-guided-action-planning-jepa-world-models/">איך JEPA של יאן לקון סוף סוף למד לתכנן פעולות - פריצת דרך במודלי עולם</a></h3>
-  <p>המאמר החדש ממטה AI מראה איך ללמד מודלי JEPA (הארכיטקטורה החלופית של יאן לקון ל-LLMs) לא רק להבין את העולם אלא גם לתכנן בו פעולות - הקטע שחסר עד עכשיו....</p>
-  <sub>📅 Jan 6, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/ai-agent-validation-lesson/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/sLVcabOmEtWkvdIPoZGK0Qw.jpg" alt="למה סוכן AI טוב אומר 'לא יודע' במקום לנחש" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/ai-agent-validation-lesson/">למה סוכן AI טוב אומר 'לא יודע' במקום לנחש</a></h3>
-  <p>מסתבר שהדרך הכי טובה לבדוק אם סוכן AI עובד טוב היא לראות איך הוא מגיב כשחסר לו מידע. הסוכן שלי לימד אותי לקח חשוב על אמינות מול נוחות.</p>
-  <sub>📅 Jan 6, 2026</sub>
 </td>
 </tr>
 </table>
