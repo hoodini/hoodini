@@ -193,6 +193,24 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-12-breaking-the-memory-wall-how-moeblaze-achieves-4x-faster-moe-training">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/5rJkaZaKA4CmnsEPra6u4AQ.jpg" alt="Breaking the Memory Wall: How MoEBlaze Achieves 4x Faster MoE Training" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-12-breaking-the-memory-wall-how-moeblaze-achieves-4x-faster-moe-training">Breaking the Memory Wall: How MoEBlaze Achieves 4x Faster MoE Training</a></h3>
+  <p>## The Memory Wall That's Blocking Our MoE Ambitions The paper [MoEBlaze: Shattering the Memory Wall in Large-Scale MoE Training](https://arxiv.org/ab...</p>
+  <sub>📅 Jan 12, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-12-time-making-reasoning-models-10x-cheaper-by-thinking-only-when-needed">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/M59kaeqLIabknsEPl67C-As.jpg" alt="TIME: Making Reasoning Models 10x Cheaper by Thinking Only When Needed" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-12-time-making-reasoning-models-10x-cheaper-by-thinking-only-when-needed">TIME: Making Reasoning Models 10x Cheaper by Thinking Only When Needed</a></h3>
+  <p>## Reasoning Models Are Burning Our Budget on Trivial Questions The paper [TIME: Temporally Intelligent Meta-reasoning Engine for Context Triggered Ex...</p>
+  <sub>📅 Jan 12, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
   <a href="https://en-blog.yuv.ai/posts/2026-01-11-opencode-the-open-source-ai-coding-agent-we-can-actually-own">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/fU1jadSQI-T7vdIPzdCE4QM.jpg" alt="OpenCode: The Open Source AI Coding Agent We Can Actually Own" style="width:100%; border-radius:8px;">
   </a>
@@ -201,6 +219,16 @@ class YuvalAvidani:
   <sub>📅 Jan 11, 2026</sub>
 </td>
 <td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-11-ui-tars-desktop-the-ai-agent-that-actually-sees-and-controls-our-computers">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/lNhjaYKmCL7wnsEP89GeoQQ.jpg" alt="UI-TARS-desktop: The AI Agent That Actually Sees and Controls Our Computers" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-11-ui-tars-desktop-the-ai-agent-that-actually-sees-and-controls-our-computers">UI-TARS-desktop: The AI Agent That Actually Sees and Controls Our Computers</a></h3>
+  <p>## Finally, An AI Agent That Can Actually Use Our Computer The project [UI-TARS-desktop](https://github.com/bytedance/UI-TARS-desktop) from ByteDance ...</p>
+  <sub>📅 Jan 11, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
   <a href="https://en-blog.yuv.ai/posts/2026-01-11-why-ai-is-pushing-us-all-toward-typescript-and-why-that-s-good">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/4HdjaY3xDsSBkdUPiJOd4Ak.jpg" alt="Why AI Is Pushing Us All Toward TypeScript (And Why That's Good)" style="width:100%; border-radius:8px;">
   </a>
@@ -208,8 +236,6 @@ class YuvalAvidani:
   <p>## The 94% Statistic That's Changing How We Code A recent [GitHub Blog post by Cassidy Williams](https://github.blog/ai-and-ml/llms/why-ai-is-pushing-...</p>
   <sub>📅 Jan 11, 2026</sub>
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
   <a href="https://en-blog.yuv.ai/posts/2026-01-11-why-continuous-fuzzing-isn-t-enough-the-bugs-that-survive">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/3XpjaZH1OJmskdUP2diqyAk.jpg" alt="Why Continuous Fuzzing Isn't Enough: The Bugs That Survive" style="width:100%; border-radius:8px;">
@@ -218,38 +244,30 @@ class YuvalAvidani:
   <p>## The Fuzzer Ran for 18 Months. The Bug Was Still There. A recent [GitHub Blog post by Antonio Morales](https://github.blog/security/vulnerability-re...</p>
   <sub>📅 Jan 11, 2026</sub>
 </td>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-10-opencode-the-open-source-ai-coding-agent-that-frees-us-from-vendor-lock-in">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/i6hiabi8MpjjnsEP-cLi2Ac.jpg" alt="OpenCode: The Open Source AI Coding Agent That Frees Us From Vendor Lock-In" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-10-opencode-the-open-source-ai-coding-agent-that-frees-us-from-vendor-lock-in">OpenCode: The Open Source AI Coding Agent That Frees Us From Vendor Lock-In</a></h3>
-  <p>## An AI Coding Agent We Can Actually Own The project [OpenCode](https://github.com/anomalyco/opencode) solves a problem that's been frustrating us te...</p>
-  <sub>📅 Jan 10, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-10-why-ai-is-settling-the-typed-vs-untyped-debate-for-us">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/S5liaYq-EZS6xN8PgYbSsAk.jpg" alt="Why AI is Settling the Typed vs. Untyped Debate For Us" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-10-why-ai-is-settling-the-typed-vs-untyped-debate-for-us">Why AI is Settling the Typed vs. Untyped Debate For Us</a></h3>
-  <p>## The 94% Stat That Changes Everything A recent [GitHub Blog post by Cassidy Williams](https://github.blog/ai-and-ml/llms/why-ai-is-pushing-developer...</p>
-  <sub>📅 Jan 10, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-09-claude-code-the-agentic-terminal-assistant-that-actually-understands-your-codebase">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/fpxgaa_7NoDyvdIPma-cqQM.jpg" alt="Claude Code: The Agentic Terminal Assistant That Actually Understands Your Codebase" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-09-claude-code-the-agentic-terminal-assistant-that-actually-understands-your-codebase">Claude Code: The Agentic Terminal Assistant That Actually Understands Your Codebase</a></h3>
-  <p>## An Agentic Coding Assistant That Lives in Your Terminal The project [claude-code](https://github.com/anthropics/claude-code) solves the problem of ...</p>
-  <sub>📅 Jan 9, 2026</sub>
-</td>
 </tr>
 </table>
 
 ### 🇮🇱 Hebrew Posts (עברית)
 
 <table>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/moeblaze-shattering-memory-wall-moe-training/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/5rJkaZaKA4CmnsEPra6u4AQ.jpg" alt="שבירת חומת הזיכרון: איך MoEBlaze משיג אימון MoE מהיר פי 4" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/moeblaze-shattering-memory-wall-moe-training/">שבירת חומת הזיכרון: איך MoEBlaze משיג אימון MoE מהיר פי 4</a></h3>
+  <p>מסתבר שהמאמר MoEBlaze פותר את צוואר הבקבוק הקריטי של הזיכרון באימון Mixture-of-Experts שמגביל את גדלי הבאצ'ים ומהירות האימון שלנו. דרך שליחת טוקנים לל...</p>
+  <sub>📅 Jan 12, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/ui-tars-desktop/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/lNhjaYKmCL7wnsEP89GeoQQ.jpg" alt="UI-TARS-desktop: ה-AI Agent שממש רואה ושולט במחשבים שלנו" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/ui-tars-desktop/">UI-TARS-desktop: ה-AI Agent שממש רואה ושולט במחשבים שלנו</a></h3>
+  <p>מסתבר שהפרויקט UI-TARS-desktop של ByteDance מגשר בין החשיבה של AI לביצוע אמיתי על ידי מתן הבנה ויזואלית לסוכנים. במקום להיות מוגבלים ל-APIs, הוא רואה ...</p>
+  <sub>📅 Jan 11, 2026</sub>
+</td>
+</tr>
 <tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/bugs-survive-continuous-fuzzing/">
@@ -284,24 +302,6 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/claude-code/">Claude Code: העוזר האג'נטי בטרמינל שבאמת מבין את הקוד שלך</a></h3>
   <p>מסתבר שיש עוזר קוד אג'נטי בשם Claude Code מבית Anthropic שרץ ישירות בטרמינל. בניגוד לכלי אוטוקומפליט, הוא יכול לנווט אוטונומית בקוד שלך, לתקן באגים, ל...</p>
   <sub>📅 Jan 9, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/physical-transformer-ai-meets-physics/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/DV1eaYjXOMblnsEPruzIyAg.jpg" alt="Physical Transformer: איך הופכים מודל AI למערכת פיזיקלית אמיתית" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/physical-transformer-ai-meets-physics/">Physical Transformer: איך הופכים מודל AI למערכת פיזיקלית אמיתית</a></h3>
-  <p>המאמר Physical Transformer מציע גישה מהפכנית: במקום לטפל בטרנספורמר כמערכת מתמטית מופשטת, הוא מתייחס אליו כמערכת פיזיקלית שמצייתת לחוקי אנרגיה וגיאומט...</p>
-  <sub>📅 Jan 7, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/ai-agent-missing-data-lessons/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/QQdeaZ5O37KR1Q-C3YXZBw.jpg" alt="כשסוכן AI שוכח להביא את הדאטה - לקחים על אדריכלות" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/ai-agent-missing-data-lessons/">כשסוכן AI שוכח להביא את הדאטה - לקחים על אדריכלות</a></h3>
-  <p>מסתבר שהאייג'נט שבניתי למעקב אחרי טרנדים החזיר לי היום הודעה שהוא מחכה לדאטה. זו הזדמנות מושלמת לדבר על מה שבאמת חשוב בבניית סוכני AI לפרודקשן - error...</p>
-  <sub>📅 Jan 7, 2026</sub>
 </td>
 </tr>
 </table>
