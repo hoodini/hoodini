@@ -193,6 +193,42 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-14-98-7-accuracy-on-length-generalization-what-rewritenets-reveals-about-transformers">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/iUJnaZT3D47d7M8Pisrp4Ac.jpg" alt="98.7% Accuracy on Length Generalization: What RewriteNets Reveals About Transformers" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-14-98-7-accuracy-on-length-generalization-what-rewritenets-reveals-about-transformers">98.7% Accuracy on Length Generalization: What RewriteNets Reveals About Transformers</a></h3>
+  <p>## Key Finding **According to the paper "RewriteNets: End-to-End Trainable String-Rewriting for Generative Sequence Modeling" by Harshil Vejendla, exp...</p>
+  <sub>📅 Jan 14, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-13-beads-git-backed-memory-for-ai-agents-that-actually-remembers">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/6J9maeieOru0xN8Psv-ewQ0.jpg" alt="Beads: Git-Backed Memory for AI Agents That Actually Remembers" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-13-beads-git-backed-memory-for-ai-agents-that-actually-remembers">Beads: Git-Backed Memory for AI Agents That Actually Remembers</a></h3>
+  <p>## How We Finally Got AI Agents That Remember Across Git Branches The project [Beads](https://github.com/steveyegge/beads) by Steve Yegge solves the p...</p>
+  <sub>📅 Jan 13, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-13-claude-code-autonomous-ai-agents-living-in-our-terminal">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/xp1mafivDomzkdUPu8jRiQg.jpg" alt="Claude Code: Autonomous AI Agents Living in Our Terminal" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-13-claude-code-autonomous-ai-agents-living-in-our-terminal">Claude Code: Autonomous AI Agents Living in Our Terminal</a></h3>
+  <p>## Finally: An AI Agent That Actually Lives in Our Development Environment The project [Claude Code](https://github.com/anthropics/claude-code) from A...</p>
+  <sub>📅 Jan 13, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://en-blog.yuv.ai/posts/2026-01-13-stop-ai-agents-from-writing-spaghetti-enforcing-tdd-with-superpowers">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/CqhmabzqF7S3nsEPme_2gQg.jpg" alt="Stop AI Agents from Writing Spaghetti: Enforcing TDD with Superpowers" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-13-stop-ai-agents-from-writing-spaghetti-enforcing-tdd-with-superpowers">Stop AI Agents from Writing Spaghetti: Enforcing TDD with Superpowers</a></h3>
+  <p>## Finally We Can Force AI Agents to Stop Acting Like Junior Developers The project [Superpowers](https://github.com/obra/superpowers) by Jesse Vincen...</p>
+  <sub>📅 Jan 13, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
   <a href="https://en-blog.yuv.ai/posts/2026-01-12-breaking-the-memory-wall-how-moeblaze-achieves-4x-faster-moe-training">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/5rJkaZaKA4CmnsEPra6u4AQ.jpg" alt="Breaking the Memory Wall: How MoEBlaze Achieves 4x Faster MoE Training" style="width:100%; border-radius:8px;">
   </a>
@@ -209,47 +245,29 @@ class YuvalAvidani:
   <sub>📅 Jan 12, 2026</sub>
 </td>
 </tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-11-opencode-the-open-source-ai-coding-agent-we-can-actually-own">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/fU1jadSQI-T7vdIPzdCE4QM.jpg" alt="OpenCode: The Open Source AI Coding Agent We Can Actually Own" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-11-opencode-the-open-source-ai-coding-agent-we-can-actually-own">OpenCode: The Open Source AI Coding Agent We Can Actually Own</a></h3>
-  <p>## Finally, an AI Coding Agent We Actually Control The project [OpenCode](https://github.com/anomalyco/opencode) solves a problem we've all been wrest...</p>
-  <sub>📅 Jan 11, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-11-ui-tars-desktop-the-ai-agent-that-actually-sees-and-controls-our-computers">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/lNhjaYKmCL7wnsEP89GeoQQ.jpg" alt="UI-TARS-desktop: The AI Agent That Actually Sees and Controls Our Computers" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-11-ui-tars-desktop-the-ai-agent-that-actually-sees-and-controls-our-computers">UI-TARS-desktop: The AI Agent That Actually Sees and Controls Our Computers</a></h3>
-  <p>## Finally, An AI Agent That Can Actually Use Our Computer The project [UI-TARS-desktop](https://github.com/bytedance/UI-TARS-desktop) from ByteDance ...</p>
-  <sub>📅 Jan 11, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-11-why-ai-is-pushing-us-all-toward-typescript-and-why-that-s-good">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/4HdjaY3xDsSBkdUPiJOd4Ak.jpg" alt="Why AI Is Pushing Us All Toward TypeScript (And Why That's Good)" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-11-why-ai-is-pushing-us-all-toward-typescript-and-why-that-s-good">Why AI Is Pushing Us All Toward TypeScript (And Why That's Good)</a></h3>
-  <p>## The 94% Statistic That's Changing How We Code A recent [GitHub Blog post by Cassidy Williams](https://github.blog/ai-and-ml/llms/why-ai-is-pushing-...</p>
-  <sub>📅 Jan 11, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://en-blog.yuv.ai/posts/2026-01-11-why-continuous-fuzzing-isn-t-enough-the-bugs-that-survive">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/3XpjaZH1OJmskdUP2diqyAk.jpg" alt="Why Continuous Fuzzing Isn't Enough: The Bugs That Survive" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://en-blog.yuv.ai/posts/2026-01-11-why-continuous-fuzzing-isn-t-enough-the-bugs-that-survive">Why Continuous Fuzzing Isn't Enough: The Bugs That Survive</a></h3>
-  <p>## The Fuzzer Ran for 18 Months. The Bug Was Still There. A recent [GitHub Blog post by Antonio Morales](https://github.blog/security/vulnerability-re...</p>
-  <sub>📅 Jan 11, 2026</sub>
-</td>
-</tr>
 </table>
 
 ### 🇮🇱 Hebrew Posts (עברית)
 
 <table>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/superpowers/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/CqhmabzqF7S3nsEPme_2gQg.jpg" alt="לעצור סוכני AI מלכתוב ספגטי: אכיפת TDD עם Superpowers" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/superpowers/">לעצור סוכני AI מלכתוב ספגטי: אכיפת TDD עם Superpowers</a></h3>
+  <p>הפרויקט Superpowers מאלץ סוכני קוד של AI לעבוד לפי פרקטיקות של מפתחים בכירים כמו TDD ותכנון שיטתי. במקום לתת לסוכנים למהר לכתוב קוד, הוא אוכף תהליך עב...</p>
+  <sub>📅 Jan 13, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/beads/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/6J9maeieOru0xN8Psv-ewQ0.jpg" alt="Beads: זיכרון מבוסס-Git לאייג'נטים שבאמת זוכרים" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/beads/">Beads: זיכרון מבוסס-Git לאייג'נטים שבאמת זוכרים</a></h3>
+  <p>מסתבר שהריפו Beads פותר את בעיית הזיכרון המתמשך ב-AI agents על ידי שמירת גרפים של משימות כקבצי JSONL עם ווירסניינג ישירות ב-Git - כך ההקשר של ה-agent ...</p>
+  <sub>📅 Jan 13, 2026</sub>
+</td>
+</tr>
 <tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/moeblaze-shattering-memory-wall-moe-training/">
@@ -284,24 +302,6 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/opencode/">OpenCode: ה-AI Coding Agent הקוד-פתוח שמשחרר אותנו מנעילת ספק</a></h3>
   <p>הריפו OpenCode הוא AI coding agent קוד-פתוח שעובד עם כל ספק מודלים - Claude, OpenAI, Google, או מודלים לוקאליים. מסתבר שסוף סוף אנחנו יכולים לקבל עזרת...</p>
   <sub>📅 Jan 10, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/ai-pushing-typed-languages/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/Y_JgaduWHu-D7M8PmIKQ2QU.jpg" alt="למה 94% משגיאות קוד AI דוחפים אותנו כולנו ל-TypeScript" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/ai-pushing-typed-languages/">למה 94% משגיאות קוד AI דוחפים אותנו כולנו ל-TypeScript</a></h3>
-  <p>נתונים חדשים מגלים ש-94% משגיאות הקומפילציה של קוד AI הן שגיאות טיפוסים. זה מסביר למה TypeScript עקפה את Python ו-JavaScript בתור השפה הכי בשימוש ב-Gi...</p>
-  <sub>📅 Jan 9, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/claude-code/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/fpxgaa_7NoDyvdIPma-cqQM.jpg" alt="Claude Code: העוזר האג'נטי בטרמינל שבאמת מבין את הקוד שלך" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/claude-code/">Claude Code: העוזר האג'נטי בטרמינל שבאמת מבין את הקוד שלך</a></h3>
-  <p>מסתבר שיש עוזר קוד אג'נטי בשם Claude Code מבית Anthropic שרץ ישירות בטרמינל. בניגוד לכלי אוטוקומפליט, הוא יכול לנווט אוטונומית בקוד שלך, לתקן באגים, ל...</p>
-  <sub>📅 Jan 9, 2026</sub>
 </td>
 </tr>
 </table>
