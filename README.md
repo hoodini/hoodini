@@ -252,6 +252,24 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/deep-live-cam/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/5ZNoacr2Bs76nsEPotmZuAk.jpg" alt="Deep-Live-Cam: החלפת פנים בזמן אמת עם תמונה אחת" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/deep-live-cam/">Deep-Live-Cam: החלפת פנים בזמן אמת עם תמונה אחת</a></h3>
+  <p>הריפו Deep-Live-Cam מאת hacksider הוא כלי קוד פתוח להחלפת פנים בזמן אמת שמשתמש בתמונת מקור בודדת כדי להחליף פנים בזרמי וידאו חיים ללא אימון. הוא מאפשר...</p>
+  <sub>📅 Jan 15, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/chatdev/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/v7tnac6EKP2cxN8Pv-Ga8AQ.jpg" alt="ChatDev 2.0: מחברה וירטואלית לפלטפורמת מולטי-אג'נט ללא קוד" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/chatdev/">ChatDev 2.0: מחברה וירטואלית לפלטפורמת מולטי-אג'נט ללא קוד</a></h3>
+  <p>הריפו ChatDev 2.0 'DevAll' מאת OpenBMB הוא פלטפורמת אורקסטרציה של סוכני AI ללא קוד שהופכת מבנים נוקשים של חברות תוכנה וירטואליות למערכות תהליך עבודה ג...</p>
+  <sub>📅 Jan 14, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
   <a href="https://blog.yuv.ai/superpowers/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/CqhmabzqF7S3nsEPme_2gQg.jpg" alt="לעצור סוכני AI מלכתוב ספגטי: אכיפת TDD עם Superpowers" style="width:100%; border-radius:8px;">
   </a>
@@ -284,24 +302,6 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/ui-tars-desktop/">UI-TARS-desktop: ה-AI Agent שממש רואה ושולט במחשבים שלנו</a></h3>
   <p>מסתבר שהפרויקט UI-TARS-desktop של ByteDance מגשר בין החשיבה של AI לביצוע אמיתי על ידי מתן הבנה ויזואלית לסוכנים. במקום להיות מוגבלים ל-APIs, הוא רואה ...</p>
   <sub>📅 Jan 11, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/bugs-survive-continuous-fuzzing/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/3XpjaZH1OJmskdUP2diqyAk.jpg" alt="למה פאזינג רצוף לא מספיק: הבאגים ששורדים" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/bugs-survive-continuous-fuzzing/">למה פאזינג רצוף לא מספיק: הבאגים ששורדים</a></h3>
-  <p>מסתבר שיוזמות פאזינג רצוף כמו OSS-Fuzz מחמיצות פגיעויות קריטיות אפילו אחרי שנים של בדיקות. המחקר הזה חושף למה כיסוי קצוות סטנדרטי לא מספיק ומציג תהליך...</p>
-  <sub>📅 Jan 11, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/opencode/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/i6hiabi8MpjjnsEP-cLi2Ac.jpg" alt="OpenCode: ה-AI Coding Agent הקוד-פתוח שמשחרר אותנו מנעילת ספק" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/opencode/">OpenCode: ה-AI Coding Agent הקוד-פתוח שמשחרר אותנו מנעילת ספק</a></h3>
-  <p>הריפו OpenCode הוא AI coding agent קוד-פתוח שעובד עם כל ספק מודלים - Claude, OpenAI, Google, או מודלים לוקאליים. מסתבר שסוף סוף אנחנו יכולים לקבל עזרת...</p>
-  <sub>📅 Jan 10, 2026</sub>
 </td>
 </tr>
 </table>
