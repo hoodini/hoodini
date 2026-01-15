@@ -15,7 +15,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <img src="https://img.shields.io/badge/Repos-116-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-168-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-169-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -29,27 +29,27 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
+- 📝 Pushed 0 commit(s) to [hoodini/eng-blog](https://github.com/hoodini/eng-blog) - Jan 14
+- 📝 Pushed 0 commit(s) to [hoodini/eng-blog](https://github.com/hoodini/eng-blog) - Jan 14
 - 📝 Pushed 0 commit(s) to [hoodini/eng-blog](https://github.com/hoodini/eng-blog) - Jan 13
 - 📝 Pushed 0 commit(s) to [hoodini/eng-blog](https://github.com/hoodini/eng-blog) - Jan 13
 - 📝 Pushed 0 commit(s) to [hoodini/eng-blog](https://github.com/hoodini/eng-blog) - Jan 13
-- 📝 Pushed 0 commit(s) to [hoodini/eng-blog](https://github.com/hoodini/eng-blog) - Jan 12
-- 📝 Pushed 0 commit(s) to [hoodini/eng-blog](https://github.com/hoodini/eng-blog) - Jan 12
 
 
 
 ### ⭐ Featured Repositories
 
-- 💙 **[eng-blog](https://github.com/hoodini/eng-blog)** - Stunning AI, Automation & Code blog by Yuval Avidani - AWS GenAI Superstar & GitHub Star. Built with Next.js, automated with Make.com ⭐ 1
-- 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 92
-- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 19
+- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 44
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
-- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 41
+- 💙 **[nextjs-bun-starter](https://github.com/hoodini/nextjs-bun-starter)** - The ultimate Next.js starter kit with Bun, Shadcn/ui, Tailwind CSS, and Google Authentication. Production-ready boilerplate that ships faster. ⭐ 19
+- 💙 **[eng-blog](https://github.com/hoodini/eng-blog)** - Stunning AI, Automation & Code blog by Yuval Avidani - AWS GenAI Superstar & GitHub Star. Built with Next.js, automated with Make.com ⭐ 1
+- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 20
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-01-14 00:18:12 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-01-15 00:17:07 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
