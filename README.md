@@ -252,6 +252,14 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/transformers-bellman-ford-geometry-thought/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/S-VpaYiXIvz6nsEPz9j-gAI.jpg" alt="טרנספורמרים מריצים Bellman-Ford: מה המאמר "The Geometry of Thought" חושף" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/transformers-bellman-ford-geometry-thought/">טרנספורמרים מריצים Bellman-Ford: מה המאמר "The Geometry of Thought" חושף</a></h3>
+  <p>לפי המאמר "The Geometry of Thought" מאת Faruk Alpay ו-Bilge Senturk, מנגנון ה-self-attention של טרנספורמרים פועל כאלגוריתם Bellman-Ford למציאת מסלול ב...</p>
+  <sub>📅 Jan 16, 2026</sub>
+</td>
+<td width="50%" valign="top">
   <a href="https://blog.yuv.ai/deep-live-cam/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/5ZNoacr2Bs76nsEPotmZuAk.jpg" alt="Deep-Live-Cam: החלפת פנים בזמן אמת עם תמונה אחת" style="width:100%; border-radius:8px;">
   </a>
@@ -259,6 +267,8 @@ class YuvalAvidani:
   <p>הריפו Deep-Live-Cam מאת hacksider הוא כלי קוד פתוח להחלפת פנים בזמן אמת שמשתמש בתמונת מקור בודדת כדי להחליף פנים בזרמי וידאו חיים ללא אימון. הוא מאפשר...</p>
   <sub>📅 Jan 15, 2026</sub>
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/chatdev/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/v7tnac6EKP2cxN8Pv-Ga8AQ.jpg" alt="ChatDev 2.0: מחברה וירטואלית לפלטפורמת מולטי-אג'נט ללא קוד" style="width:100%; border-radius:8px;">
@@ -267,8 +277,6 @@ class YuvalAvidani:
   <p>הריפו ChatDev 2.0 'DevAll' מאת OpenBMB הוא פלטפורמת אורקסטרציה של סוכני AI ללא קוד שהופכת מבנים נוקשים של חברות תוכנה וירטואליות למערכות תהליך עבודה ג...</p>
   <sub>📅 Jan 14, 2026</sub>
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/superpowers/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/CqhmabzqF7S3nsEPme_2gQg.jpg" alt="לעצור סוכני AI מלכתוב ספגטי: אכיפת TDD עם Superpowers" style="width:100%; border-radius:8px;">
@@ -277,6 +285,8 @@ class YuvalAvidani:
   <p>הפרויקט Superpowers מאלץ סוכני קוד של AI לעבוד לפי פרקטיקות של מפתחים בכירים כמו TDD ותכנון שיטתי. במקום לתת לסוכנים למהר לכתוב קוד, הוא אוכף תהליך עב...</p>
   <sub>📅 Jan 13, 2026</sub>
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/beads/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/6J9maeieOru0xN8Psv-ewQ0.jpg" alt="Beads: זיכרון מבוסס-Git לאייג'נטים שבאמת זוכרים" style="width:100%; border-radius:8px;">
@@ -285,8 +295,6 @@ class YuvalAvidani:
   <p>מסתבר שהריפו Beads פותר את בעיית הזיכרון המתמשך ב-AI agents על ידי שמירת גרפים של משימות כקבצי JSONL עם ווירסניינג ישירות ב-Git - כך ההקשר של ה-agent ...</p>
   <sub>📅 Jan 13, 2026</sub>
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/moeblaze-shattering-memory-wall-moe-training/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/5rJkaZaKA4CmnsEPra6u4AQ.jpg" alt="שבירת חומת הזיכרון: איך MoEBlaze משיג אימון MoE מהיר פי 4" style="width:100%; border-radius:8px;">
@@ -294,14 +302,6 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/moeblaze-shattering-memory-wall-moe-training/">שבירת חומת הזיכרון: איך MoEBlaze משיג אימון MoE מהיר פי 4</a></h3>
   <p>מסתבר שהמאמר MoEBlaze פותר את צוואר הבקבוק הקריטי של הזיכרון באימון Mixture-of-Experts שמגביל את גדלי הבאצ'ים ומהירות האימון שלנו. דרך שליחת טוקנים לל...</p>
   <sub>📅 Jan 12, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/ui-tars-desktop/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/lNhjaYKmCL7wnsEP89GeoQQ.jpg" alt="UI-TARS-desktop: ה-AI Agent שממש רואה ושולט במחשבים שלנו" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/ui-tars-desktop/">UI-TARS-desktop: ה-AI Agent שממש רואה ושולט במחשבים שלנו</a></h3>
-  <p>מסתבר שהפרויקט UI-TARS-desktop של ByteDance מגשר בין החשיבה של AI לביצוע אמיתי על ידי מתן הבנה ויזואלית לסוכנים. במקום להיות מוגבלים ל-APIs, הוא רואה ...</p>
-  <sub>📅 Jan 11, 2026</sub>
 </td>
 </tr>
 </table>
