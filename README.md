@@ -252,6 +252,24 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/dexter/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/84dsadGiCf65xN8Pqsy2wAE.jpg" alt="Dexter: סוכן AI שעושה ולידציה עצמית למחקר פיננסי" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/dexter/">Dexter: סוכן AI שעושה ולידציה עצמית למחקר פיננסי</a></h3>
+  <p>הריפו Dexter מאת virattt הוא סוכן אוטונומי שתוכנן במיוחד לניתוח פיננסי ועושה ולידציה לממצאי המחקר שלו. הוא פותר את בעיית האמון במחקר פיננסי מונע AI דר...</p>
+  <sub>📅 Jan 18, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/devika/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/U-Vrady_NfCZkdUPoqb0wAU.jpg" alt="Devika: מהנדס תוכנה AI בקוד פתוח למחזורי פיתוח מלאים" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/devika/">Devika: מהנדס תוכנה AI בקוד פתוח למחזורי פיתוח מלאים</a></h3>
+  <p>הריפו Devika מאת stitionai הוא מהנדס תוכנה AI אוטונומי בקוד פתוח שמטפל במשימות פיתוח מתכנון ועד דיפלוי עבור מפתחים וצוותים. הוא משנה את האופן שבו אנחנ...</p>
+  <sub>📅 Jan 17, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
   <a href="https://blog.yuv.ai/transformers-bellman-ford-geometry-thought/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/S-VpaYiXIvz6nsEPz9j-gAI.jpg" alt="טרנספורמרים מריצים Bellman-Ford: מה המאמר "The Geometry of Thought" חושף" style="width:100%; border-radius:8px;">
   </a>
@@ -284,24 +302,6 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/superpowers/">לעצור סוכני AI מלכתוב ספגטי: אכיפת TDD עם Superpowers</a></h3>
   <p>הפרויקט Superpowers מאלץ סוכני קוד של AI לעבוד לפי פרקטיקות של מפתחים בכירים כמו TDD ותכנון שיטתי. במקום לתת לסוכנים למהר לכתוב קוד, הוא אוכף תהליך עב...</p>
   <sub>📅 Jan 13, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/beads/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/6J9maeieOru0xN8Psv-ewQ0.jpg" alt="Beads: זיכרון מבוסס-Git לאייג'נטים שבאמת זוכרים" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/beads/">Beads: זיכרון מבוסס-Git לאייג'נטים שבאמת זוכרים</a></h3>
-  <p>מסתבר שהריפו Beads פותר את בעיית הזיכרון המתמשך ב-AI agents על ידי שמירת גרפים של משימות כקבצי JSONL עם ווירסניינג ישירות ב-Git - כך ההקשר של ה-agent ...</p>
-  <sub>📅 Jan 13, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/moeblaze-shattering-memory-wall-moe-training/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/5rJkaZaKA4CmnsEPra6u4AQ.jpg" alt="שבירת חומת הזיכרון: איך MoEBlaze משיג אימון MoE מהיר פי 4" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/moeblaze-shattering-memory-wall-moe-training/">שבירת חומת הזיכרון: איך MoEBlaze משיג אימון MoE מהיר פי 4</a></h3>
-  <p>מסתבר שהמאמר MoEBlaze פותר את צוואר הבקבוק הקריטי של הזיכרון באימון Mixture-of-Experts שמגביל את גדלי הבאצ'ים ומהירות האימון שלנו. דרך שליחת טוקנים לל...</p>
-  <sub>📅 Jan 12, 2026</sub>
 </td>
 </tr>
 </table>
