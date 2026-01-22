@@ -252,6 +252,14 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/eigent/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/Vc5xabLyHdvnxN8P6MiUoQY.jpg" alt="Eigent: דסקטופ Multi-Agent AI לוקאלי לתהליכים שמכבדים פרטיות" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/eigent/">Eigent: דסקטופ Multi-Agent AI לוקאלי לתהליכים שמכבדים פרטיות</a></h3>
+  <p>הריפו Eigent מאת eigent-ai הוא אפליקציית דסקטופ קוד פתוח שמעלה צוות AI שלם על המחשב שלנו, ומתאם בין סוכנים מיוחדים לביצוע אוטומציה של תהליכים מורכבים ...</p>
+  <sub>📅 Jan 22, 2026</sub>
+</td>
+<td width="50%" valign="top">
   <a href="https://blog.yuv.ai/blender-mcp/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/bCtvaZWmGcesvdIPwsbW8A0.jpg" alt="BlenderMCP: לשלוט ב-Blender עם Claude דרך שפה טבעית" style="width:100%; border-radius:8px;">
   </a>
@@ -259,6 +267,8 @@ class YuvalAvidani:
   <p>הריפו BlenderMCP מאת ahujasid הוא אינטגרציה בקוד פתוח שמחברת את Claude AI ל-Blender באמצעות פרוטוקול MCP, ומאפשרת מידול תלת-ממד ותפעול סצנות דרך פקודו...</p>
   <sub>📅 Jan 20, 2026</sub>
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/dexter/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/84dsadGiCf65xN8Pqsy2wAE.jpg" alt="Dexter: סוכן AI שעושה ולידציה עצמית למחקר פיננסי" style="width:100%; border-radius:8px;">
@@ -267,8 +277,6 @@ class YuvalAvidani:
   <p>הריפו Dexter מאת virattt הוא סוכן אוטונומי שתוכנן במיוחד לניתוח פיננסי ועושה ולידציה לממצאי המחקר שלו. הוא פותר את בעיית האמון במחקר פיננסי מונע AI דר...</p>
   <sub>📅 Jan 18, 2026</sub>
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/devika/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/U-Vrady_NfCZkdUPoqb0wAU.jpg" alt="Devika: מהנדס תוכנה AI בקוד פתוח למחזורי פיתוח מלאים" style="width:100%; border-radius:8px;">
@@ -277,6 +285,8 @@ class YuvalAvidani:
   <p>הריפו Devika מאת stitionai הוא מהנדס תוכנה AI אוטונומי בקוד פתוח שמטפל במשימות פיתוח מתכנון ועד דיפלוי עבור מפתחים וצוותים. הוא משנה את האופן שבו אנחנ...</p>
   <sub>📅 Jan 17, 2026</sub>
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/transformers-bellman-ford-geometry-thought/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/S-VpaYiXIvz6nsEPz9j-gAI.jpg" alt="טרנספורמרים מריצים Bellman-Ford: מה המאמר "The Geometry of Thought" חושף" style="width:100%; border-radius:8px;">
@@ -285,8 +295,6 @@ class YuvalAvidani:
   <p>לפי המאמר "The Geometry of Thought" מאת Faruk Alpay ו-Bilge Senturk, מנגנון ה-self-attention של טרנספורמרים פועל כאלגוריתם Bellman-Ford למציאת מסלול ב...</p>
   <sub>📅 Jan 16, 2026</sub>
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/deep-live-cam/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/5ZNoacr2Bs76nsEPotmZuAk.jpg" alt="Deep-Live-Cam: החלפת פנים בזמן אמת עם תמונה אחת" style="width:100%; border-radius:8px;">
@@ -294,14 +302,6 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/deep-live-cam/">Deep-Live-Cam: החלפת פנים בזמן אמת עם תמונה אחת</a></h3>
   <p>הריפו Deep-Live-Cam מאת hacksider הוא כלי קוד פתוח להחלפת פנים בזמן אמת שמשתמש בתמונת מקור בודדת כדי להחליף פנים בזרמי וידאו חיים ללא אימון. הוא מאפשר...</p>
   <sub>📅 Jan 15, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/chatdev/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/v7tnac6EKP2cxN8Pv-Ga8AQ.jpg" alt="ChatDev 2.0: מחברה וירטואלית לפלטפורמת מולטי-אג'נט ללא קוד" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/chatdev/">ChatDev 2.0: מחברה וירטואלית לפלטפורמת מולטי-אג'נט ללא קוד</a></h3>
-  <p>הריפו ChatDev 2.0 'DevAll' מאת OpenBMB הוא פלטפורמת אורקסטרציה של סוכני AI ללא קוד שהופכת מבנים נוקשים של חברות תוכנה וירטואליות למערכות תהליך עבודה ג...</p>
-  <sub>📅 Jan 14, 2026</sub>
 </td>
 </tr>
 </table>
