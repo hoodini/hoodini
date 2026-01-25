@@ -252,6 +252,24 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/pageindex/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/WcR1aa7IPODOnsEP-qP7-Ag.jpg" alt="PageIndex: RAG ללא ווקטורים עם החזרת מסמכים מבוססת חשיבה" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/pageindex/">PageIndex: RAG ללא ווקטורים עם החזרת מסמכים מבוססת חשיבה</a></h3>
+  <p>הריפו PageIndex מאת Vectify AI הוא פריימוורק קוד פתוח ל-RAG שמבטל Embeddings ווקטוריים וחלוקה לחלקים, ומחליף אותם בעצי מסמכים היררכיים להחזרת מידע מבו...</p>
+  <sub>📅 Jan 25, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/github-trending/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/ew51acGXE5Ls7M8P7O3d6Ao.jpg" alt="GitHub Trending: גלו מה מפתחים בונים עכשיו" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/github-trending/">GitHub Trending: גלו מה מפתחים בונים עכשיו</a></h3>
+  <p>הפיד GitHub Trending הוא רשימה שמתעדכנת יומית של ריפוזיטוריז שצוברים כוכבים הכי מהר ב-GitHub, ועוזר לנו לגלות את הפרויקטים המרגשים ביותר שקהילת הקוד ה...</p>
+  <sub>📅 Jan 24, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
   <a href="https://blog.yuv.ai/eigent/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/Vc5xabLyHdvnxN8P6MiUoQY.jpg" alt="Eigent: דסקטופ Multi-Agent AI לוקאלי לתהליכים שמכבדים פרטיות" style="width:100%; border-radius:8px;">
   </a>
@@ -284,24 +302,6 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/devika/">Devika: מהנדס תוכנה AI בקוד פתוח למחזורי פיתוח מלאים</a></h3>
   <p>הריפו Devika מאת stitionai הוא מהנדס תוכנה AI אוטונומי בקוד פתוח שמטפל במשימות פיתוח מתכנון ועד דיפלוי עבור מפתחים וצוותים. הוא משנה את האופן שבו אנחנ...</p>
   <sub>📅 Jan 17, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/transformers-bellman-ford-geometry-thought/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/S-VpaYiXIvz6nsEPz9j-gAI.jpg" alt="טרנספורמרים מריצים Bellman-Ford: מה המאמר "The Geometry of Thought" חושף" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/transformers-bellman-ford-geometry-thought/">טרנספורמרים מריצים Bellman-Ford: מה המאמר "The Geometry of Thought" חושף</a></h3>
-  <p>לפי המאמר "The Geometry of Thought" מאת Faruk Alpay ו-Bilge Senturk, מנגנון ה-self-attention של טרנספורמרים פועל כאלגוריתם Bellman-Ford למציאת מסלול ב...</p>
-  <sub>📅 Jan 16, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/deep-live-cam/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/5ZNoacr2Bs76nsEPotmZuAk.jpg" alt="Deep-Live-Cam: החלפת פנים בזמן אמת עם תמונה אחת" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/deep-live-cam/">Deep-Live-Cam: החלפת פנים בזמן אמת עם תמונה אחת</a></h3>
-  <p>הריפו Deep-Live-Cam מאת hacksider הוא כלי קוד פתוח להחלפת פנים בזמן אמת שמשתמש בתמונת מקור בודדת כדי להחליף פנים בזרמי וידאו חיים ללא אימון. הוא מאפשר...</p>
-  <sub>📅 Jan 15, 2026</sub>
 </td>
 </tr>
 </table>
