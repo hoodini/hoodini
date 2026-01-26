@@ -12,10 +12,10 @@ I'm Hoodini! Welcome to my GitHub profile.
 <table>
 <tr>
 <td align="center">
-<img src="https://img.shields.io/badge/Repos-117-blue?style=for-the-badge&logo=github" alt="Repositories">
+<img src="https://img.shields.io/badge/Repos-118-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-176-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-177-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -29,27 +29,27 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
+- 🔀 Opened a pull request in [github/awesome-copilot](https://github.com/github/awesome-copilot) - Jan 25
+- ✨ Created branch in [hoodini/awesome-copilot](https://github.com/hoodini/awesome-copilot) - Jan 25
+- 🍴 Forked [github/awesome-copilot](https://github.com/github/awesome-copilot) - Jan 25
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jan 25
 - 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jan 23
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jan 23
-- 📝 Pushed 0 commit(s) to [hoodini/logan](https://github.com/hoodini/logan) - Jan 19
-- 📝 Pushed 0 commit(s) to [hoodini/logan](https://github.com/hoodini/logan) - Jan 19
-- ✨ Created branch in [hoodini/logan](https://github.com/hoodini/logan) - Jan 19
 
 
 
 ### ⭐ Featured Repositories
 
-- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 57
+- 📦 **[awesome-copilot](https://github.com/hoodini/awesome-copilot)** - Community-contributed instructions, prompts, and configurations to help you make the most of GitHub Copilot. ⭐ 1
+- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 59
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
 - 💙 **[nextjs-bun-starter](https://github.com/hoodini/nextjs-bun-starter)** - The ultimate Next.js starter kit with Bun, Shadcn/ui, Tailwind CSS, and Google Authentication. Production-ready boilerplate that ships faster. ⭐ 20
 - 💙 **[logan](https://github.com/hoodini/logan)** - Logan, the AI Coding Agent. Based on OpenCode, modified by Yuval Avidani (YUV.AI) ⭐ 3
-- 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 95
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-01-25 00:20:01 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-01-26 00:19:30 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
