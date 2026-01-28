@@ -15,7 +15,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <img src="https://img.shields.io/badge/Repos-119-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-177-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-190-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -39,17 +39,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 📦 **[copilot-sdk-terminal-agent](https://github.com/hoodini/copilot-sdk-terminal-agent)** - AI-powered terminal command execution agent using GitHub Copilot SDK ⭐ 2
+- ☕ **[nice-actimize-sida](https://github.com/hoodini/nice-actimize-sida)** - SIDA: Synthetic Identity Defense AI - Next-gen fraud prevention system combining behavioral biometrics, AI/ML, and graph neural networks to detect synthetic identity fraud ⭐ 1
+- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 66
+- 📦 **[copilot-sdk-terminal-agent](https://github.com/hoodini/copilot-sdk-terminal-agent)** - AI-powered terminal command execution agent using GitHub Copilot SDK ⭐ 4
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
 - 📦 **[awesome-copilot](https://github.com/hoodini/awesome-copilot)** - Community-contributed instructions, prompts, and configurations to help you make the most of GitHub Copilot. ⭐ 1
-- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 59
-- 💙 **[nextjs-bun-starter](https://github.com/hoodini/nextjs-bun-starter)** - The ultimate Next.js starter kit with Bun, Shadcn/ui, Tailwind CSS, and Google Authentication. Production-ready boilerplate that ships faster. ⭐ 20
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-01-27 00:19:30 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-01-28 00:18:28 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
