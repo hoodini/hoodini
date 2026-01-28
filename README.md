@@ -252,6 +252,24 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/quantum-rl-portfolio-optimization-parameter-efficiency/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/Sbd5aaq3E7DVvdIP88S-gQc.jpg" alt="למידת חיזוק קוונטית משיגה ביצועים של RL קלאסי עם פי 100 פחות פרמטרים" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/quantum-rl-portfolio-optimization-parameter-efficiency/">למידת חיזוק קוונטית משיגה ביצועים של RL קלאסי עם פי 100 פחות פרמטרים</a></h3>
+  <p>לפי המאמר "Quantum RL vs. Classical Deep RL" מאת Vincent Gurgul, Ying Chen ו-Stefan Lessmann, סוכני למידת חיזוק קוונטיים עם מעגלים קוונטיים משיגים ביצ...</p>
+  <sub>📅 Jan 28, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/remotion/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/KRp5aaiKCvbWvdIPgKrIsAU.jpg" alt="Remotion: יצירת סרטונים בצורה פרוגרמטית עם React" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/remotion/">Remotion: יצירת סרטונים בצורה פרוגרמטית עם React</a></h3>
+  <p>הריפו Remotion מאת Jonny Burger הוא פריימוורק שמאפשר למפתחים ליצור סרטונים בצורה פרוגרמטית באמצעות קומפוננטות React. הוא משנה את ייצור הוידאו על ידי ה...</p>
+  <sub>📅 Jan 27, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
   <a href="https://blog.yuv.ai/pageindex/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/WcR1aa7IPODOnsEP-qP7-Ag.jpg" alt="PageIndex: RAG ללא ווקטורים עם החזרת מסמכים מבוססת חשיבה" style="width:100%; border-radius:8px;">
   </a>
@@ -284,24 +302,6 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/blender-mcp/">BlenderMCP: לשלוט ב-Blender עם Claude דרך שפה טבעית</a></h3>
   <p>הריפו BlenderMCP מאת ahujasid הוא אינטגרציה בקוד פתוח שמחברת את Claude AI ל-Blender באמצעות פרוטוקול MCP, ומאפשרת מידול תלת-ממד ותפעול סצנות דרך פקודו...</p>
   <sub>📅 Jan 20, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/dexter/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/84dsadGiCf65xN8Pqsy2wAE.jpg" alt="Dexter: סוכן AI שעושה ולידציה עצמית למחקר פיננסי" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/dexter/">Dexter: סוכן AI שעושה ולידציה עצמית למחקר פיננסי</a></h3>
-  <p>הריפו Dexter מאת virattt הוא סוכן אוטונומי שתוכנן במיוחד לניתוח פיננסי ועושה ולידציה לממצאי המחקר שלו. הוא פותר את בעיית האמון במחקר פיננסי מונע AI דר...</p>
-  <sub>📅 Jan 18, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/devika/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/U-Vrady_NfCZkdUPoqb0wAU.jpg" alt="Devika: מהנדס תוכנה AI בקוד פתוח למחזורי פיתוח מלאים" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/devika/">Devika: מהנדס תוכנה AI בקוד פתוח למחזורי פיתוח מלאים</a></h3>
-  <p>הריפו Devika מאת stitionai הוא מהנדס תוכנה AI אוטונומי בקוד פתוח שמטפל במשימות פיתוח מתכנון ועד דיפלוי עבור מפתחים וצוותים. הוא משנה את האופן שבו אנחנ...</p>
-  <sub>📅 Jan 17, 2026</sub>
 </td>
 </tr>
 </table>
