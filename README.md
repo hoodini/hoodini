@@ -250,6 +250,24 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/flashmla/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/9Qh7aemmAs6DkdUPmpCEQA.jpg" alt="FlashMLA: קרנלי CUDA של DeepSeek להאצת Inference של LLMs" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/flashmla/">FlashMLA: קרנלי CUDA של DeepSeek להאצת Inference של LLMs</a></h3>
+  <p>הריפו FlashMLA מאת DeepSeek הוא ספריית קרנלים ב-CUDA שמייעלת Multi-head Latent Attention (MLA) עבור inference של LLMs בפרודקשן. הוא מאפשר האצה משמעותי...</p>
+  <sub>📅 Jan 29, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/moltbot/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/Evx6afONDb-tvdIPzp7PiAQ.jpg" alt="Moltbot: עוזר AI לוקאלי לכל ערוץ מסרים" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/moltbot/">Moltbot: עוזר AI לוקאלי לכל ערוץ מסרים</a></h3>
+  <p>הריפו Moltbot מאת moltbot הוא פלטפורמת עוזר AI אישי שרץ לגמרי על המכשירים שלנו תוך התחברות לכל ערוץ המסרים המרכזי שאנחנו כבר משתמשים בו. הוא נותן לנו ...</p>
+  <sub>📅 Jan 29, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
   <a href="https://blog.yuv.ai/quantum-rl-portfolio-optimization-parameter-efficiency/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/Sbd5aaq3E7DVvdIP88S-gQc.jpg" alt="למידת חיזוק קוונטית משיגה ביצועים של RL קלאסי עם פי 100 פחות פרמטרים" style="width:100%; border-radius:8px;">
   </a>
@@ -282,24 +300,6 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/github-trending/">GitHub Trending: גלו מה מפתחים בונים עכשיו</a></h3>
   <p>הפיד GitHub Trending הוא רשימה שמתעדכנת יומית של ריפוזיטוריז שצוברים כוכבים הכי מהר ב-GitHub, ועוזר לנו לגלות את הפרויקטים המרגשים ביותר שקהילת הקוד ה...</p>
   <sub>📅 Jan 24, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/eigent/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/Vc5xabLyHdvnxN8P6MiUoQY.jpg" alt="Eigent: דסקטופ Multi-Agent AI לוקאלי לתהליכים שמכבדים פרטיות" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/eigent/">Eigent: דסקטופ Multi-Agent AI לוקאלי לתהליכים שמכבדים פרטיות</a></h3>
-  <p>הריפו Eigent מאת eigent-ai הוא אפליקציית דסקטופ קוד פתוח שמעלה צוות AI שלם על המחשב שלנו, ומתאם בין סוכנים מיוחדים לביצוע אוטומציה של תהליכים מורכבים ...</p>
-  <sub>📅 Jan 22, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/blender-mcp/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/bCtvaZWmGcesvdIPwsbW8A0.jpg" alt="BlenderMCP: לשלוט ב-Blender עם Claude דרך שפה טבעית" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/blender-mcp/">BlenderMCP: לשלוט ב-Blender עם Claude דרך שפה טבעית</a></h3>
-  <p>הריפו BlenderMCP מאת ahujasid הוא אינטגרציה בקוד פתוח שמחברת את Claude AI ל-Blender באמצעות פרוטוקול MCP, ומאפשרת מידול תלת-ממד ותפעול סצנות דרך פקודו...</p>
-  <sub>📅 Jan 20, 2026</sub>
 </td>
 </tr>
 </table>
