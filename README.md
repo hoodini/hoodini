@@ -15,7 +15,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <img src="https://img.shields.io/badge/Repos-119-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-192-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-194-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -29,16 +29,16 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
+- 🔀 Merged a pull request in [github/awesome-copilot](https://github.com/github/awesome-copilot) - Jan 29
 - 📝 Pushed 0 commit(s) to [hoodini/awesome-copilot](https://github.com/hoodini/awesome-copilot) - Jan 28
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jan 28
 - 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jan 28
 
 
 
 ### ⭐ Featured Repositories
 
-- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 71
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
+- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 74
 - 📦 **[copilot-sdk-terminal-agent](https://github.com/hoodini/copilot-sdk-terminal-agent)** - AI-powered terminal command execution agent using GitHub Copilot SDK ⭐ 5
 - ☕ **[nice-actimize-sida](https://github.com/hoodini/nice-actimize-sida)** - SIDA: Synthetic Identity Defense AI - Next-gen fraud prevention system combining behavioral biometrics, AI/ML, and graph neural networks to detect synthetic identity fraud ⭐ 1
 - 📦 **[awesome-copilot](https://github.com/hoodini/awesome-copilot)** - Community-contributed instructions, prompts, and configurations to help you make the most of GitHub Copilot. ⭐ 1
@@ -47,7 +47,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-01-29 00:20:37 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-01-30 00:21:04 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
