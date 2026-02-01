@@ -250,6 +250,14 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/pi-mono/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/aP1-aYqFIeTA28oPpYCv-QM.jpg" alt="Pi Monorepo: ערכת כלים מאוחדת לבניית סוכני AI" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/pi-mono/">Pi Monorepo: ערכת כלים מאוחדת לבניית סוכני AI</a></h3>
+  <p>הריפו Pi Monorepo מאת Mario Zechner הוא ערכת כלים מקיפה שמספקת APIs מנורמלים ל-LLM, רנטיימים לסוכנים, ספריות UI וכלי דיפלוי לבניית סוכני AI. הוא פותר ...</p>
+  <sub>📅 Feb 1, 2026</sub>
+</td>
+<td width="50%" valign="top">
   <a href="https://blog.yuv.ai/flashmla/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/9Qh7aemmAs6DkdUPmpCEQA.jpg" alt="FlashMLA: קרנלי CUDA של DeepSeek להאצת Inference של LLMs" style="width:100%; border-radius:8px;">
   </a>
@@ -257,6 +265,8 @@ class YuvalAvidani:
   <p>הריפו FlashMLA מאת DeepSeek הוא ספריית קרנלים ב-CUDA שמייעלת Multi-head Latent Attention (MLA) עבור inference של LLMs בפרודקשן. הוא מאפשר האצה משמעותי...</p>
   <sub>📅 Jan 29, 2026</sub>
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/moltbot/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/Evx6afONDb-tvdIPzp7PiAQ.jpg" alt="Moltbot: עוזר AI לוקאלי לכל ערוץ מסרים" style="width:100%; border-radius:8px;">
@@ -265,8 +275,6 @@ class YuvalAvidani:
   <p>הריפו Moltbot מאת moltbot הוא פלטפורמת עוזר AI אישי שרץ לגמרי על המכשירים שלנו תוך התחברות לכל ערוץ המסרים המרכזי שאנחנו כבר משתמשים בו. הוא נותן לנו ...</p>
   <sub>📅 Jan 29, 2026</sub>
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/quantum-rl-portfolio-optimization-parameter-efficiency/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/Sbd5aaq3E7DVvdIP88S-gQc.jpg" alt="למידת חיזוק קוונטית משיגה ביצועים של RL קלאסי עם פי 100 פחות פרמטרים" style="width:100%; border-radius:8px;">
@@ -275,6 +283,8 @@ class YuvalAvidani:
   <p>לפי המאמר "Quantum RL vs. Classical Deep RL" מאת Vincent Gurgul, Ying Chen ו-Stefan Lessmann, סוכני למידת חיזוק קוונטיים עם מעגלים קוונטיים משיגים ביצ...</p>
   <sub>📅 Jan 28, 2026</sub>
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/remotion/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/KRp5aaiKCvbWvdIPgKrIsAU.jpg" alt="Remotion: יצירת סרטונים בצורה פרוגרמטית עם React" style="width:100%; border-radius:8px;">
@@ -283,8 +293,6 @@ class YuvalAvidani:
   <p>הריפו Remotion מאת Jonny Burger הוא פריימוורק שמאפשר למפתחים ליצור סרטונים בצורה פרוגרמטית באמצעות קומפוננטות React. הוא משנה את ייצור הוידאו על ידי ה...</p>
   <sub>📅 Jan 27, 2026</sub>
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/pageindex/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/WcR1aa7IPODOnsEP-qP7-Ag.jpg" alt="PageIndex: RAG ללא ווקטורים עם החזרת מסמכים מבוססת חשיבה" style="width:100%; border-radius:8px;">
@@ -292,14 +300,6 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/pageindex/">PageIndex: RAG ללא ווקטורים עם החזרת מסמכים מבוססת חשיבה</a></h3>
   <p>הריפו PageIndex מאת Vectify AI הוא פריימוורק קוד פתוח ל-RAG שמבטל Embeddings ווקטוריים וחלוקה לחלקים, ומחליף אותם בעצי מסמכים היררכיים להחזרת מידע מבו...</p>
   <sub>📅 Jan 25, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/github-trending/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/ew51acGXE5Ls7M8P7O3d6Ao.jpg" alt="GitHub Trending: גלו מה מפתחים בונים עכשיו" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/github-trending/">GitHub Trending: גלו מה מפתחים בונים עכשיו</a></h3>
-  <p>הפיד GitHub Trending הוא רשימה שמתעדכנת יומית של ריפוזיטוריז שצוברים כוכבים הכי מהר ב-GitHub, ועוזר לנו לגלות את הפרויקטים המרגשים ביותר שקהילת הקוד ה...</p>
-  <sub>📅 Jan 24, 2026</sub>
 </td>
 </tr>
 </table>
