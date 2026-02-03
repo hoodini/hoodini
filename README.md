@@ -129,12 +129,21 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" align="center">
+  <a href="https://www.youtube.com/watch?v=uFCqOT-zj3A">
+    <img src="https://i.ytimg.com/vi/uFCqOT-zj3A/mqdefault.jpg" alt="From WhatsApp to a Deployed App with GitHub Copilot SDK AI Agent!" style="width:100%; max-width:400px;">
+  </a>
+  <br>
+  <a href="https://www.youtube.com/watch?v=uFCqOT-zj3A"><strong>From WhatsApp to a Deployed App with GitHub Copilot SDK AI Agent!</strong></a>
+</td>
+<td width="50%" align="center">
   <a href="https://www.youtube.com/watch?v=xEt8NTKZlBs">
     <img src="https://i.ytimg.com/vi/xEt8NTKZlBs/mqdefault.jpg" alt="The NEW GitHub Copilot SDK Controls My Computer (And Take Notes With Obsidian!)" style="width:100%; max-width:400px;">
   </a>
   <br>
   <a href="https://www.youtube.com/watch?v=xEt8NTKZlBs"><strong>The NEW GitHub Copilot SDK Controls My Computer (And Take Notes With Obsidian!)</strong></a>
 </td>
+</tr>
+<tr>
 <td width="50%" align="center">
   <a href="https://www.youtube.com/watch?v=d4dPB8bJVMI">
     <img src="https://i.ytimg.com/vi/d4dPB8bJVMI/mqdefault.jpg" alt="GitHub Copilot now supports SKILLS" style="width:100%; max-width:400px;">
@@ -142,8 +151,6 @@ class YuvalAvidani:
   <br>
   <a href="https://www.youtube.com/watch?v=d4dPB8bJVMI"><strong>GitHub Copilot now supports SKILLS</strong></a>
 </td>
-</tr>
-<tr>
 <td width="50%" align="center">
   <a href="https://www.youtube.com/watch?v=OwzvpJJdGsw">
     <img src="https://i.ytimg.com/vi/OwzvpJJdGsw/mqdefault.jpg" alt="Everyting about GitHub Copilot: Overview" style="width:100%; max-width:400px;">
@@ -151,6 +158,8 @@ class YuvalAvidani:
   <br>
   <a href="https://www.youtube.com/watch?v=OwzvpJJdGsw"><strong>Everyting about GitHub Copilot: Overview</strong></a>
 </td>
+</tr>
+<tr>
 <td width="50%" align="center">
   <a href="https://www.youtube.com/watch?v=gn5-vbNtAz4">
     <img src="https://i.ytimg.com/vi/gn5-vbNtAz4/mqdefault.jpg" alt="Beyond The Hype with YUV.AI" style="width:100%; max-width:400px;">
@@ -158,21 +167,12 @@ class YuvalAvidani:
   <br>
   <a href="https://www.youtube.com/watch?v=gn5-vbNtAz4"><strong>Beyond The Hype with YUV.AI</strong></a>
 </td>
-</tr>
-<tr>
 <td width="50%" align="center">
   <a href="https://www.youtube.com/watch?v=68d1KXNif68">
     <img src="https://i.ytimg.com/vi/68d1KXNif68/mqdefault.jpg" alt="Claude can now do browser automations EXTREMELY FAST!" style="width:100%; max-width:400px;">
   </a>
   <br>
   <a href="https://www.youtube.com/watch?v=68d1KXNif68"><strong>Claude can now do browser automations EXTREMELY FAST!</strong></a>
-</td>
-<td width="50%" align="center">
-  <a href="https://www.youtube.com/watch?v=LNMhtvX819I">
-    <img src="https://i.ytimg.com/vi/LNMhtvX819I/mqdefault.jpg" alt="Exclusive AI Session With GitHub!! Copilot, Vibe Coding, MCP & much more!" style="width:100%; max-width:400px;">
-  </a>
-  <br>
-  <a href="https://www.youtube.com/watch?v=LNMhtvX819I"><strong>Exclusive AI Session With GitHub!! Copilot, Vibe Coding, MCP & much more!</strong></a>
 </td>
 </tr>
 </table>
