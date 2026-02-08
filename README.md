@@ -15,7 +15,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <img src="https://img.shields.io/badge/Repos-120-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-199-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-201-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -31,14 +31,14 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 - ✨ Created branch in [hoodini/logan-webapps](https://github.com/hoodini/logan-webapps) - Feb 02
 - 🔀 Merged a pull request in [github/awesome-copilot](https://github.com/github/awesome-copilot) - Jan 29
-- 📝 Pushed 0 commit(s) to [hoodini/awesome-copilot](https://github.com/hoodini/awesome-copilot) - Jan 28
+- 🔀 Opened a pull request in [github/awesome-copilot](https://github.com/github/awesome-copilot) - Jan 25
 
 
 
 ### ⭐ Featured Repositories
 
+- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 82
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
-- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 80
 - 💛 **[logan-ai-social-booster-by-yuval-avidani](https://github.com/hoodini/logan-ai-social-booster-by-yuval-avidani)** - None ⭐ 7
 - 🐍 **[azure-translator-python](https://github.com/hoodini/azure-translator-python)** - Translate documents using Azure AI Translator + Python ⭐ 10
 - 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 96
@@ -47,7 +47,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-02-07 00:21:48 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-02-08 00:27:47 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
