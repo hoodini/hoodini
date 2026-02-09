@@ -37,7 +37,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 82
+- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 85
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
 - 💛 **[logan-ai-social-booster-by-yuval-avidani](https://github.com/hoodini/logan-ai-social-booster-by-yuval-avidani)** - None ⭐ 7
 - 🐍 **[azure-translator-python](https://github.com/hoodini/azure-translator-python)** - Translate documents using Azure AI Translator + Python ⭐ 10
@@ -47,7 +47,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-02-08 00:27:47 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-02-09 00:23:12 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
