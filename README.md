@@ -12,10 +12,10 @@ I'm Hoodini! Welcome to my GitHub profile.
 <table>
 <tr>
 <td align="center">
-<img src="https://img.shields.io/badge/Repos-120-blue?style=for-the-badge&logo=github" alt="Repositories">
+<img src="https://img.shields.io/badge/Repos-121-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-201-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-203-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -29,25 +29,27 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
+- 📝 Pushed 0 commit(s) to [hoodini/openclaw](https://github.com/hoodini/openclaw) - Feb 09
+- 📝 Pushed 0 commit(s) to [hoodini/openclaw](https://github.com/hoodini/openclaw) - Feb 09
+- 📝 Pushed 0 commit(s) to [hoodini/openclaw](https://github.com/hoodini/openclaw) - Feb 09
+- 🍴 Forked [openclaw/openclaw](https://github.com/openclaw/openclaw) - Feb 09
 - ✨ Created branch in [hoodini/logan-webapps](https://github.com/hoodini/logan-webapps) - Feb 02
-- 🔀 Merged a pull request in [github/awesome-copilot](https://github.com/github/awesome-copilot) - Jan 29
-- 🔀 Opened a pull request in [github/awesome-copilot](https://github.com/github/awesome-copilot) - Jan 25
 
 
 
 ### ⭐ Featured Repositories
 
-- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 85
+- 💙 **[openclaw](https://github.com/hoodini/openclaw)** - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞  ⭐ 2
+- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 86
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
 - 💛 **[logan-ai-social-booster-by-yuval-avidani](https://github.com/hoodini/logan-ai-social-booster-by-yuval-avidani)** - None ⭐ 7
 - 🐍 **[azure-translator-python](https://github.com/hoodini/azure-translator-python)** - Translate documents using Azure AI Translator + Python ⭐ 10
-- 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 96
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-02-09 00:23:12 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-02-10 00:27:43 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
