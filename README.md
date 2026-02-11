@@ -12,7 +12,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <table>
 <tr>
 <td align="center">
-<img src="https://img.shields.io/badge/Repos-121-blue?style=for-the-badge&logo=github" alt="Repositories">
+<img src="https://img.shields.io/badge/Repos-122-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Followers-203-blue?style=for-the-badge&logo=github" alt="Followers">
@@ -29,27 +29,27 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
-- 📝 Pushed 0 commit(s) to [hoodini/openclaw](https://github.com/hoodini/openclaw) - Feb 09
-- 📝 Pushed 0 commit(s) to [hoodini/openclaw](https://github.com/hoodini/openclaw) - Feb 09
-- 📝 Pushed 0 commit(s) to [hoodini/openclaw](https://github.com/hoodini/openclaw) - Feb 09
-- 🍴 Forked [openclaw/openclaw](https://github.com/openclaw/openclaw) - Feb 09
-- ✨ Created branch in [hoodini/logan-webapps](https://github.com/hoodini/logan-webapps) - Feb 02
+- 📝 Pushed 0 commit(s) to [hoodini/netviz](https://github.com/hoodini/netviz) - Feb 10
+- 📝 Pushed 0 commit(s) to [hoodini/netviz](https://github.com/hoodini/netviz) - Feb 10
+- 📝 Pushed 0 commit(s) to [hoodini/netviz](https://github.com/hoodini/netviz) - Feb 10
+- 🔀 Merged a pull request in [hoodini/netviz](https://github.com/hoodini/netviz) - Feb 10
+- 📝 Pushed 0 commit(s) to [hoodini/netviz](https://github.com/hoodini/netviz) - Feb 10
 
 
 
 ### ⭐ Featured Repositories
 
-- 💙 **[openclaw](https://github.com/hoodini/openclaw)** - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞  ⭐ 2
-- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 86
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 1
+- 💙 **[netviz](https://github.com/hoodini/netviz)** - 🌐 NetViz — Real-time network request visualizer with animated topology, timing waterfalls, and live traffic simulation. Built with React 18, TypeScript, Vite, and Canvas animations for a GitHub Copilot training workshop.
+- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 87
+- 💙 **[openclaw](https://github.com/hoodini/openclaw)** - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞  ⭐ 3
 - 💛 **[logan-ai-social-booster-by-yuval-avidani](https://github.com/hoodini/logan-ai-social-booster-by-yuval-avidani)** - None ⭐ 7
-- 🐍 **[azure-translator-python](https://github.com/hoodini/azure-translator-python)** - Translate documents using Azure AI Translator + Python ⭐ 10
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-02-10 00:27:43 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-02-11 00:27:06 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
