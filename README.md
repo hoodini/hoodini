@@ -252,6 +252,14 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/tambo-ai/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/MBWUacHNIfvNkdUPuo7c0A8.jpg" alt="Tambo AI: SDK לריאקט ליצירת UI גנרטיבי עם סוכני AI" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/tambo-ai/">Tambo AI: SDK לריאקט ליצירת UI גנרטיבי עם סוכני AI</a></h3>
+  <p>הריפו Tambo AI מאת tambo-ai הוא SDK פול-סטאק לריאקט שמאפשר לסוכני AI לרנדר קומפוננטות UI אינטראקטיביות במקום תגובות טקסט בלבד. הוא מטפל בסטרימינג, ניה...</p>
+  <sub>📅 Feb 17, 2026</sub>
+</td>
+<td width="50%" valign="top">
   <a href="https://blog.yuv.ai/claude-code-hooks-mastery/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/tn2NacCHKbyXkdUPjuWGwQI.jpg" alt="Claude Code Hooks Mastery: שליטה דטרמיניסטית בסוכני AI ותזמור מתקדם" style="width:100%; border-radius:8px;">
   </a>
@@ -259,6 +267,8 @@ class YuvalAvidani:
   <p>הריפו Claude Code Hooks Mastery מאת disler הוא ארגז כלים מקיף שמספק 13 הוקים לשליטה בכל שלב של ביצוע Claude Code CLI. הוא מאפשר למפתחים לבנות תהליכי A...</p>
   <sub>📅 Feb 12, 2026</sub>
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/gh-aw/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/_NqKabG6BYKckdUPr_iFmAo.jpg" alt="GitHub Agentic Workflows: כתבו CI/CD בשפה טבעית" style="width:100%; border-radius:8px;">
@@ -267,8 +277,6 @@ class YuvalAvidani:
   <p>הריפו GitHub Agentic Workflows (gh-aw) מאת GitHub הוא פריימוורק שמאפשר למפתחים להגדיר תהליכי CI/CD באמצעות מרקדאון בשפה טבעית במקום YAML. הוא מאפשר לס...</p>
   <sub>📅 Feb 10, 2026</sub>
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/claude-mem/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/VUOEafiGL_Lqxs0PvZ-b-Qk.jpg" alt="Claude-Mem: זיכרון מתמשך לקלוד קוד בין סשנים" style="width:100%; border-radius:8px;">
@@ -277,6 +285,8 @@ class YuvalAvidani:
   <p>הריפו Claude-Mem מאת thedotmack הוא פלאגין לקלוד קוד שמספק זיכרון מתמשך בין סשנים על ידי לכידה, דחיסה והזרקה חכמה של קונטקסט רלוונטי. הוא פותר את בעיי...</p>
   <sub>📅 Feb 5, 2026</sub>
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/memu/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/V6CBadiOHKKvxN8PmoPo8AU.jpg" alt="memU: פריימוורק זיכרון מתמיד לסוכני AI פרואקטיביים 24/7" style="width:100%; border-radius:8px;">
@@ -285,8 +295,6 @@ class YuvalAvidani:
   <p>הריפו memU מאת NevaMind-AI הוא פריימוורק זיכרון קוד פתוח שמאפשר לסוכני AI לרוץ 24/7 עם קונטקסט לטווח ארוך והתנהגות פרואקטיבית. הוא מפחית עלויות טוקנים...</p>
   <sub>📅 Feb 3, 2026</sub>
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/pi-mono/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/aP1-aYqFIeTA28oPpYCv-QM.jpg" alt="Pi Monorepo: ערכת כלים מאוחדת לבניית סוכני AI" style="width:100%; border-radius:8px;">
@@ -294,14 +302,6 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/pi-mono/">Pi Monorepo: ערכת כלים מאוחדת לבניית סוכני AI</a></h3>
   <p>הריפו Pi Monorepo מאת Mario Zechner הוא ערכת כלים מקיפה שמספקת APIs מנורמלים ל-LLM, רנטיימים לסוכנים, ספריות UI וכלי דיפלוי לבניית סוכני AI. הוא פותר ...</p>
   <sub>📅 Feb 1, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/flashmla/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/9Qh7aemmAs6DkdUPmpCEQA.jpg" alt="FlashMLA: קרנלי CUDA של DeepSeek להאצת Inference של LLMs" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/flashmla/">FlashMLA: קרנלי CUDA של DeepSeek להאצת Inference של LLMs</a></h3>
-  <p>הריפו FlashMLA מאת DeepSeek הוא ספריית קרנלים ב-CUDA שמייעלת Multi-head Latent Attention (MLA) עבור inference של LLMs בפרודקשן. הוא מאפשר האצה משמעותי...</p>
-  <sub>📅 Jan 29, 2026</sub>
 </td>
 </tr>
 </table>
