@@ -39,17 +39,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 💙 **[whatsapp-public-logan](https://github.com/hoodini/whatsapp-public-logan)** - Open-source WhatsApp bot with AI capabilities - Logan by YUV.AI ⭐ 40
-- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 93
+- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 26
+- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 95
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 2
-- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites
-- 💙 **[netviz](https://github.com/hoodini/netviz)** - 🌐 NetViz — Real-time network request visualizer with animated topology, timing waterfalls, and live traffic simulation. Built with React 18, TypeScript, Vite, and Canvas animations for a GitHub Copilot training workshop. ⭐ 1
+- 🐍 **[VibeVoice](https://github.com/hoodini/VibeVoice)** - Open-Source Frontier Voice AI ⭐ 2
+- 💙 **[logan](https://github.com/hoodini/logan)** - Logan, the AI Coding Agent. Based on OpenCode, modified by Yuval Avidani (YUV.AI) ⭐ 4
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-02-17 00:22:53 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-02-18 00:22:58 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
