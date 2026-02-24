@@ -12,10 +12,10 @@ I'm Hoodini! Welcome to my GitHub profile.
 <table>
 <tr>
 <td align="center">
-<img src="https://img.shields.io/badge/Repos-126-blue?style=for-the-badge&logo=github" alt="Repositories">
+<img src="https://img.shields.io/badge/Repos-127-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-217-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-218-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -29,7 +29,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
-- 📝 Pushed 0 commit(s) to [hoodini/llm-visuals](https://github.com/hoodini/llm-visuals) - Feb 22
+- ✨ Created branch in [hoodini/SkyHawk-Flight-Simulator](https://github.com/hoodini/SkyHawk-Flight-Simulator) - Feb 23
 - 📝 Pushed 0 commit(s) to [hoodini/llm-visuals](https://github.com/hoodini/llm-visuals) - Feb 22
 - 📝 Pushed 0 commit(s) to [hoodini/llm-visuals](https://github.com/hoodini/llm-visuals) - Feb 22
 - 📝 Pushed 0 commit(s) to [hoodini/llm-visuals](https://github.com/hoodini/llm-visuals) - Feb 22
@@ -39,17 +39,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 💙 **[llm-visuals](https://github.com/hoodini/llm-visuals)** - None ⭐ 5
+- 💛 **[SkyHawk-Flight-Simulator](https://github.com/hoodini/SkyHawk-Flight-Simulator)** - 3D Helicopter Flight Simulator - Fly from San Francisco to London over the Golden Gate Bridge. Built with Three.js.
+- 💙 **[llm-visuals](https://github.com/hoodini/llm-visuals)** - None ⭐ 6
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 2
 - 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 99
 - 💙 **[whatsapp-public-logan](https://github.com/hoodini/whatsapp-public-logan)** - Open-source WhatsApp bot with AI capabilities - Logan by YUV.AI ⭐ 49
-- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 2
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-02-23 00:22:27 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-02-24 00:22:27 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
