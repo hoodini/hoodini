@@ -252,6 +252,14 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/cloudflare-agents/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/yU-daeyAL92hxN8PjazXsAI.jpg" alt="Cloudflare Agents: סוכני AI עם מצב קבוע על האדג' בלי כאבי ראש של מסדי נתונים" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/cloudflare-agents/">Cloudflare Agents: סוכני AI עם מצב קבוע על האדג' בלי כאבי ראש של מסדי נתונים</a></h3>
+  <p>הריפו Cloudflare Agents מאת Cloudflare הוא SDK בסרברלס שמאפשר סוכני AI קבועים ועם מצב על רשת האדג' של Cloudflare באמצעות Durable Objects. הוא פותר את ...</p>
+  <sub>📅 Feb 24, 2026</sub>
+</td>
+<td width="50%" valign="top">
   <a href="https://blog.yuv.ai/timesfm/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/3qyaafvpAqnxvdIPqce8iQU.jpg" alt="TimesFM: חיזוי סדרות זמן בלי אימון על הדאטה שלנו" style="width:100%; border-radius:8px;">
   </a>
@@ -259,6 +267,8 @@ class YuvalAvidani:
   <p>הריפו TimesFM מאת Google Research הוא מודל בסיס עם 200 מיליון פרמטרים שמבצע חיזוי של סדרות זמן בצורה zero-shot על פני דומיינים מגוונים בלי אימון על הד...</p>
   <sub>📅 Feb 22, 2026</sub>
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/wifi-densepose/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/W7iWafHQBsbB28oP8oWa2Qw.jpg" alt="WiFi DensePose: לראות דרך קירות עם סיגנלי WiFi ו-Rust" style="width:100%; border-radius:8px;">
@@ -267,8 +277,6 @@ class YuvalAvidani:
   <p>הריפו WiFi DensePose מאת ruvnet הוא מערכת ראייה ממוחשבת ששומרת על פרייבטיות ומשתמשת בסיגנלי WiFi רגילים כדי לבצע הערכת תנוחה אנושית תלת-ממדית בזמן אמת...</p>
   <sub>📅 Feb 19, 2026</sub>
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/tambo-ai/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/MBWUacHNIfvNkdUPuo7c0A8.jpg" alt="Tambo AI: SDK לריאקט ליצירת UI גנרטיבי עם סוכני AI" style="width:100%; border-radius:8px;">
@@ -277,6 +285,8 @@ class YuvalAvidani:
   <p>הריפו Tambo AI מאת tambo-ai הוא SDK פול-סטאק לריאקט שמאפשר לסוכני AI לרנדר קומפוננטות UI אינטראקטיביות במקום תגובות טקסט בלבד. הוא מטפל בסטרימינג, ניה...</p>
   <sub>📅 Feb 17, 2026</sub>
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/claude-code-hooks-mastery/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/tn2NacCHKbyXkdUPjuWGwQI.jpg" alt="Claude Code Hooks Mastery: שליטה דטרמיניסטית בסוכני AI ותזמור מתקדם" style="width:100%; border-radius:8px;">
@@ -285,8 +295,6 @@ class YuvalAvidani:
   <p>הריפו Claude Code Hooks Mastery מאת disler הוא ארגז כלים מקיף שמספק 13 הוקים לשליטה בכל שלב של ביצוע Claude Code CLI. הוא מאפשר למפתחים לבנות תהליכי A...</p>
   <sub>📅 Feb 12, 2026</sub>
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/gh-aw/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/_NqKabG6BYKckdUPr_iFmAo.jpg" alt="GitHub Agentic Workflows: כתבו CI/CD בשפה טבעית" style="width:100%; border-radius:8px;">
@@ -294,14 +302,6 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/gh-aw/">GitHub Agentic Workflows: כתבו CI/CD בשפה טבעית</a></h3>
   <p>הריפו GitHub Agentic Workflows (gh-aw) מאת GitHub הוא פריימוורק שמאפשר למפתחים להגדיר תהליכי CI/CD באמצעות מרקדאון בשפה טבעית במקום YAML. הוא מאפשר לס...</p>
   <sub>📅 Feb 10, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/claude-mem/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/VUOEafiGL_Lqxs0PvZ-b-Qk.jpg" alt="Claude-Mem: זיכרון מתמשך לקלוד קוד בין סשנים" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/claude-mem/">Claude-Mem: זיכרון מתמשך לקלוד קוד בין סשנים</a></h3>
-  <p>הריפו Claude-Mem מאת thedotmack הוא פלאגין לקלוד קוד שמספק זיכרון מתמשך בין סשנים על ידי לכידה, דחיסה והזרקה חכמה של קונטקסט רלוונטי. הוא פותר את בעיי...</p>
-  <sub>📅 Feb 5, 2026</sub>
 </td>
 </tr>
 </table>
