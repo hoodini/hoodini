@@ -39,17 +39,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
+- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 29
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 2
 - 💙 **[llm-visuals](https://github.com/hoodini/llm-visuals)** - None ⭐ 8
 - 💛 **[SkyHawk-Flight-Simulator](https://github.com/hoodini/SkyHawk-Flight-Simulator)** - 3D Helicopter Flight Simulator - Fly from San Francisco to London over the Golden Gate Bridge. Built with Three.js. ⭐ 1
-- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 28
 - 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 99
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-02-25 00:24:00 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-02-26 00:20:21 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
