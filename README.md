@@ -252,6 +252,14 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/superset/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/gn6qaZ_YH9amkdUP5JjyoAI.jpg" alt="Superset: ה-IDE הראשון לתזמור מספר סוכני AI במקביל" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/superset/">Superset: ה-IDE הראשון לתזמור מספר סוכני AI במקביל</a></h3>
+  <p>הריפו Superset מאת superset-sh הוא IDE שבנוי במיוחד לתזמור מספר סוכני AI שרצים במקביל. הוא פותר את הבעיה של ניהול עשרות סוכנים אוטונומיים בו-זמנית בלי...</p>
+  <sub>📅 Mar 6, 2026</sub>
+</td>
+<td width="50%" valign="top">
   <a href="https://blog.yuv.ai/moonshine/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/Ky2paa7vCprf7M8PseGRsA0.jpg" alt="Moonshine: זיהוי דיבור מהיר פי 5 על מכשירי Edge" style="width:100%; border-radius:8px;">
   </a>
@@ -259,6 +267,8 @@ class YuvalAvidani:
   <p>הריפו Moonshine מאת moonshine-ai הוא ערכת כלים לזיהוי דיבור קוד פתוח שמותאמת לממשקי קול בזמן אמת, מציעה זמן תגובה מתחת ל-200 אלפיות שנייה על מכשירי ed...</p>
   <sub>📅 Mar 5, 2026</sub>
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/deer-flow/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/FtynafL-La3skdUPz4Xy2AM.jpg" alt="DeerFlow 2.0: תשתית ההרצה שסוכני AI באמת צריכים" style="width:100%; border-radius:8px;">
@@ -267,8 +277,6 @@ class YuvalAvidani:
   <p>הריפו DeerFlow 2.0 מאת ByteDance הוא פריימוורק קוד פתוח שמספק תשתית הרצה ברמת פרודקשן לסוכני AI אוטונומיים. הוא נותן לסוכנים סביבות הרצה מבודדות, זיכר...</p>
   <sub>📅 Mar 4, 2026</sub>
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/agent-skills-for-context-engineering/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/vfKfaZ_8EJrA28oP9LiOgQc.jpg" alt="Agent Skills: פריימוורק Context Engineering לסוכני AI" style="width:100%; border-radius:8px;">
@@ -277,6 +285,8 @@ class YuvalAvidani:
   <p>הריפו Agent Skills for Context Engineering מאת Muratcan Koylan הוא פריימוורק מודולרי שמלמד סוכני AI לנהל את תקציבי תשומת הלב שלהם על פני פרומפטים של מ...</p>
   <sub>📅 Feb 26, 2026</sub>
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/cloudflare-agents/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/yU-daeyAL92hxN8PjazXsAI.jpg" alt="Cloudflare Agents: סוכני AI עם מצב קבוע על האדג' בלי כאבי ראש של מסדי נתונים" style="width:100%; border-radius:8px;">
@@ -285,8 +295,6 @@ class YuvalAvidani:
   <p>הריפו Cloudflare Agents מאת Cloudflare הוא SDK בסרברלס שמאפשר סוכני AI קבועים ועם מצב על רשת האדג' של Cloudflare באמצעות Durable Objects. הוא פותר את ...</p>
   <sub>📅 Feb 24, 2026</sub>
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/timesfm/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/3qyaafvpAqnxvdIPqce8iQU.jpg" alt="TimesFM: חיזוי סדרות זמן בלי אימון על הדאטה שלנו" style="width:100%; border-radius:8px;">
@@ -294,14 +302,6 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/timesfm/">TimesFM: חיזוי סדרות זמן בלי אימון על הדאטה שלנו</a></h3>
   <p>הריפו TimesFM מאת Google Research הוא מודל בסיס עם 200 מיליון פרמטרים שמבצע חיזוי של סדרות זמן בצורה zero-shot על פני דומיינים מגוונים בלי אימון על הד...</p>
   <sub>📅 Feb 22, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/wifi-densepose/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/W7iWafHQBsbB28oP8oWa2Qw.jpg" alt="WiFi DensePose: לראות דרך קירות עם סיגנלי WiFi ו-Rust" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/wifi-densepose/">WiFi DensePose: לראות דרך קירות עם סיגנלי WiFi ו-Rust</a></h3>
-  <p>הריפו WiFi DensePose מאת ruvnet הוא מערכת ראייה ממוחשבת ששומרת על פרייבטיות ומשתמשת בסיגנלי WiFi רגילים כדי לבצע הערכת תנוחה אנושית תלת-ממדית בזמן אמת...</p>
-  <sub>📅 Feb 19, 2026</sub>
 </td>
 </tr>
 </table>
