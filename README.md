@@ -252,6 +252,24 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/claude-skills/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/EHWuabeGJJGmkdUP2bq2mQI.jpg" alt="Claude Code Skills: הפוך סוכני AI למומחי תחום" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/claude-skills/">Claude Code Skills: הפוך סוכני AI למומחי תחום</a></h3>
+  <p>הריפו Claude Code Skills & Plugins מאת Alireza Rezvani הוא ספרייה פתוחה של 169 חבילות הוראות מוכנות לפרודקשן שהופכות עוזרי קידוד AI למומחי תחום מתמחים...</p>
+  <sub>📅 Mar 9, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/gitnexus/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/THOuaZGyIePf7M8P2MSnwAQ.jpg" alt="GitNexus: אינטליגנציה לקוד ללא שרת לסוכני AI שבאמת עובדים" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/gitnexus/">GitNexus: אינטליגנציה לקוד ללא שרת לסוכני AI שבאמת עובדים</a></h3>
+  <p>הריפו GitNexus מאת abhigyanpatwari הוא מנוע אינטליגנציה לקוד ללא שרת שמאנדקס קודבייס לגרפי ידע כדי שסוכני AI יבינו מבנה, תלויות ושרשראות קריאות. רץ לג...</p>
+  <sub>📅 Mar 9, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
   <a href="https://blog.yuv.ai/superset/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/gn6qaZ_YH9amkdUP5JjyoAI.jpg" alt="Superset: ה-IDE הראשון לתזמור מספר סוכני AI במקביל" style="width:100%; border-radius:8px;">
   </a>
@@ -284,24 +302,6 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/agent-skills-for-context-engineering/">Agent Skills: פריימוורק Context Engineering לסוכני AI</a></h3>
   <p>הריפו Agent Skills for Context Engineering מאת Muratcan Koylan הוא פריימוורק מודולרי שמלמד סוכני AI לנהל את תקציבי תשומת הלב שלהם על פני פרומפטים של מ...</p>
   <sub>📅 Feb 26, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/cloudflare-agents/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/yU-daeyAL92hxN8PjazXsAI.jpg" alt="Cloudflare Agents: סוכני AI עם מצב קבוע על האדג' בלי כאבי ראש של מסדי נתונים" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/cloudflare-agents/">Cloudflare Agents: סוכני AI עם מצב קבוע על האדג' בלי כאבי ראש של מסדי נתונים</a></h3>
-  <p>הריפו Cloudflare Agents מאת Cloudflare הוא SDK בסרברלס שמאפשר סוכני AI קבועים ועם מצב על רשת האדג' של Cloudflare באמצעות Durable Objects. הוא פותר את ...</p>
-  <sub>📅 Feb 24, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/timesfm/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/3qyaafvpAqnxvdIPqce8iQU.jpg" alt="TimesFM: חיזוי סדרות זמן בלי אימון על הדאטה שלנו" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/timesfm/">TimesFM: חיזוי סדרות זמן בלי אימון על הדאטה שלנו</a></h3>
-  <p>הריפו TimesFM מאת Google Research הוא מודל בסיס עם 200 מיליון פרמטרים שמבצע חיזוי של סדרות זמן בצורה zero-shot על פני דומיינים מגוונים בלי אימון על הד...</p>
-  <sub>📅 Feb 22, 2026</sub>
 </td>
 </tr>
 </table>
