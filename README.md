@@ -252,6 +252,24 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/qwen-agent/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/GSCxaariJpC2vdIPmtaH2A8.jpg" alt="Qwen-Agent: פריימוורק ביצוע כלים נטיבי לאפליקציות LLM" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/qwen-agent/">Qwen-Agent: פריימוורק ביצוע כלים נטיבי לאפליקציות LLM</a></h3>
+  <p>הריפו Qwen-Agent מאת QwenLM הוא פריימוורק מתקדם לבניית אפליקציות LLM עם יכולות ביצוע כלים, תכנון וזיכרון נטיביות. הוא מספק למפתחים קריאות פונקציות חזק...</p>
+  <sub>📅 Mar 11, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/agency-agents/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/SRyxafrtNYenkdUP4O2b8Ak.jpg" alt="Agency Agents: הפכו את ה-IDE שלכם לאולפן AI רב-סוכנים" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/agency-agents/">Agency Agents: הפכו את ה-IDE שלכם לאולפן AI רב-סוכנים</a></h3>
+  <p>הריפו Agency Agents מאת msitarzewski הוא מערכת שמזריקה 112 פרסונות סוכני AI מתמחות ל-Claude Code, Cursor ו-Aider, והופכת עוזרי קידוד גנריים למומחי דומ...</p>
+  <sub>📅 Mar 11, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
   <a href="https://blog.yuv.ai/codebuff/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/p8Svabm3Dbe1vdIPgf3keA.jpg" alt="Codebuff: עוזר קידוד AI רב-סוכני שממש עובד" style="width:100%; border-radius:8px;">
   </a>
@@ -284,24 +302,6 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/superset/">Superset: ה-IDE הראשון לתזמור מספר סוכני AI במקביל</a></h3>
   <p>הריפו Superset מאת superset-sh הוא IDE שבנוי במיוחד לתזמור מספר סוכני AI שרצים במקביל. הוא פותר את הבעיה של ניהול עשרות סוכנים אוטונומיים בו-זמנית בלי...</p>
   <sub>📅 Mar 6, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/moonshine/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/Ky2paa7vCprf7M8PseGRsA0.jpg" alt="Moonshine: זיהוי דיבור מהיר פי 5 על מכשירי Edge" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/moonshine/">Moonshine: זיהוי דיבור מהיר פי 5 על מכשירי Edge</a></h3>
-  <p>הריפו Moonshine מאת moonshine-ai הוא ערכת כלים לזיהוי דיבור קוד פתוח שמותאמת לממשקי קול בזמן אמת, מציעה זמן תגובה מתחת ל-200 אלפיות שנייה על מכשירי ed...</p>
-  <sub>📅 Mar 5, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/deer-flow/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/FtynafL-La3skdUPz4Xy2AM.jpg" alt="DeerFlow 2.0: תשתית ההרצה שסוכני AI באמת צריכים" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/deer-flow/">DeerFlow 2.0: תשתית ההרצה שסוכני AI באמת צריכים</a></h3>
-  <p>הריפו DeerFlow 2.0 מאת ByteDance הוא פריימוורק קוד פתוח שמספק תשתית הרצה ברמת פרודקשן לסוכני AI אוטונומיים. הוא נותן לסוכנים סביבות הרצה מבודדות, זיכר...</p>
-  <sub>📅 Mar 4, 2026</sub>
 </td>
 </tr>
 </table>
