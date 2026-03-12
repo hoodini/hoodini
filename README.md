@@ -252,6 +252,14 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/hermes-agent/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/lmeyae3RGZ-tkdUPjuur6Q0.jpg" alt="Hermes Agent: סוכן AI משפר-עצמי עם זיכרון מתמשך" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/hermes-agent/">Hermes Agent: סוכן AI משפר-עצמי עם זיכרון מתמשך</a></h3>
+  <p>הריפו Hermes Agent מאת Nous Research הוא סוכן AI משפר-עצמי עם זיכרון בין-סשן ויכולת יצירת כישורים אוטונומית. הוא פותר את בעיית האמנזיה הבסיסית שפוקדת ...</p>
+  <sub>📅 Mar 12, 2026</sub>
+</td>
+<td width="50%" valign="top">
   <a href="https://blog.yuv.ai/qwen-agent/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/GSCxaariJpC2vdIPmtaH2A8.jpg" alt="Qwen-Agent: פריימוורק ביצוע כלים נטיבי לאפליקציות LLM" style="width:100%; border-radius:8px;">
   </a>
@@ -259,6 +267,8 @@ class YuvalAvidani:
   <p>הריפו Qwen-Agent מאת QwenLM הוא פריימוורק מתקדם לבניית אפליקציות LLM עם יכולות ביצוע כלים, תכנון וזיכרון נטיביות. הוא מספק למפתחים קריאות פונקציות חזק...</p>
   <sub>📅 Mar 11, 2026</sub>
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/agency-agents/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/SRyxafrtNYenkdUP4O2b8Ak.jpg" alt="Agency Agents: הפכו את ה-IDE שלכם לאולפן AI רב-סוכנים" style="width:100%; border-radius:8px;">
@@ -267,8 +277,6 @@ class YuvalAvidani:
   <p>הריפו Agency Agents מאת msitarzewski הוא מערכת שמזריקה 112 פרסונות סוכני AI מתמחות ל-Claude Code, Cursor ו-Aider, והופכת עוזרי קידוד גנריים למומחי דומ...</p>
   <sub>📅 Mar 11, 2026</sub>
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/codebuff/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/p8Svabm3Dbe1vdIPgf3keA.jpg" alt="Codebuff: עוזר קידוד AI רב-סוכני שממש עובד" style="width:100%; border-radius:8px;">
@@ -277,6 +285,8 @@ class YuvalAvidani:
   <p>הריפו Codebuff מאת CodebuffAI הוא עוזר קידוד AI מבוסס multi-agent שעורך קוד דרך הוראות בשפה טבעית. הוא פותר את בעיית מגבלות הקונטקסט של עוזרים חד-מודל...</p>
   <sub>📅 Mar 10, 2026</sub>
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/claude-skills/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/EHWuabeGJJGmkdUP2bq2mQI.jpg" alt="Claude Code Skills: הפוך סוכני AI למומחי תחום" style="width:100%; border-radius:8px;">
@@ -285,8 +295,6 @@ class YuvalAvidani:
   <p>הריפו Claude Code Skills & Plugins מאת Alireza Rezvani הוא ספרייה פתוחה של 169 חבילות הוראות מוכנות לפרודקשן שהופכות עוזרי קידוד AI למומחי תחום מתמחים...</p>
   <sub>📅 Mar 9, 2026</sub>
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
   <a href="https://blog.yuv.ai/gitnexus/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/THOuaZGyIePf7M8P2MSnwAQ.jpg" alt="GitNexus: אינטליגנציה לקוד ללא שרת לסוכני AI שבאמת עובדים" style="width:100%; border-radius:8px;">
@@ -294,14 +302,6 @@ class YuvalAvidani:
   <h3><a href="https://blog.yuv.ai/gitnexus/">GitNexus: אינטליגנציה לקוד ללא שרת לסוכני AI שבאמת עובדים</a></h3>
   <p>הריפו GitNexus מאת abhigyanpatwari הוא מנוע אינטליגנציה לקוד ללא שרת שמאנדקס קודבייס לגרפי ידע כדי שסוכני AI יבינו מבנה, תלויות ושרשראות קריאות. רץ לג...</p>
   <sub>📅 Mar 9, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/superset/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/gn6qaZ_YH9amkdUP5JjyoAI.jpg" alt="Superset: ה-IDE הראשון לתזמור מספר סוכני AI במקביל" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/superset/">Superset: ה-IDE הראשון לתזמור מספר סוכני AI במקביל</a></h3>
-  <p>הריפו Superset מאת superset-sh הוא IDE שבנוי במיוחד לתזמור מספר סוכני AI שרצים במקביל. הוא פותר את הבעיה של ניהול עשרות סוכנים אוטונומיים בו-זמנית בלי...</p>
-  <sub>📅 Mar 6, 2026</sub>
 </td>
 </tr>
 </table>
