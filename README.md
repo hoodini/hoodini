@@ -252,56 +252,56 @@ class YuvalAvidani:
 <table>
 <tr>
 <td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/autonomous-ai-agents-ides/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/tf2zaZinJ9ukkdUPrJjE6Q4.jpg" alt="סוכני AI אוטונומיים ב-IDEs: עתיד הקודינג" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/autonomous-ai-agents-ides/">סוכני AI אוטונומיים ב-IDEs: עתיד הקודינג</a></h3>
+  <p>סוכני AI אוטונומיים ב-IDEs מאת Tech News Editor הם מערכות שמבינות בסיסי קוד שלמים ופותרות באגים ארכיטקטוניים באופן עצמאי, מעבר להשלמה אוטומטית. הם משת...</p>
+  <sub>📅 Mar 13, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/q-star-v3-self-correcting-code-agents/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/S9KzaabKOvXx7M8Py5K0yQM.jpg" alt="Q-Star v3: סוכן AI שמתקן את עצמו ומבטל הזיות בקוד" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/q-star-v3-self-correcting-code-agents/">Q-Star v3: סוכן AI שמתקן את עצמו ומבטל הזיות בקוד</a></h3>
+  <p>הריפו Q-Star v3 מאת Elena Rostova הוא סוכן AI לכתיבת קוד שמתקן את עצמו ומבטל הזיות בייצור קוד מורכב באמצעות ארכיטקטורה neural-symbolic עם בדיקת AST בז...</p>
+  <sub>📅 Mar 13, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/swe-agent-v2/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/QL-zaZbzHIzXvdIPtZfuuQw.jpg" alt="SWE-agent 2.0: הנדסת תוכנה אוטונומית עם AI בקוד פתוח" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/swe-agent-v2/">SWE-agent 2.0: הנדסת תוכנה אוטונומית עם AI בקוד פתוח</a></h3>
+  <p>הריפו SWE-agent 2.0 מאת Princeton NLP Group הוא מערכת AI אוטונומית בקוד פתוח שהופכת מודלי שפה לסוכני תוכנה המסוגלים לפתור באגים אמיתיים ב-GitHub. הוא ...</p>
+  <sub>📅 Mar 13, 2026</sub>
+</td>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/devin-autonomous-ai-software-engineer/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/mryzaZeHCN23nsEPjYTc4AQ.jpg" alt="Devin: מהנדס התוכנה האוטונומי הראשון מסוגו" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/devin-autonomous-ai-software-engineer/">Devin: מהנדס התוכנה האוטונומי הראשון מסוגו</a></h3>
+  <p>הריפו Devin מאת Cognition AI הוא מהנדס תוכנה אוטונומי ראשון מסוגו שמתכנן ומבצע משימות הנדסיות מורכבות הדורשות אלפי החלטות. הוא מטפל בפרויקטים שלמים מה...</p>
+  <sub>📅 Mar 13, 2026</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://blog.yuv.ai/promptfoo/">
+    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/QLmzac_IM8KqkdUPmNm3iQw.jpg" alt="Promptfoo: בדיקות LLM לוקאליות ו-Red-Teaming לפרודקשן" style="width:100%; border-radius:8px;">
+  </a>
+  <h3><a href="https://blog.yuv.ai/promptfoo/">Promptfoo: בדיקות LLM לוקאליות ו-Red-Teaming לפרודקשן</a></h3>
+  <p>הריפו Promptfoo מאת promptfoo הוא סוויטת בדיקות קוד פתוח שמעריכה, מבצעת red-teaming, וסורקת אבטחה של אפליקציות LLM לפני פרודקשן. הכל רץ 100% לוקאלית כ...</p>
+  <sub>📅 Mar 13, 2026</sub>
+</td>
+<td width="50%" valign="top">
   <a href="https://blog.yuv.ai/hermes-agent/">
     <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/lmeyae3RGZ-tkdUPjuur6Q0.jpg" alt="Hermes Agent: סוכן AI משפר-עצמי עם זיכרון מתמשך" style="width:100%; border-radius:8px;">
   </a>
   <h3><a href="https://blog.yuv.ai/hermes-agent/">Hermes Agent: סוכן AI משפר-עצמי עם זיכרון מתמשך</a></h3>
   <p>הריפו Hermes Agent מאת Nous Research הוא סוכן AI משפר-עצמי עם זיכרון בין-סשן ויכולת יצירת כישורים אוטונומית. הוא פותר את בעיית האמנזיה הבסיסית שפוקדת ...</p>
   <sub>📅 Mar 12, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/qwen-agent/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/GSCxaariJpC2vdIPmtaH2A8.jpg" alt="Qwen-Agent: פריימוורק ביצוע כלים נטיבי לאפליקציות LLM" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/qwen-agent/">Qwen-Agent: פריימוורק ביצוע כלים נטיבי לאפליקציות LLM</a></h3>
-  <p>הריפו Qwen-Agent מאת QwenLM הוא פריימוורק מתקדם לבניית אפליקציות LLM עם יכולות ביצוע כלים, תכנון וזיכרון נטיביות. הוא מספק למפתחים קריאות פונקציות חזק...</p>
-  <sub>📅 Mar 11, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/agency-agents/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/SRyxafrtNYenkdUP4O2b8Ak.jpg" alt="Agency Agents: הפכו את ה-IDE שלכם לאולפן AI רב-סוכנים" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/agency-agents/">Agency Agents: הפכו את ה-IDE שלכם לאולפן AI רב-סוכנים</a></h3>
-  <p>הריפו Agency Agents מאת msitarzewski הוא מערכת שמזריקה 112 פרסונות סוכני AI מתמחות ל-Claude Code, Cursor ו-Aider, והופכת עוזרי קידוד גנריים למומחי דומ...</p>
-  <sub>📅 Mar 11, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/codebuff/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/p8Svabm3Dbe1vdIPgf3keA.jpg" alt="Codebuff: עוזר קידוד AI רב-סוכני שממש עובד" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/codebuff/">Codebuff: עוזר קידוד AI רב-סוכני שממש עובד</a></h3>
-  <p>הריפו Codebuff מאת CodebuffAI הוא עוזר קידוד AI מבוסס multi-agent שעורך קוד דרך הוראות בשפה טבעית. הוא פותר את בעיית מגבלות הקונטקסט של עוזרים חד-מודל...</p>
-  <sub>📅 Mar 10, 2026</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/claude-skills/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/EHWuabeGJJGmkdUP2bq2mQI.jpg" alt="Claude Code Skills: הפוך סוכני AI למומחי תחום" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/claude-skills/">Claude Code Skills: הפוך סוכני AI למומחי תחום</a></h3>
-  <p>הריפו Claude Code Skills & Plugins מאת Alireza Rezvani הוא ספרייה פתוחה של 169 חבילות הוראות מוכנות לפרודקשן שהופכות עוזרי קידוד AI למומחי תחום מתמחים...</p>
-  <sub>📅 Mar 9, 2026</sub>
-</td>
-<td width="50%" valign="top">
-  <a href="https://blog.yuv.ai/gitnexus/">
-    <img src="https://yuv-ai-images.s3.us-west-2.amazonaws.com/THOuaZGyIePf7M8P2MSnwAQ.jpg" alt="GitNexus: אינטליגנציה לקוד ללא שרת לסוכני AI שבאמת עובדים" style="width:100%; border-radius:8px;">
-  </a>
-  <h3><a href="https://blog.yuv.ai/gitnexus/">GitNexus: אינטליגנציה לקוד ללא שרת לסוכני AI שבאמת עובדים</a></h3>
-  <p>הריפו GitNexus מאת abhigyanpatwari הוא מנוע אינטליגנציה לקוד ללא שרת שמאנדקס קודבייס לגרפי ידע כדי שסוכני AI יבינו מבנה, תלויות ושרשראות קריאות. רץ לג...</p>
-  <sub>📅 Mar 9, 2026</sub>
 </td>
 </tr>
 </table>
