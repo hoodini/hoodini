@@ -39,17 +39,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 141
+- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 142
+- 💙 **[yuv-ai-nextjs-boilerplate](https://github.com/hoodini/yuv-ai-nextjs-boilerplate)** - A clean Next.js boilerplate with Clerk, Tailwind CSS, and shadcn/ui ⭐ 18
+- 💙 **[yuv-nextjs-boilerplate](https://github.com/hoodini/yuv-nextjs-boilerplate)** - A clean, minimal NextJS boilerplate with Clerk, MongoDB, Tailwind and Shadcn UI ⭐ 2
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 3
 - 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 99
-- 💙 **[whatsapp-public-logan](https://github.com/hoodini/whatsapp-public-logan)** - Open-source WhatsApp bot with AI capabilities - Logan by YUV.AI ⭐ 56
-- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 4
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-03-28 00:23:25 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-03-29 00:26:31 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
