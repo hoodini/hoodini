@@ -39,17 +39,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 149
+- 💙 **[ai-agents-101](https://github.com/hoodini/ai-agents-101)** - AI Agents 101 - Interactive Training Platform for building production-ready AI agents ⭐ 8
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 3
+- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 149
 - 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 100
 - 💙 **[yuv-ai-nextjs-boilerplate](https://github.com/hoodini/yuv-ai-nextjs-boilerplate)** - A clean Next.js boilerplate with Clerk, Tailwind CSS, and shadcn/ui ⭐ 18
-- 💙 **[yuv-nextjs-boilerplate](https://github.com/hoodini/yuv-nextjs-boilerplate)** - A clean, minimal NextJS boilerplate with Clerk, MongoDB, Tailwind and Shadcn UI ⭐ 2
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-04-02 00:24:00 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-04-03 00:25:30 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
