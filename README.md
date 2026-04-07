@@ -39,17 +39,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 🐍 **[blitzai](https://github.com/hoodini/blitzai)** - קול — Professional Transcription Studio. Hebrew-first, 4 engines, YouTube support, correction studio. ⭐ 58
-- 💙 **[whatsapp-public-logan](https://github.com/hoodini/whatsapp-public-logan)** - Open-source WhatsApp bot with AI capabilities - Logan by YUV.AI ⭐ 57
-- 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 101
-- 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 4
-- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 151
+- 🐍 **[blitzai](https://github.com/hoodini/blitzai)** - קול — Professional Transcription Studio. Hebrew-first, 4 engines, YouTube support, correction studio. ⭐ 68
+- 💙 **[ncm-bp](https://github.com/hoodini/ncm-bp)** - None ⭐ 29
+- 💙 **[yuv-ai-nextjs-boilerplate](https://github.com/hoodini/yuv-ai-nextjs-boilerplate)** - A clean Next.js boilerplate with Clerk, Tailwind CSS, and shadcn/ui ⭐ 17
+- 💙 **[nextjs-bun-starter](https://github.com/hoodini/nextjs-bun-starter)** - The ultimate Next.js starter kit with Bun, Shadcn/ui, Tailwind CSS, and Google Authentication. Production-ready boilerplate that ships faster. ⭐ 19
+- 💙 **[ai-agents-101](https://github.com/hoodini/ai-agents-101)** - AI Agents 101 - Interactive Training Platform for building production-ready AI agents ⭐ 7
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-04-06 00:26:41 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-04-07 00:26:15 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
