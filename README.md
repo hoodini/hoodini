@@ -15,7 +15,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <img src="https://img.shields.io/badge/Repos-128-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-259-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-260-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -39,17 +39,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 🐍 **[blitzai](https://github.com/hoodini/blitzai)** - קול — Professional Transcription Studio. Hebrew-first, 4 engines, YouTube support, correction studio. ⭐ 68
-- 💙 **[ncm-bp](https://github.com/hoodini/ncm-bp)** - None ⭐ 29
-- 💙 **[yuv-ai-nextjs-boilerplate](https://github.com/hoodini/yuv-ai-nextjs-boilerplate)** - A clean Next.js boilerplate with Clerk, Tailwind CSS, and shadcn/ui ⭐ 17
-- 💙 **[nextjs-bun-starter](https://github.com/hoodini/nextjs-bun-starter)** - The ultimate Next.js starter kit with Bun, Shadcn/ui, Tailwind CSS, and Google Authentication. Production-ready boilerplate that ships faster. ⭐ 19
-- 💙 **[ai-agents-101](https://github.com/hoodini/ai-agents-101)** - AI Agents 101 - Interactive Training Platform for building production-ready AI agents ⭐ 7
+- 💙 **[whatsapp-public-logan](https://github.com/hoodini/whatsapp-public-logan)** - Open-source WhatsApp bot with AI capabilities - Logan by YUV.AI ⭐ 59
+- 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 100
+- 🐍 **[blitzai](https://github.com/hoodini/blitzai)** - קול — Professional Transcription Studio. Hebrew-first, 4 engines, YouTube support, correction studio. ⭐ 74
+- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 152
+- 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 4
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-04-07 00:26:15 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-04-08 00:27:17 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
