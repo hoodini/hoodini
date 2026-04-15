@@ -39,17 +39,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
+- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 162
+- 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 4
 - 🐍 **[blitzai](https://github.com/hoodini/blitzai)** - קול — Professional Transcription Studio. Hebrew-first, 4 engines, YouTube support, correction studio. ⭐ 81
 - 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 34
 - 🐍 **[autocap](https://github.com/hoodini/autocap)** - 🤖 AI-Powered Image Captioning for LoRA Training using Florence-2 - Created by Yuval Avidani ⭐ 6
-- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 160
-- 🐍 **[groq-agent](https://github.com/hoodini/groq-agent)** - AI Agent powered by Groq, LangChain & LangGraph with web search and Hebrew RTL support ⭐ 3
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-04-14 00:31:29 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-04-15 00:31:48 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
