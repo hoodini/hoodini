@@ -39,9 +39,9 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 168
-- 🐍 **[news-claude](https://github.com/hoodini/news-claude)** - None ⭐ 1
+- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 170
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 4
+- 🐍 **[news-claude](https://github.com/hoodini/news-claude)** - None ⭐ 1
 - 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 35
 - 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 101
 
@@ -49,7 +49,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-04-17 00:30:27 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-04-18 00:27:22 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
