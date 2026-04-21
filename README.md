@@ -39,17 +39,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 🐍 **[autocap](https://github.com/hoodini/autocap)** - 🤖 AI-Powered Image Captioning for LoRA Training using Florence-2 - Created by Yuval Avidani ⭐ 6
+- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 171
+- 🐍 **[heretic](https://github.com/hoodini/heretic)** - Fully automatic censorship removal for language models ⭐ 3
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 5
-- 📦 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 170
+- 🐍 **[autocap](https://github.com/hoodini/autocap)** - 🤖 AI-Powered Image Captioning for LoRA Training using Florence-2 - Created by Yuval Avidani ⭐ 6
 - 🐍 **[news-claude](https://github.com/hoodini/news-claude)** - None ⭐ 1
-- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 35
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-04-20 00:29:38 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-04-21 00:30:44 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
