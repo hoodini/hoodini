@@ -15,7 +15,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <img src="https://img.shields.io/badge/Repos-129-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-280-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-282-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -29,9 +29,9 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
+- 📝 Pushed 0 commit(s) to [hoodini/effects-yuv-ai](https://github.com/hoodini/effects-yuv-ai) - Apr 27
 - 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Apr 26
 - 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Apr 26
-- 📝 Pushed 0 commit(s) to [hoodini/effects-yuv-ai](https://github.com/hoodini/effects-yuv-ai) - Apr 26
 - 📝 Pushed 0 commit(s) to [hoodini/effects-yuv-ai](https://github.com/hoodini/effects-yuv-ai) - Apr 26
 - 📝 Pushed 0 commit(s) to [hoodini/effects-yuv-ai](https://github.com/hoodini/effects-yuv-ai) - Apr 26
 
@@ -39,17 +39,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 6
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 190
+- 📦 **[agentcore-cohere-samples](https://github.com/hoodini/agentcore-cohere-samples)** - Amazon AgentCore Samples migrated to use Cohere LLM via Strands Agents SDK - Open source community-driven agentic framework ⭐ 1
 - 📦 **[effects-yuv-ai](https://github.com/hoodini/effects-yuv-ai)** - Visual effects catalog for hyperframes + video-use + yuv-viral-video — live at effects.yuv.ai
-- 💙 **[whatsapp-public-logan](https://github.com/hoodini/whatsapp-public-logan)** - Open-source WhatsApp bot with AI capabilities - Logan by YUV.AI ⭐ 70
-- 🐍 **[hitl-strands-labs](https://github.com/hoodini/hitl-strands-labs)** -  AWS Strands Agents Human-in-the-Loop (HITL) Labs - Practical examples with Mermaid diagrams ⭐ 6
+- 💙 **[whatsapp-public-logan](https://github.com/hoodini/whatsapp-public-logan)** - Open-source WhatsApp bot with AI capabilities - Logan by YUV.AI ⭐ 71
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 192
+- 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 6
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-04-27 00:32:11 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-04-28 00:35:06 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
