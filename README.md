@@ -39,17 +39,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 194
+- 💙 **[whatsapp-public-logan](https://github.com/hoodini/whatsapp-public-logan)** - Open-source WhatsApp bot with AI capabilities - Logan by YUV.AI ⭐ 72
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 195
+- 🐍 **[blitzai](https://github.com/hoodini/blitzai)** - קול — Professional Transcription Studio. Hebrew-first, 4 engines, YouTube support, correction studio. ⭐ 83
+- 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 6
 - 🐍 **[elevenlabs-mcp](https://github.com/hoodini/elevenlabs-mcp)** - Extending The official ElevenLabs MCP server to add Agentic Calls ⭐ 7
-- 💙 **[ai-agents-101](https://github.com/hoodini/ai-agents-101)** - AI Agents 101 - Interactive Training Platform for building production-ready AI agents ⭐ 8
-- 💙 **[logan](https://github.com/hoodini/logan)** - Logan, the AI Coding Agent. Based on OpenCode, modified by Yuval Avidani (YUV.AI) ⭐ 5
-- 📦 **[copilot-sdk-terminal-agent](https://github.com/hoodini/copilot-sdk-terminal-agent)** - AI-powered terminal command execution agent using GitHub Copilot SDK ⭐ 7
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-04-29 00:36:21 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-04-30 00:35:57 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
