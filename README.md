@@ -39,17 +39,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 196
+- 🐍 **[blitzai](https://github.com/hoodini/blitzai)** - קול — Professional Transcription Studio. Hebrew-first, 4 engines, YouTube support, correction studio. ⭐ 85
+- 💙 **[whatsapp-public-logan](https://github.com/hoodini/whatsapp-public-logan)** - Open-source WhatsApp bot with AI capabilities - Logan by YUV.AI ⭐ 73
+- 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 102
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 197
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 6
-- 💙 **[whatsapp-public-logan](https://github.com/hoodini/whatsapp-public-logan)** - Open-source WhatsApp bot with AI capabilities - Logan by YUV.AI ⭐ 72
-- 🐍 **[blitzai](https://github.com/hoodini/blitzai)** - קול — Professional Transcription Studio. Hebrew-first, 4 engines, YouTube support, correction studio. ⭐ 83
-- 🐍 **[elevenlabs-mcp](https://github.com/hoodini/elevenlabs-mcp)** - Extending The official ElevenLabs MCP server to add Agentic Calls ⭐ 7
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-05-01 00:37:58 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-05-02 00:34:55 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
