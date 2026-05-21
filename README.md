@@ -38,7 +38,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 210
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 211
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 8
 - 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 6
 - 🐍 **[extensions-detection](https://github.com/hoodini/extensions-detection)** - This repository contains a Python script that scans a user's local machine to find installed extensions on Google Chrome and Microsoft Edge browsers. It outputs the findings in both the console, in a structured tabular format, and a CSV file. ⭐ 3
@@ -48,7 +48,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-05-20 00:43:33 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-05-21 00:42:59 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
