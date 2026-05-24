@@ -38,17 +38,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
+- 💙 **[llm-visuals](https://github.com/hoodini/llm-visuals)** - None ⭐ 9
+- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 7
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 8
 - 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 211
-- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 6
 - 🐍 **[extensions-detection](https://github.com/hoodini/extensions-detection)** - This repository contains a Python script that scans a user's local machine to find installed extensions on Google Chrome and Microsoft Edge browsers. It outputs the findings in both the console, in a structured tabular format, and a CSV file. ⭐ 3
-- 💙 **[nextjs-bun-starter](https://github.com/hoodini/nextjs-bun-starter)** - The ultimate Next.js starter kit with Bun, Shadcn/ui, Tailwind CSS, and Google Authentication. Production-ready boilerplate that ships faster. ⭐ 20
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-05-23 00:40:20 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-05-24 00:41:05 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
