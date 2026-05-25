@@ -12,7 +12,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <table>
 <tr>
 <td align="center">
-<img src="https://img.shields.io/badge/Repos-129-blue?style=for-the-badge&logo=github" alt="Repositories">
+<img src="https://img.shields.io/badge/Repos-130-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Followers-295-blue?style=for-the-badge&logo=github" alt="Followers">
@@ -29,26 +29,27 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - May 19
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - May 19
-- 📝 Pushed 0 commit(s) to [kriptoburak/ai-agents-skills](https://github.com/kriptoburak/ai-agents-skills) - May 19
-- 📝 Pushed 0 commit(s) to [hoodini/3d-extracter](https://github.com/hoodini/3d-extracter) - May 15
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - May 24
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - May 24
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - May 24
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - May 24
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - May 24
 
 
 
 ### ⭐ Featured Repositories
 
-- 💙 **[llm-visuals](https://github.com/hoodini/llm-visuals)** - None ⭐ 9
-- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 7
+- 📦 **[parasites](https://github.com/hoodini/parasites)** - MOVED → https://github.com/hoodini/ai-agents-skills/tree/master/examples/parasites — this content now lives inside the ai-agents-skills repo as a bundled example of the parallax-landing-page skill. ⭐ 1
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 212
+- 🐍 **[blitzai](https://github.com/hoodini/blitzai)** - קול — Professional Transcription Studio. Hebrew-first, 4 engines, YouTube support, correction studio. ⭐ 86
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 8
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 211
-- 🐍 **[extensions-detection](https://github.com/hoodini/extensions-detection)** - This repository contains a Python script that scans a user's local machine to find installed extensions on Google Chrome and Microsoft Edge browsers. It outputs the findings in both the console, in a structured tabular format, and a CSV file. ⭐ 3
+- 💙 **[llm-visuals](https://github.com/hoodini/llm-visuals)** - None ⭐ 9
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-05-24 00:41:05 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-05-25 00:42:23 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
