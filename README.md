@@ -12,7 +12,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <table>
 <tr>
 <td align="center">
-<img src="https://img.shields.io/badge/Repos-130-blue?style=for-the-badge&logo=github" alt="Repositories">
+<img src="https://img.shields.io/badge/Repos-131-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Followers-299-blue?style=for-the-badge&logo=github" alt="Followers">
@@ -29,26 +29,27 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - May 27
-- ✨ Created branch in [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - May 27
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - May 26
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - May 26
+- 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 28
+- 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 28
+- 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 28
+- 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 28
+- 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 28
 
 
 
 ### ⭐ Featured Repositories
 
+- 💙 **[model-lab](https://github.com/hoodini/model-lab)** - None
+- 🐍 **[autocap](https://github.com/hoodini/autocap)** - 🤖 AI-Powered Image Captioning for LoRA Training using Florence-2 - Created by Yuval Avidani ⭐ 7
+- 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 8
 - 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 215
 - 📦 **[parasites](https://github.com/hoodini/parasites)** - MOVED → https://github.com/hoodini/ai-agents-skills/tree/master/examples/parasites — this content now lives inside the ai-agents-skills repo as a bundled example of the parallax-landing-page skill. ⭐ 2
-- 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 8
-- 💛 **[yuv-python-terminal](https://github.com/hoodini/yuv-python-terminal)** - 🐍 Execute Python code in your browser using WebAssembly - YUV.PYTHON Terminal by Yuval Avidani ⭐ 6
-- 🐍 **[blitzai](https://github.com/hoodini/blitzai)** - קול — Professional Transcription Studio. Hebrew-first, 4 engines, YouTube support, correction studio. ⭐ 86
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-05-28 00:38:41 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-05-29 00:45:05 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
