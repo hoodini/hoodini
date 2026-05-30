@@ -15,7 +15,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <img src="https://img.shields.io/badge/Repos-131-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-299-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-301-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -29,19 +29,19 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
-- 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 28
-- 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 28
-- 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 28
-- 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 28
-- 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 28
+- 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 29
+- 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 29
+- 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 29
+- 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 29
+- 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 29
 
 
 
 ### ⭐ Featured Repositories
 
-- 💙 **[model-lab](https://github.com/hoodini/model-lab)** - None
-- 🐍 **[autocap](https://github.com/hoodini/autocap)** - 🤖 AI-Powered Image Captioning for LoRA Training using Florence-2 - Created by Yuval Avidani ⭐ 7
+- 💙 **[model-lab](https://github.com/hoodini/model-lab)** - None ⭐ 1
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 8
+- 🐍 **[autocap](https://github.com/hoodini/autocap)** - 🤖 AI-Powered Image Captioning for LoRA Training using Florence-2 - Created by Yuval Avidani ⭐ 7
 - 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 215
 - 📦 **[parasites](https://github.com/hoodini/parasites)** - MOVED → https://github.com/hoodini/ai-agents-skills/tree/master/examples/parasites — this content now lives inside the ai-agents-skills repo as a bundled example of the parallax-landing-page skill. ⭐ 2
 
@@ -49,7 +49,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-05-29 00:45:05 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-05-30 00:41:23 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
