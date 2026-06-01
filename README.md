@@ -39,17 +39,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
+- 💙 **[ai-agents-101](https://github.com/hoodini/ai-agents-101)** - AI Agents 101 - Interactive Training Platform for building production-ready AI agents ⭐ 9
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 8
 - 💙 **[model-lab](https://github.com/hoodini/model-lab)** - None ⭐ 1
 - 🐍 **[autocap](https://github.com/hoodini/autocap)** - 🤖 AI-Powered Image Captioning for LoRA Training using Florence-2 - Created by Yuval Avidani ⭐ 7
 - 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 215
-- 📦 **[parasites](https://github.com/hoodini/parasites)** - MOVED → https://github.com/hoodini/ai-agents-skills/tree/master/examples/parasites — this content now lives inside the ai-agents-skills repo as a bundled example of the parallax-landing-page skill. ⭐ 2
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-05-31 00:44:20 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-06-01 00:46:20 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
