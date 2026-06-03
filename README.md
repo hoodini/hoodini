@@ -12,7 +12,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <table>
 <tr>
 <td align="center">
-<img src="https://img.shields.io/badge/Repos-131-blue?style=for-the-badge&logo=github" alt="Repositories">
+<img src="https://img.shields.io/badge/Repos-132-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Followers-301-blue?style=for-the-badge&logo=github" alt="Followers">
@@ -29,27 +29,27 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
-- 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 29
-- 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 29
-- 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 29
-- 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 29
+- 📝 Pushed 0 commit(s) to [hoodini/local-ai-stack-101](https://github.com/hoodini/local-ai-stack-101) - Jun 02
+- 📝 Pushed 0 commit(s) to [hoodini/local-ai-stack-101](https://github.com/hoodini/local-ai-stack-101) - Jun 02
+- 📝 Pushed 0 commit(s) to [hoodini/local-ai-stack-101](https://github.com/hoodini/local-ai-stack-101) - Jun 02
+- ✨ Created branch in [hoodini/local-ai-stack-101](https://github.com/hoodini/local-ai-stack-101) - Jun 02
 - 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 29
 
 
 
 ### ⭐ Featured Repositories
 
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 216
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 218
+- 📦 **[local-ai-stack-101](https://github.com/hoodini/local-ai-stack-101)** - The 101 for a fully-local, observable AI coding stack: coding agent → LiteLLM gateway → local model (vLLM / LM Studio), with Langfuse traces.
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 8
 - 💙 **[ai-agents-101](https://github.com/hoodini/ai-agents-101)** - AI Agents 101 - Interactive Training Platform for building production-ready AI agents ⭐ 9
 - 💙 **[model-lab](https://github.com/hoodini/model-lab)** - None ⭐ 1
-- 🐍 **[autocap](https://github.com/hoodini/autocap)** - 🤖 AI-Powered Image Captioning for LoRA Training using Florence-2 - Created by Yuval Avidani ⭐ 7
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-06-02 00:47:33 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-06-03 00:52:54 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
