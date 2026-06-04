@@ -39,17 +39,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 218
-- 📦 **[local-ai-stack-101](https://github.com/hoodini/local-ai-stack-101)** - The 101 for a fully-local, observable AI coding stack: coding agent → LiteLLM gateway → local model (vLLM / LM Studio), with Langfuse traces.
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 8
+- 💛 **[SocialBooster](https://github.com/hoodini/SocialBooster)** - None ⭐ 4
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 219
+- 📦 **[local-ai-stack-101](https://github.com/hoodini/local-ai-stack-101)** - The 101 for a fully-local, observable AI coding stack: coding agent → LiteLLM gateway → local model (vLLM / LM Studio), with Langfuse traces.
 - 💙 **[ai-agents-101](https://github.com/hoodini/ai-agents-101)** - AI Agents 101 - Interactive Training Platform for building production-ready AI agents ⭐ 9
-- 💙 **[model-lab](https://github.com/hoodini/model-lab)** - None ⭐ 1
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-06-03 00:52:54 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-06-04 00:52:39 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
