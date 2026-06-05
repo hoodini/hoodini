@@ -12,7 +12,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <table>
 <tr>
 <td align="center">
-<img src="https://img.shields.io/badge/Repos-132-blue?style=for-the-badge&logo=github" alt="Repositories">
+<img src="https://img.shields.io/badge/Repos-133-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Followers-301-blue?style=for-the-badge&logo=github" alt="Followers">
@@ -29,27 +29,27 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
+- 📝 Pushed 0 commit(s) to [hoodini/tuning-numbers](https://github.com/hoodini/tuning-numbers) - Jun 04
+- ✨ Created branch in [hoodini/tuning-numbers](https://github.com/hoodini/tuning-numbers) - Jun 04
 - 📝 Pushed 0 commit(s) to [hoodini/local-ai-stack-101](https://github.com/hoodini/local-ai-stack-101) - Jun 02
 - 📝 Pushed 0 commit(s) to [hoodini/local-ai-stack-101](https://github.com/hoodini/local-ai-stack-101) - Jun 02
 - 📝 Pushed 0 commit(s) to [hoodini/local-ai-stack-101](https://github.com/hoodini/local-ai-stack-101) - Jun 02
-- ✨ Created branch in [hoodini/local-ai-stack-101](https://github.com/hoodini/local-ai-stack-101) - Jun 02
-- 📝 Pushed 0 commit(s) to [hoodini/model-lab](https://github.com/hoodini/model-lab) - May 29
 
 
 
 ### ⭐ Featured Repositories
 
+- 💙 **[tuning-numbers](https://github.com/hoodini/tuning-numbers)** - Training is just tuning numbers — a scroll-driven, hands-on lesson on how neural networks train, and how the same gradient descent scales to an LLM. Real, gradient-checked math in the browser. ⭐ 2
+- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 36
+- 💙 **[model-lab](https://github.com/hoodini/model-lab)** - None ⭐ 3
+- 📦 **[local-ai-stack-101](https://github.com/hoodini/local-ai-stack-101)** - The 101 for a fully-local, observable AI coding stack: coding agent → LiteLLM gateway → local model (vLLM / LM Studio), with Langfuse traces. ⭐ 1
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 8
-- 💛 **[SocialBooster](https://github.com/hoodini/SocialBooster)** - None ⭐ 4
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 219
-- 📦 **[local-ai-stack-101](https://github.com/hoodini/local-ai-stack-101)** - The 101 for a fully-local, observable AI coding stack: coding agent → LiteLLM gateway → local model (vLLM / LM Studio), with Langfuse traces.
-- 💙 **[ai-agents-101](https://github.com/hoodini/ai-agents-101)** - AI Agents 101 - Interactive Training Platform for building production-ready AI agents ⭐ 9
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-06-04 00:52:39 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-06-05 00:45:26 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
