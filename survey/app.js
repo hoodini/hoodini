@@ -490,7 +490,15 @@
 
     let url = CONFIG.formEndpoint;
     let opts;
-    if (CONFIG.endpointType === "formspree") {
+    if (CONFIG.endpointType === "netlify") {
+      // Netlify Forms — url-encoded POST to the static form named "survey".
+      const body = new URLSearchParams();
+      body.set("form-name", "survey");
+      body.set("payload", JSON.stringify(payload));
+      if (payload.contact_email) body.set("email", payload.contact_email);
+      if (payload.contact_name) body.set("name", payload.contact_name);
+      opts = { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body.toString() };
+    } else if (CONFIG.endpointType === "formspree") {
       opts = { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(payload) };
     } else if (CONFIG.endpointType === "gas") {
       // Google Apps Script web app — text/plain avoids CORS preflight

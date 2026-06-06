@@ -10,14 +10,15 @@ const CONFIG = {
   accent2: "#22d3ee",       // צבע משני (גרדיאנט)
 
   /* ---- איסוף תשובות ----
-   * שלוש דרכים נתמכות. ראו survey/README.md להוראות מלאות.
-   *   endpointType: "formspree" | "gas" | "generic" | ""(דמו)
-   *   formEndpoint: כתובת ה־URL לשליחת התשובות.
-   * אם משאירים formEndpoint ריק — הסקר רץ ב"מצב דמו": התשובות נשמרות
-   * מקומית בדפדפן (localStorage) וניתן לייצא אותן ל־CSV דרך עמוד #admin.
+   * דרכים נתמכות. ראו survey/README.md להוראות מלאות.
+   *   endpointType: "netlify" | "formspree" | "gas" | "generic" | ""(דמו)
+   *   formEndpoint: כתובת ה־URL לשליחת התשובות (ל-netlify זה "/").
+   * ברירת המחדל היא Netlify Forms — כשהאתר מתארח ב-Netlify התשובות נאספות
+   * אוטומטית בלוח הבקרה, בלי שרת. בהרצה מקומית (file/localhost) השליחה
+   * פשוט תיכשל בשקט והתשובה תישמר מקומית (גיבוי + ייצוא CSV דרך #admin).
    */
-  endpointType: "",
-  formEndpoint: "",
+  endpointType: "netlify",
+  formEndpoint: "/",
 
   /* ---- הקורס (מוצג בסיום למי שהשלים את הסקר) ---- */
   course: {

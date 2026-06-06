@@ -1,0 +1,7 @@
+# Netlify configuration for the YUV.AI survey
+# Static site — no build step. The survey lives in survey/ and is served at the root.
+[build]
+  publish = "survey"
+  command = ""
+
+# Forms are detected from the static <form name="survey"> in survey/index.html.

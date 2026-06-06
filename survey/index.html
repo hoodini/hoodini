@@ -24,6 +24,17 @@
     <div id="stage"></div>
   </main>
 
+  <!-- טופס סטטי מוסתר לזיהוי Netlify Forms. כך התשובות נאספות אוטומטית
+       בלוח הבקרה של Netlify, בלי שרת. כל התשובות נשלחות כ-JSON בשדה payload;
+       email/name נשמרים גם בנפרד לנוחות ייצוא. -->
+  <form name="survey" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="survey" />
+    <input type="text" name="bot-field" />
+    <input type="text" name="payload" />
+    <input type="email" name="email" />
+    <input type="text" name="name" />
+  </form>
+
   <button id="back" aria-label="חזרה">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
     חזרה
