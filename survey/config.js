@@ -152,6 +152,24 @@ const QUESTIONS = [
       { value: "templates", label: "ספריית תבניות וקוד מוכן לשימוש", emoji: "📦" },
     ],
   },
+  {
+    type: "single",
+    id: "platform",
+    title: "על איזו פלטפורמה הכי היית רוצה שהקהילה תתנהל?",
+    subtitle: "איפה יהיה לך הכי נוח להיות חלק מהקהילה",
+    required: true,
+    allowOther: true,
+    options: [
+      { value: "whatsapp", label: "וואטסאפ", emoji: "🟢" },
+      { value: "telegram", label: "טלגרם", emoji: "✈️" },
+      { value: "discord", label: "דיסקורד", emoji: "🎮" },
+      { value: "slack", label: "סלאק", emoji: "💼" },
+      { value: "facebook", label: "קבוצת פייסבוק", emoji: "📘" },
+      { value: "forum", label: "פורום / פלטפורמה ייעודית באתר (Skool/Circle וכו')", emoji: "🌐" },
+      { value: "app", label: "אפליקציה ייעודית", emoji: "📱" },
+      { value: "nopref", label: "אין לי העדפה — מה שיהיה הכי טוב", emoji: "🤷" },
+    ],
+  },
 
   /* ---------- קהילות בתשלום היום ---------- */
   {

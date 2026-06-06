@@ -398,6 +398,23 @@ p.sub {
 #admin-view th, #admin-view td { border: 1px solid var(--line); padding: 8px; text-align: right; vertical-align: top; }
 #admin-view th { background: var(--bg-soft); position: sticky; top: 0; }
 
+/* ---------- keyboard focus (a11y) ---------- */
+.opt:focus-visible,
+.scale button:focus-visible,
+.btn:focus-visible,
+#back:focus-visible,
+.copy-btn:focus-visible,
+.text-input:focus-visible,
+.text-area:focus-visible,
+.field input:focus-visible,
+.other-input:focus-visible {
+  outline: 3px solid var(--accent2);
+  outline-offset: 2px;
+  border-color: var(--accent);
+}
+/* keep the accent ring on selected option cards even while focused */
+.opt.selected:focus-visible { outline-color: #fff; }
+
 @media (max-width: 540px) {
   #stage { padding: 76px 18px 110px; }
   .opt { font-size: 16px; padding: 14px 15px; }

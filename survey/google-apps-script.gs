@@ -18,7 +18,11 @@
  */
 
 function doPost(e) {
+  // נעילה כדי שבקשות מקבילות לא ידרסו כותרות/שורות זו את זו
+  var lock = LockService.getScriptLock();
   try {
+    lock.waitLock(30000); // עד 30 שניות המתנה לנעילה
+
     var data = JSON.parse(e.postData.contents);
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
 
@@ -40,6 +44,7 @@ function doPost(e) {
 
     var row = headers.map(function (h) { return data[h] != null ? data[h] : ""; });
     sheet.appendRow(row);
+    SpreadsheetApp.flush();
 
     return ContentService
       .createTextOutput(JSON.stringify({ ok: true }))
@@ -48,6 +53,8 @@ function doPost(e) {
     return ContentService
       .createTextOutput(JSON.stringify({ ok: false, error: String(err) }))
       .setMimeType(ContentService.MimeType.JSON);
+  } finally {
+    try { lock.releaseLock(); } catch (e2) {}
   }
 }
 
