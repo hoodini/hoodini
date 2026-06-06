@@ -15,7 +15,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <img src="https://img.shields.io/badge/Repos-133-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-301-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-300-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -39,17 +39,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 💙 **[tuning-numbers](https://github.com/hoodini/tuning-numbers)** - Training is just tuning numbers — a scroll-driven, hands-on lesson on how neural networks train, and how the same gradient descent scales to an LLM. Real, gradient-checked math in the browser. ⭐ 2
-- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 36
-- 💙 **[model-lab](https://github.com/hoodini/model-lab)** - None ⭐ 3
-- 📦 **[local-ai-stack-101](https://github.com/hoodini/local-ai-stack-101)** - The 101 for a fully-local, observable AI coding stack: coding agent → LiteLLM gateway → local model (vLLM / LM Studio), with Langfuse traces. ⭐ 1
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 219
+- 📦 **[effects-yuv-ai](https://github.com/hoodini/effects-yuv-ai)** - Visual effects catalog for hyperframes + video-use + yuv-viral-video — live at effects.yuv.ai ⭐ 2
+- 💙 **[virtual-typewriter](https://github.com/hoodini/virtual-typewriter)** - An immersive virtual typewriter web application simulating a 1960s mechanical typewriter ⭐ 2
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 8
+- 💙 **[tuning-numbers](https://github.com/hoodini/tuning-numbers)** - Training is just tuning numbers — a scroll-driven, hands-on lesson on how neural networks train, and how the same gradient descent scales to an LLM. Real, gradient-checked math in the browser. ⭐ 2
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-06-05 00:45:26 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-06-06 00:42:45 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
