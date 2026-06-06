@@ -29,7 +29,8 @@ python3 -m http.server 8000
 1. **פתיחה** + הצגת המתנה בסיום.
 2. **מי אתם** — תפקיד ורמת מעורבות ב-AI (פילוח המשיבים).
 3. **הלב** — מה הכי היה גורם לך להצטרף, באילו נושאים להתמקד (מבוסס הנישה שלך:
-   הרצת LLM לוקאלית, fine-tuning, תשתית מאובטחת, סוכנים, RAG...), ובאיזה פורמט.
+   הרצת LLM לוקאלית, fine-tuning, תשתית מאובטחת, סוכנים, RAG...), באיזה פורמט,
+   ועל איזו **פלטפורמה** (וואטסאפ / טלגרם / דיסקורד / סלאק / פייסבוק / פורום ייעודי).
 4. **קהילות בתשלום היום** — האם חבר, באילו, מה הכי טוב שם, מה חסר/חיסרון
    (עם הסתעפות: למי שלא חבר נשאלת שאלה אחרת).
 5. **נכונות לשלם** — כמה לחודש + מודל תשלום מועדף.
@@ -53,37 +54,42 @@ course: {
 }
 ```
 
-## איסוף התשובות — 3 אפשרויות
+## איסוף התשובות
 
 הגדירו ב-`config.js` את `endpointType` ואת `formEndpoint`.
 
-### א. מצב דמו (ברירת מחדל)
-`formEndpoint` ריק. התשובות נשמרות מקומית בדפדפן בלבד. נוח לבדיקה.
-צפייה וייצוא ל-CSV: היכנסו ל-`index.html#admin`.
+### א. Netlify Forms (ברירת המחדל) — `endpointType: "netlify"`
+כשהאתר מתארח ב-Netlify, התשובות נאספות **אוטומטית** בלוח הבקרה
+(`Forms → survey`) בלי שום שרת. הזיהוי מתבסס על ה-`<form name="survey">`
+המוסתר ב-`index.html`. כל תשובה נשמרת כ-JSON בשדה `payload`, ובנוסף
+`email`/`name` נשמרים בנפרד לנוחות. ייצוא ל-CSV זמין ישירות מ-Netlify.
 
-### ב. Google Sheets (מומלץ, חינמי) — `endpointType: "gas"`
+### ב. Google Sheets (חינמי) — `endpointType: "gas"`
 1. צרו Google Sheet → `Extensions → Apps Script`.
 2. הדביקו את `google-apps-script.gs`, ועשו `Deploy → Web app`
    (Execute as: Me, Access: Anyone).
-3. הדביקו את ה-URL שמסתיים ב-`/exec` ל-`formEndpoint`.
-   כל משיב נכתב כשורה חדשה, עם עמודות אוטומטיות.
+3. הדביקו את ה-URL שמסתיים ב-`/exec` ל-`formEndpoint` והגדירו `endpointType: "gas"`.
 
 ### ג. Formspree — `endpointType: "formspree"`
-פתחו טופס ב-[formspree.io](https://formspree.io), והדביקו את כתובת ה-endpoint
+פתחו טופס ב-[formspree.io](https://formspree.io), הדביקו את כתובת ה-endpoint
 (`https://formspree.io/f/xxxx`) ל-`formEndpoint`.
 
-> בכל המצבים נשמר עותק מקומי כגיבוי, וניתן לייצא אותו דרך `#admin`.
+### ד. מצב דמו — `endpointType: ""`
+התשובות נשמרות מקומית בדפדפן בלבד. נוח לבדיקה.
 
-## פרסום (GitHub Pages)
+> בכל המצבים נשמר עותק מקומי כגיבוי, וניתן לצפות/לייצא ל-CSV דרך `index.html#admin`.
 
-הקבצים בתיקיית `survey/` בריפו `hoodini/hoodini`. כדי לפרסם:
+## פרסום
 
-1. `Settings → Pages → Build from branch` (למשל `main`, root).
-2. הסקר יהיה זמין בכתובת:
-   `https://hoodini.github.io/hoodini/survey/`
+### Netlify (מומלץ — כולל איסוף תשובות מובנה)
+`netlify.toml` בשורש הריפו מגדיר `publish = "survey"`, כך שהסקר מוגש בשורש
+האתר. פרסום: `netlify deploy --prod` (או דרך לוח הבקרה / חיבור ל-GitHub).
+Netlify Forms נדלק אוטומטית כשמזוהה הטופס בפריסה.
 
-חלופות בקליק: לגרור את התיקייה ל-[Netlify Drop](https://app.netlify.com/drop)
-או `vercel deploy`.
+### GitHub Pages (חלופה)
+1. `Settings → Pages → Build from branch` (`main`, root).
+2. הסקר יהיה זמין ב-`https://hoodini.github.io/hoodini/survey/`.
+   (במצב זה כדאי לעבור לאיסוף דרך Google Sheets/Formspree.)
 
 ## נגישות ו-UX
 - ניווט מלא במקלדת: `Enter` להמשך, אותיות (א/ב/ג…) לבחירה מהירה.
