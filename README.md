@@ -39,8 +39,8 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 220
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 8
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 220
 - 📦 **[effects-yuv-ai](https://github.com/hoodini/effects-yuv-ai)** - Visual effects catalog for hyperframes + video-use + yuv-viral-video — live at effects.yuv.ai ⭐ 2
 - 💙 **[virtual-typewriter](https://github.com/hoodini/virtual-typewriter)** - An immersive virtual typewriter web application simulating a 1960s mechanical typewriter ⭐ 2
 - 💙 **[tuning-numbers](https://github.com/hoodini/tuning-numbers)** - Training is just tuning numbers — a scroll-driven, hands-on lesson on how neural networks train, and how the same gradient descent scales to an LLM. Real, gradient-checked math in the browser. ⭐ 2
@@ -49,7 +49,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-06-07 00:46:08 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-06-08 00:46:52 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
