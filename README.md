@@ -29,27 +29,27 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
+- 📝 Pushed 0 commit(s) to [hoodini/yuv-cover-studio](https://github.com/hoodini/yuv-cover-studio) - Jun 18
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jun 18
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jun 18
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jun 18
 - 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jun 17
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jun 17
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jun 10
-- ✨ Created branch in [hoodini/yuv-cover-studio](https://github.com/hoodini/yuv-cover-studio) - Jun 10
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jun 10
 
 
 
 ### ⭐ Featured Repositories
 
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 228
+- 💙 **[whatsapp-public-logan](https://github.com/hoodini/whatsapp-public-logan)** - Open-source WhatsApp bot with AI capabilities - Logan by YUV.AI ⭐ 75
+- 📦 **[yuv-cover-studio](https://github.com/hoodini/yuv-cover-studio)** - YUV Cover Studio — poster-grade social covers: AI cutout in-browser, text behind subject, stretch typography, RTL-first. By @hoodini ⭐ 1
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 231
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 9
 - 💙 **[ncm-bp](https://github.com/hoodini/ncm-bp)** - None ⭐ 30
-- 📦 **[effects-yuv-ai](https://github.com/hoodini/effects-yuv-ai)** - Visual effects catalog for hyperframes + video-use + yuv-viral-video — live at effects.yuv.ai ⭐ 3
-- 🐍 **[groq-agent](https://github.com/hoodini/groq-agent)** - AI Agent powered by Groq, LangChain & LangGraph with web search and Hebrew RTL support ⭐ 4
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-06-18 00:49:25 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-06-19 00:53:58 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
