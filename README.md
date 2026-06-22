@@ -12,10 +12,10 @@ I'm Hoodini! Welcome to my GitHub profile.
 <table>
 <tr>
 <td align="center">
-<img src="https://img.shields.io/badge/Repos-134-blue?style=for-the-badge&logo=github" alt="Repositories">
+<img src="https://img.shields.io/badge/Repos-135-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-305-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-306-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -29,27 +29,27 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
+- ✨ Created branch in [hoodini/apple-silicon-arena](https://github.com/hoodini/apple-silicon-arena) - Jun 21
 - 📝 Pushed 0 commit(s) to [hoodini/yuv-cover-studio](https://github.com/hoodini/yuv-cover-studio) - Jun 18
 - 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jun 18
 - 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jun 18
 - 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jun 18
-- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jun 17
 
 
 
 ### ⭐ Featured Repositories
 
+- 💛 **[apple-silicon-arena](https://github.com/hoodini/apple-silicon-arena)** - ⚡ Real-time MLX vs llama.cpp benchmark arena for Apple Silicon — and an honest lesson in how easy it is to fool yourself with a benchmark. ⭐ 1
+- 🐍 **[blitzai](https://github.com/hoodini/blitzai)** - קול — Professional Transcription Studio. Hebrew-first, 4 engines, YouTube support, correction studio. ⭐ 87
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 233
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 9
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 232
 - 💙 **[whatsapp-public-logan](https://github.com/hoodini/whatsapp-public-logan)** - Open-source WhatsApp bot with AI capabilities - Logan by YUV.AI ⭐ 75
-- 📦 **[yuv-cover-studio](https://github.com/hoodini/yuv-cover-studio)** - YUV Cover Studio — poster-grade social covers: AI cutout in-browser, text behind subject, stretch typography, RTL-first. By @hoodini ⭐ 1
-- 💙 **[ncm-bp](https://github.com/hoodini/ncm-bp)** - None ⭐ 30
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-06-21 00:48:45 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-06-22 00:48:49 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
