@@ -39,7 +39,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 📦 **[cxone-churn-lab](https://github.com/hoodini/cxone-churn-lab)** - Hands-on Claude lab: download a synthetic NiCE CXone churn dataset and use copy-paste prompts to go from data → insights → landing page → MVP → deck. Live site.
+- 📦 **[cxone-churn-lab](https://github.com/hoodini/cxone-churn-lab)** - Hands-on Claude lab: download a synthetic NiCE CXone churn dataset and use copy-paste prompts to go from data → insights → landing page → MVP → deck. Live site. ⭐ 1
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 9
 - 💛 **[apple-silicon-arena](https://github.com/hoodini/apple-silicon-arena)** - ⚡ Real-time MLX vs llama.cpp benchmark arena for Apple Silicon — and an honest lesson in how easy it is to fool yourself with a benchmark. ⭐ 1
 - 🐍 **[blitzai](https://github.com/hoodini/blitzai)** - קול — Professional Transcription Studio. Hebrew-first, 4 engines, YouTube support, correction studio. ⭐ 87
@@ -49,7 +49,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-06-23 00:43:30 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-06-24 00:38:42 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
