@@ -15,7 +15,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <img src="https://img.shields.io/badge/Repos-136-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-308-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-307-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -39,17 +39,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 📦 **[cxone-churn-lab](https://github.com/hoodini/cxone-churn-lab)** - Hands-on Claude lab: download a synthetic NiCE CXone churn dataset and use copy-paste prompts to go from data → insights → landing page → MVP → deck. Live site. ⭐ 1
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 236
+- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 8
+- 📦 **[librepods](https://github.com/hoodini/librepods)** - AirPods liberated from Apple's ecosystem. ⭐ 1
+- 💙 **[netviz](https://github.com/hoodini/netviz)** - 🌐 NetViz — Real-time network request visualizer with animated topology, timing waterfalls, and live traffic simulation. Built with React 18, TypeScript, Vite, and Canvas animations for a GitHub Copilot training workshop. ⭐ 2
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 9
-- 💛 **[apple-silicon-arena](https://github.com/hoodini/apple-silicon-arena)** - ⚡ Real-time MLX vs llama.cpp benchmark arena for Apple Silicon — and an honest lesson in how easy it is to fool yourself with a benchmark. ⭐ 1
-- 🐍 **[blitzai](https://github.com/hoodini/blitzai)** - קול — Professional Transcription Studio. Hebrew-first, 4 engines, YouTube support, correction studio. ⭐ 87
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 233
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-06-24 00:38:42 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-06-25 00:43:55 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
