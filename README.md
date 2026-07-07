@@ -12,7 +12,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <table>
 <tr>
 <td align="center">
-<img src="https://img.shields.io/badge/Repos-136-blue?style=for-the-badge&logo=github" alt="Repositories">
+<img src="https://img.shields.io/badge/Repos-137-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Followers-310-blue?style=for-the-badge&logo=github" alt="Followers">
@@ -29,9 +29,9 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
-- 📝 Pushed 0 commit(s) to [hoodini/cxone-churn-lab](https://github.com/hoodini/cxone-churn-lab) - Jun 22
-- 📝 Pushed 0 commit(s) to [hoodini/cxone-churn-lab](https://github.com/hoodini/cxone-churn-lab) - Jun 22
-- 📝 Pushed 0 commit(s) to [hoodini/cxone-churn-lab](https://github.com/hoodini/cxone-churn-lab) - Jun 22
+- 📝 Pushed 0 commit(s) to [hoodini/tokana](https://github.com/hoodini/tokana) - Jul 06
+- 📝 Pushed 0 commit(s) to [hoodini/tokana](https://github.com/hoodini/tokana) - Jul 06
+- ✨ Created branch in [hoodini/tokana](https://github.com/hoodini/tokana) - Jul 06
 - 📝 Pushed 0 commit(s) to [hoodini/cxone-churn-lab](https://github.com/hoodini/cxone-churn-lab) - Jun 22
 - 📝 Pushed 0 commit(s) to [hoodini/cxone-churn-lab](https://github.com/hoodini/cxone-churn-lab) - Jun 22
 
@@ -39,17 +39,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
+- 💙 **[tokana](https://github.com/hoodini/tokana)** - Where your tokens actually go — a local, factual token-usage analyzer for Claude Code. Reads its own usage receipts (no API key), dedupes by message.id, shows billing vs. actual context content, cache savings, and a live meter. ⭐ 1
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 9
 - 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 243
 - 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 101
 - 📦 **[cxone-churn-lab](https://github.com/hoodini/cxone-churn-lab)** - Hands-on Claude lab: download a synthetic NiCE CXone churn dataset and use copy-paste prompts to go from data → insights → landing page → MVP → deck. Live site. ⭐ 2
-- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 10
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-07-06 00:37:01 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-07-07 00:37:14 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
