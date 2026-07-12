@@ -15,7 +15,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <img src="https://img.shields.io/badge/Repos-137-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-312-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-313-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -29,18 +29,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
-- 📝 Pushed 0 commit(s) to [hoodini/tokana](https://github.com/hoodini/tokana) - Jul 06
-- 📝 Pushed 0 commit(s) to [hoodini/tokana](https://github.com/hoodini/tokana) - Jul 06
-- ✨ Created branch in [hoodini/tokana](https://github.com/hoodini/tokana) - Jul 06
-- 📝 Pushed 0 commit(s) to [hoodini/cxone-churn-lab](https://github.com/hoodini/cxone-churn-lab) - Jun 22
-- 📝 Pushed 0 commit(s) to [hoodini/cxone-churn-lab](https://github.com/hoodini/cxone-churn-lab) - Jun 22
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jul 11
+- 🔀 Merged a pull request in [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jul 11
+- 🔀 Opened a pull request in [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jul 11
+- ✨ Created branch in [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Jul 11
 
 
 
 ### ⭐ Featured Repositories
 
-- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 11
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 245
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 246
+- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 12
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 9
 - 📦 **[openai-whisper-colab-by-yuval-avidani](https://github.com/hoodini/openai-whisper-colab-by-yuval-avidani)** - OpenAI's Whisper transcriber on Google Colab by Yuval Avidani - יובל אבידני ⭐ 7
 - 💙 **[tokana](https://github.com/hoodini/tokana)** - Where your tokens actually go — a local, factual token-usage analyzer for Claude Code. Reads its own usage receipts (no API key), dedupes by message.id, shows billing vs. actual context content, cache savings, and a live meter. ⭐ 2
@@ -49,7 +48,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-07-11 00:29:26 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-07-12 00:31:37 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
