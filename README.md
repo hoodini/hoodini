@@ -38,9 +38,9 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 246
-- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 12
+- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 13
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 9
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 246
 - 📦 **[openai-whisper-colab-by-yuval-avidani](https://github.com/hoodini/openai-whisper-colab-by-yuval-avidani)** - OpenAI's Whisper transcriber on Google Colab by Yuval Avidani - יובל אבידני ⭐ 7
 - 💙 **[tokana](https://github.com/hoodini/tokana)** - Where your tokens actually go — a local, factual token-usage analyzer for Claude Code. Reads its own usage receipts (no API key), dedupes by message.id, shows billing vs. actual context content, cache savings, and a live meter. ⭐ 2
 
@@ -48,7 +48,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-07-12 00:31:37 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-07-13 00:31:40 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
