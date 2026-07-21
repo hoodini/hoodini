@@ -12,10 +12,10 @@ I'm Hoodini! Welcome to my GitHub profile.
 <table>
 <tr>
 <td align="center">
-<img src="https://img.shields.io/badge/Repos-138-blue?style=for-the-badge&logo=github" alt="Repositories">
+<img src="https://img.shields.io/badge/Repos-139-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-317-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-320-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -29,27 +29,26 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
-- 📝 Pushed 0 commit(s) to [hoodini/logan-cli](https://github.com/hoodini/logan-cli) - Jul 17
-- 📝 Pushed 0 commit(s) to [hoodini/logan-cli](https://github.com/hoodini/logan-cli) - Jul 17
-- 📝 Pushed 0 commit(s) to [hoodini/logan-cli](https://github.com/hoodini/logan-cli) - Jul 17
-- 📝 Pushed 0 commit(s) to [hoodini/logan-cli](https://github.com/hoodini/logan-cli) - Jul 17
-- 📝 Pushed 0 commit(s) to [hoodini/logan-cli](https://github.com/hoodini/logan-cli) - Jul 17
+- 📝 Pushed 0 commit(s) to [hoodini/mesh-to-matter](https://github.com/hoodini/mesh-to-matter) - Jul 20
+- 📝 Pushed 0 commit(s) to [hoodini/mesh-to-matter](https://github.com/hoodini/mesh-to-matter) - Jul 19
+- 📝 Pushed 0 commit(s) to [hoodini/mesh-to-matter](https://github.com/hoodini/mesh-to-matter) - Jul 19
+- 📝 Pushed 0 commit(s) to [hoodini/mesh-to-matter](https://github.com/hoodini/mesh-to-matter) - Jul 19
 
 
 
 ### ⭐ Featured Repositories
 
-- 💙 **[whatsapp-public-logan](https://github.com/hoodini/whatsapp-public-logan)** - Open-source WhatsApp bot with AI capabilities - Logan by YUV.AI ⭐ 86
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 252
+- 💙 **[mesh-to-matter](https://github.com/hoodini/mesh-to-matter)** - None
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 253
 - 🦀 **[logan-cli](https://github.com/hoodini/logan-cli)** - Logan CLI - terminal AI coding agent by Yuval Avidani (YUV.AI). Fork of xAI Grok Build. ⭐ 10
-- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 15
+- 💙 **[logan](https://github.com/hoodini/logan)** - Logan, the AI Coding Agent. Based on OpenCode, modified by Yuval Avidani (YUV.AI) ⭐ 4
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 10
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-07-19 00:31:29 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-07-21 00:30:41 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
