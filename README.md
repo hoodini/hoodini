@@ -15,7 +15,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <img src="https://img.shields.io/badge/Repos-139-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-321-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-322-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -38,17 +38,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 258
+- 💙 **[whatsapp-public-logan](https://github.com/hoodini/whatsapp-public-logan)** - Open-source WhatsApp bot with AI capabilities - Logan by YUV.AI ⭐ 87
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 257
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 10
 - 🐍 **[yuv-ai-trends](https://github.com/hoodini/yuv-ai-trends)** -  YUV.AI Developers AI Trends - Beautiful Gen AI & ML news aggregator with Apple-inspired design ⭐ 102
 - 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 16
-- 🐍 **[blitzai](https://github.com/hoodini/blitzai)** - קול — Professional Transcription Studio. Hebrew-first, 4 engines, YouTube support, correction studio. ⭐ 86
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-07-27 02:31:12 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-07-28 02:05:55 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
