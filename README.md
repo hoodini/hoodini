@@ -38,17 +38,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 258
-- 🦀 **[logan-cli](https://github.com/hoodini/logan-cli)** - Logan CLI - terminal AI coding agent by Yuval Avidani (YUV.AI). Fork of xAI Grok Build. ⭐ 9
-- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 18
+- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 19
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 259
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 10
+- 🦀 **[logan-cli](https://github.com/hoodini/logan-cli)** - Logan CLI - terminal AI coding agent by Yuval Avidani (YUV.AI). Fork of xAI Grok Build. ⭐ 9
 - 💙 **[whatsapp-public-logan](https://github.com/hoodini/whatsapp-public-logan)** - Open-source WhatsApp bot with AI capabilities - Logan by YUV.AI ⭐ 87
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-07-30 01:59:05 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-07-31 02:24:07 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
