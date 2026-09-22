@@ -15,7 +15,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <img src="https://img.shields.io/badge/Repos-140-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-326-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-327-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -35,8 +35,8 @@ No recent activity
 
 ### ⭐ Featured Repositories
 
+- 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 11
 - 💙 **[rag-document-assistant](https://github.com/hoodini/rag-document-assistant)** - A web application for document management with AI-powered chat and analytics using RAG, LangChain, and Cohere.
-- 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 10
 - 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 279
 - 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 37
 - 💙 **[virtual-typewriter](https://github.com/hoodini/virtual-typewriter)** - An immersive virtual typewriter web application simulating a 1960s mechanical typewriter ⭐ 2
@@ -45,7 +45,7 @@ No recent activity
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-09-21 00:24:44 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-09-22 00:22:49 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
