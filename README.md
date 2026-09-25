@@ -12,10 +12,10 @@ I'm Hoodini! Welcome to my GitHub profile.
 <table>
 <tr>
 <td align="center">
-<img src="https://img.shields.io/badge/Repos-140-blue?style=for-the-badge&logo=github" alt="Repositories">
+<img src="https://img.shields.io/badge/Repos-141-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-327-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-328-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -29,23 +29,24 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
-No recent activity
+- 📝 Pushed 0 commit(s) to [hoodini/fly-high-nyc](https://github.com/hoodini/fly-high-nyc) - Sep 24
+- ✨ Created branch in [hoodini/fly-high-nyc](https://github.com/hoodini/fly-high-nyc) - Sep 24
 
 
 
 ### ⭐ Featured Repositories
 
-- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 38
+- 🐍 **[blitzai](https://github.com/hoodini/blitzai)** - קול — Professional Transcription Studio. Hebrew-first, 4 engines, YouTube support, correction studio. ⭐ 87
+- 📦 **[fly-high-nyc](https://github.com/hoodini/fly-high-nyc)** - FLY HIGH · New York — be a macaw at golden hour over real NYC. A YUV.AI experience.
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 11
+- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 38
 - 💙 **[rag-document-assistant](https://github.com/hoodini/rag-document-assistant)** - A web application for document management with AI-powered chat and analytics using RAG, LangChain, and Cohere.
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 279
-- 💙 **[virtual-typewriter](https://github.com/hoodini/virtual-typewriter)** - An immersive virtual typewriter web application simulating a 1960s mechanical typewriter ⭐ 2
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-09-24 00:22:01 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-09-25 00:23:25 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
