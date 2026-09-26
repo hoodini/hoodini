@@ -30,15 +30,16 @@ I'm Hoodini! Welcome to my GitHub profile.
 ### 🚀 Recent Activity
 
 - 📝 Pushed 0 commit(s) to [hoodini/fly-high-nyc](https://github.com/hoodini/fly-high-nyc) - Sep 24
+- 📝 Pushed 0 commit(s) to [hoodini/fly-high-nyc](https://github.com/hoodini/fly-high-nyc) - Sep 24
 - ✨ Created branch in [hoodini/fly-high-nyc](https://github.com/hoodini/fly-high-nyc) - Sep 24
 
 
 
 ### ⭐ Featured Repositories
 
-- 🐍 **[blitzai](https://github.com/hoodini/blitzai)** - קול — Professional Transcription Studio. Hebrew-first, 4 engines, YouTube support, correction studio. ⭐ 87
-- 📦 **[fly-high-nyc](https://github.com/hoodini/fly-high-nyc)** - FLY HIGH · New York — be a macaw at golden hour over real NYC. A YUV.AI experience.
+- 📦 **[fly-high-nyc](https://github.com/hoodini/fly-high-nyc)** - FLY HIGH · New York — be a macaw at golden hour over real NYC. A YUV.AI experience. ⭐ 1
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 11
+- 🐍 **[blitzai](https://github.com/hoodini/blitzai)** - קול — Professional Transcription Studio. Hebrew-first, 4 engines, YouTube support, correction studio. ⭐ 87
 - 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 38
 - 💙 **[rag-document-assistant](https://github.com/hoodini/rag-document-assistant)** - A web application for document management with AI-powered chat and analytics using RAG, LangChain, and Cohere.
 
@@ -46,7 +47,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-09-25 00:23:25 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-09-26 00:22:23 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
