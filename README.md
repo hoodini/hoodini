@@ -37,17 +37,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 📦 **[fly-high-nyc](https://github.com/hoodini/fly-high-nyc)** - FLY HIGH · New York — be a macaw at golden hour over real NYC. A YUV.AI experience. ⭐ 1
+- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 39
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 11
+- 📦 **[fly-high-nyc](https://github.com/hoodini/fly-high-nyc)** - FLY HIGH · New York — be a macaw at golden hour over real NYC. A YUV.AI experience. ⭐ 1
 - 🐍 **[blitzai](https://github.com/hoodini/blitzai)** - קול — Professional Transcription Studio. Hebrew-first, 4 engines, YouTube support, correction studio. ⭐ 87
-- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 38
 - 💙 **[rag-document-assistant](https://github.com/hoodini/rag-document-assistant)** - A web application for document management with AI-powered chat and analytics using RAG, LangChain, and Cohere.
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-09-26 00:22:23 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-09-27 00:26:41 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
