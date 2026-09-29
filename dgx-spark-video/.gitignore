@@ -1,6 +1,8 @@
 render/
 audio/raw/
-audio/*.wav
-!audio/sfx/*.wav
+audio/vo.wav
+audio/music.wav
+audio/mix_pre.wav
 qa/stills/
+render.log
 __pycache__/
