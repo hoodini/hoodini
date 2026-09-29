@@ -37,10 +37,10 @@ mix = np.stack([vo, vo], 1) * 1.0 + mus + sb * 1.0
 mix[int(END * SR):] = 0
 sf.write("build/mix_raw.wav", mix, SR)
 # --- loudnorm two-pass to -14 LUFS / -1 dBTP
-af = "loudnorm=I=-14:TP=-1:LRA=9:print_format=json"
+af = "loudnorm=I=-14:TP=-3:LRA=9:print_format=json"
 r = subprocess.run([FF, "-hide_banner", "-i", "build/mix_raw.wav", "-af", af, "-f", "null", "-"], capture_output=True, text=True)
 js = json.loads(r.stderr[r.stderr.rindex("{"):r.stderr.rindex("}") + 1])
-af2 = f"loudnorm=I=-14:TP=-1:LRA=9:measured_I={js['input_i']}:measured_TP={js['input_tp']}:measured_LRA={js['input_lra']}:measured_thresh={js['input_thresh']}:offset={js['target_offset']}:linear=true,alimiter=limit=0.89:level=false"
+af2 = f"loudnorm=I=-14:TP=-3:LRA=9:measured_I={js['input_i']}:measured_TP={js['input_tp']}:measured_LRA={js['input_lra']}:measured_thresh={js['input_thresh']}:offset={js['target_offset']}:linear=true,alimiter=limit=0.70:level=false"
 subprocess.run([FF, "-y", "-loglevel", "error", "-i", "build/mix_raw.wav", "-af", af2, "-ar", "48000", "-c:a", "pcm_s16le", "build/mix_final.wav"], check=True)
 subprocess.run([FF, "-y", "-loglevel", "error", "-i", "build/mix_final.wav", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "build/audio_final.m4a"], check=True)
 print("pre-norm", js["input_i"], js["input_tp"], "-> mix_final.wav / audio_final.m4a")

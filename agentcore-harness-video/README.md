@@ -93,4 +93,16 @@ Setup: `./fetch_assets.sh && pip install -r requirements.txt && ./run_all.sh` (C
 
 ## 5. QA results
 
-See the bottom of this file (filled in after the final render).
+Measured on the delivered file (`ffprobe` / `ebur128`):
+
+| Check | Result |
+|---|---|
+| Duration | 106.23 s (target 90–115 s, X limit 2:20) |
+| Video | H.264 High, 1920×1080, 30 fps, yuv420p, 5.47 Mbps |
+| Audio | AAC-LC 48 kHz stereo, **−14.1 LUFS** integrated, **−1.8 dBTP** true peak (limiter targets −3 dBTP pre-AAC because AAC re-encode overshoots ~1 dB) |
+| File size | 1080p **75.4 MB** (< 100 MB) · 720p preview **24.3 MB** (< 30 MB) |
+| Shots | 97 hard cuts, median ≈ 1.0 s; every scene has ≥ 1 sticker/toast/scribble/cursor overlay |
+| Visual QA | one still per shot at ~85 % → 9 contact sheets (`qa/sheet_*.jpg`); fixed headline/subline overlaps, captions collisions, mask-clipped descenders, duplicate-SVG-id and logo-CSS-class collisions (logo turned invisible on ink) |
+| Intelligibility | final mix re-transcribed with faster-whisper: 262 / 318 script words matched (82 %); the misses are acronym spellings (“A W S”, “P O V”, “ex”→“X”, “billed”→“build”), the full sentence structure is recovered through the drop and breakdown (`qa/final_mix_transcript.txt`) |
+
+Known limits: Kokoro reads a few acronyms with a slightly robotic cadence; the music is procedural (clean, not a produced track); `qa_audio` word-match is a proxy, not a listening test — please give the mix one real listen before posting.
