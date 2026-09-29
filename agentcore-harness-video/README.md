@@ -1,6 +1,6 @@
 # AgentCore Harness — motion-graphics explainer
 
-**BY YUVAL AVIDANI — AWS GEN AI SUPERSTAR · YUV.AI** · 16:9 · 1920×1080 · 30 fps · H.264 High + AAC 48 kHz · −14 LUFS · ~106 s
+**BY YUVAL AVIDANI — AWS GEN AI SUPERSTAR · YUV.AI** · 16:9 · 1920×1080 · 30 fps · H.264 High + AAC 48 kHz · −14 LUFS · ~131 s
 
 Fast-edit explainer on **Amazon Bedrock AgentCore harness** (GA 18 Jun 2026): what it is and why it beats a DIY agent stack.
 Everything (script → TTS → word sync → page → SFX → music → mix → render) is code in this folder and re-runnable with `./run_all.sh`.
@@ -35,7 +35,7 @@ out/agentcore-harness-explainer-720p-preview.mp4 720p preview for chat
 
 **Jokes / illustrations, not facts** (they are labelled as such in the README, not in the video): "6 services / 12 dashboards / 0 sleep", "9 log-group tabs", the 03:07 AM clock, "friday 4:59 PM", chat/toast texts, the ex, `session_id: 7f3a…`, the config panel (marked `# simplified for the screen` — field names follow the docs' wording "model, tools, skills, instructions" but it is **not literal API syntax**), the `✔ deployed` line typed after `agentcore deploy` (illustrative output), and the DIY column of the scoreboard.
 
-## 1. Story beats (97 cuts, median ≈ 1.0 s)
+## 1. Story beats (v2 calmer edit: 59 cuts, median ≈ 1.9 s; v1 had 97 cuts and was too fast)
 
 | § | Page | Beat |
 |---|---|---|
@@ -97,12 +97,18 @@ Measured on the delivered file (`ffprobe` / `ebur128`):
 
 | Check | Result |
 |---|---|
-| Duration | 106.23 s (target 90–115 s, X limit 2:20) |
-| Video | H.264 High, 1920×1080, 30 fps, yuv420p, 5.47 Mbps |
-| Audio | AAC-LC 48 kHz stereo, **−14.1 LUFS** integrated, **−1.8 dBTP** true peak (limiter targets −3 dBTP pre-AAC because AAC re-encode overshoots ~1 dB) |
-| File size | 1080p **75.4 MB** (< 100 MB) · 720p preview **24.3 MB** (< 30 MB) |
-| Shots | 97 hard cuts, median ≈ 1.0 s; every scene has ≥ 1 sticker/toast/scribble/cursor overlay |
+| Duration | 131.1 s (X limit 2:20; v2 is longer on purpose: slower VO, a plain-language definition, and a recap) |
+| Video | H.264 High, 1920×1080, 30 fps, yuv420p, 5.5 Mbps |
+| Audio | AAC-LC 48 kHz stereo, **−14.1 LUFS** integrated, **−1.7 dBTP** true peak (limiter targets −3 dBTP pre-AAC because AAC re-encode overshoots ~1 dB) |
+| File size | 1080p **93.5 MB** (< 100 MB) · 720p preview **~26 MB** |
+| Shots | 59 cuts, median ≈ 1.9 s (longest holds on the three pillars); calmer motion: punch-in 1.8 %, beat-zoom 0.4 % (off in the breakdown), grain 9 %, wobble ≤ 0.6° |
 | Visual QA | one still per shot at ~85 % → 9 contact sheets (`qa/sheet_*.jpg`); fixed headline/subline overlaps, captions collisions, mask-clipped descenders, duplicate-SVG-id and logo-CSS-class collisions (logo turned invisible on ink) |
-| Intelligibility | final mix re-transcribed with faster-whisper: 262 / 318 script words matched (82 %); the misses are acronym spellings (“A W S”, “P O V”, “ex”→“X”, “billed”→“build”), the full sentence structure is recovered through the drop and breakdown (`qa/final_mix_transcript.txt`) |
+| Intelligibility | final mix re-transcribed with faster-whisper: 294 / 357 script words matched (82 %); the misses are acronym spellings (“A W S”, “P O V”, “ex”→“X”, “billed”→“build”), the full sentence structure is recovered through the drop and breakdown (`qa/final_mix_transcript.txt`) |
 
 Known limits: Kokoro reads a few acronyms with a slightly robotic cadence; the music is procedural (clean, not a produced track); `qa_audio` word-match is a proxy, not a listening test — please give the mix one real listen before posting.
+
+
+## v2 changes (feedback: "too fast, dizzy, I couldn't tell what to take from it")
+* VO speed 1.2× → 1.1× with longer pauses; new line right after the drop defining the harness in plain words ("a managed runtime that runs your agent, so you don't have to"); new **recap** before the verdict (2 API calls · 1 private microVM per session · every step traced · $0 harness fee).
+* Cuts 97 → 59, grouped by idea; word-by-word cut runs (five problems, four built-in tools, four ops items, five scoreboard cut-ins) became single shots whose parts land on the spoken word.
+* Effects toned down (see QA table). All 7 selling points are still in.
