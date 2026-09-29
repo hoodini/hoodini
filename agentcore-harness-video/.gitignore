@@ -1,0 +1,12 @@
+node_modules/
+assets/models/
+assets/icons/
+assets/icons.zip
+build/chunk_*.mp4
+build/video_raw.mp4
+build/mix_raw.wav
+build/mix_final.wav
+build/vo48.wav
+build/vo_proc.wav
+build/music.wav
+tts/*.wav

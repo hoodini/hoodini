@@ -1,0 +1,9 @@
+numpy
+scipy
+soundfile
+pillow
+imageio-ffmpeg
+playwright
+faster-whisper
+kokoro-onnx
+onnxruntime

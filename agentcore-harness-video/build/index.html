@@ -1,0 +1,57 @@
+<!doctype html><html><head><meta charset="utf-8"><title>AgentCore Harness — explainer</title>
+<style>
+@font-face{font-family:Anton;src:url(fonts/anton.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"Instrument Serif";src:url(fonts/instrument-serif-italic.woff2) format("woff2");font-style:italic;font-weight:400}
+@font-face{font-family:"JetBrains Mono";src:url(fonts/jbm-400.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"JetBrains Mono";src:url(fonts/jbm-700.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"JetBrains Mono";src:url(fonts/jbm-800.woff2) format("woff2");font-weight:800}
+:root{--ink:#0B0B0C;--paper:#EEE8DD;--org:#FF9900}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;background:#000;overflow:hidden}
+.t-ink,#stage[data-theme=ink]{--bg:#0B0B0C;--fg:#EEE8DD;--ac:#FF9900;--stkbg:#EEE8DD;--stkfg:#0B0B0C;--stksh:#FF9900;--scr:#FF9900;--dim:#7d786f}
+.t-paper,#stage[data-theme=paper]{--bg:#EEE8DD;--fg:#0B0B0C;--ac:#FF9900;--stkbg:#FF9900;--stkfg:#0B0B0C;--stksh:#0B0B0C;--scr:#FF9900;--dim:#7d786f}
+.t-orange,#stage[data-theme=orange]{--bg:#FF9900;--fg:#0B0B0C;--ac:#EEE8DD;--stkbg:#0B0B0C;--stkfg:#EEE8DD;--stksh:#EEE8DD;--scr:#0B0B0C;--dim:#5a3a00}
+#stage{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden;background:var(--bg);color:var(--fg)}
+#world{position:absolute;inset:0;transform-origin:50% 50%}
+.shot{position:absolute;inset:0;overflow:hidden;background:var(--bg);color:var(--fg);transform-origin:50% 50%}
+.abs{position:absolute}
+.f-anton{font-family:Anton,Impact,sans-serif;text-transform:uppercase;line-height:.92;letter-spacing:.004em}
+.f-serif{font-family:"Instrument Serif",serif;font-style:italic;line-height:1}
+.f-mono{font-family:"JetBrains Mono",monospace;line-height:1.25}
+.mask{overflow:hidden;padding:.08em .12em .3em 0;margin:-.08em 0 -.3em 0;display:block}
+.in{display:inline-block;white-space:nowrap;will-change:transform}
+.emo{font-family:"Noto Color Emoji",sans-serif;line-height:1}
+.stkw{position:absolute}
+.stk{font:800 30px/1.15 "JetBrains Mono",monospace;background:var(--stkbg);color:var(--stkfg);border:3px solid var(--stkfg);box-shadow:7px 7px 0 var(--stksh);padding:10px 18px;white-space:nowrap;text-transform:uppercase;letter-spacing:.01em}
+.toast{position:absolute;display:flex;gap:18px;align-items:center;padding:20px 24px;border-radius:30px;background:rgba(244,244,246,.96);color:#111;box-shadow:0 18px 50px rgba(0,0,0,.35);font-family:-apple-system,"Helvetica Neue",Arial,sans-serif}
+.toast .ti{font-size:58px;font-family:"Noto Color Emoji";line-height:1}
+.toast .tt{display:flex;justify-content:space-between;font-size:24px;gap:30px}.toast .tt span{color:#888}
+.toast .tm{font-size:30px;font-weight:600;line-height:1.15;margin-top:2px}
+.caret{opacity:0}
+.cursor{position:absolute;left:0;top:0;width:46px;height:46px;z-index:40;filter:drop-shadow(3px 4px 0 rgba(0,0,0,.35))}
+.ripple{position:absolute;width:90px;height:90px;border-radius:50%;border:5px solid var(--scr);margin:-45px 0 0 -45px;z-index:39}
+svg{display:block}
+.pnl{position:absolute;border:3px solid var(--fg);background:var(--bg)}
+.code{font:500 30px/1.5 "JetBrains Mono",monospace;white-space:pre;color:#EEE8DD}
+.c-k{color:#FF9900}.c-s{color:#a8d08d}.c-c{color:#7d786f}.c-n{color:#8ecbff}
+/* chrome */
+#chrome{position:absolute;inset:0;z-index:50;pointer-events:none;font:700 19px/1 "JetBrains Mono",monospace;color:var(--fg);letter-spacing:.06em;text-transform:uppercase}
+#chrome .top{position:absolute;left:80px;right:80px;top:38px;height:46px;border-bottom:3px solid var(--fg);display:flex;align-items:flex-start;justify-content:space-between}
+#chrome .bot{position:absolute;left:80px;right:80px;bottom:38px;height:40px;border-top:3px solid var(--fg);display:flex;justify-content:space-between;padding-top:10px}
+#chrome .lg{height:28px;display:none;margin-left:22px}
+#stage[data-theme=paper] .lg.d,#stage[data-theme=ink] .lg.r,#stage[data-theme=orange] .lg.m{display:block}
+#chrome .rt{display:flex;align-items:center;margin-top:-4px}
+#caps{position:absolute;left:80px;bottom:92px;z-index:60;font:800 36px/1.2 "JetBrains Mono",monospace;text-transform:none;letter-spacing:.01em}
+#caps .ch{display:none;background:var(--bg);color:var(--fg);padding:8px 18px 10px 18px;border:3px solid var(--fg);box-shadow:6px 6px 0 var(--fg)}
+#caps .w{padding:0 6px;margin:0 -2px}
+#caps .w.on{background:var(--fg);color:var(--bg)}
+#grain{position:absolute;inset:0;z-index:90;background-size:1920px 1080px;opacity:.16;mix-blend-mode:overlay;pointer-events:none}
+#flash{position:absolute;inset:0;z-index:95;background:#fff;mix-blend-mode:difference;opacity:0;pointer-events:none}
+</style></head><body>
+<div id="stage" data-theme="ink"><div id="world"></div>
+<div id="caps"></div>
+<div id="chrome"><div class="top"><span id="c-sec"></span><span class="rt"><span id="c-date">29 SEP 2026</span><span class="lg d" id="lg-d"></span><span class="lg r" id="lg-r"></span><span class="lg m" id="lg-m"></span></span></div>
+<div class="bot"><span id="c-tc"></span><span id="c-mid">// AgentCore Harness · explainer</span><span id="c-pg"></span></div></div>
+<div id="grain"></div><div id="flash"></div></div>
+<script src="gsap.min.js"></script><script src="words.js"></script><script src="assets.js"></script><script src="page.js"></script>
+</body></html>
