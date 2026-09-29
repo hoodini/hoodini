@@ -2,238 +2,262 @@
  "lines": {
   "h1": {
    "start": 0.5,
-   "dur": 3.394791666666667,
+   "dur": 3.6002083333333332,
    "spoken": "P O V: your A. I. agent works perfectly. On your laptop.",
    "text": "{P O V=POV}: your {A. I.=AI} agent works perfectly. On your laptop."
   },
   "h2": {
-   "start": 4.014791666666667,
-   "dur": 1.106375,
+   "start": 4.320208333333333,
+   "dur": 1.1599166666666667,
    "spoken": "Boss says: ship it.",
    "text": "Boss says: ship it."
   },
   "h3": {
-   "start": 5.241166666666667,
-   "dur": 3.500125,
+   "start": 5.700125,
+   "dur": 3.8331666666666666,
    "spoken": "Cool. Now it needs sandboxes. Memory. Auth. Logs. Scaling.",
    "text": "Cool. Now it needs sandboxes. Memory. Auth. Logs. Scaling."
   },
   "h4": {
-   "start": 8.861291666666668,
-   "dur": 0.632875,
+   "start": 9.753291666666666,
+   "dur": 0.6764166666666667,
    "spoken": "And therapy.",
    "text": "And therapy."
   },
   "pain1": {
-   "start": 9.614166666666668,
-   "dur": 1.8222916666666666,
+   "start": 10.829708333333333,
+   "dur": 1.8973333333333333,
    "spoken": "So you duct tape six services together.",
    "text": "So you duct tape six services together."
   },
   "pain2": {
-   "start": 11.556458333333335,
-   "dur": 1.7064166666666667,
+   "start": 12.947041666666665,
+   "dur": 1.88125,
    "spoken": "Twelve dashboards. Zero sleep.",
    "text": "Twelve dashboards. Zero sleep."
   },
   "pain3": {
-   "start": 13.382875000000002,
-   "dur": 1.4776666666666667,
+   "start": 15.178291666666667,
+   "dur": 1.6402916666666667,
    "spoken": "Prod is on fire. Again.",
    "text": "Prod is on fire. Again."
   },
   "drop1": {
-   "start": 15.61054166666667,
-   "dur": 1.7689166666666667,
+   "start": 17.568583333333333,
+   "dur": 1.9291666666666667,
    "spoken": "Meet Amazon Bedrock agent core.",
    "text": "Meet Amazon Bedrock {agent core=AgentCore}."
   },
   "drop2": {
-   "start": 17.629458333333336,
-   "dur": 1.4550416666666666,
+   "start": 19.74775,
+   "dur": 1.5363333333333333,
    "spoken": "Main character: the Harness.",
    "text": "Main character: the Harness."
   },
+  "def": {
+   "start": 21.734083333333334,
+   "dur": 3.1341666666666668,
+   "spoken": "A managed runtime that runs your agent, so you don't have to.",
+   "text": "A managed runtime that runs your agent, so you don't have to."
+  },
   "an1": {
-   "start": 19.384500000000003,
-   "dur": 2.676416666666667,
+   "start": 25.268250000000002,
+   "dur": 2.907375,
    "spoken": "Think restaurant. You bring the recipe. That's your config.",
    "text": "Think restaurant. You bring the recipe. That's your config."
   },
   "an2": {
-   "start": 22.18091666666667,
-   "dur": 1.9535416666666667,
+   "start": 28.395625000000003,
+   "dur": 2.162125,
    "spoken": "A W S runs the entire kitchen.",
    "text": "{A W S=AWS} runs the entire kitchen."
   },
   "how1": {
-   "start": 24.254458333333336,
-   "dur": 2.8657083333333335,
+   "start": 30.957750000000004,
+   "dur": 3.20825,
    "spoken": "A config is a model, tools, skills, and instructions.",
    "text": "A config is a model, tools, skills, and instructions."
   },
   "how2": {
-   "start": 27.24016666666667,
-   "dur": 3.3602916666666665,
+   "start": 34.386,
+   "dur": 3.5994166666666665,
    "spoken": "Two A P I calls. Create Harness. Invoke Harness. That's it.",
    "text": "Two {A P I=API} calls. {Create Harness=CreateHarness}. {Invoke Harness=InvokeHarness}. That's it."
   },
   "b1": {
-   "start": 30.720458333333337,
-   "dur": 3.4029166666666666,
+   "start": 38.485416666666666,
+   "dur": 3.65625,
    "spoken": "Built in: a browser, a code interpreter, a shell, and a file system.",
    "text": "Built in: a browser, a code interpreter, a shell, and a file system."
   },
   "b2": {
-   "start": 34.243375,
-   "dur": 2.8971666666666667,
+   "start": 42.361666666666665,
+   "dur": 3.092125,
    "spoken": "Gateway plugs in your A P Is and M C P servers.",
    "text": "Gateway plugs in your {A P Is=APIs} and {M C P=MCP} servers."
   },
   "b2b": {
-   "start": 37.26054166666667,
-   "dur": 2.580375,
+   "start": 45.673791666666666,
+   "dur": 2.8477916666666667,
    "spoken": "M C P is U S B C for A. I. tools.",
    "text": "{M C P=MCP} is {U S B C=USB-C} for {A. I.=AI} tools."
   },
   "b3": {
-   "start": 39.96091666666667,
-   "dur": 2.0297083333333332,
+   "start": 48.74158333333333,
+   "dur": 2.20875,
    "spoken": "Memory that remembers you. Unlike your ex.",
    "text": "Memory that remembers you. Unlike your ex."
   },
   "b4": {
-   "start": 42.110625000000006,
-   "dur": 2.5165,
+   "start": 51.17033333333333,
+   "dur": 2.7135833333333332,
    "spoken": "Any model. Switch mid session, keep the context.",
    "text": "Any model. Switch mid session, keep the context."
   },
   "b5": {
-   "start": 44.747125000000004,
-   "dur": 2.4720416666666667,
+   "start": 54.10391666666666,
+   "dur": 2.7347916666666667,
    "spoken": "Deploy from the C L I. Now go touch grass.",
    "text": "Deploy from the {C L I=CLI}. Now go touch grass."
   },
   "p0": {
-   "start": 47.51916666666667,
-   "dur": 1.743625,
+   "start": 57.28870833333333,
+   "dur": 1.8868333333333334,
    "spoken": "Now the part that makes other setups sweat.",
    "text": "Now the part that makes other setups sweat."
   },
   "p1a": {
-   "start": 49.51279166666667,
-   "dur": 3.0075416666666666,
+   "start": 59.42554166666667,
+   "dur": 3.3209166666666667,
    "spoken": "One. Scale. A hostel crams everyone into one box.",
    "text": "One. Scale. A hostel crams everyone into one box."
   },
   "p1b": {
-   "start": 52.64033333333334,
-   "dur": 2.6105416666666668,
+   "start": 62.966458333333335,
+   "dur": 2.84475,
    "spoken": "A hotel gives every guest a private, locked room.",
    "text": "A hotel gives every guest a private, locked room."
   },
   "p1c": {
-   "start": 55.370875000000005,
-   "dur": 2.8887916666666666,
+   "start": 66.03120833333334,
+   "dur": 3.116041666666667,
    "spoken": "One session. One micro V M. Up to eight hours.",
    "text": "One session. One {micro V M=microVM}. Up to eight hours."
   },
   "p1d": {
-   "start": 58.37966666666667,
-   "dur": 3.3870416666666667,
+   "start": 69.36725000000001,
+   "dur": 3.621125,
    "spoken": "Ten sessions or five thousand. Zero servers for you to run.",
    "text": "Ten sessions or five thousand. Zero servers for you to run."
   },
   "p2a": {
-   "start": 61.88670833333334,
-   "dur": 5.033,
+   "start": 73.38837500000001,
+   "dur": 5.49125,
    "spoken": "Two. Security. When a session ends, the micro V M is terminated and memory is wiped.",
    "text": "Two. Security. When a session ends, the {micro V M=microVM} is terminated and memory is wiped."
   },
   "p2b": {
-   "start": 67.03970833333334,
-   "dur": 3.073625,
+   "start": 79.099625,
+   "dur": 3.1595833333333334,
    "spoken": "Your A P I keys sit in a vault. The agent never sees them.",
    "text": "Your {A P I=API} keys sit in a vault. The agent never sees them."
   },
   "p3a": {
-   "start": 70.23333333333333,
-   "dur": 2.477625,
+   "start": 82.65920833333334,
+   "dur": 2.772666666666667,
    "spoken": "Three. Observability. Think flight black box.",
    "text": "Three. Observability. Think flight black box."
   },
   "p3b": {
-   "start": 72.83095833333333,
-   "dur": 2.3349166666666665,
+   "start": 85.651875,
+   "dur": 2.602625,
    "spoken": "Session. Trace. Step. Every move recorded.",
    "text": "Session. Trace. Step. Every move recorded."
   },
   "p3c": {
-   "start": 75.28587499999999,
-   "dur": 2.713625,
+   "start": 88.4745,
+   "dur": 2.854,
    "spoken": "Versus you, at three A M, hopping between log groups.",
    "text": "Versus you, at {three A M=3AM}, hopping between log groups."
   },
   "pr1": {
-   "start": 78.11949999999999,
-   "dur": 1.986625,
+   "start": 91.72850000000001,
+   "dur": 2.190541666666667,
    "spoken": "Pricing. You pay for active C P U.",
    "text": "Pricing. You pay for active {C P U=CPU}."
   },
   "pr2": {
-   "start": 80.22612499999998,
-   "dur": 2.166375,
+   "start": 94.13904166666669,
+   "dur": 2.3259166666666666,
    "spoken": "Waiting on the model? No C P U billed.",
    "text": "Waiting on the model? No {C P U=CPU} billed."
   },
   "pr3": {
-   "start": 82.51249999999999,
-   "dur": 1.6270833333333334,
+   "start": 96.68495833333336,
+   "dur": 1.74075,
    "spoken": "The harness fee? Zero dollars.",
    "text": "The harness fee? Zero dollars."
   },
   "ops1": {
-   "start": 84.25958333333332,
-   "dur": 3.312333333333333,
+   "start": 98.82570833333335,
+   "dur": 3.7632083333333335,
    "spoken": "Ops is built in. Versions. Rollbacks. Evals. A B tests.",
    "text": "Ops is built in. Versions. Rollbacks. Evals. {A B=A/B} tests."
   },
   "ops2": {
-   "start": 87.69191666666666,
-   "dur": 3.7247916666666665,
+   "start": 102.80891666666669,
+   "dur": 3.952583333333333,
    "spoken": "Outgrow config? Export to code. Keep your model, prompt, and tools.",
    "text": "Outgrow config? Export to code. Keep your model, prompt, and tools."
   },
   "sc1": {
-   "start": 91.53670833333332,
-   "dur": 2.939583333333333,
+   "start": 107.16150000000002,
+   "dur": 3.0967083333333334,
    "spoken": "Scoreboard. D I Y stack versus agent core Harness.",
    "text": "Scoreboard. {D I Y=DIY} stack versus {agent core=AgentCore} Harness."
   },
   "sc2": {
-   "start": 94.59629166666666,
-   "dur": 2.260125,
+   "start": 110.47820833333336,
+   "dur": 2.50975,
    "spoken": "Setup. Scale. Security. Observability.",
    "text": "Setup. Scale. Security. Observability."
   },
   "sc3": {
-   "start": 97.15641666666666,
-   "dur": 0.8322916666666667,
+   "start": 113.28795833333335,
+   "dur": 0.8960833333333333,
    "spoken": "Not even close.",
    "text": "Not even close."
   },
+  "rc1": {
+   "start": 114.78404166666668,
+   "dur": 1.2414583333333333,
+   "spoken": "So, what do you take home?",
+   "text": "So, what do you take home?"
+  },
+  "rc2": {
+   "start": 116.37550000000002,
+   "dur": 3.7308333333333334,
+   "spoken": "Two A P I calls to ship. One private micro V M per session.",
+   "text": "Two {A P I=API} calls to ship. One private {micro V M=microVM} per session."
+  },
+  "rc3": {
+   "start": 120.40633333333335,
+   "dur": 2.1864583333333334,
+   "spoken": "Every step traced. And no harness fee.",
+   "text": "Every step traced. And no harness fee."
+  },
   "v1": {
-   "start": 98.48870833333332,
-   "dur": 3.2066666666666666,
+   "start": 123.19279166666668,
+   "dur": 3.374041666666667,
    "spoken": "Your job is shipping agents. Not babysitting infrastructure.",
    "text": "Your job is shipping agents. Not babysitting infrastructure."
   },
   "v2": {
-   "start": 102.14537499999999,
-   "dur": 0.5798333333333333,
+   "start": 127.01683333333335,
+   "dur": 0.6007083333333333,
    "spoken": "Go build.",
    "text": "Go build."
   }
  },
- "total": 102.84520833333333
+ "total": 127.83754166666667
 }

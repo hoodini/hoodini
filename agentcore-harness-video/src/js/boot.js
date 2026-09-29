@@ -35,11 +35,11 @@ function fx(t, frame) {
   const s = SHOTS[idx];
   if (idx !== lastShot) { SHOTS.forEach((q, i) => q.el.style.display = i === idx ? "block" : "none"); lastShot = idx; stage.dataset.theme = s.theme;
     cSec.textContent = `AGENTCORE — ISSUE Nº01 · § ${pad(s.page)} ${PAGES[s.page - 1]}`; cPg.textContent = `P. ${pad(s.page)} / 14`; }
-  const p = Math.max(0, 1 - (t - s.t0) / .26); s.el.style.transform = `scale(${1 + .05 * p * p})`;
-  if (t >= DROP && t < END) { const ph = ((t - DROP) / BEAT) % 1, amp = (t >= BREAK && t < REDROP) ? .005 : .014; world.style.transform = `scale(${1 + amp * Math.exp(-5 * ph)})`; } else world.style.transform = "none";
+  const p = Math.max(0, 1 - (t - s.t0) / .2); s.el.style.transform = `scale(${1 + .018 * p * p})`;   // gentle punch-in (calmer edit)
+  if (t >= DROP && t < END) { const ph = ((t - DROP) / BEAT) % 1, amp = (t >= BREAK && t < REDROP) ? 0 : .004; world.style.transform = `scale(${1 + amp * Math.exp(-5 * ph)})`; } else world.style.transform = "none";
   for (const y of TYPERS) { const n = Math.max(0, Math.min(y.text.length, Math.floor((t - y.t0) * y.cps))); y.tx.textContent = y.text.slice(0, n); y.caret.style.opacity = t < y.t0 - .05 ? 0 : (n < y.text.length ? 1 : (Math.floor(t * 2.2) % 2 ? 0 : 1)); }
   for (const c of COUNTERS) { const q = Math.max(0, Math.min(1, (t - c.t0) / c.dur)); c.el.textContent = c.fmt(c.a + (c.b - c.a) * ease.out3(q)); }
-  for (const w of WOB) w.el.style.rotate = (w.amp * Math.sin(t * 2.6 + w.ph)) + "deg";
+  for (const w of WOB) w.el.style.rotate = (.4 * w.amp * Math.sin(t * 1.6 + w.ph)) + "deg";
   for (const f of LIVE) f(t);
   let ci = CHUNKS.findIndex(c => t >= c.s && t < c.e);
   if (ci !== lastCh) { CHUNKS.forEach((c, i) => c.el.style.display = i === ci ? "block" : "none"); lastCh = ci; }
