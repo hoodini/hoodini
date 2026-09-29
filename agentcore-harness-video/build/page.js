@@ -145,7 +145,7 @@ S("h1b", W("h1", "works"), "ink", 1, k => {
   IC(k, "l:badge-check", { x: 1440, y: 150, s: 260, c: "var(--ac)", sw: 1.5, t: W("h1", "works") + .12 });
   L(k, "on your laptop.", { f: "serif", x: 80, y: 700, size: 170, c: "var(--ac)", t: W("h1", "on") });
   EM(k, "💻", { x: 1520, y: 660, s: 200, t: W("h1", "laptop") + .05, r: 8 });
-  AR(k, { p: [1500, 700, 1300, 800], t: W("h1", "laptop") + .3, label: "famous last words.", lx: 1200, ly: 590, ls: 56, bend: 30, bend2: 30 });
+  ST(k, "famous last words.", { x: 1180, y: 790, r: -3, t: W("h1", "laptop") + .3, size: 30 });
 });
 S("h2", LS("h2"), "paper", 1, k => {
   mono(k, "BOSS SAYS:", { x: 80, y: 150, size: 40, t: LS("h2") });
@@ -242,7 +242,7 @@ S("config", W("an1", "thats"), "ink", 4, k => {
   L(k, "THAT'S YOUR", { x: 70, y: 190, size: 200, fit: 650, t: W("an1", "thats") });
   L(k, "CONFIG.", { x: 70, y: 430, size: 300, fit: 650, c: "var(--ac)", t: W("an1", "config") });
   PN(k, { x: 780, y: 160, w: 1040, h: 620, bg: "#151517", bd: "3px solid var(--fg)", t: W("an1", "thats"), wipe: true, html: `<div class="f-mono" style="font:700 24px 'JetBrains Mono';color:#7d786f;padding:14px 26px;border-bottom:2px solid #333">config.yaml</div>` });
-  TY(k, { x: 810, y: 250, size: 32, c: "#EEE8DD", text: "# recipe = config\nmodel: …\ntools: …\nskills: …\ninstructions: …", t: W("an1", "thats") + .2, cps: 30 });
+  TY(k, { x: 810, y: 250, size: 32, c: "#EEE8DD", text: "# recipe = config\nmodel: …\ntools: …\nskills: …\ninstructions: …", t: W("an1", "thats") + .2, cps: 60 });
 });
 S("kitchen", LS("an2"), "paper", 4, k => {
   const lg = box(k, { left: 80, top: 150 }, logoSVG("default", 200)); FADE(k, lg, LS("an2"), .2);
@@ -269,17 +269,15 @@ S("two", LS("how2"), "orange", 5, k => {
   SC(k, { x: 20, y: 140, w: 560, h: 830, t: W("how2", "calls") + .1, seed: 9 });
   AR(k, { p: [1500, 220, 1220, 340], t: W("how2", "calls") + .3, label: "yes, two.", lx: 1400, ly: 130, ls: 78, c: "var(--fg)", bend: 40, bend2: 40 });
 });
-S("create", W("how2", "createharness"), "ink", 5, k => {
-  mono(k, "01", { x: 80, y: 130, size: 50, c: "var(--ac)", t: k.t0 });
-  L(k, "CREATEHARNESS", { x: 70, y: 200, size: 300, fit: 1740, t: k.t0 + .03 });
-  term(k, { t: k.t0 + .12, bg: "#151517", fg: "#EEE8DD", text: `$ aws bedrock-agentcore-control create-harness \\\n    --harness-name "MyHarness" \\\n    --execution-role-arn "arn:aws:iam::123456789012:role/MyHarnessRole"` });
-  ST(k, "from the official docs", { x: 1380, y: 490, r: 3, t: k.t0 + .5, size: 26 });
-});
-S("invoke", W("how2", "invokeharness"), "paper", 5, k => {
-  mono(k, "02", { x: 80, y: 130, size: 50, c: "#c26a00", t: k.t0 });
-  L(k, "INVOKEHARNESS", { x: 70, y: 200, size: 300, fit: 1740, t: k.t0 + .03 });
-  term(k, { t: k.t0 + .12, bg: "#0B0B0C", fg: "#EEE8DD", h: 340, text: `response = client.invoke_harness(\n    harnessArn=HARNESS_ARN,\n    runtimeSessionId=SESSION_ID,\n    messages=[{"role": "user", "content": [{"text": "hi"}]}],\n)`, cps: 60 });
-  ST(k, "boto3 · bedrock-agentcore", { x: 1250, y: 490, r: 3, t: k.t0 + .5, size: 26 });
+S("calls", W("how2", "createharness"), "ink", 5, k => {
+  const t1 = W("how2", "createharness"), t2 = W("how2", "invokeharness");
+  mono(k, "01", { x: 80, y: 120, size: 40, c: "var(--ac)", t: t1 }); L(k, "CREATEHARNESS", { x: 160, y: 115, size: 110, fit: 1500, t: t1 });
+  PN(k, { x: 80, y: 250, w: 1760, h: 210, bg: "#151517", bd: "3px solid var(--fg)", t: t1 + .05, wipe: true, html: "" });
+  TY(k, { x: 116, y: 270, size: 28, c: "#EEE8DD", text: `$ aws bedrock-agentcore-control create-harness \\\n    --harness-name "MyHarness" \\\n    --execution-role-arn "arn:aws:iam::123456789012:role/MyHarnessRole"`, t: t1 + .1, cps: 110 });
+  mono(k, "02", { x: 80, y: 500, size: 40, c: "var(--ac)", t: t2 }); L(k, "INVOKEHARNESS", { x: 160, y: 495, size: 110, fit: 1500, t: t2 });
+  PN(k, { x: 80, y: 630, w: 1760, h: 250, bg: "#EEE8DD", bd: "3px solid var(--fg)", t: t2 + .05, wipe: true, html: "" });
+  TY(k, { x: 116, y: 645, size: 27, c: "#0B0B0C", text: `response = client.invoke_harness(\n    harnessArn=HARNESS_ARN,\n    runtimeSessionId=SESSION_ID,\n    messages=[{"role": "user", "content": [{"text": "hi"}]}],\n)`, t: t2 + .1, cps: 100 });
+  ST(k, "from the official docs", { x: 1420, y: 430, r: 3, t: t1 + .8, size: 24 });
 });
 S("thatsit", W("how2", "thats"), "orange", 5, k => {
   L(k, "THAT'S IT.", { x: 70, y: 260, size: 560, fit: 1760, t: W("how2", "thats") });
@@ -321,7 +319,7 @@ S("ex", W("b3", "unlike"), "paper", 6, k => {
 S("anymodel", LS("b4"), "orange", 6, k => {
   L(k, "ANY MODEL.", { x: 70, y: 140, size: 300, fit: 1700, t: LS("b4") });
   ["Anthropic Claude", "Amazon Nova", "Meta Llama", "DeepSeek", "Qwen", "Kimi", "MiniMax", "Cohere", "Mistral", "OpenAI", "Google Gemini", "LiteLLM"].forEach((x, i) =>
-    PN(k, { x: 80 + (i % 4) * 440, y: 470 + Math.floor(i / 4) * 120, w: 410, h: 92, bd: "3px solid var(--fg)", r: 46, bg: i % 5 == 0 ? "var(--fg)" : "transparent", c: i % 5 == 0 ? "var(--bg)" : "var(--fg)", t: LS("b4") + .2 + i * .07, snd: i % 4 == 0,
+    PN(k, { x: 80 + (i % 4) * 440, y: 470 + Math.floor(i / 4) * 120, w: 410, h: 92, bd: "3px solid var(--fg)", r: 46, bg: i % 5 == 0 ? "var(--fg)" : "transparent", c: i % 5 == 0 ? "var(--bg)" : "var(--fg)", t: LS("b4") + .15 + i * .04, snd: i % 4 == 0,
       html: `<div style="font:800 28px/86px 'JetBrains Mono';text-align:center">${x}</div>` }));
 });
 S("switch", W("b4", "switch"), "ink", 6, k => {
@@ -420,7 +418,7 @@ S("obs", LS("p3a"), "orange", 10, k => {
   const bars = []; for (let i = 0; i < 40; i++) bars.push(box(k, { left: 140 + i * 16, top: 640, width: 10, height: 10, background: "#0B0B0C" }));
   const rec = box(k, { left: 610, top: 495 }, `<span style="display:inline-block;width:24px;height:24px;border-radius:50%;background:#0B0B0C;margin-right:10px;vertical-align:-3px"></span><span style="font:800 32px 'JetBrains Mono'">REC</span>`);
   LIVE.push(t => { if (t < k.t0 || t > k.t1) return; bars.forEach((b, i) => { const h = 20 + 150 * Math.abs(Math.sin(t * 3 + i * .55) * Math.sin(t * 1.6 + i * .21)); b.style.height = h + "px"; b.style.top = (650 - h / 2) + "px"; }); rec.style.opacity = (Math.floor(t * 1.6) % 2) ? .3 : 1; });
-  L(k, "BLACK", { x: 900, y: 440, size: 230, fit: 900, t: W("p3a", "flight") }); L(k, "BOX.", { x: 900, y: 640, size: 230, fit: 900, c: "var(--ac)", t: W("p3a", "black") });
+  L(k, "BLACK", { x: 900, y: 440, size: 230, fit: 900, t: W("p3a", "flight") }); L(k, "BOX.", { x: 900, y: 665, size: 230, fit: 900, c: "var(--ac)", t: W("p3a", "black") });
 }, { cut: "whoosh" });
 S("wf", LS("p3b"), "paper", 10, k => {
   const row = (label, y, tt, bars, hh, bg) => { L(k, label, { x: 80, y: y + 20, size: 66, fit: 250, t: tt }); bars.forEach((b, i) => PN(k, { x: 360 + b[0], y: y + (110 - hh) / 2, w: b[1], h: hh, bg, bd: "3px solid var(--fg)", t: tt + .08 * i, wipe: true, snd: i === 0, html: "" })); };
