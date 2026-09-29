@@ -1,16 +1,27 @@
-# The Motion Issue: motion graphics explainer (1080×1440, 3:4, 72s)
+# Case File: Project Lily — motion graphics, taught through a real story
 
-`motion-graphics-explainer.mp4` explains what motion graphics is, the 8 motion moves worth knowing, and how to prompt Claude Opus 5.5 / Sonnet 5.5 to make an explainer video.
+A 3:4 (1080×1440) Instagram explainer, about 80 seconds long. It teaches 8 motion moves, each used for a real job in one hot news story:
 
-- **Style:** retro magazine ("Issue Nº05"), fast beat-synced cuts. Anton for English; Assistant in bold/thin pairs for Hebrew.
-- **Subtitles:** Hebrew line on top, English line below. The captions also appear as big layered type placed in front of, behind, and between the scene elements.
-- **Stack:** HTML + GSAP on a paused timeline, so every frame renders the same way each time. Playwright takes a screenshot of each frame and ffmpeg encodes H.264. `soundtrack.py` generates a 120 BPM synth track with sound effects placed on every cut.
+| # | Move | Job in the story |
+|---|------|------------------|
+| 01 | Kinetic type | The headline: "Someone is reading your chats" |
+| 02 | Stagger | Volume: an endless wall of real chats (Project Lily) |
+| 03 | Easing | The numbers: 4 replies scored 1–7, $50+/hour |
+| 04 | Mask reveal | The leak: the privacy filter redacts, and details slip through |
+| 05 | Parallax | The pile: Copilot reviewers see uploaded photos, faces uncensored |
+| 06 | Morph | Chat → eye: not one company (OpenAI, Microsoft, Anthropic) |
+| 07 | Overshoot | The switch |
+| 08 | Line draw | Where to tap: ChatGPT and Claude opt-out paths |
 
-## Rebuild
+It ends with the Claude Code prompt that built the video (Opus 5.5 for script and concept, Sonnet 5.5 for iterations) and a call to action to switch the setting off and share.
+
+**Sources shown on screen:** 404 Media, "Inside 'Project Lily'" (Sep 14, 2026); 404 Media on Copilot reviewers (Sep 2026); Tom's Guide and Android Headlines (opt-out path); IBTimes (the opt-out isn't retroactive); privacy.claude.com (Claude toggle).
+
+## Build
 ```bash
-pip install numpy scipy imageio-ffmpeg
-python3 soundtrack.py
-FFMPEG=$(python3 -c "import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())") \
-  node render.mjs video motion-graphics-explainer.mp4 soundtrack.wav
-node render.mjs stills 5,20,40   # preview frames -> stills/
+export GEMINI_API_KEY=...        # Gemini 3.8 Flash TTS (Hebrew voiceover)
+./build.sh                       # tts.py -> timing.json -> soundtrack.py -> render -> project-lily-motion.mp4
 ```
+- `script.json`: the voiceover lines plus the Hebrew and English subtitles. Edit the text, voice or style here.
+- `tts.py`: one Gemini TTS call per line. Line durations drive every scene cut (`timing.js`). Without a key it estimates the timing.
+- `index.html`: GSAP on a paused timeline, so frames render the same way every time. `node render.mjs stills 5,20` gives preview frames.

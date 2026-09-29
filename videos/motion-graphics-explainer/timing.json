@@ -1,0 +1,134 @@
+{
+ "duration": 80.17,
+ "estimated": true,
+ "lines": [
+  {
+   "i": 0,
+   "scene": "hook",
+   "start": 0.35,
+   "end": 5.994,
+   "he": "404 Media חשפו: מאות קבלנים של OpenAI קוראים *שיחות אמיתיות* של משתמשי ChatGPT.",
+   "en": "404 Media: hundreds of OpenAI contractors read *real ChatGPT chats.*"
+  },
+  {
+   "i": 1,
+   "scene": "toc",
+   "start": 6.274,
+   "end": 11.782,
+   "he": "בואו נהפוך את זה לסרטון מושן שמניע לפעולה. *לכל תנועה — תפקיד.*",
+   "en": "Let's turn it into a motion video that drives action. *Every move gets a job.*"
+  },
+  {
+   "i": 2,
+   "scene": "stagger",
+   "start": 12.062,
+   "end": 16.686,
+   "he": "הפרויקט: *Project Lily.* כל משימה — שיחה אמיתית. עוד אחת. ועוד אחת.",
+   "en": "It's called *Project Lily.* Each task: a real chat. Another. And another."
+  },
+  {
+   "i": 3,
+   "scene": "easing",
+   "start": 16.966,
+   "end": 22.814,
+   "he": "מסכמים מה רצית, מדרגים *4 תשובות מ־1 עד 7.* בשכר של *מעל $50 לשעה.*",
+   "en": "They summarize your intent, score *4 replies 1–7* — for *$50+ an hour.*"
+  },
+  {
+   "i": 4,
+   "scene": "mask",
+   "start": 23.094,
+   "end": 28.398,
+   "he": "פילטר אמור להסיר פרטים אישיים. אבל OpenAI מודים: *מידע רגיש עדיין עובר.*",
+   "en": "A filter strips personal info — but OpenAI admits *sensitive details still slip through.*"
+  },
+  {
+   "i": 5,
+   "scene": "parallax",
+   "start": 28.678,
+   "end": 35.274,
+   "he": "ובמיקרוסופט? בודקים של Copilot רואים גם *תמונות שהעליתם.* פנים לא מצונזרות.",
+   "en": "Microsoft? Copilot reviewers also see *photos users upload.* Faces uncensored."
+  },
+  {
+   "i": 6,
+   "scene": "morph",
+   "start": 35.554,
+   "end": 40.314,
+   "he": "גם Anthropic אישרו בדיקה אנושית. *זה לא סיפור של חברה אחת.*",
+   "en": "Anthropic confirmed human review too. *This isn't one company's story.*"
+  },
+  {
+   "i": 7,
+   "scene": "toggle",
+   "start": 40.594,
+   "end": 42.394,
+   "he": "החדשות הטובות? *יש כפתור.*",
+   "en": "The good news? *There's a switch.*"
+  },
+  {
+   "i": 8,
+   "scene": "gpt",
+   "start": 42.674,
+   "end": 48.046,
+   "he": "ChatGPT: הגדרות ← Data Controls ← *לכבות את Improve the model for everyone.*",
+   "en": "ChatGPT: Settings → Data Controls → *turn off “Improve the model for everyone”.*"
+  },
+  {
+   "i": 9,
+   "scene": "claude",
+   "start": 48.326,
+   "end": 52.406,
+   "he": "Claude: הגדרות ← Privacy ← *לכבות את Help improve our AI models.*",
+   "en": "Claude: Settings → Privacy → *turn off “Help improve our AI models”.*"
+  },
+  {
+   "i": 10,
+   "scene": "hold",
+   "start": 52.686,
+   "end": 56.834,
+   "he": "שימו לב: זה חל *מכאן והלאה.* מה שכבר נאסף — לא חוזר.",
+   "en": "Heads up: it applies *from now on.* What's already collected stays."
+  },
+  {
+   "i": 11,
+   "scene": "prompt",
+   "start": 57.114,
+   "end": 59.494,
+   "he": "ועכשיו — *הפרומפט שבנה את הסרטון הזה.*",
+   "en": "Now — *the prompt that built this video.*"
+  },
+  {
+   "i": 12,
+   "scene": "prompt",
+   "start": 59.774,
+   "end": 64.398,
+   "he": "*Opus 5.5* לתסריט ולקונספט. *Sonnet 5.5* לאיטרציות.",
+   "en": "*Opus 5.5* for script & concept. *Sonnet 5.5* for iterations."
+  },
+  {
+   "i": 13,
+   "scene": "prompt",
+   "start": 64.678,
+   "end": 69.03,
+   "he": "תנו לו *מקרה אמיתי עם מקורות.* ודרשו שלכל תנועה יהיה *תפקיד בסיפור.*",
+   "en": "Give it *a real case with sources.* Demand *every move has a job.*"
+  },
+  {
+   "i": 14,
+   "scene": "prompt",
+   "start": 69.31,
+   "end": 74.342,
+   "he": "*קריינות קודם* — והקאטים לפיה. ובסוף: *שיצלם פריימים ויבקר את עצמו.*",
+   "en": "*Voiceover first,* cut to it. Then make it *screenshot frames & self-critique.*"
+  },
+  {
+   "i": 15,
+   "scene": "cta",
+   "start": 74.622,
+   "end": 78.566,
+   "he": "עכשיו לכו *לכבות את זה.* ושלחו למישהו *שחייב לראות.*",
+   "en": "Now go *switch it off.* And send this to someone *who needs to see it.*"
+  }
+ ]
+}

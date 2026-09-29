@@ -2,658 +2,492 @@
 <html lang="he">
 <head>
 <meta charset="utf-8">
-<title>The Motion Issue</title>
+<title>Case File: Project Lily</title>
 <link rel="stylesheet" href="fonts/fonts.local.css">
 <style>
 :root{
-  --ink:#121015; --paper:#F2EADB; --orange:#FF5A1F; --cobalt:#2B45FF; --lime:#D5FF3F; --claude:#D97757;
+  --black:#0C0C0E; --panel:#17171A; --panel2:#202024; --line:#2C2C31; --bone:#EEE8DD; --ash:#8B867D;
+  --red:#FF3B2F; --paper:#F2EEE6; --ink:#141416; --mute:#C9C2B6;
   --en:'Anton',sans-serif; --he:'Assistant',sans-serif; --mono:'JetBrains Mono',monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{width:1080px;height:1440px;overflow:hidden;background:var(--ink)}
-#stage{position:relative;width:1080px;height:1440px;overflow:hidden;background:var(--ink);color:var(--ink)}
-#world{position:absolute;inset:0;transform-origin:50% 45%}
-.scene{position:absolute;inset:0;visibility:hidden;overflow:hidden}
+html,body{width:1080px;height:1440px;overflow:hidden;background:var(--black)}
+#stage{position:relative;width:1080px;height:1440px;overflow:hidden;background:var(--black);color:var(--bone)}
+#world{position:absolute;left:0;top:0;width:1080px;height:1210px;overflow:hidden;transform-origin:50% 50%}
+.scene{position:absolute;inset:0;visibility:hidden;overflow:hidden;background:var(--black)}
+.scene.paper{background:var(--paper);color:var(--ink)}
 .abs{position:absolute}
-.en{font-family:var(--en);text-transform:uppercase;line-height:.86;letter-spacing:.005em}
-.he{font-family:var(--he);direction:rtl;line-height:.9}
-.w800{font-weight:800}.w200{font-weight:200}.w300{font-weight:300}
+.en{font-family:var(--en);text-transform:uppercase;line-height:.88;letter-spacing:.003em}
+.he{font-family:var(--he);direction:rtl;line-height:1}
+.mono{font-family:var(--mono)}
+.w800{font-weight:800}.w700{font-weight:700}.w200{font-weight:200}.w300{font-weight:300}
 .he span + span{margin-right:.22em}
-.mhead .name{white-space:nowrap}
-.outline{color:transparent;-webkit-text-stroke:3px currentColor}
-.center-x{left:0;right:0;text-align:center}
-.bg-paper{background:var(--paper)} .bg-ink{background:var(--ink)} .bg-orange{background:var(--orange)} .bg-cobalt{background:var(--cobalt)}
-.halftone{background-image:radial-gradient(currentColor 28%,transparent 30%);background-size:18px 18px}
-.tag{font-family:var(--mono);font-size:22px;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border:2px solid currentColor;display:inline-block}
-.chip{font-family:var(--mono);font-size:20px;letter-spacing:.1em;padding:6px 12px;background:var(--ink);color:var(--lime);display:inline-block}
+.cx{left:0;right:0;text-align:center}
+.outline{color:transparent;-webkit-text-stroke:2px currentColor}
+.red{color:var(--red)} .ash{color:var(--ash)}
 
 /* chrome */
-#chrome{position:absolute;left:0;right:0;top:0;height:96px;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 44px;font-family:var(--mono);font-size:20px;letter-spacing:.16em;text-transform:uppercase;mix-blend-mode:difference;color:#fff;pointer-events:none}
-#chrome b{font-family:var(--en);font-weight:400;font-size:34px;letter-spacing:.02em}
-#progress{position:absolute;left:44px;right:44px;top:92px;height:4px;z-index:50;background:rgba(255,255,255,.18);mix-blend-mode:difference}
-#progress i{display:block;height:100%;width:100%;background:#fff;transform-origin:0 50%;transform:scaleX(0)}
-.reg{position:absolute;width:34px;height:34px;z-index:49;mix-blend-mode:difference}
-.reg:before,.reg:after{content:"";position:absolute;background:#fff}
-.reg:before{left:16px;top:0;width:2px;height:34px}.reg:after{top:16px;left:0;height:2px;width:34px}
-#grain{position:absolute;inset:-60px;z-index:60;pointer-events:none;opacity:.16;mix-blend-mode:multiply;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1.2 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>")}
-#vignette{position:absolute;inset:0;z-index:59;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,transparent 60%,rgba(0,0,0,.28))}
+#hdr{position:absolute;left:44px;right:44px;top:30px;height:40px;z-index:30;display:flex;align-items:center;justify-content:space-between;font-family:var(--mono);font-size:17px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone)}
+#hdr .rec{display:flex;align-items:center;gap:12px}
+#rec-dot{width:12px;height:12px;border-radius:50%;background:var(--red)}
+#hdr-rule{position:absolute;left:44px;right:44px;top:78px;height:1px;background:var(--bone);opacity:.18;z-index:30}
+#prog{position:absolute;left:44px;top:77px;height:3px;width:992px;background:var(--red);transform-origin:0 50%;z-index:31}
 
-/* wipes */
-.wipe{position:absolute;inset:0;z-index:40;pointer-events:none;display:flex;flex-direction:column}
-.wipe i{flex:1;display:block}
-.flash{position:absolute;inset:0;z-index:41;background:var(--paper);opacity:0;pointer-events:none}
+/* move chip (inside each scene) */
+.move{position:absolute;left:44px;top:100px;right:44px;display:flex;align-items:flex-start;gap:18px;z-index:20}
+.move .n{font-family:var(--mono);font-size:17px;letter-spacing:.14em;color:var(--red);padding-top:9px;white-space:nowrap}
+.move .t{font-family:var(--en);font-size:44px;line-height:1;white-space:nowrap}
+.move .why{font-family:var(--mono);font-size:17px;line-height:1.45;color:var(--ash);padding-top:4px;max-width:520px}
+.paper .move .why{color:#6f6a62}
+.src{position:absolute;right:44px;bottom:26px;font-family:var(--mono);font-size:15px;letter-spacing:.1em;color:var(--ash);text-transform:uppercase;z-index:20}
+.paper .src{color:#77726a}
 
-/* captions */
-#captions{position:absolute;left:0;right:0;bottom:44px;z-index:45;height:190px}
-.cap{position:absolute;left:40px;right:40px;bottom:0;display:flex;flex-direction:column;align-items:center;gap:10px;visibility:hidden}
-.cap .he-line{direction:rtl;font-family:var(--he);font-weight:800;font-size:46px;line-height:1.1;background:var(--ink);color:var(--paper);padding:8px 20px 12px;display:flex;flex-wrap:wrap;justify-content:center;gap:0 .28em;box-shadow:8px 8px 0 rgba(0,0,0,.25)}
-.cap .en-line{font-family:var(--en);font-size:32px;letter-spacing:.04em;text-transform:uppercase;background:var(--lime);color:var(--ink);padding:6px 16px 6px;display:flex;flex-wrap:wrap;justify-content:center;gap:0 .3em}
-.cap span{display:inline-block}
-.cap .he-line .hl{color:var(--lime)}
-.cap .he-line .thin{font-weight:300}
-.cap .en-line .hl{background:var(--ink);color:var(--lime);padding:0 6px}
+/* caption band */
+#band{position:absolute;left:0;right:0;top:1210px;bottom:0;background:var(--black);z-index:40;border-top:2px solid var(--red)}
+.cap{position:absolute;left:44px;right:44px;top:30px;visibility:hidden}
+.cap .h{direction:rtl;font-family:var(--he);font-weight:700;font-size:40px;line-height:1.18;color:var(--bone);display:flex;flex-wrap:wrap;gap:0 .26em;justify-content:flex-start}
+.cap .e{margin-top:12px;font-family:var(--en);font-size:27px;letter-spacing:.03em;line-height:1.15;text-transform:uppercase;color:var(--bone);display:flex;flex-wrap:wrap;gap:0 .3em;direction:ltr}
+.cap span{display:inline-block;opacity:.28}
+.cap .hl{color:var(--red)}
+.cap bdi{unicode-bidi:isolate}
 
-/* terminal */
-.term{position:absolute;left:54px;right:54px;top:430px;height:740px;background:#0B0A0E;border:2px solid #2d2a33;border-radius:18px;overflow:hidden;box-shadow:18px 18px 0 var(--cobalt)}
-.term .bar{height:54px;background:#1b1920;display:flex;align-items:center;padding:0 20px;gap:10px;font-family:var(--mono);font-size:19px;color:#8d8896}
-.term .bar i{width:15px;height:15px;border-radius:50%;display:inline-block}
-.term .body{padding:26px 30px;font-family:var(--mono);font-size:25px;line-height:1.5;color:#e9e4f0;direction:ltr;text-align:left}
-.term .ln{white-space:pre-wrap;border-left:5px solid transparent;padding-left:14px;margin-left:-19px;opacity:.42}
-.term .ln.on{opacity:1;border-left-color:var(--lime);background:rgba(213,255,63,.06)}
-.k1{color:var(--lime)} .k2{color:var(--claude)} .k3{color:#8ea0ff} .dim{color:#77727f}
-.cursor{display:inline-block;width:13px;height:28px;background:var(--lime);vertical-align:-5px;margin-left:2px}
+#grain{position:absolute;inset:-60px;z-index:60;pointer-events:none;opacity:.07;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 1.4 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>")}
+#redact{position:absolute;left:0;top:0;width:1080px;height:1210px;z-index:35;pointer-events:none}
+#redact i{position:absolute;left:0;right:0;display:block;background:var(--ink)}
+#redact b{position:absolute;right:0;top:0;bottom:0;width:10px;background:var(--red)}
+
+/* shared UI bits */
+.bub{position:absolute;padding:22px 26px;border-radius:26px;background:var(--panel2);width:560px}
+.bub.me{background:#2A2A2F;border-bottom-right-radius:6px}
+.bub.ai{background:var(--black);border:2px solid var(--line);border-bottom-left-radius:6px}
+.bub .ln{height:14px;border-radius:7px;background:#4A4A52;margin:9px 0}
+.bub .tag{font-family:var(--mono);font-size:14px;letter-spacing:.14em;color:var(--ash);margin-bottom:8px}
+.phone{position:absolute;left:240px;top:190px;width:600px;height:990px;border-radius:64px;background:#000;border:3px solid #34343a;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.55)}
+.phone .scr{position:absolute;inset:14px;border-radius:52px;overflow:hidden;background:#171717}
+.phone .pg{position:absolute;inset:0;padding:78px 34px 0}
+.phone .ttl{font-family:var(--he);font-weight:700;font-size:40px;direction:ltr;color:#f2f2f2;margin-bottom:26px}
+.phone .row{display:flex;align-items:center;justify-content:space-between;font-family:var(--he);font-size:29px;color:#e8e8e8;padding:24px 8px;border-bottom:1px solid #2c2c2c;direction:ltr}
+.phone .row small{display:block;font-size:20px;color:#8e8e8e;margin-top:6px;line-height:1.25;max-width:380px}
+.sw{width:86px;height:50px;border-radius:25px;background:#34C759;position:relative;flex:none}
+.sw i{position:absolute;top:4px;left:40px;width:42px;height:42px;border-radius:50%;background:#fff;display:block}
+.term{position:absolute;left:44px;right:44px;background:#09090B;border:2px solid var(--line);border-radius:18px;overflow:hidden}
+.term .bar{height:50px;background:var(--panel);display:flex;align-items:center;padding:0 20px;gap:10px;font-family:var(--mono);font-size:17px;color:var(--ash)}
+.term .bar i{width:13px;height:13px;border-radius:50%;background:#3a3a40;display:inline-block}
+.term .body{padding:22px 26px;font-family:var(--mono);font-size:23px;line-height:1.5;color:#dcd6cc;direction:ltr;text-align:left}
+.term .tl{white-space:pre-wrap;border-left:4px solid transparent;padding-left:14px;margin-left:-18px;opacity:.45;margin-bottom:6px}
+.term .tl.on{opacity:1;border-left-color:var(--red)}
+.k1{color:var(--red)} .k2{color:#E8B27A} .k3{color:#9FB4FF} .dim{color:#6b665f}
+.cursor{display:inline-block;width:12px;height:26px;background:var(--red);vertical-align:-5px}
 </style>
 </head>
 <body>
 <div id="stage">
 <div id="world">
 
-<!-- ============ S1 HOOK ============ -->
-<section class="scene bg-paper" id="s1">
-  <div class="abs halftone" style="color:#e2d6c1;inset:0"></div>
-  <div class="abs he w800" id="s1-heb" style="top:150px;right:-30px;font-size:360px;color:var(--cobalt);white-space:nowrap">מושן</div>
-  <div class="abs" id="s1-circle" style="left:250px;top:470px;width:580px;height:580px;border-radius:50%;background:var(--orange)"></div>
-  <div class="abs en center-x" id="s1-motion" style="top:560px;font-size:318px;color:var(--ink);white-space:nowrap"></div>
-  <div class="abs" id="s1-graphics" style="left:0;right:0;top:855px;text-align:center;font-family:var(--he);font-weight:200;font-size:150px;color:var(--ink);letter-spacing:-.02em">graphics</div>
-  <div class="abs he w200" id="s1-heb2" style="top:1010px;left:90px;font-size:120px;color:var(--cobalt)">גרפיקס</div>
-  <div class="abs" id="s1-q" style="right:80px;top:990px;width:170px;height:170px;border-radius:50%;background:var(--lime);display:grid;place-items:center;font-family:var(--en);font-size:130px;color:var(--ink)">?</div>
-  <div class="abs tag" id="s1-tag" style="left:60px;top:130px;color:var(--ink)">Issue Nº05 — The Motion Issue</div>
+<!-- 1 HOOK — kinetic type -->
+<section class="scene" id="hook">
+  <div class="move"><span class="n">MOVE 01</span><span class="t">KINETIC TYPE</span><span class="why">The headline is the hero. Each word lands on the voice.</span></div>
+  <div class="abs he w800 outline" id="hk-back" style="top:250px;right:-40px;font-size:430px;color:#3a3833;white-space:nowrap">קוראים</div>
+  <div class="abs" id="hk-bubble" style="left:560px;top:600px;width:420px;height:170px;border-radius:30px;background:var(--panel2);padding:30px">
+    <div style="height:16px;border-radius:8px;background:#4a4a52;width:90%"></div><div style="height:16px;border-radius:8px;background:#4a4a52;width:70%;margin-top:18px"></div><div style="height:16px;border-radius:8px;background:#4a4a52;width:80%;margin-top:18px"></div>
+  </div>
+  <div class="abs en" id="hk-w1" style="left:44px;top:290px;font-size:200px">SOMEONE</div>
+  <div class="abs en red" id="hk-w2" style="left:44px;top:480px;font-size:200px">IS READING</div>
+  <div class="abs en" id="hk-w3" style="left:44px;top:670px;font-size:200px">YOUR CHATS.</div>
+  <div class="abs" id="hk-scan" style="left:0;right:0;top:470px;height:3px;background:var(--red);box-shadow:0 0 24px var(--red)"></div>
+  <div class="abs" id="hk-src" style="left:44px;top:930px;display:flex;align-items:center;gap:20px">
+    <img src="assets/openai.svg" style="width:64px;height:64px">
+    <div class="mono" style="font-size:20px;letter-spacing:.12em;color:var(--ash);line-height:1.5">REPORTED BY <span style="color:var(--bone)">404 MEDIA</span><br>SEP 14, 2026 · “PROJECT LILY”</div>
+  </div>
+  <div class="src">Source: 404media.co</div>
 </section>
 
-<!-- ============ S2 DEFINITION ============ -->
-<section class="scene bg-ink" id="s2">
-  <div class="abs en outline center-x" id="s2-back" style="top:240px;font-size:250px;color:var(--paper);white-space:nowrap;opacity:.9">THAT<br>MOVES</div>
-  <div class="abs" id="s2-circle" style="left:120px;top:560px;width:260px;height:260px;border-radius:50%;background:var(--orange)"></div>
-  <div class="abs" id="s2-square" style="left:420px;top:620px;width:230px;height:230px;background:var(--cobalt)"></div>
-  <svg class="abs" id="s2-tri" style="left:700px;top:560px" width="270" height="260" viewBox="0 0 270 260"><polygon points="135,0 270,260 0,260" fill="#D5FF3F"/></svg>
-  <div class="abs" id="s2-front" style="left:60px;top:790px;">
-    <div class="en" style="font-size:170px;color:var(--paper)">GRAPHIC<br>DESIGN</div>
-  </div>
-  <div class="abs he" id="s2-he" style="right:60px;top:820px;text-align:right;color:var(--lime)"><div class="w800" style="font-size:110px">עיצוב גרפי</div><div class="w200" style="font-size:130px;color:var(--paper)">שזז.</div></div>
-  <div class="abs tag" id="s2-paused" style="left:60px;top:140px;color:var(--lime)">❚❚ paused</div>
-  <div class="abs tag" id="s2-play" style="left:60px;top:140px;color:var(--ink);background:var(--lime);border-color:var(--lime)">▶ playing</div>
-  <!-- phase B: 4 ingredient tiles -->
-  <div class="abs" id="s2-tiles" style="left:60px;right:60px;top:380px;display:grid;grid-template-columns:1fr 1fr;gap:22px">
-    <div class="tile" style="background:var(--paper);height:300px;padding:28px;position:relative">
-      <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="#121015" stroke-width="2.2" stroke-linecap="round"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
-      <div class="en" style="position:absolute;left:28px;bottom:28px;font-size:78px">TYPE</div><div class="he w300" style="position:absolute;right:28px;bottom:32px;font-size:48px">טקסט</div></div>
-    <div class="tile" style="background:var(--orange);height:300px;padding:28px;position:relative">
-      <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="#121015" stroke-width="2.2" stroke-linejoin="round"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg>
-      <div class="en" style="position:absolute;left:28px;bottom:28px;font-size:78px">ICONS</div><div class="he w300" style="position:absolute;right:28px;bottom:32px;font-size:48px">אייקונים</div></div>
-    <div class="tile" style="background:var(--cobalt);height:300px;padding:28px;position:relative;color:var(--paper)">
-      <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="#F2EADB" stroke-width="2.2"><circle cx="8" cy="8" r="5"/><rect x="11" y="11" width="10" height="10"/></svg>
-      <div class="en" style="position:absolute;left:28px;bottom:28px;font-size:78px">SHAPES</div><div class="he w300" style="position:absolute;right:28px;bottom:32px;font-size:48px">צורות</div></div>
-    <div class="tile" style="background:var(--lime);height:300px;padding:28px;position:relative">
-      <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="#121015" stroke-width="2.4" stroke-linecap="round"><path d="M4 20V13M10 20V6M16 20v-9M22 20H2"/></svg>
-      <div class="en" style="position:absolute;left:28px;bottom:28px;font-size:78px">DATA</div><div class="he w300" style="position:absolute;right:28px;bottom:32px;font-size:48px">דאטה</div></div>
-  </div>
-  <div class="abs" id="s2-plus" style="left:60px;right:60px;top:1060px;display:flex;justify-content:space-between;align-items:center;color:var(--paper)">
-    <div class="en" style="font-size:96px">+ TIME</div>
-    <div id="s2-metro" style="display:flex;gap:12px"><i style="width:26px;height:70px;background:var(--lime);display:block"></i><i style="width:26px;height:70px;background:var(--lime);display:block"></i><i style="width:26px;height:70px;background:var(--lime);display:block"></i><i style="width:26px;height:70px;background:var(--lime);display:block"></i></div>
-    <div class="en" style="font-size:96px;color:var(--orange)">+ RHYTHM</div>
-  </div>
+<!-- 2 TOC — plan every move -->
+<section class="scene paper" id="toc">
+  <div class="move"><span class="n">STEP 00</span><span class="t">THE PLAN</span><span class="why">Map every move to a job in the story — before animating anything.</span></div>
+  <div class="abs en" style="left:44px;top:200px;font-size:128px;color:var(--ink)">ONE STORY.</div>
+  <div class="abs en" style="left:44px;top:318px;font-size:128px;color:var(--red)">EIGHT MOVES.</div>
+  <div class="abs" id="toc-list" style="left:44px;right:44px;top:470px"></div>
 </section>
 
-<!-- ============ S3 GOAL ============ -->
-<section class="scene bg-orange" id="s3">
-  <div class="abs halftone" style="color:#ff7a47;inset:0;opacity:.8"></div>
-  <div class="abs he w800 center-x" id="s3-heb" style="top:250px;font-size:300px;color:var(--paper);white-space:nowrap">להסביר</div>
-  <div class="abs en center-x" id="s3-explain" style="top:430px;font-size:280px;color:var(--ink)">EXPLAIN</div>
-  <div class="abs center-x" id="s3-gt" style="top:705px;font-family:var(--he);font-weight:200;font-style:italic;font-size:110px;line-height:1;color:var(--ink)">over</div>
-  <div class="abs en outline center-x" id="s3-decorate" style="top:870px;font-size:200px;color:var(--ink)">DECORATE</div>
-  <div class="abs" id="s3-strike" style="left:110px;width:860px;top:945px;height:34px;background:var(--lime);transform-origin:0 50%;box-shadow:0 0 0 4px var(--ink)"></div>
-  <div class="abs he w300" id="s3-heb2" style="left:80px;top:150px;font-size:64px;color:var(--ink)">לא רק לקשט.</div>
+<!-- 3 STAGGER -->
+<section class="scene" id="stagger">
+  <div class="abs en" id="st-back" style="left:30px;top:330px;font-size:260px;color:var(--bone);white-space:nowrap;line-height:.9">PROJECT<br><span class="red">LILY</span></div>
+  <div class="abs" id="st-wall" style="left:0;right:0;top:0;height:1210px"></div>
+  <div class="move"><span class="n">MOVE 02</span><span class="t">STAGGER</span><span class="why">One after another — not all at once. Reads as volume: there’s a lot of this.</span></div>
+  <div class="src">Source: 404media.co · Sep 14, 2026</div>
 </section>
 
-<!-- ============ S4 8 MOVES ============ -->
-<section class="scene bg-cobalt" id="s4">
-  <div class="abs en" id="s4-8a" style="left:0;right:0;top:40px;text-align:center;font-size:1180px;color:var(--lime);line-height:1">8</div>
-  <div class="abs en center-x" id="s4-moves" style="top:580px;font-size:250px;color:var(--paper);white-space:nowrap">MOVES</div>
-  <div class="abs he" id="s4-he" style="right:70px;top:150px;text-align:right;color:var(--paper)"><span class="w800" style="font-size:78px">תנועות</span> <span class="w200" style="font-size:78px">שחייבים להכיר</span></div>
-  <div class="abs tag" id="s4-tag" style="left:60px;top:1080px;color:var(--paper)">A field guide / מדריך שטח</div>
-</section>
-
-<!-- ============ MOVE TEMPLATE PARTS are inline per scene ============ -->
-<!-- M1 EASING -->
-<section class="scene bg-paper" id="m1">
-  <div class="abs en outline" style="left:-20px;top:360px;font-size:520px;color:#d9ccb4;-webkit-text-stroke-width:4px" id="m1-back">EASE</div>
-  <div class="mhead abs" style="left:60px;top:130px;right:60px">
-    <div class="en outline num" style="font-size:190px;color:var(--orange);-webkit-text-stroke-width:4px">01</div>
-    <div class="en name" style="position:absolute;left:250px;top:10px;font-size:150px;color:var(--ink)">EASING</div>
-    <div class="he w800 hname" style="position:absolute;right:0;top:130px;font-size:64px;color:var(--cobalt)">איזינג <span class="w200">/ האצה והאטה</span></div>
+<!-- 4 EASING -->
+<section class="scene paper" id="easing">
+  <div class="move"><span class="n">MOVE 03</span><span class="t">EASING</span><span class="why">Fast start, soft landing. Counters &amp; sliders feel physical, not robotic.</span></div>
+  <div class="abs" id="ea-card" style="left:44px;right:44px;top:200px;height:420px;background:#fff;border:2px solid var(--ink);border-radius:18px;padding:30px 34px">
+    <div class="mono" style="font-size:18px;letter-spacing:.14em;color:#6f6a62">REVIEW TASK · SCORE 4 REPLIES · 1–7</div>
+    <div style="margin-top:14px;font-family:var(--he);font-size:28px;direction:ltr;color:var(--ink)"><b>User intent:</b> <span id="ea-intent"></span></div>
+    <div id="ea-rows" style="margin-top:26px"></div>
   </div>
-  <div class="abs" style="left:60px;right:60px;top:440px">
-    <div style="font-family:var(--mono);font-size:22px;letter-spacing:.14em;color:#8c8373">LINEAR</div>
-    <div style="height:120px;border-bottom:3px dashed #bfb3a0;position:relative"><div id="m1-lin" style="position:absolute;left:0;top:14px;width:100px;height:100px;border-radius:50%;background:#bfb3a0"></div></div>
-    <div style="font-family:var(--mono);font-size:22px;letter-spacing:.14em;color:var(--ink);margin-top:34px">EASE-IN-OUT ✓</div>
-    <div style="height:120px;border-bottom:3px solid var(--ink);position:relative"><div id="m1-ease" style="position:absolute;left:0;top:14px;width:100px;height:100px;border-radius:50%;background:var(--orange)"></div></div>
-  </div>
-  <svg class="abs" id="m1-graph" style="left:300px;top:790px" width="480" height="380" viewBox="0 0 480 380">
-    <rect x="1" y="1" width="478" height="378" fill="#121015"/>
-    <path d="M40 340 H440 M40 340 V40" stroke="#4a4552" stroke-width="2"/>
-    <path id="m1-lpath" d="M40 340 L440 40" stroke="#4a4552" stroke-width="3" stroke-dasharray="8 8" fill="none"/>
-    <path id="m1-cpath" d="M40 340 C 240 340, 240 40, 440 40" stroke="#D5FF3F" stroke-width="7" fill="none" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
-    <circle id="m1-dot" cx="40" cy="340" r="14" fill="#FF5A1F"/>
-    <text x="50" y="30" fill="#8d8896" font-family="JetBrains Mono" font-size="16">cubic-bezier(.65,0,.35,1)</text>
+  <div class="abs en" id="ea-num" style="left:44px;top:700px;font-size:250px;color:var(--ink);white-space:nowrap">$<span id="ea-n">0</span>+</div>
+  <div class="abs en" style="left:520px;top:730px;font-size:64px;color:var(--ink);line-height:1">/ HOUR</div>
+  <div class="abs he w300" style="left:520px;top:810px;font-size:40px;color:#6f6a62">לשעה, לקרוא שיחות</div>
+  <svg class="abs" id="ea-graph" style="left:44px;top:990px" width="276" height="170" viewBox="0 0 276 170">
+    <path d="M10 160 H266 M10 160 V10" stroke="#b9b2a6" stroke-width="2"/>
+    <path id="ea-curve" d="M10 160 C 60 20, 140 12, 266 10" stroke="#FF3B2F" stroke-width="5" fill="none" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+    <text x="18" y="24" fill="#77726a" font-family="JetBrains Mono" font-size="14">ease-out</text>
   </svg>
+  <div class="src">Source: 404media.co via AI Weekly / Android Headlines</div>
 </section>
 
-<!-- M2 OVERSHOOT -->
-<section class="scene bg-ink" id="m2">
-  <div class="abs en" id="m2-back" style="left:0;right:0;top:420px;text-align:center;font-size:400px;color:#1f1c24">BOING</div>
-  <div class="mhead abs" style="left:60px;top:130px;right:60px">
-    <div class="en outline num" style="font-size:190px;color:var(--lime);-webkit-text-stroke-width:4px">02</div>
-    <div class="en name" style="position:absolute;left:250px;top:10px;font-size:150px;color:var(--paper)">OVERSHOOT</div>
-    <div class="he w800 hname" style="position:absolute;right:0;top:130px;font-size:64px;color:var(--lime)">אוברשוט <span class="w200" style="color:var(--paper)">/ עבור וחזור</span></div>
+<!-- 5 MASK REVEAL -->
+<section class="scene" id="mask">
+  <div class="move"><span class="n">MOVE 04</span><span class="t">MASK REVEAL</span><span class="why">Hide, then reveal. Here the motion IS the story: what was hidden leaks.</span></div>
+  <div class="abs en outline" id="mk-back" style="left:20px;top:250px;font-size:250px;color:#3a3833;white-space:nowrap">FILTERED?</div>
+  <div class="abs" id="mk-doc" style="left:90px;top:330px;width:900px;height:720px;background:var(--paper);color:var(--ink);padding:44px 48px;transform:rotate(-2deg);box-shadow:0 30px 60px rgba(0,0,0,.5)">
+    <div class="mono" style="font-size:17px;letter-spacing:.14em;color:#77726a;display:flex;justify-content:space-between"><span>CHAT TRANSCRIPT · TASK</span><span>ILLUSTRATIVE EXAMPLE</span></div>
+    <div id="mk-lines" style="margin-top:28px;font-family:var(--he);font-size:34px;line-height:1.35;direction:ltr"></div>
+    <div id="mk-scanner" class="abs" style="left:0;right:0;top:0;height:4px;background:var(--red);box-shadow:0 0 30px var(--red)"><span class="mono" style="position:absolute;right:10px;top:-26px;font-size:14px;letter-spacing:.14em;color:var(--red)">PRIVACY FILTER</span></div>
   </div>
-  <div class="abs" style="left:290px;top:470px;width:500px;height:500px;border:4px dashed #5b5563"></div>
-  <div class="abs" id="m2-card" style="left:290px;top:470px;width:500px;height:500px;background:var(--cobalt);display:grid;place-items:center;transform-origin:50% 50%">
-    <div class="en" style="font-size:190px;color:var(--paper)">POP!</div>
-  </div>
-  <div class="abs" style="left:60px;right:60px;top:1030px;height:4px;background:#3a3640"></div>
-  <div class="abs" style="left:700px;top:1000px;width:4px;height:64px;background:var(--orange)"></div>
-  <div class="abs" id="m2-slide" style="left:60px;top:1004px;width:120px;height:56px;background:var(--orange)"></div>
-  <div class="abs" style="left:640px;top:1080px;font-family:var(--mono);font-size:20px;color:var(--orange);letter-spacing:.1em">TARGET</div>
+  <div class="abs en red" id="mk-slip" style="left:44px;top:1080px;font-size:96px">SLIPS THROUGH.</div>
+  <div class="src">Source: 404media.co · IBTimes</div>
 </section>
 
-<!-- M3 STAGGER -->
-<section class="scene bg-paper" id="m3">
-  <div class="mhead abs" style="left:60px;top:130px;right:60px">
-    <div class="en outline num" style="font-size:190px;color:var(--cobalt);-webkit-text-stroke-width:4px">03</div>
-    <div class="en name" style="position:absolute;left:250px;top:10px;font-size:150px;color:var(--ink)">STAGGER</div>
-    <div class="he w800 hname" style="position:absolute;right:0;top:130px;font-size:64px;color:var(--orange)">סטאגר <span class="w200" style="color:var(--ink)">/ אחד אחרי השני</span></div>
-  </div>
-  <div class="abs en" id="m3-back" style="left:40px;top:440px;font-size:190px;color:var(--cobalt);opacity:.14;line-height:.95">ONE<br>BY<br>ONE</div>
-  <div class="abs" id="m3-bars" style="left:70px;right:70px;top:450px;height:430px;display:flex;align-items:flex-end;gap:18px">
-    <i style="flex:1;height:30%;background:var(--ink)"></i><i style="flex:1;height:52%;background:var(--orange)"></i><i style="flex:1;height:40%;background:var(--ink)"></i><i style="flex:1;height:74%;background:var(--cobalt)"></i><i style="flex:1;height:60%;background:var(--ink)"></i><i style="flex:1;height:88%;background:var(--orange)"></i><i style="flex:1;height:70%;background:var(--ink)"></i><i style="flex:1;height:100%;background:var(--cobalt)"></i>
-  </div>
-  <div class="abs" id="m3-dots" style="left:70px;right:70px;top:920px;display:grid;grid-template-columns:repeat(10,1fr);gap:16px"></div>
+<!-- 6 PARALLAX -->
+<section class="scene" id="parallax">
+  <div class="abs" id="px-far" style="left:0;top:300px;width:2200px;height:300px"></div>
+  <div class="abs" id="px-mid" style="left:0;top:470px;width:2600px;height:420px"></div>
+  <div class="abs en red" id="px-word" style="left:40px;top:500px;font-size:250px;white-space:nowrap">UNCENSORED</div>
+  <div class="abs" id="px-near" style="left:0;top:640px;width:3200px;height:560px"></div>
+  <div class="move"><span class="n">MOVE 05</span><span class="t">PARALLAX</span><span class="why">Layers at different speeds = depth. It pulls the viewer into the pile.</span></div>
+  <div class="abs" style="left:44px;top:200px;display:flex;align-items:center;gap:16px"><img src="assets/copilot-color.svg" style="width:58px;height:58px"><span class="en" style="font-size:54px">MICROSOFT COPILOT</span></div>
+  <div class="src">Source: 404media.co · Sep 2026</div>
 </section>
 
-<!-- M4 KINETIC TYPE -->
-<section class="scene bg-orange" id="m4">
-  <div class="mhead abs" style="left:60px;top:130px;right:60px">
-    <div class="en outline num" style="font-size:190px;color:var(--ink);-webkit-text-stroke-width:4px">04</div>
-    <div class="en name" style="position:absolute;left:250px;top:10px;font-size:150px;color:var(--paper)">KINETIC TYPE</div>
+<!-- 7 MORPH -->
+<section class="scene paper" id="morph">
+  <div class="move"><span class="n">MOVE 06</span><span class="t">MORPH</span><span class="why">One shape becomes another: a chat turns into an eye. Idea → consequence.</span></div>
+  <div class="abs" id="mo-shape" style="left:240px;top:250px;width:600px;height:470px;background:var(--ink)"></div>
+  <div class="abs" id="mo-iris" style="left:450px;top:395px;width:180px;height:180px;border-radius:50%;background:var(--red)"><div style="position:absolute;left:55px;top:55px;width:70px;height:70px;border-radius:50%;background:var(--ink)"></div></div>
+  <div class="abs" id="mo-logos" style="left:0;right:0;top:790px;display:flex;justify-content:center;gap:70px">
+    <img src="assets/openai-ink.svg" style="width:110px;height:110px"><img src="assets/copilot-color.svg" style="width:110px;height:110px"><img src="assets/claude-color.svg" style="width:110px;height:110px">
   </div>
-  <div class="abs he w800" id="m4-heb" style="right:40px;top:420px;font-size:250px;color:#ff7c4f;white-space:nowrap">הגיבור</div>
-  <div class="abs" id="m4-words" style="left:60px;right:60px;top:430px;height:740px">
-    <div class="en kw" style="position:absolute;left:0;top:0;font-size:200px;color:var(--ink)">THE</div>
-    <div class="en kw" style="position:absolute;right:0;top:40px;font-size:260px;color:var(--paper)">TEXT</div>
-    <div class="kw" style="position:absolute;left:0;top:230px;font-family:var(--he);font-weight:200;font-size:120px;color:var(--ink);font-style:italic">is the</div>
-    <div class="en kw" style="position:absolute;left:0;right:0;top:420px;text-align:center;font-size:340px;color:var(--ink);background:var(--lime);line-height:.95;padding-top:14px">HERO</div>
-  </div>
+  <div class="abs en cx" id="mo-txt" style="top:960px;font-size:120px;color:var(--ink)">NOT ONE COMPANY.</div>
+  <div class="src">Source: 404media.co — Anthropic confirmed human review</div>
 </section>
 
-<!-- M5 MASK REVEAL -->
-<section class="scene bg-ink" id="m5">
-  <div class="mhead abs" style="left:60px;top:130px;right:60px">
-    <div class="en outline num" style="font-size:190px;color:var(--orange);-webkit-text-stroke-width:4px">05</div>
-    <div class="en name" style="position:absolute;left:250px;top:10px;font-size:150px;color:var(--paper)">MASK REVEAL</div>
-    <div class="he w800 hname" style="position:absolute;right:0;top:130px;font-size:64px;color:var(--orange)">מאסק ריביל <span class="w200" style="color:var(--paper)">/ חשיפה</span></div>
+<!-- 8 OVERSHOOT -->
+<section class="scene" id="toggle">
+  <div class="move"><span class="n">MOVE 07</span><span class="t">OVERSHOOT</span><span class="why">Pass the target, settle back. A tiny bounce makes UI feel tappable.</span></div>
+  <div class="abs en" id="tg-t1" style="left:44px;top:230px;font-size:170px">THERE’S</div>
+  <div class="abs en" id="tg-t2" style="left:44px;top:390px;font-size:170px">A SWITCH.</div>
+  <div class="abs" id="tg-pill" style="left:230px;top:640px;width:620px;height:330px;border-radius:165px;background:var(--red)">
+    <div id="tg-knob" style="position:absolute;left:310px;top:20px;width:290px;height:290px;border-radius:50%;background:var(--bone);box-shadow:0 12px 30px rgba(0,0,0,.35)"></div>
   </div>
-  <div class="abs en center-x" style="top:520px;font-size:300px;color:#2a2630">HIDDEN</div>
-  <div class="abs" id="m5-panel" style="left:60px;right:60px;top:450px;height:560px;background:var(--lime);clip-path:circle(0% at 50% 50%);display:grid;place-items:center">
-    <div style="text-align:center">
-      <div class="en" style="font-size:280px;color:var(--ink)">REVEAL</div>
-      <div class="he w200" style="font-size:110px;color:var(--ink)">נחשף.</div>
-    </div>
-  </div>
-  <div class="abs" style="left:60px;top:1040px;overflow:hidden;height:100px"><div id="m5-line1" class="en" style="font-size:96px;color:var(--paper)">THROUGH A SHAPE</div></div>
+  <div class="abs en" id="tg-on" style="left:300px;top:1000px;font-size:80px">ON</div>
+  <div class="abs en" id="tg-off" style="left:640px;top:1000px;font-size:80px;color:var(--red)">OFF</div>
 </section>
 
-<!-- M6 LINE DRAW -->
-<section class="scene bg-paper" id="m6">
-  <div class="mhead abs" style="left:60px;top:130px;right:60px">
-    <div class="en outline num" style="font-size:190px;color:var(--cobalt);-webkit-text-stroke-width:4px">06</div>
-    <div class="en name" style="position:absolute;left:250px;top:10px;font-size:150px;color:var(--ink)">LINE DRAW</div>
-    <div class="he w800 hname" style="position:absolute;right:0;top:130px;font-size:64px;color:var(--cobalt)">ליין דרו <span class="w200" style="color:var(--ink)">/ קו שמצייר</span></div>
-  </div>
-  <div class="abs en" style="left:120px;top:600px;font-size:230px;color:var(--ink)">THIS</div>
-  <div class="abs he w200" style="left:600px;top:640px;font-size:150px;color:var(--ink)">חשוב.</div>
-  <svg class="abs" style="left:0;top:380px" width="1080" height="820" viewBox="0 0 1080 820" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path class="draw" d="M100 190 C 60 60, 520 40, 560 190 C 600 340, 70 360, 90 210" stroke="#FF5A1F" stroke-width="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
-    <path class="draw" d="M590 470 C 700 440, 880 480, 990 450" stroke="#2B45FF" stroke-width="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
-    <path class="draw" d="M180 780 C 240 560, 420 520, 560 600 C 640 650, 700 560, 820 520 L 780 500 M820 520 L 790 560" stroke="#121015" stroke-width="10" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
-    <path class="draw" d="M40 20 H1040" stroke="#121015" stroke-width="3" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+<!-- 9 LINE DRAW — ChatGPT -->
+<section class="scene" id="gpt">
+  <div class="move"><span class="n">MOVE 08</span><span class="t">LINE DRAW</span><span class="why">A line that draws itself guides the eye exactly where to tap.</span></div>
+  <div class="phone"><div class="scr">
+    <div class="pg" id="g-p1"><div class="ttl" style="display:flex;align-items:center;gap:16px"><img src="assets/openai.svg" style="width:44px;height:44px">Settings</div>
+      <div class="row">General<span>›</span></div><div class="row">Notifications<span>›</span></div><div class="row">Personalization<span>›</span></div><div class="row" id="g-dc">Data controls<span>›</span></div><div class="row">Security<span>›</span></div><div class="row">Account<span>›</span></div></div>
+    <div class="pg" id="g-p2" style="background:#171717"><div class="ttl">‹ Data controls</div>
+      <div class="row" id="g-row"><div>Improve the model for everyone<small>Allow your content to be used to train our models</small></div><div class="sw" id="g-sw"><i></i></div></div>
+      <div class="row">Shared links<span>›</span></div><div class="row">Export data<span>›</span></div></div>
+  </div></div>
+  <svg class="abs" style="left:0;top:0" width="1080" height="1210" viewBox="0 0 1080 1210" fill="none" stroke="#FF3B2F" stroke-linecap="round" stroke-linejoin="round">
+    <path class="d1" d="M280 640 C 300 590, 560 585, 640 600 C 700 612, 690 680, 600 690 C 470 700, 300 700, 275 660" stroke-width="7" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+    <path class="d2" d="M60 900 C 120 700, 160 640, 240 640 M240 640 l-40 -16 M240 640 l-26 34" stroke-width="7" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+    <path class="d3" d="M650 440 C 660 380, 850 375, 860 440 C 866 505, 680 510, 652 462" stroke-width="7" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
   </svg>
+  <div class="abs mono" style="left:44px;top:1100px;font-size:20px;letter-spacing:.12em;color:var(--bone)">SETTINGS → DATA CONTROLS → <span class="red">OFF</span></div>
+  <div class="src">Source: Tom’s Guide · Android Headlines</div>
 </section>
 
-<!-- M7 MORPH -->
-<section class="scene bg-cobalt" id="m7">
-  <div class="mhead abs" style="left:60px;top:130px;right:60px">
-    <div class="en outline num" style="font-size:190px;color:var(--lime);-webkit-text-stroke-width:4px">07</div>
-    <div class="en name" style="position:absolute;left:250px;top:10px;font-size:150px;color:var(--paper)">MORPH</div>
-    <div class="he w800 hname" style="position:absolute;right:0;top:130px;font-size:64px;color:var(--lime)">מורף <span class="w200" style="color:var(--paper)">/ צורה לצורה</span></div>
-  </div>
-  <div class="abs en outline center-x" id="m7-back" style="top:560px;font-size:250px;color:var(--paper);opacity:.35">SHAPE</div>
-  <div class="abs" id="m7-shape" style="left:240px;top:430px;width:600px;height:600px;background:var(--lime)"></div>
-  <div class="abs" id="m7-labels" style="left:60px;right:60px;top:1070px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:26px;letter-spacing:.14em;color:var(--paper)">
-    <span>● CIRCLE</span><span>→</span><span>■ SQUARE</span><span>→</span><span>★ STAR</span>
-  </div>
+<!-- 10 LINE DRAW — Claude -->
+<section class="scene" id="claude">
+  <div class="move"><span class="n">MOVE 08 · AGAIN</span><span class="t">LINE DRAW</span><span class="why">Same move, new app — repetition teaches the pattern.</span></div>
+  <div class="phone"><div class="scr" style="background:#262624">
+    <div class="pg" id="c-p1" style="background:#262624"><div class="ttl" style="display:flex;align-items:center;gap:16px"><img src="assets/claude-color.svg" style="width:44px;height:44px">Settings</div>
+      <div class="row" style="border-color:#3a3936">Profile<span>›</span></div><div class="row" style="border-color:#3a3936">Appearance<span>›</span></div><div class="row" id="c-pr" style="border-color:#3a3936">Privacy<span>›</span></div><div class="row" style="border-color:#3a3936">Billing<span>›</span></div><div class="row" style="border-color:#3a3936">Connectors<span>›</span></div></div>
+    <div class="pg" id="c-p2" style="background:#262624"><div class="ttl">‹ Privacy</div>
+      <div class="row" style="border-color:#3a3936"><div>Help improve our AI models<small>Allow the use of your chats to train models</small></div><div class="sw" id="c-sw"><i></i></div></div>
+      <div class="row" style="border-color:#3a3936">Export data<span>›</span></div></div>
+  </div></div>
+  <svg class="abs" style="left:0;top:0" width="1080" height="1210" viewBox="0 0 1080 1210" fill="none" stroke="#FF3B2F" stroke-linecap="round" stroke-linejoin="round">
+    <path class="d1" d="M280 540 C 300 490, 520 485, 580 500 C 640 512, 630 580, 540 590 C 420 600, 300 600, 275 560" stroke-width="7" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+    <path class="d2" d="M60 800 C 120 620, 160 545, 240 545 M240 545 l-40 -16 M240 545 l-26 34" stroke-width="7" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+    <path class="d3" d="M650 440 C 660 380, 850 375, 860 440 C 866 505, 680 510, 652 462" stroke-width="7" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+  </svg>
+  <div class="abs mono" style="left:44px;top:1100px;font-size:20px;letter-spacing:.12em;color:var(--bone)">SETTINGS → PRIVACY → <span class="red">OFF</span></div>
+  <div class="src">Source: privacy.claude.com</div>
 </section>
 
-<!-- M8 PARALLAX -->
-<section class="scene" id="m8" style="background:#F7C9A3">
-  <div class="abs" id="m8-sun" style="left:620px;top:360px;width:300px;height:300px;border-radius:50%;background:var(--orange)"></div>
-  <svg class="abs" id="m8-far" style="left:0;top:560px" width="1800" height="500" viewBox="0 0 1800 500"><path d="M0 500 L0 260 L180 120 L360 250 L520 90 L720 260 L900 140 L1100 280 L1280 110 L1480 250 L1650 150 L1800 240 L1800 500Z" fill="#8f7bd9"/></svg>
-  <div class="abs en" id="m8-text" style="left:40px;top:560px;font-size:330px;color:var(--ink);white-space:nowrap">DEPTH</div>
-  <svg class="abs" id="m8-mid" style="left:0;top:760px" width="2000" height="480" viewBox="0 0 2000 480"><path d="M0 480 L0 220 C 200 120, 360 300, 560 190 S 900 110, 1100 230 S 1500 120, 1700 210 S 1900 160, 2000 180 L2000 480Z" fill="#2B45FF"/></svg>
-  <div class="abs he w800" id="m8-heb" style="left:520px;top:900px;font-size:200px;color:var(--lime);white-space:nowrap">עומק</div>
-  <svg class="abs" id="m8-front" style="left:0;top:1000px" width="2400" height="300" viewBox="0 0 2400 300"><path d="M0 300 L0 120 C 300 20, 500 160, 800 90 S 1300 20, 1600 110 S 2100 30, 2400 100 L2400 300Z" fill="#121015"/></svg>
-  <div class="mhead abs" style="left:60px;top:130px;right:60px">
-    <div class="en outline num" style="font-size:190px;color:var(--ink);-webkit-text-stroke-width:4px">08</div>
-    <div class="en name" style="position:absolute;left:250px;top:10px;font-size:150px;color:var(--ink)">PARALLAX</div>
+<!-- 11 HOLD -->
+<section class="scene" id="hold">
+  <div class="move"><span class="n">BONUS</span><span class="t">THE HOLD</span><span class="why">Stillness is a move too. Let the hard fact land.</span></div>
+  <div class="abs" id="ho-in" style="left:44px;right:44px;top:330px">
+    <div class="en" style="font-size:190px">FROM NOW ON.</div>
+    <div class="en red" style="font-size:190px;margin-top:10px">NOT BACKWARDS.</div>
+    <div class="he" style="margin-top:60px"><span class="w800" style="font-size:66px">מה שכבר נאסף</span><span class="w200" style="font-size:66px">— לא חוזר.</span></div>
   </div>
-  <div class="abs" style="right:60px;top:1110px;font-family:var(--mono);font-size:20px;letter-spacing:.12em;color:var(--paper);text-align:right">FAR 0.2× · MID 0.6× · NEAR 1.4×</div>
+  <div class="src">Sources: IBTimes · privacy.claude.com</div>
 </section>
 
-<!-- ============ T: NOW CLAUDE ============ -->
-<section class="scene bg-ink" id="t1">
-  <div class="abs" id="t1-circle" style="left:340px;top:420px;width:400px;height:400px;border-radius:50%;background:var(--paper)"></div>
-  <img class="abs" id="t1-logo" src="assets/claude.svg" style="left:390px;top:470px;width:300px;height:300px">
-  <div class="abs en" id="t1-now" style="left:60px;top:150px;font-size:230px;color:var(--lime)">NOW:</div>
-  <div class="abs en" id="t1-how" style="left:60px;top:880px;font-size:118px;color:var(--paper)">HOW TO PROMPT<br><span style="color:var(--claude)">CLAUDE</span></div>
-  <div class="abs he" id="t1-he" style="right:60px;top:200px;text-align:right;color:var(--paper)"><div class="w800" style="font-size:80px">איך מבקשים</div><div class="w200" style="font-size:80px">מקלוד</div></div>
+<!-- 12 PROMPT -->
+<section class="scene" id="prompt">
+  <div class="move"><span class="n">THE PROMPT</span><span class="t">CLAUDE CODE</span><span class="why">This brief built the video you’re watching.</span></div>
+  <div class="abs" id="pr-models" style="left:44px;right:44px;top:200px;height:190px;display:flex;gap:24px">
+    <div id="pr-opus" style="flex:1;border:2px solid var(--line);border-radius:18px;padding:22px 26px;position:relative"><img src="assets/claude-color.svg" style="position:absolute;right:22px;top:22px;width:44px;height:44px"><div class="mono ash" style="font-size:16px">claude-opus-5-5</div><div class="en" style="font-size:78px;margin-top:10px">OPUS 5.5</div><div class="mono red" style="font-size:17px;margin-top:10px;letter-spacing:.1em">SCRIPT · CONCEPT</div></div>
+    <div id="pr-sonnet" style="flex:1;border:2px solid var(--line);border-radius:18px;padding:22px 26px;position:relative"><img src="assets/claude-color.svg" style="position:absolute;right:22px;top:22px;width:44px;height:44px"><div class="mono ash" style="font-size:16px">claude-sonnet-5-5</div><div class="en" style="font-size:78px;margin-top:10px">SONNET 5.5</div><div class="mono red" style="font-size:17px;margin-top:10px;letter-spacing:.1em">ITERATIONS</div></div>
+  </div>
+  <div class="term" style="top:420px;height:760px"><div class="bar"><i></i><i></i><i></i><span style="margin-left:12px">~/case-file — claude</span></div><div class="body" id="pr-body"></div></div>
 </section>
 
-<!-- ============ MODELS ============ -->
-<section class="scene bg-paper" id="mo">
-  <div class="abs tag" style="left:60px;top:130px;color:var(--ink)">Pick your model / בחרו מודל</div>
-  <div class="abs" id="mo-opus" style="left:60px;right:60px;top:210px;height:470px;background:var(--ink);color:var(--paper);padding:44px;overflow:hidden">
-    <img src="assets/claude.svg" style="position:absolute;right:-70px;top:-90px;width:300px">
-    <div style="font-family:var(--mono);font-size:24px;color:var(--lime)">claude-opus-5-5</div>
-    <div class="en" style="font-size:200px;margin-top:20px">OPUS 5.5</div>
-    <div class="he" style="position:absolute;right:44px;bottom:40px;text-align:right"><span class="w800" style="font-size:64px;color:var(--lime)">קונספט</span> <span class="w200" style="font-size:64px">ותכנון</span></div>
-    <div class="en" style="position:absolute;left:44px;bottom:44px;font-size:44px;color:#8d8896">THINK · PLAN · SCRIPT</div>
+<!-- 13 CTA -->
+<section class="scene" id="cta">
+  <div class="abs" id="cta-pill" style="left:44px;top:170px;width:300px;height:160px;border-radius:80px;background:var(--red)"><div id="cta-knob" style="position:absolute;left:150px;top:10px;width:140px;height:140px;border-radius:50%;background:var(--bone)"></div></div>
+  <div class="abs en" id="cta-t1" style="left:44px;top:380px;font-size:210px">TURN IT</div>
+  <div class="abs en red" id="cta-t2" style="left:44px;top:570px;font-size:210px">OFF.</div>
+  <svg class="abs" style="left:0;top:0" width="1080" height="1210" fill="none"><path id="cta-trail" d="M420 1000 C 520 900, 560 820, 700 760" stroke="#8B867D" stroke-width="3" stroke-dasharray="4 12"/></svg>
+  <svg class="abs" id="cta-plane" style="left:640px;top:600px" width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="#EEE8DD" stroke-width="1.6" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
+  <div class="abs" id="cta-share" style="left:44px;top:840px">
+    <div class="en" style="font-size:88px">SEND THIS TO SOMEONE</div>
+    <div class="he" style="margin-top:18px;color:var(--ash)"><span class="w800" style="font-size:52px;color:var(--bone)">שלחו</span><span class="w200" style="font-size:52px">למישהו שחייב לראות</span></div>
   </div>
-  <div class="abs" id="mo-sonnet" style="left:60px;right:60px;top:710px;height:470px;background:var(--orange);color:var(--ink);padding:44px;overflow:hidden">
-    <svg style="position:absolute;right:36px;top:30px" width="130" height="130" viewBox="0 0 24 24" fill="#121015"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>
-    <div style="font-family:var(--mono);font-size:24px">claude-sonnet-5-5</div>
-    <div class="en" style="font-size:200px;margin-top:20px">SONNET 5.5</div>
-    <div class="he" style="position:absolute;right:44px;bottom:40px;text-align:right"><span class="w800" style="font-size:64px;color:var(--paper)">איטרציות</span> <span class="w200" style="font-size:64px">מהירות</span></div>
-    <div class="en" style="position:absolute;left:44px;bottom:44px;font-size:44px;color:#5a1d05">BUILD · TWEAK · REPEAT</div>
-  </div>
+  <div class="abs" style="left:44px;top:1120px;display:flex;align-items:center;gap:12px" id="cta-sig"><img src="assets/claude-color.svg" style="width:30px;height:30px"><span class="mono ash" style="font-size:17px;letter-spacing:.12em">MADE WITH CLAUDE · VOICE: GEMINI 3.8 FLASH TTS</span></div>
+  <div class="abs en" style="right:44px;top:1110px;font-size:50px" id="cta-yuv">YUV.AI</div>
 </section>
 
-<!-- ============ PROMPT RULES ============ -->
-<section class="scene bg-ink" id="pr">
-  <div class="abs" style="left:60px;top:130px;right:60px;height:270px">
-    <div class="abs en" id="pr-count" style="left:0;top:0;font-size:230px;color:var(--lime)">01</div>
-    <div class="abs en" style="left:0;top:210px;font-family:var(--mono);font-size:22px;color:#8d8896;letter-spacing:.14em">PROMPT RULE / 06</div>
-    <div class="abs" id="pr-titles" style="left:290px;right:0;top:10px;height:250px;overflow:hidden"></div>
-  </div>
-  <div class="term">
-    <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span style="margin-left:14px">~/motion-video — claude</span><img src="assets/claude.svg" style="width:26px;margin-left:auto"></div>
-    <div class="body" id="pr-body"></div>
-  </div>
-</section>
+</div>
 
-<!-- ============ FINAL ============ -->
-<section class="scene bg-orange" id="fi">
-  <div class="abs he center-x" id="fi-heb" style="top:190px;color:var(--paper);white-space:nowrap"><span class="w800" style="font-size:150px">תנועה</span> <span class="w200" style="font-size:150px">= משמעות</span></div>
-  <div class="abs en center-x" id="fi-motion" style="top:380px;font-size:300px;color:var(--ink)">MOTION</div>
-  <div class="abs" id="fi-neq" style="left:0;right:0;top:690px;text-align:center"><span style="font-family:var(--mono);font-weight:700;font-size:110px;color:var(--ink);vertical-align:20px">≠</span> <span class="en outline" style="font-size:150px;color:var(--ink)">DECORATION</span></div>
-  <div class="abs" id="fi-strike" style="left:110px;width:860px;top:742px;height:26px;background:var(--ink);transform-origin:0 50%"></div>
-  <div class="abs en center-x" id="fi-eq" style="top:900px;font-size:200px;color:var(--paper)"><span style="display:inline-block;background:var(--ink);padding:26px 34px 18px;line-height:.86">= MEANING</span></div>
-  <!-- save end card -->
-  <div class="abs bg-ink" id="fi-end" style="inset:0;clip-path:circle(0% at 50% 50%)">
-    <svg class="abs" id="fi-save" style="left:390px;top:260px" width="300" height="360" viewBox="0 0 30 36"><path d="M3 2h24v32l-12-8-12 8z" fill="#D5FF3F"/></svg>
-    <div class="abs en center-x" style="top:680px;font-size:190px;color:var(--paper)">SAVE THIS</div>
-    <div class="abs he center-x" style="top:870px;color:var(--lime)"><span class="w800" style="font-size:90px">שמרו</span> <span class="w200" style="font-size:90px">לסרטון הבא</span></div>
-    <div class="abs" style="left:60px;top:1070px;display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:22px;color:#8d8896;letter-spacing:.1em"><img src="assets/claude.svg" style="width:34px">MADE WITH CLAUDE + GSAP</div>
-    <div class="abs en" style="right:60px;top:1058px;font-size:54px;color:var(--paper)">YUV.AI</div>
-  </div>
-</section>
-
-</div><!-- /world -->
-
-<div class="wipe" id="wipe"><i></i><i></i><i></i><i></i></div>
-<div class="flash" id="flash"></div>
-<div id="chrome"><span id="chrome-l">Nº05 · MOTION</span><b id="chrome-m">THE MOTION ISSUE</b><span id="chrome-r">P.01</span></div>
-<div id="progress"><i id="progress-i"></i></div>
-<div class="reg" style="left:18px;top:1370px"></div><div class="reg" style="right:18px;top:1370px"></div>
-<div id="captions"></div>
-<div id="vignette"></div>
+<div id="redact"><i style="top:0;height:34%"></i><i style="top:33%;height:35%;transform:translateX(-8%)"></i><i style="top:67%;height:34%;transform:translateX(-3%)"></i><b></b></div>
+<div id="hdr"><span>CASE FILE Nº01 — PROJECT LILY</span><span class="rec"><span id="rec-dot"></span><span id="tc">00:00:00</span></span></div>
+<div id="hdr-rule"></div><div id="prog"></div>
+<div id="band"></div>
 <div id="grain"></div>
 </div>
 
 <script src="assets/gsap.min.js"></script>
+<script src="timing.js"></script>
 <script>
-const DURATION = 72, FPS = 30;
-const tl = gsap.timeline({paused:true, defaults:{ease:'power3.out'}});
-gsap.set('#wipe',{xPercent:-110});
-const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const FPS=30, T=window.TIMING, DURATION=T.duration;
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const tl=gsap.timeline({paused:true,defaults:{ease:'power3.out'}});
+gsap.set('#redact',{xPercent:-105});
 
-// ---------------- scene schedule ----------------
-const MOVE0 = 14.5, MOVE_LEN = 3.5;
-const SCENES = [
-  ['s1',0,4.5,'P.01'],['s2',4.5,9,'P.02'],['s3',9,12,'P.03'],['s4',12,14.5,'P.04'],
-  ...[1,2,3,4,5,6,7,8].map(i=>['m'+i, MOVE0+(i-1)*MOVE_LEN, MOVE0+i*MOVE_LEN, 'P.'+String(4+i).padStart(2,'0')]),
-  ['t1',42.5,45.5,'P.13'],['mo',45.5,50,'P.14'],['pr',50,66,'P.15'],['fi',66,72,'P.16']
-];
-SCENES.forEach(([id,s,e,page])=>{
-  tl.set('#'+id,{visibility:'visible'},s);
-  if(e<DURATION) tl.set('#'+id,{visibility:'hidden'},e);
-  tl.set('#chrome-r',{textContent:page},s);
+// ---------- scene spans come from the voiceover timing ----------
+const order=[], SC={};
+T.lines.forEach(l=>{ if(!SC[l.scene]){SC[l.scene]={lines:[]};order.push(l.scene);} SC[l.scene].lines.push(l); });
+order.forEach((id,k)=>{ SC[id].s = k===0 ? 0 : SC[id].lines[0].start-0.18; });
+order.forEach((id,k)=>{ const sc=SC[id]; sc.e = k<order.length-1 ? SC[order[k+1]].s : DURATION; sc.d=sc.e-sc.s; });
+window.CUTS = order.slice(1).map(id=>SC[id].s);
+order.forEach(id=>{ const pap=$('#'+id).classList.contains('paper'); tl.set('#hdr',{color:pap?'#141416':'#EEE8DD'},SC[id].s).set('#hdr-rule',{backgroundColor:pap?'#141416':'#EEE8DD'},SC[id].s); tl.set('#'+id,{visibility:'visible'},SC[id].s); if(SC[id].e<DURATION) tl.set('#'+id,{visibility:'hidden'},SC[id].e); });
+const REDACT_CUTS=new Set(['stagger','mask','toggle','hold','cta']);
+order.slice(1).forEach(id=>{
+  const t=SC[id].s;
+  if(REDACT_CUTS.has(id)) tl.fromTo('#redact',{xPercent:-105},{xPercent:105,duration:.5,ease:'power2.inOut',immediateRender:false},t-.25);
+  tl.fromTo('#world',{scale:1.035},{scale:1,duration:.5,ease:'expo.out',immediateRender:false},t);
 });
-window.CUTS = SCENES.map(s=>s[1]).filter(t=>t>0);
+tl.fromTo('#prog',{scaleX:0},{scaleX:1,duration:DURATION,ease:'none'},0);
+order.forEach(id=>{ const S=SC[id].s;
+  tl.from(`#${id} .move > *`,{y:24,opacity:0,duration:.4,stagger:.08},S+.1);
+  if($(`#${id} .src`)) tl.from(`#${id} .src`,{opacity:0,duration:.4},S+.6); });
 
-// beat punch on every cut + transition style
-const wipeColors = [['#FF5A1F','#2B45FF','#D5FF3F','#121015'],['#D5FF3F','#121015','#FF5A1F','#F2EADB'],['#2B45FF','#F2EADB','#121015','#FF5A1F']];
-CUTS.forEach((t,i)=>{
-  tl.fromTo('#world',{scale:1.06,rotation:i%2?-.6:.6},{scale:1,rotation:0,duration:.45,ease:'expo.out',immediateRender:false},t);
-  if(i%3===0){ // stripe wipe
-    const cols = wipeColors[i%wipeColors.length];
-    $$('#wipe i').forEach((el,k)=>tl.set(el,{background:cols[k]},t-.25));
-    tl.fromTo('#wipe',{xPercent:-110},{xPercent:110,duration:.5,ease:'power2.inOut',immediateRender:false},t-.25);
-    tl.fromTo('#wipe i',{xPercent:0},{xPercent:(k)=>k*6-9,duration:.5,ease:'none',immediateRender:false},t-.25);
-  } else { // 2-frame flash
-    tl.fromTo('#flash',{opacity:.85},{opacity:0,duration:.12,ease:'none',immediateRender:false},t);
-  }
-});
-tl.fromTo('#progress-i',{scaleX:0},{scaleX:1,duration:DURATION,ease:'none'},0);
-
-// ---------------- S1 hook ----------------
-$('#s1-motion').innerHTML = 'MOTION'.split('').map(c=>`<span style="display:inline-block">${c}</span>`).join('');
-tl.from('#s1-circle',{scale:0,duration:.7,ease:'back.out(2)'},0.05)
-  .from('#s1-heb',{xPercent:40,opacity:0,duration:.8,ease:'expo.out'},0.1)
-  .from('#s1-motion span',{yPercent:-160,rotation:()=>gsap.utils.random(-25,25),opacity:0,duration:.55,stagger:.07,ease:'back.out(2.2)'},0.25)
-  .from('#s1-graphics',{letterSpacing:'.6em',opacity:0,duration:.9,ease:'expo.out'},0.8)
-  .from('#s1-heb2',{x:-200,opacity:0,duration:.6},1.1)
-  .from('#s1-q',{scale:0,rotation:-180,duration:.7,ease:'back.out(3)'},1.4)
-  .to('#s1-q',{rotation:20,duration:.25,yoyo:true,repeat:5,ease:'sine.inOut'},2.1)
-  .from('#s1-tag',{clipPath:'inset(0 100% 0 0)',duration:.5},0.4)
-  .to('#s1-circle',{scale:1.08,duration:.25,yoyo:true,repeat:3,ease:'sine.inOut'},2.5)
-  .to('#s1-heb',{x:-80,duration:4,ease:'none'},0.9)
-  .to('#s1-motion',{scale:1.05,duration:3.5,ease:'none'},1);
-
-// ---------------- S2 definition ----------------
-{const T=4.5;
-tl.from('#s2-back',{opacity:0,duration:.3},T)
-  .set('#s2-play',{opacity:0},T).set('#s2-paused',{opacity:1},T)
-  .from(['#s2-circle','#s2-square','#s2-tri'],{scale:0,duration:.35,stagger:.06,ease:'back.out(2)'},T)
-  .from('#s2-front',{yPercent:60,opacity:0,duration:.5},T+.15)
-  .from('#s2-he',{xPercent:30,opacity:0,duration:.5},T+.3)
-  .set('#s2-paused',{opacity:0},T+.9).set('#s2-play',{opacity:1},T+.9)
-  .to('#s2-circle',{x:120,y:-120,duration:.9,ease:'power2.inOut',yoyo:true,repeat:1},T+.9)
-  .to('#s2-square',{rotation:180,borderRadius:'40px',duration:1,ease:'back.inOut(1.6)'},T+.95)
-  .to('#s2-tri',{y:-180,rotation:-30,duration:.5,ease:'power2.out',yoyo:true,repeat:1},T+1.0)
-  .to('#s2-back',{xPercent:-8,duration:2,ease:'none'},T)
-  // phase B
-  .to(['#s2-front','#s2-he','#s2-play'],{opacity:0,y:40,duration:.2,ease:'power2.in'},T+2)
-  .to(['#s2-circle','#s2-square','#s2-tri'],{scale:0,duration:.25,stagger:.04,ease:'back.in(2)'},T+2)
-  .to('#s2-back',{opacity:.12,duration:.3},T+2)
-  .from('#s2-tiles .tile',{scale:.2,opacity:0,rotation:()=>gsap.utils.random(-12,12),duration:.45,stagger:.1,ease:'back.out(1.8)'},T+2.1)
-  .from('#s2-tiles svg',{scale:0,rotation:-90,duration:.4,stagger:.1,ease:'back.out(3)'},T+2.3)
-  .from('#s2-plus > div',{y:80,opacity:0,duration:.4,stagger:.15},T+2.8)
-  .fromTo('#s2-metro i',{scaleY:.2},{scaleY:1,duration:.25,stagger:{each:.25,repeat:1,yoyo:true},ease:'power1.inOut'},T+3.1);
+// ---------- 1 HOOK ----------
+{const {s:S,d:D}=SC.hook;
+ ['#hk-w1','#hk-w2','#hk-w3'].forEach((w,i)=>tl.from(w,{yPercent:110,opacity:0,duration:.45,ease:'expo.out'},S+.35+i*.55));
+ tl.from('#hk-back',{opacity:0,duration:.8},S)
+   .to('#hk-back',{x:-160,duration:D,ease:'none'},S)
+   .from('#hk-bubble',{scale:.4,opacity:0,duration:.5,ease:'back.out(2)'},S+.2)
+   .fromTo('#hk-scan',{y:-120},{y:420,duration:1.4,ease:'power1.inOut',repeat:1,yoyo:true},S+1.2)
+   .to('#hk-w2',{letterSpacing:'.04em',duration:Math.max(D-1,.5),ease:'none'},S+1)
+   .from('#hk-src',{x:-40,opacity:0,duration:.5},S+2);
 }
-
-// ---------------- S3 goal ----------------
-{const T=9;
-tl.from('#s3-heb',{scale:1.6,opacity:0,duration:.6,ease:'expo.out'},T)
-  .from('#s3-explain',{yPercent:100,opacity:0,duration:.45,ease:'back.out(1.6)'},T+.15)
-  .from('#s3-gt',{letterSpacing:'.5em',opacity:0,duration:.4,ease:'expo.out'},T+.6)
-  .from('#s3-decorate',{yPercent:-60,opacity:0,duration:.4},T+.8)
-  .from('#s3-strike',{scaleX:0,duration:.45,ease:'power4.inOut'},T+1.55)
-  .to('#s3-decorate',{opacity:.4,duration:.3},T+1.9)
-  .from('#s3-heb2',{x:-120,opacity:0,duration:.4},T+1.7)
-  .to('#s3-explain',{scale:1.08,duration:.18,yoyo:true,repeat:1},T+2.2)
-  .to('#s3-heb',{xPercent:6,duration:3,ease:'none'},T);
+// ---------- 2 TOC ----------
+{const {s:S}=SC.toc;
+ const rows=[['01','KINETIC TYPE','the headline','כותרת'],['02','STAGGER','the volume','כמות'],['03','EASING','the numbers','מספרים'],['04','MASK REVEAL','the leak','הדליפה'],['05','PARALLAX','the pile','הערימה'],['06','MORPH','chat → eye','שיחה ← עין'],['07','OVERSHOOT','the switch','הכפתור'],['08','LINE DRAW','where to tap','איפה ללחוץ']];
+ $('#toc-list').innerHTML=rows.map(r=>`<div class="tr" style="display:flex;align-items:baseline;gap:22px;border-top:1.5px solid #cfc8bb;padding:12px 0 10px"><span class="mono" style="font-size:18px;color:var(--red);width:34px">${r[0]}</span><span class="en" style="font-size:52px;width:420px;color:var(--ink)">${r[1]}</span><span class="mono" style="font-size:18px;color:#6f6a62;flex:1">${r[2]}</span><span class="he w300" style="font-size:32px;color:var(--ink)">${r[3]}</span></div>`).join('');
+ tl.from('#toc > .en',{yPercent:60,opacity:0,duration:.45,stagger:.12,ease:'expo.out'},S+.05)
+   .from('#toc-list .tr',{x:-60,opacity:0,duration:.35,stagger:.09},S+.6);
 }
-
-// ---------------- S4 8 moves ----------------
-{const T=12;
-tl.from('#s4-8a',{scale:.2,rotation:-30,opacity:0,duration:.6,ease:'back.out(1.7)'},T)
-  .from('#s4-moves',{xPercent:120,duration:.6,ease:'expo.out'},T+.3)
-  .to('#s4-moves',{xPercent:-12,duration:1.6,ease:'none'},T+.9)
-  .from('#s4-he > span',{y:-60,opacity:0,duration:.4,stagger:.12},T+.5)
-  .from('#s4-tag',{clipPath:'inset(0 100% 0 0)',duration:.5},T+.9);
+// ---------- 3 STAGGER ----------
+{const {s:S,d:D}=SC.stagger;
+ let html='';
+ for(let i=0;i<16;i++){const me=i%2===0,x=me?440:80,y=250+i*150,w=[88,64,92,70,80][i%5],z=(i%5===2)?1:3;
+   html+=`<div class="bub ${me?'me':'ai'}" style="left:${x}px;top:${y}px;z-index:${z}"><div class="tag">${me?'USER':'CHATGPT'}</div><div class="ln" style="width:${w}%"></div><div class="ln" style="width:${w-24}%"></div></div>`;}
+ $('#st-wall').innerHTML=html; $('#st-back').style.zIndex=2;
+ tl.from('#st-back',{opacity:0,scale:1.1,duration:.6},S)
+   .from('#st-wall .bub',{y:120,opacity:0,scale:.9,duration:.4,stagger:D/18,ease:'back.out(1.6)'},S+.3)
+   .to('#st-wall',{y:-1300,duration:D,ease:'power1.in'},S+.6);
 }
-
-// ---------------- move header (shared) ----------------
-function moveHead(id,T){
-  tl.from(`#${id} .num`,{xPercent:-60,opacity:0,duration:.4,ease:'expo.out'},T)
-    .from(`#${id} .name`,{yPercent:110,opacity:0,duration:.45,ease:'back.out(1.5)'},T+.08)
-    .from(`#${id} .hname`,{x:80,opacity:0,duration:.4},T+.2);
+// ---------- 4 EASING ----------
+{const {s:S,d:D}=SC.easing;
+ const picks=[6,3,5,2];
+ $('#ea-rows').innerHTML=['A','B','C','D'].map((l,i)=>`<div style="display:flex;align-items:center;gap:22px;margin:22px 0"><span class="en" style="font-size:40px;width:34px">${l}</span><div style="flex:1;height:14px;border-radius:7px;background:#ece7de;position:relative"><div class="bar" style="position:absolute;left:0;top:0;bottom:0;border-radius:7px;background:var(--ink);width:${(picks[i]-1)/6*100}%"></div></div><span class="en" style="font-size:40px;width:40px;text-align:right"><span class="sc">${picks[i]}</span></span></div>`).join('');
+ const intent='wants help writing a message to ████████', o={k:0}, N0=S+Math.min(2.4,D*.45);
+ tl.from('#ea-card',{y:60,opacity:0,duration:.5},S+.05)
+   .to(o,{k:intent.length,duration:1,ease:'none',onUpdate:()=>$('#ea-intent').textContent=intent.slice(0,Math.round(o.k))},S+.5)
+   .from('#ea-rows .bar',{scaleX:0,transformOrigin:'0 50%',duration:.9,stagger:.18,ease:'power3.out'},S+1.1)
+   .from('#ea-rows .sc',{opacity:0,duration:.2,stagger:.18},S+1.7);
+ const n={v:0};
+ tl.to(n,{v:50,duration:1.6,ease:'power3.out',onUpdate:()=>$('#ea-n').textContent=Math.round(n.v)},N0)
+   .to('#ea-curve',{strokeDashoffset:0,duration:1.6,ease:'power3.out'},N0)
+   .from('#ea-num',{opacity:0,duration:.3},N0);
 }
-const MT = i => MOVE0+(i-1)*MOVE_LEN;
-
-
-// M1 easing
-{const T=MT(1); moveHead('m1',T);
- tl.to('#m1-lin',{x:860,duration:1.4,ease:'none',yoyo:true,repeat:1},T+.4)
-   .to('#m1-ease',{x:860,duration:1.4,ease:'power3.inOut',yoyo:true,repeat:1},T+.4)
-   .to('#m1-back',{x:-160,duration:3.5,ease:'none'},T)
-   .from('#m1-graph',{y:60,opacity:0,duration:.4},T+.3)
-   .to('#m1-cpath',{strokeDashoffset:0,duration:1.2,ease:'power3.inOut'},T+.6);
- const p={v:0}, bz=(a,b,c,d,t)=>(1-t)**3*a+3*(1-t)**2*t*b+3*(1-t)*t*t*c+t**3*d;
- tl.to(p,{v:1,duration:1.2,ease:'power3.inOut',onUpdate:()=>{const t=p.v;$('#m1-dot').setAttribute('cx',bz(40,240,240,440,t));$('#m1-dot').setAttribute('cy',bz(340,340,40,40,t));}},T+.6);
+// ---------- 5 MASK ----------
+{const {s:S,d:D}=SC.mask;
+ const L=[['USER: my therapist ','said I should stop',' calling him.'],['USER: I earn ','₪31,000',' — should I ask for more?'],['USER: we live at ','14 Herzl St.',', is the area safe?'],['USER: my son ','Noam',' was diagnosed with…'],['USER: here’s my ','ID number',', fill the form.']];
+ $('#mk-lines').innerHTML=L.map(l=>`<div style="margin:14px 0">${l[0]}<span class="sec" style="position:relative;display:inline-block">${l[1]}<i class="bar" style="position:absolute;left:-4px;right:-4px;top:4px;bottom:2px;background:var(--ink);display:block"></i></span>${l[2]}</div>`).join('');
+ tl.from('#mk-doc',{y:80,opacity:0,rotation:-6,duration:.6},S)
+   .fromTo('#mk-scanner',{y:40},{y:640,duration:1.3,ease:'none',immediateRender:false},S+.5)
+   .from('#mk-lines .bar',{scaleX:0,transformOrigin:'0 50%',duration:.25,stagger:.22,ease:'power2.out'},S+.65)
+   .to('#mk-scanner',{opacity:0,duration:.2},S+1.8);
+ const leak=$$('#mk-lines .bar'); const R=S+Math.max(2.2,D*.5);
+ [1,3].forEach((k,j)=>{ tl.to(leak[k],{clipPath:'inset(0 0 0 100%)',duration:.6,ease:'power3.inOut'},R+j*.35)
+                            .to(leak[k].parentNode,{color:'#FF3B2F',duration:.2},R+j*.35+.3); });
+ tl.from('#mk-slip',{yPercent:100,opacity:0,duration:.45,ease:'expo.out'},R+.7)
+   .to('#mk-back',{x:-120,duration:D,ease:'none'},S);
 }
-// M2 overshoot
-{const T=MT(2); moveHead('m2',T);
- tl.from('#m2-card',{scale:0,rotation:-12,duration:.9,ease:'back.out(3.2)'},T+.35)
-   .to('#m2-card',{scale:.9,duration:.12,yoyo:true,repeat:1,ease:'power1.inOut'},T+1.5)
-   .to('#m2-slide',{x:580,duration:1,ease:'back.out(2.6)'},T+1.3)
-   .from('#m2-back',{scale:.6,opacity:0,duration:.6},T+.3)
-   .to('#m2-back',{scale:1.1,duration:2.5,ease:'none'},T+.9);
+// ---------- 6 PARALLAX ----------
+{const {s:S,d:D}=SC.parallax;
+ const tones=['#3b3631','#2f3438','#3a3035','#34372f','#2d2f36','#3b3530'];
+ const card=(w,h,i,br)=>`<div style="position:absolute;left:${i*(w+40)}px;top:0;width:${w}px;height:${h}px;border-radius:14px;overflow:hidden;background:${tones[i%6]}">
+   <div style="position:absolute;left:50%;top:${h*.2}px;width:${w*.34}px;height:${w*.34}px;margin-left:${-w*.17}px;border-radius:50%;background:#77716a;filter:blur(${br?2:4}px)"></div>
+   <div style="position:absolute;left:50%;top:${h*.2+w*.36}px;width:${w*.7}px;height:${h}px;margin-left:${-w*.35}px;border-radius:${w*.3}px ${w*.3}px 0 0;background:#5d5852;filter:blur(${br?2:4}px)"></div>
+   ${br?`<svg style="position:absolute;left:50%;top:${h*.2-16}px;margin-left:${-w*.17-16}px" width="${w*.34+32}" height="${w*.34+32}" fill="none" stroke="#FF3B2F" stroke-width="4"><path d="M2 26V2h24M${w*.34+30} 26V2h-24M2 ${w*.34+6}v24h24M${w*.34+30} ${w*.34+6}v24h-24"/></svg><div class="mono" style="position:absolute;left:14px;bottom:12px;font-size:14px;letter-spacing:.12em;color:#FF3B2F">FACE · UNCENSORED</div>`:''}</div>`;
+ $('#px-far').innerHTML=Array.from({length:9},(_,i)=>card(190,250,i,false)).join('');
+ $('#px-mid').innerHTML=Array.from({length:8},(_,i)=>card(260,340,i,false)).join('');
+ $('#px-near').innerHTML=Array.from({length:7},(_,i)=>card(400,520,i,true)).join('');
+ tl.fromTo('#px-far',{x:0},{x:-300,duration:D,ease:'none',immediateRender:false},S)
+   .fromTo('#px-mid',{x:-40},{x:-760,duration:D,ease:'none',immediateRender:false},S)
+   .fromTo('#px-word',{x:260},{x:-900,duration:D,ease:'none',immediateRender:false},S)
+   .fromTo('#px-near',{x:60},{x:-1500,duration:D,ease:'none',immediateRender:false},S)
+   .fromTo('#px-far',{opacity:0},{opacity:.45,duration:.6,immediateRender:false},S)
+   .fromTo('#px-mid',{opacity:0},{opacity:.75,duration:.6,immediateRender:false},S+.1)
+   .from('#px-near',{y:120,opacity:0,duration:.6},S+.2);
 }
-// M3 stagger
-{const T=MT(3); moveHead('m3',T);
- $('#m3-dots').innerHTML = Array.from({length:30},(_,i)=>`<i style="aspect-ratio:1;border-radius:50%;display:block;background:${['#121015','#FF5A1F','#2B45FF'][i%3]}"></i>`).join('');
- tl.from('#m3-bars i',{scaleY:0,transformOrigin:'50% 100%',duration:.55,stagger:.08,ease:'back.out(1.8)'},T+.35)
-   .from('#m3-dots i',{scale:0,duration:.35,stagger:{each:.035,grid:[3,10],from:'center'},ease:'back.out(3)'},T+1.2)
-   .to('#m3-bars i',{scaleY:.55,duration:.3,stagger:{each:.05,yoyo:true,repeat:1},ease:'power2.inOut'},T+2.4)
-   .from('#m3-back',{x:-100,opacity:0,duration:.5},T+.2);
+// ---------- 7 MORPH (bubble -> eye, equal point counts) ----------
+{const {s:S,d:D}=SC.morph;
+ const N=48, P=f=>'polygon('+Array.from({length:N},(_,i)=>{const [x,y]=f(i/N);return `${(x*100).toFixed(2)}% ${(y*100).toFixed(2)}%`;}).join(',')+')';
+ const bubble=P(t=>{const per=t*4, side=Math.floor(per), u=per-side, m=.08; let x,y;
+   if(side===0){x=m+u*(1-2*m);y=.02;} else if(side===1){x=.98;y=m+u*(.82-m);} else if(side===2){x=1-m-u*(1-2*m);y=.84;} else {x=.02;y=.84-u*(.82-m);}
+   if(side===2&&u>.78&&u<.9){y=1;x=.12;} return [x,y];});
+ const eye=P(t=>{const a=t*2*Math.PI; return [.5+.5*Math.cos(a), .5-.44*Math.sin(a)*Math.abs(Math.sin(a))**.35];});
+ tl.set('#mo-shape',{clipPath:bubble},S)
+   .from('#mo-shape',{scale:.3,opacity:0,duration:.45,ease:'back.out(2)'},S+.1)
+   .to('#mo-shape',{clipPath:eye,duration:.9,ease:'expo.inOut'},S+1.1)
+   .from('#mo-iris',{scale:0,duration:.5,ease:'back.out(2.5)'},S+1.8)
+   .to('#mo-iris',{x:60,duration:.5,ease:'power2.inOut',yoyo:true,repeat:1},S+2.4)
+   .from('#mo-logos img',{y:40,opacity:0,duration:.35,stagger:.15,ease:'back.out(2)'},S+Math.min(2.2,D*.45))
+   .from('#mo-txt',{yPercent:80,opacity:0,duration:.45,ease:'expo.out'},S+Math.min(2.8,D*.6));
 }
-// M4 kinetic type
-{const T=MT(4);
- tl.from('#m4 .num',{xPercent:-60,opacity:0,duration:.4,ease:'expo.out'},T)
-   .from('#m4 .name',{yPercent:110,opacity:0,duration:.45,ease:'back.out(1.5)'},T+.08);
- const kw=$$('#m4 .kw');
- tl.from(kw[0],{scale:3.2,opacity:0,duration:.3,ease:'expo.out'},T+.3)
-   .from(kw[1],{xPercent:120,rotation:15,duration:.35,ease:'back.out(2)'},T+.62)
-   .from(kw[2],{yPercent:-120,opacity:0,duration:.3},T+.95)
-   .from(kw[3],{scaleY:0,transformOrigin:'50% 100%',duration:.35,ease:'back.out(2.5)'},T+1.25)
-   .from('#m4-heb',{opacity:0,xPercent:-20,duration:.5},T+1.4)
-   .to(kw[3],{letterSpacing:'.08em',duration:1.5,ease:'none'},T+1.6)
-   .to(kw[1],{rotation:-4,duration:.2,yoyo:true,repeat:3},T+1.8)
-   .to('#m4-words',{scale:1.05,duration:2,ease:'none'},T+1.5);
+// ---------- 8 OVERSHOOT ----------
+{const {s:S,d:D}=SC.toggle, F=S+Math.min(.9,D*.45);
+ tl.from('#tg-t1',{xPercent:-60,opacity:0,duration:.35,ease:'expo.out'},S)
+   .from('#tg-t2',{xPercent:-60,opacity:0,duration:.35,ease:'expo.out'},S+.25)
+   .from('#tg-pill',{scale:.6,opacity:0,duration:.4,ease:'back.out(2)'},S+.1)
+   .to('#tg-knob',{x:-290,duration:.7,ease:'back.out(3)'},F)
+   .to('#tg-knob',{scaleX:1.12,scaleY:.9,duration:.12,yoyo:true,repeat:1},F+.12)
+   .to('#tg-pill',{backgroundColor:'#34343a',duration:.3},F)
+   .to('#tg-on',{opacity:.25,duration:.2},F)
+   .from('#tg-off',{scale:1.6,opacity:0,duration:.35,ease:'back.out(3)'},F+.2);
 }
-// M5 mask reveal
-{const T=MT(5); moveHead('m5',T);
- tl.to('#m5-panel',{clipPath:'circle(75% at 50% 50%)',duration:1,ease:'power3.inOut'},T+.5)
-   .from('#m5-panel .en',{scale:1.4,duration:1.2,ease:'power3.out'},T+.5)
-   .from('#m5-line1',{yPercent:110,duration:.5,ease:'expo.out'},T+1.6)
-   .to('#m5-panel',{clipPath:'circle(75% at 50% 50%)',duration:.01},T+2);
+// ---------- 9/10 LINE DRAW ----------
+function settingsFlow(id,rowSel,sw,p2){
+ const {s:S,d:D}=SC[id], k=D/5.2;
+ gsap.set(p2,{xPercent:100});
+ tl.from(`#${id} .phone`,{y:100,opacity:0,duration:.5},S)
+   .to(`#${id} .d2`,{strokeDashoffset:0,duration:.6,ease:'power2.inOut'},S+.6*k+.2)
+   .to(`#${id} .d1`,{strokeDashoffset:0,duration:.6,ease:'power2.inOut'},S+1.1*k+.2)
+   .to(rowSel,{backgroundColor:'rgba(255,59,47,.18)',duration:.2},S+1.6*k+.2)
+   .to(`#${id} .d1, #${id} .d2`,{opacity:0,duration:.2},S+2.1*k+.2)
+   .to(p2,{xPercent:0,duration:.45,ease:'power3.inOut'},S+2.1*k+.2)
+   .to(`#${id} .d3`,{strokeDashoffset:0,duration:.6,ease:'power2.inOut'},S+2.8*k+.2)
+   .to(`${sw} i`,{x:-36,duration:.4,ease:'back.out(3)'},S+3.6*k+.2)
+   .to(sw,{backgroundColor:'#5a5a60',duration:.2},S+3.6*k+.2);
 }
-// M6 line draw
-{const T=MT(6); moveHead('m6',T);
- tl.to('#m6 .draw',{strokeDashoffset:0,duration:.9,stagger:.45,ease:'power2.inOut'},T+.35);
+settingsFlow('gpt','#g-dc','#g-sw','#g-p2');
+settingsFlow('claude','#c-pr','#c-sw','#c-p2');
+// ---------- 11 HOLD ----------
+{const {s:S,d:D}=SC.hold;
+ tl.from('#ho-in > *',{opacity:0,y:20,duration:.6,stagger:.5,ease:'power2.out'},S+.1)
+   .to('#ho-in',{scale:1.06,transformOrigin:'0 0',duration:D,ease:'none'},S);
 }
-// M7 morph (polygons with identical point counts)
-{const T=MT(7); moveHead('m7',T);
- const N=20, poly=f=>'polygon('+Array.from({length:N},(_,i)=>{const [x,y]=f(i/N);return `${(x*50+50).toFixed(2)}% ${(y*50+50).toFixed(2)}%`;}).join(',')+')';
- const circle=poly(t=>[Math.cos(t*2*Math.PI-Math.PI/2),Math.sin(t*2*Math.PI-Math.PI/2)]);
- const square=poly(t=>{const a=t*2*Math.PI-Math.PI/2,c=Math.cos(a),s=Math.sin(a),m=Math.max(Math.abs(c),Math.abs(s));return [c/m*.85,s/m*.85];});
- const star=poly(t=>{const i=Math.round(t*N),r=i%2?.42:1,a=t*2*Math.PI-Math.PI/2;return [Math.cos(a)*r,Math.sin(a)*r];});
- tl.set('#m7-shape',{clipPath:circle},T)
-   .from('#m7-shape',{scale:0,duration:.4,ease:'back.out(2)'},T+.2)
-   .to('#m7-shape',{clipPath:square,rotation:90,background:'#FF5A1F',duration:.7,ease:'expo.inOut'},T+.9)
-   .to('#m7-shape',{clipPath:star,rotation:216,background:'#F2EADB',duration:.7,ease:'expo.inOut'},T+2)
-   .from('#m7-labels span',{y:40,opacity:0,duration:.3,stagger:.3},T+.4)
-   .to('#m7-back',{xPercent:-10,duration:3.5,ease:'none'},T);
-}
-// M8 parallax
-{const T=MT(8);
- tl.from('#m8 .num',{xPercent:-60,opacity:0,duration:.4,ease:'expo.out'},T)
-   .from('#m8 .name',{yPercent:110,opacity:0,duration:.45,ease:'back.out(1.5)'},T+.08)
-   .fromTo('#m8-sun',{x:0},{x:-60,duration:3.5,ease:'power1.inOut'},T)
-   .fromTo('#m8-far',{x:0},{x:-240,duration:3.5,ease:'power1.inOut'},T)
-   .fromTo('#m8-text',{x:300},{x:-260,duration:3.5,ease:'power1.inOut'},T)
-   .fromTo('#m8-mid',{x:0},{x:-720,duration:3.5,ease:'power1.inOut'},T)
-   .fromTo('#m8-heb',{x:500},{x:-700,duration:3.5,ease:'power1.inOut'},T)
-   .fromTo('#m8-front',{x:0},{x:-1320,duration:3.5,ease:'power1.inOut'},T);
-}
-
-// ---------------- T1 now claude (match cut: circle -> logo) ----------------
-{const T=42.5;
- tl.from('#t1-circle',{scale:0,duration:.5,ease:'back.out(2)'},T)
-   .from('#t1-logo',{scale:0,rotation:-200,duration:.8,ease:'back.out(2)'},T+.25)
-   .to('#t1-logo',{rotation:90,duration:2.2,ease:'none'},T+1.05)
-   .from('#t1-now',{xPercent:-100,duration:.45,ease:'expo.out'},T+.1)
-   .from('#t1-he > div',{x:120,opacity:0,duration:.4,stagger:.12},T+.4)
-   .from('#t1-how',{yPercent:60,opacity:0,duration:.5,ease:'back.out(1.5)'},T+.8)
-   .to('#t1-circle',{scale:1.15,duration:.2,yoyo:true,repeat:3,ease:'sine.inOut'},T+1.6);
-}
-// ---------------- MODELS ----------------
-{const T=45.5;
- tl.from('#mo-opus',{xPercent:-110,duration:.5,ease:'expo.out'},T)
-   .from('#mo-opus img',{rotation:-180,scale:0,duration:.9,ease:'back.out(1.6)'},T+.2)
-   .from('#mo-opus .en',{yPercent:60,opacity:0,duration:.4,stagger:.1},T+.25)
-   .from('#mo-sonnet',{xPercent:110,duration:.5,ease:'expo.out'},T+2.2)
-   .from('#mo-sonnet svg',{scale:0,rotation:30,duration:.5,ease:'back.out(3)'},T+2.4)
-   .from('#mo-sonnet .en',{yPercent:60,opacity:0,duration:.4,stagger:.1},T+2.45)
-   .to('#mo-opus',{scale:.96,y:-10,duration:.3},T+2.2);
-}
-// ---------------- PROMPT RULES ----------------
-{const T=50, RL=16/6;
- const rules=[
-  ['ROLE · AUDIENCE · GOAL','תפקיד, קהל ומטרה'],
-  ['SCRIPT FIRST','תסריט קודם'],
-  ['EXACT FORMAT','פורמט מדויק'],
-  ['DESIGN LANGUAGE','שפה עיצובית'],
-  ['ANIMATOR WORDS','מילים של אנימטור'],
-  ['SELF-CRITIQUE','ביקורת עצמית'],
- ];
- $('#pr-titles').innerHTML = rules.map(([en,he])=>`<div class="rt" style="position:absolute;left:0;right:0;top:0;visibility:hidden"><div class="en" style="font-size:96px;color:var(--paper);line-height:.95">${en}</div><div class="he" style="text-align:right;margin-top:18px;color:var(--lime)"><span class="w800" style="font-size:62px">${he.split(' ')[0]}</span> <span class="w200" style="font-size:62px">${he.split(' ').slice(1).join(' ')}</span></div></div>`).join('');
- const lines=[
+// ---------- 12 PROMPT ----------
+{const {s:S,d:D,lines}=SC.prompt;
+ const L=[
   `<span class="dim">$</span> claude <span class="k3">--model</span> <span class="k2">claude-opus-5-5</span>`,
-  `<span class="k1">&gt;</span> You're a senior motion designer. Audience: devs on Instagram. Goal: explain easing in 45s.`,
-  `<span class="k1">&gt;</span> First write the script + shot list. <span class="k2">Wait for my OK</span> before any code.`,
-  `<span class="k1">&gt;</span> Format: <span class="k3">1080×1440 (3:4), 30fps, 45s, H.264</span>.`,
-  `<span class="k1">&gt;</span> Type: Anton + Assistant, bold/thin pairs. Palette: ink, paper, orange. Cut on the beat.`,
-  `<span class="k1">&gt;</span> Motion: <span class="k3">ease-out</span> entrances, <span class="k3">60ms stagger</span>, <span class="k3">back.out</span> overshoot, masked reveals.`,
-  `<span class="k1">&gt;</span> Render frame-by-frame. <span class="k2">Screenshot key frames, critique them, fix, re-render.</span>`,
- ];
- $('#pr-body').innerHTML = lines.map(l=>`<div class="ln"><span class="tx"></span></div>`).join('') + `<span class="cursor" id="pr-cursor"></span>`;
- const lnEls=$$('#pr-body .ln');
- // typing: reveal HTML progressively by visible character count (deterministic on seek)
- function typer(el,html){
-   const tmp=document.createElement('div');tmp.innerHTML=html;
-   const segs=[];tmp.childNodes.forEach(n=>segs.push({cls:n.nodeType===1?n.className:'',txt:n.textContent}));
-   const total=segs.reduce((a,s)=>a+s.txt.length,0);
-   return {total,render:(k)=>{let left=Math.round(k),out='';for(const s of segs){if(left<=0)break;const t=s.txt.slice(0,left);left-=t.length;const esc=t.replace(/&/g,'&amp;').replace(/</g,'&lt;');out+=s.cls?`<span class="${s.cls}">${esc}</span>`:esc;}el.querySelector('.tx').innerHTML=out;}};
- }
- const typers=lines.map((h,i)=>typer(lnEls[i],h));
- const typeLine=(i,at,dur)=>{const o={k:0};tl.to(o,{k:typers[i].total,duration:dur,ease:'none',onUpdate:()=>typers[i].render(o.k)},at);
-   tl.call(()=>{},null,at); tl.set(lnEls[i],{className:'ln on'},at); if(i>0) tl.set(lnEls[i-1],{className:'ln'},at);};
- tl.from('.term',{y:120,opacity:0,duration:.5,ease:'expo.out'},T);
- typeLine(0,T+.2,.6);
- rules.forEach((r,k)=>{
-   const at=T+k*RL, el=$$('#pr-titles .rt')[k];
-   tl.set(el,{visibility:'visible'},at).from(el,{yPercent:100,duration:.4,ease:'expo.out'},at);
-   if(k<5) tl.to(el,{yPercent:-100,duration:.3,ease:'power3.in'},at+RL-.3).set(el,{visibility:'hidden'},at+RL);
-   tl.call(()=>{$('#pr-count').textContent=String(k+1).padStart(2,'0')},null,at).fromTo('#pr-count',{scale:1.35,transformOrigin:'0% 50%'},{scale:1,duration:.35,ease:'back.out(3)',immediateRender:false},at);
-   typeLine(k+1, at+(k===0?.8:.15), k===0?1.4:1.5);
- });
- tl.to('#pr-cursor',{opacity:0,duration:.01,repeat:31,yoyo:true,repeatDelay:.24},T);
+  `<span class="k1">&gt;</span> Case study: 404 Media’s “Project Lily” report (Sep 14, 2026) + Copilot photo review. Put a source on every scene.`,
+  `<span class="k1">&gt;</span> Goal: viewers switch off training toggles and share. 1080×1440, 30fps.`,
+  `<span class="k1">&gt;</span> Give every motion a job: <span class="k3">stagger</span> = volume, <span class="k3">mask reveal</span> = the leak, <span class="k3">line draw</span> = where to tap.`,
+  `<span class="k1">&gt;</span> Voiceover first (Gemini 3.8 Flash TTS). <span class="k2">Cut every scene to the VO timing.</span>`,
+  `<span class="k1">&gt;</span> Palette: black, bone, one red. Anton + Assistant, bold/thin.`,
+  `<span class="k1">&gt;</span> Render frame-by-frame. <span class="k2">Screenshot key frames, critique, fix, re-render.</span>`];
+ $('#pr-body').innerHTML=L.map(()=>`<div class="tl"><span class="tx"></span></div>`).join('')+'<span class="cursor" id="pr-cur"></span>';
+ const els=$$('#pr-body .tl');
+ const typer=(el,html)=>{const tmp=document.createElement('div');tmp.innerHTML=html;const segs=[...tmp.childNodes].map(n=>({c:n.nodeType===1?n.className:'',t:n.textContent}));const total=segs.reduce((a,s)=>a+s.t.length,0);
+   return {total,render:k=>{let left=Math.round(k),out='';for(const s of segs){if(left<=0)break;const t=s.t.slice(0,left);left-=t.length;const e=t.replace(/&/g,'&amp;').replace(/</g,'&lt;');out+=s.c?`<span class="${s.c}">${e}</span>`:e;}el.querySelector('.tx').innerHTML=out;}};};
+ const ty=L.map((h,i)=>typer(els[i],h));
+ const mid=(l,f)=>l.start+(l.end-l.start)*f;
+ const at=[lines[0].start+.1, lines[0].start+.9, lines[1].start+.2, lines[2].start, mid(lines[2],.5), lines[3].start, mid(lines[3],.5)];
+ const du=[.6,1.4,1.1,1.6,1.1,1.1,1.5];
+ L.forEach((_,i)=>{const o={k:0};tl.to(o,{k:ty[i].total,duration:du[i],ease:'none',onUpdate:()=>ty[i].render(o.k)},at[i]).set(els[i],{attr:{class:'tl on'}},at[i]); if(i) tl.set(els[i-1],{attr:{class:'tl'}},at[i]);});
+ tl.from('#prompt .term',{y:80,opacity:0,duration:.5},S)
+   .from('#pr-models > div',{y:-30,opacity:0,duration:.45,stagger:.9,ease:'back.out(1.6)'},lines[1].start)
+   .to('#pr-opus',{borderColor:'#FF3B2F',duration:.2},lines[1].start)
+   .to('#pr-opus',{borderColor:'#2C2C31',duration:.2},mid(lines[1],.5))
+   .to('#pr-sonnet',{borderColor:'#FF3B2F',duration:.2},mid(lines[1],.5))
+   .to('#pr-sonnet',{borderColor:'#2C2C31',duration:.2},lines[2].start)
+   .to('#pr-cur',{opacity:0,duration:.01,repeat:Math.floor(D/.5),yoyo:true,repeatDelay:.24},S);
 }
-// ---------------- FINAL ----------------
-{const T=66;
- tl.from('#fi-motion',{scale:2.4,opacity:0,duration:.45,ease:'expo.out'},T)
-   .from('#fi-neq',{yPercent:80,opacity:0,duration:.4},T+.4)
-   .from('#fi-strike',{scaleX:0,duration:.4,ease:'power4.inOut'},T+1.1)
-   .from('#fi-heb',{yPercent:-60,opacity:0,duration:.5},T+1.3)
-   .from('#fi-eq',{scale:0,rotation:-8,duration:.55,ease:'back.out(2.4)'},T+1.6)
-   .to('#fi-eq',{scale:1.06,duration:.2,yoyo:true,repeat:1},T+2.4)
-   .to('#fi-end',{clipPath:'circle(80% at 50% 50%)',duration:.7,ease:'power3.inOut'},T+2.95)
-   .from('#fi-save',{y:-500,duration:.9,ease:'bounce.out'},T+3.2)
-   .from('#fi-end .en, #fi-end .he',{yPercent:80,opacity:0,duration:.4,stagger:.1},T+3.5)
-   .to('#fi-save',{scaleY:.9,transformOrigin:'50% 100%',duration:.15,yoyo:true,repeat:1},T+4.3);
+// ---------- 13 CTA ----------
+{const {s:S,d:D}=SC.cta;
+ gsap.set('#cta-plane',{x:-280,y:360,rotation:-10,opacity:0});
+ tl.from('#cta-pill',{scale:.5,opacity:0,duration:.35,ease:'back.out(2)'},S)
+   .to('#cta-knob',{x:-140,duration:.6,ease:'back.out(3)'},S+.45)
+   .to('#cta-pill',{backgroundColor:'#34343a',duration:.25},S+.45)
+   .from('#cta-t1',{yPercent:100,opacity:0,duration:.4,ease:'expo.out'},S+.2)
+   .from('#cta-t2',{scale:2,opacity:0,duration:.4,ease:'expo.out'},S+.55)
+   .from('#cta-trail',{opacity:0,duration:.3},S+1.4)
+   .to('#cta-plane',{x:0,y:0,rotation:0,opacity:1,duration:.9,ease:'power2.out'},S+1.4)
+   .from('#cta-share > *',{y:30,opacity:0,duration:.4,stagger:.15},S+1.6)
+   .to('#cta-plane',{x:420,y:-620,rotation:18,duration:1,ease:'power2.in'},S+Math.max(2.8,D-1.4))
+   .from(['#cta-sig','#cta-yuv'],{opacity:0,duration:.5},S+2.2);
 }
 
-// ---------------- CAPTIONS ----------------
-const CAPS = [
- [0.3,4.35,'רגע. מה זה בכלל *מושן גרפיקס*?','Wait. What even is *motion graphics*?'],
- [4.6,6.5,'זה עיצוב גרפי — *שזז.*','It\'s graphic design — *that moves.*'],
- [6.6,8.95,'טקסט, אייקונים, צורות ודאטה — עם *זמן וקצב.*','Type, icons, shapes & data — plus *time & rhythm.*'],
- [9.1,11.95,'המטרה: *להסביר.* לא רק לקשט.','The goal: *explain.* Not just decorate.'],
- [12.1,14.4,'*8 תנועות* שחייבים להכיר.','*8 moves* you have to know.'],
- ['m',1,'*איזינג.* שום דבר בטבע לא זז לינארית.','*Easing.* Nothing in nature moves linearly.'],
- ['m',2,'*אוברשוט.* עוברים את היעד — וחוזרים.','*Overshoot.* Pass the target — then settle.'],
- ['m',3,'*סטאגר.* אחד אחרי השני, לא כולם ביחד.','*Stagger.* One after another, not all at once.'],
- ['m',4,'*קינטיק טייפ.* הטקסט הוא הגיבור.','*Kinetic type.* The text is the hero.'],
- ['m',5,'*מאסק ריביל.* חושפים דרך צורה.','*Mask reveal.* Uncover through a shape.'],
- ['m',6,'*ליין דרו.* הקו מצייר את עצמו.','*Line draw.* The line draws itself.'],
- ['m',7,'*מורף.* צורה הופכת לצורה.','*Morph.* One shape becomes another.'],
- ['m',8,'*פרלקסה.* שכבות בקצבים שונים = *עומק.*','*Parallax.* Layers at different speeds = *depth.*'],
- [42.6,45.4,'ועכשיו: איך מבקשים את זה *מקלוד.*','Now: how to ask *Claude* for it.'],
- [45.6,47.65,'*Opus\u00a05.5* — לקונספט ולתכנון.','*Opus 5.5* — for concept & planning.'],
- [47.75,49.9,'*Sonnet\u00a05.5* — לאיטרציות מהירות.','*Sonnet 5.5* — for fast iterations.'],
- ['r',0,'תנו לו *תפקיד, קהל ומטרה.*','Give it a *role, audience & goal.*'],
- ['r',1,'*תסריט קודם.* פריימים אחר כך.','*Script first.* Frames later.'],
- ['r',2,'פורמט מדויק: *1080×1440, 30fps.*','Exact format: *1080×1440, 30fps.*'],
- ['r',3,'שפה עיצובית: *פונטים, צבעים, קצב עריכה.*','Design language: *fonts, palette, edit pace.*'],
- ['r',4,'תארו תנועה כמו *אנימטור.*','Describe motion like an *animator.*'],
- ['r',5,'ובקשו ממנו *לצלם פריימים — ולבקר את עצמו.*','Make it *screenshot frames & critique itself.*'],
- [66.1,68.9,'תנועה היא לא קישוט. תנועה היא *משמעות.*','Motion isn\'t decoration. Motion is *meaning.*'],
- [69.05,71.85,'*שמרו* את זה לסרטון הבא.','*Save this* for your next video.'],
-].map(c=>{
-  if(c[0]==='m'){const s=MT(c[1]);return [s+.12,s+MOVE_LEN-.1,c[2],c[3]];}
-  if(c[0]==='r'){const s=50+c[1]*16/6;return [s+.08,s+16/6-.08,c[2],c[3]];}
-  return c;
-});
-function words(str){let on=false;return str.split(' ').map(w=>{const st=w.startsWith('*');const en=w.replace(/[.,?!:—]+$/,'').endsWith('*')||w.endsWith('*');if(st)on=true;const hl=on;if(en)on=false;return {t:w.replace(/\*/g,''),hl};});}
-const capRoot=$('#captions');
-CAPS.forEach(([s,e,he,en],i)=>{
+// ---------- captions: word-by-word, paced to the voice ----------
+function heWords(str){const W=words(str),out=[];const isHe=t=>/[\u0590-\u05FF]/.test(t);
+  W.forEach(w=>{const lat=!isHe(w.t);const last=out[out.length-1];if(lat&&last&&last.lat&&!/[.,:;?!]$/.test(last.t)){last.t+=' '+w.t;last.hl=last.hl||w.hl;}else out.push({t:w.t,hl:w.hl,lat});});
+  return out.map(w=>{if(!w.lat)return w;const m=w.t.match(/^(.*?)([.,:;?!”“]*)$/);return {t:w.t,hl:w.hl,html:`<bdi dir="ltr">${m[1]}</bdi>${m[2]}`};});}
+function words(str){let on=false;return str.split(' ').filter(Boolean).map(w=>{const st=w.startsWith('*');const en=w.replace(/[.,?!:—”]+$/,'').endsWith('*')||w.endsWith('*');if(st)on=true;const hl=on;if(en)on=false;return {t:w.replace(/\*/g,''),hl};});}
+const band=$('#band');
+T.lines.forEach(l=>{
   const d=document.createElement('div');d.className='cap';
-  d.innerHTML=`<div class="he-line">${words(he).map(w=>`<span class="${w.hl?'hl':''}">${w.t}</span>`).join('')}</div><div class="en-line">${words(en).map(w=>`<span class="${w.hl?'hl':''}">${w.t}</span>`).join('')}</div>`;
-  capRoot.appendChild(d);
-  tl.set(d,{visibility:'visible'},s)
-    .from(d.querySelector('.he-line'),{scaleX:0,transformOrigin:'100% 50%',duration:.22,ease:'power3.out'},s)
-    .from(d.querySelectorAll('.he-line span'),{yPercent:70,opacity:0,duration:.18,stagger:.045,ease:'back.out(2)'},s+.08)
-    .from(d.querySelector('.en-line'),{scaleX:0,transformOrigin:'0% 50%',duration:.22},s+.12)
-    .from(d.querySelectorAll('.en-line span'),{yPercent:70,opacity:0,duration:.16,stagger:.035,ease:'back.out(2)'},s+.18)
-    .to(d,{opacity:0,y:14,duration:.1,ease:'power1.in'},e-.1)
-    .set(d,{visibility:'hidden'},e);
+  const H=heWords(l.he), E=words(l.en);
+  d.innerHTML=`<div class="h">${H.map(w=>`<span class="${w.hl?'hl':''}">${w.html||w.t}</span>`).join('')}</div><div class="e">${E.map(w=>`<span class="${w.hl?'hl':''}">${w.t}</span>`).join('')}</div>`;
+  band.appendChild(d);
+  const s=l.start, e=l.end, next=T.lines[l.i+1], off=next?next.start-.02:DURATION-.01;
+  tl.set(d,{visibility:'visible'},s-.05).from(d,{y:14,opacity:0,duration:.2},s-.05);
+  [[d.querySelectorAll('.h span'),H],[d.querySelectorAll('.e span'),E]].forEach(([els,W])=>{
+    const tot=W.reduce((a,w)=>a+w.t.length+1,0); let acc=0;
+    els.forEach((el,i)=>{ tl.to(el,{opacity:1,duration:.12,ease:'none'},s+(acc/tot)*(e-s)*.95); acc+=W[i].t.length+1; });
+  });
+  tl.set(d,{visibility:'hidden'},off);
 });
 
-// ---------------- driver ----------------
-let rng=1;
-window.renderFrame = (f)=>{
+// ---------- driver ----------
+window.renderFrame=f=>{
   const t=Math.min(f/FPS+1e-4,DURATION-1e-4);
   tl.seek(t,false);
-  rng = (f*9301+49297)%233280;
-  const gx=(rng%60), gy=((rng*7)%60);
-  document.getElementById('grain').style.transform=`translate(${-gx}px,${-gy}px)`;
+  const s=Math.floor(t), ff=f%FPS;
+  $('#tc').textContent=`00:${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}:${String(ff).padStart(2,'0')}`;
+  $('#rec-dot').style.opacity=(Math.floor(t*1.6)%2)?.25:1;
+  const r=(f*9301+49297)%233280; $('#grain').style.transform=`translate(${-(r%60)}px,${-((r*7)%60)}px)`;
 };
-window.TOTAL_FRAMES = DURATION*FPS;
-window.__ready = document.fonts.ready.then(()=>{
-  $$('.mhead .name').forEach(el=>{let fs=150;el.style.fontSize=fs+'px';const sc=el.closest('.scene');const v=sc.style.visibility;sc.style.visibility='visible';while(el.offsetWidth>700&&fs>80){fs-=4;el.style.fontSize=fs+'px';}sc.style.visibility=v;});
-  renderFrame(0); return true; });
+window.TOTAL_FRAMES=Math.round(DURATION*FPS);
+window.__ready=document.fonts.ready.then(()=>{renderFrame(0);return true;});
 </script>
 </body>
 </html>
