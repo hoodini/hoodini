@@ -27,7 +27,7 @@
   S(W('h2'), { theme: 'black', sec: '01 HOOK', page: 1 }, `
     <div class="abs s3art" style="left:140px;top:300px">${ART.gpuCard(640)}</div>
     <div class="abs" style="left:900px;top:220px"><div class="label dim">your GPU’s VRAM</div>
-      <div class="disp s3n" style="font-size:300px;margin-top:10px">32<span style="font-size:150px"> GB</span></div>
+      <div class="disp s3n" style="font-size:300px;margin-top:70px">32<span style="font-size:150px"> GB</span></div>
       <div class="serif s3c dim" style="font-size:54px">(it felt huge in 2025)</div></div>`,
     (q, t0) => { H.draw(q('.s3art svg'), t0, .5); H.slideX(q('.s3art'), t0, { x: -120 }); H.slam(q('.s3n'), W('h2', '32 GB.'), { cue: 'pop' }); H.fade(q('.s3c'), W('h2', '32 GB.') + .3); });
 
@@ -84,7 +84,7 @@ of 31.84 GiB of which 0 bytes is free.  <span class="p">¯\\_(ツ)_/¯</span></d
       <div class="bar-row"><div class="nm">RTX 5090</div><div class="bar-track"><div class="bar s10a" style="width:${32 / 128 * 100}%"></div><div class="bar-val s10av" style="left:calc(${32 / 128 * 100}% + 24px)">32 GB</div></div></div>
       <div class="bar-row"><div class="nm g">DGX SPARK</div><div class="bar-track"><div class="bar win s10b" style="width:100%"></div><div class="bar-val s10bv" style="right:24px;color:#000">128 GB</div></div></div>
       <div class="mono dim" style="font-size:22px;margin-top:18px">5090: 32 GB GDDR7 VRAM · Spark: 128 GB LPDDR5X shared by CPU + GPU</div></div>
-    <div class="abs s10c" style="left:1210px;top:400px">${ART.circle(520, 170)}</div>
+    <div class="abs s10c" style="left:1200px;top:280px">${ART.circle(640, 200)}</div>
     <div class="abs serif acc s10d" style="left:1340px;top:620px;font-size:60px">4× the room</div>
     ${src(SRC.spark + ' · ' + SRC.g5090)}`,
     (q, t0) => { H.barX(q('.s10a'), t0); H.fade(q('.s10av'), t0 + .3); H.barX(q('.s10b'), t0 + .15, { d: .9 }); H.fade(q('.s10bv'), t0 + .7); H.draw(q('.s10c'), t0 + .8, .5); H.fade(q('.s10d'), t0 + 1.0); });
@@ -207,8 +207,8 @@ of 31.84 GiB of which 0 bytes is free.  <span class="p">¯\\_(ツ)_/¯</span></d
     <div class="abs" style="left:130px;top:230px">
       <div class="mask"><span class="disp s24a" style="font-size:200px">CAPACITY</span></div>
       <div class="serif s24b" style="font-size:90px">→ decides <u>what</u> runs</div></div>
-    <div class="abs" style="left:1000px;top:520px">
-      <div class="mask"><span class="disp s24c" style="font-size:200px;color:var(--g);-webkit-text-stroke:3px #000">BANDWIDTH</span></div>
+    <div class="abs" style="left:860px;top:520px">
+      <div class="mask"><span class="disp s24c" style="font-size:190px;color:var(--g);-webkit-text-stroke:3px #000">BANDWIDTH</span></div>
       <div class="serif s24d" style="font-size:90px">→ decides <u>how fast</u></div></div>`,
     (q, t0) => { H.rise(q('.s24a'), t0); H.fade(q('.s24b'), W('p1', 'decides')); H.rise(q('.s24c'), W('p1', 'Bandwidth')); H.fade(q('.s24d'), W('p1', 'decides', 1)); });
 
@@ -254,16 +254,16 @@ of 31.84 GiB of which 0 bytes is free.  <span class="p">¯\\_(ツ)_/¯</span></d
     <div class="abs label dim" style="left:120px;top:160px">MEMORY BANDWIDTH · pipes drawn to scale</div>
     <div class="abs" style="left:120px;top:210px;width:1680px">
       <div class="mono" style="font-size:28px;font-weight:700">RTX 5090 · <span class="s28a">0</span> GB/s</div>
-      <div class="abs s28p1" style="left:0;top:50px;width:1680px;height:${PIPE(1792) * .72}px;border:4px solid var(--g);overflow:hidden">${packets('pc', 46, 'var(--g)')}</div>
-      <div class="abs mono" style="left:0;top:${70 + PIPE(1792) * .72}px;font-size:28px;font-weight:700">DGX SPARK · 273 GB/s</div>
-      <div class="abs s28p2" style="left:0;top:${118 + PIPE(1792) * .72}px;width:1680px;height:${PIPE(273) * .72}px;border:4px solid #8C8C8C;overflow:hidden">${packets('pd', 4, '#8C8C8C')}</div></div>
-    <div class="abs s28s" style="left:1300px;top:700px"><div class="disp g" style="font-size:190px">6.56×</div></div>
-    <div class="abs serif s28t" style="left:1000px;top:770px;font-size:54px">six and a half-ish</div>
+      <div class="abs s28p1" style="left:0;top:50px;width:1680px;height:${PIPE(1792) * .55}px;border:4px solid var(--g);overflow:hidden">${packets('pc', 46, 'var(--g)')}</div>
+      <div class="abs mono" style="left:0;top:${70 + PIPE(1792) * .55}px;font-size:28px;font-weight:700">DGX SPARK · 273 GB/s</div>
+      <div class="abs s28p2" style="left:0;top:${118 + PIPE(1792) * .55}px;width:1680px;height:${PIPE(273) * .55}px;border:4px solid #8C8C8C;overflow:hidden">${packets('pd', 4, '#8C8C8C')}</div></div>
+    <div class="abs s28s" style="left:1400px;top:705px"><div class="disp g" style="font-size:160px">6.56×</div></div>
+    <div class="abs serif s28t" style="left:900px;top:780px;font-size:54px">six and a half-ish</div>
     ${src('1,792 GB/s: ' + SRC.g5090 + ' · 273 GB/s: ' + SRC.spark)}`,
     (q, t0) => {
       counter(q('.s28a'), t0, t0 + .5, 0, 1792);
       H.barX(q('.s28p1'), t0, { d: .4 }); H.barX(q('.s28p2'), t0 + .15, { d: .4 });
-      flowPackets(q, '.pc', -30, 1680, PIPE(1792) * .36, PIPE(1792) * .72, 1100, t0); flowPackets(q, '.pd', -30, 1680, PIPE(273) * .36, PIPE(273) * .72, 170, t0);
+      flowPackets(q, '.pc', -30, 1680, PIPE(1792) * .275, PIPE(1792) * .55, 1100, t0); flowPackets(q, '.pd', -30, 1680, PIPE(273) * .275, PIPE(273) * .55, 170, t0);
       H.slam(q('.s28s'), W('p3', 'Six')); H.fade(q('.s28t'), W('p3', 'wider.'));
     });
 
@@ -308,14 +308,14 @@ of 31.84 GiB of which 0 bytes is free.  <span class="p">¯\\_(ツ)_/¯</span></d
   S(W('r2'), { theme: 'white', sec: '05 HEAD-TO-HEAD', page: 5 }, `
     <div class="abs" style="left:120px;top:190px;width:840px">
       <div class="label">DENSE 32B · Qwen3 32B · Q4_K_M · Ollama</div>
-      <div class="disp s32a" style="font-size:230px;margin-top:14px">6.2×</div>
+      <div class="disp s32a" style="font-size:230px;margin-top:50px">6.2×</div>
       <div class="mono" style="font-size:26px">58.9 vs 9.5 tok/s decode</div></div>
     <div class="abs" style="left:1060px;top:190px;width:760px">
       <div class="label">MEMORY BANDWIDTH RATIO</div>
-      <div class="disp s32b" style="font-size:230px;margin-top:14px;color:var(--g);-webkit-text-stroke:3px #000">6.6×</div>
+      <div class="disp s32b" style="font-size:230px;margin-top:50px;color:var(--g);-webkit-text-stroke:3px #000">6.6×</div>
       <div class="mono" style="font-size:26px">1,792 ÷ 273 GB/s</div></div>
-    <div class="abs s32c" style="left:900px;top:330px;font:400 150px/1 var(--display)">≈</div>
-    <div class="abs s32o" style="left:1010px;top:170px">${ART.circle(760, 300, '#000')}</div>
+    <div class="abs s32c" style="left:900px;top:370px;font:400 150px/1 var(--display)">≈</div>
+    <div class="abs s32o" style="left:985px;top:185px">${ART.circle(860, 380, '#000')}</div>
     <div class="sticker black s32s" style="left:620px;top:690px;transform:rotate(-3deg)">the bottleneck 👆 = bandwidth</div>
     ${src(SRC.lmsys + ' · decode, batch 1')}`,
     (q, t0) => { H.slam(q('.s32a'), t0 + .25); H.slam(q('.s32b'), W('r2', 'That\'s'), { cue: false }); H.fade(q('.s32c'), W('r2', 'That\'s')); H.draw(q('.s32o'), W('r2', 'bandwidth'), .45); H.pop(q('.s32s'), W('r2', 'gap.')); });
@@ -422,7 +422,7 @@ of 31.84 GiB of which 0 bytes is free.  <span class="p">¯\\_(ツ)_/¯</span></d
       ${ROUNDS.map((r, i) => `<div class="rw rw${i}" style="display:grid;grid-template-columns:360px 1fr 1fr 170px;padding:8px 14px;border-top:1px solid #262626;${r[0] === 'SOFTWARE' ? 'background:#1a1a1a' : ''}">
         <b>${r[0]}</b><span style="${r[3] === 'S' ? 'color:var(--g);font-weight:700' : ''}">${r[1]}</span><span style="${r[3] === 'G' ? 'color:var(--g);font-weight:700' : ''}">${r[2]}</span>
         <span class="pill" style="font-size:17px;padding:5px 10px;${r[3] === 'T' ? 'background:#fff' : ''}">${r[3] === 'S' ? 'SPARK' : r[3] === 'G' ? '5090' : 'DEPENDS'}</span></div>`).join('')}</div>
-    <div class="sticker black s42s" style="left:1100px;top:800px;transform:rotate(3deg);font-size:26px">score ≠ verdict. bottleneck = verdict.</div>
+    <div class="sticker black s42s" style="left:1180px;top:842px;transform:rotate(2deg);font-size:22px;padding:10px 16px">score ≠ verdict. bottleneck = verdict.</div>
     <div class="src">sources per row in README · noise: Tom’s Hardware (37.5 dBA @ 18") · fine-tuning & 200B: NVIDIA claims</div>`,
     (q, t0) => { q.all('.rw').forEach((r, i) => H.fade(r, t0 + .05 + i * .07, { y: 12 })); cue(t0 + .1, 'whoosh', .4); H.pop(q('.s42s'), W('r8', 'games'), { rot0: -10, rot: 3 }); });
 
@@ -448,12 +448,12 @@ of 31.84 GiB of which 0 bytes is free.  <span class="p">¯\\_(ツ)_/¯</span></d
     (q, t0) => { H.slideX(q('.tG'), t0, { x: 160 }); H.pop(q('.tG .disp'), W('b3', '5090.'), { cue: 'ding' }); });
 
   S(W('b4'), { theme: 'white', sec: '06 WHICH ONE?', page: 6 }, `
-    <div class="abs s46a" style="left:140px;top:300px">${ART.sparkBox(460, '#000', '#fff')}</div>
-    <div class="abs s46b" style="left:1320px;top:300px">${ART.sparkBox(460, '#000', '#fff')}</div>
-    <div class="abs s46c" style="left:560px;top:520px;width:800px;height:10px;background:var(--g);transform-origin:0 50%"></div>
-    <div class="abs mono" style="left:640px;top:450px;font-size:24px;font-weight:700">ConnectX-7 · 200 Gb/s</div>
-    <div class="abs center" style="top:-230px"><div class="disp s46d" style="font-size:200px">2 × SPARK = 405B</div></div>
-    <div class="toast s46t" style="top:660px;right:560px;width:800px"><div class="h">ALSO ANNOUNCED · MAY 31, 2026</div>RTX Spark (N1X) Windows-on-Arm PCs · up to 128 GB unified · “this fall” · price TBA</div>
+    <div class="abs s46a" style="left:140px;top:380px">${ART.sparkBox(460, '#000', '#fff')}</div>
+    <div class="abs s46b" style="left:1320px;top:380px">${ART.sparkBox(460, '#000', '#fff')}</div>
+    <div class="abs s46c" style="left:560px;top:600px;width:800px;height:10px;background:var(--g);transform-origin:0 50%"></div>
+    <div class="abs mono" style="left:640px;top:545px;font-size:24px;font-weight:700">ConnectX-7 · 200 Gb/s</div>
+    <div class="abs" style="left:0;right:0;top:150px;text-align:center"><div class="disp s46d" style="font-size:170px">2 × SPARK = 405B</div></div>
+    <div class="toast s46t" style="top:730px;right:560px;width:800px"><div class="h">ALSO ANNOUNCED · MAY 31, 2026</div>RTX Spark (N1X) Windows-on-Arm PCs · up to 128 GB unified · “this fall” · price TBA</div>
     ${src('405B: docs.nvidia.com DGX Spark hardware · product page now says up to 4 units / 700B · RTX Spark: nvidianews.nvidia.com 2026-05-31')}`,
     (q, t0) => { H.pop(q('.s46a'), t0, { cue: false }); H.pop(q('.s46b'), W('b4', 'Link'), { cue: false }); H.barX(q('.s46c'), W('b4', 'Link') + .1, { d: .3 }); cue(W('b4', 'Link') + .1, 'whoosh', .5); H.slam(q('.s46d'), W('b4', '405B.')); H.fade(q('.s46t'), W('b4', '405B.') + .35); cue(W('b4', '405B.') + .35, 'toast', .5); });
 

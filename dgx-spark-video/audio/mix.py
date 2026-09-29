@@ -44,10 +44,10 @@ mix = np.tanh(mix * 0.9) / 0.9 * 0.9
 pre = os.path.join(HERE, 'mix_pre.wav'); sf.write(pre, mix.astype(np.float32), SR)
 
 # 2-pass loudnorm
-p1 = subprocess.run(['ffmpeg', '-hide_banner', '-i', pre, '-af', 'loudnorm=I=-14:TP=-1.5:LRA=9:print_format=json', '-f', 'null', '-'],
+p1 = subprocess.run(['ffmpeg', '-hide_banner', '-i', pre, '-af', 'loudnorm=I=-14:TP=-2:LRA=9:print_format=json', '-f', 'null', '-'],
                     capture_output=True, text=True).stderr
 m = json.loads(re.search(r'\{[^{}]*"input_i"[^{}]*\}', p1, re.S).group(0))
-af = (f"loudnorm=I=-14:TP=-1.5:LRA=9:measured_I={m['input_i']}:measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}"
+af = (f"loudnorm=I=-14:TP=-2:LRA=9:measured_I={m['input_i']}:measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}"
       f":measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true,aresample=48000")
 subprocess.run(['ffmpeg', '-y', '-hide_banner', '-loglevel', 'error', '-i', pre, '-af', af, '-ar', '48000', os.path.join(HERE, 'mix.wav')], check=True)
 p3 = subprocess.run(['ffmpeg', '-hide_banner', '-i', os.path.join(HERE, 'mix.wav'), '-af', 'loudnorm=I=-14:TP=-1:print_format=json', '-f', 'null', '-'],
