@@ -1,0 +1,6 @@
+render/
+audio/raw/
+audio/*.wav
+!audio/sfx/*.wav
+qa/stills/
+__pycache__/
