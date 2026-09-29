@@ -162,3 +162,16 @@ All sources were accessed **2026-09-29**, and each URL returned HTTP 200 on that
   - **Music:** procedurally generated in numpy (140 BPM).
   - **SFX:** procedurally generated.
 - **Why not ElevenLabs?** The account had 16 credits against about 2,190 needed for eleven_v3, and the music job failed with "insufficient funds". The fallback was used as specified, and nothing was charged.
+
+## 7. QA results (final encode)
+
+| Check | Result |
+|---|---|
+| Duration | 117.29 s (target 90–120) |
+| Video | 1920×1080, 30 fps, H.264 High, ~5.6 Mbps, `-preset slow -tune grain` |
+| Audio | AAC-LC, 48 kHz stereo, **−14.09 LUFS** integrated, **−1.15 dBTP** true peak (measured on the MP4) |
+| Size | 1080p **82.5 MB** (< 100 MB). 720p preview **25.5 MB** (< 30 MB) |
+| Shots | 53 hard cuts. Contact sheets in `qa/sheet_*.jpg`, stills sampled late in each shot |
+| Intelligibility | The final mix was re-transcribed with faster-whisper (`audio/transcript_final.txt`), and every line came back recognizable. Known mishears are covered by the on-screen captions: "CUDA out of memory" came back as "Kudo memory" (masked by the error SFX), and "Power:" as "However". |
+| Numbers | Every on-screen figure was re-checked against the LMSYS CSV export and the NVIDIA pages on 2026-09-29 (§5) |
+| Known nit | The hand-drawn circle on the 128 GB bar (≈ 11–13 s) brushes the "GB" label |
