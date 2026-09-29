@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="he">
+<head>
+<meta charset="utf-8">
+<title>The Motion Issue</title>
+<link rel="stylesheet" href="fonts/fonts.local.css">
+<style>
+:root{
+  --ink:#121015; --paper:#F2EADB; --orange:#FF5A1F; --cobalt:#2B45FF; --lime:#D5FF3F; --claude:#D97757;
+  --en:'Anton',sans-serif; --he:'Assistant',sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1440px;overflow:hidden;background:var(--ink)}
+#stage{position:relative;width:1080px;height:1440px;overflow:hidden;background:var(--ink);color:var(--ink)}
+#world{position:absolute;inset:0;transform-origin:50% 45%}
+.scene{position:absolute;inset:0;visibility:hidden;overflow:hidden}
+.abs{position:absolute}
+.en{font-family:var(--en);text-transform:uppercase;line-height:.86;letter-spacing:.005em}
+.he{font-family:var(--he);direction:rtl;line-height:.9}
+.w800{font-weight:800}.w200{font-weight:200}.w300{font-weight:300}
+.he span + span{margin-right:.22em}
+.mhead .name{white-space:nowrap}
+.outline{color:transparent;-webkit-text-stroke:3px currentColor}
+.center-x{left:0;right:0;text-align:center}
+.bg-paper{background:var(--paper)} .bg-ink{background:var(--ink)} .bg-orange{background:var(--orange)} .bg-cobalt{background:var(--cobalt)}
+.halftone{background-image:radial-gradient(currentColor 28%,transparent 30%);background-size:18px 18px}
+.tag{font-family:var(--mono);font-size:22px;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border:2px solid currentColor;display:inline-block}
+.chip{font-family:var(--mono);font-size:20px;letter-spacing:.1em;padding:6px 12px;background:var(--ink);color:var(--lime);display:inline-block}
+
+/* chrome */
+#chrome{position:absolute;left:0;right:0;top:0;height:96px;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 44px;font-family:var(--mono);font-size:20px;letter-spacing:.16em;text-transform:uppercase;mix-blend-mode:difference;color:#fff;pointer-events:none}
+#chrome b{font-family:var(--en);font-weight:400;font-size:34px;letter-spacing:.02em}
+#progress{position:absolute;left:44px;right:44px;top:92px;height:4px;z-index:50;background:rgba(255,255,255,.18);mix-blend-mode:difference}
+#progress i{display:block;height:100%;width:100%;background:#fff;transform-origin:0 50%;transform:scaleX(0)}
+.reg{position:absolute;width:34px;height:34px;z-index:49;mix-blend-mode:difference}
+.reg:before,.reg:after{content:"";position:absolute;background:#fff}
+.reg:before{left:16px;top:0;width:2px;height:34px}.reg:after{top:16px;left:0;height:2px;width:34px}
+#grain{position:absolute;inset:-60px;z-index:60;pointer-events:none;opacity:.16;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1.2 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>")}
+#vignette{position:absolute;inset:0;z-index:59;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,transparent 60%,rgba(0,0,0,.28))}
+
+/* wipes */
+.wipe{position:absolute;inset:0;z-index:40;pointer-events:none;display:flex;flex-direction:column}
+.wipe i{flex:1;display:block}
+.flash{position:absolute;inset:0;z-index:41;background:var(--paper);opacity:0;pointer-events:none}
+
+/* captions */
+#captions{position:absolute;left:0;right:0;bottom:44px;z-index:45;height:190px}
+.cap{position:absolute;left:40px;right:40px;bottom:0;display:flex;flex-direction:column;align-items:center;gap:10px;visibility:hidden}
+.cap .he-line{direction:rtl;font-family:var(--he);font-weight:800;font-size:46px;line-height:1.1;background:var(--ink);color:var(--paper);padding:8px 20px 12px;display:flex;flex-wrap:wrap;justify-content:center;gap:0 .28em;box-shadow:8px 8px 0 rgba(0,0,0,.25)}
+.cap .en-line{font-family:var(--en);font-size:32px;letter-spacing:.04em;text-transform:uppercase;background:var(--lime);color:var(--ink);padding:6px 16px 6px;display:flex;flex-wrap:wrap;justify-content:center;gap:0 .3em}
+.cap span{display:inline-block}
+.cap .he-line .hl{color:var(--lime)}
+.cap .he-line .thin{font-weight:300}
+.cap .en-line .hl{background:var(--ink);color:var(--lime);padding:0 6px}
+
+/* terminal */
+.term{position:absolute;left:54px;right:54px;top:430px;height:740px;background:#0B0A0E;border:2px solid #2d2a33;border-radius:18px;overflow:hidden;box-shadow:18px 18px 0 var(--cobalt)}
+.term .bar{height:54px;background:#1b1920;display:flex;align-items:center;padding:0 20px;gap:10px;font-family:var(--mono);font-size:19px;color:#8d8896}
+.term .bar i{width:15px;height:15px;border-radius:50%;display:inline-block}
+.term .body{padding:26px 30px;font-family:var(--mono);font-size:25px;line-height:1.5;color:#e9e4f0;direction:ltr;text-align:left}
+.term .ln{white-space:pre-wrap;border-left:5px solid transparent;padding-left:14px;margin-left:-19px;opacity:.42}
+.term .ln.on{opacity:1;border-left-color:var(--lime);background:rgba(213,255,63,.06)}
+.k1{color:var(--lime)} .k2{color:var(--claude)} .k3{color:#8ea0ff} .dim{color:#77727f}
+.cursor{display:inline-block;width:13px;height:28px;background:var(--lime);vertical-align:-5px;margin-left:2px}
+</style>
+</head>
+<body>
+<div id="stage">
+<div id="world">
+
+<!-- ============ S1 HOOK ============ -->
+<section class="scene bg-paper" id="s1">
+  <div class="abs halftone" style="color:#e2d6c1;inset:0"></div>
+  <div class="abs he w800" id="s1-heb" style="top:150px;right:-30px;font-size:360px;color:var(--cobalt);white-space:nowrap">מושן</div>
+  <div class="abs" id="s1-circle" style="left:250px;top:470px;width:580px;height:580px;border-radius:50%;background:var(--orange)"></div>
+  <div class="abs en center-x" id="s1-motion" style="top:560px;font-size:318px;color:var(--ink);white-space:nowrap"></div>
+  <div class="abs" id="s1-graphics" style="left:0;right:0;top:855px;text-align:center;font-family:var(--he);font-weight:200;font-size:150px;color:var(--ink);letter-spacing:-.02em">graphics</div>
+  <div class="abs he w200" id="s1-heb2" style="top:1010px;left:90px;font-size:120px;color:var(--cobalt)">גרפיקס</div>
+  <div class="abs" id="s1-q" style="right:80px;top:990px;width:170px;height:170px;border-radius:50%;background:var(--lime);display:grid;place-items:center;font-family:var(--en);font-size:130px;color:var(--ink)">?</div>
+  <div class="abs tag" id="s1-tag" style="left:60px;top:130px;color:var(--ink)">Issue Nº05 — The Motion Issue</div>
+</section>
+
+<!-- ============ S2 DEFINITION ============ -->
+<section class="scene bg-ink" id="s2">
+  <div class="abs en outline center-x" id="s2-back" style="top:240px;font-size:250px;color:var(--paper);white-space:nowrap;opacity:.9">THAT<br>MOVES</div>
+  <div class="abs" id="s2-circle" style="left:120px;top:560px;width:260px;height:260px;border-radius:50%;background:var(--orange)"></div>
+  <div class="abs" id="s2-square" style="left:420px;top:620px;width:230px;height:230px;background:var(--cobalt)"></div>
+  <svg class="abs" id="s2-tri" style="left:700px;top:560px" width="270" height="260" viewBox="0 0 270 260"><polygon points="135,0 270,260 0,260" fill="#D5FF3F"/></svg>
+  <div class="abs" id="s2-front" style="left:60px;top:790px;">
+    <div class="en" style="font-size:170px;color:var(--paper)">GRAPHIC<br>DESIGN</div>
+  </div>
+  <div class="abs he" id="s2-he" style="right:60px;top:820px;text-align:right;color:var(--lime)"><div class="w800" style="font-size:110px">עיצוב גרפי</div><div class="w200" style="font-size:130px;color:var(--paper)">שזז.</div></div>
+  <div class="abs tag" id="s2-paused" style="left:60px;top:140px;color:var(--lime)">❚❚ paused</div>
+  <div class="abs tag" id="s2-play" style="left:60px;top:140px;color:var(--ink);background:var(--lime);border-color:var(--lime)">▶ playing</div>
+  <!-- phase B: 4 ingredient tiles -->
+  <div class="abs" id="s2-tiles" style="left:60px;right:60px;top:380px;display:grid;grid-template-columns:1fr 1fr;gap:22px">
+    <div class="tile" style="background:var(--paper);height:300px;padding:28px;position:relative">
+      <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="#121015" stroke-width="2.2" stroke-linecap="round"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
+      <div class="en" style="position:absolute;left:28px;bottom:28px;font-size:78px">TYPE</div><div class="he w300" style="position:absolute;right:28px;bottom:32px;font-size:48px">טקסט</div></div>
+    <div class="tile" style="background:var(--orange);height:300px;padding:28px;position:relative">
+      <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="#121015" stroke-width="2.2" stroke-linejoin="round"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg>
+      <div class="en" style="position:absolute;left:28px;bottom:28px;font-size:78px">ICONS</div><div class="he w300" style="position:absolute;right:28px;bottom:32px;font-size:48px">אייקונים</div></div>
+    <div class="tile" style="background:var(--cobalt);height:300px;padding:28px;position:relative;color:var(--paper)">
+      <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="#F2EADB" stroke-width="2.2"><circle cx="8" cy="8" r="5"/><rect x="11" y="11" width="10" height="10"/></svg>
+      <div class="en" style="position:absolute;left:28px;bottom:28px;font-size:78px">SHAPES</div><div class="he w300" style="position:absolute;right:28px;bottom:32px;font-size:48px">צורות</div></div>
+    <div class="tile" style="background:var(--lime);height:300px;padding:28px;position:relative">
+      <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="#121015" stroke-width="2.4" stroke-linecap="round"><path d="M4 20V13M10 20V6M16 20v-9M22 20H2"/></svg>
+      <div class="en" style="position:absolute;left:28px;bottom:28px;font-size:78px">DATA</div><div class="he w300" style="position:absolute;right:28px;bottom:32px;font-size:48px">דאטה</div></div>
+  </div>
+  <div class="abs" id="s2-plus" style="left:60px;right:60px;top:1060px;display:flex;justify-content:space-between;align-items:center;color:var(--paper)">
+    <div class="en" style="font-size:96px">+ TIME</div>
+    <div id="s2-metro" style="display:flex;gap:12px"><i style="width:26px;height:70px;background:var(--lime);display:block"></i><i style="width:26px;height:70px;background:var(--lime);display:block"></i><i style="width:26px;height:70px;background:var(--lime);display:block"></i><i style="width:26px;height:70px;background:var(--lime);display:block"></i></div>
+    <div class="en" style="font-size:96px;color:var(--orange)">+ RHYTHM</div>
+  </div>
+</section>
+
+<!-- ============ S3 GOAL ============ -->
+<section class="scene bg-orange" id="s3">
+  <div class="abs halftone" style="color:#ff7a47;inset:0;opacity:.8"></div>
+  <div class="abs he w800 center-x" id="s3-heb" style="top:250px;font-size:300px;color:var(--paper);white-space:nowrap">להסביר</div>
+  <div class="abs en center-x" id="s3-explain" style="top:430px;font-size:280px;color:var(--ink)">EXPLAIN</div>
+  <div class="abs center-x" id="s3-gt" style="top:705px;font-family:var(--he);font-weight:200;font-style:italic;font-size:110px;line-height:1;color:var(--ink)">over</div>
+  <div class="abs en outline center-x" id="s3-decorate" style="top:870px;font-size:200px;color:var(--ink)">DECORATE</div>
+  <div class="abs" id="s3-strike" style="left:110px;width:860px;top:945px;height:34px;background:var(--lime);transform-origin:0 50%;box-shadow:0 0 0 4px var(--ink)"></div>
+  <div class="abs he w300" id="s3-heb2" style="left:80px;top:150px;font-size:64px;color:var(--ink)">לא רק לקשט.</div>
+</section>
+
+<!-- ============ S4 8 MOVES ============ -->
+<section class="scene bg-cobalt" id="s4">
+  <div class="abs en" id="s4-8a" style="left:0;right:0;top:40px;text-align:center;font-size:1180px;color:var(--lime);line-height:1">8</div>
+  <div class="abs en center-x" id="s4-moves" style="top:580px;font-size:250px;color:var(--paper);white-space:nowrap">MOVES</div>
+  <div class="abs he" id="s4-he" style="right:70px;top:150px;text-align:right;color:var(--paper)"><span class="w800" style="font-size:78px">תנועות</span> <span class="w200" style="font-size:78px">שחייבים להכיר</span></div>
+  <div class="abs tag" id="s4-tag" style="left:60px;top:1080px;color:var(--paper)">A field guide / מדריך שטח</div>
+</section>
+
+<!-- ============ MOVE TEMPLATE PARTS are inline per scene ============ -->
+<!-- M1 EASING -->
+<section class="scene bg-paper" id="m1">
+  <div class="abs en outline" style="left:-20px;top:360px;font-size:520px;color:#d9ccb4;-webkit-text-stroke-width:4px" id="m1-back">EASE</div>
+  <div class="mhead abs" style="left:60px;top:130px;right:60px">
+    <div class="en outline num" style="font-size:190px;color:var(--orange);-webkit-text-stroke-width:4px">01</div>
+    <div class="en name" style="position:absolute;left:250px;top:10px;font-size:150px;color:var(--ink)">EASING</div>
+    <div class="he w800 hname" style="position:absolute;right:0;top:130px;font-size:64px;color:var(--cobalt)">איזינג <span class="w200">/ האצה והאטה</span></div>
+  </div>
+  <div class="abs" style="left:60px;right:60px;top:440px">
+    <div style="font-family:var(--mono);font-size:22px;letter-spacing:.14em;color:#8c8373">LINEAR</div>
+    <div style="height:120px;border-bottom:3px dashed #bfb3a0;position:relative"><div id="m1-lin" style="position:absolute;left:0;top:14px;width:100px;height:100px;border-radius:50%;background:#bfb3a0"></div></div>
+    <div style="font-family:var(--mono);font-size:22px;letter-spacing:.14em;color:var(--ink);margin-top:34px">EASE-IN-OUT ✓</div>
+    <div style="height:120px;border-bottom:3px solid var(--ink);position:relative"><div id="m1-ease" style="position:absolute;left:0;top:14px;width:100px;height:100px;border-radius:50%;background:var(--orange)"></div></div>
+  </div>
+  <svg class="abs" id="m1-graph" style="left:300px;top:790px" width="480" height="380" viewBox="0 0 480 380">
+    <rect x="1" y="1" width="478" height="378" fill="#121015"/>
+    <path d="M40 340 H440 M40 340 V40" stroke="#4a4552" stroke-width="2"/>
+    <path id="m1-lpath" d="M40 340 L440 40" stroke="#4a4552" stroke-width="3" stroke-dasharray="8 8" fill="none"/>
+    <path id="m1-cpath" d="M40 340 C 240 340, 240 40, 440 40" stroke="#D5FF3F" stroke-width="7" fill="none" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+    <circle id="m1-dot" cx="40" cy="340" r="14" fill="#FF5A1F"/>
+    <text x="50" y="30" fill="#8d8896" font-family="JetBrains Mono" font-size="16">cubic-bezier(.65,0,.35,1)</text>
+  </svg>
+</section>
+
+<!-- M2 OVERSHOOT -->
+<section class="scene bg-ink" id="m2">
+  <div class="abs en" id="m2-back" style="left:0;right:0;top:420px;text-align:center;font-size:400px;color:#1f1c24">BOING</div>
+  <div class="mhead abs" style="left:60px;top:130px;right:60px">
+    <div class="en outline num" style="font-size:190px;color:var(--lime);-webkit-text-stroke-width:4px">02</div>
+    <div class="en name" style="position:absolute;left:250px;top:10px;font-size:150px;color:var(--paper)">OVERSHOOT</div>
+    <div class="he w800 hname" style="position:absolute;right:0;top:130px;font-size:64px;color:var(--lime)">אוברשוט <span class="w200" style="color:var(--paper)">/ עבור וחזור</span></div>
+  </div>
+  <div class="abs" style="left:290px;top:470px;width:500px;height:500px;border:4px dashed #5b5563"></div>
+  <div class="abs" id="m2-card" style="left:290px;top:470px;width:500px;height:500px;background:var(--cobalt);display:grid;place-items:center;transform-origin:50% 50%">
+    <div class="en" style="font-size:190px;color:var(--paper)">POP!</div>
+  </div>
+  <div class="abs" style="left:60px;right:60px;top:1030px;height:4px;background:#3a3640"></div>
+  <div class="abs" style="left:700px;top:1000px;width:4px;height:64px;background:var(--orange)"></div>
+  <div class="abs" id="m2-slide" style="left:60px;top:1004px;width:120px;height:56px;background:var(--orange)"></div>
+  <div class="abs" style="left:640px;top:1080px;font-family:var(--mono);font-size:20px;color:var(--orange);letter-spacing:.1em">TARGET</div>
+</section>
+
+<!-- M3 STAGGER -->
+<section class="scene bg-paper" id="m3">
+  <div class="mhead abs" style="left:60px;top:130px;right:60px">
+    <div class="en outline num" style="font-size:190px;color:var(--cobalt);-webkit-text-stroke-width:4px">03</div>
+    <div class="en name" style="position:absolute;left:250px;top:10px;font-size:150px;color:var(--ink)">STAGGER</div>
+    <div class="he w800 hname" style="position:absolute;right:0;top:130px;font-size:64px;color:var(--orange)">סטאגר <span class="w200" style="color:var(--ink)">/ אחד אחרי השני</span></div>
+  </div>
+  <div class="abs en" id="m3-back" style="left:40px;top:440px;font-size:190px;color:var(--cobalt);opacity:.14;line-height:.95">ONE<br>BY<br>ONE</div>
+  <div class="abs" id="m3-bars" style="left:70px;right:70px;top:450px;height:430px;display:flex;align-items:flex-end;gap:18px">
+    <i style="flex:1;height:30%;background:var(--ink)"></i><i style="flex:1;height:52%;background:var(--orange)"></i><i style="flex:1;height:40%;background:var(--ink)"></i><i style="flex:1;height:74%;background:var(--cobalt)"></i><i style="flex:1;height:60%;background:var(--ink)"></i><i style="flex:1;height:88%;background:var(--orange)"></i><i style="flex:1;height:70%;background:var(--ink)"></i><i style="flex:1;height:100%;background:var(--cobalt)"></i>
+  </div>
+  <div class="abs" id="m3-dots" style="left:70px;right:70px;top:920px;display:grid;grid-template-columns:repeat(10,1fr);gap:16px"></div>
+</section>
+
+<!-- M4 KINETIC TYPE -->
+<section class="scene bg-orange" id="m4">
+  <div class="mhead abs" style="left:60px;top:130px;right:60px">
+    <div class="en outline num" style="font-size:190px;color:var(--ink);-webkit-text-stroke-width:4px">04</div>
+    <div class="en name" style="position:absolute;left:250px;top:10px;font-size:150px;color:var(--paper)">KINETIC TYPE</div>
+  </div>
+  <div class="abs he w800" id="m4-heb" style="right:40px;top:420px;font-size:250px;color:#ff7c4f;white-space:nowrap">הגיבור</div>
+  <div class="abs" id="m4-words" style="left:60px;right:60px;top:430px;height:740px">
+    <div class="en kw" style="position:absolute;left:0;top:0;font-size:200px;color:var(--ink)">THE</div>
+    <div class="en kw" style="position:absolute;right:0;top:40px;font-size:260px;color:var(--paper)">TEXT</div>
+    <div class="kw" style="position:absolute;left:0;top:230px;font-family:var(--he);font-weight:200;font-size:120px;color:var(--ink);font-style:italic">is the</div>
+    <div class="en kw" style="position:absolute;left:0;right:0;top:420px;text-align:center;font-size:340px;color:var(--ink);background:var(--lime);line-height:.95;padding-top:14px">HERO</div>
+  </div>
+</section>
+
+<!-- M5 MASK REVEAL -->
+<section class="scene bg-ink" id="m5">
+  <div class="mhead abs" style="left:60px;top:130px;right:60px">
+    <div class="en outline num" style="font-size:190px;color:var(--orange);-webkit-text-stroke-width:4px">05</div>
+    <div class="en name" style="position:absolute;left:250px;top:10px;font-size:150px;color:var(--paper)">MASK REVEAL</div>
+    <div class="he w800 hname" style="position:absolute;right:0;top:130px;font-size:64px;color:var(--orange)">מאסק ריביל <span class="w200" style="color:var(--paper)">/ חשיפה</span></div>
+  </div>
+  <div class="abs en center-x" style="top:520px;font-size:300px;color:#2a2630">HIDDEN</div>
+  <div class="abs" id="m5-panel" style="left:60px;right:60px;top:450px;height:560px;background:var(--lime);clip-path:circle(0% at 50% 50%);display:grid;place-items:center">
+    <div style="text-align:center">
+      <div class="en" style="font-size:280px;color:var(--ink)">REVEAL</div>
+      <div class="he w200" style="font-size:110px;color:var(--ink)">נחשף.</div>
+    </div>
+  </div>
+  <div class="abs" style="left:60px;top:1040px;overflow:hidden;height:100px"><div id="m5-line1" class="en" style="font-size:96px;color:var(--paper)">THROUGH A SHAPE</div></div>
+</section>
+
+<!-- M6 LINE DRAW -->
+<section class="scene bg-paper" id="m6">
+  <div class="mhead abs" style="left:60px;top:130px;right:60px">
+    <div class="en outline num" style="font-size:190px;color:var(--cobalt);-webkit-text-stroke-width:4px">06</div>
+    <div class="en name" style="position:absolute;left:250px;top:10px;font-size:150px;color:var(--ink)">LINE DRAW</div>
+    <div class="he w800 hname" style="position:absolute;right:0;top:130px;font-size:64px;color:var(--cobalt)">ליין דרו <span class="w200" style="color:var(--ink)">/ קו שמצייר</span></div>
+  </div>
+  <div class="abs en" style="left:120px;top:600px;font-size:230px;color:var(--ink)">THIS</div>
+  <div class="abs he w200" style="left:600px;top:640px;font-size:150px;color:var(--ink)">חשוב.</div>
+  <svg class="abs" style="left:0;top:380px" width="1080" height="820" viewBox="0 0 1080 820" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path class="draw" d="M100 190 C 60 60, 520 40, 560 190 C 600 340, 70 360, 90 210" stroke="#FF5A1F" stroke-width="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+    <path class="draw" d="M590 470 C 700 440, 880 480, 990 450" stroke="#2B45FF" stroke-width="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+    <path class="draw" d="M180 780 C 240 560, 420 520, 560 600 C 640 650, 700 560, 820 520 L 780 500 M820 520 L 790 560" stroke="#121015" stroke-width="10" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+    <path class="draw" d="M40 20 H1040" stroke="#121015" stroke-width="3" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+  </svg>
+</section>
+
+<!-- M7 MORPH -->
+<section class="scene bg-cobalt" id="m7">
+  <div class="mhead abs" style="left:60px;top:130px;right:60px">
+    <div class="en outline num" style="font-size:190px;color:var(--lime);-webkit-text-stroke-width:4px">07</div>
+    <div class="en name" style="position:absolute;left:250px;top:10px;font-size:150px;color:var(--paper)">MORPH</div>
+    <div class="he w800 hname" style="position:absolute;right:0;top:130px;font-size:64px;color:var(--lime)">מורף <span class="w200" style="color:var(--paper)">/ צורה לצורה</span></div>
+  </div>
+  <div class="abs en outline center-x" id="m7-back" style="top:560px;font-size:250px;color:var(--paper);opacity:.35">SHAPE</div>
+  <div class="abs" id="m7-shape" style="left:240px;top:430px;width:600px;height:600px;background:var(--lime)"></div>
+  <div class="abs" id="m7-labels" style="left:60px;right:60px;top:1070px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:26px;letter-spacing:.14em;color:var(--paper)">
+    <span>● CIRCLE</span><span>→</span><span>■ SQUARE</span><span>→</span><span>★ STAR</span>
+  </div>
+</section>
+
+<!-- M8 PARALLAX -->
+<section class="scene" id="m8" style="background:#F7C9A3">
+  <div class="abs" id="m8-sun" style="left:620px;top:360px;width:300px;height:300px;border-radius:50%;background:var(--orange)"></div>
+  <svg class="abs" id="m8-far" style="left:0;top:560px" width="1800" height="500" viewBox="0 0 1800 500"><path d="M0 500 L0 260 L180 120 L360 250 L520 90 L720 260 L900 140 L1100 280 L1280 110 L1480 250 L1650 150 L1800 240 L1800 500Z" fill="#8f7bd9"/></svg>
+  <div class="abs en" id="m8-text" style="left:40px;top:560px;font-size:330px;color:var(--ink);white-space:nowrap">DEPTH</div>
+  <svg class="abs" id="m8-mid" style="left:0;top:760px" width="2000" height="480" viewBox="0 0 2000 480"><path d="M0 480 L0 220 C 200 120, 360 300, 560 190 S 900 110, 1100 230 S 1500 120, 1700 210 S 1900 160, 2000 180 L2000 480Z" fill="#2B45FF"/></svg>
+  <div class="abs he w800" id="m8-heb" style="left:520px;top:900px;font-size:200px;color:var(--lime);white-space:nowrap">עומק</div>
+  <svg class="abs" id="m8-front" style="left:0;top:1000px" width="2400" height="300" viewBox="0 0 2400 300"><path d="M0 300 L0 120 C 300 20, 500 160, 800 90 S 1300 20, 1600 110 S 2100 30, 2400 100 L2400 300Z" fill="#121015"/></svg>
+  <div class="mhead abs" style="left:60px;top:130px;right:60px">
+    <div class="en outline num" style="font-size:190px;color:var(--ink);-webkit-text-stroke-width:4px">08</div>
+    <div class="en name" style="position:absolute;left:250px;top:10px;font-size:150px;color:var(--ink)">PARALLAX</div>
+  </div>
+  <div class="abs" style="right:60px;top:1110px;font-family:var(--mono);font-size:20px;letter-spacing:.12em;color:var(--paper);text-align:right">FAR 0.2× · MID 0.6× · NEAR 1.4×</div>
+</section>
+
+<!-- ============ T: NOW CLAUDE ============ -->
+<section class="scene bg-ink" id="t1">
+  <div class="abs" id="t1-circle" style="left:340px;top:420px;width:400px;height:400px;border-radius:50%;background:var(--paper)"></div>
+  <img class="abs" id="t1-logo" src="assets/claude.svg" style="left:390px;top:470px;width:300px;height:300px">
+  <div class="abs en" id="t1-now" style="left:60px;top:150px;font-size:230px;color:var(--lime)">NOW:</div>
+  <div class="abs en" id="t1-how" style="left:60px;top:880px;font-size:118px;color:var(--paper)">HOW TO PROMPT<br><span style="color:var(--claude)">CLAUDE</span></div>
+  <div class="abs he" id="t1-he" style="right:60px;top:200px;text-align:right;color:var(--paper)"><div class="w800" style="font-size:80px">איך מבקשים</div><div class="w200" style="font-size:80px">מקלוד</div></div>
+</section>
+
+<!-- ============ MODELS ============ -->
+<section class="scene bg-paper" id="mo">
+  <div class="abs tag" style="left:60px;top:130px;color:var(--ink)">Pick your model / בחרו מודל</div>
+  <div class="abs" id="mo-opus" style="left:60px;right:60px;top:210px;height:470px;background:var(--ink);color:var(--paper);padding:44px;overflow:hidden">
+    <img src="assets/claude.svg" style="position:absolute;right:-70px;top:-90px;width:300px">
+    <div style="font-family:var(--mono);font-size:24px;color:var(--lime)">claude-opus-5-5</div>
+    <div class="en" style="font-size:200px;margin-top:20px">OPUS 5.5</div>
+    <div class="he" style="position:absolute;right:44px;bottom:40px;text-align:right"><span class="w800" style="font-size:64px;color:var(--lime)">קונספט</span> <span class="w200" style="font-size:64px">ותכנון</span></div>
+    <div class="en" style="position:absolute;left:44px;bottom:44px;font-size:44px;color:#8d8896">THINK · PLAN · SCRIPT</div>
+  </div>
+  <div class="abs" id="mo-sonnet" style="left:60px;right:60px;top:710px;height:470px;background:var(--orange);color:var(--ink);padding:44px;overflow:hidden">
+    <svg style="position:absolute;right:36px;top:30px" width="130" height="130" viewBox="0 0 24 24" fill="#121015"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>
+    <div style="font-family:var(--mono);font-size:24px">claude-sonnet-5-5</div>
+    <div class="en" style="font-size:200px;margin-top:20px">SONNET 5.5</div>
+    <div class="he" style="position:absolute;right:44px;bottom:40px;text-align:right"><span class="w800" style="font-size:64px;color:var(--paper)">איטרציות</span> <span class="w200" style="font-size:64px">מהירות</span></div>
+    <div class="en" style="position:absolute;left:44px;bottom:44px;font-size:44px;color:#5a1d05">BUILD · TWEAK · REPEAT</div>
+  </div>
+</section>
+
+<!-- ============ PROMPT RULES ============ -->
+<section class="scene bg-ink" id="pr">
+  <div class="abs" style="left:60px;top:130px;right:60px;height:270px">
+    <div class="abs en" id="pr-count" style="left:0;top:0;font-size:230px;color:var(--lime)">01</div>
+    <div class="abs en" style="left:0;top:210px;font-family:var(--mono);font-size:22px;color:#8d8896;letter-spacing:.14em">PROMPT RULE / 06</div>
+    <div class="abs" id="pr-titles" style="left:290px;right:0;top:10px;height:250px;overflow:hidden"></div>
+  </div>
+  <div class="term">
+    <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span style="margin-left:14px">~/motion-video — claude</span><img src="assets/claude.svg" style="width:26px;margin-left:auto"></div>
+    <div class="body" id="pr-body"></div>
+  </div>
+</section>
+
+<!-- ============ FINAL ============ -->
+<section class="scene bg-orange" id="fi">
+  <div class="abs he center-x" id="fi-heb" style="top:190px;color:var(--paper);white-space:nowrap"><span class="w800" style="font-size:150px">תנועה</span> <span class="w200" style="font-size:150px">= משמעות</span></div>
+  <div class="abs en center-x" id="fi-motion" style="top:380px;font-size:300px;color:var(--ink)">MOTION</div>
+  <div class="abs" id="fi-neq" style="left:0;right:0;top:690px;text-align:center"><span style="font-family:var(--mono);font-weight:700;font-size:110px;color:var(--ink);vertical-align:20px">≠</span> <span class="en outline" style="font-size:150px;color:var(--ink)">DECORATION</span></div>
+  <div class="abs" id="fi-strike" style="left:110px;width:860px;top:742px;height:26px;background:var(--ink);transform-origin:0 50%"></div>
+  <div class="abs en center-x" id="fi-eq" style="top:900px;font-size:200px;color:var(--paper)"><span style="display:inline-block;background:var(--ink);padding:26px 34px 18px;line-height:.86">= MEANING</span></div>
+  <!-- save end card -->
+  <div class="abs bg-ink" id="fi-end" style="inset:0;clip-path:circle(0% at 50% 50%)">
+    <svg class="abs" id="fi-save" style="left:390px;top:260px" width="300" height="360" viewBox="0 0 30 36"><path d="M3 2h24v32l-12-8-12 8z" fill="#D5FF3F"/></svg>
+    <div class="abs en center-x" style="top:680px;font-size:190px;color:var(--paper)">SAVE THIS</div>
+    <div class="abs he center-x" style="top:870px;color:var(--lime)"><span class="w800" style="font-size:90px">שמרו</span> <span class="w200" style="font-size:90px">לסרטון הבא</span></div>
+    <div class="abs" style="left:60px;top:1070px;display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:22px;color:#8d8896;letter-spacing:.1em"><img src="assets/claude.svg" style="width:34px">MADE WITH CLAUDE + GSAP</div>
+    <div class="abs en" style="right:60px;top:1058px;font-size:54px;color:var(--paper)">YUV.AI</div>
+  </div>
+</section>
+
+</div><!-- /world -->
+
+<div class="wipe" id="wipe"><i></i><i></i><i></i><i></i></div>
+<div class="flash" id="flash"></div>
+<div id="chrome"><span id="chrome-l">Nº05 · MOTION</span><b id="chrome-m">THE MOTION ISSUE</b><span id="chrome-r">P.01</span></div>
+<div id="progress"><i id="progress-i"></i></div>
+<div class="reg" style="left:18px;top:1370px"></div><div class="reg" style="right:18px;top:1370px"></div>
+<div id="captions"></div>
+<div id="vignette"></div>
+<div id="grain"></div>
+</div>
+
+<script src="assets/gsap.min.js"></script>
+<script>
+const DURATION = 72, FPS = 30;
+const tl = gsap.timeline({paused:true, defaults:{ease:'power3.out'}});
+gsap.set('#wipe',{xPercent:-110});
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+
+// ---------------- scene schedule ----------------
+const MOVE0 = 14.5, MOVE_LEN = 3.5;
+const SCENES = [
+  ['s1',0,4.5,'P.01'],['s2',4.5,9,'P.02'],['s3',9,12,'P.03'],['s4',12,14.5,'P.04'],
+  ...[1,2,3,4,5,6,7,8].map(i=>['m'+i, MOVE0+(i-1)*MOVE_LEN, MOVE0+i*MOVE_LEN, 'P.'+String(4+i).padStart(2,'0')]),
+  ['t1',42.5,45.5,'P.13'],['mo',45.5,50,'P.14'],['pr',50,66,'P.15'],['fi',66,72,'P.16']
+];
+SCENES.forEach(([id,s,e,page])=>{
+  tl.set('#'+id,{visibility:'visible'},s);
+  if(e<DURATION) tl.set('#'+id,{visibility:'hidden'},e);
+  tl.set('#chrome-r',{textContent:page},s);
+});
+window.CUTS = SCENES.map(s=>s[1]).filter(t=>t>0);
+
+// beat punch on every cut + transition style
+const wipeColors = [['#FF5A1F','#2B45FF','#D5FF3F','#121015'],['#D5FF3F','#121015','#FF5A1F','#F2EADB'],['#2B45FF','#F2EADB','#121015','#FF5A1F']];
+CUTS.forEach((t,i)=>{
+  tl.fromTo('#world',{scale:1.06,rotation:i%2?-.6:.6},{scale:1,rotation:0,duration:.45,ease:'expo.out',immediateRender:false},t);
+  if(i%3===0){ // stripe wipe
+    const cols = wipeColors[i%wipeColors.length];
+    $$('#wipe i').forEach((el,k)=>tl.set(el,{background:cols[k]},t-.25));
+    tl.fromTo('#wipe',{xPercent:-110},{xPercent:110,duration:.5,ease:'power2.inOut',immediateRender:false},t-.25);
+    tl.fromTo('#wipe i',{xPercent:0},{xPercent:(k)=>k*6-9,duration:.5,ease:'none',immediateRender:false},t-.25);
+  } else { // 2-frame flash
+    tl.fromTo('#flash',{opacity:.85},{opacity:0,duration:.12,ease:'none',immediateRender:false},t);
+  }
+});
+tl.fromTo('#progress-i',{scaleX:0},{scaleX:1,duration:DURATION,ease:'none'},0);
+
+// ---------------- S1 hook ----------------
+$('#s1-motion').innerHTML = 'MOTION'.split('').map(c=>`<span style="display:inline-block">${c}</span>`).join('');
+tl.from('#s1-circle',{scale:0,duration:.7,ease:'back.out(2)'},0.05)
+  .from('#s1-heb',{xPercent:40,opacity:0,duration:.8,ease:'expo.out'},0.1)
+  .from('#s1-motion span',{yPercent:-160,rotation:()=>gsap.utils.random(-25,25),opacity:0,duration:.55,stagger:.07,ease:'back.out(2.2)'},0.25)
+  .from('#s1-graphics',{letterSpacing:'.6em',opacity:0,duration:.9,ease:'expo.out'},0.8)
+  .from('#s1-heb2',{x:-200,opacity:0,duration:.6},1.1)
+  .from('#s1-q',{scale:0,rotation:-180,duration:.7,ease:'back.out(3)'},1.4)
+  .to('#s1-q',{rotation:20,duration:.25,yoyo:true,repeat:5,ease:'sine.inOut'},2.1)
+  .from('#s1-tag',{clipPath:'inset(0 100% 0 0)',duration:.5},0.4)
+  .to('#s1-circle',{scale:1.08,duration:.25,yoyo:true,repeat:3,ease:'sine.inOut'},2.5)
+  .to('#s1-heb',{x:-80,duration:4,ease:'none'},0.9)
+  .to('#s1-motion',{scale:1.05,duration:3.5,ease:'none'},1);
+
+// ---------------- S2 definition ----------------
+{const T=4.5;
+tl.from('#s2-back',{opacity:0,duration:.3},T)
+  .set('#s2-play',{opacity:0},T).set('#s2-paused',{opacity:1},T)
+  .from(['#s2-circle','#s2-square','#s2-tri'],{scale:0,duration:.35,stagger:.06,ease:'back.out(2)'},T)
+  .from('#s2-front',{yPercent:60,opacity:0,duration:.5},T+.15)
+  .from('#s2-he',{xPercent:30,opacity:0,duration:.5},T+.3)
+  .set('#s2-paused',{opacity:0},T+.9).set('#s2-play',{opacity:1},T+.9)
+  .to('#s2-circle',{x:120,y:-120,duration:.9,ease:'power2.inOut',yoyo:true,repeat:1},T+.9)
+  .to('#s2-square',{rotation:180,borderRadius:'40px',duration:1,ease:'back.inOut(1.6)'},T+.95)
+  .to('#s2-tri',{y:-180,rotation:-30,duration:.5,ease:'power2.out',yoyo:true,repeat:1},T+1.0)
+  .to('#s2-back',{xPercent:-8,duration:2,ease:'none'},T)
+  // phase B
+  .to(['#s2-front','#s2-he','#s2-play'],{opacity:0,y:40,duration:.2,ease:'power2.in'},T+2)
+  .to(['#s2-circle','#s2-square','#s2-tri'],{scale:0,duration:.25,stagger:.04,ease:'back.in(2)'},T+2)
+  .to('#s2-back',{opacity:.12,duration:.3},T+2)
+  .from('#s2-tiles .tile',{scale:.2,opacity:0,rotation:()=>gsap.utils.random(-12,12),duration:.45,stagger:.1,ease:'back.out(1.8)'},T+2.1)
+  .from('#s2-tiles svg',{scale:0,rotation:-90,duration:.4,stagger:.1,ease:'back.out(3)'},T+2.3)
+  .from('#s2-plus > div',{y:80,opacity:0,duration:.4,stagger:.15},T+2.8)
+  .fromTo('#s2-metro i',{scaleY:.2},{scaleY:1,duration:.25,stagger:{each:.25,repeat:1,yoyo:true},ease:'power1.inOut'},T+3.1);
+}
+
+// ---------------- S3 goal ----------------
+{const T=9;
+tl.from('#s3-heb',{scale:1.6,opacity:0,duration:.6,ease:'expo.out'},T)
+  .from('#s3-explain',{yPercent:100,opacity:0,duration:.45,ease:'back.out(1.6)'},T+.15)
+  .from('#s3-gt',{letterSpacing:'.5em',opacity:0,duration:.4,ease:'expo.out'},T+.6)
+  .from('#s3-decorate',{yPercent:-60,opacity:0,duration:.4},T+.8)
+  .from('#s3-strike',{scaleX:0,duration:.45,ease:'power4.inOut'},T+1.55)
+  .to('#s3-decorate',{opacity:.4,duration:.3},T+1.9)
+  .from('#s3-heb2',{x:-120,opacity:0,duration:.4},T+1.7)
+  .to('#s3-explain',{scale:1.08,duration:.18,yoyo:true,repeat:1},T+2.2)
+  .to('#s3-heb',{xPercent:6,duration:3,ease:'none'},T);
+}
+
+// ---------------- S4 8 moves ----------------
+{const T=12;
+tl.from('#s4-8a',{scale:.2,rotation:-30,opacity:0,duration:.6,ease:'back.out(1.7)'},T)
+  .from('#s4-moves',{xPercent:120,duration:.6,ease:'expo.out'},T+.3)
+  .to('#s4-moves',{xPercent:-12,duration:1.6,ease:'none'},T+.9)
+  .from('#s4-he > span',{y:-60,opacity:0,duration:.4,stagger:.12},T+.5)
+  .from('#s4-tag',{clipPath:'inset(0 100% 0 0)',duration:.5},T+.9);
+}
+
+// ---------------- move header (shared) ----------------
+function moveHead(id,T){
+  tl.from(`#${id} .num`,{xPercent:-60,opacity:0,duration:.4,ease:'expo.out'},T)
+    .from(`#${id} .name`,{yPercent:110,opacity:0,duration:.45,ease:'back.out(1.5)'},T+.08)
+    .from(`#${id} .hname`,{x:80,opacity:0,duration:.4},T+.2);
+}
+const MT = i => MOVE0+(i-1)*MOVE_LEN;
+
+
+// M1 easing
+{const T=MT(1); moveHead('m1',T);
+ tl.to('#m1-lin',{x:860,duration:1.4,ease:'none',yoyo:true,repeat:1},T+.4)
+   .to('#m1-ease',{x:860,duration:1.4,ease:'power3.inOut',yoyo:true,repeat:1},T+.4)
+   .to('#m1-back',{x:-160,duration:3.5,ease:'none'},T)
+   .from('#m1-graph',{y:60,opacity:0,duration:.4},T+.3)
+   .to('#m1-cpath',{strokeDashoffset:0,duration:1.2,ease:'power3.inOut'},T+.6);
+ const p={v:0}, bz=(a,b,c,d,t)=>(1-t)**3*a+3*(1-t)**2*t*b+3*(1-t)*t*t*c+t**3*d;
+ tl.to(p,{v:1,duration:1.2,ease:'power3.inOut',onUpdate:()=>{const t=p.v;$('#m1-dot').setAttribute('cx',bz(40,240,240,440,t));$('#m1-dot').setAttribute('cy',bz(340,340,40,40,t));}},T+.6);
+}
+// M2 overshoot
+{const T=MT(2); moveHead('m2',T);
+ tl.from('#m2-card',{scale:0,rotation:-12,duration:.9,ease:'back.out(3.2)'},T+.35)
+   .to('#m2-card',{scale:.9,duration:.12,yoyo:true,repeat:1,ease:'power1.inOut'},T+1.5)
+   .to('#m2-slide',{x:580,duration:1,ease:'back.out(2.6)'},T+1.3)
+   .from('#m2-back',{scale:.6,opacity:0,duration:.6},T+.3)
+   .to('#m2-back',{scale:1.1,duration:2.5,ease:'none'},T+.9);
+}
+// M3 stagger
+{const T=MT(3); moveHead('m3',T);
+ $('#m3-dots').innerHTML = Array.from({length:30},(_,i)=>`<i style="aspect-ratio:1;border-radius:50%;display:block;background:${['#121015','#FF5A1F','#2B45FF'][i%3]}"></i>`).join('');
+ tl.from('#m3-bars i',{scaleY:0,transformOrigin:'50% 100%',duration:.55,stagger:.08,ease:'back.out(1.8)'},T+.35)
+   .from('#m3-dots i',{scale:0,duration:.35,stagger:{each:.035,grid:[3,10],from:'center'},ease:'back.out(3)'},T+1.2)
+   .to('#m3-bars i',{scaleY:.55,duration:.3,stagger:{each:.05,yoyo:true,repeat:1},ease:'power2.inOut'},T+2.4)
+   .from('#m3-back',{x:-100,opacity:0,duration:.5},T+.2);
+}
+// M4 kinetic type
+{const T=MT(4);
+ tl.from('#m4 .num',{xPercent:-60,opacity:0,duration:.4,ease:'expo.out'},T)
+   .from('#m4 .name',{yPercent:110,opacity:0,duration:.45,ease:'back.out(1.5)'},T+.08);
+ const kw=$$('#m4 .kw');
+ tl.from(kw[0],{scale:3.2,opacity:0,duration:.3,ease:'expo.out'},T+.3)
+   .from(kw[1],{xPercent:120,rotation:15,duration:.35,ease:'back.out(2)'},T+.62)
+   .from(kw[2],{yPercent:-120,opacity:0,duration:.3},T+.95)
+   .from(kw[3],{scaleY:0,transformOrigin:'50% 100%',duration:.35,ease:'back.out(2.5)'},T+1.25)
+   .from('#m4-heb',{opacity:0,xPercent:-20,duration:.5},T+1.4)
+   .to(kw[3],{letterSpacing:'.08em',duration:1.5,ease:'none'},T+1.6)
+   .to(kw[1],{rotation:-4,duration:.2,yoyo:true,repeat:3},T+1.8)
+   .to('#m4-words',{scale:1.05,duration:2,ease:'none'},T+1.5);
+}
+// M5 mask reveal
+{const T=MT(5); moveHead('m5',T);
+ tl.to('#m5-panel',{clipPath:'circle(75% at 50% 50%)',duration:1,ease:'power3.inOut'},T+.5)
+   .from('#m5-panel .en',{scale:1.4,duration:1.2,ease:'power3.out'},T+.5)
+   .from('#m5-line1',{yPercent:110,duration:.5,ease:'expo.out'},T+1.6)
+   .to('#m5-panel',{clipPath:'circle(75% at 50% 50%)',duration:.01},T+2);
+}
+// M6 line draw
+{const T=MT(6); moveHead('m6',T);
+ tl.to('#m6 .draw',{strokeDashoffset:0,duration:.9,stagger:.45,ease:'power2.inOut'},T+.35);
+}
+// M7 morph (polygons with identical point counts)
+{const T=MT(7); moveHead('m7',T);
+ const N=20, poly=f=>'polygon('+Array.from({length:N},(_,i)=>{const [x,y]=f(i/N);return `${(x*50+50).toFixed(2)}% ${(y*50+50).toFixed(2)}%`;}).join(',')+')';
+ const circle=poly(t=>[Math.cos(t*2*Math.PI-Math.PI/2),Math.sin(t*2*Math.PI-Math.PI/2)]);
+ const square=poly(t=>{const a=t*2*Math.PI-Math.PI/2,c=Math.cos(a),s=Math.sin(a),m=Math.max(Math.abs(c),Math.abs(s));return [c/m*.85,s/m*.85];});
+ const star=poly(t=>{const i=Math.round(t*N),r=i%2?.42:1,a=t*2*Math.PI-Math.PI/2;return [Math.cos(a)*r,Math.sin(a)*r];});
+ tl.set('#m7-shape',{clipPath:circle},T)
+   .from('#m7-shape',{scale:0,duration:.4,ease:'back.out(2)'},T+.2)
+   .to('#m7-shape',{clipPath:square,rotation:90,background:'#FF5A1F',duration:.7,ease:'expo.inOut'},T+.9)
+   .to('#m7-shape',{clipPath:star,rotation:216,background:'#F2EADB',duration:.7,ease:'expo.inOut'},T+2)
+   .from('#m7-labels span',{y:40,opacity:0,duration:.3,stagger:.3},T+.4)
+   .to('#m7-back',{xPercent:-10,duration:3.5,ease:'none'},T);
+}
+// M8 parallax
+{const T=MT(8);
+ tl.from('#m8 .num',{xPercent:-60,opacity:0,duration:.4,ease:'expo.out'},T)
+   .from('#m8 .name',{yPercent:110,opacity:0,duration:.45,ease:'back.out(1.5)'},T+.08)
+   .fromTo('#m8-sun',{x:0},{x:-60,duration:3.5,ease:'power1.inOut'},T)
+   .fromTo('#m8-far',{x:0},{x:-240,duration:3.5,ease:'power1.inOut'},T)
+   .fromTo('#m8-text',{x:300},{x:-260,duration:3.5,ease:'power1.inOut'},T)
+   .fromTo('#m8-mid',{x:0},{x:-720,duration:3.5,ease:'power1.inOut'},T)
+   .fromTo('#m8-heb',{x:500},{x:-700,duration:3.5,ease:'power1.inOut'},T)
+   .fromTo('#m8-front',{x:0},{x:-1320,duration:3.5,ease:'power1.inOut'},T);
+}
+
+// ---------------- T1 now claude (match cut: circle -> logo) ----------------
+{const T=42.5;
+ tl.from('#t1-circle',{scale:0,duration:.5,ease:'back.out(2)'},T)
+   .from('#t1-logo',{scale:0,rotation:-200,duration:.8,ease:'back.out(2)'},T+.25)
+   .to('#t1-logo',{rotation:90,duration:2.2,ease:'none'},T+1.05)
+   .from('#t1-now',{xPercent:-100,duration:.45,ease:'expo.out'},T+.1)
+   .from('#t1-he > div',{x:120,opacity:0,duration:.4,stagger:.12},T+.4)
+   .from('#t1-how',{yPercent:60,opacity:0,duration:.5,ease:'back.out(1.5)'},T+.8)
+   .to('#t1-circle',{scale:1.15,duration:.2,yoyo:true,repeat:3,ease:'sine.inOut'},T+1.6);
+}
+// ---------------- MODELS ----------------
+{const T=45.5;
+ tl.from('#mo-opus',{xPercent:-110,duration:.5,ease:'expo.out'},T)
+   .from('#mo-opus img',{rotation:-180,scale:0,duration:.9,ease:'back.out(1.6)'},T+.2)
+   .from('#mo-opus .en',{yPercent:60,opacity:0,duration:.4,stagger:.1},T+.25)
+   .from('#mo-sonnet',{xPercent:110,duration:.5,ease:'expo.out'},T+2.2)
+   .from('#mo-sonnet svg',{scale:0,rotation:30,duration:.5,ease:'back.out(3)'},T+2.4)
+   .from('#mo-sonnet .en',{yPercent:60,opacity:0,duration:.4,stagger:.1},T+2.45)
+   .to('#mo-opus',{scale:.96,y:-10,duration:.3},T+2.2);
+}
+// ---------------- PROMPT RULES ----------------
+{const T=50, RL=16/6;
+ const rules=[
+  ['ROLE · AUDIENCE · GOAL','תפקיד, קהל ומטרה'],
+  ['SCRIPT FIRST','תסריט קודם'],
+  ['EXACT FORMAT','פורמט מדויק'],
+  ['DESIGN LANGUAGE','שפה עיצובית'],
+  ['ANIMATOR WORDS','מילים של אנימטור'],
+  ['SELF-CRITIQUE','ביקורת עצמית'],
+ ];
+ $('#pr-titles').innerHTML = rules.map(([en,he])=>`<div class="rt" style="position:absolute;left:0;right:0;top:0;visibility:hidden"><div class="en" style="font-size:96px;color:var(--paper);line-height:.95">${en}</div><div class="he" style="text-align:right;margin-top:18px;color:var(--lime)"><span class="w800" style="font-size:62px">${he.split(' ')[0]}</span> <span class="w200" style="font-size:62px">${he.split(' ').slice(1).join(' ')}</span></div></div>`).join('');
+ const lines=[
+  `<span class="dim">$</span> claude <span class="k3">--model</span> <span class="k2">claude-opus-5-5</span>`,
+  `<span class="k1">&gt;</span> You're a senior motion designer. Audience: devs on Instagram. Goal: explain easing in 45s.`,
+  `<span class="k1">&gt;</span> First write the script + shot list. <span class="k2">Wait for my OK</span> before any code.`,
+  `<span class="k1">&gt;</span> Format: <span class="k3">1080×1440 (3:4), 30fps, 45s, H.264</span>.`,
+  `<span class="k1">&gt;</span> Type: Anton + Assistant, bold/thin pairs. Palette: ink, paper, orange. Cut on the beat.`,
+  `<span class="k1">&gt;</span> Motion: <span class="k3">ease-out</span> entrances, <span class="k3">60ms stagger</span>, <span class="k3">back.out</span> overshoot, masked reveals.`,
+  `<span class="k1">&gt;</span> Render frame-by-frame. <span class="k2">Screenshot key frames, critique them, fix, re-render.</span>`,
+ ];
+ $('#pr-body').innerHTML = lines.map(l=>`<div class="ln"><span class="tx"></span></div>`).join('') + `<span class="cursor" id="pr-cursor"></span>`;
+ const lnEls=$$('#pr-body .ln');
+ // typing: reveal HTML progressively by visible character count (deterministic on seek)
+ function typer(el,html){
+   const tmp=document.createElement('div');tmp.innerHTML=html;
+   const segs=[];tmp.childNodes.forEach(n=>segs.push({cls:n.nodeType===1?n.className:'',txt:n.textContent}));
+   const total=segs.reduce((a,s)=>a+s.txt.length,0);
+   return {total,render:(k)=>{let left=Math.round(k),out='';for(const s of segs){if(left<=0)break;const t=s.txt.slice(0,left);left-=t.length;const esc=t.replace(/&/g,'&amp;').replace(/</g,'&lt;');out+=s.cls?`<span class="${s.cls}">${esc}</span>`:esc;}el.querySelector('.tx').innerHTML=out;}};
+ }
+ const typers=lines.map((h,i)=>typer(lnEls[i],h));
+ const typeLine=(i,at,dur)=>{const o={k:0};tl.to(o,{k:typers[i].total,duration:dur,ease:'none',onUpdate:()=>typers[i].render(o.k)},at);
+   tl.call(()=>{},null,at); tl.set(lnEls[i],{className:'ln on'},at); if(i>0) tl.set(lnEls[i-1],{className:'ln'},at);};
+ tl.from('.term',{y:120,opacity:0,duration:.5,ease:'expo.out'},T);
+ typeLine(0,T+.2,.6);
+ rules.forEach((r,k)=>{
+   const at=T+k*RL, el=$$('#pr-titles .rt')[k];
+   tl.set(el,{visibility:'visible'},at).from(el,{yPercent:100,duration:.4,ease:'expo.out'},at);
+   if(k<5) tl.to(el,{yPercent:-100,duration:.3,ease:'power3.in'},at+RL-.3).set(el,{visibility:'hidden'},at+RL);
+   tl.call(()=>{$('#pr-count').textContent=String(k+1).padStart(2,'0')},null,at).fromTo('#pr-count',{scale:1.35,transformOrigin:'0% 50%'},{scale:1,duration:.35,ease:'back.out(3)',immediateRender:false},at);
+   typeLine(k+1, at+(k===0?.8:.15), k===0?1.4:1.5);
+ });
+ tl.to('#pr-cursor',{opacity:0,duration:.01,repeat:31,yoyo:true,repeatDelay:.24},T);
+}
+// ---------------- FINAL ----------------
+{const T=66;
+ tl.from('#fi-motion',{scale:2.4,opacity:0,duration:.45,ease:'expo.out'},T)
+   .from('#fi-neq',{yPercent:80,opacity:0,duration:.4},T+.4)
+   .from('#fi-strike',{scaleX:0,duration:.4,ease:'power4.inOut'},T+1.1)
+   .from('#fi-heb',{yPercent:-60,opacity:0,duration:.5},T+1.3)
+   .from('#fi-eq',{scale:0,rotation:-8,duration:.55,ease:'back.out(2.4)'},T+1.6)
+   .to('#fi-eq',{scale:1.06,duration:.2,yoyo:true,repeat:1},T+2.4)
+   .to('#fi-end',{clipPath:'circle(80% at 50% 50%)',duration:.7,ease:'power3.inOut'},T+2.95)
+   .from('#fi-save',{y:-500,duration:.9,ease:'bounce.out'},T+3.2)
+   .from('#fi-end .en, #fi-end .he',{yPercent:80,opacity:0,duration:.4,stagger:.1},T+3.5)
+   .to('#fi-save',{scaleY:.9,transformOrigin:'50% 100%',duration:.15,yoyo:true,repeat:1},T+4.3);
+}
+
+// ---------------- CAPTIONS ----------------
+const CAPS = [
+ [0.3,4.35,'רגע. מה זה בכלל *מושן גרפיקס*?','Wait. What even is *motion graphics*?'],
+ [4.6,6.5,'זה עיצוב גרפי — *שזז.*','It\'s graphic design — *that moves.*'],
+ [6.6,8.95,'טקסט, אייקונים, צורות ודאטה — עם *זמן וקצב.*','Type, icons, shapes & data — plus *time & rhythm.*'],
+ [9.1,11.95,'המטרה: *להסביר.* לא רק לקשט.','The goal: *explain.* Not just decorate.'],
+ [12.1,14.4,'*8 תנועות* שחייבים להכיר.','*8 moves* you have to know.'],
+ ['m',1,'*איזינג.* שום דבר בטבע לא זז לינארית.','*Easing.* Nothing in nature moves linearly.'],
+ ['m',2,'*אוברשוט.* עוברים את היעד — וחוזרים.','*Overshoot.* Pass the target — then settle.'],
+ ['m',3,'*סטאגר.* אחד אחרי השני, לא כולם ביחד.','*Stagger.* One after another, not all at once.'],
+ ['m',4,'*קינטיק טייפ.* הטקסט הוא הגיבור.','*Kinetic type.* The text is the hero.'],
+ ['m',5,'*מאסק ריביל.* חושפים דרך צורה.','*Mask reveal.* Uncover through a shape.'],
+ ['m',6,'*ליין דרו.* הקו מצייר את עצמו.','*Line draw.* The line draws itself.'],
+ ['m',7,'*מורף.* צורה הופכת לצורה.','*Morph.* One shape becomes another.'],
+ ['m',8,'*פרלקסה.* שכבות בקצבים שונים = *עומק.*','*Parallax.* Layers at different speeds = *depth.*'],
+ [42.6,45.4,'ועכשיו: איך מבקשים את זה *מקלוד.*','Now: how to ask *Claude* for it.'],
+ [45.6,47.65,'*Opus\u00a05.5* — לקונספט ולתכנון.','*Opus 5.5* — for concept & planning.'],
+ [47.75,49.9,'*Sonnet\u00a05.5* — לאיטרציות מהירות.','*Sonnet 5.5* — for fast iterations.'],
+ ['r',0,'תנו לו *תפקיד, קהל ומטרה.*','Give it a *role, audience & goal.*'],
+ ['r',1,'*תסריט קודם.* פריימים אחר כך.','*Script first.* Frames later.'],
+ ['r',2,'פורמט מדויק: *1080×1440, 30fps.*','Exact format: *1080×1440, 30fps.*'],
+ ['r',3,'שפה עיצובית: *פונטים, צבעים, קצב עריכה.*','Design language: *fonts, palette, edit pace.*'],
+ ['r',4,'תארו תנועה כמו *אנימטור.*','Describe motion like an *animator.*'],
+ ['r',5,'ובקשו ממנו *לצלם פריימים — ולבקר את עצמו.*','Make it *screenshot frames & critique itself.*'],
+ [66.1,68.9,'תנועה היא לא קישוט. תנועה היא *משמעות.*','Motion isn\'t decoration. Motion is *meaning.*'],
+ [69.05,71.85,'*שמרו* את זה לסרטון הבא.','*Save this* for your next video.'],
+].map(c=>{
+  if(c[0]==='m'){const s=MT(c[1]);return [s+.12,s+MOVE_LEN-.1,c[2],c[3]];}
+  if(c[0]==='r'){const s=50+c[1]*16/6;return [s+.08,s+16/6-.08,c[2],c[3]];}
+  return c;
+});
+function words(str){let on=false;return str.split(' ').map(w=>{const st=w.startsWith('*');const en=w.replace(/[.,?!:—]+$/,'').endsWith('*')||w.endsWith('*');if(st)on=true;const hl=on;if(en)on=false;return {t:w.replace(/\*/g,''),hl};});}
+const capRoot=$('#captions');
+CAPS.forEach(([s,e,he,en],i)=>{
+  const d=document.createElement('div');d.className='cap';
+  d.innerHTML=`<div class="he-line">${words(he).map(w=>`<span class="${w.hl?'hl':''}">${w.t}</span>`).join('')}</div><div class="en-line">${words(en).map(w=>`<span class="${w.hl?'hl':''}">${w.t}</span>`).join('')}</div>`;
+  capRoot.appendChild(d);
+  tl.set(d,{visibility:'visible'},s)
+    .from(d.querySelector('.he-line'),{scaleX:0,transformOrigin:'100% 50%',duration:.22,ease:'power3.out'},s)
+    .from(d.querySelectorAll('.he-line span'),{yPercent:70,opacity:0,duration:.18,stagger:.045,ease:'back.out(2)'},s+.08)
+    .from(d.querySelector('.en-line'),{scaleX:0,transformOrigin:'0% 50%',duration:.22},s+.12)
+    .from(d.querySelectorAll('.en-line span'),{yPercent:70,opacity:0,duration:.16,stagger:.035,ease:'back.out(2)'},s+.18)
+    .to(d,{opacity:0,y:14,duration:.1,ease:'power1.in'},e-.1)
+    .set(d,{visibility:'hidden'},e);
+});
+
+// ---------------- driver ----------------
+let rng=1;
+window.renderFrame = (f)=>{
+  const t=Math.min(f/FPS+1e-4,DURATION-1e-4);
+  tl.seek(t,false);
+  rng = (f*9301+49297)%233280;
+  const gx=(rng%60), gy=((rng*7)%60);
+  document.getElementById('grain').style.transform=`translate(${-gx}px,${-gy}px)`;
+};
+window.TOTAL_FRAMES = DURATION*FPS;
+window.__ready = document.fonts.ready.then(()=>{
+  $$('.mhead .name').forEach(el=>{let fs=150;el.style.fontSize=fs+'px';const sc=el.closest('.scene');const v=sc.style.visibility;sc.style.visibility='visible';while(el.offsetWidth>700&&fs>80){fs-=4;el.style.fontSize=fs+'px';}sc.style.visibility=v;});
+  renderFrame(0); return true; });
+</script>
+</body>
+</html>
