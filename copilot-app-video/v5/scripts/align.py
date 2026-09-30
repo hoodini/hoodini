@@ -4,8 +4,8 @@ from faster_whisper import WhisperModel
 m = WhisperModel('small.en', device='cpu', compute_type='int8')
 lines = json.load(open('src/script.json'))
 dur = json.load(open('audio/vo_durations.json'))
-GAP = {'promise':.6,'habit':.35,'scale':.45,'reveal':.7,'mywork':.1,'handoff':.3,'models':.1,'lanes':.1,'merge':.15,'sandbox':.15,'control':.2,'ships':.35,'listen':.1,'payoff':1.6,'cta':.8}
-LEAD, DEFGAP, TAIL = 0.8, 0.35, 5.8
+GAP = {'promise':1.0,'habit':.6,'scale':.8,'reveal':1.2,'mywork':.1,'handoff':.3,'models':.1,'lanes':.1,'merge':.15,'sandbox':.15,'control':.2,'ships':.35,'listen':.1,'payoff':2.2,'cta':1.2}
+LEAD, DEFGAP, TAIL = 1.0, 0.65, 6.3
 norm = lambda w: re.sub(r'[^a-z0-9]','',w.lower())
 t = LEAD; TL = {'lines':{}, 'words':{}}
 for key, text in lines:

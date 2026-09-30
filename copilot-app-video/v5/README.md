@@ -55,8 +55,8 @@ It is built as a HyperFrames composition (HTML + GSAP, deterministic render). `h
 ## Build
 ```
 /tmp/cbx/bin/python scripts/tts_takes.py   # 3 seeded takes per line (+ scripts/tts_extra.py for added lines)
-python3 scripts/pick_takes.py              # whisper-scored pick per line
-python3 scripts/stretch.py                 # 6% formant-preserving slow-down
+python3 scripts/pick_takes.py              # pick per line: transcript match, then SQUIM PESQ
+/tmp/cbx/bin/python scripts/squim_takes.py # objective quality score per take (no time-stretch: it degraded the voice)
 python3 scripts/align.py                   # word timings → src/timeline.json
 python3 scripts/build_data.py              # single-scope index.html
 node scripts/qa.mjs .75                    # stills + SFX cues (serve repo root on :8765)
