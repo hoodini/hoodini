@@ -25,7 +25,8 @@ It is built as a HyperFrames composition (HTML + GSAP, deterministic render). `h
     - the model picker and Auto
     - local and cloud sandboxes
     - the GitHub Community discussion
-- **Calmer read.** The best of 3 seeded Chatterbox takes is picked per line: a script-matched transcript, then confidence, then the slower delivery. The read is then slowed 6% with Rubber Band (formant-preserving), from about 205 wpm to about 180 wpm.
+- **Clean voice, measured.** The best of 3 seeded Chatterbox takes is picked per line: a script-matched transcript first, then objective speech quality (torchaudio SQUIM, reference-free PESQ; all picks score 3.8–4.1). Pacing comes from pauses between lines, not from time-stretching.
+  - *Lesson learned:* an earlier v5 build slowed the voice 6% with Rubber Band. SQUIM showed this cut PESQ from about 3.8 to 1.2–2.0 (audibly metallic), so it was removed. The mastering chain was checked and leaves PESQ unchanged (3.82 → 3.84).
 - **Real instruments.** The score is arranged in code (mido) and rendered with FluidSynth using the FluidR3 GM soundfont (piano, strings, pizzicato, harp, celesta, bass, drums), not synthesised sine waves. The leitmotif is *Mary Had a Little Lamb* (public domain). Mia plays it with one wrong note in Act 1, and it is played correctly as a solo piano at 6:02 PM.
 - **QA fixes.**
   - The screenshot's edge never enters the frame on close-ups.
