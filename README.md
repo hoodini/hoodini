@@ -15,7 +15,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <img src="https://img.shields.io/badge/Repos-141-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-328-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-329-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -29,9 +29,11 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
-- 📝 Pushed 0 commit(s) to [hoodini/fly-high-nyc](https://github.com/hoodini/fly-high-nyc) - Sep 24
-- 📝 Pushed 0 commit(s) to [hoodini/fly-high-nyc](https://github.com/hoodini/fly-high-nyc) - Sep 24
-- ✨ Created branch in [hoodini/fly-high-nyc](https://github.com/hoodini/fly-high-nyc) - Sep 24
+- 🔀 Opened a pull request in [hoodini/hoodini](https://github.com/hoodini/hoodini) - Sep 29
+- ✨ Created branch in [hoodini/hoodini](https://github.com/hoodini/hoodini) - Sep 29
+- 🔀 Opened a pull request in [hoodini/hoodini](https://github.com/hoodini/hoodini) - Sep 29
+- 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Sep 29
+- 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Sep 29
 
 
 
@@ -47,7 +49,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-09-29 00:24:35 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-09-30 00:25:25 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
