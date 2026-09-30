@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>Home by 6 — GitHub Copilot app</title>
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="src/data.js"></script>
+<script src="src/kit.js"></script>
+<style>
+@font-face{font-family:'Mona Sans';src:url(assets/fonts/mona-sans-latin-standard-normal.woff2) format('woff2');font-weight:200 900;font-stretch:75% 125%}
+@font-face{font-family:'Monaspace Neon';src:url(assets/fonts/monaspace-neon-latin-400-normal.woff2) format('woff2');font-weight:400}
+@font-face{font-family:'Monaspace Neon';src:url(assets/fonts/monaspace-neon-latin-700-normal.woff2) format('woff2');font-weight:700}
+@font-face{font-family:'Instrument Serif';font-style:italic;src:url(assets/fonts/instrument-serif-latin-400-italic.woff2) format('woff2')}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#FFF7EC}
+body{font-family:'Mona Sans',sans-serif;color:#1F1B3A;-webkit-font-smoothing:antialiased}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFF7EC}
+.shot{position:absolute;inset:0;visibility:hidden;overflow:hidden}
+.cam{position:absolute;inset:0;transform-origin:50% 50%}
+.bg-cream{background:#FFF7EC}.bg-night{background:#2B2660;color:#fff}.bg-pu{background:#7B5CF0;color:#fff}.bg-su{background:#FFC94A}.bg-mi{background:#34C9A0}.bg-co{background:#FF7A5C;color:#fff}.bg-paper{background:#fff}
+.abs{position:absolute}
+.c{position:absolute;left:0;right:0;text-align:center}
+/* type scale (one family, three roles) */
+.h1{font-weight:800;font-size:128px;line-height:.98;letter-spacing:-.035em}
+.h2{font-weight:800;font-size:84px;line-height:1.02;letter-spacing:-.03em}
+.h3{font-weight:700;font-size:52px;line-height:1.1;letter-spacing:-.02em}
+.body{font-weight:500;font-size:34px;line-height:1.35;color:#6A6488}
+.eyebrow{font-weight:700;font-size:24px;letter-spacing:.14em;text-transform:uppercase;color:#7B5CF0}
+.hand{font-family:'Instrument Serif',serif;font-style:italic}
+.mono{font-family:'Monaspace Neon',monospace}
+.foot{position:absolute;left:48px;bottom:36px;max-width:560px;line-height:1.35;font-weight:500;font-size:18px;color:#6A6488;letter-spacing:.01em;z-index:40}
+.foot.fr{background:rgba(255,255,255,.88);color:#3F3A5C;padding:6px 12px;border-radius:8px}
+.bg-night .foot,.bg-pu .foot{color:rgba(255,255,255,.7)}
+.mask{display:block;overflow:hidden;padding:.12em .1em;margin:-.12em -.1em}
+.mask>span{display:inline-block}
+/* UI kit */
+.win{position:absolute;background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 40px 90px rgba(31,27,58,.16),0 2px 0 rgba(31,27,58,.04)}
+.wbar{height:60px;display:flex;align-items:center;gap:18px;padding:0 24px;background:#FBF7F1;border-bottom:1.5px solid #EFE6D8;font-weight:600;font-size:21px;color:#6A6488}
+.wbody{position:absolute;left:0;right:0;top:60px;bottom:0}
+.card{position:absolute;background:#fff;color:#1F1B3A;border-radius:22px;padding:26px 30px;box-shadow:0 24px 60px rgba(31,27,58,.12)}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:8px 18px;border-radius:999px;font-weight:700;font-size:22px}
+.ico svg{width:28px;height:28px;fill:currentColor;display:block}
+.row{display:flex;align-items:center;gap:18px;padding:20px 0;border-bottom:1.5px solid #EFE6D8;font-weight:600;font-size:32px}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:18px 30px;border-radius:16px;font-weight:700;font-size:30px}
+.lower{position:absolute;left:120px;bottom:150px;background:#fff;border-radius:18px;padding:18px 28px;box-shadow:0 18px 40px rgba(31,27,58,.14)}
+.lower b{display:block;font-weight:800;font-size:36px}.lower span{font-weight:500;font-size:24px;color:#6A6488}
+/* captions — one quiet style everywhere */
+#cap{position:absolute;left:0;right:0;bottom:46px;z-index:50;text-align:center;pointer-events:none}
+.chunk{position:absolute;left:0;right:0;bottom:0;visibility:hidden}
+.chunk .box{display:inline-block;background:rgba(31,27,58,.88);border-radius:16px;padding:12px 26px;font-weight:600;font-size:38px;line-height:1.25;color:#fff;letter-spacing:-.005em}
+.chunk .w{opacity:.55}
+/* iris transition */
+.iris{position:absolute;left:960px;top:540px;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;z-index:40;transform:scale(0)}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="99.43" data-width="1920" data-height="1080">
+  <div id="stage"></div>
+  <div id="fx"></div>
+  <div id="cap"></div>
+  <audio id="mix" src="audio/master.wav" data-start="0" data-duration="99.43" data-volume="1"></audio>
+</div>
+<script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });
+window.__timelines["main"] = tl;
+const TLD = window.TL;
+const norm = w => w.toLowerCase().replace(/[^a-z0-9]/g,'');
+function Wd(k,w,n=1){let c=0;for(const x of TLD.words[k]){if(norm(x.w).startsWith(norm(w))&&++c===n)return x}throw Error('W miss '+k+':'+w+'#'+n)}
+const W=(k,w,n)=>Wd(k,w,n).s, WE=(k,w,n)=>Wd(k,w,n).e;
+const L=k=>TLD.lines[k].start, LE=k=>TLD.lines[k].end, END=TLD.total;
+window.CUES=[]; window.CUTS=[];
+const cue=(t,type,extra={})=>CUES.push(Object.assign({t:+t.toFixed(3),type},extra));
+const stage=document.getElementById('stage'), fx=document.getElementById('fx');
+let uid=0;
+// ---- shot: hard cut in/out + a slow camera push (the one camera language)
+function SHOT(sec,t0,t1,bg,html,build,opt={}){
+  const el=document.createElement('div');el.className='shot '+bg;el.id='s'+(++uid);
+  el.innerHTML=`<div class="cam">${html}</div>`;stage.appendChild(el);
+  tl.set(el,{visibility:'visible'},t0);tl.set(el,{visibility:'hidden'},t1);
+  const cam=el.querySelector('.cam');const p=opt.push??.035;
+  tl.fromTo(cam,{scale:1,x:0},{scale:1+p,x:opt.drift??0,duration:t1-t0,ease:'none',immediateRender:false},t0);
+  CUTS.push({t:t0,t1,id:el.id,sec});if(!opt.silent)cue(t0,'cut');
+  const q=s=>el.querySelectorAll(s);
+  SHOT_T0=t0;build&&build(q,t0,t1,el);return el;
+}
+// ---- motion vocabulary (consistent easing & durations)
+const E_IN='power3.out', E_POP='back.out(1.6)';
+let SHOT_T0=0; // late entrances stay hidden from the start of their shot (no pre-entrance flash)
+const hideTil=(t,els,v={opacity:0})=>{if(t>SHOT_T0+.02)tl.set(els,v,SHOT_T0)};
+const rise=(t,els,st=.07,d=.6)=>{hideTil(t,els);tl.fromTo(els,{y:40,opacity:0},{y:0,opacity:1,duration:d,ease:E_IN,stagger:st,immediateRender:false},t)};
+const pop=(t,els,st=.07,snd='pop')=>{hideTil(t,els);tl.fromTo(els,{scale:.6,opacity:0},{scale:1,opacity:1,duration:.5,ease:E_POP,stagger:st,immediateRender:false},t);if(snd){const n=Math.min(els.length||1,5);for(let i=0;i<n;i++)cue(t+i*st,snd)}};
+const reveal=(t,els,st=.08)=>{hideTil(t,els,{yPercent:105});tl.fromTo(els,{yPercent:105},{yPercent:0,duration:.6,ease:E_IN,stagger:st,immediateRender:false},t)};
+const fadeIn=(t,els,d=.4)=>(hideTil(t,els),tl).fromTo(els,{opacity:0},{opacity:1,duration:d,ease:'none',immediateRender:false},t);
+const slideIn=(t,els,x=-80,st=.07)=>(hideTil(t,els),tl).fromTo(els,{x,opacity:0},{x:0,opacity:1,duration:.55,ease:E_IN,stagger:st,immediateRender:false},t);
+const swap=(t,a,b)=>{tl.set(a,{opacity:0},t);tl.set(b,{opacity:1},t)};
+function blink(t,eyes){tl.fromTo(eyes,{scaleY:1},{scaleY:.1,duration:.06,yoyo:true,repeat:1,transformOrigin:'50% 50%',immediateRender:false},t)}
+// discrete counter: pre-rendered values toggled by sets (renderer-safe)
+function counter(t,holder,vals,d){holder.innerHTML=vals.map((v,i)=>`<span style="position:absolute;left:0;right:0;opacity:${i===0?1:0}">${v}</span>`).join('');const sp=[...holder.children];
+  sp.forEach((s,i)=>{if(i===0)return;const ti=t+d*Math.pow(i/(sp.length-1),.6);tl.set(sp[i-1],{opacity:0},ti);tl.set(s,{opacity:1},ti)})}
+function typeOn(t,el,text,d){el.innerHTML=[...text].map(c=>`<span style="opacity:0">${c===' '?'&nbsp;':c}</span>`).join('');tl.to(el.children,{opacity:1,duration:.01,stagger:d/text.length,immediateRender:false},t);cue(t,'keys',{d})}
+function iris(t,color,dur=.7){const d=document.createElement('div');d.className='iris';d.style.background=color;fx.appendChild(d);
+  const g=dur*.55;tl.fromTo(d,{scale:0},{scale:260,duration:g,ease:'power3.in',immediateRender:false},t-g);tl.set(d,{scale:0},t+.001);cue(t-g,'whoosh')}
+const beat=60/100;
+</script>
+<script src="src/shots.js"></script>
+<script>
+// ---- captions: ≤5-word chunks, pure timeline sets, never overlapping
+const capEl=document.getElementById('cap');const CH=[];
+for(const k of Object.keys(TLD.words)){let cur=[];const ws=TLD.words[k];
+  ws.forEach((w,i)=>{cur.push(w);if(/[,.:?!]$/.test(w.w)||cur.length>=5||i===ws.length-1){CH.push(cur);cur=[]}})}
+CH.forEach((c,j)=>{const s=Math.max(0,c[0].s-.05);let e=c[c.length-1].e+.25;if(CH[j+1])e=Math.min(e,CH[j+1][0].s-.06);if(HIDECAP(s))return;
+  const div=document.createElement('div');div.className='chunk';
+  div.innerHTML=`<span class="box">${c.map(w=>`<span class="w">${w.w.replace(/\.\.\.$/,'…')}</span>`).join(' ')}</span>`;capEl.appendChild(div);
+  tl.set(div,{visibility:'visible'},s);tl.set(div,{visibility:'hidden'},Math.max(s+.2,e));
+  [...div.querySelectorAll('.w')].forEach((sp,i)=>{tl.set(sp,{opacity:1,color:'#FFC94A'},Math.max(s,c[i].s-.02));tl.set(sp,{color:'#FFFFFF'},c[i].e+.04)})});
+tl.seek(0);
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+{
+ "open": {
+  "seed": 42,
+  "heard": "11.47pm, 200 notifications, a release that ships tomorrow and a promise.",
+  "sim": 0.81
+ },
+ "promise": {
+  "seed": 23,
+  "heard": "6 o'clock, front row, her daughter's very first piano recital.",
+  "sim": 1.0
+ },
+ "habit": {
+  "seed": 42,
+  "heard": "Problem is, Dana does everything herself. Every branch. Every review. Every failing test.",
+  "sim": 1.0
+ },
+ "scale": {
+  "seed": 42,
+  "heard": "But more than 180 million developers build on GitHub, and GitHub has seen this night before.",
+  "sim": 0.95
+ },
+ "reveal": {
+  "seed": 23,
+  "heard": "So they built the GitHub Copilot app, a desktop home for your coding agents.",
+  "sim": 1.0
+ },
+ "mywork": {
+  "seed": 42,
+  "heard": "Every session, issue, and pull request from every repo in one calm place.",
+  "sim": 1.0
+ },
+ "handoff": {
+  "seed": 7,
+  "heard": "Dana hands one small bug to an agent. Just one. Very, very carefully.",
+  "sim": 1.0
+ },
+ "models": {
+  "seed": 7,
+  "heard": "She picks the model for the job, or lets auto-decide",
+  "sim": 1.0
+ },
+ "lanes": {
+  "seed": 23,
+  "heard": "Each agent gets its own git worktree, so nobody steps on anybody's toes.",
+  "sim": 1.0
+ },
+ "merge": {
+  "seed": 42,
+  "heard": "Then, Agent Merge watches the tests, keeps an eye on reviewers, fixes what breaks, and merges when her rules are met.",
+  "sim": 1.0
+ },
+ "sandbox": {
+  "seed": 42,
+  "heard": "Every agent works in a sandbox, on her laptop or in the cloud.",
+  "sim": 1.0
+ },
+ "control": {
+  "seed": 23,
+  "heard": "In the cloud, it asks before every change, and autopilot, that's her call.",
+  "sim": 1.0
+ },
+ "ships": {
+  "seed": 7,
+  "heard": "and the team behind it ships fast. Eight new features in the first 19 days.",
+  "sim": 1.0
+ },
+ "listen": {
+  "seed": 23,
+  "heard": "and developers can join the discussion right in GitHub Community.",
+  "sim": 1.0
+ },
+ "payoff": {
+  "seed": 23,
+  "heard": "6.02 PM, front row, and the release merged at 4.",
+  "sim": 0.82
+ },
+ "cta": {
+  "seed": 7,
+  "heard": "the GitHub Copilot app. Let your agents do the work. Keep your evenings.",
+  "sim": 1.0
+ }
+}
