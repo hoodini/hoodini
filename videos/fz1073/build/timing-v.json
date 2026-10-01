@@ -1,0 +1,203 @@
+{
+  "fmt": "v",
+  "W": 1080,
+  "H": 1920,
+  "FPS": 30,
+  "BPM": 84,
+  "BEAT": 0.7142857142857143,
+  "TR": 0.6,
+  "DURATION": 62.91428571428573,
+  "FRAMES": 1887,
+  "CUTS": [
+    {
+      "id": "s1",
+      "key": "opening",
+      "start": 0,
+      "end": 4.2857,
+      "beats": 6,
+      "hold": 4.2857,
+      "words": 4
+    },
+    {
+      "id": "s2",
+      "key": "context",
+      "start": 4.8857,
+      "end": 10.6,
+      "beats": 8,
+      "hold": 5.7143,
+      "words": 14
+    },
+    {
+      "id": "s3",
+      "key": "turbulence",
+      "start": 11.2,
+      "end": 16.9143,
+      "beats": 8,
+      "hold": 5.7143,
+      "words": 15
+    },
+    {
+      "id": "s4",
+      "key": "dive",
+      "start": 17.5143,
+      "end": 21.0857,
+      "beats": 5,
+      "hold": 3.5714,
+      "words": 9
+    },
+    {
+      "id": "s5",
+      "key": "code",
+      "start": 21.6857,
+      "end": 29.5429,
+      "beats": 11,
+      "hold": 7.8571,
+      "words": 21
+    },
+    {
+      "id": "s6",
+      "key": "response",
+      "start": 30.1429,
+      "end": 33.7143,
+      "beats": 5,
+      "hold": 3.5714,
+      "words": 9
+    },
+    {
+      "id": "s7",
+      "key": "turn",
+      "start": 34.3143,
+      "end": 38.6,
+      "beats": 6,
+      "hold": 4.2857,
+      "words": 10
+    },
+    {
+      "id": "s8",
+      "key": "landing",
+      "start": 39.2,
+      "end": 44.9143,
+      "beats": 8,
+      "hold": 5.7143,
+      "words": 14
+    },
+    {
+      "id": "s9",
+      "key": "why1",
+      "start": 45.5143,
+      "end": 49.0857,
+      "beats": 5,
+      "hold": 3.5714,
+      "words": 7
+    },
+    {
+      "id": "s10",
+      "key": "why2",
+      "start": 49.6857,
+      "end": 51.8286,
+      "beats": 3,
+      "hold": 2.1429,
+      "words": 4
+    },
+    {
+      "id": "s11",
+      "key": "why3",
+      "start": 52.4286,
+      "end": 54.5714,
+      "beats": 3,
+      "hold": 2.1429,
+      "words": 4
+    },
+    {
+      "id": "s12",
+      "key": "now",
+      "start": 55.1714,
+      "end": 58.7429,
+      "beats": 5,
+      "hold": 3.5714,
+      "words": 8
+    },
+    {
+      "id": "s13",
+      "key": "end",
+      "start": 59.3429,
+      "end": 62.9143,
+      "beats": 5,
+      "hold": 3.5714,
+      "words": 3
+    }
+  ],
+  "CUES": [
+    {
+      "t": 4.2857,
+      "type": "air"
+    },
+    {
+      "t": 10.6,
+      "type": "air"
+    },
+    {
+      "t": 16.9143,
+      "type": "air"
+    },
+    {
+      "t": 21.0857,
+      "type": "air"
+    },
+    {
+      "t": 22.0357,
+      "type": "tick"
+    },
+    {
+      "t": 22.2957,
+      "type": "tick"
+    },
+    {
+      "t": 22.5557,
+      "type": "tick"
+    },
+    {
+      "t": 22.8157,
+      "type": "tick"
+    },
+    {
+      "t": 25.6143,
+      "type": "tick"
+    },
+    {
+      "t": 25.8743,
+      "type": "tick"
+    },
+    {
+      "t": 29.5429,
+      "type": "air"
+    },
+    {
+      "t": 30.0429,
+      "type": "radar",
+      "dur": 3.571
+    },
+    {
+      "t": 33.7143,
+      "type": "air"
+    },
+    {
+      "t": 38.6,
+      "type": "air"
+    },
+    {
+      "t": 44.9143,
+      "type": "air"
+    },
+    {
+      "t": 54.5714,
+      "type": "air"
+    },
+    {
+      "t": 58.7429,
+      "type": "air"
+    }
+  ],
+  "landAt": 42.842857142857156,
+  "grainFrames": 4
+}
