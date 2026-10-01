@@ -1,0 +1,12 @@
+{
+  "name": "fz1073-news-explainer",
+  "private": true,
+  "version": "1.0.0",
+  "description": "YUV.AI news explainer (Hebrew, no VO): flydubai FZ1073, 30.9.2026",
+  "scripts": {
+    "timing": "node build/dump-timing.mjs",
+    "qa": "node build/qa-stills.mjs",
+    "render": "node build/render.mjs"
+  },
+  "dependencies": { "gsap": "^3.13.0" }
+}

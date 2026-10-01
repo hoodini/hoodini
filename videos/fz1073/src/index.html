@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>FZ1073 · YA-051 · NWS</title>
+<style>
+@font-face{font-family:'Assistant';font-weight:200;src:url(../fonts/assistant-hebrew-200-normal.woff2) format('woff2');unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F}
+@font-face{font-family:'Assistant';font-weight:300;src:url(../fonts/assistant-hebrew-300-normal.woff2) format('woff2');unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F}
+@font-face{font-family:'Assistant';font-weight:600;src:url(../fonts/assistant-hebrew-600-normal.woff2) format('woff2');unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F}
+@font-face{font-family:'Assistant';font-weight:800;src:url(../fonts/assistant-hebrew-800-normal.woff2) format('woff2');unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F}
+@font-face{font-family:'Assistant';font-weight:200;src:url(../fonts/assistant-latin-200-normal.woff2) format('woff2')}
+@font-face{font-family:'Assistant';font-weight:300;src:url(../fonts/assistant-latin-300-normal.woff2) format('woff2')}
+@font-face{font-family:'Assistant';font-weight:600;src:url(../fonts/assistant-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Assistant';font-weight:800;src:url(../fonts/assistant-latin-800-normal.woff2) format('woff2')}
+@font-face{font-family:'Plex';font-weight:600;src:url(../fonts/ibm-plex-mono-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Anton';font-weight:400;src:url(../fonts/anton-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Oswald';font-weight:200;src:url(../fonts/oswald-latin-200-normal.woff2) format('woff2')}
+@font-face{font-family:'Oswald';font-weight:300;src:url(../fonts/oswald-latin-300-normal.woff2) format('woff2')}
+
+:root{
+  --cloud:#FFFFFF;--dawn:#FFE8EF;--pink:#EE6A92;--pink-deep:#A8264F;--gold:#FFC53D;
+  --sea:#19B8C9;--sky:#8EC3F2;--open:#2F6FD6;--deep:#0B2A5B;--muted:#4A6285;--scrim:#061A48;
+  /* muted storm palette, derived from deep-sky + muted (turbulence only) */
+  --storm-0:#16304F;--storm-1:#2B4566;--storm-2:#4A6285;--storm-3:#6F84A2;--storm-4:#A3B1C4;
+  --W:1920px;--H:1080px;
+  --thick:76px;--thin:46px;--chip:26px;--rule:24px;--label:54;
+}
+html.v{--W:1080px;--H:1920px;--thick:72px;--thin:48px;--chip:32px;--rule:30px}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:var(--W);height:var(--H);overflow:hidden;background:var(--deep)}
+body{font-family:'Assistant';color:var(--deep);-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+bdi,.iso{unicode-bidi:isolate}
+.mono{font-family:'Plex','Assistant';font-weight:600;letter-spacing:.02em}
+#stage{position:absolute;inset:0;width:var(--W);height:var(--H);overflow:hidden}
+.abs{position:absolute}
+.fill{position:absolute;inset:0}
+
+/* ---------- skies ---------- */
+.sky{position:absolute;inset:0;opacity:0}
+#sky-high{background:linear-gradient(180deg,#1E56B8 0%,var(--open) 30%,#5E9BE6 62%,var(--sky) 100%)}
+#sky-low{background:linear-gradient(180deg,#5E9BE6 0%,var(--sky) 45%,#CFE4FA 80%,var(--cloud) 100%)}
+#sky-clear{background:linear-gradient(180deg,#4F8EE0 0%,var(--sky) 48%,#E9F2FD 82%,var(--dawn) 100%)}
+#sky-gold{background:linear-gradient(180deg,#3B7BDA 0%,var(--sky) 40%,var(--dawn) 78%,#FFE2A8 100%)}
+#sky-dawn{background:linear-gradient(180deg,var(--deep) 0%,#24509E 30%,#7FA9E3 58%,var(--dawn) 80%,#FFF4F7 100%)}
+#sky-storm{background:linear-gradient(180deg,var(--storm-0) 0%,var(--storm-1) 45%,var(--storm-2) 85%,var(--storm-3) 100%)}
+.clouds{position:absolute;top:0;left:-400px;width:calc(var(--W) + 800px);height:100%}
+.puff{position:absolute;border-radius:50%}
+.horizon{position:absolute;left:0;right:0;height:2px;background:var(--gold);opacity:.75}
+.sunglow{position:absolute;border-radius:50%}
+#scrim{background:linear-gradient(180deg,rgba(6,26,72,.62) 0%,rgba(6,26,72,0) 50%);opacity:0}
+#rays{opacity:0;background:radial-gradient(ellipse 60% 55% at 22% 8%,rgba(255,232,239,.55),rgba(255,232,239,0) 70%)}
+.veil{opacity:0}
+#grain{opacity:.07;mix-blend-mode:overlay;background-size:512px 512px}
+#vignette{background:radial-gradient(ellipse 80% 75% at 50% 48%,rgba(6,26,72,0) 55%,rgba(6,26,72,.30) 100%)}
+
+/* ---------- chrome ---------- */
+.rule{position:absolute;display:flex;align-items:center;justify-content:space-between;gap:24px;
+  background:rgba(255,255,255,.92);border:2px solid rgba(11,42,91,.18);border-radius:14px;padding:10px 20px;font-size:var(--rule);color:var(--deep);
+  box-shadow:0 14px 30px -24px rgba(6,26,72,.6)}
+#top{left:80px;right:80px;top:32px;height:64px}
+#bottom{left:80px;right:80px;bottom:28px;height:50px;font-size:22px}
+html.v #top{left:60px;right:120px;top:224px;height:auto;flex-wrap:wrap;row-gap:10px;padding:12px 20px}
+html.v #bottom{left:60px;right:120px;bottom:384px;height:58px;font-size:30px}
+.strip{display:flex;align-items:center;gap:10px;white-space:nowrap}
+.strip .heb{font-weight:600}
+.strip svg{width:1.3em;height:1em}
+.center{display:flex;align-items:center;gap:16px;white-space:nowrap}
+.date{font-family:'Plex','Assistant';font-weight:600;color:var(--muted)}
+.tag{display:inline-flex;align-items:center;gap:.4em;background:var(--cloud);border:2px solid var(--sky);border-left:8px solid var(--pink);
+  border-radius:6px;padding:.18em .6em .22em;font-family:'Plex','Assistant';font-weight:600;color:var(--deep);white-space:nowrap;line-height:1.15}
+#alt{display:flex;align-items:center;gap:12px;direction:ltr;white-space:nowrap}
+#alt .lbl{font-family:'Plex';font-weight:600}
+#alt .tape{position:relative;width:170px;height:14px;border:2px solid var(--deep);border-radius:8px;overflow:hidden;background:#fff}
+#alt .tfill{position:absolute;left:0;top:0;bottom:0;width:90%;background:var(--sky)}
+#alt .trend{width:18px;height:18px}
+html.v #alt .tape{width:150px}
+.tc{font-family:'Plex';font-weight:600;direction:ltr;color:var(--muted)}
+.wm{direction:ltr;display:inline-flex;align-items:baseline;gap:0;line-height:1}
+.wm .a{font-family:'Anton';letter-spacing:.02em;color:var(--deep)}
+.wm .b{font-family:'Oswald';font-weight:200;color:var(--deep)}
+
+/* ---------- cards ---------- */
+.card{position:relative}
+.card-bg{position:absolute;inset:0;background:var(--cloud);border:2.5px solid var(--deep);border-radius:36px 36px 36px 6px;
+  box-shadow:0 20px 40px -24px rgba(6,26,72,.5)}
+.card-body{position:relative;padding:40px 48px 44px}
+.thick{font-weight:800;font-size:var(--thick);line-height:1.12;color:var(--deep)}
+.thin{font-weight:300;font-size:var(--thin);line-height:1.22;color:var(--open);margin-top:16px}
+.card .tag{font-size:var(--chip);margin-bottom:22px}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding:.06em .02em .14em;margin:-.06em -.02em -.14em}
+.wi{display:inline-block;will-change:transform}
+
+.shot{position:absolute;inset:0;opacity:0}
+.slot-card{position:absolute;right:80px;width:820px;top:130px;bottom:110px;display:flex;flex-direction:column;justify-content:center}
+.slot-panel{position:absolute;left:80px;width:940px;top:150px;bottom:130px;display:flex;flex-direction:column;justify-content:center}
+html.v .slot-card{right:120px;left:60px;width:auto;top:400px;bottom:auto;height:520px;justify-content:flex-start}
+html.v .slot-panel{right:120px;left:60px;width:auto;top:950px;bottom:auto;height:520px;justify-content:flex-start}
+
+/* title */
+#title{position:absolute;left:0;right:0;top:300px;text-align:center;color:#fff;font-weight:800;font-size:132px;line-height:1.1;
+  text-shadow:0 2px 6px rgba(6,26,72,.55),0 18px 48px rgba(6,26,72,.45)}
+#title .mono{font-weight:600;letter-spacing:.04em}
+html.v #title{top:640px;font-size:118px;padding:0 120px 0 60px}
+
+/* panels */
+.panel{position:absolute;inset:0;opacity:0}
+.panel .card{width:100%}
+.panel .card-body{padding:30px 40px 30px}
+.panel svg{display:block;width:100%;height:auto;overflow:visible}
+.ptag{position:absolute;top:22px;right:26px;font-size:var(--chip)}
+.legend{display:flex;gap:36px;justify-content:flex-start;font-weight:600;font-size:30px;color:var(--muted);margin-top:8px}
+html.v .legend{font-size:44px;gap:28px}
+.legend span{display:inline-flex;align-items:center;gap:12px}
+.legend i{display:inline-block;width:56px;height:0;border-top:4px dashed var(--deep)}
+.legend i.s{border-top-style:solid}
+
+/* transponder */
+.xpdr{background:var(--deep);border-radius:24px;padding:26px 30px 30px;direction:ltr}
+.xpdr .hdr{display:flex;justify-content:space-between;color:var(--sky);font-family:'Plex';font-weight:600;font-size:24px;letter-spacing:.12em;margin-bottom:14px}
+html.v .xpdr .hdr{font-size:30px}
+.digits{display:flex;gap:26px;justify-content:center}
+.digits svg{width:120px;height:200px}
+html.v .digits svg{width:110px;height:184px}
+.seg{fill:var(--sky)}
+.codes{display:flex;flex-direction:column;gap:18px;margin-top:24px}
+.code{position:relative;opacity:0}
+.code .card-body{padding:18px 30px 20px;font-weight:600;font-size:40px;line-height:1.2}
+html.v .code .card-body{font-size:44px}
+.code .num{font-family:'Plex';font-weight:600;color:var(--deep)}
+
+/* why-it-worked */
+#why{position:absolute;left:0;right:0;top:130px;bottom:110px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:28px}
+html.v #why{top:400px;bottom:470px;right:120px;left:60px;justify-content:flex-start;gap:30px}
+.wcard{width:1120px;opacity:0}
+html.v .wcard{width:100%}
+.wcard .card-body{display:flex;align-items:center;gap:36px;padding:28px 40px}
+.wcard svg{width:104px;height:104px;flex:none}
+.wcard .txt{font-weight:800;font-size:60px;line-height:1.15}
+html.v .wcard .txt{font-size:56px}
+.ico{fill:none;stroke:var(--deep);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.ico .g{stroke:var(--gold)}
+.ico .gf{fill:var(--gold);stroke:none}
+.hl{position:relative;display:inline-block}
+.hl-bg{position:absolute;left:-.18em;right:-.18em;top:.04em;bottom:.02em;background:var(--gold);border-radius:12px;transform-origin:100% 50%;transform:scaleX(0)}
+.hl-tx{position:relative}
+#why .tag{font-size:var(--chip);opacity:0}
+
+/* now + end */
+#s12 .slot-card,#s13 .slot-card{right:0;left:0;width:auto;align-items:center}
+#s12 .card{width:1100px}
+html.v #s12 .slot-card{right:120px;left:60px;top:560px}
+html.v #s12 .card{width:100%}
+#endcard{width:1240px;text-align:center}
+#endcard .card-body{padding:52px 60px 46px;display:flex;flex-direction:column;align-items:center}
+#endcard .thick{font-size:84px}
+.sources{margin-top:22px;font-size:30px;color:var(--muted);line-height:1.4}
+.sources .mono{color:var(--deep)}
+.sign{display:flex;align-items:center;gap:26px;margin-top:34px;direction:ltr}
+.sign img{width:150px;height:150px}
+.sign .wm{font-size:92px}
+.credit{font-family:'Plex';font-weight:600;font-size:26px;letter-spacing:.14em;color:var(--muted);margin-top:14px;direction:ltr}
+html.v #s13 .slot-card{right:120px;left:60px;top:470px;height:auto}
+html.v #endcard{width:100%}
+html.v #endcard .thick{font-size:80px}
+html.v .sources{font-size:44px}
+html.v .sign{flex-direction:column;gap:14px}
+html.v .sign img{width:220px;height:220px}
+html.v .sign .wm{font-size:100px}
+html.v .credit{font-size:44px;letter-spacing:.06em}
+</style>
+</head>
+<body>
+<div id="stage">
+  <!-- skies (bottom → top) -->
+  <div id="sky-high" class="sky"><div class="clouds" data-clouds="high"></div></div>
+  <div id="sky-low" class="sky"><div class="clouds" data-clouds="low"></div><div class="horizon" style="top:91%"></div></div>
+  <div id="sky-clear" class="sky"><div class="clouds" data-clouds="clear"></div><div id="rays" class="fill"></div></div>
+  <div id="sky-gold" class="sky"><div class="sunglow" style="left:6%;bottom:-18%;width:60%;height:46%;background:radial-gradient(closest-side,rgba(255,197,61,.55),rgba(255,197,61,0))"></div><div class="clouds" data-clouds="gold"></div><div class="horizon" style="top:92%"></div></div>
+  <div id="sky-dawn" class="sky"><div class="sunglow" style="left:30%;bottom:4%;width:40%;height:30%;background:radial-gradient(closest-side,rgba(255,197,61,.45),rgba(255,197,61,0))"></div><div class="horizon" style="top:84%"></div><div class="clouds" data-clouds="sea"></div></div>
+  <div id="sky-storm" class="sky"><div class="clouds" data-clouds="storm"></div></div>
+  <div id="scrim" class="fill"></div>
+
+  <!-- shared graphic panels -->
+  <div id="p-map" class="panel"><div class="slot-panel"><div class="card"><div class="card-bg"></div><div class="card-body">
+    <svg id="map" viewBox="0 0 1000 480" aria-label="מפה סכמטית">
+      <path id="route-plan" d="" fill="none" stroke="#0B2A5B" stroke-width="5" stroke-linecap="round" stroke-dasharray="14 16"/>
+      <path id="route-real" d="" fill="none" stroke="#0B2A5B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <g id="radar" opacity="0">
+        <circle class="rr" r="70" fill="none" stroke="#8EC3F2" stroke-width="3"/>
+        <circle class="rr" r="130" fill="none" stroke="#8EC3F2" stroke-width="2.5" opacity=".7"/>
+        <path id="sweep" d="M0 0 L130 0 A130 130 0 0 0 112.6 -65 Z" fill="#8EC3F2" opacity=".45"/>
+      </g>
+      <g id="jets" opacity="0"></g>
+      <g id="pts"></g>
+      <g id="land-ring-pos"><g id="land-ring" opacity="0"><circle r="26" fill="none" stroke="#19B8C9" stroke-width="5"/></g></g>
+      <g id="plane"><path d="M0 -20 L5 -6 L22 4 L22 9 L5 4 L4 15 L10 20 L10 23 L0 20 L-10 23 L-10 20 L-4 15 L-5 4 L-22 9 L-22 4 L-5 -6 Z" fill="#fff" stroke="#0B2A5B" stroke-width="3" stroke-linejoin="round"/></g>
+    </svg>
+    <div class="legend"><span><i></i>מסלול מתוכנן</span><span id="lg-real" style="opacity:0"><i class="s"></i>מסלול בפועל</span></div>
+  </div><span class="tag ptag">המחשה</span></div></div></div>
+
+  <div id="p-alt" class="panel"><div class="slot-panel"><div class="card"><div class="card-bg"></div><div class="card-body">
+    <svg viewBox="0 0 1000 480" aria-label="פרופיל גובה להמחשה">
+      <line x1="120" y1="60" x2="120" y2="400" stroke="#4A6285" stroke-width="3"/>
+      <line x1="120" y1="400" x2="960" y2="400" stroke="#4A6285" stroke-width="3"/>
+      <text x="100" y="80" text-anchor="end" font-family="Assistant" font-weight="600" font-size="54" fill="#4A6285" direction="rtl">גובה</text>
+      <text x="960" y="462" text-anchor="end" font-family="Assistant" font-weight="600" font-size="54" fill="#4A6285" direction="rtl">זמן</text>
+      <path id="alt-line" d="M120 110 L560 110 C585 110 590 300 612 300 C628 300 632 262 648 262 C664 262 668 330 690 330 L960 330" fill="none" stroke="#0B2A5B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle id="alt-dot" r="12" fill="#fff" stroke="#0B2A5B" stroke-width="5"/>
+    </svg>
+  </div><span class="tag ptag">המחשה</span></div></div></div>
+
+  <div id="p-xpdr" class="panel"><div class="slot-panel">
+    <div class="xpdr"><div class="hdr"><span>XPDR</span><span>SQUAWK</span></div><div class="digits" id="digits"></div></div>
+    <div class="codes">
+      <div class="code card" id="code7700"><div class="card-bg"></div><div class="card-body"><bdi class="num">7700</bdi> · מצב חירום כללי</div></div>
+      <div class="code card" id="code7500"><div class="card-bg"></div><div class="card-body"><bdi class="num">7500</bdi> · התערבות בלתי חוקית / חטיפה</div></div>
+    </div>
+  </div></div>
+
+  <!-- shots -->
+  <div class="shot" id="s1"><div id="title" data-split>מה קרה בטיסה <bdi class="mono" dir="ltr">FZ1073</bdi></div></div>
+
+  <div class="shot" id="s2"><div class="slot-card"><div class="card"><div class="card-bg"></div><div class="card-body">
+    <span class="tag">לפי ynet</span>
+    <div class="thick" data-split>טיסה רגילה מדובאי לתל אביב</div>
+    <div class="thin" data-split>יום רביעי, <bdi dir="ltr">30.9</bdi> · <bdi dir="ltr">174</bdi> נוסעים, מהם <bdi dir="ltr">27</bdi> ילדים</div>
+  </div></div></div></div>
+
+  <div class="shot" id="s3"><div class="slot-card"><div class="card"><div class="card-bg"></div><div class="card-body">
+    <span class="tag">לפי ראש הממשלה</span>
+    <div class="thick" data-split>באמצע הטיסה: מאבק בתא הטייס</div>
+    <div class="thin" data-split>טייס אחד דקר את השני וניסה להפיל את המטוס</div>
+  </div></div></div></div>
+
+  <div class="shot" id="s4"><div class="slot-card"><div class="card"><div class="card-bg"></div><div class="card-body">
+    <span class="tag">לפי הדיווחים</span>
+    <div class="thick" data-split>המטוס איבד גובה במהירות</div>
+    <div class="thin" data-split>אלפי רגל בתוך דקות</div>
+  </div></div></div></div>
+
+  <div class="shot" id="s5"><div class="slot-card"><div class="card"><div class="card-bg"></div><div class="card-body">
+    <span class="tag">לפי <bdi>Wikipedia</bdi> ו-<bdi>Times of Israel</bdi></span>
+    <div class="thick" data-split>שני קודים ששודרו מהמטוס</div>
+    <div class="thin" data-split>ככה מטוס אומר לעולם שמשהו לא בסדר</div>
+  </div></div></div></div>
+
+  <div class="shot" id="s6"><div class="slot-card"><div class="card"><div class="card-bg"></div><div class="card-body">
+    <span class="tag">לפי <bdi>Times of Israel</bdi></span>
+    <div class="thick" data-split>חיל האוויר הזניק מטוסי קרב</div>
+    <div class="thin" data-split>בעקבות קוד החטיפה</div>
+  </div></div></div></div>
+
+  <div class="shot" id="s7"><div class="slot-card"><div class="card"><div class="card-bg"></div><div class="card-body">
+    <span class="tag">לפי ראש הממשלה</span>
+    <div class="thick" data-split>נוסעים ואנשי צוות נכנסו לתא הטייס</div>
+    <div class="thin" data-split>והשתלטו על התוקף</div>
+  </div></div></div></div>
+
+  <div class="shot" id="s8"><div class="slot-card"><div class="card"><div class="card-bg"></div><div class="card-body">
+    <span class="tag">לפי <bdi>flydubai</bdi></span>
+    <div class="thick" data-split>המטוס נחת בבטחה בתבוק</div>
+    <div class="thin" data-split>אנשי צוות של <bdi>flydubai</bdi> שטסו על הסיפון הנחיתו אותו</div>
+  </div></div></div></div>
+
+  <div class="shot" id="s9"><div id="why">
+    <div class="wcard card" id="w1"><div class="card-bg"></div><div class="card-body">
+      <svg class="ico" viewBox="0 0 48 48"><circle cx="16" cy="15" r="5"/><path d="M7 33c0-6 4-10 9-10s9 4 9 10"/><circle cx="32" cy="15" r="5"/><path d="M23 33c0-6 4-10 9-10s9 4 9 10"/><path d="M8 40h32"/><path class="g" d="M21 40l3-3 3 3"/></svg>
+      <div class="txt" data-split>היו על הסיפון אנשי צוות נוספים</div></div></div>
+    <div class="wcard card" id="w2"><div class="card-bg"></div><div class="card-body">
+      <svg class="ico" viewBox="0 0 48 48"><circle cx="24" cy="27" r="15"/><path d="M20 6h8"/><path d="M24 6v6"/><path d="M36 13l3-3"/><path class="g" d="M24 27V18"/><path d="M24 27l6 4"/></svg>
+      <div class="txt" data-split>הנוסעים פעלו בתוך דקות</div></div></div>
+    <div class="wcard card" id="w3"><div class="card-bg"></div><div class="card-body">
+      <svg class="ico" viewBox="0 0 48 48"><path d="M6 14l8 4 10-2 12-6c3-1 5 1 3 3l-10 7-4 9-3 1 1-8-8 3-3 4-2 0 1-6-6-6z"/><path d="M4 40h40"/><path d="M10 44h6M22 44h6M34 44h6"/><circle class="gf" cx="40" cy="40" r="2.6"/></svg>
+      <div class="txt" data-split><span class="hl"><span class="hl-bg"></span><span class="hl-tx"><bdi>174</bdi> אנשים נחתו בשלום</span></span></div></div></div>
+    <span class="tag">לפי <bdi>flydubai</bdi> והדיווחים</span>
+  </div></div>
+
+  <div class="shot" id="s12"><div class="slot-card"><div class="card"><div class="card-bg"></div><div class="card-body">
+    <span class="tag">לפי <bdi>flydubai</bdi></span>
+    <div class="thick" data-split><bdi>flydubai</bdi> השעתה את הטיסות לישראל</div>
+    <div class="thin" data-split>החקירה נמשכת</div>
+  </div></div></div></div>
+
+  <div class="shot" id="s13"><div class="slot-card"><div class="card" id="endcard"><div class="card-bg"></div><div class="card-body">
+    <div class="thick" data-split>הפרטים עדיין מתבררים.</div>
+    <div class="sources" id="sources"><div>מקורות</div><bdi class="mono" dir="ltr">flydubai · ynet · Times&nbsp;of&nbsp;Israel · Al&nbsp;Jazeera · Wikipedia</bdi></div>
+    <div class="sign" id="sign"><img src="../assets/phoenix.png" alt="YUV.AI"><span class="wm"><span class="a">YUV</span><span class="b">.AI</span></span></div>
+    <div class="credit" id="credit">YUVAL AVIDANI · YUV.AI</div>
+  </div></div></div></div>
+
+  <!-- transition veils -->
+  <div id="veil-l" class="veil fill"><div class="clouds" data-clouds="veil-l"></div></div>
+  <div id="veil-s" class="veil fill"><div class="clouds" data-clouds="veil-s"></div></div>
+
+  <!-- chrome -->
+  <div id="top" class="rule">
+    <div class="strip"><span class="heb">מ- ערפל</span><svg viewBox="0 0 26 20"><path d="M24 10H3M10 3L3 10l7 7" fill="none" stroke="#0B2A5B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="heb">אל ברור</span><span>·</span><bdi class="mono" dir="ltr">YA-051 · NWS</bdi></div>
+    <div class="center"><span class="date"><bdi dir="ltr">30.9.2026</bdi> · עודכן <bdi dir="ltr">1.10.2026</bdi></span><span class="tag">הפרטים עדיין מתבררים</span></div>
+    <div id="alt"><span class="lbl">ALT</span><div class="tape"><div class="tfill" id="tfill"></div></div><svg class="trend" viewBox="0 0 18 18"><path id="trend" d="M9 3v12M4 8l5-5 5 5" fill="none" stroke="#0B2A5B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  </div>
+  <div id="bottom" class="rule"><span class="wm" style="font-size:1.25em"><span class="a">YUV</span><span class="b">.AI</span></span><span class="tc" id="tc">00:00:00</span></div>
+
+  <div id="grain" class="fill"></div>
+  <div id="vignette" class="fill"></div>
+</div>
+
+<script src="../node_modules/gsap/dist/gsap.min.js"></script>
+<script>
+(() => {
+const FMT = new URLSearchParams(location.search).get('fmt') === 'v' ? 'v' : 'h';
+document.documentElement.classList.add(FMT);
+const W = FMT === 'v' ? 1080 : 1920, H = FMT === 'v' ? 1920 : 1080, FPS = 30;
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+/* ================= TIMING (generated, never hand-typed) ================= */
+const BPM = 84, BEAT = 60 / BPM, TR = 0.6;
+// read: every string a viewer must read in the shot; chips: attribution chips (1 word each)
+const SHOTS = [
+  { id: 's1',  key: 'opening',  read: ['מה קרה בטיסה FZ1073'], chips: 0, minBeats: 6, sky: 'high' },
+  { id: 's2',  key: 'context',  read: ['טיסה רגילה מדובאי לתל אביב', 'יום רביעי, 30.9 · 174 נוסעים, מהם 27 ילדים'], chips: 1, sky: 'low' },
+  { id: 's3',  key: 'turbulence', read: ['באמצע הטיסה: מאבק בתא הטייס', 'טייס אחד דקר את השני וניסה להפיל את המטוס'], chips: 1, sky: 'storm' },
+  { id: 's4',  key: 'dive',     read: ['המטוס איבד גובה במהירות', 'אלפי רגל בתוך דקות'], chips: 1, sky: 'storm' },
+  { id: 's5',  key: 'code',     read: ['שני קודים ששודרו מהמטוס', 'ככה מטוס אומר לעולם שמשהו לא בסדר', '7700 · מצב חירום כללי', '7500 · התערבות בלתי חוקית / חטיפה'], chips: 1, sky: 'storm' },
+  { id: 's6',  key: 'response', read: ['חיל האוויר הזניק מטוסי קרב', 'בעקבות קוד החטיפה'], chips: 1, sky: 'storm' },
+  { id: 's7',  key: 'turn',     read: ['נוסעים ואנשי צוות נכנסו לתא הטייס', 'והשתלטו על התוקף'], chips: 1, sky: 'break' },
+  { id: 's8',  key: 'landing',  read: ['המטוס נחת בבטחה בתבוק', 'אנשי צוות של flydubai שטסו על הסיפון הנחיתו אותו'], chips: 1, sky: 'break' },
+  { id: 's9',  key: 'why1',     read: ['היו על הסיפון אנשי צוות נוספים'], chips: 1, sky: 'clear' },
+  { id: 's10', key: 'why2',     read: ['הנוסעים פעלו בתוך דקות'], chips: 0, sky: 'clear', group: true },
+  { id: 's11', key: 'why3',     read: ['174 אנשים נחתו בשלום'], chips: 0, sky: 'clear', group: true },
+  { id: 's12', key: 'now',      read: ['flydubai השעתה את הטיסות לישראל', 'החקירה נמשכת'], chips: 1, sky: 'gold' },
+  { id: 's13', key: 'end',      read: ['הפרטים עדיין מתבררים.'], chips: 0, minBeats: 5, sky: 'dawn' },
+];
+const countWords = arr => arr.join(' ').split(/\s+/).filter(w => /[\p{L}\p{N}]/u.test(w)).length;
+let tcur = 0;
+SHOTS.forEach((s, i) => {
+  s.words = countWords(s.read) + s.chips;
+  s.readSec = Math.max(1.6, s.words * 0.33 + 0.6);
+  s.beats = Math.max(s.minBeats || 0, Math.ceil(s.readSec / BEAT - 1e-9));
+  s.hold = s.beats * BEAT;
+  s.start = tcur;               // content fully in
+  s.end = tcur + s.hold;        // transition out begins
+  tcur = s.end + (i < SHOTS.length - 1 ? TR : 0);
+});
+const DURATION = tcur;
+const FRAMES = Math.round(DURATION * FPS);
+const CUES = [];   // audio cues {t, type}
+const CUTS = SHOTS.map(s => ({ id: s.id, key: s.key, start: +s.start.toFixed(4), end: +s.end.toFixed(4), beats: s.beats, hold: +s.hold.toFixed(4), words: s.words }));
+const S = Object.fromEntries(SHOTS.map(s => [s.key, s]));
+
+/* ================= deterministic helpers ================= */
+function mulberry32(a) { return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const CLOUDSPEC = {
+  high:  { seed: 11, n: 14, y: [0.62, 1.0], c: [255, 255, 255], a: [0.55, 0.9], s: [260, 620], speed: 5 },
+  low:   { seed: 12, n: 22, y: [0.66, 1.05], c: [255, 255, 255], a: [0.7, 0.95], s: [300, 700], speed: 7 },
+  clear: { seed: 13, n: 18, y: [0.6, 1.05], c: [255, 255, 255], a: [0.6, 0.95], s: [280, 680], speed: 6 },
+  gold:  { seed: 14, n: 14, y: [0.7, 1.05], c: [255, 240, 230], a: [0.55, 0.9], s: [300, 700], speed: 4 },
+  sea:   { seed: 15, n: 30, y: [0.8, 1.08], c: [255, 255, 255], a: [0.8, 1.0], s: [280, 640], speed: 3 },
+  storm: { seed: 16, n: 30, y: [-0.1, 1.05], c: [74, 98, 133], a: [0.45, 0.85], s: [380, 900], speed: 9, c2: [22, 48, 79] },
+  'veil-l': { seed: 17, n: 26, y: [-0.1, 1.05], c: [255, 255, 255], a: [0.85, 1.0], s: [500, 1100], speed: 30 },
+  'veil-s': { seed: 18, n: 26, y: [-0.1, 1.05], c: [111, 132, 162], a: [0.85, 1.0], s: [500, 1100], speed: 30 },
+};
+const cloudLayers = [];
+$$('[data-clouds]').forEach(el => {
+  const sp = CLOUDSPEC[el.dataset.clouds]; const r = mulberry32(sp.seed);
+  const span = W + 800;
+  for (let i = 0; i < sp.n; i++) {
+    const w = sp.s[0] + r() * (sp.s[1] - sp.s[0]), h = w * (0.38 + r() * 0.2);
+    const x = r() * span - w / 2, y = (sp.y[0] + r() * (sp.y[1] - sp.y[0])) * H - h / 2;
+    const a = sp.a[0] + r() * (sp.a[1] - sp.a[0]);
+    const c = sp.c2 && r() < 0.4 ? sp.c2 : sp.c;
+    const p = document.createElement('div'); p.className = 'puff';
+    Object.assign(p.style, { left: x + 'px', top: y + 'px', width: w + 'px', height: h + 'px',
+      background: `radial-gradient(closest-side, rgba(${c},${a}) 0%, rgba(${c},${a * 0.55}) 55%, rgba(${c},0) 100%)` });
+    el.appendChild(p);
+  }
+  cloudLayers.push({ el, speed: sp.speed });
+});
+
+/* word splitter: text → .w > .wi units, isolated elements kept whole */
+function split(el) {
+  const units = [];
+  const walk = (node, into) => {
+    [...node.childNodes].forEach(n => {
+      if (n.nodeType === 3) {
+        const parts = n.textContent.split(/(\s+)/);
+        parts.forEach(p => {
+          if (!p) return;
+          if (/^\s+$/.test(p)) { into.appendChild(document.createTextNode(' ')); return; }
+          const w = document.createElement('span'); w.className = 'w';
+          const wi = document.createElement('span'); wi.className = 'wi'; wi.textContent = p;
+          w.appendChild(wi); into.appendChild(w); units.push(wi);
+        });
+      } else if (n.classList && (n.classList.contains('hl') || n.classList.contains('hl-tx'))) {
+        const c = n.cloneNode(false); into.appendChild(c);
+        if (n.classList.contains('hl')) { const bg = n.querySelector('.hl-bg'); c.appendChild(bg.cloneNode(true)); walk(n.querySelector('.hl-tx'), (() => { const t = document.createElement('span'); t.className = 'hl-tx'; c.appendChild(t); return t; })()); }
+      } else {
+        const w = document.createElement('span'); w.className = 'w';
+        const wi = document.createElement('span'); wi.className = 'wi'; wi.appendChild(n.cloneNode(true));
+        w.appendChild(wi); into.appendChild(w); units.push(wi);
+      }
+    });
+  };
+  const frag = document.createElement('div'); walk(el, frag);
+  el.innerHTML = ''; [...frag.childNodes].forEach(c => el.appendChild(c));
+  el._units = units; return units;
+}
+$$('[data-split]').forEach(split);
+
+/* seven-segment digits */
+const SEG = { a: 'M14 6h32l-5 7H19z', b: 'M48 8l5 6v30l-5 4-4-4V15z', c: 'M48 52l5 4v30l-5 6-4-6V56z', d: 'M14 94h32l-5-7H19z', e: 'M12 52l4 4v30l-4 6-5-6V56z', f: 'M12 8l4 7v29l-4 4-5-4V14z', g: 'M16 50l4-4h20l4 4-4 4H20z' };
+const DIG = { 0: 'abcdef', 5: 'acdfg', 6: 'acdefg', 7: 'abc', 8: 'abcdefg' };
+const digitEls = [];
+for (let i = 0; i < 4; i++) {
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); svg.setAttribute('viewBox', '0 0 60 100');
+  const segs = {};
+  for (const k in SEG) { const p = document.createElementNS(svg.namespaceURI, 'path'); p.setAttribute('d', SEG[k]); p.setAttribute('class', 'seg'); p.style.opacity = .1; svg.appendChild(p); segs[k] = p; }
+  $('#digits').appendChild(svg); digitEls.push(segs);
+}
+function setDigit(i, v) { const on = v == null ? '' : DIG[v]; for (const k in digitEls[i]) digitEls[i][k].style.opacity = on.includes(k) ? 1 : 0.1; }
+
+/* ================= map geometry (schematic, relative positions only) ================= */
+const proj = (lon, lat) => [60 + (lon - 33) * 0.88 * 42.7, 40 + (33.2 - lat) * 42.7];
+const DXB = proj(55.36, 25.25), TUU = proj(36.62, 28.37), TLV = proj(34.89, 32.01);
+const C1 = [398, 113];
+const qb = (p0, c, p1, t) => [(1 - t) ** 2 * p0[0] + 2 * (1 - t) * t * c[0] + t * t * p1[0], (1 - t) ** 2 * p0[1] + 2 * (1 - t) * t * c[1] + t * t * p1[1]];
+const qd = (p0, c, p1, t) => [2 * (1 - t) * (c[0] - p0[0]) + 2 * t * (p1[0] - c[0]), 2 * (1 - t) * (c[1] - p0[1]) + 2 * t * (p1[1] - c[1])];
+const TD = 0.8, DIV = qb(DXB, C1, TLV, TD), CA = [DXB[0] + TD * (C1[0] - DXB[0]), DXB[1] + TD * (C1[1] - DXB[1])], C2 = [262, 178];
+const f1 = v => v.toFixed(1);
+$('#route-plan').setAttribute('d', `M${DXB.map(f1)} Q${C1.map(f1)} ${TLV.map(f1)}`);
+$('#route-real').setAttribute('d', `M${DIV.map(f1)} Q${C2.map(f1)} ${TUU.map(f1)}`);
+const ptsG = $('#pts'), NS = 'http://www.w3.org/2000/svg';
+[[DXB, 'דובאי', 1], [TUU, 'תבוק', 1], [TLV, 'תל אביב', -1]].forEach(([p, name, dir]) => {
+  const c = document.createElementNS(NS, 'circle'); c.setAttribute('cx', p[0]); c.setAttribute('cy', p[1]); c.setAttribute('r', 11);
+  c.setAttribute('fill', '#fff'); c.setAttribute('stroke', '#0B2A5B'); c.setAttribute('stroke-width', 5); ptsG.appendChild(c);
+  const t = document.createElementNS(NS, 'text'); t.textContent = name; t.setAttribute('x', p[0]); t.setAttribute('y', p[1] + (dir > 0 ? 70 : -30));
+  t.setAttribute('text-anchor', 'middle'); t.setAttribute('font-family', 'Assistant'); t.setAttribute('font-weight', '800'); t.setAttribute('font-size', '54'); t.setAttribute('fill', '#0B2A5B'); t.setAttribute('direction', 'rtl');
+  ptsG.appendChild(t);
+});
+$('#radar').setAttribute('transform', `translate(${TLV.map(f1)})`);
+$('#land-ring-pos').setAttribute('transform', `translate(${TUU.map(f1)})`);
+const JET = 'M0 -16 L4 -4 L16 8 L16 11 L3 7 L2 13 L7 17 L-7 17 L-2 13 L-3 7 L-16 11 L-16 8 L-4 -4 Z';
+const jets = [[TLV[0] - 95, TLV[1] + 95], [TLV[0] - 60, TLV[1] + 140]].map(([x, y]) => {
+  const g = document.createElementNS(NS, 'g'); const p = document.createElementNS(NS, 'path'); p.setAttribute('d', JET);
+  p.setAttribute('fill', 'none'); p.setAttribute('stroke', '#0B2A5B'); p.setAttribute('stroke-width', 3); p.setAttribute('stroke-linejoin', 'round');
+  g.appendChild(p); $('#jets').appendChild(g); return { g, x, y };
+});
+
+const planLen = $('#route-plan').getTotalLength(), realLen = $('#route-real').getTotalLength(), altLen = $('#alt-line').getTotalLength();
+gsap.set('#route-plan', { attr: { 'stroke-dasharray': '14 16' } });
+// dashed path draw-in via mask: use a clone as mask
+const mask = document.createElementNS(NS, 'mask'); mask.id = 'planmask';
+const mp = document.createElementNS(NS, 'path'); mp.setAttribute('d', $('#route-plan').getAttribute('d')); mp.setAttribute('fill', 'none'); mp.setAttribute('stroke', '#fff'); mp.setAttribute('stroke-width', 14);
+mp.style.strokeDasharray = `${planLen} ${planLen + 40}`; mp.style.strokeDashoffset = planLen; mask.appendChild(mp);
+const defs = document.createElementNS(NS, 'defs'); defs.appendChild(mask); $('#map').prepend(defs);
+$('#route-plan').setAttribute('mask', 'url(#planmask)');
+gsap.set('#route-real', { strokeDasharray: `${realLen} ${realLen + 40}`, strokeDashoffset: realLen + 20 });
+gsap.set('#alt-line', { strokeDasharray: `${altLen} ${altLen + 40}`, strokeDashoffset: altLen + 20 });
+$$('.ico path, .ico circle').forEach(p => { if (p.classList.contains('gf')) return; const L = p.getTotalLength(); p.style.strokeDasharray = `${L} ${L + 10}`; p.style.strokeDashoffset = L + 5; });
+
+/* ================= state driven by timeline ================= */
+const st = { plane: 0, planeOn: 0, alt: 0.9, altDir: 0, shake: 0, radar: 0, jets: 0 };
+
+/* ================= TIMELINE ================= */
+const tl = gsap.timeline({ paused: true });
+const EASE = 'power2.out'; // easeOutCubic
+const STAG = 0.12;
+const skyEl = { high: '#sky-high', low: '#sky-low', clear: '#sky-clear', gold: '#sky-gold', dawn: '#sky-dawn', storm: '#sky-storm' };
+gsap.set('#sky-high', { opacity: 1 });
+
+function reveal(el, at, dur = 0.75) {
+  const u = el._units || [];
+  tl.fromTo(u, { yPercent: 112 }, { yPercent: 0, duration: dur, ease: EASE, stagger: STAG }, at);
+  return at + dur + STAG * Math.max(0, u.length - 1);
+}
+function revealCard(shotEl, at) {
+  const tag = $('.tag', shotEl), thick = $('.thick', shotEl), thin = $('.thin', shotEl);
+  let t = at;
+  if (tag) tl.fromTo(tag, { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.5, ease: EASE }, t + 0.05);
+  t = reveal(thick, t + 0.15);
+  if (thin) t = reveal(thin, t - 0.3);
+  return t;
+}
+function shotFade(sel, s, prev, opts = {}) {
+  if (prev) tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: TR, ease: 'sine.inOut' }, s.start - TR);
+  else tl.set(sel, { opacity: 1 }, 0);
+  if (!opts.keep) tl.to(sel, { opacity: 0, duration: TR, ease: 'sine.inOut' }, s.end);
+}
+function veil(at, kind) {
+  const v = kind === 's' ? '#veil-s' : '#veil-l';
+  tl.fromTo(v, { opacity: 0 }, { opacity: 0.62, duration: TR / 2, ease: 'sine.inOut' }, at);
+  tl.to(v, { opacity: 0, duration: TR / 2, ease: 'sine.inOut' }, at + TR / 2);
+  CUES.push({ t: +at.toFixed(4), type: 'air' });
+}
+function skyTo(key, at, dur = TR, val = 1) { tl.to(skyEl[key], { opacity: val, duration: dur, ease: 'sine.inOut' }, at); }
+
+// ---- shot 1: opening
+const s1 = S.opening;
+shotFade('#s1', s1, null);
+tl.set('#scrim', { opacity: 0.9 }, 0).to('#scrim', { opacity: 0, duration: TR }, s1.end);
+reveal($('#title'), 0.5, 1.0);
+
+// ---- shot 2: context
+const s2 = S.context;
+veil(s1.end, 'l'); skyTo('low', s1.end); shotFade('#s2', s2, s1);
+tl.fromTo('#p-map', { opacity: 0 }, { opacity: 1, duration: TR, ease: 'sine.inOut' }, s2.start - TR);
+revealCard($('#s2'), s2.start - 0.25);
+tl.to(mp, { strokeDashoffset: 0, duration: s2.hold * 0.8, ease: 'none' }, s2.start);
+tl.fromTo(st, { planeOn: 0 }, { planeOn: 1, duration: 0.5, ease: 'none' }, s2.start);
+tl.fromTo(st, { plane: 0 }, { plane: 0.5, duration: s2.hold * 0.9, ease: 'none' }, s2.start + 0.2);
+
+// ---- shot 3: turbulence
+const s3 = S.turbulence;
+veil(s2.end, 's'); skyTo('storm', s2.end); tl.set('#sky-clear', { opacity: 1 }, s2.end + TR); shotFade('#s3', s3, s2);
+revealCard($('#s3'), s3.start - 0.25);
+tl.to(st, { plane: TD, duration: s3.hold * 0.8, ease: 'sine.out' }, s3.start);
+tl.fromTo(st, { shake: 0 }, { shake: 1, duration: 0.8, ease: 'sine.inOut' }, s3.start)
+  .to(st, { shake: 0, duration: 0.8, ease: 'sine.inOut' }, s3.end - 0.6);
+
+// ---- shot 4: dive (panel swap map → altitude)
+const s4 = S.dive;
+veil(s3.end, 's'); shotFade('#s4', s4, s3);
+tl.to('#p-map', { opacity: 0, duration: TR }, s3.end).fromTo('#p-alt', { opacity: 0 }, { opacity: 1, duration: TR }, s3.end);
+revealCard($('#s4'), s4.start - 0.25);
+const drawT = s4.start + 0.2, drawD = s4.hold * 0.8;
+tl.to('#alt-line', { strokeDashoffset: 0, duration: drawD, ease: 'none' }, drawT);
+// altimeter tracks the illustrative line: flat for ~ (440/altLen) of the path then falls
+tl.to(st, { alt: 0.42, altDir: -1, duration: drawD * 0.28, ease: 'sine.inOut' }, drawT + drawD * 0.5);
+tl.to(st, { alt: 0.5, duration: drawD * 0.08, ease: 'sine.inOut' }, drawT + drawD * 0.78);
+tl.to(st, { alt: 0.36, duration: drawD * 0.1, ease: 'sine.inOut' }, drawT + drawD * 0.86);
+tl.set(st, { altDir: 0 }, s4.end);
+tl.to('#p-alt', { opacity: 0, duration: TR }, s4.end);
+
+// ---- shot 5: the code
+const s5 = S.code;
+veil(s4.end, 's'); shotFade('#s5', s5, s4);
+tl.fromTo('#p-xpdr', { opacity: 0 }, { opacity: 1, duration: TR }, s4.end).to('#p-xpdr', { opacity: 0, duration: TR }, s5.end);
+revealCard($('#s5'), s5.start - 0.25);
+const XP = [];  // digit events {t, i, v}
+const typeAt = s5.start + 0.35;
+[7, 7, 0, 0].forEach((v, i) => { XP.push({ t: typeAt + i * 0.26, i, v }); });
+const t7700done = typeAt + 3 * 0.26;
+tl.fromTo('#code7700', { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: EASE }, t7700done + 0.25);
+const changeAt = s5.start + s5.hold * 0.5;
+XP.push({ t: changeAt, i: 1, v: 6 }, { t: changeAt + 0.26, i: 1, v: 5 });
+tl.to('#code7700', { opacity: 0.5, duration: 0.5 }, changeAt + 0.5);
+tl.fromTo('#code7500', { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: EASE }, changeAt + 0.5);
+XP.forEach(e => CUES.push({ t: +e.t.toFixed(4), type: 'tick' }));
+
+// ---- shot 6: response
+const s6 = S.response;
+veil(s5.end, 's'); shotFade('#s6', s6, s5);
+tl.fromTo('#p-map', { opacity: 0 }, { opacity: 1, duration: TR }, s5.end);
+revealCard($('#s6'), s6.start - 0.25);
+tl.fromTo('#radar', { opacity: 0 }, { opacity: 1, duration: 0.6 }, s6.start - 0.1).to('#radar', { opacity: 0, duration: 0.8 }, s6.end);
+tl.fromTo(st, { radar: 0 }, { radar: 1, duration: s6.hold + TR, ease: 'none' }, s6.start - 0.1);
+tl.fromTo('#jets', { opacity: 0 }, { opacity: 1, duration: 0.6 }, s6.start + 0.4);
+tl.fromTo(st, { jets: 0 }, { jets: 1, duration: s6.hold + 1.2, ease: 'sine.inOut' }, s6.start + 0.4);
+tl.to('#jets', { opacity: 0, duration: 0.8 }, S.turn.end - 0.4);
+CUES.push({ t: +(s6.start - 0.1).toFixed(4), type: 'radar', dur: +(s6.hold).toFixed(3) });
+
+// ---- shot 7: the turn (storm starts to break)
+const s7 = S.turn;
+veil(s6.end, 's'); shotFade('#s7', s7, s6);
+revealCard($('#s7'), s7.start - 0.25);
+tl.to('#sky-storm', { opacity: 0.6, duration: s7.hold + TR, ease: 'sine.inOut' }, s7.start - 0.2);
+tl.to('#rays', { opacity: 1, duration: s7.hold, ease: 'sine.inOut' }, s7.start);
+
+// ---- shot 8: landing
+const s8 = S.landing;
+veil(s7.end, 'l'); shotFade('#s8', s8, s7);
+revealCard($('#s8'), s8.start - 0.25);
+tl.to('#sky-storm', { opacity: 0.18, duration: s8.hold + TR, ease: 'sine.inOut' }, s8.start - 0.2);
+tl.to('#lg-real', { opacity: 1, duration: 0.5 }, s8.start);
+const landD = s8.hold * 0.62;
+tl.to('#route-real', { strokeDashoffset: 0, duration: landD, ease: 'none' }, s8.start + 0.1);
+tl.fromTo(st, { plane: 1 }, { plane: 2, duration: landD, ease: 'none', immediateRender: false }, s8.start + 0.1);   // 1..2 = diverted leg
+tl.to(st, { alt: 0.03, duration: landD, ease: 'sine.inOut' }, s8.start + 0.1);
+const landAt = s8.start + 0.1 + landD;
+tl.fromTo('#land-ring', { opacity: 0.7, scale: 0.6, transformOrigin: '50% 50%' }, { opacity: 0, scale: 2.2, duration: 1.4, ease: 'sine.out' }, landAt);
+tl.to('#p-map', { opacity: 0, duration: TR }, s8.end);
+
+// ---- shots 9–11: why it worked (cards accumulate)
+const s9 = S.why1, s10 = S.why2, s11 = S.why3;
+veil(s8.end, 'l'); shotFade('#s9', s9, s8, { keep: true }); tl.to('#s9', { opacity: 0, duration: TR }, s11.end);
+tl.to('#sky-storm', { opacity: 0, duration: s9.hold, ease: 'sine.inOut' }, s9.start - 0.3);
+function whyCard(sel, at) {
+  const el = $(sel);
+  tl.fromTo(el, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: EASE }, at);
+  $$('.ico path:not(.gf), .ico circle:not(.gf)', el).forEach((p, i) => tl.to(p, { strokeDashoffset: 0, duration: 0.45, ease: 'sine.inOut' }, at + 0.15 + i * 0.12));
+  const gf = $('.gf', el); if (gf) tl.fromTo(gf, { opacity: 0 }, { opacity: 1, duration: 0.3 }, at + 0.9);
+  return reveal($('.txt', el), at + 0.2);
+}
+whyCard('#w1', s9.start - 0.3);
+tl.fromTo('#why > .tag', { opacity: 0 }, { opacity: 1, duration: 0.5 }, s9.start + 0.6);
+whyCard('#w2', s10.start - 0.3);
+const w3done = whyCard('#w3', s11.start - 0.3);
+tl.to('#w3 .hl-bg', { scaleX: 1, duration: 0.55, ease: 'power2.inOut' }, w3done + 0.05);   // the ONE gold marker, wipes right→left
+
+// ---- shot 12: now
+const s12 = S.now;
+veil(s11.end, 'l'); skyTo('gold', s11.end); shotFade('#s12', s12, s11);
+revealCard($('#s12'), s12.start - 0.25);
+
+// ---- shot 13: end card
+const s13 = S.end;
+veil(s12.end, 'l'); skyTo('dawn', s12.end); shotFade('#s13', s13, s12, { keep: true });
+reveal($('#s13 .thick'), s13.start - 0.25);
+tl.fromTo('#sources', { opacity: 0 }, { opacity: 1, duration: 0.6 }, s13.start + 0.4);
+tl.fromTo('#sign', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.8, ease: EASE }, s13.start + 0.8);
+tl.fromTo('#credit', { opacity: 0 }, { opacity: 1, duration: 0.6 }, s13.start + 1.2);
+tl.set({}, {}, DURATION);
+
+/* ================= per-frame (pure function of t) ================= */
+const tfill = $('#tfill'), trend = $('#trend'), plane = $('#plane'), sweep = $('#sweep'), tc = $('#tc'), grain = $('#grain');
+const card3 = $('#s3 .card-bg');
+function planePose(p) {
+  if (p <= 1) { const t = Math.min(p, TD) / 1; const q = qb(DXB, C1, TLV, t), d = qd(DXB, C1, TLV, t); return [q, d]; }
+  const u = p - 1; return [qb(DIV, C2, TUU, u), qd(DIV, C2, TUU, u)];
+}
+function applyFrame(t, frame) {
+  // parallax
+  cloudLayers.forEach(L => { L.el.style.transform = `translateX(${(-L.speed * t).toFixed(2)}px)`; });
+  // plane marker
+  const [q, d] = planePose(st.plane); const ang = Math.atan2(d[1], d[0]) * 180 / Math.PI + 90;
+  plane.setAttribute('transform', `translate(${q[0].toFixed(2)} ${q[1].toFixed(2)}) rotate(${ang.toFixed(2)})`);
+  plane.style.opacity = st.planeOn;
+  // radar sweep + jets
+  sweep.setAttribute('transform', `rotate(${(-st.radar * 540).toFixed(2)})`);
+  jets.forEach((j, i) => { const k = st.jets; const x = j.x + (DIV[0] - j.x) * 0.28 * k, y = j.y - 40 * k - i * 8 * k;
+    const a = Math.atan2(DIV[1] - j.y, DIV[0] - j.x) * 180 / Math.PI + 90; j.g.setAttribute('transform', `translate(${x.toFixed(2)} ${y.toFixed(2)}) rotate(${a.toFixed(1)}) scale(1.4)`); });
+  // card-only shake (shot 3), ≤2px, deterministic
+  const sh = st.shake * 2; card3.style.transform = `translate(${(sh * Math.sin(t * 7.3)).toFixed(2)}px, ${(sh * Math.sin(t * 9.1 + 1.3)).toFixed(2)}px)`;
+  // altimeter
+  tfill.style.width = (st.alt * 100).toFixed(2) + '%';
+  trend.setAttribute('d', st.altDir < 0 ? 'M9 3v12M4 10l5 5 5-5' : 'M3 9h12');
+  // transponder digits
+  for (let i = 0; i < 4; i++) setDigit(i, null);
+  XP.forEach(e => { if (t >= e.t) setDigit(e.i, e.v); });
+  // alt-dot follows the drawn altitude line
+  const off = parseFloat(getComputedStyle($('#alt-line')).strokeDashoffset) || 0; const pt = $('#alt-line').getPointAtLength(Math.min(altLen, Math.max(0, altLen - off)));
+  $('#alt-dot').setAttribute('cx', pt.x); $('#alt-dot').setAttribute('cy', pt.y);
+  // grain + timecode
+  grain.style.backgroundImage = `url(../assets/grain${frame % 4}.png)`;
+  const ff = frame % FPS, ss = Math.floor(frame / FPS) % 60, mm = Math.floor(frame / FPS / 60);
+  tc.textContent = [mm, ss, ff].map(n => String(n).padStart(2, '0')).join(':');
+}
+
+window.seek = (t, frame) => { frame = frame ?? Math.round(t * FPS); tl.seek(t, false); applyFrame(t, frame); return true; };
+window.TIMING = { fmt: FMT, W, H, FPS, BPM, BEAT, TR, DURATION, FRAMES, CUTS, CUES: CUES.sort((a, b) => a.t - b.t), landAt, grainFrames: 4 };
+window.READY = document.fonts.ready.then(async () => {
+  const faces = ["800 40px Assistant", "300 40px Assistant", "600 40px Assistant", "600 20px Plex", "400 20px Anton", "200 20px Oswald"];
+  await Promise.all(faces.map(f => document.fonts.load(f, 'אבג abc 123')));
+  await Promise.all([...document.images].map(i => i.decode().catch(() => {})));
+  for (let i = 0; i < 4; i++) { const im = new Image(); im.src = `../assets/grain${i}.png`; await im.decode(); }
+  window.seek(0, 0); return true;
+});
+})();
+</script>
+</body>
+</html>
