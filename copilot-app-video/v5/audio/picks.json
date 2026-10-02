@@ -1,0 +1,98 @@
+{
+ "open": {
+  "seed": 7,
+  "heard": "11.47pm, 200 notifications, a release that ships tomorrow and a promise.",
+  "sim": 0.81,
+  "pesq": 4.07
+ },
+ "promise": {
+  "seed": 23,
+  "heard": "6 o'clock, front row, her daughter's very first piano recital.",
+  "sim": 1.0,
+  "pesq": 3.8
+ },
+ "habit": {
+  "seed": 23,
+  "heard": "Problem is, Dana does everything herself, every branch, every review, every failing test,",
+  "sim": 1.0,
+  "pesq": 4.08
+ },
+ "scale": {
+  "seed": 7,
+  "heard": "but more than 180 million developers build on GitHub, and GitHub has seen this night before.",
+  "sim": 0.95,
+  "pesq": 3.93
+ },
+ "reveal": {
+  "seed": 23,
+  "heard": "So they built the GitHub Copilot app, a desktop home for your coding agents.",
+  "sim": 1.0,
+  "pesq": 3.82
+ },
+ "mywork": {
+  "seed": 42,
+  "heard": "Every session, issue, and pull request from every repo in one calm place.",
+  "sim": 1.0,
+  "pesq": 4.05
+ },
+ "handoff": {
+  "seed": 7,
+  "heard": "Dana hands one small bug to an agent. Just one. Very, very carefully.",
+  "sim": 1.0,
+  "pesq": 3.96
+ },
+ "models": {
+  "seed": 42,
+  "heard": "She picks the model for the job or let's auto-decide",
+  "sim": 1.0,
+  "pesq": 3.98
+ },
+ "lanes": {
+  "seed": 7,
+  "heard": "Each agent gets its own git worktree, so nobody steps on anybody's toes.",
+  "sim": 1.0,
+  "pesq": 3.84
+ },
+ "merge": {
+  "seed": 7,
+  "heard": "Then Agent Merge watches the tests, keeps an eye on reviewers, fixes what breaks, and merges when her rules are met.",
+  "sim": 1.0,
+  "pesq": 3.9
+ },
+ "sandbox": {
+  "seed": 7,
+  "heard": "Every agent works in a sandbox, on her laptop or in the cloud.",
+  "sim": 1.0,
+  "pesq": 3.96
+ },
+ "control": {
+  "seed": 7,
+  "heard": "In the cloud it asks before every change, and autopilot, that's her call.",
+  "sim": 1.0,
+  "pesq": 4.11
+ },
+ "ships": {
+  "seed": 7,
+  "heard": "and the team behind it ships fast. Eight new features in the first 19 days.",
+  "sim": 1.0,
+  "pesq": 4.08
+ },
+ "listen": {
+  "seed": 42,
+  "heard": "and developers can join the discussion right in GitHub Community.",
+  "sim": 1.0,
+  "pesq": 3.95
+ },
+ "payoff": {
+  "seed": 42,
+  "heard": "6.02 PM, front row, and the release merged at 4.",
+  "sim": 0.82,
+  "pesq": 4.11
+ },
+ "cta": {
+  "seed": 23,
+  "heard": "the GitHub Copilot app. Let your agents do the work. Keep your evenings.",
+  "sim": 1.0,
+  "pesq": 4.01
+ }
+}

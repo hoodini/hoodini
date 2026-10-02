@@ -1,0 +1,1586 @@
+{
+ "lines": {
+  "hook": {
+   "start": 0.35,
+   "end": 5.918,
+   "text": "POV: you've got fourteen tabs, three terminals, two agents... and they're fighting over the same branch.",
+   "heard": "POV. You've got 14 tabs, 3 terminals, 2 agents, and they're fighting over the same branch."
+  },
+  "reveal": {
+   "start": 7.098,
+   "end": 10.533,
+   "text": "Meet the GitHub Copilot app. The desktop home for your agents.",
+   "heard": "Meet the GitHub Copilot app, the desktop home for your agents."
+  },
+  "mywork": {
+   "start": 10.813,
+   "end": 19.431,
+   "text": "One My Work view: agent sessions, issues, pull requests and background automations, across your repos. Basically, air-traffic control for agents.",
+   "heard": "One my work view, agent sessions, issues, pull requests, and background automations across your repos. Basically, air traffic control for agents."
+  },
+  "worktree": {
+   "start": 19.711,
+   "end": 27.285,
+   "text": "Every session runs in its own git worktree. Parallel agents, separate lanes, zero branch juggling. No more, who touched my branch?",
+   "heard": "every session runs in its own Git worktree. Parallel agents, separate lanes, zero branch juggling. No more who touched my branch."
+  },
+  "pipeline": {
+   "start": 27.565,
+   "end": 40.983,
+   "text": "Start from an issue, the agent does the work, you review the PR. Then Agent Merge takes over: it watches CI, tracks required reviewers, fixes failing checks, and merges when your conditions pass. It babysits CI, so you don't.",
+   "heard": "Start from an issue, the agent does the work, you review the PR. Then Agent Merge takes over. It watches CI, tracks required reviewers, fixes failing checks, and merges when your conditions pass. It babysits CI, so you don't."
+  },
+  "models": {
+   "start": 41.263,
+   "end": 47.685,
+   "text": "Pick a model and reasoning effort per session, or let Auto choose. Change it any time, mid-task. Bring your own key, too.",
+   "heard": "Pick a model and reasoning effort per session, or let auto choose. Change at any time mid -task. Bring your own key too."
+  },
+  "canvas": {
+   "start": 47.965,
+   "end": 55.325,
+   "text": "Canvases are shared work surfaces: plans, terminals, browsers, deployments. You edit, the agent edits. Same page, literally.",
+   "heard": "Canvases are shared work surfaces, plans, terminals, browsers, deployments, you edit the agent edits. Same page, literally."
+  },
+  "azure": {
+   "start": 55.605,
+   "end": 67.893,
+   "text": "Azure shops: Azure DevOps work items and pull requests show up in My Work, and community canvas extensions bring Functions, Resource Graph, even your Azure costs. Finally, the cloud bill next to the code.",
+   "heard": "Azure Shops, Azure DevOps work items and pull requests show up in my work and community canvas extensions bring functions, resource graph, even your Azure costs. Finally, the cloud bill next to the code."
+  },
+  "safety": {
+   "start": 68.173,
+   "end": 77.858,
+   "text": "Run agents in a local or cloud sandbox. The cloud agent asks before every write, until you flip on autopilot. And slash security review adds a security pass.",
+   "heard": "run agents in a local or cloud sandbox. The cloud agent asks before every write until you flip on autopilot, and slash security review adds a security pass."
+  },
+  "money": {
+   "start": 78.138,
+   "end": 92.879,
+   "text": "Now, money. Since June first, Copilot runs on GitHub AI Credits. Every plan includes monthly credits, a single dollar-based credit pool across models, with budgets and caps per user, cost center or enterprise. Completions don't burn credits.",
+   "heard": "Now money. Since June 1, Copilot runs on GitHub AI credits. Every plan includes monthly credits, a single dollar -based credit pool across models, with budgets and caps per user, cost center or enterprise. Completions don't burn credits."
+  },
+  "honest": {
+   "start": 93.159,
+   "end": 98.215,
+   "text": "And yes, it's still tokens underneath. Devs were loud about that. But now you can see it, and cap it.",
+   "heard": "and yes, it's still tokens underneath. Devs were loud about that, but now you can see it and cap it."
+  },
+  "score": {
+   "start": 99.395,
+   "end": 107.033,
+   "text": "Tab-hopping stack versus the Copilot app. Context switching, parallel agents, CI babysitting, cloud visibility, spend control.",
+   "heard": "tab -hopping stack versus the Copilot app, context switching, parallel agents, CI, babysitting, cloud visibility, spend control"
+  },
+  "cta": {
+   "start": 107.813,
+   "end": 111.951,
+   "text": "One app. Many agents. Ship it. It's a technical preview, so check your plan.",
+   "heard": "One app, many agents, ship it. It's a technical preview, so check your plan."
+  }
+ },
+ "words": {
+  "hook": [
+   {
+    "w": "POV:",
+    "s": 0.35,
+    "e": 0.77
+   },
+   {
+    "w": "you've",
+    "s": 1.47,
+    "e": 1.65
+   },
+   {
+    "w": "got",
+    "s": 1.65,
+    "e": 1.79
+   },
+   {
+    "w": "fourteen",
+    "s": 1.824,
+    "e": 2.096
+   },
+   {
+    "w": "tabs,",
+    "s": 2.13,
+    "e": 2.41
+   },
+   {
+    "w": "three",
+    "s": 2.448,
+    "e": 2.752
+   },
+   {
+    "w": "terminals,",
+    "s": 2.79,
+    "e": 3.17
+   },
+   {
+    "w": "two",
+    "s": 3.202,
+    "e": 3.458
+   },
+   {
+    "w": "agents",
+    "s": 3.49,
+    "e": 3.83
+   },
+   {
+    "w": "and",
+    "s": 4.25,
+    "e": 4.39
+   },
+   {
+    "w": "they're",
+    "s": 4.39,
+    "e": 4.59
+   },
+   {
+    "w": "fighting",
+    "s": 4.59,
+    "e": 4.83
+   },
+   {
+    "w": "over",
+    "s": 4.83,
+    "e": 5.11
+   },
+   {
+    "w": "the",
+    "s": 5.11,
+    "e": 5.25
+   },
+   {
+    "w": "same",
+    "s": 5.25,
+    "e": 5.43
+   },
+   {
+    "w": "branch.",
+    "s": 5.43,
+    "e": 5.67
+   }
+  ],
+  "reveal": [
+   {
+    "w": "Meet",
+    "s": 7.098,
+    "e": 7.278
+   },
+   {
+    "w": "the",
+    "s": 7.278,
+    "e": 7.438
+   },
+   {
+    "w": "GitHub",
+    "s": 7.438,
+    "e": 7.778
+   },
+   {
+    "w": "Copilot",
+    "s": 7.778,
+    "e": 8.278
+   },
+   {
+    "w": "app.",
+    "s": 8.278,
+    "e": 8.518
+   },
+   {
+    "w": "The",
+    "s": 8.898,
+    "e": 8.998
+   },
+   {
+    "w": "desktop",
+    "s": 8.998,
+    "e": 9.258
+   },
+   {
+    "w": "home",
+    "s": 9.258,
+    "e": 9.658
+   },
+   {
+    "w": "for",
+    "s": 9.658,
+    "e": 9.878
+   },
+   {
+    "w": "your",
+    "s": 9.878,
+    "e": 9.998
+   },
+   {
+    "w": "agents.",
+    "s": 9.998,
+    "e": 10.258
+   }
+  ],
+  "mywork": [
+   {
+    "w": "One",
+    "s": 10.813,
+    "e": 10.993
+   },
+   {
+    "w": "My",
+    "s": 10.993,
+    "e": 11.173
+   },
+   {
+    "w": "Work",
+    "s": 11.173,
+    "e": 11.393
+   },
+   {
+    "w": "view:",
+    "s": 11.393,
+    "e": 11.673
+   },
+   {
+    "w": "agent",
+    "s": 12.133,
+    "e": 12.333
+   },
+   {
+    "w": "sessions,",
+    "s": 12.333,
+    "e": 12.753
+   },
+   {
+    "w": "issues,",
+    "s": 13.173,
+    "e": 13.413
+   },
+   {
+    "w": "pull",
+    "s": 13.633,
+    "e": 13.813
+   },
+   {
+    "w": "requests",
+    "s": 13.813,
+    "e": 14.253
+   },
+   {
+    "w": "and",
+    "s": 14.393,
+    "e": 14.513
+   },
+   {
+    "w": "background",
+    "s": 14.513,
+    "e": 14.833
+   },
+   {
+    "w": "automations,",
+    "s": 14.833,
+    "e": 15.553
+   },
+   {
+    "w": "across",
+    "s": 15.553,
+    "e": 15.913
+   },
+   {
+    "w": "your",
+    "s": 15.913,
+    "e": 16.133
+   },
+   {
+    "w": "repos.",
+    "s": 16.133,
+    "e": 16.553
+   },
+   {
+    "w": "Basically,",
+    "s": 17.153,
+    "e": 17.553
+   },
+   {
+    "w": "air-traffic",
+    "s": 17.619,
+    "e": 18.147
+   },
+   {
+    "w": "control",
+    "s": 18.213,
+    "e": 18.593
+   },
+   {
+    "w": "for",
+    "s": 18.593,
+    "e": 18.853
+   },
+   {
+    "w": "agents.",
+    "s": 18.853,
+    "e": 19.133
+   }
+  ],
+  "worktree": [
+   {
+    "w": "Every",
+    "s": 19.711,
+    "e": 19.931
+   },
+   {
+    "w": "session",
+    "s": 19.931,
+    "e": 20.211
+   },
+   {
+    "w": "runs",
+    "s": 20.211,
+    "e": 20.531
+   },
+   {
+    "w": "in",
+    "s": 20.531,
+    "e": 20.711
+   },
+   {
+    "w": "its",
+    "s": 20.711,
+    "e": 20.811
+   },
+   {
+    "w": "own",
+    "s": 20.811,
+    "e": 21.051
+   },
+   {
+    "w": "git",
+    "s": 21.051,
+    "e": 21.231
+   },
+   {
+    "w": "worktree.",
+    "s": 21.231,
+    "e": 21.771
+   },
+   {
+    "w": "Parallel",
+    "s": 22.631,
+    "e": 22.631
+   },
+   {
+    "w": "agents,",
+    "s": 22.631,
+    "e": 23.071
+   },
+   {
+    "w": "separate",
+    "s": 23.491,
+    "e": 23.571
+   },
+   {
+    "w": "lanes,",
+    "s": 23.571,
+    "e": 23.991
+   },
+   {
+    "w": "zero",
+    "s": 24.311,
+    "e": 24.551
+   },
+   {
+    "w": "branch",
+    "s": 24.551,
+    "e": 24.871
+   },
+   {
+    "w": "juggling.",
+    "s": 24.871,
+    "e": 25.211
+   },
+   {
+    "w": "No",
+    "s": 25.691,
+    "e": 25.871
+   },
+   {
+    "w": "more,",
+    "s": 25.871,
+    "e": 26.091
+   },
+   {
+    "w": "who",
+    "s": 26.091,
+    "e": 26.311
+   },
+   {
+    "w": "touched",
+    "s": 26.311,
+    "e": 26.551
+   },
+   {
+    "w": "my",
+    "s": 26.551,
+    "e": 26.791
+   },
+   {
+    "w": "branch?",
+    "s": 26.791,
+    "e": 27.051
+   }
+  ],
+  "pipeline": [
+   {
+    "w": "Start",
+    "s": 27.565,
+    "e": 27.805
+   },
+   {
+    "w": "from",
+    "s": 27.805,
+    "e": 27.965
+   },
+   {
+    "w": "an",
+    "s": 27.965,
+    "e": 28.065
+   },
+   {
+    "w": "issue,",
+    "s": 28.065,
+    "e": 28.265
+   },
+   {
+    "w": "the",
+    "s": 28.405,
+    "e": 28.465
+   },
+   {
+    "w": "agent",
+    "s": 28.465,
+    "e": 28.725
+   },
+   {
+    "w": "does",
+    "s": 28.725,
+    "e": 28.945
+   },
+   {
+    "w": "the",
+    "s": 28.945,
+    "e": 29.105
+   },
+   {
+    "w": "work,",
+    "s": 29.105,
+    "e": 29.285
+   },
+   {
+    "w": "you",
+    "s": 29.385,
+    "e": 29.485
+   },
+   {
+    "w": "review",
+    "s": 29.485,
+    "e": 29.725
+   },
+   {
+    "w": "the",
+    "s": 29.725,
+    "e": 29.865
+   },
+   {
+    "w": "PR.",
+    "s": 29.865,
+    "e": 30.245
+   },
+   {
+    "w": "Then",
+    "s": 30.885,
+    "e": 31.065
+   },
+   {
+    "w": "Agent",
+    "s": 31.065,
+    "e": 31.445
+   },
+   {
+    "w": "Merge",
+    "s": 31.445,
+    "e": 31.685
+   },
+   {
+    "w": "takes",
+    "s": 31.685,
+    "e": 31.945
+   },
+   {
+    "w": "over:",
+    "s": 31.945,
+    "e": 32.285
+   },
+   {
+    "w": "it",
+    "s": 32.645,
+    "e": 32.745
+   },
+   {
+    "w": "watches",
+    "s": 32.745,
+    "e": 33.045
+   },
+   {
+    "w": "CI,",
+    "s": 33.045,
+    "e": 33.425
+   },
+   {
+    "w": "tracks",
+    "s": 34.065,
+    "e": 34.305
+   },
+   {
+    "w": "required",
+    "s": 34.305,
+    "e": 34.765
+   },
+   {
+    "w": "reviewers,",
+    "s": 34.765,
+    "e": 35.245
+   },
+   {
+    "w": "fixes",
+    "s": 35.565,
+    "e": 35.825
+   },
+   {
+    "w": "failing",
+    "s": 35.825,
+    "e": 36.185
+   },
+   {
+    "w": "checks,",
+    "s": 36.185,
+    "e": 36.525
+   },
+   {
+    "w": "and",
+    "s": 36.725,
+    "e": 36.805
+   },
+   {
+    "w": "merges",
+    "s": 36.805,
+    "e": 37.125
+   },
+   {
+    "w": "when",
+    "s": 37.125,
+    "e": 37.325
+   },
+   {
+    "w": "your",
+    "s": 37.325,
+    "e": 37.445
+   },
+   {
+    "w": "conditions",
+    "s": 37.445,
+    "e": 37.705
+   },
+   {
+    "w": "pass.",
+    "s": 37.705,
+    "e": 38.145
+   },
+   {
+    "w": "It",
+    "s": 38.725,
+    "e": 38.845
+   },
+   {
+    "w": "babysits",
+    "s": 38.845,
+    "e": 39.325
+   },
+   {
+    "w": "CI,",
+    "s": 39.325,
+    "e": 39.765
+   },
+   {
+    "w": "so",
+    "s": 40.285,
+    "e": 40.445
+   },
+   {
+    "w": "you",
+    "s": 40.445,
+    "e": 40.585
+   },
+   {
+    "w": "don't.",
+    "s": 40.585,
+    "e": 40.925
+   }
+  ],
+  "models": [
+   {
+    "w": "Pick",
+    "s": 41.263,
+    "e": 41.403
+   },
+   {
+    "w": "a",
+    "s": 41.403,
+    "e": 41.543
+   },
+   {
+    "w": "model",
+    "s": 41.543,
+    "e": 41.803
+   },
+   {
+    "w": "and",
+    "s": 41.803,
+    "e": 42.043
+   },
+   {
+    "w": "reasoning",
+    "s": 42.043,
+    "e": 42.323
+   },
+   {
+    "w": "effort",
+    "s": 42.323,
+    "e": 42.683
+   },
+   {
+    "w": "per",
+    "s": 42.683,
+    "e": 42.883
+   },
+   {
+    "w": "session,",
+    "s": 42.883,
+    "e": 43.223
+   },
+   {
+    "w": "or",
+    "s": 43.583,
+    "e": 43.623
+   },
+   {
+    "w": "let",
+    "s": 43.623,
+    "e": 43.823
+   },
+   {
+    "w": "Auto",
+    "s": 43.823,
+    "e": 44.143
+   },
+   {
+    "w": "choose.",
+    "s": 44.143,
+    "e": 44.443
+   },
+   {
+    "w": "Change",
+    "s": 45.103,
+    "e": 45.203
+   },
+   {
+    "w": "it",
+    "s": 45.217,
+    "e": 45.329
+   },
+   {
+    "w": "any",
+    "s": 45.343,
+    "e": 45.523
+   },
+   {
+    "w": "time,",
+    "s": 45.523,
+    "e": 45.803
+   },
+   {
+    "w": "mid-task.",
+    "s": 45.893,
+    "e": 46.613
+   },
+   {
+    "w": "Bring",
+    "s": 46.703,
+    "e": 46.783
+   },
+   {
+    "w": "your",
+    "s": 46.783,
+    "e": 46.903
+   },
+   {
+    "w": "own",
+    "s": 46.903,
+    "e": 47.043
+   },
+   {
+    "w": "key,",
+    "s": 47.043,
+    "e": 47.243
+   },
+   {
+    "w": "too.",
+    "s": 47.243,
+    "e": 47.503
+   }
+  ],
+  "canvas": [
+   {
+    "w": "Canvases",
+    "s": 47.965,
+    "e": 48.425
+   },
+   {
+    "w": "are",
+    "s": 48.425,
+    "e": 48.645
+   },
+   {
+    "w": "shared",
+    "s": 48.645,
+    "e": 48.905
+   },
+   {
+    "w": "work",
+    "s": 48.905,
+    "e": 49.165
+   },
+   {
+    "w": "surfaces:",
+    "s": 49.165,
+    "e": 49.565
+   },
+   {
+    "w": "plans,",
+    "s": 50.345,
+    "e": 50.345
+   },
+   {
+    "w": "terminals,",
+    "s": 50.585,
+    "e": 50.825
+   },
+   {
+    "w": "browsers,",
+    "s": 51.145,
+    "e": 51.345
+   },
+   {
+    "w": "deployments.",
+    "s": 51.545,
+    "e": 51.885
+   },
+   {
+    "w": "You",
+    "s": 52.485,
+    "e": 52.525
+   },
+   {
+    "w": "edit,",
+    "s": 52.525,
+    "e": 52.785
+   },
+   {
+    "w": "the",
+    "s": 52.785,
+    "e": 53.005
+   },
+   {
+    "w": "agent",
+    "s": 53.005,
+    "e": 53.305
+   },
+   {
+    "w": "edits.",
+    "s": 53.305,
+    "e": 53.605
+   },
+   {
+    "w": "Same",
+    "s": 54.145,
+    "e": 54.405
+   },
+   {
+    "w": "page,",
+    "s": 54.405,
+    "e": 54.745
+   },
+   {
+    "w": "literally.",
+    "s": 54.885,
+    "e": 55.065
+   }
+  ],
+  "azure": [
+   {
+    "w": "Azure",
+    "s": 55.605,
+    "e": 55.905
+   },
+   {
+    "w": "shops:",
+    "s": 55.905,
+    "e": 56.345
+   },
+   {
+    "w": "Azure",
+    "s": 56.785,
+    "e": 57.025
+   },
+   {
+    "w": "DevOps",
+    "s": 57.025,
+    "e": 57.485
+   },
+   {
+    "w": "work",
+    "s": 57.485,
+    "e": 57.765
+   },
+   {
+    "w": "items",
+    "s": 57.765,
+    "e": 58.125
+   },
+   {
+    "w": "and",
+    "s": 58.125,
+    "e": 58.405
+   },
+   {
+    "w": "pull",
+    "s": 58.405,
+    "e": 58.625
+   },
+   {
+    "w": "requests",
+    "s": 58.625,
+    "e": 59.065
+   },
+   {
+    "w": "show",
+    "s": 59.065,
+    "e": 59.345
+   },
+   {
+    "w": "up",
+    "s": 59.345,
+    "e": 59.505
+   },
+   {
+    "w": "in",
+    "s": 59.505,
+    "e": 59.625
+   },
+   {
+    "w": "My",
+    "s": 59.625,
+    "e": 59.765
+   },
+   {
+    "w": "Work,",
+    "s": 59.765,
+    "e": 60.045
+   },
+   {
+    "w": "and",
+    "s": 60.045,
+    "e": 60.505
+   },
+   {
+    "w": "community",
+    "s": 60.505,
+    "e": 60.845
+   },
+   {
+    "w": "canvas",
+    "s": 60.845,
+    "e": 61.245
+   },
+   {
+    "w": "extensions",
+    "s": 61.245,
+    "e": 61.825
+   },
+   {
+    "w": "bring",
+    "s": 61.825,
+    "e": 62.165
+   },
+   {
+    "w": "Functions,",
+    "s": 62.165,
+    "e": 62.705
+   },
+   {
+    "w": "Resource",
+    "s": 63.085,
+    "e": 63.345
+   },
+   {
+    "w": "Graph,",
+    "s": 63.345,
+    "e": 63.725
+   },
+   {
+    "w": "even",
+    "s": 64.045,
+    "e": 64.205
+   },
+   {
+    "w": "your",
+    "s": 64.205,
+    "e": 64.385
+   },
+   {
+    "w": "Azure",
+    "s": 64.385,
+    "e": 64.685
+   },
+   {
+    "w": "costs.",
+    "s": 64.685,
+    "e": 65.025
+   },
+   {
+    "w": "Finally,",
+    "s": 65.765,
+    "e": 66.105
+   },
+   {
+    "w": "the",
+    "s": 66.345,
+    "e": 66.485
+   },
+   {
+    "w": "cloud",
+    "s": 66.485,
+    "e": 66.665
+   },
+   {
+    "w": "bill",
+    "s": 66.665,
+    "e": 66.925
+   },
+   {
+    "w": "next",
+    "s": 66.925,
+    "e": 67.185
+   },
+   {
+    "w": "to",
+    "s": 67.185,
+    "e": 67.365
+   },
+   {
+    "w": "the",
+    "s": 67.365,
+    "e": 67.445
+   },
+   {
+    "w": "code.",
+    "s": 67.445,
+    "e": 67.665
+   }
+  ],
+  "safety": [
+   {
+    "w": "Run",
+    "s": 68.173,
+    "e": 68.373
+   },
+   {
+    "w": "agents",
+    "s": 68.373,
+    "e": 68.773
+   },
+   {
+    "w": "in",
+    "s": 68.773,
+    "e": 68.993
+   },
+   {
+    "w": "a",
+    "s": 68.993,
+    "e": 69.113
+   },
+   {
+    "w": "local",
+    "s": 69.113,
+    "e": 69.373
+   },
+   {
+    "w": "or",
+    "s": 69.373,
+    "e": 69.653
+   },
+   {
+    "w": "cloud",
+    "s": 69.653,
+    "e": 69.953
+   },
+   {
+    "w": "sandbox.",
+    "s": 69.953,
+    "e": 70.453
+   },
+   {
+    "w": "The",
+    "s": 71.133,
+    "e": 71.193
+   },
+   {
+    "w": "cloud",
+    "s": 71.193,
+    "e": 71.453
+   },
+   {
+    "w": "agent",
+    "s": 71.453,
+    "e": 71.773
+   },
+   {
+    "w": "asks",
+    "s": 71.773,
+    "e": 72.133
+   },
+   {
+    "w": "before",
+    "s": 72.133,
+    "e": 72.493
+   },
+   {
+    "w": "every",
+    "s": 72.493,
+    "e": 72.833
+   },
+   {
+    "w": "write,",
+    "s": 72.833,
+    "e": 73.093
+   },
+   {
+    "w": "until",
+    "s": 73.093,
+    "e": 73.553
+   },
+   {
+    "w": "you",
+    "s": 73.553,
+    "e": 73.713
+   },
+   {
+    "w": "flip",
+    "s": 73.713,
+    "e": 73.933
+   },
+   {
+    "w": "on",
+    "s": 73.933,
+    "e": 74.153
+   },
+   {
+    "w": "autopilot.",
+    "s": 74.153,
+    "e": 74.813
+   },
+   {
+    "w": "And",
+    "s": 75.153,
+    "e": 75.353
+   },
+   {
+    "w": "slash",
+    "s": 75.353,
+    "e": 75.653
+   },
+   {
+    "w": "security",
+    "s": 75.653,
+    "e": 76.053
+   },
+   {
+    "w": "review",
+    "s": 76.053,
+    "e": 76.473
+   },
+   {
+    "w": "adds",
+    "s": 76.473,
+    "e": 76.833
+   },
+   {
+    "w": "a",
+    "s": 76.833,
+    "e": 76.973
+   },
+   {
+    "w": "security",
+    "s": 76.973,
+    "e": 77.313
+   },
+   {
+    "w": "pass.",
+    "s": 77.313,
+    "e": 77.653
+   }
+  ],
+  "money": [
+   {
+    "w": "Now,",
+    "s": 78.138,
+    "e": 78.358
+   },
+   {
+    "w": "money.",
+    "s": 78.358,
+    "e": 78.678
+   },
+   {
+    "w": "Since",
+    "s": 79.278,
+    "e": 79.338
+   },
+   {
+    "w": "June",
+    "s": 79.338,
+    "e": 79.578
+   },
+   {
+    "w": "first,",
+    "s": 79.644,
+    "e": 80.172
+   },
+   {
+    "w": "Copilot",
+    "s": 80.238,
+    "e": 80.558
+   },
+   {
+    "w": "runs",
+    "s": 80.558,
+    "e": 80.898
+   },
+   {
+    "w": "on",
+    "s": 80.898,
+    "e": 81.198
+   },
+   {
+    "w": "GitHub",
+    "s": 81.198,
+    "e": 81.498
+   },
+   {
+    "w": "AI",
+    "s": 81.498,
+    "e": 82.018
+   },
+   {
+    "w": "Credits.",
+    "s": 82.018,
+    "e": 82.318
+   },
+   {
+    "w": "Every",
+    "s": 82.938,
+    "e": 83.138
+   },
+   {
+    "w": "plan",
+    "s": 83.138,
+    "e": 83.438
+   },
+   {
+    "w": "includes",
+    "s": 83.438,
+    "e": 83.858
+   },
+   {
+    "w": "monthly",
+    "s": 83.858,
+    "e": 84.278
+   },
+   {
+    "w": "credits,",
+    "s": 84.278,
+    "e": 84.598
+   },
+   {
+    "w": "a",
+    "s": 84.998,
+    "e": 85.058
+   },
+   {
+    "w": "single",
+    "s": 85.058,
+    "e": 85.378
+   },
+   {
+    "w": "dollar-based",
+    "s": 85.436,
+    "e": 85.9
+   },
+   {
+    "w": "credit",
+    "s": 85.958,
+    "e": 86.278
+   },
+   {
+    "w": "pool",
+    "s": 86.278,
+    "e": 86.518
+   },
+   {
+    "w": "across",
+    "s": 86.518,
+    "e": 86.838
+   },
+   {
+    "w": "models,",
+    "s": 86.838,
+    "e": 87.238
+   },
+   {
+    "w": "with",
+    "s": 87.598,
+    "e": 87.738
+   },
+   {
+    "w": "budgets",
+    "s": 87.738,
+    "e": 88.058
+   },
+   {
+    "w": "and",
+    "s": 88.058,
+    "e": 88.318
+   },
+   {
+    "w": "caps",
+    "s": 88.318,
+    "e": 88.538
+   },
+   {
+    "w": "per",
+    "s": 88.538,
+    "e": 88.778
+   },
+   {
+    "w": "user,",
+    "s": 88.778,
+    "e": 89.058
+   },
+   {
+    "w": "cost",
+    "s": 89.438,
+    "e": 89.498
+   },
+   {
+    "w": "center",
+    "s": 89.498,
+    "e": 89.858
+   },
+   {
+    "w": "or",
+    "s": 89.858,
+    "e": 90.178
+   },
+   {
+    "w": "enterprise.",
+    "s": 90.178,
+    "e": 90.638
+   },
+   {
+    "w": "Completions",
+    "s": 91.358,
+    "e": 91.818
+   },
+   {
+    "w": "don't",
+    "s": 91.818,
+    "e": 92.178
+   },
+   {
+    "w": "burn",
+    "s": 92.178,
+    "e": 92.318
+   },
+   {
+    "w": "credits.",
+    "s": 92.318,
+    "e": 92.678
+   }
+  ],
+  "honest": [
+   {
+    "w": "And",
+    "s": 93.159,
+    "e": 93.299
+   },
+   {
+    "w": "yes,",
+    "s": 93.299,
+    "e": 93.519
+   },
+   {
+    "w": "it's",
+    "s": 93.739,
+    "e": 93.859
+   },
+   {
+    "w": "still",
+    "s": 93.859,
+    "e": 94.019
+   },
+   {
+    "w": "tokens",
+    "s": 94.019,
+    "e": 94.379
+   },
+   {
+    "w": "underneath.",
+    "s": 94.379,
+    "e": 94.779
+   },
+   {
+    "w": "Devs",
+    "s": 95.419,
+    "e": 95.539
+   },
+   {
+    "w": "were",
+    "s": 95.539,
+    "e": 95.619
+   },
+   {
+    "w": "loud",
+    "s": 95.619,
+    "e": 95.799
+   },
+   {
+    "w": "about",
+    "s": 95.799,
+    "e": 96.019
+   },
+   {
+    "w": "that.",
+    "s": 96.019,
+    "e": 96.279
+   },
+   {
+    "w": "But",
+    "s": 96.539,
+    "e": 96.679
+   },
+   {
+    "w": "now",
+    "s": 96.679,
+    "e": 96.859
+   },
+   {
+    "w": "you",
+    "s": 96.859,
+    "e": 97.039
+   },
+   {
+    "w": "can",
+    "s": 97.039,
+    "e": 97.179
+   },
+   {
+    "w": "see",
+    "s": 97.179,
+    "e": 97.379
+   },
+   {
+    "w": "it,",
+    "s": 97.379,
+    "e": 97.559
+   },
+   {
+    "w": "and",
+    "s": 97.559,
+    "e": 97.699
+   },
+   {
+    "w": "cap",
+    "s": 97.699,
+    "e": 97.899
+   },
+   {
+    "w": "it.",
+    "s": 97.899,
+    "e": 98.099
+   }
+  ],
+  "score": [
+   {
+    "w": "Tab-hopping",
+    "s": 99.449,
+    "e": 99.881
+   },
+   {
+    "w": "stack",
+    "s": 99.935,
+    "e": 100.215
+   },
+   {
+    "w": "versus",
+    "s": 100.215,
+    "e": 100.515
+   },
+   {
+    "w": "the",
+    "s": 100.515,
+    "e": 100.735
+   },
+   {
+    "w": "Copilot",
+    "s": 100.735,
+    "e": 101.115
+   },
+   {
+    "w": "app.",
+    "s": 101.115,
+    "e": 101.395
+   },
+   {
+    "w": "Context",
+    "s": 102.195,
+    "e": 102.235
+   },
+   {
+    "w": "switching,",
+    "s": 102.235,
+    "e": 102.675
+   },
+   {
+    "w": "parallel",
+    "s": 103.015,
+    "e": 103.235
+   },
+   {
+    "w": "agents,",
+    "s": 103.235,
+    "e": 103.735
+   },
+   {
+    "w": "CI",
+    "s": 104.035,
+    "e": 104.255
+   },
+   {
+    "w": "babysitting,",
+    "s": 104.735,
+    "e": 105.175
+   },
+   {
+    "w": "cloud",
+    "s": 105.495,
+    "e": 105.555
+   },
+   {
+    "w": "visibility,",
+    "s": 105.555,
+    "e": 105.955
+   },
+   {
+    "w": "spend",
+    "s": 106.455,
+    "e": 106.455
+   },
+   {
+    "w": "control.",
+    "s": 106.455,
+    "e": 106.815
+   }
+  ],
+  "cta": [
+   {
+    "w": "One",
+    "s": 107.813,
+    "e": 108.013
+   },
+   {
+    "w": "app.",
+    "s": 108.013,
+    "e": 108.233
+   },
+   {
+    "w": "Many",
+    "s": 108.493,
+    "e": 108.573
+   },
+   {
+    "w": "agents.",
+    "s": 108.573,
+    "e": 109.013
+   },
+   {
+    "w": "Ship",
+    "s": 109.213,
+    "e": 109.413
+   },
+   {
+    "w": "it.",
+    "s": 109.413,
+    "e": 109.633
+   },
+   {
+    "w": "It's",
+    "s": 109.933,
+    "e": 110.073
+   },
+   {
+    "w": "a",
+    "s": 110.073,
+    "e": 110.173
+   },
+   {
+    "w": "technical",
+    "s": 110.173,
+    "e": 110.513
+   },
+   {
+    "w": "preview,",
+    "s": 110.513,
+    "e": 110.853
+   },
+   {
+    "w": "so",
+    "s": 111.073,
+    "e": 111.173
+   },
+   {
+    "w": "check",
+    "s": 111.173,
+    "e": 111.373
+   },
+   {
+    "w": "your",
+    "s": 111.373,
+    "e": 111.533
+   },
+   {
+    "w": "plan.",
+    "s": 111.533,
+    "e": 111.753
+   }
+  ]
+ },
+ "total": 115.551
+}

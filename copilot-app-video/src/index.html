@@ -1,0 +1,170 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>GitHub Copilot app — explainer</title>
+<script src="../node_modules/gsap/dist/gsap.min.js"></script>
+<script src="../node_modules/gsap/dist/TextPlugin.min.js"></script>
+<script src="data.js"></script>
+<style>
+@font-face{font-family:'Mona Sans';src:url(../assets/fonts/mona-sans-latin-standard-normal.woff2) format('woff2');font-weight:200 900;font-stretch:75% 125%}
+@font-face{font-family:'Mona Sans';font-style:italic;src:url(../assets/fonts/mona-sans-latin-standard-italic.woff2) format('woff2');font-weight:200 900;font-stretch:75% 125%}
+@font-face{font-family:'Hubot Sans';src:url(../assets/fonts/hubot-sans-latin-standard-normal.woff2) format('woff2');font-weight:200 900;font-stretch:75% 125%}
+@font-face{font-family:'Monaspace Neon';src:url(../assets/fonts/monaspace-neon-latin-400-normal.woff2) format('woff2');font-weight:400}
+@font-face{font-family:'Monaspace Neon';src:url(../assets/fonts/monaspace-neon-latin-700-normal.woff2) format('woff2');font-weight:700}
+@font-face{font-family:'Instrument Serif';font-style:italic;src:url(../assets/fonts/instrument-serif-latin-400-italic.woff2) format('woff2')}
+:root{--canvas:#0D1117;--surface:#161B22;--border:#30363D;--fg:#F0F6FC;--muted:#8B949E;--green:#2DA44E;--green2:#3FB950;--purple:#8250DF;--purple2:#A371F7;--red:#F85149;--attn:#D29922;--wfg:#1F2328;--blue:#58A6FF}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+body{font-family:'Mona Sans',sans-serif;color:var(--fg)}
+#stage{position:absolute;inset:0;overflow:hidden;background:var(--canvas)}
+#world{position:absolute;inset:0;transform-origin:50% 50%}
+.shot{position:absolute;inset:0;visibility:hidden;overflow:hidden}
+.punch{position:absolute;inset:0;transform-origin:50% 50%}
+.t-dark{background:var(--canvas);color:var(--fg)}
+.t-white{background:#FFFFFF;color:var(--wfg)}
+.t-purple{background:var(--purple);color:#fff}
+.t-green{background:#1A7F37;color:#fff}
+.t-red{background:#3d0f10;color:#fff}
+.t-black{background:#010409;color:var(--fg)}
+/* chrome */
+#chrome{position:absolute;inset:0;pointer-events:none;z-index:50;font-family:'Monaspace Neon',monospace;font-size:17px;letter-spacing:.06em;text-transform:uppercase}
+#chrome .top,#chrome .bot{position:absolute;left:80px;right:80px;display:flex;justify-content:space-between;align-items:center}
+#chrome .top{top:30px;padding-bottom:10px;border-bottom:1.5px solid currentColor}
+#chrome .bot{bottom:26px;padding-top:10px;border-top:1.5px solid currentColor}
+#chrome{color:rgba(240,246,252,.62)}
+#chrome.light{color:rgba(31,35,40,.62)}
+#chrome.onpurple{color:rgba(255,255,255,.75)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--red);margin-right:10px;vertical-align:middle}
+/* captions */
+#cap{position:absolute;left:0;right:0;bottom:92px;z-index:60;text-align:center;pointer-events:none}
+#cap .box{display:inline-block;max-width:1500px;background:rgba(1,4,9,.84);border:1px solid #30363D;border-radius:10px;padding:12px 26px;font-family:'Monaspace Neon',monospace;font-size:34px;line-height:1.3;color:#8B949E}
+#cap .box b{font-weight:400;color:#F0F6FC}
+#cap .box i{font-style:normal;color:#0D1117;background:#3FB950;border-radius:4px;padding:0 4px;font-weight:700}
+#cap .pr{color:#A371F7;font-weight:700}
+/* grain */
+.grain{position:absolute;inset:0;z-index:70;opacity:.07;mix-blend-mode:overlay;background-size:960px 540px;image-rendering:pixelated;display:none;transform:scale(2);transform-origin:0 0;width:960px;height:540px}
+.flash{position:absolute;inset:0;z-index:65;background:#fff;opacity:0;pointer-events:none}
+/* type */
+.disp{font-family:'Mona Sans';font-weight:900;font-stretch:125%;letter-spacing:-.02em;line-height:.9}
+.serif{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+.mono{font-family:'Monaspace Neon',monospace}
+.hub{font-family:'Hubot Sans';font-stretch:125%;font-weight:800}
+.c{position:absolute;left:0;right:0;text-align:center}
+.mask{display:block;overflow:hidden;padding:.3em .2em;margin:-.3em -.2em}
+.mask>span{display:inline-block}
+.muted{color:var(--muted)}
+.g{color:var(--green2)}.p{color:var(--purple2)}.r{color:var(--red)}.a{color:var(--attn)}
+.kicker{font-family:'Monaspace Neon';font-size:24px;letter-spacing:.14em;text-transform:uppercase}
+/* ui */
+.win{position:absolute;background:var(--surface);border:1.5px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.win .bar{height:44px;border-bottom:1.5px solid var(--border);display:flex;align-items:center;padding:0 16px;gap:8px;font-family:'Monaspace Neon';font-size:16px;color:var(--muted)}
+.win .bar i{width:13px;height:13px;border-radius:50%;background:#30363D;display:inline-block}
+.term{font-family:'Monaspace Neon';font-size:24px;line-height:1.5;padding:18px 22px;color:var(--fg);white-space:pre}
+.row{display:flex;align-items:center;gap:16px;padding:16px 22px;border-bottom:1.5px solid var(--border);font-size:26px}
+.ico svg{width:30px;height:30px;fill:currentColor;display:block}
+.lab{font-family:'Monaspace Neon';font-size:16px;padding:3px 12px;border-radius:999px;border:1.5px solid currentColor}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:8px 20px;border-radius:999px;font-weight:700;font-size:24px}
+.sticker{position:absolute;background:#fff;color:#0D1117;font-family:'Mona Sans';font-weight:800;font-stretch:110%;font-size:34px;padding:14px 24px;border-radius:16px;box-shadow:6px 6px 0 #000;border:3px solid #000;white-space:nowrap;z-index:20}
+.sticker.pu{background:var(--purple2);color:#fff}.sticker.gr{background:var(--green2);color:#0D1117}.sticker.ye{background:#F2CC60}
+.toast{position:absolute;right:90px;top:120px;background:#161B22;border:1.5px solid #30363D;border-left:6px solid var(--green2);border-radius:12px;padding:18px 26px;font-size:26px;font-weight:600;display:flex;gap:14px;align-items:center;z-index:25;box-shadow:0 20px 50px rgba(0,0,0,.5);color:var(--fg)}
+.hand{position:absolute;overflow:visible;z-index:22}
+.hand path{fill:none;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+.handlab{position:absolute;font-family:'Instrument Serif';font-style:italic;font-size:52px;z-index:22}
+.cursor{position:absolute;width:44px;height:44px;z-index:30}
+.card{position:absolute;background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:22px 26px}
+.t-white .card,.t-white .win{background:#F6F8FA;border-color:#D1D9E0;box-shadow:0 20px 50px rgba(0,0,0,.12)}
+.sq{position:absolute;width:52px;height:52px;border-radius:9px}
+.stamp{position:absolute;border:8px solid var(--purple2);color:var(--purple2);font-family:'Mona Sans';font-weight:900;font-stretch:125%;font-size:120px;padding:6px 40px;border-radius:24px;transform:rotate(-8deg);z-index:26;background:rgba(13,17,23,.85);display:flex;gap:24px;align-items:center}
+.stamp svg{width:110px;height:110px;fill:currentColor}
+.gauge-arc{fill:none;stroke-width:40;stroke-linecap:round}
+</style></head>
+<body>
+<div id="stage"><div id="world"></div>
+<div id="chrome"><div class="top"><span id="c-issue">DEV TOOLS ISSUE Nº03</span><span id="c-sec">§ 01 · HOOK</span><span>2026-09-29</span></div>
+<div class="bot"><span id="c-tc"><span class="dot"></span>00:00:00</span><span id="c-sha">commit 0000000</span><span id="c-pg">P. 01 / 13</span></div></div>
+<div id="cap"><span class="box" id="capbox"></span></div>
+<div id="fx"></div>
+<div class="grain" style="background-image:url(../assets/noise/n0.png)"></div><div class="grain" style="background-image:url(../assets/noise/n1.png)"></div><div class="grain" style="background-image:url(../assets/noise/n2.png)"></div><div class="grain" style="background-image:url(../assets/noise/n3.png)"></div>
+</div>
+<script>
+gsap.registerPlugin(TextPlugin);
+const FPS=30, TLD=window.TL, CUES=[], CUTS=[];
+const tl=gsap.timeline({paused:true});
+const norm=w=>w.toLowerCase().replace(/[^a-z0-9]/g,'');
+function Wd(key,word,n=1){const ws=TLD.words[key];let c=0;for(const x of ws){if(norm(x.w).startsWith(norm(word))&&++c===n)return x}throw Error('W miss '+key+':'+word+'#'+n)}
+const W=(k,w,n)=>Wd(k,w,n).s, WE=(k,w,n)=>Wd(k,w,n).e;
+const L=k=>TLD.lines[k].start, LE=k=>TLD.lines[k].end, END=TLD.total;
+const cue=(t,type,extra={})=>CUES.push(Object.assign({t:+t.toFixed(3),type},extra));
+let seed=42;const rnd=()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296};
+const I=(n,cls='')=>`<span class="ico ${cls}">${ICON[n]}</span>`;
+const world=document.getElementById('world');
+let uid=0;
+const SECS={hook:'01 · HOOK',reveal:'02 · REVEAL',mywork:'03 · MY WORK',worktree:'04 · WORKTREES',pipeline:'05 · AGENT MERGE',models:'06 · MODELS',canvas:'07 · CANVASES',azure:'08 · AZURE',safety:'09 · SAFETY',money:'10 · AI CREDITS',honest:'10b · FINE PRINT',score:'11 · SCOREBOARD',cta:'12 · SHIP IT'};
+// ---- shot factory
+function SHOT(sec,t0,t1,theme,html,build){
+  const id='s'+(++uid);const el=document.createElement('div');el.className='shot t-'+theme;el.id=id;
+  el.innerHTML=`<div class="punch">${html.replace(/\$ID/g,id)}</div>`;world.appendChild(el);
+  tl.set(el,{visibility:'visible'},t0);tl.set(el,{visibility:'hidden'},t1);
+  tl.fromTo(el.querySelector('.punch'),{scale:1.0},{scale:1.045,ease:'none',duration:t1-t0,immediateRender:false},t0);
+  CUTS.push({t:t0,t1,id,theme,sec});cue(t0,'cut');
+  const q=s=>el.querySelectorAll(s);
+  if(build)build(q,t0,t1,el);
+  // jump-cuts inside long shots keep the edit fast (alternate framings, ~every 1.4s)
+  const d=t1-t0;if(d>2.3&&!/NOJUMP/.test(html)){const n=Math.floor(d/1.4);for(let k=1;k<=n;k++){const tj=t0+d*k/(n+1);const on=k%2===1;
+    tl.set(el,{scale:on?1.09:1,transformOrigin:on?(k%4===1?'40% 45%':'60% 45%'):'50% 50%'},tj);cue(tj,'cut')}}
+  return el;
+}
+// ---- motion helpers (one tween per element/property)
+const slam=(t,els,d=.32)=>{tl.fromTo(els,{scale:1.7,opacity:0},{scale:1,opacity:1,duration:d,ease:'expo.out',stagger:.06,immediateRender:false},t);cue(t,'slam')};
+const pop=(t,els,st=.07,snd=true)=>{tl.fromTo(els,{scale:0,opacity:0},{scale:1,opacity:1,duration:.34,ease:'back.out(2.4)',stagger:st,immediateRender:false},t);if(snd){const n=els.length||1;for(let i=0;i<Math.min(n,6);i++)cue(t+i*st,'pop')}};
+const up=(t,els,st=.06)=>{tl.fromTo(els,{yPercent:115},{yPercent:0,duration:.42,ease:'power4.out',stagger:st,immediateRender:false},t);cue(t,'whoosh')};
+const fade=(t,els,d=.3)=>tl.fromTo(els,{opacity:0},{opacity:1,duration:d,ease:'none',immediateRender:false},t);
+const slideX=(t,els,x=-120,st=.06)=>{tl.fromTo(els,{x,opacity:0},{x:0,opacity:1,duration:.4,ease:'power3.out',stagger:st,immediateRender:false},t)};
+const draw=(t,els,d=.5)=>{tl.fromTo(els,{strokeDashoffset:1},{strokeDashoffset:0,duration:d,ease:'power2.inOut',immediateRender:false},t);cue(t,'scribble')};
+const type=(t,el,text,d)=>{d=d||Math.min(1.4,text.length*.035);tl.fromTo(el,{text:''},{text:{value:text},duration:d,ease:'none',immediateRender:false},t);cue(t,'keys',{d})};
+const count=(t,el,a,b,d,fmt=v=>Math.round(v))=>{const o={v:a};tl.fromTo(o,{v:a},{v:b,duration:d,ease:'power2.out',immediateRender:false,onUpdate:()=>el.textContent=fmt(o.v)},t)};
+const sticker=(t,el,rot=-6)=>{tl.fromTo(el,{scale:0,rotation:rot-25,opacity:0},{scale:1,rotation:rot,opacity:1,duration:.45,ease:'back.out(2.2)',immediateRender:false},t);cue(t,'pop2')};
+const toast=(t,el)=>{tl.fromTo(el,{xPercent:140},{xPercent:0,duration:.45,ease:'expo.out',immediateRender:false},t);cue(t,'toast')};
+const fx=document.getElementById('fx');
+const flash=(t,c='#fff',o=.85)=>{const f=document.createElement('div');f.className='flash';f.style.background=c;fx.appendChild(f);tl.fromTo(f,{opacity:o},{opacity:0,duration:.28,ease:'power2.out',immediateRender:false},t);tl.set(f,{opacity:0},t-.001)};
+const shake=(t,el,amt=14,d=.35)=>{tl.fromTo(el,{x:0},{x:0,duration:d,ease:'none',immediateRender:false,onUpdate:function(){const p=this.progress();el.style.transform=`translate(${Math.sin(p*60)*amt*(1-p)}px,${Math.cos(p*47)*amt*.6*(1-p)}px)`}},t)};
+const circle=(w,h,col='var(--purple2)')=>`<svg class="hand" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><path pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" stroke="${col}" d="M${w*.52},${h*.06} C${w*.9},${h*.02} ${w*1.0},${h*.45} ${w*.93},${h*.72} C${w*.84},${h*1.0} ${w*.18},${h*1.02} ${w*.05},${h*.66} C${-w*.03},${h*.35} ${w*.2},${h*.03} ${w*.6},${h*.1}"/></svg>`;
+const arrow=(w,h,col='var(--green2)')=>`<svg class="hand" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><path pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" stroke="${col}" d="M10,${h-10} C${w*.3},${h*.2} ${w*.6},${h*.15} ${w-14},14 M${w-60},10 L${w-14},14 L${w-24},58"/></svg>`;
+const CURSOR=`<svg viewBox="0 0 24 24"><path d="M3 2l7 19 2.5-7.5L20 11z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg>`;
+const beat=60/140;
+</script>
+<script src="shots.js"></script>
+<script>
+// ---- captions: phrase chunks
+const CHUNKS=[];
+for(const k of Object.keys(TLD.words)){let cur=[];const ws=TLD.words[k];
+  ws.forEach((w,i)=>{cur.push(w);const brk=/[,.:?!]$/.test(w.w)||cur.length>=7;if(brk||i===ws.length-1){CHUNKS.push({s:cur[0].s,e:cur[cur.length-1].e,ws:cur});cur=[]}})}
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+function caption(t){let c=null;for(const ch of CHUNKS){if(t>=ch.s-.08&&t<=ch.e+.25){c=ch}}
+  const box=document.getElementById('capbox');if(!c){box.parentNode.style.visibility='hidden';return}
+  box.parentNode.style.visibility='visible';
+  box.innerHTML='<span class="pr">&gt; </span>'+c.ws.map(w=>{const x=esc(w.w);return (t>=w.s-.03&&t<w.e+.05)?`<i>${x}</i>`:(t>=w.e?`<b>${x}</b>`:x)}).join(' ')}
+// ---- chrome
+const chromeEl=document.getElementById('chrome'),stage=document.getElementById('stage');
+const grains=[...document.querySelectorAll('.grain')];
+const SEC_ORDER=Object.keys(SECS);
+function shaAt(i){let h=(i*2654435761)>>>0;return (h.toString(16)+'0000000').slice(0,7)}
+window.seek=function(t,frame){
+  tl.seek(t,false);
+  let cur=CUTS[0];for(const c of CUTS){if(c.t<=t)cur=c}
+  chromeEl.className=cur.theme==='white'?'light':(cur.theme==='purple'||cur.theme==='green'?'onpurple':'');
+  document.getElementById('c-sec').textContent='§ '+SECS[cur.sec];
+  const idx=CUTS.indexOf(cur);
+  document.getElementById('c-sha').textContent='commit '+shaAt(idx+3)+' · shot '+String(idx+1).padStart(2,'0');
+  document.getElementById('c-pg').textContent='P. '+String(SEC_ORDER.indexOf(cur.sec)+1).padStart(2,'0')+' / 13';
+  const s=Math.floor(t),ff=Math.floor((t-s)*FPS);
+  document.getElementById('c-tc').innerHTML='<span class="dot"></span>'+[Math.floor(s/60),s%60,ff].map(v=>String(v).padStart(2,'0')).join(':');
+  caption(t);
+  grains.forEach((g,i)=>g.style.display=(i===(frame??Math.round(t*FPS))%4)?'block':'none');
+  // beat-synced micro zoom (after the drop)
+  const bp=((t-MUSIC_T0)/beat)%1, on=t>DROP&&!(t>BREAK0&&t<BREAK1);
+  world.style.transform=`scale(${on?1+.008*Math.exp(-bp*6):1})`;
+};
+window.CUES=CUES;window.CUTS=CUTS;window.DURATION=END;
+window.META={DROP,MUSIC_T0,BREAK0,BREAK1,beat};
+window.READY=document.fonts.ready.then(()=>{seek(0,0);return true});
+</script>
+</body></html>

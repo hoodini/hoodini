@@ -1,0 +1,1435 @@
+{
+ "lines": {
+  "cold": {
+   "start": 0.47,
+   "end": 10.326,
+   "text": "Meet Dana. It's two a.m. Four hundred notifications. Ninety-seven open pull requests. One of them is called quick fix. It has three hundred and forty-seven comments.",
+   "heard": "Meet Dana, it's 2A, M, 400 notifications, 97 open pull requests. One of them is called Quick Fix. It has 347 comments."
+  },
+  "pain": {
+   "start": 10.546,
+   "end": 15.815,
+   "text": "Tabs everywhere. Two agents, editing the same branch. And git blame? Git blame says it was Dana.",
+   "heard": "Tabs Everywhere, two agents editing the same branch, and git blame, git blame says it was Dana."
+  },
+  "turn": {
+   "start": 16.535,
+   "end": 27.885,
+   "text": "Here's the thing. GitHub has seen this movie before. A hundred and eighty million developers. Six hundred and thirty million repositories. Forty-three million pull requests merged, every single month.",
+   "heard": "Here's the thing, GitHub has seen this movie before. 180 million developers, 630 million repositories, 43 million pull requests merged every single month."
+  },
+  "reveal": {
+   "start": 28.905,
+   "end": 32.809,
+   "text": "So they built the GitHub Copilot app. A desktop home for your agents.",
+   "heard": "So they built the GitHub Copilot app, a desktop home for your agents."
+  },
+  "mywork": {
+   "start": 33.029,
+   "end": 40.453,
+   "text": "One My Work view. Sessions, issues, pull requests and automations, across every repo. Dana's four hundred tabs? One window.",
+   "heard": "One My Work view Sessions, issues, pull requests and automations across every repo Dana's 400 tabs, one window"
+  },
+  "worktree": {
+   "start": 40.673,
+   "end": 46.518,
+   "text": "Every agent gets its own git worktree. Five agents. Five lanes. Zero, who touched my branch.",
+   "heard": "Every agent gets its own git worktree. Five agents, five lanes, zero who touched my branch."
+  },
+  "merge": {
+   "start": 46.738,
+   "end": 59.175,
+   "text": "Dana picks an issue. The agent writes the fix and opens the PR. Then Agent Merge babysits CI, fixes the failing checks, and merges when the rules pass. That three hundred comment PR? Merged before lunch.",
+   "heard": "Dana picks an issue. The agent writes the fix and opens the PR. Then Agent Merge Babesit CI, fixes the failing checks and merges when the rules pass. That 300 -comment PR merged before lunch."
+  },
+  "power": {
+   "start": 59.395,
+   "end": 68.995,
+   "text": "Pick your model, or let Auto decide. Plan together on a live canvas. Run it in a sandbox. The cloud agent asks before every write, until you trust it with autopilot.",
+   "heard": "Pick your model or let auto -decide. Plan together on a live canvas. Run it in a sandbox. The cloud agent asks before every write until you trust it with autopilot."
+  },
+  "honest": {
+   "start": 69.215,
+   "end": 75.551,
+   "text": "The catch? It's metered in AI credits. Every plan includes monthly credits, and a hard cap keeps your bill boring.",
+   "heard": "The catch? It's metered in AI credits. Every plan includes monthly credits and a hard cap keeps your bill boring."
+  },
+  "next": {
+   "start": 76.171,
+   "end": 87.606,
+   "text": "And GitHub doesn't sit still. Nineteen days after launch, eight new capabilities shipped, with an open feedback thread in GitHub Community. Meanwhile, GitHub Next is already prototyping what comes after.",
+   "heard": "and GitHub doesn't sit still. 19 days after launch, eight new capabilities shipped with an open feedback thread in GitHub Community. Meanwhile, GitHub Next is already prototyping what comes after."
+  },
+  "end": {
+   "start": 88.326,
+   "end": 99.099,
+   "text": "Dana logs off at five. Like, actually five. The GitHub Copilot app is in technical preview for Pro, Pro plus, Business and Enterprise. One app. Many agents. Go home on time.",
+   "heard": "Dana logs off at 5, like actually 5. The GitHub Copilot app is in technical preview for Pro, Pro Plus, Business, and Enterprise. One app, many agents, go home on time."
+  }
+ },
+ "words": {
+  "cold": [
+   {
+    "w": "Meet",
+    "s": 0.47,
+    "e": 0.69
+   },
+   {
+    "w": "Dana.",
+    "s": 0.69,
+    "e": 1.01
+   },
+   {
+    "w": "It's",
+    "s": 1.27,
+    "e": 1.43
+   },
+   {
+    "w": "two",
+    "s": 1.586,
+    "e": 2.834
+   },
+   {
+    "w": "a.m.",
+    "s": 2.85,
+    "e": 2.974
+   },
+   {
+    "w": "Four",
+    "s": 2.976,
+    "e": 2.988
+   },
+   {
+    "w": "hundred",
+    "s": 2.989,
+    "e": 2.99
+   },
+   {
+    "w": "notifications.",
+    "s": 2.99,
+    "e": 3.65
+   },
+   {
+    "w": "Ninety-seven",
+    "s": 3.758,
+    "e": 4.622
+   },
+   {
+    "w": "open",
+    "s": 4.73,
+    "e": 5.21
+   },
+   {
+    "w": "pull",
+    "s": 5.21,
+    "e": 5.49
+   },
+   {
+    "w": "requests.",
+    "s": 5.49,
+    "e": 5.95
+   },
+   {
+    "w": "One",
+    "s": 6.47,
+    "e": 6.61
+   },
+   {
+    "w": "of",
+    "s": 6.61,
+    "e": 6.71
+   },
+   {
+    "w": "them",
+    "s": 6.71,
+    "e": 6.81
+   },
+   {
+    "w": "is",
+    "s": 6.81,
+    "e": 6.97
+   },
+   {
+    "w": "called",
+    "s": 6.97,
+    "e": 7.23
+   },
+   {
+    "w": "quick",
+    "s": 7.23,
+    "e": 7.47
+   },
+   {
+    "w": "fix.",
+    "s": 7.47,
+    "e": 7.69
+   },
+   {
+    "w": "It",
+    "s": 8.15,
+    "e": 8.25
+   },
+   {
+    "w": "has",
+    "s": 8.25,
+    "e": 8.39
+   },
+   {
+    "w": "three",
+    "s": 8.482,
+    "e": 9.218
+   },
+   {
+    "w": "hundred",
+    "s": 9.227,
+    "e": 9.301
+   },
+   {
+    "w": "and",
+    "s": 9.302,
+    "e": 9.309
+   },
+   {
+    "w": "forty-seven",
+    "s": 9.309,
+    "e": 9.31
+   },
+   {
+    "w": "comments.",
+    "s": 9.31,
+    "e": 10.01
+   }
+  ],
+  "pain": [
+   {
+    "w": "Tabs",
+    "s": 10.546,
+    "e": 10.806
+   },
+   {
+    "w": "everywhere.",
+    "s": 10.806,
+    "e": 11.246
+   },
+   {
+    "w": "Two",
+    "s": 11.566,
+    "e": 11.766
+   },
+   {
+    "w": "agents,",
+    "s": 11.766,
+    "e": 12.066
+   },
+   {
+    "w": "editing",
+    "s": 12.066,
+    "e": 12.406
+   },
+   {
+    "w": "the",
+    "s": 12.406,
+    "e": 12.606
+   },
+   {
+    "w": "same",
+    "s": 12.606,
+    "e": 12.786
+   },
+   {
+    "w": "branch.",
+    "s": 12.786,
+    "e": 13.166
+   },
+   {
+    "w": "And",
+    "s": 13.426,
+    "e": 13.526
+   },
+   {
+    "w": "git",
+    "s": 13.526,
+    "e": 13.666
+   },
+   {
+    "w": "blame?",
+    "s": 13.666,
+    "e": 13.946
+   },
+   {
+    "w": "Git",
+    "s": 14.406,
+    "e": 14.546
+   },
+   {
+    "w": "blame",
+    "s": 14.546,
+    "e": 14.846
+   },
+   {
+    "w": "says",
+    "s": 14.846,
+    "e": 15.066
+   },
+   {
+    "w": "it",
+    "s": 15.066,
+    "e": 15.206
+   },
+   {
+    "w": "was",
+    "s": 15.206,
+    "e": 15.346
+   },
+   {
+    "w": "Dana.",
+    "s": 15.346,
+    "e": 15.546
+   }
+  ],
+  "turn": [
+   {
+    "w": "Here's",
+    "s": 16.535,
+    "e": 16.815
+   },
+   {
+    "w": "the",
+    "s": 16.815,
+    "e": 16.915
+   },
+   {
+    "w": "thing.",
+    "s": 16.915,
+    "e": 17.155
+   },
+   {
+    "w": "GitHub",
+    "s": 17.775,
+    "e": 17.775
+   },
+   {
+    "w": "has",
+    "s": 17.775,
+    "e": 18.035
+   },
+   {
+    "w": "seen",
+    "s": 18.035,
+    "e": 18.215
+   },
+   {
+    "w": "this",
+    "s": 18.215,
+    "e": 18.375
+   },
+   {
+    "w": "movie",
+    "s": 18.375,
+    "e": 18.615
+   },
+   {
+    "w": "before.",
+    "s": 18.615,
+    "e": 19.075
+   },
+   {
+    "w": "A",
+    "s": 19.177,
+    "e": 19.993
+   },
+   {
+    "w": "hundred",
+    "s": 20.004,
+    "e": 20.085
+   },
+   {
+    "w": "and",
+    "s": 20.086,
+    "e": 20.094
+   },
+   {
+    "w": "eighty",
+    "s": 20.094,
+    "e": 20.095
+   },
+   {
+    "w": "million",
+    "s": 20.095,
+    "e": 20.815
+   },
+   {
+    "w": "developers.",
+    "s": 20.815,
+    "e": 21.395
+   },
+   {
+    "w": "Six",
+    "s": 21.487,
+    "e": 22.223
+   },
+   {
+    "w": "hundred",
+    "s": 22.233,
+    "e": 22.306
+   },
+   {
+    "w": "and",
+    "s": 22.307,
+    "e": 22.314
+   },
+   {
+    "w": "thirty",
+    "s": 22.315,
+    "e": 22.315
+   },
+   {
+    "w": "million",
+    "s": 22.315,
+    "e": 23.315
+   },
+   {
+    "w": "repositories.",
+    "s": 23.315,
+    "e": 24.015
+   },
+   {
+    "w": "Forty-three",
+    "s": 24.105,
+    "e": 24.825
+   },
+   {
+    "w": "million",
+    "s": 24.915,
+    "e": 25.475
+   },
+   {
+    "w": "pull",
+    "s": 25.475,
+    "e": 25.775
+   },
+   {
+    "w": "requests",
+    "s": 25.775,
+    "e": 26.195
+   },
+   {
+    "w": "merged,",
+    "s": 26.195,
+    "e": 26.675
+   },
+   {
+    "w": "every",
+    "s": 26.675,
+    "e": 27.135
+   },
+   {
+    "w": "single",
+    "s": 27.135,
+    "e": 27.415
+   },
+   {
+    "w": "month.",
+    "s": 27.415,
+    "e": 27.695
+   }
+  ],
+  "reveal": [
+   {
+    "w": "So",
+    "s": 28.905,
+    "e": 29.045
+   },
+   {
+    "w": "they",
+    "s": 29.045,
+    "e": 29.165
+   },
+   {
+    "w": "built",
+    "s": 29.165,
+    "e": 29.365
+   },
+   {
+    "w": "the",
+    "s": 29.365,
+    "e": 29.545
+   },
+   {
+    "w": "GitHub",
+    "s": 29.545,
+    "e": 29.925
+   },
+   {
+    "w": "Copilot",
+    "s": 29.925,
+    "e": 30.485
+   },
+   {
+    "w": "app.",
+    "s": 30.485,
+    "e": 30.725
+   },
+   {
+    "w": "A",
+    "s": 31.185,
+    "e": 31.285
+   },
+   {
+    "w": "desktop",
+    "s": 31.285,
+    "e": 31.525
+   },
+   {
+    "w": "home",
+    "s": 31.525,
+    "e": 31.925
+   },
+   {
+    "w": "for",
+    "s": 31.925,
+    "e": 32.145
+   },
+   {
+    "w": "your",
+    "s": 32.145,
+    "e": 32.265
+   },
+   {
+    "w": "agents.",
+    "s": 32.265,
+    "e": 32.545
+   }
+  ],
+  "mywork": [
+   {
+    "w": "One",
+    "s": 33.029,
+    "e": 33.189
+   },
+   {
+    "w": "My",
+    "s": 33.189,
+    "e": 33.369
+   },
+   {
+    "w": "Work",
+    "s": 33.369,
+    "e": 33.589
+   },
+   {
+    "w": "view.",
+    "s": 33.589,
+    "e": 33.829
+   },
+   {
+    "w": "Sessions,",
+    "s": 33.829,
+    "e": 34.549
+   },
+   {
+    "w": "issues,",
+    "s": 35.129,
+    "e": 35.129
+   },
+   {
+    "w": "pull",
+    "s": 35.369,
+    "e": 35.529
+   },
+   {
+    "w": "requests",
+    "s": 35.529,
+    "e": 35.929
+   },
+   {
+    "w": "and",
+    "s": 35.929,
+    "e": 36.209
+   },
+   {
+    "w": "automations,",
+    "s": 36.209,
+    "e": 36.869
+   },
+   {
+    "w": "across",
+    "s": 36.869,
+    "e": 37.189
+   },
+   {
+    "w": "every",
+    "s": 37.189,
+    "e": 37.569
+   },
+   {
+    "w": "repo.",
+    "s": 37.569,
+    "e": 37.929
+   },
+   {
+    "w": "Dana's",
+    "s": 37.929,
+    "e": 38.789
+   },
+   {
+    "w": "four",
+    "s": 38.823,
+    "e": 39.095
+   },
+   {
+    "w": "hundred",
+    "s": 39.098,
+    "e": 39.125
+   },
+   {
+    "w": "tabs?",
+    "s": 39.129,
+    "e": 39.529
+   },
+   {
+    "w": "One",
+    "s": 39.789,
+    "e": 39.989
+   },
+   {
+    "w": "window.",
+    "s": 39.989,
+    "e": 40.289
+   }
+  ],
+  "worktree": [
+   {
+    "w": "Every",
+    "s": 40.673,
+    "e": 40.913
+   },
+   {
+    "w": "agent",
+    "s": 40.913,
+    "e": 41.253
+   },
+   {
+    "w": "gets",
+    "s": 41.253,
+    "e": 41.473
+   },
+   {
+    "w": "its",
+    "s": 41.473,
+    "e": 41.653
+   },
+   {
+    "w": "own",
+    "s": 41.653,
+    "e": 41.833
+   },
+   {
+    "w": "git",
+    "s": 41.833,
+    "e": 42.033
+   },
+   {
+    "w": "worktree.",
+    "s": 42.033,
+    "e": 42.573
+   },
+   {
+    "w": "Five",
+    "s": 43.013,
+    "e": 43.193
+   },
+   {
+    "w": "agents.",
+    "s": 43.193,
+    "e": 43.573
+   },
+   {
+    "w": "Five",
+    "s": 44.073,
+    "e": 44.213
+   },
+   {
+    "w": "lanes.",
+    "s": 44.213,
+    "e": 44.593
+   },
+   {
+    "w": "Zero,",
+    "s": 45.293,
+    "e": 45.293
+   },
+   {
+    "w": "who",
+    "s": 45.293,
+    "e": 45.573
+   },
+   {
+    "w": "touched",
+    "s": 45.573,
+    "e": 45.793
+   },
+   {
+    "w": "my",
+    "s": 45.793,
+    "e": 46.033
+   },
+   {
+    "w": "branch.",
+    "s": 46.033,
+    "e": 46.273
+   }
+  ],
+  "merge": [
+   {
+    "w": "Dana",
+    "s": 46.738,
+    "e": 46.978
+   },
+   {
+    "w": "picks",
+    "s": 46.978,
+    "e": 47.198
+   },
+   {
+    "w": "an",
+    "s": 47.198,
+    "e": 47.398
+   },
+   {
+    "w": "issue.",
+    "s": 47.398,
+    "e": 47.638
+   },
+   {
+    "w": "The",
+    "s": 48.078,
+    "e": 48.158
+   },
+   {
+    "w": "agent",
+    "s": 48.158,
+    "e": 48.438
+   },
+   {
+    "w": "writes",
+    "s": 48.438,
+    "e": 48.718
+   },
+   {
+    "w": "the",
+    "s": 48.718,
+    "e": 48.978
+   },
+   {
+    "w": "fix",
+    "s": 48.978,
+    "e": 49.158
+   },
+   {
+    "w": "and",
+    "s": 49.158,
+    "e": 49.358
+   },
+   {
+    "w": "opens",
+    "s": 49.358,
+    "e": 49.638
+   },
+   {
+    "w": "the",
+    "s": 49.638,
+    "e": 49.838
+   },
+   {
+    "w": "PR.",
+    "s": 49.838,
+    "e": 50.158
+   },
+   {
+    "w": "Then",
+    "s": 50.758,
+    "e": 50.878
+   },
+   {
+    "w": "Agent",
+    "s": 50.878,
+    "e": 51.278
+   },
+   {
+    "w": "Merge",
+    "s": 51.278,
+    "e": 51.578
+   },
+   {
+    "w": "babysits",
+    "s": 51.634,
+    "e": 52.082
+   },
+   {
+    "w": "CI,",
+    "s": 52.138,
+    "e": 52.618
+   },
+   {
+    "w": "fixes",
+    "s": 53.018,
+    "e": 53.318
+   },
+   {
+    "w": "the",
+    "s": 53.318,
+    "e": 53.538
+   },
+   {
+    "w": "failing",
+    "s": 53.538,
+    "e": 53.778
+   },
+   {
+    "w": "checks,",
+    "s": 53.778,
+    "e": 54.098
+   },
+   {
+    "w": "and",
+    "s": 54.098,
+    "e": 54.378
+   },
+   {
+    "w": "merges",
+    "s": 54.378,
+    "e": 54.718
+   },
+   {
+    "w": "when",
+    "s": 54.718,
+    "e": 54.898
+   },
+   {
+    "w": "the",
+    "s": 54.898,
+    "e": 54.998
+   },
+   {
+    "w": "rules",
+    "s": 54.998,
+    "e": 55.218
+   },
+   {
+    "w": "pass.",
+    "s": 55.218,
+    "e": 55.558
+   },
+   {
+    "w": "That",
+    "s": 56.158,
+    "e": 56.278
+   },
+   {
+    "w": "three",
+    "s": 56.33,
+    "e": 56.746
+   },
+   {
+    "w": "hundred",
+    "s": 56.751,
+    "e": 56.793
+   },
+   {
+    "w": "comment",
+    "s": 56.798,
+    "e": 57.118
+   },
+   {
+    "w": "PR?",
+    "s": 57.118,
+    "e": 57.658
+   },
+   {
+    "w": "Merged",
+    "s": 57.658,
+    "e": 58.378
+   },
+   {
+    "w": "before",
+    "s": 58.378,
+    "e": 58.718
+   },
+   {
+    "w": "lunch.",
+    "s": 58.718,
+    "e": 58.958
+   }
+  ],
+  "power": [
+   {
+    "w": "Pick",
+    "s": 59.395,
+    "e": 59.535
+   },
+   {
+    "w": "your",
+    "s": 59.535,
+    "e": 59.695
+   },
+   {
+    "w": "model,",
+    "s": 59.695,
+    "e": 59.955
+   },
+   {
+    "w": "or",
+    "s": 59.955,
+    "e": 60.275
+   },
+   {
+    "w": "let",
+    "s": 60.275,
+    "e": 60.535
+   },
+   {
+    "w": "Auto",
+    "s": 60.535,
+    "e": 60.855
+   },
+   {
+    "w": "decide.",
+    "s": 60.855,
+    "e": 61.395
+   },
+   {
+    "w": "Plan",
+    "s": 61.855,
+    "e": 61.895
+   },
+   {
+    "w": "together",
+    "s": 61.895,
+    "e": 62.175
+   },
+   {
+    "w": "on",
+    "s": 62.175,
+    "e": 62.455
+   },
+   {
+    "w": "a",
+    "s": 62.455,
+    "e": 62.575
+   },
+   {
+    "w": "live",
+    "s": 62.575,
+    "e": 62.755
+   },
+   {
+    "w": "canvas.",
+    "s": 62.755,
+    "e": 63.195
+   },
+   {
+    "w": "Run",
+    "s": 63.775,
+    "e": 63.895
+   },
+   {
+    "w": "it",
+    "s": 63.895,
+    "e": 64.055
+   },
+   {
+    "w": "in",
+    "s": 64.055,
+    "e": 64.195
+   },
+   {
+    "w": "a",
+    "s": 64.195,
+    "e": 64.295
+   },
+   {
+    "w": "sandbox.",
+    "s": 64.295,
+    "e": 64.655
+   },
+   {
+    "w": "The",
+    "s": 65.275,
+    "e": 65.355
+   },
+   {
+    "w": "cloud",
+    "s": 65.355,
+    "e": 65.595
+   },
+   {
+    "w": "agent",
+    "s": 65.595,
+    "e": 65.895
+   },
+   {
+    "w": "asks",
+    "s": 65.895,
+    "e": 66.295
+   },
+   {
+    "w": "before",
+    "s": 66.295,
+    "e": 66.615
+   },
+   {
+    "w": "every",
+    "s": 66.615,
+    "e": 66.935
+   },
+   {
+    "w": "write,",
+    "s": 66.935,
+    "e": 67.195
+   },
+   {
+    "w": "until",
+    "s": 67.195,
+    "e": 67.595
+   },
+   {
+    "w": "you",
+    "s": 67.595,
+    "e": 67.755
+   },
+   {
+    "w": "trust",
+    "s": 67.755,
+    "e": 67.975
+   },
+   {
+    "w": "it",
+    "s": 67.975,
+    "e": 68.135
+   },
+   {
+    "w": "with",
+    "s": 68.135,
+    "e": 68.295
+   },
+   {
+    "w": "autopilot.",
+    "s": 68.295,
+    "e": 68.855
+   }
+  ],
+  "honest": [
+   {
+    "w": "The",
+    "s": 69.215,
+    "e": 69.335
+   },
+   {
+    "w": "catch?",
+    "s": 69.335,
+    "e": 69.575
+   },
+   {
+    "w": "It's",
+    "s": 69.895,
+    "e": 70.015
+   },
+   {
+    "w": "metered",
+    "s": 70.015,
+    "e": 70.375
+   },
+   {
+    "w": "in",
+    "s": 70.375,
+    "e": 70.555
+   },
+   {
+    "w": "AI",
+    "s": 70.555,
+    "e": 70.975
+   },
+   {
+    "w": "credits.",
+    "s": 70.975,
+    "e": 71.295
+   },
+   {
+    "w": "Every",
+    "s": 71.935,
+    "e": 72.115
+   },
+   {
+    "w": "plan",
+    "s": 72.115,
+    "e": 72.395
+   },
+   {
+    "w": "includes",
+    "s": 72.395,
+    "e": 72.775
+   },
+   {
+    "w": "monthly",
+    "s": 72.775,
+    "e": 73.155
+   },
+   {
+    "w": "credits,",
+    "s": 73.155,
+    "e": 73.495
+   },
+   {
+    "w": "and",
+    "s": 73.495,
+    "e": 73.895
+   },
+   {
+    "w": "a",
+    "s": 73.895,
+    "e": 74.015
+   },
+   {
+    "w": "hard",
+    "s": 74.015,
+    "e": 74.255
+   },
+   {
+    "w": "cap",
+    "s": 74.255,
+    "e": 74.475
+   },
+   {
+    "w": "keeps",
+    "s": 74.475,
+    "e": 74.735
+   },
+   {
+    "w": "your",
+    "s": 74.735,
+    "e": 74.875
+   },
+   {
+    "w": "bill",
+    "s": 74.875,
+    "e": 75.075
+   },
+   {
+    "w": "boring.",
+    "s": 75.075,
+    "e": 75.315
+   }
+  ],
+  "next": [
+   {
+    "w": "And",
+    "s": 76.171,
+    "e": 76.331
+   },
+   {
+    "w": "GitHub",
+    "s": 76.331,
+    "e": 76.551
+   },
+   {
+    "w": "doesn't",
+    "s": 76.551,
+    "e": 76.931
+   },
+   {
+    "w": "sit",
+    "s": 76.931,
+    "e": 77.091
+   },
+   {
+    "w": "still.",
+    "s": 77.091,
+    "e": 77.451
+   },
+   {
+    "w": "Nineteen",
+    "s": 77.531,
+    "e": 78.171
+   },
+   {
+    "w": "days",
+    "s": 78.251,
+    "e": 78.451
+   },
+   {
+    "w": "after",
+    "s": 78.451,
+    "e": 78.791
+   },
+   {
+    "w": "launch,",
+    "s": 78.791,
+    "e": 79.111
+   },
+   {
+    "w": "eight",
+    "s": 79.471,
+    "e": 79.571
+   },
+   {
+    "w": "new",
+    "s": 79.571,
+    "e": 79.791
+   },
+   {
+    "w": "capabilities",
+    "s": 79.791,
+    "e": 80.271
+   },
+   {
+    "w": "shipped,",
+    "s": 80.271,
+    "e": 80.691
+   },
+   {
+    "w": "with",
+    "s": 80.691,
+    "e": 81.131
+   },
+   {
+    "w": "an",
+    "s": 81.131,
+    "e": 81.251
+   },
+   {
+    "w": "open",
+    "s": 81.251,
+    "e": 81.571
+   },
+   {
+    "w": "feedback",
+    "s": 81.571,
+    "e": 81.951
+   },
+   {
+    "w": "thread",
+    "s": 81.951,
+    "e": 82.351
+   },
+   {
+    "w": "in",
+    "s": 82.351,
+    "e": 82.571
+   },
+   {
+    "w": "GitHub",
+    "s": 82.571,
+    "e": 82.871
+   },
+   {
+    "w": "Community.",
+    "s": 82.871,
+    "e": 83.251
+   },
+   {
+    "w": "Meanwhile,",
+    "s": 84.411,
+    "e": 84.411
+   },
+   {
+    "w": "GitHub",
+    "s": 84.871,
+    "e": 85.071
+   },
+   {
+    "w": "Next",
+    "s": 85.071,
+    "e": 85.351
+   },
+   {
+    "w": "is",
+    "s": 85.351,
+    "e": 85.631
+   },
+   {
+    "w": "already",
+    "s": 85.631,
+    "e": 85.971
+   },
+   {
+    "w": "prototyping",
+    "s": 85.971,
+    "e": 86.731
+   },
+   {
+    "w": "what",
+    "s": 86.731,
+    "e": 86.871
+   },
+   {
+    "w": "comes",
+    "s": 86.871,
+    "e": 87.071
+   },
+   {
+    "w": "after.",
+    "s": 87.071,
+    "e": 87.411
+   }
+  ],
+  "end": [
+   {
+    "w": "Dana",
+    "s": 88.326,
+    "e": 88.566
+   },
+   {
+    "w": "logs",
+    "s": 88.566,
+    "e": 88.866
+   },
+   {
+    "w": "off",
+    "s": 88.866,
+    "e": 89.086
+   },
+   {
+    "w": "at",
+    "s": 89.086,
+    "e": 89.206
+   },
+   {
+    "w": "five.",
+    "s": 89.272,
+    "e": 89.8
+   },
+   {
+    "w": "Like,",
+    "s": 89.866,
+    "e": 90.026
+   },
+   {
+    "w": "actually",
+    "s": 90.026,
+    "e": 90.406
+   },
+   {
+    "w": "five.",
+    "s": 90.486,
+    "e": 91.126
+   },
+   {
+    "w": "The",
+    "s": 91.206,
+    "e": 91.386
+   },
+   {
+    "w": "GitHub",
+    "s": 91.386,
+    "e": 91.646
+   },
+   {
+    "w": "Copilot",
+    "s": 91.646,
+    "e": 92.206
+   },
+   {
+    "w": "app",
+    "s": 92.206,
+    "e": 92.426
+   },
+   {
+    "w": "is",
+    "s": 92.426,
+    "e": 92.586
+   },
+   {
+    "w": "in",
+    "s": 92.586,
+    "e": 92.746
+   },
+   {
+    "w": "technical",
+    "s": 92.746,
+    "e": 93.126
+   },
+   {
+    "w": "preview",
+    "s": 93.126,
+    "e": 93.566
+   },
+   {
+    "w": "for",
+    "s": 93.566,
+    "e": 93.806
+   },
+   {
+    "w": "Pro,",
+    "s": 93.806,
+    "e": 94.086
+   },
+   {
+    "w": "Pro",
+    "s": 94.366,
+    "e": 94.586
+   },
+   {
+    "w": "plus,",
+    "s": 94.586,
+    "e": 94.846
+   },
+   {
+    "w": "Business",
+    "s": 95.126,
+    "e": 95.346
+   },
+   {
+    "w": "and",
+    "s": 95.566,
+    "e": 95.606
+   },
+   {
+    "w": "Enterprise.",
+    "s": 95.606,
+    "e": 96.046
+   },
+   {
+    "w": "One",
+    "s": 96.726,
+    "e": 96.886
+   },
+   {
+    "w": "app.",
+    "s": 96.886,
+    "e": 97.106
+   },
+   {
+    "w": "Many",
+    "s": 97.406,
+    "e": 97.526
+   },
+   {
+    "w": "agents.",
+    "s": 97.526,
+    "e": 97.946
+   },
+   {
+    "w": "Go",
+    "s": 98.166,
+    "e": 98.306
+   },
+   {
+    "w": "home",
+    "s": 98.306,
+    "e": 98.486
+   },
+   {
+    "w": "on",
+    "s": 98.486,
+    "e": 98.666
+   },
+   {
+    "w": "time.",
+    "s": 98.666,
+    "e": 98.886
+   }
+  ]
+ },
+ "total": 102.499
+}

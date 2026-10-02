@@ -1,0 +1,8 @@
+out/render_raw.mp4
+out/render.log
+audio/mix_premaster.wav
+audio/master.wav
+audio/tts.log
+qa/shot_*.jpg
+qa/final/
+qa/qa.log
