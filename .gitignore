@@ -46,3 +46,7 @@ npm-debug.log*
 # Temporary files
 /tmp/
 *.tmp
+flight-school-film/film-*/assets/
+flight-school-film/film-*/snapshots/
+flight-school-film/**/node_modules/
+flight-school-film/**/renders/
