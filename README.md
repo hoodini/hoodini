@@ -29,27 +29,27 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
+- 🔀 Opened a pull request in [hoodini/hoodini](https://github.com/hoodini/hoodini) - Oct 02
+- ✨ Created branch in [hoodini/hoodini](https://github.com/hoodini/hoodini) - Oct 01
 - 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Sep 30
 - 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Sep 30
 - 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Oct 01
-- ✨ Created branch in [hoodini/hoodini](https://github.com/hoodini/hoodini) - Oct 01
-- 🔀 Opened a pull request in [hoodini/hoodini](https://github.com/hoodini/hoodini) - Oct 01
 
 
 
 ### ⭐ Featured Repositories
 
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 280
+- 💙 **[nano-banana-ui](https://github.com/hoodini/nano-banana-ui)** - YUV.AI Nano Banana Pro Platform - Beautiful web app for Google Gemini image generation with all features from the API docs ⭐ 36
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 11
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 281
 - 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 40
 - 📦 **[fly-high-nyc](https://github.com/hoodini/fly-high-nyc)** - FLY HIGH · New York — be a macaw at golden hour over real NYC. A YUV.AI experience. ⭐ 2
-- 🐍 **[blitzai](https://github.com/hoodini/blitzai)** - קול — Professional Transcription Studio. Hebrew-first, 4 engines, YouTube support, correction studio. ⭐ 87
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-10-02 00:24:55 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-10-03 00:22:30 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
