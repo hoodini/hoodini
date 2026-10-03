@@ -5,7 +5,7 @@ const b = await chromium.launch({executablePath:'/opt/pw-browsers/chromium-1194/
 const p = await b.newPage({viewport:{width:+W,height:+H}});
 p.on('console', m => console.log('[page]', m.text()));
 p.on('pageerror', e => console.log('[err]', e.message));
-await p.goto(`http://localhost:8123/${page}?w=${W}&h=${H}`);
+await p.goto(`http://localhost:8123/${page.split("#")[0]}?w=${W}&h=${H}${page.includes("#") ? "#" + page.split("#")[1] : ""}`);
 await p.waitForFunction(() => window.__ready === true, null, {timeout: 120000});
 for (const t of times.split(',')) {
   const t0 = Date.now();

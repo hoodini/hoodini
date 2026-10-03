@@ -199,12 +199,13 @@ export class Notebook {
           const bx = a.x + (b.x - a.x) * f, by = a.y + (b.y - a.y) * f;
           if (kind === 'ink') {
             const press = 0.75 + 0.25 * noise1(si * 3.1 + i * 0.13);
-            ctx.strokeStyle = `rgba(22,40,120,${0.92 * alpha})`; ctx.lineWidth = 11 * press;
+            ctx.strokeStyle = `rgba(22,40,120,${0.92 * alpha})`; ctx.lineWidth = (this.doodle.W ? this.doodle.W[si] : 11) * press * Math.min(1, 0.35 + 0.65 * Math.min(i, st.length - i) / 4);
           }
           ctx.beginPath(); ctx.moveTo(a.x * w, a.y * h); ctx.lineTo(bx * w, by * h); ctx.stroke();
           acc += L; tip = { x: bx, y: by };
           if (f < 1) break;
         }
+        if (kind === 'ink' && this.doodle.D && this.doodle.D[si] && local >= m.len) { ctx.fillStyle = `rgba(22,40,120,${0.88 * alpha})`; ctx.beginPath(); st.forEach((q, qi) => qi ? ctx.lineTo(q.x * w, q.y * h) : ctx.moveTo(q.x * w, q.y * h)); ctx.fill(); }
       });
       ctx.restore();
     }
@@ -212,6 +213,12 @@ export class Notebook {
     return tip;
   }
 
+  // replace the doodle with external strokes: [{pts:[[u,v]...], w(px), dark}]
+  setDoodle(strokes) {
+    const S = strokes.map(st => st.pts.map(([x, y]) => ({ x, y })));
+    let total = 0; const meta = S.map(st => { let L = 0; for (let i = 1; i < st.length; i++) L += Math.hypot(st[i].x - st[i - 1].x, (st[i].y - st[i - 1].y) * 1.366); const m = { start: total, len: L }; total += L + 0.012; return m; });
+    this.doodle = { S, meta, total, W: strokes.map(s => s.w), D: strokes.map(s => !!s.dark) };
+  }
   // page uv -> world
   uvToWorld(x, y) {
     const v = new THREE.Vector3((x - 0.5) * PAGE_W, (0.5 - y) * PAGE_H, 0.02);

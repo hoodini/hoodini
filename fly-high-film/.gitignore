@@ -3,3 +3,5 @@ out/
 shots/
 *.f32
 *.wav
+out2/
+*.mp4

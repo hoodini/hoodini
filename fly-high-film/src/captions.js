@@ -94,12 +94,12 @@ export class Overlay {
   drawEndCard(t, t0) {
     const ctx = this.ctx, W = this.W, H = this.H, u = this.u;
     const k = (d, len = 0.8) => easeOutCubic(clamp((t - t0 - d) / len));
-    const cy = this.portrait ? H * 0.64 : H * 0.66;
+    const cy = this.portrait ? H * 0.68 : H * 0.7;
     // subtitle
     const a1 = k(0.5);
     ctx.save(); ctx.globalAlpha = a1; ctx.font = `600 ${44 * u}px ${RUBIK}`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.direction = 'rtl';
     ctx.shadowColor = 'rgba(0,20,50,0.5)'; ctx.shadowBlur = 20 * u; ctx.fillStyle = '#ffffff';
-    ctx.fillText('להתרומם מעל הרעש. לראות את התמונה המלאה.', W / 2, cy + (1 - a1) * 20 * u); ctx.restore();
+    ctx.fillText('פתרונות AI פרקטיים — לכל אחת ואחד', W / 2, cy + (1 - a1) * 20 * u); ctx.restore();
     // name line
     const a2 = k(0.9);
     ctx.save(); ctx.globalAlpha = a2; ctx.font = `800 ${50 * u}px ${RUBIK}`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.direction = 'rtl';
@@ -122,9 +122,9 @@ export class Overlay {
     }
   }
 
-  render(t, extra) {
+  render(t, extra, list = CAPTIONS) {
     const ctx = this.ctx; ctx.clearRect(0, 0, this.W, this.H);
-    for (const c of CAPTIONS) if (t > c[0] - 0.1 && t < c[1] + 0.1) this.drawCaption(t, c);
+    for (const c of list) if (t > c[0] - 0.1 && t < c[1] + 0.1) this.drawCaption(t, c);
     if (extra) extra(ctx, this);
     this.tex.needsUpdate = true;
   }
