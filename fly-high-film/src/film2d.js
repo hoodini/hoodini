@@ -211,8 +211,8 @@ export function render2D(ctx, t, W, H, start) {
   let cx, cy, vw;
   const s = start; // {cx, cy, vw} matching the 3D shot at the hand-off
   if (t < 10.5) { const k = smoother(7.7, 10.5, t); cx = lerp(s.cx, NOA[0] + 0.05, k); cy = lerp(s.cy, G - 0.33, k); vw = lerp(s.vw, 1.55, k); }
-  else if (t < 17) { const k = smoother(10.5, 12.5, t); cx = lerp(NOA[0] + 0.05, NOA[0] + 0.2, k); cy = lerp(G - 0.33, G - 0.42, k); vw = lerp(1.55, 2.1, k); }
-  else if (t < 28.8) { const k = smoother(17, 28.5, t); cx = NOA[0] + lerp(0.2, 0.05, k); cy = G - lerp(0.42, 0.62, k); vw = lerp(2.1, 2.25, k); }
+  else if (t < 17) { const k = smoother(10.5, 12.5, t); cx = lerp(NOA[0] + 0.05, NOA[0] + 0.2, k); cy = lerp(G - 0.33, G - 0.3, k); vw = lerp(1.55, 2.1, k); }
+  else if (t < 28.8) { const k = smoother(17, 28.5, t); cx = NOA[0] + lerp(0.2, 0.05, k); cy = G - lerp(0.3, 0.62, k); vw = lerp(2.1, 2.25, k); }
   else if (t < 37.6) { const k = smoother(28.8, 37.2, t); cx = NOA[0] + lerp(0.05, 0.0, k); cy = G - lerp(0.62, 0.3, k); vw = lerp(2.25, 1.15, k); }
   else if (t < 47.4) { const k = smoother(37.6, 41.5, t), k2 = smoother(43, 47.2, t); cx = NOA[0] + lerp(0.0, -0.3, k) + k2 * 0.25; cy = G - lerp(0.3, 0.42, k) - k2 * 0.05; vw = lerp(1.15, 1.9, k) - k2 * 0.15; }
   else if (t < 50.6) { const k = smoother(47.4, 50.6, t), m = macawState(t, NOA, LANDX), b = smooth(47.4, 48.1, t); cx = lerp(NOA[0] - 0.05, m.x + 0.35, b); cy = lerp(G - 0.47, m.y - 0.12, b); vw = lerp(1.75, 2.3, k); }
@@ -262,7 +262,7 @@ export function render2D(ctx, t, W, H, start) {
     const colorN = bloom;
     let pose = { smile: 0.6, look: [0, 0] }, pos = [NOA[0], NOA[1]], sc = GS, ride = 0;
     if (t < 10.5) pose = { smile: lerp(0.5, 0.9, smooth(8.6, 9.2, t)), open: pulse(9.2, 9.4, 9.9, 10.2, t) * 0.55, look: [lerp(0, 0.35, pulse(8.2, 8.5, 8.9, 9.2, t)) - lerp(0, 0.35, pulse(8.9, 9.1, 9.4, 9.6, t)), 0], wave: pulse(9.3, 9.6, 10.2, 10.5, t), lid: pulse(7.9, 8.0, 8.15, 8.3, t), blink: t > 8.5 };
-    else if (t < 17) pose = { smile: 0.8, walk: smooth(12.3, 12.6, t) * (1 - smooth(16.6, 16.9, t)), phase: walkX * 22, look: [0.35, -0.1] };
+    else if (t < 17.6) pose = { smile: 0.8, walk: smooth(12.35, 12.7, t) * (1 - smooth(16.55, 16.9, t)), phase: (walkX - GIRL[0]) * 30, turn: smoother(11.8, 12.35, t) * (1 - smoother(16.9, 17.5, t)), look: [0.45, -0.1] };
     else if (t < 28.8) pose = { smile: lerp(0.6, -0.7, smooth(17.4, 22, t)), worry: smooth(17.4, 19, t), open: pulse(17.6, 17.8, 18.6, 19, t) * 0.7, look: [Math.sin(t * 2.1) * 0.6 * smooth(20, 21, t), lerp(-0.2, -0.9, smooth(17.4, 18, t)) + smooth(20.5, 21.5, t) * 0.6], phone: smooth(19.6, 20.2, t), cry: smooth(26.0, 27.5, t), headDrop: 0 };
     else if (t < 37.6) pose = { smile: -0.9, worry: 1, sit: smoother(28.8, 30.0, t), hug: smoother(29.4, 30.4, t), lid: 0.45, cry: 1, look: [0, 0.6], headTilt: 0.1, blink: false };
     else if (t < 47.4) {
