@@ -1,0 +1,104 @@
+/* ===== "NVIDIA-branded editorial × terminal" design system ===== */
+:root {
+  --g: #76B900;      /* NVIDIA green, primary accent */
+  --k: #000000;
+  --k2: #0A0A0A;
+  --m: #1A1A1A;      /* mid grey (dark) */
+  --m2: #8C8C8C;     /* mid grey (light) */
+  --w: #FFFFFF;
+  --r: #FF3B30;      /* red: ONLY errors / doesn't fit */
+  --display: 'Anton', 'Impact', sans-serif;
+  --serif: 'Instrument Serif', Georgia, serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  --M: 80px;         /* page margin */
+  --cut: 28px;       /* chamfer size */
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+body { font-family: var(--mono); color: var(--w); -webkit-font-smoothing: antialiased; }
+
+#stage { position: absolute; inset: 0; overflow: hidden; background: var(--k2); transform-origin: 50% 50%; }
+.shot { position: absolute; inset: 0; visibility: hidden; overflow: hidden; }
+.cam { position: absolute; inset: 0; transform-origin: 50% 46%; }
+
+/* themes (hard-cut) */
+.t-black { background: var(--k2); color: var(--w); --fg: var(--w); --bg: var(--k2); --acc: var(--g); --dim: var(--m2); --line: rgba(118,185,0,.14); }
+.t-green { background: var(--g); color: var(--k); --fg: var(--k); --bg: var(--g); --acc: var(--k); --dim: rgba(0,0,0,.55); --line: rgba(0,0,0,.12); }
+.t-white { background: var(--w); color: var(--k); --fg: var(--k); --bg: var(--w); --acc: var(--g); --dim: #5c5c5c; --line: rgba(0,0,0,.08); }
+.t-pure { background: #000; color: var(--w); --fg: var(--w); --bg: #000; --acc: var(--g); --dim: var(--m2); --line: rgba(118,185,0,.12); }
+
+.grid { position: absolute; inset: 0;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 80px 80px; background-position: 80px 60px; }
+
+/* chrome: magazine / spec-sheet frame */
+.chrome { position: absolute; inset: 0; pointer-events: none; z-index: 50; color: var(--fg); }
+.chrome .top, .chrome .bot { position: absolute; left: var(--M); right: var(--M); display: flex; justify-content: space-between; align-items: center;
+  font: 400 17px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+.chrome .top { top: 34px; padding-bottom: 12px; border-bottom: 2px solid var(--fg); }
+.chrome .bot { bottom: 30px; padding-top: 12px; border-top: 2px solid var(--fg); }
+.chrome .top b, .chrome .bot b { font-weight: 700; color: var(--acc); }
+.t-green .chrome .top b, .t-green .chrome .bot b { color: var(--k); }
+.chrome .tick { position: absolute; width: 18px; height: 18px; border-color: var(--acc); border-style: solid; }
+.chrome .tl { left: 40px; top: 96px; border-width: 2px 0 0 2px; } .chrome .tr { right: 40px; top: 96px; border-width: 2px 2px 0 0; }
+.chrome .bl { left: 40px; bottom: 96px; border-width: 0 0 2px 2px; } .chrome .br { right: 40px; bottom: 96px; border-width: 0 2px 2px 0; }
+
+/* type */
+.disp { font-family: var(--display); font-weight: 400; text-transform: uppercase; line-height: .9; letter-spacing: -.005em; }
+.serif { font-family: var(--serif); font-style: italic; font-weight: 400; line-height: 1.05; }
+.mono { font-family: var(--mono); }
+.acc { color: var(--acc); }
+.g { color: var(--g); } .red { color: var(--r); } .dim { color: var(--dim); }
+.mask { overflow: hidden; display: inline-block; padding: .06em .3em .3em .3em; margin: -.06em -.3em -.3em -.3em; vertical-align: top; }
+.mask > span { display: inline-block; }
+
+.abs { position: absolute; }
+.center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.label { font: 700 18px/1 var(--mono); letter-spacing: .16em; text-transform: uppercase; }
+.src { position: absolute; left: var(--M); right: var(--M); bottom: 96px; font: 400 15px/1.35 var(--mono); color: var(--dim); letter-spacing: .02em; }
+.src::before { content: 'SRC › '; color: var(--acc); font-weight: 700; }
+
+/* NVIDIA "cut-corner" chamfer shapes */
+.cut { clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, var(--cut) 100%, 0 calc(100% - var(--cut))); }
+.card { background: var(--m); color: var(--w); padding: 34px 40px; }
+.t-white .card { background: #F1F1F1; color: var(--k); }
+.t-green .card { background: var(--k); color: var(--w); }
+.pill { display: inline-block; font: 700 20px/1 var(--mono); padding: 10px 16px; letter-spacing: .08em; text-transform: uppercase; background: var(--g); color: #000; }
+
+/* stickers / toasts / overlays */
+.sticker { position: absolute; font: 700 34px/1 var(--mono); padding: 16px 22px; background: var(--w); color: #000; border: 4px solid #000;
+  box-shadow: 8px 8px 0 #000; white-space: nowrap; transform-origin: 50% 50%; z-index: 30; }
+.sticker.green { background: var(--g); } .sticker.red { background: var(--r); color: #fff; } .sticker.black { background: #000; color: var(--g); border-color: var(--g); box-shadow: 8px 8px 0 var(--g); }
+.toast { position: absolute; right: 110px; top: 120px; width: 520px; background: rgba(20,20,20,.96); color: #fff; border: 1px solid #333; border-left: 6px solid var(--g);
+  padding: 18px 22px; font: 400 20px/1.35 var(--mono); z-index: 32; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+.toast .h { font-weight: 700; font-size: 16px; letter-spacing: .12em; color: var(--g); margin-bottom: 6px; }
+.toast.err { border-left-color: var(--r); } .toast.err .h { color: var(--r); }
+
+.term { position: absolute; background: #050505; border: 2px solid #2a2a2a; color: #d8d8d8; font: 400 26px/1.45 var(--mono); padding: 56px 34px 30px; white-space: pre; overflow: hidden; }
+.term::before { content: '● ● ●'; position: absolute; top: 14px; left: 20px; font-size: 16px; color: #444; letter-spacing: 4px; }
+.term .p { color: var(--g); } .term .e { color: var(--r); font-weight: 700; } .term .ok { color: var(--g); font-weight: 700; }
+.caret { display: inline-block; width: .6em; height: 1.05em; background: var(--g); vertical-align: -0.15em; }
+
+/* captions */
+#cap { position: absolute; left: 0; right: 0; bottom: 118px; display: flex; justify-content: center; z-index: 60; pointer-events: none; }
+#cap .box { background: rgba(0,0,0,.86); padding: 10px 22px 12px; font: 400 34px/1.2 var(--mono); color: #cfcfcf; max-width: 1500px; white-space: nowrap; border-left: 4px solid var(--g); }
+#cap .box .pr { color: var(--g); font-weight: 700; margin-right: 12px; }
+#cap .w { padding: 0 2px; }
+#cap .w.on { background: var(--g); color: #000; font-weight: 700; }
+#cap .w.past { color: #fff; }
+
+.grain { position: absolute; inset: 0; z-index: 80; opacity: .085; mix-blend-mode: overlay; pointer-events: none; }
+#flash { position: absolute; inset: 0; z-index: 70; background: #fff; opacity: 0; pointer-events: none; }
+#cursor { position: absolute; z-index: 75; width: 36px; height: 36px; left: 0; top: 0; opacity: 0; pointer-events: none; }
+
+/* charts */
+.bar-row { display: flex; align-items: center; gap: 24px; margin: 18px 0; }
+.bar-row .nm { width: 300px; font: 700 28px/1 var(--mono); text-transform: uppercase; }
+.bar-track { position: relative; height: 84px; flex: 1; }
+.bar { position: absolute; left: 0; top: 0; bottom: 0; background: var(--m2); transform-origin: 0 50%; }
+.bar.win { background: var(--g); }
+.bar-val { position: absolute; top: 50%; transform: translateY(-50%); font: 400 60px/1 var(--display); white-space: nowrap; }
+
+.score { position: absolute; top: 118px; left: 50%; transform: translateX(-50%); display: flex; gap: 0; z-index: 20; font: 700 22px/1 var(--mono); letter-spacing: .1em; }
+.score > div { padding: 10px 18px; background: #000; color: #fff; border: 2px solid #333; }
+.score .n { font-family: var(--display); font-size: 34px; color: var(--g); letter-spacing: 0; }
