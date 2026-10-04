@@ -1,8 +1,35 @@
 # FLY HIGH with YUV.AI - Flux 3 Video prompts (4 x 20s, 16:9, t2v)
 
+## "The Drawing" - wordless short (locked concept)
+
+### 1_the_drawing (1570 chars)
+
+```
+/gen prompt: t2v Shot 1 of 4. Premium 3D animated feature, award-winning wordless short film, expressive big eyes, emotional facial acting, soft warm cinematic light, anamorphic lens, vivid saturated colors, no speech, cuts only between angles on the same action, every touched object reacts. One cozy living room at dusk, a hallway to her bedroom on the right. 0-3s: extreme close-up: Lia (6-year-old girl, huge hopeful brown eyes, messy dark curls, yellow star pajamas) finishes a crayon drawing of a blue-and-gold macaw with a little heart, her eyes lighting up, crayon dust puffing. 3-6s: low tracking: she runs to the couch, socks sliding on the wooden floor, holding the drawing high, grinning. 6-10s: wide: her dad (tired man, late 30s, stubble, gray hoodie, dark circles under his eyes) juggles a swarm of glowing pinging orbs that keep popping out of his laptop; one bonks his head, another ricochets off the lamp, he catches a third with his foot. 10-14s: two-shot: she tugs his sleeve and holds up the drawing; he gives a thumbs-up without looking, eyes on the orbs, an orb whipping past the lens. 14-17s: whip pan: more orbs burst out, his juggling spinning wild, cushions flying. 17-20s: close-up: her arms slowly lower the drawing, her smile flickering. Audio: a tender music-box theme, crayon scratch, frantic pings and jazz drums growing over the music box, a cartoon bonk, music box fading thin on her face. No words. Feature-animation quality, no deformation, smooth fluid motion, 8k, extreme details. , resolution:720p, duration:20s, aspect_ratio:16:9
+```
+
+### 2_unseen (1650 chars)
+
+```
+/gen prompt: t2v Shot 2 of 4. Premium 3D animated feature, award-winning wordless short film, expressive big eyes, emotional facial acting, soft warm cinematic light, anamorphic lens, vivid saturated colors, no speech, cuts only between angles on the same action, every touched object reacts. Same living room at night, the hallway on the right. 0-3s: wide: around her dad (tired man, late 30s, stubble, gray hoodie, dark circles under his eyes) the glowing orbs whirl like a tornado, papers flying; he juggles with hands and feet, one orb balanced on his nose. 3-7s: low angle: Lia (6-year-old girl, huge hopeful brown eyes, messy dark curls, yellow star pajamas) steps into the whirl holding up her crayon macaw drawing; an orb knocks it from her hands; in one frame the world slams into one percent speed, nothing stops: the drawing spinning through the air, orbs streaking past it, her eyes widening; time snaps back like a whip. 7-11s: top-down: the drawing lands face up on the rug; she looks at him; he still does not see. 11-16s: close-up: her lip trembles, one tear rolls; she kneels, smooths the drawing flat in the middle of the floor, then walks down the hallway dragging her stuffed bunny. 16-20s: slow pull back: her dad tiny and alone inside the whirling orbs, the drawing glowing faintly on the floor. Audio: frantic pings and drums, dead silence and one heartbeat on the slow spin, bass snap, only a soft piano note under her tear, the music box playing three lonely notes as she leaves. No words. Feature-animation quality, no deformation, smooth fluid motion, 8k, extreme details. , resolution:720p, duration:20s, aspect_ratio:16:9
+```
+
+### 3_alive (1683 chars)
+
+```
+/gen prompt: t2v Shot 3 of 4. Premium 3D animated feature, award-winning wordless short film, expressive big eyes, emotional facial acting, soft warm cinematic light, anamorphic lens, vivid saturated colors, no speech, cuts only between angles on the same action, every touched object reacts. Same living room at night, glowing orbs whirling around her dad (tired man, late 30s, stubble, gray hoodie, dark circles under his eyes), her crayon macaw drawing on the rug, her bedroom door glowing at the end of the hallway. 0-3s: he steps backward onto the drawing; paper crinkles; he stops and looks down; every orb crashes to the floor and bounces, one bonking his head. 3-7s: extreme close-up on his eyes: he sees the drawing - a crayon dad and girl holding hands under the macaw - and his eyes fill with tears. 7-11s: macro: the crayon lines peel up off the paper and a wave of color fills them as a blue-and-gold macaw with visible crayon-stroke feathers (cobalt wings, golden chest, green crown) inflates into 3D, hops up and shakes, crayon dust bursting toward the lens. 11-16s: orbit camera: the macaw sweeps the room, catching each orb in its beak and dropping it into one woven basket, the orbs dimming and going quiet, a warm lamp glow returning. 16-20s: it lands on his shoulder and nudges his cheek toward the glowing bedroom door. Audio: pings stopping one by one, paper crinkle, silence on his eyes, the music-box theme returning, a crayon-scratch shimmer as the bird forms, soft wingbeats, full strings swelling on the nudge. No words. Feature-animation quality, no deformation, smooth fluid motion, 8k, extreme details. , resolution:720p, duration:20s, aspect_ratio:16:9
+```
+
+### 4_bad_drawing (1704 chars)
+
+```
+/gen prompt: t2v Shot 4 of 4. Premium 3D animated feature, award-winning wordless short film, expressive big eyes, emotional facial acting, soft warm cinematic light, anamorphic lens, vivid saturated colors, no speech, cuts only between angles on the same action, every touched object reacts. One small bedroom at night, a star night-light, a window to the starry sky. 0-4s: her dad (tired man, late 30s, stubble, gray hoodie, dark circles under his eyes) tiptoes in; Lia (6-year-old girl, huge hopeful brown eyes, messy dark curls, yellow star pajamas) sleeps hugging her bunny, a dried tear on her cheek; a blue-and-gold macaw with visible crayon-stroke feathers (cobalt wings, golden chest, green crown) perches on the headboard. 4-8s: low angle: he sits on the floor with crayons, tongue out, drawing with total focus. 8-12s: two-shot: she opens one eye; he proudly holds up his drawing - a hilariously terrible lopsided macaw with a potato body; she bursts out laughing, he laughs; the real macaw tilts its head, offended, ruffling its feathers. 12-15s: she leaps into a tight hug; both drawings now taped side by side on the wall. 15-18s: the macaw flies out the window; the camera follows it up into the starry night. 18-20s: gold letters "FLY HIGH" glow among the stars, "YUV.AI" beneath, then fade to black. Audio: night crickets, crayon scratch, a giggle bursting into shared laughter, a cartoon feather ruffle, the music-box theme blooming into full orchestra on the hug, a warm boom on "FLY HIGH", then silence. No words, only laughter. Feature-animation quality, no deformation, smooth fluid motion, 8k, extreme details. Crisp letter edges. , resolution:720p, duration:20s, aspect_ratio:16:9
+```
+
+
 No in-model voice: lay the existing Hebrew VO + soundtrack2.wav over the edit.
 
-## Style B - Papercraft / origami (recommended)
+## Earlier set - Style B - Papercraft / origami (recommended)
 
 ### 1_popup (1667 chars)
 
@@ -28,7 +55,7 @@ No in-model voice: lay the existing Hebrew VO + soundtrack2.wav over the edit.
 /gen prompt: t2v Shot 4 of 4. Papercraft stop-motion film, a world made entirely of real cut and folded paper, Laika quality, macro tilt-shift lens, warm light, vivid saturated colors, no speech, cuts only between angles on the same action. Tissue-paper golden sky, cotton-wool cloud sea. Noa (small papercraft girl, brown paper bob, big kind button eyes, mustard paper hoodie, blue jeans, teal backpack, gold star clip) rides on an origami blue-and-gold macaw (cobalt folded wings, golden chest, green crown, white face, black beak), always flying forward, sticky notes swirling behind. 0-4s: chase camera: like a pop-up book, gold paper letters "YUV.AI" spring upright from the clouds ahead, casting shadows. 4-7s: low side angle: they thread between the letters "V" and "A", wingtip grazing the gold, glitter bursting at the lens. 7-12s: orbit camera circling them: the swirling notes fold themselves mid-air into eight neat origami cards that click into one calm ring - apple, briefcase, scales, laptop, graduation cap, bar chart, palette, family - a green checkmark stamping onto each, a sun flare each orbit. 12-15s: close-up: Noa smiling, relaxed; a cut-paper thought bubble pops up with three green checkmarks. 15-18s: they fly into the gold foil sun until the frame floods pure white. 18-20s: out of the white, gold foil letters "FLY HIGH" pop up, "WITH YUV.AI" beneath, then fade to black. Audio: rising strings, bass boom on the letter pass, a fold snap and chime per card, choir on the orbit, total cut on the whiteout, the biggest orchestral hit on "FLY HIGH", then silence. No voice. Real paper fibers, crisp folds, crisp letter edges, no deformation, smooth fluid motion, 8k, extreme details. , resolution:720p, duration:20s, aspect_ratio:16:9
 ```
 
-## Style A - Ink & watercolor notebook
+## Earlier set - Style A - Ink & watercolor notebook
 
 ### 1_doodle (1591 chars)
 
