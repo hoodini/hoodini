@@ -1,0 +1,2 @@
+{ "name": "agentcore-harness-explainer", "private": true, "version": "1.0.0",
+  "dependencies": { "@fontsource/anton": "^5", "@fontsource/instrument-serif": "^5", "@fontsource/jetbrains-mono": "^5", "gsap": "^3", "lucide-static": "^0" } }
