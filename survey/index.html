@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>סקר קהילת AI סגורה · YUV.AI</title>
+  <meta name="description" content="עזרו לי לעצב קהילת AI סגורה — מה הכי יהיה בעל ערך בשבילכם? 3 דקות, ומתנה בסיום." />
+
+  <!-- Open Graph (לשיתוף ברשתות) -->
+  <meta property="og:title" content="עזרו לי לעצב קהילת AI סגורה 🤖" />
+  <meta property="og:description" content="3 דקות שיעצבו בדיוק מה יהיה בקהילה. בסוף — מתנה כתודה 🎁" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="progress"><span></span></div>
+  <div id="brand">YUV.AI</div>
+
+  <main id="app">
+    <div id="stage"></div>
+  </main>
+
+  <!-- טופס סטטי מוסתר לזיהוי Netlify Forms. כך התשובות נאספות אוטומטית
+       בלוח הבקרה של Netlify, בלי שרת. כל התשובות נשלחות כ-JSON בשדה payload;
+       email/name נשמרים גם בנפרד לנוחות ייצוא. -->
+  <form name="survey" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="survey" />
+    <input type="text" name="bot-field" />
+    <input type="text" name="payload" />
+    <input type="email" name="email" />
+    <input type="text" name="name" />
+  </form>
+
+  <button id="back" aria-label="חזרה">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+    חזרה
+  </button>
+
+  <noscript>
+    <p style="color:#fff;text-align:center;padding:40px">הסקר דורש JavaScript מופעל בדפדפן.</p>
+  </noscript>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
