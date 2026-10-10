@@ -1,0 +1,16 @@
+out/render_raw.mp4
+out/render.log
+audio/mix_premaster.wav
+audio/master.wav
+audio/tts.log
+qa/shot_*.jpg
+qa/final/
+qa/qa.log
+audio/take_*.wav
+audio/raw/
+audio/score.wav
+audio/tts*.log
+qa/chk.jpg
+assets/official/*
+!assets/official/app_window.png
+!assets/official/app_real.jpg

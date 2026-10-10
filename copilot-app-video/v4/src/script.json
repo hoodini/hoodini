@@ -1,0 +1,58 @@
+[
+ [
+  "open",
+  "Eleven forty-seven p.m. Dana has two hundred and twelve notifications, a release that ships tomorrow... and a promise."
+ ],
+ [
+  "promise",
+  "Six o'clock. Front row. Her daughter's very first piano recital."
+ ],
+ [
+  "habit",
+  "Thing is, Dana does everything herself. Every branch. Every review. Every failing test. Because the one time she didn't... yeah. We don't talk about that time."
+ ],
+ [
+  "scale",
+  "But Dana's not alone. More than a hundred and eighty million developers build on GitHub. So GitHub has seen this night before. Many, many times."
+ ],
+ [
+  "reveal",
+  "That's why they built the GitHub Copilot app. A desktop home for your coding agents."
+ ],
+ [
+  "mywork",
+  "All that noise lands in one calm place: My Work. Agent sessions, issues, pull requests and automations, from every repo."
+ ],
+ [
+  "handoff",
+  "So Dana tries something new. She hands one small bug to an agent. Just one. Very, very carefully."
+ ],
+ [
+  "lanes",
+  "Each agent works in its own copy of the code, a git worktree, so they never step on each other's toes. Or on hers."
+ ],
+ [
+  "merge",
+  "Then Agent Merge takes the part nobody enjoys. It watches the tests, keeps an eye on reviewers, fixes what breaks, and only merges when her rules are met."
+ ],
+ [
+  "control",
+  "And letting go doesn't mean losing control. Agents run in a sandbox. In the cloud, they ask before every change, and autopilot only switches on when you say so."
+ ],
+ [
+  "money",
+  "The honest part? It runs on AI credits. Every plan comes with a monthly amount, and you can set a hard cap, so the bill never surprises you."
+ ],
+ [
+  "listen",
+  "And the team keeps shipping. Nineteen days after launch, eight new features landed, with an open feedback thread in GitHub Community."
+ ],
+ [
+  "payoff",
+  "Six oh two, p.m. Front row. And the release? Merged... at four."
+ ],
+ [
+  "cta",
+  "The GitHub Copilot app. In technical preview now, for Pro, Pro plus, Business and Enterprise. Let your agents do the work. Keep your evenings."
+ ]
+]

@@ -1,0 +1,22 @@
+{
+  "name": "copilot-app-video",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fontsource-variable/hubot-sans": "^5.3.0",
+    "@fontsource-variable/mona-sans": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
+    "@fontsource/mona-sans": "^5.3.0",
+    "@fontsource/monaspace-neon": "^5.3.0",
+    "@primer/octicons": "^19.38.0",
+    "gsap": "^3.15.0",
+    "playwright": "1.56"
+  }
+}
