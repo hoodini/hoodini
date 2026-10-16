@@ -12,7 +12,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <table>
 <tr>
 <td align="center">
-<img src="https://img.shields.io/badge/Repos-141-blue?style=for-the-badge&logo=github" alt="Repositories">
+<img src="https://img.shields.io/badge/Repos-142-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Followers-331-blue?style=for-the-badge&logo=github" alt="Followers">
@@ -39,17 +39,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
+- 💛 **[motion-in-code](https://github.com/hoodini/motion-in-code)** - Motion in Code — how Claude Opus 5.5 makes studio-grade launch videos in pure code (the @twoclipping method, taken apart with live labs). YUV.AI
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 288
+- 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 12
 - 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 44
-- 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 11
 - 💙 **[llm-visuals](https://github.com/hoodini/llm-visuals)** - None ⭐ 11
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 287
-- 📦 **[cxone-churn-lab](https://github.com/hoodini/cxone-churn-lab)** - Hands-on Claude lab: download a synthetic NiCE CXone churn dataset and use copy-paste prompts to go from data → insights → landing page → MVP → deck. Live site. ⭐ 3
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-10-15 00:20:47 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-10-16 00:20:10 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
