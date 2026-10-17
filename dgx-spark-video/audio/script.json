@@ -1,0 +1,2105 @@
+[
+ {
+  "key": "h1",
+  "section": "HOOK",
+  "gap": 0.0,
+  "tts": "[excited] POV: you want to run a one-twenty B model at home\u2026",
+  "units": [
+   {
+    "say": [
+     "POV:"
+    ],
+    "cap": "POV:"
+   },
+   {
+    "say": [
+     "you"
+    ],
+    "cap": "you"
+   },
+   {
+    "say": [
+     "want"
+    ],
+    "cap": "want"
+   },
+   {
+    "say": [
+     "to"
+    ],
+    "cap": "to"
+   },
+   {
+    "say": [
+     "run"
+    ],
+    "cap": "run"
+   },
+   {
+    "say": [
+     "a"
+    ],
+    "cap": "a"
+   },
+   {
+    "say": [
+     "one-twenty",
+     "B"
+    ],
+    "cap": "120B"
+   },
+   {
+    "say": [
+     "model"
+    ],
+    "cap": "model"
+   },
+   {
+    "say": [
+     "at"
+    ],
+    "cap": "at"
+   },
+   {
+    "say": [
+     "home\u2026"
+    ],
+    "cap": "home\u2026"
+   }
+  ],
+  "caption": "POV: you want to run a 120B model at home\u2026"
+ },
+ {
+  "key": "h2",
+  "section": "HOOK",
+  "gap": 0.05,
+  "tts": "and your GPU has thirty-two gigs.",
+  "units": [
+   {
+    "say": [
+     "and"
+    ],
+    "cap": "and"
+   },
+   {
+    "say": [
+     "your"
+    ],
+    "cap": "your"
+   },
+   {
+    "say": [
+     "GPU"
+    ],
+    "cap": "GPU"
+   },
+   {
+    "say": [
+     "has"
+    ],
+    "cap": "has"
+   },
+   {
+    "say": [
+     "thirty-two",
+     "gigs."
+    ],
+    "cap": "32 GB."
+   }
+  ],
+  "caption": "and your GPU has 32 GB."
+ },
+ {
+  "key": "h3",
+  "section": "HOOK",
+  "gap": 0.55,
+  "tts": "[deadpan] CUDA out of memory. Classic.",
+  "units": [
+   {
+    "say": [
+     "CUDA"
+    ],
+    "cap": "CUDA"
+   },
+   {
+    "say": [
+     "out"
+    ],
+    "cap": "out"
+   },
+   {
+    "say": [
+     "of"
+    ],
+    "cap": "of"
+   },
+   {
+    "say": [
+     "memory."
+    ],
+    "cap": "memory."
+   },
+   {
+    "say": [
+     "Classic."
+    ],
+    "cap": "Classic."
+   }
+  ],
+  "caption": "CUDA out of memory. Classic."
+ },
+ {
+  "key": "w1",
+  "section": "WHAT IS IT",
+  "gap": 0.1,
+  "tts": "[excited] Enter DGX Spark. A tiny box with a hundred twenty-eight gigs of memory the GPU can actually use.",
+  "units": [
+   {
+    "say": [
+     "Enter"
+    ],
+    "cap": "Enter"
+   },
+   {
+    "say": [
+     "DGX"
+    ],
+    "cap": "DGX"
+   },
+   {
+    "say": [
+     "Spark."
+    ],
+    "cap": "Spark."
+   },
+   {
+    "say": [
+     "A"
+    ],
+    "cap": "A"
+   },
+   {
+    "say": [
+     "tiny"
+    ],
+    "cap": "tiny"
+   },
+   {
+    "say": [
+     "box"
+    ],
+    "cap": "box"
+   },
+   {
+    "say": [
+     "with"
+    ],
+    "cap": "with"
+   },
+   {
+    "say": [
+     "a",
+     "hundred",
+     "twenty-eight",
+     "gigs"
+    ],
+    "cap": "128 GB"
+   },
+   {
+    "say": [
+     "of"
+    ],
+    "cap": "of"
+   },
+   {
+    "say": [
+     "memory"
+    ],
+    "cap": "memory"
+   },
+   {
+    "say": [
+     "the"
+    ],
+    "cap": "the"
+   },
+   {
+    "say": [
+     "GPU"
+    ],
+    "cap": "GPU"
+   },
+   {
+    "say": [
+     "can"
+    ],
+    "cap": "can"
+   },
+   {
+    "say": [
+     "actually"
+    ],
+    "cap": "actually"
+   },
+   {
+    "say": [
+     "use."
+    ],
+    "cap": "use."
+   }
+  ],
+  "caption": "Enter DGX Spark. A tiny box with 128 GB of memory the GPU can actually use."
+ },
+ {
+  "key": "w2",
+  "section": "WHAT IS IT",
+  "gap": 0.1,
+  "tts": "Unified memory: CPU and GPU share one giant pantry. No more tiny GPU mini fridge.",
+  "units": [
+   {
+    "say": [
+     "Unified"
+    ],
+    "cap": "Unified"
+   },
+   {
+    "say": [
+     "memory:"
+    ],
+    "cap": "memory:"
+   },
+   {
+    "say": [
+     "CPU"
+    ],
+    "cap": "CPU"
+   },
+   {
+    "say": [
+     "and"
+    ],
+    "cap": "and"
+   },
+   {
+    "say": [
+     "GPU"
+    ],
+    "cap": "GPU"
+   },
+   {
+    "say": [
+     "share"
+    ],
+    "cap": "share"
+   },
+   {
+    "say": [
+     "one"
+    ],
+    "cap": "one"
+   },
+   {
+    "say": [
+     "giant"
+    ],
+    "cap": "giant"
+   },
+   {
+    "say": [
+     "pantry."
+    ],
+    "cap": "pantry."
+   },
+   {
+    "say": [
+     "No"
+    ],
+    "cap": "No"
+   },
+   {
+    "say": [
+     "more"
+    ],
+    "cap": "more"
+   },
+   {
+    "say": [
+     "tiny"
+    ],
+    "cap": "tiny"
+   },
+   {
+    "say": [
+     "GPU"
+    ],
+    "cap": "GPU"
+   },
+   {
+    "say": [
+     "mini"
+    ],
+    "cap": "mini"
+   },
+   {
+    "say": [
+     "fridge."
+    ],
+    "cap": "fridge."
+   }
+  ],
+  "caption": "Unified memory: CPU and GPU share one giant pantry. No more tiny GPU mini fridge."
+ },
+ {
+  "key": "w3",
+  "section": "WHAT IS IT",
+  "gap": 0.35,
+  "tts": "Inside: a G B ten Grace Blackwell chip, twenty Arm cores, up to a petaflop of sparse F P four.",
+  "units": [
+   {
+    "say": [
+     "Inside:"
+    ],
+    "cap": "Inside:"
+   },
+   {
+    "say": [
+     "a"
+    ],
+    "cap": "a"
+   },
+   {
+    "say": [
+     "G",
+     "B",
+     "ten"
+    ],
+    "cap": "GB10"
+   },
+   {
+    "say": [
+     "Grace"
+    ],
+    "cap": "Grace"
+   },
+   {
+    "say": [
+     "Blackwell"
+    ],
+    "cap": "Blackwell"
+   },
+   {
+    "say": [
+     "chip,"
+    ],
+    "cap": "chip,"
+   },
+   {
+    "say": [
+     "twenty"
+    ],
+    "cap": "20"
+   },
+   {
+    "say": [
+     "Arm"
+    ],
+    "cap": "Arm"
+   },
+   {
+    "say": [
+     "cores,"
+    ],
+    "cap": "cores,"
+   },
+   {
+    "say": [
+     "up"
+    ],
+    "cap": "up"
+   },
+   {
+    "say": [
+     "to"
+    ],
+    "cap": "to"
+   },
+   {
+    "say": [
+     "a"
+    ],
+    "cap": "a"
+   },
+   {
+    "say": [
+     "petaflop"
+    ],
+    "cap": "petaflop"
+   },
+   {
+    "say": [
+     "of"
+    ],
+    "cap": "of"
+   },
+   {
+    "say": [
+     "sparse"
+    ],
+    "cap": "sparse"
+   },
+   {
+    "say": [
+     "F",
+     "P",
+     "four."
+    ],
+    "cap": "FP4."
+   }
+  ],
+  "caption": "Inside: a GB10 Grace Blackwell chip, 20 Arm cores, up to a petaflop of sparse FP4."
+ },
+ {
+  "key": "f1",
+  "section": "WHAT RUNS",
+  "gap": 0.05,
+  "tts": "So what fits? Eight B, twenty B: easy on both.",
+  "units": [
+   {
+    "say": [
+     "So"
+    ],
+    "cap": "So"
+   },
+   {
+    "say": [
+     "what"
+    ],
+    "cap": "what"
+   },
+   {
+    "say": [
+     "fits?"
+    ],
+    "cap": "fits?"
+   },
+   {
+    "say": [
+     "Eight",
+     "B,"
+    ],
+    "cap": "8B,"
+   },
+   {
+    "say": [
+     "twenty",
+     "B:"
+    ],
+    "cap": "20B:"
+   },
+   {
+    "say": [
+     "easy"
+    ],
+    "cap": "easy"
+   },
+   {
+    "say": [
+     "on"
+    ],
+    "cap": "on"
+   },
+   {
+    "say": [
+     "both."
+    ],
+    "cap": "both."
+   }
+  ],
+  "caption": "So what fits? 8B, 20B: easy on both."
+ },
+ {
+  "key": "f2",
+  "section": "WHAT RUNS",
+  "gap": 0.05,
+  "tts": "Seventy B: Spark, yes. The fifty-ninety? Nope.",
+  "units": [
+   {
+    "say": [
+     "Seventy",
+     "B:"
+    ],
+    "cap": "70B:"
+   },
+   {
+    "say": [
+     "Spark,"
+    ],
+    "cap": "Spark,"
+   },
+   {
+    "say": [
+     "yes."
+    ],
+    "cap": "yes."
+   },
+   {
+    "say": [
+     "The"
+    ],
+    "cap": "The"
+   },
+   {
+    "say": [
+     "fifty-ninety?"
+    ],
+    "cap": "5090?"
+   },
+   {
+    "say": [
+     "Nope."
+    ],
+    "cap": "Nope."
+   }
+  ],
+  "caption": "70B: Spark, yes. The 5090? Nope."
+ },
+ {
+  "key": "f3",
+  "section": "WHAT RUNS",
+  "gap": 0.05,
+  "tts": "One-twenty B: Spark only. Up to two hundred B if you quantize.",
+  "units": [
+   {
+    "say": [
+     "One-twenty",
+     "B:"
+    ],
+    "cap": "120B:"
+   },
+   {
+    "say": [
+     "Spark"
+    ],
+    "cap": "Spark"
+   },
+   {
+    "say": [
+     "only."
+    ],
+    "cap": "only."
+   },
+   {
+    "say": [
+     "Up"
+    ],
+    "cap": "Up"
+   },
+   {
+    "say": [
+     "to"
+    ],
+    "cap": "to"
+   },
+   {
+    "say": [
+     "two",
+     "hundred",
+     "B"
+    ],
+    "cap": "200B"
+   },
+   {
+    "say": [
+     "if"
+    ],
+    "cap": "if"
+   },
+   {
+    "say": [
+     "you"
+    ],
+    "cap": "you"
+   },
+   {
+    "say": [
+     "quantize."
+    ],
+    "cap": "quantize."
+   }
+  ],
+  "caption": "120B: Spark only. Up to 200B if you quantize."
+ },
+ {
+  "key": "q1",
+  "section": "WHAT RUNS",
+  "gap": 0.4,
+  "tts": "Quantizing is zipping the model: way smaller, slightly dumber.",
+  "units": [
+   {
+    "say": [
+     "Quantizing"
+    ],
+    "cap": "Quantizing"
+   },
+   {
+    "say": [
+     "is"
+    ],
+    "cap": "is"
+   },
+   {
+    "say": [
+     "zipping"
+    ],
+    "cap": "zipping"
+   },
+   {
+    "say": [
+     "the"
+    ],
+    "cap": "the"
+   },
+   {
+    "say": [
+     "model:"
+    ],
+    "cap": "model:"
+   },
+   {
+    "say": [
+     "way"
+    ],
+    "cap": "way"
+   },
+   {
+    "say": [
+     "smaller,"
+    ],
+    "cap": "smaller,"
+   },
+   {
+    "say": [
+     "slightly"
+    ],
+    "cap": "slightly"
+   },
+   {
+    "say": [
+     "dumber."
+    ],
+    "cap": "dumber."
+   }
+  ],
+  "caption": "Quantizing is zipping the model: way smaller, slightly dumber."
+ },
+ {
+  "key": "p1",
+  "section": "THE BOTTLENECK",
+  "gap": 0.1,
+  "tts": "[serious] Now the plot twist. Memory size decides what runs. Bandwidth decides how fast.",
+  "units": [
+   {
+    "say": [
+     "Now"
+    ],
+    "cap": "Now"
+   },
+   {
+    "say": [
+     "the"
+    ],
+    "cap": "the"
+   },
+   {
+    "say": [
+     "plot"
+    ],
+    "cap": "plot"
+   },
+   {
+    "say": [
+     "twist."
+    ],
+    "cap": "twist."
+   },
+   {
+    "say": [
+     "Memory"
+    ],
+    "cap": "Memory"
+   },
+   {
+    "say": [
+     "size"
+    ],
+    "cap": "size"
+   },
+   {
+    "say": [
+     "decides"
+    ],
+    "cap": "decides"
+   },
+   {
+    "say": [
+     "what"
+    ],
+    "cap": "what"
+   },
+   {
+    "say": [
+     "runs."
+    ],
+    "cap": "runs."
+   },
+   {
+    "say": [
+     "Bandwidth"
+    ],
+    "cap": "Bandwidth"
+   },
+   {
+    "say": [
+     "decides"
+    ],
+    "cap": "decides"
+   },
+   {
+    "say": [
+     "how"
+    ],
+    "cap": "how"
+   },
+   {
+    "say": [
+     "fast."
+    ],
+    "cap": "fast."
+   }
+  ],
+  "caption": "Now the plot twist. Memory size decides what runs. Bandwidth decides how fast."
+ },
+ {
+  "key": "p2",
+  "section": "THE BOTTLENECK",
+  "gap": 0.05,
+  "tts": "Spark is a huge warehouse with a narrow door: two seventy-three gigabytes per second.",
+  "units": [
+   {
+    "say": [
+     "Spark"
+    ],
+    "cap": "Spark"
+   },
+   {
+    "say": [
+     "is"
+    ],
+    "cap": "is"
+   },
+   {
+    "say": [
+     "a"
+    ],
+    "cap": "a"
+   },
+   {
+    "say": [
+     "huge"
+    ],
+    "cap": "huge"
+   },
+   {
+    "say": [
+     "warehouse"
+    ],
+    "cap": "warehouse"
+   },
+   {
+    "say": [
+     "with"
+    ],
+    "cap": "with"
+   },
+   {
+    "say": [
+     "a"
+    ],
+    "cap": "a"
+   },
+   {
+    "say": [
+     "narrow"
+    ],
+    "cap": "narrow"
+   },
+   {
+    "say": [
+     "door:"
+    ],
+    "cap": "door:"
+   },
+   {
+    "say": [
+     "two",
+     "seventy-three"
+    ],
+    "cap": "273"
+   },
+   {
+    "say": [
+     "gigabytes"
+    ],
+    "cap": "gigabytes"
+   },
+   {
+    "say": [
+     "per"
+    ],
+    "cap": "per"
+   },
+   {
+    "say": [
+     "second."
+    ],
+    "cap": "second."
+   }
+  ],
+  "caption": "Spark is a huge warehouse with a narrow door: 273 gigabytes per second."
+ },
+ {
+  "key": "p3",
+  "section": "THE BOTTLENECK",
+  "gap": 0.45,
+  "tts": "The fifty-ninety is a small garage on a highway: seventeen ninety-two. Six and a half times wider.",
+  "units": [
+   {
+    "say": [
+     "The"
+    ],
+    "cap": "The"
+   },
+   {
+    "say": [
+     "fifty-ninety"
+    ],
+    "cap": "5090"
+   },
+   {
+    "say": [
+     "is"
+    ],
+    "cap": "is"
+   },
+   {
+    "say": [
+     "a"
+    ],
+    "cap": "a"
+   },
+   {
+    "say": [
+     "small"
+    ],
+    "cap": "small"
+   },
+   {
+    "say": [
+     "garage"
+    ],
+    "cap": "garage"
+   },
+   {
+    "say": [
+     "on"
+    ],
+    "cap": "on"
+   },
+   {
+    "say": [
+     "a"
+    ],
+    "cap": "a"
+   },
+   {
+    "say": [
+     "highway:"
+    ],
+    "cap": "highway:"
+   },
+   {
+    "say": [
+     "seventeen",
+     "ninety-two."
+    ],
+    "cap": "1,792."
+   },
+   {
+    "say": [
+     "Six"
+    ],
+    "cap": "Six"
+   },
+   {
+    "say": [
+     "and"
+    ],
+    "cap": "and"
+   },
+   {
+    "say": [
+     "a"
+    ],
+    "cap": "a"
+   },
+   {
+    "say": [
+     "half"
+    ],
+    "cap": "half"
+   },
+   {
+    "say": [
+     "times"
+    ],
+    "cap": "times"
+   },
+   {
+    "say": [
+     "wider."
+    ],
+    "cap": "wider."
+   }
+  ],
+  "caption": "The 5090 is a small garage on a highway: 1,792. Six and a half times wider."
+ },
+ {
+  "key": "r1",
+  "section": "HEAD-TO-HEAD",
+  "gap": 0.1,
+  "tts": "[excited] Round one: same twenty B model. The fifty-ninety hits two hundred five tokens a second. Spark? Sixty-one.",
+  "units": [
+   {
+    "say": [
+     "Round"
+    ],
+    "cap": "Round"
+   },
+   {
+    "say": [
+     "one:"
+    ],
+    "cap": "one:"
+   },
+   {
+    "say": [
+     "same"
+    ],
+    "cap": "same"
+   },
+   {
+    "say": [
+     "twenty",
+     "B"
+    ],
+    "cap": "20B"
+   },
+   {
+    "say": [
+     "model."
+    ],
+    "cap": "model."
+   },
+   {
+    "say": [
+     "The"
+    ],
+    "cap": "The"
+   },
+   {
+    "say": [
+     "fifty-ninety"
+    ],
+    "cap": "5090"
+   },
+   {
+    "say": [
+     "hits"
+    ],
+    "cap": "hits"
+   },
+   {
+    "say": [
+     "two",
+     "hundred",
+     "five"
+    ],
+    "cap": "205"
+   },
+   {
+    "say": [
+     "tokens"
+    ],
+    "cap": "tokens"
+   },
+   {
+    "say": [
+     "a"
+    ],
+    "cap": "a"
+   },
+   {
+    "say": [
+     "second."
+    ],
+    "cap": "second."
+   },
+   {
+    "say": [
+     "Spark?"
+    ],
+    "cap": "Spark?"
+   },
+   {
+    "say": [
+     "Sixty-one."
+    ],
+    "cap": "61."
+   }
+  ],
+  "caption": "Round one: same 20B model. The 5090 hits 205 tokens a second. Spark? 61."
+ },
+ {
+  "key": "r2",
+  "section": "HEAD-TO-HEAD",
+  "gap": 0.1,
+  "tts": "On a dense thirty-two B: six times. That's the bandwidth gap.",
+  "units": [
+   {
+    "say": [
+     "On"
+    ],
+    "cap": "On"
+   },
+   {
+    "say": [
+     "a"
+    ],
+    "cap": "a"
+   },
+   {
+    "say": [
+     "dense"
+    ],
+    "cap": "dense"
+   },
+   {
+    "say": [
+     "thirty-two",
+     "B:"
+    ],
+    "cap": "32B:"
+   },
+   {
+    "say": [
+     "six"
+    ],
+    "cap": "six"
+   },
+   {
+    "say": [
+     "times."
+    ],
+    "cap": "times."
+   },
+   {
+    "say": [
+     "That's"
+    ],
+    "cap": "That's"
+   },
+   {
+    "say": [
+     "the"
+    ],
+    "cap": "the"
+   },
+   {
+    "say": [
+     "bandwidth"
+    ],
+    "cap": "bandwidth"
+   },
+   {
+    "say": [
+     "gap."
+    ],
+    "cap": "gap."
+   }
+  ],
+  "caption": "On a dense 32B: six times. That's the bandwidth gap."
+ },
+ {
+  "key": "r3",
+  "section": "HEAD-TO-HEAD",
+  "gap": 0.1,
+  "tts": "Reading your prompt? Fifty-ninety again, four times faster.",
+  "units": [
+   {
+    "say": [
+     "Reading"
+    ],
+    "cap": "Reading"
+   },
+   {
+    "say": [
+     "your"
+    ],
+    "cap": "your"
+   },
+   {
+    "say": [
+     "prompt?"
+    ],
+    "cap": "prompt?"
+   },
+   {
+    "say": [
+     "Fifty-ninety"
+    ],
+    "cap": "5090"
+   },
+   {
+    "say": [
+     "again,"
+    ],
+    "cap": "again,"
+   },
+   {
+    "say": [
+     "four"
+    ],
+    "cap": "four"
+   },
+   {
+    "say": [
+     "times"
+    ],
+    "cap": "times"
+   },
+   {
+    "say": [
+     "faster."
+    ],
+    "cap": "faster."
+   }
+  ],
+  "caption": "Reading your prompt? 5090 again, four times faster."
+ },
+ {
+  "key": "r4",
+  "section": "HEAD-TO-HEAD",
+  "gap": 0.1,
+  "tts": "Seventy B: Spark runs it at four and a half tokens a second. The fifty-ninety can't even fit it.",
+  "units": [
+   {
+    "say": [
+     "Seventy",
+     "B:"
+    ],
+    "cap": "70B:"
+   },
+   {
+    "say": [
+     "Spark"
+    ],
+    "cap": "Spark"
+   },
+   {
+    "say": [
+     "runs"
+    ],
+    "cap": "runs"
+   },
+   {
+    "say": [
+     "it"
+    ],
+    "cap": "it"
+   },
+   {
+    "say": [
+     "at"
+    ],
+    "cap": "at"
+   },
+   {
+    "say": [
+     "four"
+    ],
+    "cap": "four"
+   },
+   {
+    "say": [
+     "and"
+    ],
+    "cap": "and"
+   },
+   {
+    "say": [
+     "a"
+    ],
+    "cap": "a"
+   },
+   {
+    "say": [
+     "half"
+    ],
+    "cap": "half"
+   },
+   {
+    "say": [
+     "tokens"
+    ],
+    "cap": "tokens"
+   },
+   {
+    "say": [
+     "a"
+    ],
+    "cap": "a"
+   },
+   {
+    "say": [
+     "second."
+    ],
+    "cap": "second."
+   },
+   {
+    "say": [
+     "The"
+    ],
+    "cap": "The"
+   },
+   {
+    "say": [
+     "fifty-ninety"
+    ],
+    "cap": "5090"
+   },
+   {
+    "say": [
+     "can't"
+    ],
+    "cap": "can't"
+   },
+   {
+    "say": [
+     "even"
+    ],
+    "cap": "even"
+   },
+   {
+    "say": [
+     "fit"
+    ],
+    "cap": "fit"
+   },
+   {
+    "say": [
+     "it."
+    ],
+    "cap": "it."
+   }
+  ],
+  "caption": "70B: Spark runs it at four and a half tokens a second. The 5090 can't even fit it."
+ },
+ {
+  "key": "r5",
+  "section": "HEAD-TO-HEAD",
+  "gap": 0.1,
+  "tts": "One-twenty B: Spark does forty-two tokens a second, and serves sixty-four users at once.",
+  "units": [
+   {
+    "say": [
+     "One-twenty",
+     "B:"
+    ],
+    "cap": "120B:"
+   },
+   {
+    "say": [
+     "Spark"
+    ],
+    "cap": "Spark"
+   },
+   {
+    "say": [
+     "does"
+    ],
+    "cap": "does"
+   },
+   {
+    "say": [
+     "forty-two"
+    ],
+    "cap": "42"
+   },
+   {
+    "say": [
+     "tokens"
+    ],
+    "cap": "tokens"
+   },
+   {
+    "say": [
+     "a"
+    ],
+    "cap": "a"
+   },
+   {
+    "say": [
+     "second,"
+    ],
+    "cap": "second,"
+   },
+   {
+    "say": [
+     "and"
+    ],
+    "cap": "and"
+   },
+   {
+    "say": [
+     "serves"
+    ],
+    "cap": "serves"
+   },
+   {
+    "say": [
+     "sixty-four"
+    ],
+    "cap": "64"
+   },
+   {
+    "say": [
+     "users"
+    ],
+    "cap": "users"
+   },
+   {
+    "say": [
+     "at"
+    ],
+    "cap": "at"
+   },
+   {
+    "say": [
+     "once."
+    ],
+    "cap": "once."
+   }
+  ],
+  "caption": "120B: Spark does 42 tokens a second, and serves 64 users at once."
+ },
+ {
+  "key": "r6",
+  "section": "HEAD-TO-HEAD",
+  "gap": 0.1,
+  "tts": "Power: Spark draws just sixty to ninety watts on LLMs. The fifty-ninety card alone? Rated five seventy-five.",
+  "units": [
+   {
+    "say": [
+     "Power:"
+    ],
+    "cap": "Power:"
+   },
+   {
+    "say": [
+     "Spark"
+    ],
+    "cap": "Spark"
+   },
+   {
+    "say": [
+     "draws"
+    ],
+    "cap": "draws"
+   },
+   {
+    "say": [
+     "just"
+    ],
+    "cap": "just"
+   },
+   {
+    "say": [
+     "sixty",
+     "to",
+     "ninety"
+    ],
+    "cap": "60 to 90"
+   },
+   {
+    "say": [
+     "watts"
+    ],
+    "cap": "watts"
+   },
+   {
+    "say": [
+     "on"
+    ],
+    "cap": "on"
+   },
+   {
+    "say": [
+     "LLMs."
+    ],
+    "cap": "LLMs."
+   },
+   {
+    "say": [
+     "The"
+    ],
+    "cap": "The"
+   },
+   {
+    "say": [
+     "fifty-ninety"
+    ],
+    "cap": "5090"
+   },
+   {
+    "say": [
+     "card"
+    ],
+    "cap": "card"
+   },
+   {
+    "say": [
+     "alone?"
+    ],
+    "cap": "alone?"
+   },
+   {
+    "say": [
+     "Rated"
+    ],
+    "cap": "Rated"
+   },
+   {
+    "say": [
+     "five",
+     "seventy-five."
+    ],
+    "cap": "575 W."
+   }
+  ],
+  "caption": "Power: Spark draws just 60 to 90 watts on LLMs. The 5090 card alone? Rated 575 W."
+ },
+ {
+  "key": "r7",
+  "section": "HEAD-TO-HEAD",
+  "gap": 0.1,
+  "tts": "Price: Spark, forty-six ninety-nine. The fifty-ninety, nineteen ninety-nine, plus a whole PC.",
+  "units": [
+   {
+    "say": [
+     "Price:"
+    ],
+    "cap": "Price:"
+   },
+   {
+    "say": [
+     "Spark,"
+    ],
+    "cap": "Spark,"
+   },
+   {
+    "say": [
+     "forty-six",
+     "ninety-nine."
+    ],
+    "cap": "$4,699."
+   },
+   {
+    "say": [
+     "The"
+    ],
+    "cap": "The"
+   },
+   {
+    "say": [
+     "fifty-ninety,"
+    ],
+    "cap": "5090,"
+   },
+   {
+    "say": [
+     "nineteen",
+     "ninety-nine,"
+    ],
+    "cap": "$1,999,"
+   },
+   {
+    "say": [
+     "plus"
+    ],
+    "cap": "plus"
+   },
+   {
+    "say": [
+     "a"
+    ],
+    "cap": "a"
+   },
+   {
+    "say": [
+     "whole"
+    ],
+    "cap": "whole"
+   },
+   {
+    "say": [
+     "PC."
+    ],
+    "cap": "PC."
+   }
+  ],
+  "caption": "Price: Spark, $4,699. The 5090, $1,999, plus a whole PC."
+ },
+ {
+  "key": "r8",
+  "section": "HEAD-TO-HEAD",
+  "gap": 0.45,
+  "tts": "Software: Spark ships NVIDIA's AI stack. The fifty-ninety also games and renders.",
+  "units": [
+   {
+    "say": [
+     "Software:"
+    ],
+    "cap": "Software:"
+   },
+   {
+    "say": [
+     "Spark"
+    ],
+    "cap": "Spark"
+   },
+   {
+    "say": [
+     "ships"
+    ],
+    "cap": "ships"
+   },
+   {
+    "say": [
+     "NVIDIA's"
+    ],
+    "cap": "NVIDIA's"
+   },
+   {
+    "say": [
+     "AI"
+    ],
+    "cap": "AI"
+   },
+   {
+    "say": [
+     "stack."
+    ],
+    "cap": "stack."
+   },
+   {
+    "say": [
+     "The"
+    ],
+    "cap": "The"
+   },
+   {
+    "say": [
+     "fifty-ninety"
+    ],
+    "cap": "5090"
+   },
+   {
+    "say": [
+     "also"
+    ],
+    "cap": "also"
+   },
+   {
+    "say": [
+     "games"
+    ],
+    "cap": "games"
+   },
+   {
+    "say": [
+     "and"
+    ],
+    "cap": "and"
+   },
+   {
+    "say": [
+     "renders."
+    ],
+    "cap": "renders."
+   }
+  ],
+  "caption": "Software: Spark ships NVIDIA's AI stack. The 5090 also games and renders."
+ },
+ {
+  "key": "b1",
+  "section": "WHICH ONE?",
+  "gap": 0.1,
+  "tts": "[curious] So which one should you buy?",
+  "units": [
+   {
+    "say": [
+     "So"
+    ],
+    "cap": "So"
+   },
+   {
+    "say": [
+     "which"
+    ],
+    "cap": "which"
+   },
+   {
+    "say": [
+     "one"
+    ],
+    "cap": "one"
+   },
+   {
+    "say": [
+     "should"
+    ],
+    "cap": "should"
+   },
+   {
+    "say": [
+     "you"
+    ],
+    "cap": "you"
+   },
+   {
+    "say": [
+     "buy?"
+    ],
+    "cap": "buy?"
+   }
+  ],
+  "caption": "So which one should you buy?"
+ },
+ {
+  "key": "b2",
+  "section": "WHICH ONE?",
+  "gap": 0.05,
+  "tts": "Big models, agents, fine-tuning, or a silent desk box: Spark.",
+  "units": [
+   {
+    "say": [
+     "Big"
+    ],
+    "cap": "Big"
+   },
+   {
+    "say": [
+     "models,"
+    ],
+    "cap": "models,"
+   },
+   {
+    "say": [
+     "agents,"
+    ],
+    "cap": "agents,"
+   },
+   {
+    "say": [
+     "fine-tuning,"
+    ],
+    "cap": "fine-tuning,"
+   },
+   {
+    "say": [
+     "or"
+    ],
+    "cap": "or"
+   },
+   {
+    "say": [
+     "a"
+    ],
+    "cap": "a"
+   },
+   {
+    "say": [
+     "silent"
+    ],
+    "cap": "silent"
+   },
+   {
+    "say": [
+     "desk"
+    ],
+    "cap": "desk"
+   },
+   {
+    "say": [
+     "box:"
+    ],
+    "cap": "box:"
+   },
+   {
+    "say": [
+     "Spark."
+    ],
+    "cap": "Spark."
+   }
+  ],
+  "caption": "Big models, agents, fine-tuning, or a silent desk box: Spark."
+ },
+ {
+  "key": "b3",
+  "section": "WHICH ONE?",
+  "gap": 0.05,
+  "tts": "Max speed on models under thirty B, plus gaming and creative work: fifty-ninety.",
+  "units": [
+   {
+    "say": [
+     "Max"
+    ],
+    "cap": "Max"
+   },
+   {
+    "say": [
+     "speed"
+    ],
+    "cap": "speed"
+   },
+   {
+    "say": [
+     "on"
+    ],
+    "cap": "on"
+   },
+   {
+    "say": [
+     "models"
+    ],
+    "cap": "models"
+   },
+   {
+    "say": [
+     "under"
+    ],
+    "cap": "under"
+   },
+   {
+    "say": [
+     "thirty",
+     "B,"
+    ],
+    "cap": "30B,"
+   },
+   {
+    "say": [
+     "plus"
+    ],
+    "cap": "plus"
+   },
+   {
+    "say": [
+     "gaming"
+    ],
+    "cap": "gaming"
+   },
+   {
+    "say": [
+     "and"
+    ],
+    "cap": "and"
+   },
+   {
+    "say": [
+     "creative"
+    ],
+    "cap": "creative"
+   },
+   {
+    "say": [
+     "work:"
+    ],
+    "cap": "work:"
+   },
+   {
+    "say": [
+     "fifty-ninety."
+    ],
+    "cap": "5090."
+   }
+  ],
+  "caption": "Max speed on models under 30B, plus gaming and creative work: 5090."
+ },
+ {
+  "key": "b4",
+  "section": "WHICH ONE?",
+  "gap": 0.4,
+  "tts": "Need more? Link two Sparks for four-oh-five B.",
+  "units": [
+   {
+    "say": [
+     "Need"
+    ],
+    "cap": "Need"
+   },
+   {
+    "say": [
+     "more?"
+    ],
+    "cap": "more?"
+   },
+   {
+    "say": [
+     "Link"
+    ],
+    "cap": "Link"
+   },
+   {
+    "say": [
+     "two"
+    ],
+    "cap": "two"
+   },
+   {
+    "say": [
+     "Sparks"
+    ],
+    "cap": "Sparks"
+   },
+   {
+    "say": [
+     "for"
+    ],
+    "cap": "for"
+   },
+   {
+    "say": [
+     "four-oh-five",
+     "B."
+    ],
+    "cap": "405B."
+   }
+  ],
+  "caption": "Need more? Link two Sparks for 405B."
+ },
+ {
+  "key": "c1",
+  "section": "VALUE",
+  "gap": 0.1,
+  "tts": "Value math, dollars per token-per-second: on twenty B, a fifty-ninety build is seventeen bucks. Spark, seventy-seven.",
+  "units": [
+   {
+    "say": [
+     "Value"
+    ],
+    "cap": "Value"
+   },
+   {
+    "say": [
+     "math,"
+    ],
+    "cap": "math,"
+   },
+   {
+    "say": [
+     "dollars"
+    ],
+    "cap": "dollars"
+   },
+   {
+    "say": [
+     "per"
+    ],
+    "cap": "per"
+   },
+   {
+    "say": [
+     "token-per-second:"
+    ],
+    "cap": "token-per-second:"
+   },
+   {
+    "say": [
+     "on"
+    ],
+    "cap": "on"
+   },
+   {
+    "say": [
+     "twenty",
+     "B,"
+    ],
+    "cap": "20B,"
+   },
+   {
+    "say": [
+     "a"
+    ],
+    "cap": "a"
+   },
+   {
+    "say": [
+     "fifty-ninety"
+    ],
+    "cap": "5090"
+   },
+   {
+    "say": [
+     "build"
+    ],
+    "cap": "build"
+   },
+   {
+    "say": [
+     "is"
+    ],
+    "cap": "is"
+   },
+   {
+    "say": [
+     "seventeen",
+     "bucks."
+    ],
+    "cap": "$17."
+   },
+   {
+    "say": [
+     "Spark,"
+    ],
+    "cap": "Spark,"
+   },
+   {
+    "say": [
+     "seventy-seven."
+    ],
+    "cap": "$77."
+   }
+  ],
+  "caption": "Value math, dollars per token-per-second: on 20B, a 5090 build is $17. Spark, $77."
+ },
+ {
+  "key": "c2",
+  "section": "VALUE",
+  "gap": 0.6,
+  "tts": "On one-twenty B, the fifty-ninety can't play.",
+  "units": [
+   {
+    "say": [
+     "On"
+    ],
+    "cap": "On"
+   },
+   {
+    "say": [
+     "one-twenty",
+     "B,"
+    ],
+    "cap": "120B,"
+   },
+   {
+    "say": [
+     "the"
+    ],
+    "cap": "the"
+   },
+   {
+    "say": [
+     "fifty-ninety"
+    ],
+    "cap": "5090"
+   },
+   {
+    "say": [
+     "can't"
+    ],
+    "cap": "can't"
+   },
+   {
+    "say": [
+     "play."
+    ],
+    "cap": "play."
+   }
+  ],
+  "caption": "On 120B, the 5090 can't play."
+ },
+ {
+  "key": "v1",
+  "section": "VERDICT",
+  "gap": 0.0,
+  "tts": "[confident] Spark equals capacity. Fifty-ninety equals speed. Pick your bottleneck.",
+  "units": [
+   {
+    "say": [
+     "Spark"
+    ],
+    "cap": "Spark"
+   },
+   {
+    "say": [
+     "equals"
+    ],
+    "cap": "equals"
+   },
+   {
+    "say": [
+     "capacity."
+    ],
+    "cap": "capacity."
+   },
+   {
+    "say": [
+     "Fifty-ninety"
+    ],
+    "cap": "5090"
+   },
+   {
+    "say": [
+     "equals"
+    ],
+    "cap": "equals"
+   },
+   {
+    "say": [
+     "speed."
+    ],
+    "cap": "speed."
+   },
+   {
+    "say": [
+     "Pick"
+    ],
+    "cap": "Pick"
+   },
+   {
+    "say": [
+     "your"
+    ],
+    "cap": "your"
+   },
+   {
+    "say": [
+     "bottleneck."
+    ],
+    "cap": "bottleneck."
+   }
+  ],
+  "caption": "Spark equals capacity. 5090 equals speed. Pick your bottleneck."
+ }
+]
