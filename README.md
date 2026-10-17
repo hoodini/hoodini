@@ -29,27 +29,27 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
-- ⭐ Starred [initialcommit-com/git-sim](https://github.com/initialcommit-com/git-sim) - Oct 13
-- 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Oct 04
-- 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Oct 03
-- 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Oct 04
-- ✨ Created branch in [hoodini/hoodini](https://github.com/hoodini/hoodini) - Oct 03
+- 📝 Pushed 0 commit(s) to [hoodini/motion-in-code](https://github.com/hoodini/motion-in-code) - Oct 15
+- 📝 Pushed 0 commit(s) to [hoodini/motion-in-code](https://github.com/hoodini/motion-in-code) - Oct 15
+- 📝 Pushed 0 commit(s) to [hoodini/motion-in-code](https://github.com/hoodini/motion-in-code) - Oct 15
+- 📝 Pushed 0 commit(s) to [hoodini/motion-in-code](https://github.com/hoodini/motion-in-code) - Oct 15
+- ✨ Created branch in [hoodini/motion-in-code](https://github.com/hoodini/motion-in-code) - Oct 15
 
 
 
 ### ⭐ Featured Repositories
 
 - 💛 **[motion-in-code](https://github.com/hoodini/motion-in-code)** - Motion in Code — how Claude Opus 5.5 makes studio-grade launch videos in pure code (the @twoclipping method, taken apart with live labs). YUV.AI
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 288
+- 💙 **[whatsapp-public-logan](https://github.com/hoodini/whatsapp-public-logan)** - Open-source WhatsApp bot with AI capabilities - Logan by YUV.AI ⭐ 91
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 12
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 288
 - 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 44
-- 💙 **[llm-visuals](https://github.com/hoodini/llm-visuals)** - None ⭐ 11
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-10-16 00:20:10 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-10-17 00:20:53 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
