@@ -1,0 +1,4 @@
+build/
+src/node_modules/
+qa/A/*.png
+qa/B/*.png

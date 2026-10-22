@@ -1,0 +1,11 @@
+{
+ "file": "render.mjs",
+ "lines": [
+  "for (let f = a; f < b; f++) {",
+  "  await pg.evaluate(SEEK, f);",
+  "  const r = await cdp",
+  "    .send(CAP, SHOT);",
+  "  ff.stdin.write(png(r));",
+  "}"
+ ]
+}

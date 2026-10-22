@@ -1,0 +1,188 @@
+{
+ "fmt": "B",
+ "issues": [],
+ "report": [
+  {
+   "shot": "01",
+   "key": "open",
+   "t": 3.083,
+   "still": "qa/B/shot_01_open.png",
+   "fonts": [
+    "Anton",
+    "Assistant ExtraLight ExtraBold",
+    "Assistant ExtraLight Light",
+    "Assistant ExtraLight SemiBold",
+    "IBM Plex Mono SemiBold",
+    "Oswald ExtraLight"
+   ]
+  },
+  {
+   "shot": "02",
+   "key": "pain",
+   "t": 8.083,
+   "still": "qa/B/shot_02_pain.png",
+   "fonts": [
+    "Anton",
+    "Assistant ExtraLight ExtraBold",
+    "Assistant ExtraLight Light",
+    "Assistant ExtraLight SemiBold",
+    "IBM Plex Mono SemiBold",
+    "Oswald ExtraLight"
+   ]
+  },
+  {
+   "shot": "03",
+   "key": "promise",
+   "t": 13.083,
+   "still": "qa/B/shot_03_promise.png",
+   "fonts": [
+    "Anton",
+    "Assistant ExtraLight ExtraBold",
+    "Assistant ExtraLight Light",
+    "Assistant ExtraLight SemiBold",
+    "IBM Plex Mono SemiBold",
+    "Oswald ExtraLight"
+   ]
+  },
+  {
+   "shot": "04",
+   "key": "app",
+   "t": 17.528,
+   "still": "qa/B/shot_04_app.png",
+   "fonts": [
+    "Anton",
+    "Assistant ExtraLight ExtraBold",
+    "Assistant ExtraLight Light",
+    "Assistant ExtraLight SemiBold",
+    "IBM Plex Mono SemiBold",
+    "Oswald ExtraLight"
+   ]
+  },
+  {
+   "shot": "05B",
+   "key": "repoenv",
+   "t": 21.972,
+   "still": "qa/B/shot_05_repoenv.png",
+   "fonts": [
+    "Anton",
+    "Assistant ExtraLight ExtraBold",
+    "Assistant ExtraLight Light",
+    "Assistant ExtraLight SemiBold",
+    "IBM Plex Mono SemiBold",
+    "Oswald ExtraLight"
+   ]
+  },
+  {
+   "shot": "07",
+   "key": "model",
+   "t": 25.861,
+   "still": "qa/B/shot_06_model.png",
+   "fonts": [
+    "Anton",
+    "Assistant ExtraLight ExtraBold",
+    "Assistant ExtraLight Light",
+    "Assistant ExtraLight SemiBold",
+    "IBM Plex Mono SemiBold",
+    "Oswald ExtraLight"
+   ]
+  },
+  {
+   "shot": "08",
+   "key": "prompt",
+   "t": 30.861,
+   "still": "qa/B/shot_07_prompt.png",
+   "fonts": [
+    "Anton",
+    "Assistant ExtraLight ExtraBold",
+    "Assistant ExtraLight Light",
+    "Assistant ExtraLight SemiBold",
+    "IBM Plex Mono SemiBold",
+    "Oswald ExtraLight"
+   ]
+  },
+  {
+   "shot": "09",
+   "key": "render",
+   "t": 34.75,
+   "still": "qa/B/shot_08_render.png",
+   "fonts": [
+    "Anton",
+    "Assistant ExtraLight ExtraBold",
+    "Assistant ExtraLight Light",
+    "Assistant ExtraLight SemiBold",
+    "IBM Plex Mono SemiBold",
+    "Oswald ExtraLight"
+   ]
+  },
+  {
+   "shot": "10",
+   "key": "loop",
+   "t": 39.75,
+   "still": "qa/B/shot_09_loop.png",
+   "fonts": [
+    "Anton",
+    "Assistant ExtraLight ExtraBold",
+    "Assistant ExtraLight Light",
+    "Assistant ExtraLight SemiBold",
+    "IBM Plex Mono SemiBold",
+    "Oswald ExtraLight"
+   ]
+  },
+  {
+   "shot": "11",
+   "key": "notam1",
+   "t": 43.639,
+   "still": "qa/B/shot_10_notam1.png",
+   "fonts": [
+    "Anton",
+    "Assistant ExtraLight ExtraBold",
+    "Assistant ExtraLight Light",
+    "Assistant ExtraLight SemiBold",
+    "IBM Plex Mono SemiBold",
+    "Oswald ExtraLight"
+   ]
+  },
+  {
+   "shot": "14",
+   "key": "result",
+   "t": 48.639,
+   "still": "qa/B/shot_11_result.png",
+   "fonts": [
+    "Anton",
+    "Assistant ExtraLight ExtraBold",
+    "Assistant ExtraLight Light",
+    "Assistant ExtraLight SemiBold",
+    "IBM Plex Mono SemiBold",
+    "Oswald ExtraLight"
+   ]
+  },
+  {
+   "shot": "16",
+   "key": "reveal",
+   "t": 52.528,
+   "still": "qa/B/shot_12_reveal.png",
+   "fonts": [
+    "Anton",
+    "Assistant ExtraLight ExtraBold",
+    "Assistant ExtraLight Light",
+    "Assistant ExtraLight SemiBold",
+    "IBM Plex Mono SemiBold",
+    "Oswald ExtraLight"
+   ]
+  },
+  {
+   "shot": "17",
+   "key": "end",
+   "t": 56.972,
+   "still": "qa/B/shot_13_end.png",
+   "fonts": [
+    "Anton",
+    "Assistant ExtraLight ExtraBold",
+    "Assistant ExtraLight Light",
+    "Assistant ExtraLight SemiBold",
+    "IBM Plex Mono SemiBold",
+    "Oswald ExtraLight"
+   ]
+  }
+ ]
+}
