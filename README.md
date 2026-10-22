@@ -32,24 +32,24 @@ I'm Hoodini! Welcome to my GitHub profile.
 - 📝 Pushed 0 commit(s) to [hoodini/motion-in-code](https://github.com/hoodini/motion-in-code) - Oct 19
 - 📝 Pushed 0 commit(s) to [hoodini/motion-in-code](https://github.com/hoodini/motion-in-code) - Oct 18
 - 📝 Pushed 0 commit(s) to [hoodini/motion-in-code](https://github.com/hoodini/motion-in-code) - Oct 19
-- 📝 Pushed 0 commit(s) to [hoodini/motion-in-code](https://github.com/hoodini/motion-in-code) - Oct 19
+- 📝 Pushed 0 commit(s) to [hoodini/motion-in-code](https://github.com/hoodini/motion-in-code) - Oct 18
 - 📝 Pushed 0 commit(s) to [hoodini/motion-in-code](https://github.com/hoodini/motion-in-code) - Oct 19
 
 
 
 ### ⭐ Featured Repositories
 
+- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 47
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 12
 - 💙 **[virtual-typewriter](https://github.com/hoodini/virtual-typewriter)** - An immersive virtual typewriter web application simulating a 1960s mechanical typewriter ⭐ 3
 - 📦 **[amazon-bedrock-agentcore-samples](https://github.com/hoodini/amazon-bedrock-agentcore-samples)** - None ⭐ 2
 - 📦 **[motion-in-code](https://github.com/hoodini/motion-in-code)** - Motion in Code — how Claude Opus 5.5 makes studio-grade launch videos in pure code (the @twoclipping method, taken apart with live labs). YUV.AI ⭐ 1
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 289
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-10-21 00:20:41 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-10-22 00:20:35 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
