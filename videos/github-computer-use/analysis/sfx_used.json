@@ -1,0 +1,193 @@
+{
+ "sfx": {
+  "pop_hard": {
+   "mixkit_id": 2364,
+   "file": "sfx/pop_hard.mp3",
+   "peak": 0.0444,
+   "onset": 0.0028,
+   "dur": 1.175,
+   "peak_db": 2.7,
+   "rms_db": -9.1
+  },
+  "swoosh": {
+   "mixkit_id": 166,
+   "file": "sfx/swoosh.mp3",
+   "peak": 0.2956,
+   "onset": 0.1359,
+   "dur": 0.781,
+   "peak_db": -0.9,
+   "rms_db": -14.5
+  },
+  "key": {
+   "mixkit_id": 2542,
+   "file": "sfx/key.mp3",
+   "peak": 0.1146,
+   "onset": 0.1076,
+   "dur": 0.306,
+   "peak_db": -1.1,
+   "rms_db": -20.3
+  },
+  "enter": {
+   "mixkit_id": 2577,
+   "file": "sfx/enter.mp3",
+   "peak": 0.0089,
+   "onset": 0.0002,
+   "dur": 1.047,
+   "peak_db": 1.7,
+   "rms_db": -11.2
+  },
+  "pop": {
+   "mixkit_id": 3005,
+   "file": "sfx/pop.mp3",
+   "peak": 0.0361,
+   "onset": 0.0126,
+   "dur": 0.18,
+   "peak_db": 1.0,
+   "rms_db": -11.8
+  },
+  "error": {
+   "mixkit_id": 2575,
+   "file": "sfx/error.mp3",
+   "peak": 0.1303,
+   "onset": 0.0,
+   "dur": 1.329,
+   "peak_db": 2.2,
+   "rms_db": -15.0
+  },
+  "slam": {
+   "mixkit_id": 2299,
+   "file": "sfx/slam.mp3",
+   "peak": 0.0884,
+   "onset": 0.0617,
+   "dur": 1.101,
+   "peak_db": 2.7,
+   "rms_db": -5.5
+  },
+  "click": {
+   "mixkit_id": 1117,
+   "file": "sfx/click.mp3",
+   "peak": 0.1348,
+   "onset": 0.0977,
+   "dur": 0.288,
+   "peak_db": 1.8,
+   "rms_db": -14.0
+  },
+  "tick": {
+   "mixkit_id": 2568,
+   "file": "sfx/tick.mp3",
+   "peak": 0.0028,
+   "onset": 0.0,
+   "dur": 0.199,
+   "peak_db": -3.1,
+   "rms_db": -15.5
+  },
+  "switch": {
+   "mixkit_id": 2585,
+   "file": "sfx/switch.mp3",
+   "peak": 0.0037,
+   "onset": 0.0,
+   "dur": 1.106,
+   "peak_db": 2.4,
+   "rms_db": -10.7
+  },
+  "confirm": {
+   "mixkit_id": 2867,
+   "file": "sfx/confirm.mp3",
+   "peak": 0.1949,
+   "onset": 0.0025,
+   "dur": 1.304,
+   "peak_db": 2.4,
+   "rms_db": -12.4
+  },
+  "notif": {
+   "mixkit_id": 2354,
+   "file": "sfx/notif.mp3",
+   "peak": 0.056,
+   "onset": 0.0513,
+   "dur": 1.059,
+   "peak_db": -2.8,
+   "rms_db": -13.8
+  },
+  "whoosh": {
+   "mixkit_id": 1492,
+   "file": "sfx/whoosh.mp3",
+   "peak": 1.077,
+   "onset": 0.5616,
+   "dur": 1.334,
+   "peak_db": 0.5,
+   "rms_db": -18.8
+  },
+  "riser": {
+   "mixkit_id": 790,
+   "file": "sfx/riser.mp3",
+   "peak": 2.5344,
+   "onset": 1.3535,
+   "dur": 2.575,
+   "peak_db": -5.3,
+   "rms_db": -21.5
+  },
+  "drop": {
+   "mixkit_id": 2303,
+   "file": "sfx/drop.mp3",
+   "peak": 0.2063,
+   "onset": 0.0281,
+   "dur": 2.75,
+   "peak_db": -1.4,
+   "rms_db": -10.3
+  },
+  "swoosh_light": {
+   "mixkit_id": 3115,
+   "file": "sfx/swoosh_light.mp3",
+   "peak": 0.1179,
+   "onset": 0.0756,
+   "dur": 0.574,
+   "peak_db": -2.6,
+   "rms_db": -19.4
+  },
+  "scan": {
+   "mixkit_id": 2626,
+   "file": "sfx/scan.mp3",
+   "peak": 0.494,
+   "onset": 0.0431,
+   "dur": 2.171,
+   "peak_db": -2.3,
+   "rms_db": -15.5
+  },
+  "drag": {
+   "mixkit_id": 3120,
+   "file": "sfx/drag.mp3",
+   "peak": 0.0951,
+   "onset": 0.015,
+   "dur": 1.65,
+   "peak_db": -7.7,
+   "rms_db": -26.7
+  },
+  "success": {
+   "mixkit_id": 951,
+   "file": "sfx/success.mp3",
+   "peak": 0.1859,
+   "onset": 0.0484,
+   "dur": 2.8,
+   "peak_db": -0.6,
+   "rms_db": -15.9
+  },
+  "impact": {
+   "mixkit_id": 772,
+   "file": "sfx/impact.mp3",
+   "peak": 0.5119,
+   "onset": 0.1109,
+   "dur": 1.222,
+   "peak_db": 2.0,
+   "rms_db": -11.0
+  },
+  "logo": {
+   "mixkit_id": 2902,
+   "file": "sfx/logo.mp3",
+   "peak": 1.2699,
+   "onset": 0.146,
+   "dur": 5.994,
+   "peak_db": 1.9,
+   "rms_db": -10.6
+  }
+ }
+}
