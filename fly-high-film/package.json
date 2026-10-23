@@ -1,0 +1,2 @@
+{ "name": "fly-high-film", "private": true, "type": "module",
+  "dependencies": { "three": "0.170.0", "opentype.js": "2.0.0", "playwright-core": "1.63.0" } }
