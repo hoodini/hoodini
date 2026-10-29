@@ -11,24 +11,25 @@ WORDS = json.load(open(CFG['words']))
 END = CFG.get('end_card', 4.5)
 FPS = CFG.get('fps', 30)                                             # end card
 
+STARTS, _t = [], 0.0
+for a, b in KEEP: STARTS.append(_t); _t += b - a
 def O(src):
-    """source time -> output time (a time inside a removed stretch snaps to the next kept moment)"""
-    t = 0.0
-    for a, b in KEEP:
-        if src < a: return t
-        if src <= b: return t + src - a
-        t += b - a
-    return t
+    """source time -> output time. KEEP is in STORY order (it may be reordered against the source).
+    A time inside a removed stretch maps to the start of the next kept range in source order."""
+    for (a, b), t0 in zip(KEEP, STARTS):
+        if a <= src < b: return t0 + src - a
+    nxt = [(a, t0) for (a, b), t0 in zip(KEEP, STARTS) if a > src]
+    return min(nxt)[1] if nxt else _t
 SPEECH = sum(b - a for a, b in KEEP)
 DUR = SPEECH + END
 
 # plates: kept ranges split at screen/face boundaries
 plates = []
-for a, b in KEEP:
+for (a, b), T0 in zip(KEEP, STARTS):      # cumulative story time (a boundary belongs to two ranges: never look it up)
     edges = sorted({a, b} | {x for f in FACE for x in f if a < x < b})
     for i, (s, e) in enumerate(zip(edges, edges[1:])):
         face = any(fa <= s < fb for fa, fb in FACE)
-        plates.append({'t0': round(O(s), 4), 'dur': round(e - s, 4), 'in': s, 'kind': 'face' if face else 'screen',
+        plates.append({'t0': round(T0 + s - a, 4), 'dur': round(e - s, 4), 'in': s, 'kind': 'face' if face else 'screen',
                        'cut': i == 0})                 # True = a real cut into this plate, False = continuous take
 # face punch levels per plate (jump cuts alternate 1.0 / 1.12; the sign-off is the top-anchored crop that hides
 # the old burned-in name tag)
@@ -49,7 +50,9 @@ ow = []
 for w in WORDS:
     for a, b in KEEP:
         if a - 0.02 <= w['s'] < b - 0.05:   # by its START: Whisper often stretches a word's end over the next pause
-            ow.append({'w': w['w'], 't0': round(O(max(w['s'], a)), 3), 't1': round(O(min(w['e'], b)), 3)}); break
+            T0 = STARTS[KEEP.index([a, b])]
+            ow.append({'w': w['w'], 't0': round(T0 + max(w['s'], a) - a, 3), 't1': round(T0 + min(w['e'], b) - a, 3), 'src': w['s']}); break
+ow.sort(key=lambda w: w['t0'])
 # caption phrases (calm, read at a glance): up to 7 words / 34 characters, break on a pause or punctuation,
 # each shown at least 0.9 s and held until the next phrase when the gap is short (no flicker)
 HEAD_WORDS = {'של', 'את', 'עם', 'יש', 'זה', 'כמו', 'אם', 'או', 'כי', 'אבל', 'גם', 'רק', 'על', 'אל', 'מה', 'לי', 'לנו',

@@ -41,6 +41,7 @@ These override generic defaults, and override `yuv-design-system` §6 where it s
 | "It ends on me looking sideways" (v2) | **Pick the closing frame by eye.** Make a grid of the last seconds and choose a frame looking into the lens. The avatar and any freeze use that frame, never simply the last one. |
 | "The branding is always dark; I love it lighter" (v2) | **Light is the default stage.** `paperSky` (white → cloud with soft pink / violet / orange glows), ink headlines with the gold marker, pink-tinted shadows. Terminals and code stay dark cards on it. Night only when he asks or the topic is night. |
 | "I loved the glow around the circle, I want more" (v2) | **The glow ring is a signature, not a one-off.** `softRing` (conic glow stops as stacked strokes: cheap at 6 subframes) goes around the screen panel, split cards, hero B-roll cards, code chips, the lower third, the MODS-style hero chip, the CTA and the avatar, pulsing softly on the beat. Never on body text or small chips. |
+| "I didn't understand what a mod is, it jumps straight to Live pane, the demo is visually bad" (v3) | **A question is followed by its answer.** If the source answers later, **reorder the story** (`keep` is in story order, not source order): question → definition → examples. **A demo shows one thing at a time:** the concept first (A vs B, e.g. plugin = tools going out, mod = Claude's own look), then each example alone, big, in a spotlight (the rest dimmed, the glow ring on the active part, a large label naming it). Never four small elements at once. Before the stills gate, ask: would a viewer who knows nothing understand it from the screen alone? |
 | "No feeling of 60 fps animation" | **60 fps, 6 subframes, springs everywhere.** Plates morph panel↔full frame. Screen jump cuts push. Face jump cuts punch (1.0/1.12 + an impulse). Scenes grow out of the panel and contract back. Never a fade. |
 
 ## 0. Intake
@@ -70,11 +71,11 @@ Read all of `transcript.md`; `words.json` has every word's time.
 Write `build/edit_plan.md` with these four things:
 - **the promise**;
 - **the cold open**: the strongest line first;
-- **the chapter arc**: an argument, not a spec list;
+- **the chapter arc**: an argument, not a spec list. Check every question he asks on camera: where is its answer? If it comes later in the source, move it right after the question;
 - **every cut, each with its reason**: fillers, restarts, narrating instead of showing, tangents (a tangent is a separate Short).
 
 Then put every decision in one `edit.json` (example: `references/example-claude-mods/edit.json`):
-- `keep`: source ranges of speech to keep. Leave padding to `snapcuts.py`.
+- `keep`: source ranges of speech to keep, **in story order**, which may differ from source order. Leave padding to `snapcuts.py`. Plate and word times are computed cumulatively in story order: a boundary time belongs to two ranges, so never look it up.
 - `face`: on-camera source ranges. The rest is screen.
 - `zooms`: `[source_t, [x,y,w,h] | null]` for the screen stage. **Check a frame at every zoom time**, because the old edit may have panned.
 - `anchors`: a name for every spoken word that triggers motion, e.g. `"toast": 61.2`. All motion and sound hang on these names.
@@ -118,7 +119,7 @@ Start from `references/example-claude-mods/film.js`. It is a complete, rendered,
 ### B-roll scenes
 `scene(x,t,a,b,seed,fn)` grows a full-frame scene out of the panel and contracts it back.
 
-**One scene per idea he explains, built from what he says:**
+**One scene per idea he explains, built from what he says. Clarity first:** a concept before its examples; one element at a time; big labels; spotlight plus glow on the active part; the rest dimmed. A shared element can carry the eye from the concept to the examples, as in the example's `lab()`, where the mod window grows into the examples window.
 - the UI he describes, drawn in code (status lines, panes, toasts, chips);
 - before/after;
 - A vs B;
@@ -218,5 +219,5 @@ It is fine for a rough cut or a Resolve hand-off. It is **not** the YUV.AI look,
 ## References
 - `references/playbook.md`: the research and evidence (pacing, hooks, CTAs, sound, rights).
 - `references/formats.md`: recipes for talking head, reels, screen demos, screenshots and product reviews.
-- `references/example-claude-mods/`: the full worked example (`edit.json` + `film.js`).
+- `references/example-claude-mods/`: the full worked example: `edit.json` (story-ordered `keep`), `captions_src.json` (hand-written phrases by source time) and `film.js` (`lab()` = concept → examples).
 - `references/edl-schema.md`: the quick-mode EDL.

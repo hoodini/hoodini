@@ -49,7 +49,7 @@ const PL = D.plates;
 function plateAt(t) { let lo = 0, hi = PL.length - 1; while (lo < hi) { const m = (lo + hi + 1) >> 1; if (PL[m].t0 <= t) lo = m; else hi = m - 1; } return lo; }
 const srcIdx = (p, t) => clamp(Math.round((p.in + clamp(t - p.t0, 0, p.dur)) * 30), Math.round(p.in * 30), Math.min(5423, Math.round((p.in + p.dur) * 30) - 1));  // 5423 = last decodable source frame
 const AVATAR = 5372;   // frame where Yuval looks straight into the lens (picked from a grid of the last 4 s)
-const BEHIND = [[A.faces - 0.3, A.faces_end], [A.mods_now - 0.25, A.mods_now_end]];
+const BEHIND = [[A.mods_now - 0.25, A.mods_now_end]];
 // the render driver calls prepare(t) before each frame: decode every frame (and matte) the subframes will touch
 window.prepare = async (t, n = 6, shutter = 0.5, fps = 60) => {
   const need = [];
@@ -97,8 +97,8 @@ function zoomAt(t) {
 
 /* ---------------- the edit layer: impulses (camera punches), flashes ---------------- */
 const CUTS = PL.filter((p, i) => i > 0 && p.cut).map(p => p.t0);
-const IMPS = [...CUTS.map(t => [t, 1]), [A.hook_date, 2], [A.mod - 0.1, 3], [A.what, 3], [A.live, 1], [A.status, 1], [A.toast, 2],
-  [A.terminal, 1], [A.desktop, 1], [A.plugins, 2], [A.faces, 2], [A.pray, 2], [A.shabbat, 1], [A.tokens, 2], [A.api, 2],
+const IMPS = [...CUTS.map(t => [t, 1]), [A.hook_date, 2], [A.mod - 0.1, 3], [A.what, 3], [A.tools, 1], [A.mods_in, 2], [A.live, 2], [A.status, 1], [A.toast, 2],
+  [A.terminal, 1], [A.desktop, 1], [A.plugins, 2], [A.pray, 2], [A.shabbat, 1], [A.tokens, 2], [A.api, 2],
   [A.explode, 3], [A.mods_now, 2], [A.ch2, 3], [A.nice, 2], [A.read, 1], [A.end, 2]].sort((a, b) => a[0] - b[0]);
 function camAt(t) {
   let z = 0, sx = 0, sy = 0, rot = 0;
@@ -248,43 +248,117 @@ function modPage(x, t) {
     headline(x, t, ['איך', 'עושים', 'את', 'זה?'], [A.how, A.how + 0.25, PL[2].t0 + 0.05, PL[2].t0 + 0.25], b - 0.2, { y: 600, size: 170, right: 1500 });
   }, { w: 11 });
 }
-// TYPES: what a mod can be, each piece appears as he names it
-function modTypes(x, t) {
-  const a = A.what - 0.08, b = A.types_end;
+// WHAT: the question gets its own spread, held over the first words of the answer
+function whatChapter(x, t) {
+  const a = A.what - 0.08, b = A.face_start + 0.05;
   scene(x, t, a, b, PANEL, (x, t) => {
     paperSky(x, W1, H1, t, { side: 'left' });
     x.save(); x.font = FT.en(520); x.fillStyle = 'rgba(255,46,160,.07)'; x.direction = 'ltr'; x.textAlign = 'left'; x.fillText('01', 40, 760); x.restore();
-    const mv = clamp(spring(t - A.live + 0.1, 9, 0.9), 0, 1);           // headline lifts away once the demo starts
-    x.save(); x.translate(0, -mv * 60); x.scale(1, 1);
-    headline(x, t, ['מה', 'זה', 'מוד?'], [a, a + 0.12, a + 0.25], null, { y: 175 - mv * 30, size: 140 - mv * 40, marker: 2 });
+    mono(x, 30, 700); x.fillStyle = INK.pinkDeep; x.direction = 'ltr'; x.textAlign = 'right'; x.fillText('01 · MODS', 1800, 380);
+    headline(x, t, ['מה', 'זה', 'מוד?'], [a + 0.05, a + 0.2, a + 0.35], null, { y: 600, size: 230, marker: 2 });
+  }, { w: 12 });
+}
+// LAB: plugin vs mod (the answer), then the mod window grows into the three examples (shared element)
+const TOOLS = ['GitHub', 'Slack', 'Gmail', 'Drive', 'Web'];
+function miniUI(x, t, cx, cy, w, h, on) {   // the parts a mod adds to Claude's own window
+  const u = clamp(on, 0, 1); if (u <= 0.01) return;
+  const L = cx - w / 2, T = cy - h / 2;
+  x.save(); rr(x, L + 18, T + 70, w * 0.3 * u, h - 150, 14); x.fillStyle = 'rgba(93,228,233,.22)'; x.fill(); x.restore();
+  x.save(); rr(x, L + 18, T + h - 62, (w - 36) * u, 40, 20); x.fillStyle = 'rgba(255,255,255,.10)'; x.fill(); x.restore();
+  if (u > 0.6) { x.save(); rr(x, L + w - 190, T + 74, 170, 52, 16); x.fillStyle = WHITE; x.fill(); x.fillStyle = '#28C840'; circle(x, L + w - 166, T + 100, 9); x.fill(); x.restore(); }
+  x.save(); rr(x, L + w - 230, T + h - 56, 200, 28, 10); x.fillStyle = markerPaint(x, GOLD, T + h - 56, 28); x.globalAlpha = u; x.fill(); x.restore();
+}
+function lab(x, t) {
+  const a = A.eq_end - 0.15, b = A.types_end;
+  scene(x, t, a, b, SPLIT, (x, t) => {
+    paperSky(x, W1, H1, t, { side: 'right' });
+    const ph2 = clamp(spring(t - (A.live - 0.5), 8, 0.9), 0, 1.02);        // 0 = plugin vs mod, 1 = examples
+    // ----- phase 1: two columns (RTL: plugin first, on the right) -----
+    if (ph2 < 0.98) {
+      const out = ph2;
+      // PLUGIN column
+      x.save(); x.translate(out * 700, 0);
+      const s1 = pop(t, a + 0.1, 16, 0.6);
+      if (s1 > 0.01) {
+        headline(x, t, ['פלאגין'], [a + 0.1], null, { y: 250, size: 140, right: 1690, maxW: 600 });
+        x.save(); x.font = FT.textB(40); x.fillStyle = INK.ink2; x.direction = 'rtl'; x.textAlign = 'center'; x.fillText('נותן ל-Claude כלים לצאת החוצה', 1390, 330); x.restore();
+        x.save(); x.translate(1390, 620); x.scale(s1, s1); terminal(x, 0, 0, 420, 270, t, { title: 'Claude', lines: [['> /plugin install', '#FFFFFF']] }); x.restore();
+        TOOLS.forEach((tl, i) => {   // tools fly OUT along arrows
+          const k = clamp(spring(t - A.tools - i * 0.12, 10, 0.75), 0, 1.05), ang = -Math.PI * 0.9 + i * Math.PI * 0.45;
+          if (k <= 0.01) return;
+          const r0 = 200, r1 = 200 + 190 * k, cx = 1390 + Math.cos(ang) * r1 * 1.25, cy = 620 + Math.sin(ang) * r1 * 0.95;
+          x.save(); x.strokeStyle = INK.pink; x.lineWidth = 4; x.setLineDash([2, 12]); x.lineCap = 'round';
+          x.beginPath(); x.moveTo(1390 + Math.cos(ang) * r0 * 1.05, 620 + Math.sin(ang) * r0 * 0.7); x.lineTo(cx, cy); x.stroke(); x.restore();
+          chip(x, t, A.tools + i * 0.12, cx, cy, tl, { size: 26, fill: WHITE, ink: INK.ink });
+        });
+      }
+      x.restore();
+      // divider
+      x.save(); x.globalAlpha = 1 - out; x.strokeStyle = INK.line || '#ECEAF4'; x.lineWidth = 3; x.beginPath(); x.moveTo(960, 230); x.lineTo(960, 900); x.stroke(); x.restore();
+    }
+    // MOD column: its window is the shared element that becomes the big examples window
+    const sM = pop(t, A.mods_in - 0.1, 16, 0.6);
+    if (sM <= 0.01) return;
+    const cx = lerp(530, 830, ph2), cy = lerp(620, 575, ph2), w = lerp(420, 1240, ph2), h = lerp(270, 640, ph2);
+    if (ph2 < 0.6) {
+      x.save(); x.translate(-ph2 * 400, 0);
+      headline(x, t, ['מוד'], [A.mods_in - 0.1], null, { y: 250, size: 140, right: 690, maxW: 500, marker: 0 });
+      x.save(); x.font = FT.textB(40); x.fillStyle = INK.ink2; x.direction = 'rtl'; x.textAlign = 'center'; x.fillText('משנה את הנראות של Claude עצמו', 530, 330); x.restore();
+      x.restore();
+    }
+    x.save(); x.translate(cx, cy); x.scale(sM, sM); x.translate(-cx, -cy);
+    const lines = ph2 > 0.5 ? [['> make the status line show the hebrew date', '#FFFFFF'], ['● Writing the hebrew-date mod…'], ['● Hot-reloading: hebrew-date'], ['  Ran 3 shell commands']] : [['> /plugin-authoring', '#FFFFFF']];
+    terminal(x, cx, cy, w, h, t, { title: 'Claude Code', lines });
+    // inward arrows: the mod changes Claude itself
+    if (ph2 < 0.5) {
+      const k = clamp(spring(t - A.mods_in - 0.3, 9, 0.8), 0, 1) * (1 - ph2 * 2);
+      [[-1, -1], [1, -1], [-1, 1], [1, 1]].forEach(([dx, dy]) => { const ox = cx + dx * (w / 2 + 90 - 40 * k), oy = cy + dy * (h / 2 + 60 - 25 * k);
+        x.save(); x.globalAlpha = k; x.strokeStyle = INK.pink; x.lineWidth = 6; x.lineCap = 'round'; x.beginPath(); x.moveTo(ox, oy); x.lineTo(ox - dx * 50, oy - dy * 35); x.stroke(); x.restore(); });
+      miniUI(x, t, cx, cy, w, h, spring(t - A.mods_in - 0.5, 8, 0.9));
+      if (t > A.faces) softRing(x, cx, cy, w + 20, h + 20, 40, t, 1.2);    // "the face of Claude"
+    }
     x.restore();
-    const enter = pop(t, A.live - 0.15, 12, 0.7);
-    if (enter <= 0.01) return;
-    x.save(); x.translate(860, 560); x.scale(enter, enter); x.translate(-860, -560);
-    terminal(x, 860, 560, 1180, 600, t, { lines: [['> make the status line show the hebrew date', '#FFFFFF'], ['● Writing statusline hook…'], ['● Hot-reloading mod: hebrew-date']] });
-    // live pane slides out of the window's left edge
-    const lp = clamp(spring(t - A.live, 12, 0.7), 0, 1.02);
-    if (lp > 0.01) { x.save(); rr(x, 270, 300, 300 * lp, 520, 26); x.fillStyle = '#1A1846'; x.fill(); x.clip();
-      mono(x, 20, 500); x.fillStyle = INK.cyan; x.direction = 'ltr'; x.textAlign = 'left'; x.fillText('LIVE · tool calls', 290, 340);
-      for (let i = 0; i < 7; i++) { const on = t > A.live + 0.3 + i * 0.35; x.fillStyle = on ? 'rgba(207,205,235,.8)' : 'rgba(207,205,235,.2)'; x.fillText(['Read  plugin.json', 'Bash  mkdir hooks', 'Edit  statusline.js', 'Bash  npm test', 'Read  hebcal.js', 'Edit  hint.js', 'Bash  type-check'][i], 290, 390 + i * 54); }
-      x.restore(); }
-    // band above the prompt
-    const bp = clamp(spring(t - A.band, 14, 0.7), 0, 1.02);
-    if (bp > 0.01) { x.save(); rr(x, 640, 700 - 70 * bp, 760, 52, 26); x.fillStyle = 'rgba(93,228,233,.14)'; x.fill(); mono(x, 22, 600); x.fillStyle = INK.cyan; x.direction = 'ltr'; x.textAlign = 'left'; x.fillText('⎇ main · 3 files changed', 670, 734 - 70 * bp); x.restore(); }
-    // status line with a ticking token counter
-    const sp = clamp(spring(t - A.status, 14, 0.7), 0, 1.02);
-    if (sp > 0.01) { x.save(); x.globalAlpha = 1; rr(x, 300, 860 - 6, 1120 * sp, 50, 25); x.fillStyle = 'rgba(255,255,255,.07)'; x.fill(); x.clip();
-      mono(x, 22, 600); x.direction = 'ltr'; x.textAlign = 'left'; x.fillStyle = '#7CE3A1'; x.fillText('Opus 5.5', 324, 887);
-      x.fillStyle = INK.onNight2; x.fillText('ctx ' + Math.round(lerp(12, 48, clamp((t - A.status) / 6))) + '%', 470, 887);
-      x.restore(); goldChip(x, t, A.status + 0.2, 1410, 879, DATE, 24); }
-    // toast
-    const tp = pop(t, A.toast, 20, 0.5);
-    if (tp > 0.01) { x.save(); x.translate(1250, 340); x.scale(tp, tp); card(x, 0, 0, 340, 96, 26, { fill: WHITE, depth: 0.6 });
-      x.fillStyle = '#28C840'; circle(x, -130, 0, 16); x.fill(); x.font = FT.textB(28); x.fillStyle = INK.ink; x.direction = 'ltr'; x.textAlign = 'left'; x.fillText('Task finished ✓', -100, 10); x.restore(); }
-    x.restore();
-    // labels on the right, as he names them
-    [['Live pane', A.live], ['Band', A.band], ['Status line', A.status], ['Toast', A.toast]].forEach(([s, t0], i) => chip(x, t, t0 + 0.05, 1670, 330 + i * 120, s, { size: 28 }));
-  });
+    if (ph2 < 0.6 && t > A.faces - 0.1) headline(x, t, ['הפנים', 'של', 'Claude'], [A.faces, A.faces + 0.4, A.faces + 0.6], null, { y: 930, size: 90, right: 820, maxW: 600, marker: 0 });
+    // ----- phase 2: the three examples, one at a time, in the spotlight -----
+    if (ph2 > 0.3) {
+      const L = cx - w / 2, T = cy - h / 2, ex = clamp((ph2 - 0.3) / 0.7);
+      const parts = [
+        { k: 'live', t0: A.live, en: 'LIVE PANE', he: 'חלון צד שמתעדכן בזמן אמת', r: [L + 22, T + 74, 360, h - 160] },
+        { k: 'status', t0: A.status - 0.6, en: 'STATUS LINE', he: 'שורת הסטטוס שלמטה', r: [L + 22, T + h - 76, w - 44, 56] },
+        { k: 'toast', t0: A.toast, en: 'TOAST', he: 'הודעה שקופצת', r: [L + w - 470, T + 80, 440, 120] }];
+      const act = parts.reduce((c, p) => (t >= p.t0 ? p : c), null);
+      // draw the parts as they arrive
+      parts.forEach((p, i) => {
+        const k = clamp(spring(t - p.t0, 12, 0.7), 0, 1.02) * ex; if (k <= 0.01) return;
+        const [X, Y, PW, PH] = p.r;
+        x.save();
+        if (p.k === 'live') { rr(x, X, Y, PW * k, PH, 18); x.fillStyle = '#1D1B4E'; x.fill(); x.clip(); mono(x, 26, 600); x.fillStyle = INK.cyan; x.direction = 'ltr'; x.textAlign = 'left'; x.fillText('LIVE · tool calls', X + 22, Y + 44);
+          ['Read  plugin.json', 'Bash  mkdir hooks', 'Edit  statusline.js', 'Bash  npm test', 'Read  hebcal.js', 'Edit  hint.js'].forEach((s2, j) => { const on = t > p.t0 + 0.4 + j * 0.45; x.fillStyle = on ? 'rgba(255,255,255,.9)' : 'rgba(255,255,255,.18)'; x.fillText(s2, X + 22, Y + 100 + j * 52); }); }
+        if (p.k === 'status') { rr(x, X, Y, PW * k, PH, PH / 2); x.fillStyle = 'rgba(255,255,255,.12)'; x.fill(); x.clip(); mono(x, 26, 700); x.direction = 'ltr'; x.textAlign = 'left'; x.fillStyle = '#7CE3A1'; x.fillText('▸▸ Opus 5.5', X + 26, Y + 37); x.fillStyle = INK.onNight2; x.fillText('ctx 31%', X + 230, Y + 37); }
+        x.restore();
+        if (p.k === 'status' && k > 0.5) goldChip(x, t, p.t0 + 0.2, X + PW - 20, Y + PH / 2, DATE, 28);
+        if (p.k === 'toast') { const s3 = pop(t, p.t0, 20, 0.5) * ex; if (s3 > 0.01) { x.save(); x.translate(X + PW / 2, Y + PH / 2); x.scale(s3, s3); card(x, 0, 0, PW, PH, 30, { fill: WHITE, depth: 0.8 }); x.fillStyle = '#28C840'; circle(x, -PW / 2 + 50, 0, 20); x.fill(); x.font = FT.textB(40); x.fillStyle = INK.ink; x.direction = 'ltr'; x.textAlign = 'left'; x.fillText('Task finished ✓', -PW / 2 + 90, 14); x.restore(); } }
+      });
+      // spotlight: dim the window except the active part, glow ring on the part
+      if (act) {
+        const [X, Y, PW, PH] = act.r, sp = clamp(spring(t - act.t0, 10, 0.9), 0, 1) * ex;
+        x.save(); rrc(x, cx, cy, w, h, 34); x.clip(); x.beginPath(); x.rect(L, T, w, h); rr(x, X - 8, Y - 8, PW + 16, PH + 16, 24); x.fillStyle = `rgba(11,10,31,${0.55 * sp})`; x.fill('evenodd'); x.restore();
+        softRing(x, X + PW / 2, Y + PH / 2, PW + 16, PH + 16, 24, t, 1.1 * sp);
+      }
+      // labels on the right: the active one big, the earlier ones as small chips above
+      parts.forEach((p, i) => {
+        if (t < p.t0) return;
+        const isAct = p === act, k = clamp(spring(t - p.t0, 14, 0.7), 0, 1.03) * ex;
+        if (isAct) {
+          x.save(); x.translate(1690, 560); x.scale(k, k);
+          x.font = FT.en(84); x.fillStyle = INK.ink; x.textAlign = 'center'; x.direction = 'ltr'; x.fillText(p.en, 0, 0);
+          x.font = FT.textB(36); x.fillStyle = INK.pinkDeep; x.direction = 'rtl'; x.fillText(p.he, 0, 64);
+          x.restore();
+        } else chip(x, t, p.t0, 1690, 300 + i * 74, p.en, { size: 24, fill: WHITE, ink: INK.ink2 });
+      });
+      mono(x, 28, 700); x.fillStyle = INK.pinkDeep; x.direction = 'ltr'; x.textAlign = 'right'; x.globalAlpha = ex; x.fillText('3 MOD EXAMPLES', 1840, 150); x.globalAlpha = 1;
+    }
+  }, { w: 10 });
 }
 // WHERE: terminal or desktop
 function where(x, t) {
@@ -375,7 +449,6 @@ function splitTitles(x, t) {
   headline(x, t, ['אבל', 'נחמד.'], [A.nice - 0.4, A.nice], A.verdict_end - 0.3, { y: 650, size: 160, right: 1840, maxW: 640, marker: 1 });
 }
 function behindTitles(x, t) {
-  x.save(); x.shadowColor = 'rgba(14,13,42,.55)'; x.shadowBlur = 30; headline(x, t, ['הפנים', 'של', 'קלוד'], [A.faces, A.faces + 0.45, A.faces + 0.7], A.faces_end - 0.3, { y: 420, size: 250, right: 1820, maxW: 1700, marker: 0, color: WHITE }); x.restore();
   x.save(); x.shadowColor = 'rgba(14,13,42,.55)'; x.shadowBlur = 30; headline(x, t, ['מודים.', 'עכשיו.'], [A.mods_now, A.mods_now + 0.3], A.mods_now_end - 0.3, { y: 400, size: 270, right: 1800, maxW: 1650, marker: 0, color: WHITE }); x.restore();
 }
 // chips over the screen plate
@@ -441,7 +514,7 @@ function draw(x, t, L) {
   plate(x, t);
   if (BEHIND.some(([a, b]) => t >= a && t < b)) { behindTitles(x, t); subjectOver(x, t); }
   splitTitles(x, t); overlays(x, t);
-  hook(x, t); modPage(x, t); modTypes(x, t); where(x, t); zmanim(x, t); tokens(x, t); apiVsSub(x, t); skills(x, t); chapter2(x, t);
+  hook(x, t); modPage(x, t); whatChapter(x, t); lab(x, t); where(x, t); zmanim(x, t); tokens(x, t); apiVsSub(x, t); skills(x, t); chapter2(x, t);
   endcard(x, t);
   x.restore();
   flash(x, t); captions(x, t); progress(x, t);

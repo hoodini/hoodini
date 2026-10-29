@@ -18,7 +18,7 @@ def snap(t, side):
     i0 = max(0, int(t * 100) - 35); return (i0 + int(np.argmin(env[i0:int(t * 100) + 36]))) / 100, False
 K = []
 for a, b in cfg['keep']:
-    if K and a - K[-1][1] < 0.25: K[-1][1] = b
+    if K and 0 <= a - K[-1][1] < 0.25: K[-1][1] = b     # adjacent in the source: one take
     else: K.append([a, b])
 out = []
 print(f'speech median {MED:.1f} dB, quiet <= {QUIET:.1f} dB')
