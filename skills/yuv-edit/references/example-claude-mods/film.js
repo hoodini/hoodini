@@ -8,6 +8,7 @@
 import { clamp, lerp, inv, out3, in3, io3, spring, sk, rgba, INK, FT, rr, rrc, circle, nightSky, markerPaint, gradPaint, mountFilm, rnd } from '../../src/core.js';
 import { card, neonRing, slamWords, popType, GLOW } from '../../src/ui.js';
 import D from './data.json';
+import RECT from './rects.json';   // DOM rects of the real pages (device px), captured with the screenshots
 
 const A = D.A, B = D.B, DUR = D.DUR, W1 = 1920, H1 = 1080;
 const WHITE = '#FFFFFF', GOLD = INK.gold, PINK = INK.pink, NIGHT = INK.night, NIGHT2 = INK.night2, NIGHT3 = INK.night3;
@@ -36,7 +37,7 @@ const beatPulse = t => Math.exp(-((((t % B) + B) % B) / B) * 5);
 const pop = (t, t0, w = 20, z = 0.5) => clamp(spring(t - t0, w, z), 0, 1.25);
 
 /* ---------------- footage: lazily decoded frames, an LRU so memory stays flat ---------------- */
-const IMG = new Map(), MAT = new Map();
+const IMG = new Map(), MAT = new Map();   // LRU of decoded frames (pages are re-touched every frame, so they stay)
 const pad = n => String(n).padStart(6, '0');
 function load(map, url, key) {
   if (map.has(key)) { const v = map.get(key); map.delete(key); map.set(key, v); return v.p; }
@@ -49,6 +50,10 @@ const PL = D.plates;
 function plateAt(t) { let lo = 0, hi = PL.length - 1; while (lo < hi) { const m = (lo + hi + 1) >> 1; if (PL[m].t0 <= t) lo = m; else hi = m - 1; } return lo; }
 const srcIdx = (p, t) => clamp(Math.round((p.in + clamp(t - p.t0, 0, p.dur)) * 30), Math.round(p.in * 30), Math.min(5423, Math.round((p.in + p.dur) * 30) - 1));  // 5423 = last decodable source frame
 const AVATAR = 5372;   // frame where Yuval looks straight into the lens (picked from a grid of the last 4 s)
+const WEB = Q.get('web') || 'file:///home/user/edit_yuv/v2/web/';
+const PAGES = ['changelog', 'pricing', 'plugins'];
+const CANDLE_N = 240;                                   // Mixkit #29425 (Shabbat-like candles), 30 fps frames
+const candleIdx = t => clamp(Math.floor((t - (A.pray - 0.3)) * 30), 0, CANDLE_N - 1) + 1;
 const BEHIND = [[A.mods_now - 0.25, A.mods_now_end]];
 // the render driver calls prepare(t) before each frame: decode every frame (and matte) the subframes will touch
 window.prepare = async (t, n = 6, shutter = 0.5, fps = 60) => {
@@ -61,6 +66,8 @@ window.prepare = async (t, n = 6, shutter = 0.5, fps = 60) => {
     if (BEHIND.some(([a, b]) => ts >= a && ts < b)) need.push(load(MAT, MATTES + pad(srcIdx(p, ts)) + '.png', srcIdx(p, ts)));
   }
   need.push(load(IMG, FRAMES + pad(AVATAR) + '.jpg', AVATAR));
+  for (const pg of PAGES) need.push(load(IMG, WEB + pg + '.png', 'web:' + pg));
+  if (t > A.pray - 0.6 && t < A.pray_end + 0.8) for (let i = 0; i < n; i++) { const c = candleIdx(t + (i - n / 2) / 600); need.push(load(IMG, WEB + 'candles/' + pad(c) + '.jpg', 'c:' + c)); }
   const last = PL[PL.length - 1]; need.push(load(IMG, FRAMES + pad(srcIdx(last, last.t0 + last.dur)) + '.jpg', srcIdx(last, last.t0 + last.dur)));
   await Promise.all(need);
 };
@@ -342,7 +349,7 @@ function lab(x, t) {
       // spotlight: dim the window except the active part, glow ring on the part
       if (act) {
         const [X, Y, PW, PH] = act.r, sp = clamp(spring(t - act.t0, 10, 0.9), 0, 1) * ex;
-        x.save(); rrc(x, cx, cy, w, h, 34); x.clip(); x.beginPath(); x.rect(L, T, w, h); rr(x, X - 8, Y - 8, PW + 16, PH + 16, 24); x.fillStyle = `rgba(11,10,31,${0.55 * sp})`; x.fill('evenodd'); x.restore();
+        x.save(); rrc(x, cx, cy, w, h, 34); x.clip(); x.beginPath(); x.rect(L, T, w, h); x.roundRect(X - 8, Y - 8, PW + 16, PH + 16, 24); x.fillStyle = `rgba(11,10,31,${0.55 * sp})`; x.fill('evenodd'); x.restore();
         softRing(x, X + PW / 2, Y + PH / 2, PW + 16, PH + 16, 24, t, 1.1 * sp);
       }
       // labels on the right: the active one big, the earlier ones as small chips above
@@ -360,6 +367,52 @@ function lab(x, t) {
     }
   }, { w: 10 });
 }
+// REAL B-ROLL: a live capture of the actual page, in a browser card; scroll/zoom keys; spotlight on real DOM rects
+function browserCard(x, t, a, b, page, url, keys, hls, opt = {}) {
+  scene(x, t, a, b, PANEL, (x, t) => {
+    paperSky(x, W1, H1, t, { side: 'right' });
+    const im = get(IMG, 'web:' + page), R0 = RECT[page]; if (!im) return;
+    const cx = 960, cy = 476, w = 1560, h = 790, top = cy - h / 2, bar = 62;
+    softRing(x, cx, cy, w, h, 34, t, 0.7 + 0.2 * beatPulse(t));
+    card(x, cx, cy, w, h, 34, { fill: WHITE, shadow: 'rgba(255,46,160,.22)', depth: 1 });
+    x.save(); rrc(x, cx, cy, w, h, 34); x.clip();
+    x.fillStyle = INK.cloud; x.fillRect(cx - w / 2, top, w, bar);
+    ['#FF5F57', '#FEBC2E', '#28C840'].forEach((c, i) => { circle(x, cx - w / 2 + 34 + i * 26, top + bar / 2, 8); x.fillStyle = c; x.fill(); });
+    rr(x, cx - 380, top + 14, 760, bar - 28, (bar - 28) / 2); x.fillStyle = WHITE; x.fill();
+    mono(x, 22, 500); x.fillStyle = INK.ink2; x.direction = 'ltr'; x.textAlign = 'center'; x.fillText(url, cx, top + bar / 2 + 8);
+    // camera on the page: y (source px) and zoom, sprung between keys
+    const y = sk(t, keys.map(k => [k[0], k[1]]), 4, 1), z = Math.exp(sk(t, keys.map(k => [k[0], Math.log(k[2] || 1)]), 4, 1));
+    const fx = sk(t, keys.map(k => [k[0], k[3] ?? R0.W / 2]), 4, 1);   // horizontal focus (source px)
+    const sw = R0.W / z, shh = sw * (h - bar) / w, sx = clamp(fx - sw / 2, 0, R0.W - sw), sy = clamp(y, 0, R0.H - shh);
+    x.drawImage(im, sx, sy, sw, shh, cx - w / 2, top + bar, w, h - bar);
+    const map = r => [cx - w / 2 + (r[0] - sx) * w / sw, top + bar + (r[1] - sy) * (h - bar) / shh, r[2] * w / sw, r[3] * (h - bar) / shh];
+    const act = hls.filter(hl => t >= hl[0] && t < hl[1]).pop();
+    if (act) {
+      const [X, Y, PW, PH] = map(act[2]), sp = clamp(spring(t - act[0], 10, 0.9), 0, 1) * (1 - in3(inv(act[1] - 0.2, act[1], t)));
+      x.beginPath(); x.rect(cx - w / 2, top + bar, w, h - bar); x.roundRect(X - 10, Y - 10, PW + 20, PH + 20, 18); x.fillStyle = `rgba(28,26,75,${0.42 * sp})`; x.fill('evenodd');   // rr() would beginPath: use roundRect so the hole survives
+      x.restore();
+      softRing(x, X + PW / 2, Y + PH / 2, PW + 20, PH + 20, 18, t, 1.2 * sp);
+      if (act[3]) chip(x, t, act[0] + 0.15, clamp(X + PW / 2, 300, 1620), clamp(Y - 46, 150, 860), act[3], { size: 30, fill: PINK, ink: WHITE, glow: true, out: act[1] - 0.2 });
+    } else x.restore();
+
+  });
+}
+function realBroll(x, t) {
+  const C = RECT.changelog, P = RECT.pricing, G = RECT.plugins;
+  // "זה העדכון האחרון של Anthropic?" -> the real changelog, the newest version lit up
+  browserCard(x, t, A.hook_end, A.not_this - 0.15, 'changelog', 'code.claude.com/docs/en/changelog',
+    [[A.hook_end - 1, 0, 1], [A.latest - 0.2, 120, 1.25, 1400]],
+    [[A.latest, A.not_this, [C.h1[0] - 20, C.h1[1] - 14, 1120, C.h1[3] + 28], 'Claude Code changelog'], [A.latest + 0.9, A.not_this, [1700, 250, 430, 70], 'הגרסה האחרונה']]);
+  // "API Credits ... מול המנוי" -> the real pricing page: the API tab, then Pro / Max
+  browserCard(x, t, A.api - 0.25, A.api_end, 'pricing', 'claude.com/pricing',
+    [[A.api - 1, 300, 1], [A.sub - 0.3, 620, 1]],
+    [[A.api, A.sub - 0.35, [1272, 580, 98, 70], 'API'], [A.sub - 0.3, A.api_end, [P.proCard[0], P.proCard[1], P.maxCard[0] + P.maxCard[2] - P.proCard[0], 900], 'מנוי']]);
+  // "אז הבנו, זה הרעיון של מודים בתוך Claude" -> the real plugins docs page
+  browserCard(x, t, A.idea - 0.05, A.skills - 0.3, 'plugins', 'code.claude.com/docs/en/plugins',
+    [[A.idea - 1, 0, 1], [A.skills - 1.4, 380, 1]],
+    [[A.idea + 0.6, A.skills - 0.3, [G.h1[0] - 20, G.h1[1] - 14, 1400, 330], 'Plugins overview']]);
+}
+
 // WHERE: terminal or desktop
 function where(x, t) {
   const a = A.terminal - 0.2, b = A.types2_end;
@@ -377,8 +430,12 @@ function where(x, t) {
 function zmanim(x, t) {
   const a = A.pray - 0.3, b = A.pray_end;
   scene(x, t, a, b, PANEL, (x, t) => {
-    paperSky(x, W1, H1, t, { side: 'right' });
-    headline(x, t, ['כל', 'מה', 'שאני', 'רוצה'], [A.pray, A.pray + 0.12, A.pray + 0.24, A.pray + 0.36], null, { y: 170, size: 130, marker: 3 });
+    const cim = get(IMG, 'c:' + candleIdx(t));
+    if (cim) { const k = 1.04 + 0.04 * clamp((t - a) / (b - a)); x.save(); x.translate(960, 540); x.scale(k, k); x.drawImage(cim, -960, -540, 1920, 1080); x.restore();
+      x.fillStyle = 'rgba(14,13,42,.25)'; x.fillRect(0, 0, W1, H1); } else paperSky(x, W1, H1, t, { side: 'right' });
+    x.save(); x.shadowColor = 'rgba(0,0,0,.6)'; x.shadowBlur = 30;
+    headline(x, t, ['כל', 'מה', 'שאני', 'רוצה'], [A.pray, A.pray + 0.12, A.pray + 0.24, A.pray + 0.36], null, { y: 170, size: 130, marker: 3, color: WHITE });
+    x.restore();
     terminal(x, 960, 590, 1300, 520, t, { lines: [['> remind me of prayer times in the status line', '#FFFFFF'], ['● Adding zmanim to the hebrew-date mod…']] });
     const items = [['זמן תפילה', A.pray], ['חצות', A.chatzot], ['תיקון חצות', A.tikun], ['ערבית', A.arvit], ['כניסת שבת', A.shabbat]];
     statusBar(x, 330, 760, 1260, 62, t, [xr => goldChip(x, t, a, xr, 791, DATE, 26)]);
@@ -491,6 +548,7 @@ function endcard(x, t) {
    white with a night stroke over full-frame footage. */
 const CH = D.chunks;
 function capOnLight(t) {
+  if (t > A.pray - 0.1 && t < A.pray_end) return false;       // over the real candle footage
   const p = PL[plateAt(t)];
   if (p.kind === 'screen') return true;
   return SPLITS.some(([a, b]) => t > a + 0.2 && t < b);
@@ -514,7 +572,7 @@ function draw(x, t, L) {
   plate(x, t);
   if (BEHIND.some(([a, b]) => t >= a && t < b)) { behindTitles(x, t); subjectOver(x, t); }
   splitTitles(x, t); overlays(x, t);
-  hook(x, t); modPage(x, t); whatChapter(x, t); lab(x, t); where(x, t); zmanim(x, t); tokens(x, t); apiVsSub(x, t); skills(x, t); chapter2(x, t);
+  hook(x, t); modPage(x, t); whatChapter(x, t); lab(x, t); where(x, t); zmanim(x, t); tokens(x, t); realBroll(x, t); skills(x, t); chapter2(x, t);
   endcard(x, t);
   x.restore();
   flash(x, t); captions(x, t); progress(x, t);

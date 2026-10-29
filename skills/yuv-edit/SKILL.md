@@ -42,6 +42,7 @@ These override generic defaults, and override `yuv-design-system` §6 where it s
 | "The branding is always dark; I love it lighter" (v2) | **Light is the default stage.** `paperSky` (white → cloud with soft pink / violet / orange glows), ink headlines with the gold marker, pink-tinted shadows. Terminals and code stay dark cards on it. Night only when he asks or the topic is night. |
 | "I loved the glow around the circle, I want more" (v2) | **The glow ring is a signature, not a one-off.** `softRing` (conic glow stops as stacked strokes: cheap at 6 subframes) goes around the screen panel, split cards, hero B-roll cards, code chips, the lower third, the MODS-style hero chip, the CTA and the avatar, pulsing softly on the beat. Never on body text or small chips. |
 | "I didn't understand what a mod is, it jumps straight to Live pane, the demo is visually bad" (v3) | **A question is followed by its answer.** If the source answers later, **reorder the story** (`keep` is in story order, not source order): question → definition → examples. **A demo shows one thing at a time:** the concept first (A vs B, e.g. plugin = tools going out, mod = Claude's own look), then each example alone, big, in a spotlight (the rest dimmed, the glow ring on the active part, a large label naming it). Never four small elements at once. Before the stills gate, ask: would a viewer who knows nothing understand it from the screen alone? |
+| "Why don't you take real B-roll from the web?" (v4) | **Real B-roll first, code second.** Two legal sources, both checked as reachable: (1) **live captures of the actual pages he talks about** — the changelog, the pricing page, the docs (`capture_web.cjs` → full-page PNG + DOM rects; the film's `browserCard` scrolls and zooms it at 60 fps and spotlights the real element with a label); (2) **licensed stock footage** from Mixkit (`mixkit.py video <tag>`, choose from the contact sheet by eye), e.g. Shabbat candles behind the zmanim. Never rip YouTube or random sites: it is blocked, and it is someone else's copyright. A short capture of a public page under commentary is the norm; say in the edit note which pages and clips were used. Code-drawn scenes are for what has no real image (a concept, a comparison, a mock of the result). |
 | "No feeling of 60 fps animation" | **60 fps, 6 subframes, springs everywhere.** Plates morph panel↔full frame. Screen jump cuts push. Face jump cuts punch (1.0/1.12 + an impulse). Scenes grow out of the panel and contract back. Never a fade. |
 
 ## 0. Intake
@@ -128,6 +129,14 @@ Start from `references/example-claude-mods/film.js`. It is a complete, rendered,
 - a chapter spread with a folio numeral.
 
 Components come from the kit (`card`, `slamWords`, `popType`, `neonRing`, `markerPaint`, `rr`) and the example (`paperSky`, `softRing`, `terminal`, `statusBar`, `goldChip`, `chip`, `codeChip`). Terminals and code chips stay dark cards on the light stage, with the glow ring.
+
+### Real B-roll
+- **Web pages:** `browserCard(x,t,a,b,page,url,keys,highlights)` is a white browser card with the URL pill and the glow ring.
+  - `keys` are `[t, scrollY, zoom, focusX]` in source px.
+  - `highlights` are `[t0, t1, rect, label]`. The spotlight dims everything but the rect.
+  - **Check every rect on a crop of the PNG.** The pricing page's "API" regex matched the nav instead of the tab.
+- **Stock footage:** extract frames (`fps=30, scale=1920:1080`), load them in `prepare()` like the plates, and draw them full-bleed with a slow push under the scene's card. Captions turn white over dark footage.
+- **Spotlights:** build the hole with `x.rect(...)` + `x.roundRect(...)` + `fill('evenodd')`. The kit's `rr()` calls `beginPath()` and silently inverts the spotlight: the active part goes dark and the rest stays bright.
 
 ### Text over the plate
 - **Code chips:** a command typed in JetBrains Mono on night glass, while he says it.
