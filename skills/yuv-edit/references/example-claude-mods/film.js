@@ -14,6 +14,24 @@ const WHITE = '#FFFFFF', GOLD = INK.gold, PINK = INK.pink, NIGHT = INK.night, NI
 const Q = new URLSearchParams(location.search);
 const FRAMES = Q.get('frames') || 'file:///home/user/edit_yuv/v2/frames/';
 const MATTES = Q.get('mattes') || 'file:///home/user/edit_yuv/v2/mattes/';
+// Yuval prefers the light edition: Paper/Cloud stage with soft pink / violet / orange glows (29.10.2026)
+function paperSky(x, W, H, t = 0, { side = 'right' } = {}) {
+  const g = x.createLinearGradient(0, 0, 0, H); g.addColorStop(0, '#FFFFFF'); g.addColorStop(1, INK.cloud); x.fillStyle = g; x.fillRect(0, 0, W, H);
+  const glow = (cx, cy, r, c) => { const q = x.createRadialGradient(cx, cy, 0, cx, cy, r); q.addColorStop(0, c); q.addColorStop(1, 'rgba(255,255,255,0)'); x.fillStyle = q; x.fillRect(0, 0, W, H); };
+  const sx = side === 'left' ? 0.22 : 0.78;
+  glow(W * sx, H * 0.42, Math.max(W, H) * 0.45, 'rgba(255,46,160,.10)');
+  glow(W * (1 - sx), H * 0.15, Math.max(W, H) * 0.38, 'rgba(139,108,255,.09)');
+  glow(W * 0.5, H * 1.15, Math.max(W, H) * 0.6, 'rgba(255,143,58,.10)');
+  for (let i = 0; i < 70; i++) { const px = rnd(i) * W, py = rnd(i + 99) * H, a = 0.10 + 0.08 * Math.sin(t * 1.2 + i * 2.1); x.fillStyle = `rgba(255,46,160,${a.toFixed(3)})`; x.beginPath(); x.arc(px, py, 1.6, 0, 7); x.fill(); }
+}
+// the glow ring (Yuval: "more of that glow, it's stunning"): conic glow stops, soft halo from stacked strokes
+function softRing(x, cx, cy, w, h, r, t, power = 1) {
+  if (w < 2 || h < 2 || power <= 0.01) return;
+  const g = x.createConicGradient(t * 0.9, cx, cy); GLOW.forEach((c, i) => g.addColorStop(i / (GLOW.length - 1), c));
+  x.save(); x.strokeStyle = g;
+  [[34, 0.07], [22, 0.12], [13, 0.22], [7, 0.45], [3.5, 1]].forEach(([lw, a]) => { x.globalAlpha = a * power; x.lineWidth = lw; rrc(x, cx, cy, w + 6, h + 6, r + 3); x.stroke(); });
+  x.restore();
+}
 const beatPulse = t => Math.exp(-((((t % B) + B) % B) / B) * 5);
 const pop = (t, t0, w = 20, z = 0.5) => clamp(spring(t - t0, w, z), 0, 1.25);
 
@@ -30,6 +48,7 @@ const get = (map, key) => { const v = map.get(key); return v && v.im.complete &&
 const PL = D.plates;
 function plateAt(t) { let lo = 0, hi = PL.length - 1; while (lo < hi) { const m = (lo + hi + 1) >> 1; if (PL[m].t0 <= t) lo = m; else hi = m - 1; } return lo; }
 const srcIdx = (p, t) => clamp(Math.round((p.in + clamp(t - p.t0, 0, p.dur)) * 30), Math.round(p.in * 30), Math.min(5423, Math.round((p.in + p.dur) * 30) - 1));  // 5423 = last decodable source frame
+const AVATAR = 5372;   // frame where Yuval looks straight into the lens (picked from a grid of the last 4 s)
 const BEHIND = [[A.faces - 0.3, A.faces_end], [A.mods_now - 0.25, A.mods_now_end]];
 // the render driver calls prepare(t) before each frame: decode every frame (and matte) the subframes will touch
 window.prepare = async (t, n = 6, shutter = 0.5, fps = 60) => {
@@ -41,6 +60,7 @@ window.prepare = async (t, n = 6, shutter = 0.5, fps = 60) => {
     if (k > 0) { const q = PL[k - 1]; need.push(load(IMG, FRAMES + pad(srcIdx(q, q.t0 + q.dur)) + '.jpg', srcIdx(q, q.t0 + q.dur))); }
     if (BEHIND.some(([a, b]) => ts >= a && ts < b)) need.push(load(MAT, MATTES + pad(srcIdx(p, ts)) + '.png', srcIdx(p, ts)));
   }
+  need.push(load(IMG, FRAMES + pad(AVATAR) + '.jpg', AVATAR));
   const last = PL[PL.length - 1]; need.push(load(IMG, FRAMES + pad(srcIdx(last, last.t0 + last.dur)) + '.jpg', srcIdx(last, last.t0 + last.dur)));
   await Promise.all(need);
 };
@@ -95,7 +115,7 @@ function flash(x, t) { let a = 0; for (const p of FLASH) { const u = t - p; if (
 
 /* ---------------- drawing the plate ---------------- */
 function drawSource(x, p, t, R, opt = {}) {
-  const im = get(IMG, srcIdx(p, t)); if (!im) return;
+  const im = get(IMG, t >= A.end ? AVATAR : srcIdx(p, t)); if (!im) return;
   let sx, sy, sw, sh;
   if (p.kind === 'screen') { const [zx, zy, s] = zoomAt(t); sx = zx * 1920; sy = zy * 1080; sw = s * 1920; sh = s * 1080; }
   else { const s = p.punch || 1, [ax, ay] = p.anchor || [0.5, 0.3]; sw = 1920 / s; sh = 1080 / s; sx = ax * (1920 - sw); sy = ay * (1080 - sh); }
@@ -107,7 +127,8 @@ function drawSource(x, p, t, R, opt = {}) {
 function plate(x, t) {
   const k = plateAt(t), p = PL[k], R = plateRect(t);
   if (R.w < W1 - 1 || R.h < H1 - 1) {   // a card on the stage: deep night shadow + thin rim
-    card(x, R.cx, R.cy, R.w, R.h, R.r, { fill: NIGHT, shadow: 'rgba(5,4,20,.65)', depth: 0.9 });
+    card(x, R.cx, R.cy, R.w, R.h, R.r, { fill: NIGHT, shadow: 'rgba(255,46,160,.22)', depth: 0.9 });
+    softRing(x, R.cx, R.cy, R.w, R.h, R.r, t, 0.55 + 0.25 * beatPulse(t));
   }
   x.save(); rrc(x, R.cx, R.cy, R.w, R.h, R.r); x.clip();
   const q = k > 0 ? PL[k - 1] : null, u = t - p.t0;
@@ -118,7 +139,7 @@ function plate(x, t) {
     drawSource(x, p, t, R, { dx: -(1 - e) * R.w });
   } else drawSource(x, p, t, R);
   x.restore();
-  if (R.r > 1) { x.save(); rrc(x, R.cx, R.cy, R.w, R.h, R.r); x.lineWidth = 2; x.strokeStyle = 'rgba(255,255,255,.14)'; x.stroke(); x.restore(); }
+
 }
 // person matte on top of a headline (text behind the subject)
 const mcv = document.createElement('canvas'); mcv.width = W1; mcv.height = H1; const mx = mcv.getContext('2d');
@@ -134,12 +155,13 @@ function subjectOver(x, t) {
 /* ---------------- shared UI pieces ---------------- */
 const DATE = 'כ״ד בחשון תשפ״ז';
 function headline(x, t, words, times, tOut, opt = {}) {
-  slamWords(x, t, words, 960, opt.y ?? 150, opt.size ?? 120, opt.ltr ? FT.en : FT.he, opt.color ?? WHITE, times, tOut,
+  slamWords(x, t, words, 960, opt.y ?? 150, opt.size ?? 120, opt.ltr ? FT.en : FT.he, opt.color ?? INK.ink, times, tOut,
     { right: opt.right ?? 1800, maxW: opt.maxW ?? 1500, marker: opt.marker != null ? { i: opt.marker, paint: GOLD } : null, ltr: opt.ltr });
 }
 function mono(x, s, w = 600) { x.font = `${w} ${s}px "JetBrains Mono", monospace`; }
 function terminal(x, cx, cy, w, h, t, opt = {}) {   // a Claude Code window drawn in code
-  card(x, cx, cy, w, h, 34, { fill: '#0B0A1F', shadow: 'rgba(5,4,20,.7)', depth: 1, stroke: 'rgba(255,255,255,.12)' });
+  card(x, cx, cy, w, h, 34, { fill: '#0B0A1F', shadow: 'rgba(255,46,160,.22)', depth: 1, stroke: 'rgba(255,255,255,.12)' });
+  if (opt.glow !== false) softRing(x, cx, cy, w, h, 34, t, 0.5 + 0.3 * beatPulse(t));
   x.save(); rrc(x, cx, cy, w, h, 34); x.clip();
   const L = cx - w / 2, T = cy - h / 2;
   x.fillStyle = '#14123A'; x.fillRect(L, T, w, 56);
@@ -174,7 +196,7 @@ function chip(x, t, t0, cx, cy, text, opt = {}) {   // Phoenix Ink chip: pink wa
   x.save(); x.font = f; const tw = x.measureText(text).width, w = tw + 56, h = (opt.size || 30) * 1.9;
   x.translate(cx, cy); x.scale(s, s);
   if (opt.glow) neonRing(x, 0, 0, w, h, h / 2, t * 1.05, { lw: 3, glow: 14, power: 0.6 + 0.4 * beatPulse(t) });
-  rrc(x, 0, 0, w, h, h / 2); x.fillStyle = opt.fill || INK.pinkWash; x.fill();
+  rrc(x, 0, 0, w, h, h / 2); x.fillStyle = opt.fill || INK.pinkWash; x.fill(); x.lineWidth = 2; x.strokeStyle = INK.pinkLine || '#F7DCEB'; x.stroke();
   x.fillStyle = opt.ink || INK.pinkDeep; x.textAlign = 'center'; x.direction = he ? 'rtl' : 'ltr'; x.fillText(text, 0, (opt.size || 30) * 0.36);
   x.restore();
 }
@@ -183,7 +205,7 @@ function codeChip(x, t, t0, tOut, cx, cy, text, prompt = '$') {   // a command a
   mono(x, 46, 600); x.direction = 'ltr';
   const full = prompt + ' ' + text, w = x.measureText(full).width + 90, h = 100;
   x.save(); x.translate(cx, cy); x.scale(s, s);
-  card(x, 0, 0, w, h, 34, { fill: 'rgba(20,18,58,.95)', shadow: 'rgba(5,4,20,.7)', depth: 0.8, stroke: 'rgba(255,255,255,.16)' });
+  softRing(x, 0, 0, w, h, 34, t, 0.8); card(x, 0, 0, w, h, 34, { fill: 'rgba(20,18,58,.96)', shadow: 'rgba(255,46,160,.25)', depth: 0.8, stroke: 'rgba(255,255,255,.16)' });
   x.textAlign = 'left'; x.fillStyle = PINK; x.fillText(prompt, -w / 2 + 45, 16);
   const pw = x.measureText(prompt + ' ').width, n = clamp(Math.floor((t - t0 - 0.15) / 0.045), 0, text.length);
   x.fillStyle = WHITE; x.fillText(text.slice(0, n), -w / 2 + 45 + pw, 16);
@@ -203,7 +225,7 @@ function scene(x, t, a, b, seed, fn, opt = {}) {
 // HOOK: the status line with the Hebrew date, then it hands over to the real screen
 function hook(x, t) {
   scene(x, t, -1, A.hook_end - 0.35, PANEL, (x, t) => {
-    nightSky(x, W1, H1, t, { side: 'right' });
+    paperSky(x, W1, H1, t, { side: 'right' });
     const push = 1 + 0.05 * clamp(t / A.hook_end);
     x.save(); x.translate(960, 560); x.scale(push, push); x.translate(-960, -560);
     terminal(x, 960, 560, 1300, 560, t, { title: 'Claude Code · v2.1.289', lines: [['● It passed validation. Next I\'m writing a test.'], ['● Both tests pass. Last step is a type-check.'], ['  Ran 3 shell commands'], ['> /plugin-authoring', '#FFFFFF']] });
@@ -230,8 +252,8 @@ function modPage(x, t) {
 function modTypes(x, t) {
   const a = A.what - 0.08, b = A.types_end;
   scene(x, t, a, b, PANEL, (x, t) => {
-    nightSky(x, W1, H1, t, { side: 'left' });
-    x.save(); x.font = FT.en(520); x.fillStyle = 'rgba(255,255,255,.05)'; x.direction = 'ltr'; x.textAlign = 'left'; x.fillText('01', 40, 760); x.restore();
+    paperSky(x, W1, H1, t, { side: 'left' });
+    x.save(); x.font = FT.en(520); x.fillStyle = 'rgba(255,46,160,.07)'; x.direction = 'ltr'; x.textAlign = 'left'; x.fillText('01', 40, 760); x.restore();
     const mv = clamp(spring(t - A.live + 0.1, 9, 0.9), 0, 1);           // headline lifts away once the demo starts
     x.save(); x.translate(0, -mv * 60); x.scale(1, 1);
     headline(x, t, ['מה', 'זה', 'מוד?'], [a, a + 0.12, a + 0.25], null, { y: 175 - mv * 30, size: 140 - mv * 40, marker: 2 });
@@ -268,7 +290,7 @@ function modTypes(x, t) {
 function where(x, t) {
   const a = A.terminal - 0.2, b = A.types2_end;
   scene(x, t, a, b, PANEL, (x, t) => {
-    nightSky(x, W1, H1, t, { side: 'right' });
+    paperSky(x, W1, H1, t, { side: 'right' });
     headline(x, t, ['בטרמינל', 'או', 'בדסקטופ'], [A.terminal, A.desktop - 0.35, A.desktop], null, { y: 185, size: 140, marker: 2 });
     const s1 = pop(t, A.terminal, 16, 0.6), s2 = pop(t, A.desktop, 16, 0.6);
     if (s1 > 0.01) { x.save(); x.translate(1330, 600); x.scale(s1, s1); terminal(x, 0, 0, 640, 400, t, { title: 'Terminal', lines: [['$ claude', '#FFFFFF'], ['● mods: hebrew-date']] }); statusBar(x, -300, 140, 600, 44, t, [xr => goldChip(x, t, A.terminal + 0.3, xr, 162, DATE, 20)]); x.restore(); }
@@ -281,7 +303,7 @@ function where(x, t) {
 function zmanim(x, t) {
   const a = A.pray - 0.3, b = A.pray_end;
   scene(x, t, a, b, PANEL, (x, t) => {
-    nightSky(x, W1, H1, t, { side: 'right' });
+    paperSky(x, W1, H1, t, { side: 'right' });
     headline(x, t, ['כל', 'מה', 'שאני', 'רוצה'], [A.pray, A.pray + 0.12, A.pray + 0.24, A.pray + 0.36], null, { y: 170, size: 130, marker: 3 });
     terminal(x, 960, 590, 1300, 520, t, { lines: [['> remind me of prayer times in the status line', '#FFFFFF'], ['● Adding zmanim to the hebrew-date mod…']] });
     const items = [['זמן תפילה', A.pray], ['חצות', A.chatzot], ['תיקון חצות', A.tikun], ['ערבית', A.arvit], ['כניסת שבת', A.shabbat]];
@@ -294,7 +316,7 @@ function zmanim(x, t) {
 function tokens(x, t) {
   const a = A.tokens - 0.25, b = A.tokens_end;
   scene(x, t, a, b, PANEL, (x, t) => {
-    nightSky(x, W1, H1, t, { side: 'left' });
+    paperSky(x, W1, H1, t, { side: 'left' });
     headline(x, t, ['כמה', 'טוקנים?'], [A.tokens - 0.25, A.tokens], null, { y: 190, size: 150, marker: 1 });
     terminal(x, 960, 580, 1300, 520, t, { lines: [['> how many tokens would this cost tomorrow?', '#FFFFFF'], ['● Estimating from today\'s sessions…']] });
     statusBar(x, 330, 760, 1260, 62, t, [xr => { const n = Math.round(lerp(0, 184000, clamp(spring(t - A.tokens - 0.2, 2.2, 1), 0, 1)));
@@ -306,7 +328,7 @@ function tokens(x, t) {
 function apiVsSub(x, t) {
   const a = A.api - 0.25, b = A.api_end;
   scene(x, t, a, b, PANEL, (x, t) => {
-    nightSky(x, W1, H1, t, { side: 'right' });
+    paperSky(x, W1, H1, t, { side: 'right' });
     headline(x, t, ['API', 'או', 'מנוי?'], [A.api - 0.1, A.sub - 0.4, A.sub], null, { y: 190, size: 150, marker: 2 });
     const tilt = Math.sin(t * 1.6) * 0.05 * clamp(t - A.sub, 0, 1) + 0.06 * (1 - clamp(spring(t - A.sub, 6, 0.6), 0, 1)) * (t > A.api ? 1 : 0);
     x.save(); x.translate(960, 600); x.rotate(tilt);
@@ -321,7 +343,7 @@ function apiVsSub(x, t) {
 function skills(x, t) {
   const a = A.skills - 0.3, b = PL[12].t0 + 0.15;
   scene(x, t, a, b, PANEL, (x, t) => {
-    nightSky(x, W1, H1, t, { side: 'left' });
+    paperSky(x, W1, H1, t, { side: 'left' });
     const ex = clamp(spring(t - A.explode, 5, 0.9), 0, 1.2);
     for (let i = 0; i < 26; i++) {
       const ang = rnd(i) * Math.PI * 2, d = 120 + ex * (500 + rnd(i + 3) * 700), s = pop(t, a + 0.15 + i * 0.03, 18, 0.6) * (1 - 0.4 * ex);
@@ -332,7 +354,7 @@ function skills(x, t) {
       mono(x, 22, 700); x.fillStyle = INK.ink; x.textAlign = 'center'; x.direction = 'ltr'; x.fillText('SKILL.md', 0, 8); x.restore();
     }
     const m = pop(t, A.explode + 0.15, 14, 0.5);
-    if (m > 0.01) { x.save(); x.translate(960, 520); x.scale(m, m); neonRing(x, 0, 0, 460, 150, 75, t * 1.3, { lw: 4, glow: 22 }); rrc(x, 0, 0, 460, 150, 75); x.fillStyle = PINK; x.fill(); x.font = FT.en(100); x.fillStyle = WHITE; x.textAlign = 'center'; x.direction = 'ltr'; x.fillText('MODS', 0, 36); x.restore(); }
+    if (m > 0.01) { x.save(); x.translate(960, 520); x.scale(m, m); softRing(x, 0, 0, 460, 150, 75, t, 1); rrc(x, 0, 0, 460, 150, 75); x.fillStyle = PINK; x.fill(); x.font = FT.en(100); x.fillStyle = WHITE; x.textAlign = 'center'; x.direction = 'ltr'; x.fillText('MODS', 0, 36); x.restore(); }
     headline(x, t, ['כמו', 'הסקילים'], [A.skills - 0.2, A.skills], null, { y: 175, size: 140, marker: 1 });
   }, { w: 10 });
 }
@@ -340,9 +362,9 @@ function skills(x, t) {
 function chapter2(x, t) {
   const a = A.ch2 - 0.05, b = A.ch2 + 1.25;
   scene(x, t, a, b, { cx: 1500, cy: 540, w: 60, h: 60, r: 30 }, (x, t) => {
-    nightSky(x, W1, H1, t, { side: 'right' });
-    x.save(); x.font = FT.en(560); x.fillStyle = 'rgba(255,255,255,.06)'; x.direction = 'ltr'; x.textAlign = 'left'; x.fillText('02', 60, 780); x.restore();
-    mono(x, 30, 700); x.fillStyle = INK.pinkSoft; x.direction = 'ltr'; x.textAlign = 'right'; x.fillText('02 · VERDICT', 1800, 380);
+    paperSky(x, W1, H1, t, { side: 'right' });
+    x.save(); x.font = FT.en(560); x.fillStyle = 'rgba(255,46,160,.08)'; x.direction = 'ltr'; x.textAlign = 'left'; x.fillText('02', 60, 780); x.restore();
+    mono(x, 30, 700); x.fillStyle = INK.pinkDeep; x.direction = 'ltr'; x.textAlign = 'right'; x.fillText('02 · VERDICT', 1800, 380);
     headline(x, t, ['שווה', 'את', 'זה?'], [a + 0.05, a + 0.2, a + 0.35], null, { y: 600, size: 210, marker: 2 });
   }, { w: 12 });
 }
@@ -353,8 +375,8 @@ function splitTitles(x, t) {
   headline(x, t, ['אבל', 'נחמד.'], [A.nice - 0.4, A.nice], A.verdict_end - 0.3, { y: 650, size: 160, right: 1840, maxW: 640, marker: 1 });
 }
 function behindTitles(x, t) {
-  headline(x, t, ['הפנים', 'של', 'קלוד'], [A.faces, A.faces + 0.45, A.faces + 0.7], A.faces_end - 0.3, { y: 420, size: 250, right: 1820, maxW: 1700, marker: 0 });
-  headline(x, t, ['מודים.', 'עכשיו.'], [A.mods_now, A.mods_now + 0.3], A.mods_now_end - 0.3, { y: 400, size: 270, right: 1800, maxW: 1650, marker: 0 });
+  x.save(); x.shadowColor = 'rgba(14,13,42,.55)'; x.shadowBlur = 30; headline(x, t, ['הפנים', 'של', 'קלוד'], [A.faces, A.faces + 0.45, A.faces + 0.7], A.faces_end - 0.3, { y: 420, size: 250, right: 1820, maxW: 1700, marker: 0, color: WHITE }); x.restore();
+  x.save(); x.shadowColor = 'rgba(14,13,42,.55)'; x.shadowBlur = 30; headline(x, t, ['מודים.', 'עכשיו.'], [A.mods_now, A.mods_now + 0.3], A.mods_now_end - 0.3, { y: 400, size: 270, right: 1800, maxW: 1650, marker: 0, color: WHITE }); x.restore();
 }
 // chips over the screen plate
 function overlays(x, t) {
@@ -364,7 +386,7 @@ function overlays(x, t) {
   // lower third (white card, pink bar), above the captions, RTL start = right
   const lt0 = A.lt, lt1 = A.lt + 3.6, s = clamp(spring(t - lt0, 12, 0.7), 0, 1.02) * (1 - in3(inv(lt1 - 0.25, lt1, t)));
   if (s > 0.01) { x.save(); const w = 560 * s, X = 1840 - w, Y = 760; x.beginPath(); x.rect(X - 30, Y - 40, w + 60, 220); x.clip();
-    card(x, 1840 - 280, Y + 70, 560, 140, 40, { fill: WHITE, depth: 0.7 }); x.fillStyle = PINK; rr(x, 1840 - 22, Y + 26, 8, 88, 4); x.fill();
+    softRing(x, 1840 - 280, Y + 70, 560, 140, 40, t, 0.9); card(x, 1840 - 280, Y + 70, 560, 140, 40, { fill: WHITE, depth: 0.7 }); x.fillStyle = PINK; rr(x, 1840 - 22, Y + 26, 8, 88, 4); x.fill();
     x.direction = 'rtl'; x.textAlign = 'right'; x.font = FT.he(70); x.fillStyle = INK.ink; x.fillText('יובל אבידני', 1800, Y + 82);
     x.font = FT.textB(26); x.fillStyle = INK.ink2; x.fillText('AI Builder & Speaker · YUV.AI', 1800, Y + 120); x.restore(); }
   // CTA: the only glow ring in the film
@@ -378,42 +400,43 @@ function overlays(x, t) {
 function endcard(x, t) {
   if (t < A.end) return;
   const u = t - A.end, R = plateRect(t);
-  neonRing(x, R.cx, R.cy, R.w + 18, R.h + 18, (R.w + 18) / 2, t * 1.05, { lw: 4, glow: 18, power: clamp(u * 2) });
+  const pw = clamp(u * 2) * (0.85 + 0.15 * beatPulse(t));
+  neonRing(x, R.cx, R.cy, R.w + 22, R.h + 22, (R.w + 22) / 2, t * 1.05, { lw: 6, glow: 30, power: pw });
+  softRing(x, R.cx, R.cy, R.w + 40, R.h + 40, (R.w + 40) / 2, t + 1.3, 0.6 * pw);
   headline(x, t, ['תמשיכו', 'לעוף', 'גבוה'], [A.end + 0.35, A.end + 0.55, A.end + 0.75], null, { y: 470, size: 150, right: 1800, maxW: 900, marker: 1 });
   const sk2 = io3(inv(A.end + 1.1, A.end + 2.6, t));
   x.save(); x.translate(1790, 650); x.rotate(-0.05); x.font = FT.hand(110); x.direction = 'rtl'; x.textAlign = 'right'; const sw = x.measureText('יובל אבידני').width;
-  x.beginPath(); x.rect(-sw * sk2 - 10, -130, sw * sk2 + 20, 190); x.clip(); x.fillStyle = INK.goldFlat; x.fillText('יובל אבידני', 0, 0); x.restore();
+  x.beginPath(); x.rect(-sw * sk2 - 10, -130, sw * sk2 + 20, 190); x.clip(); x.fillStyle = INK.pinkDeep; x.fillText('יובל אבידני', 0, 0); x.restore();
   const ul = out3(inv(A.end + 2.6, A.end + 3.25, t)); x.strokeStyle = INK.gold[1]; x.lineWidth = 6; x.lineCap = 'round'; x.beginPath(); x.moveTo(1790, 690); x.lineTo(1790 - 520 * ul, 708); x.stroke();
   x.direction = 'ltr'; x.textAlign = 'right'; x.font = FT.en(56); x.fillStyle = PINK; x.fillText('YUV.AI', 1840, 1000);
-  mono(x, 20, 700); x.fillStyle = INK.cyan; x.fillText("LET'S FLY HIGH", 1840, 1034);
-  x.textAlign = 'left'; mono(x, 30, 600); x.fillStyle = INK.onNight2; x.fillText('yuv.ai', 80, 1020);
+  mono(x, 20, 700); x.fillStyle = INK.ink2; x.fillText("LET'S FLY HIGH", 1840, 1034);
+  x.textAlign = 'left'; mono(x, 30, 600); x.fillStyle = INK.ink2; x.fillText('yuv.ai', 80, 1020);
 }
 
-/* ---------------- kinetic captions (kit style): each word pops when spoken, the spoken word is gold ---------------- */
+/* ---------------- captions: calm phrases (Yuval: word-by-word pops are distracting) ----------------
+   The whole phrase appears at once with one short rise and stays still until the next one. Ink on the light stage,
+   white with a night stroke over full-frame footage. */
 const CH = D.chunks;
+function capOnLight(t) {
+  const p = PL[plateAt(t)];
+  if (p.kind === 'screen') return true;
+  return SPLITS.some(([a, b]) => t > a + 0.2 && t < b);
+}
 function captions(x, t) {
   if (t >= A.end - 0.05) return;
-  let c = null; for (const ch of CH) { if (t >= ch.t0 - 0.02 && t < ch.end) { c = ch; break; } } if (!c) return;
-  const size = 58, y = 1018;
-  x.save(); x.font = FT.textB(size); x.direction = 'rtl'; x.textAlign = 'left'; x.lineJoin = 'round';
-  const ws = c.words.map(o => x.measureText(o.w).width), gap = size * 0.3, total = ws.reduce((p, q) => p + q, 0) + gap * (ws.length - 1);
-  let pos = 960 + total / 2;
-  c.words.forEach((o, i) => {
-    const xl = pos - ws[i]; pos -= ws[i] + gap;
-    if (t < o.t0 - 0.03) return;
-    const s = clamp(spring(t - o.t0 + 0.03, 24, 0.5), 0, 1.2), cur = t < o.t1 + 0.05 && (i === c.words.length - 1 || t < c.words[i + 1].t0);
-    const sc = (0.55 + 0.45 * s) * (cur ? 1.06 : 1) * (1 - in3(inv(c.end - 0.1, c.end, t))); if (sc <= 0.01) return;
-    x.save(); x.translate(xl + ws[i] / 2, y - size * 0.35); x.scale(sc, sc); x.translate(-(xl + ws[i] / 2), -(y - size * 0.35));
-    x.lineWidth = size * 0.17; x.strokeStyle = NIGHT; x.strokeText(o.w, xl, y);
-    x.shadowColor = 'rgba(5,4,20,.5)'; x.shadowBlur = 14; x.shadowOffsetY = 5; x.fillStyle = cur ? INK.goldFlat : WHITE; x.fillText(o.w, xl, y); x.restore();
-  });
+  let c = null; for (const ch of CH) { if (t >= ch.t0 - 0.05 && t < ch.end) { c = ch; break; } } if (!c) return;
+  const text = c.words.map(o => o.w).join(' '), size = 54, y = 1022, light = capOnLight(t);
+  const k = out3(inv(c.t0 - 0.05, c.t0 + 0.13, t)), dy = (1 - k) * 10;
+  x.save(); x.font = FT.textB(size); x.direction = 'rtl'; x.textAlign = 'center'; x.lineJoin = 'round'; x.globalAlpha = k;
+  if (light) { x.fillStyle = INK.ink; x.fillText(text, 960, y + dy); }
+  else { x.lineWidth = size * 0.16; x.strokeStyle = 'rgba(14,13,42,.85)'; x.strokeText(text, 960, y + dy); x.fillStyle = WHITE; x.fillText(text, 960, y + dy); }
   x.restore();
 }
-function progress(x, t) { const u = clamp(t / DUR); x.fillStyle = 'rgba(255,255,255,.22)'; x.fillRect(0, 0, W1, 6); x.fillStyle = gradPaint(x, W1, 0, 0, 0, [PINK, INK.cyan]); x.fillRect(W1 * (1 - u), 0, W1 * u, 6); }
+function progress(x, t) { const u = clamp(t / DUR); x.fillStyle = 'rgba(28,26,75,.10)'; x.fillRect(0, 0, W1, 6); x.fillStyle = gradPaint(x, W1, 0, 0, 0, [PINK, INK.cyan]); x.fillRect(W1 * (1 - u), 0, W1 * u, 6); }
 
 /* ---------------- the frame ---------------- */
 function draw(x, t, L) {
-  nightSky(x, W1, H1, t, { side: 'right' });
+  paperSky(x, W1, H1, t, { side: 'right' });
   x.save(); camApply(x, camAt(t));
   plate(x, t);
   if (BEHIND.some(([a, b]) => t >= a && t < b)) { behindTitles(x, t); subjectOver(x, t); }

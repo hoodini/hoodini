@@ -28,6 +28,10 @@ That gives 60 fps with 6-subframe motion blur, shared-element transitions, Phoen
 | "Titles appear in illogical places" | **No title floats over footage.** A headline lives in a layout made for it: a full B-roll scene, a **split** (the plate becomes a card on the left, the headline owns the right), a chapter spread, or text behind the subject. It slams in on the spoken word. |
 | "No B-roll" | **Every named thing is shown.** When there is no footage of it, draw it in code with the kit: the UI he describes, the feature working, a comparison, a counter. A screenshot of a real page is B-roll too. |
 | "No Mixkit audio like the motion skill" | **Mixkit music + Mixkit SFX** (`mixkit.py`), beat grid by `beats.py`, SFX placed by their measured peak, ducked under the voice, mixed to −14 LUFS. Mixkit is reachable from the cloud shell (verified Oct 2026). |
+| "Word-by-word captions are distracting" (v2) | **Calm phrase captions.** The whole phrase (≤ 7 words / ~40 chars, broken at meaning, never between "Claude" and "Code") appears at once with one 0.18 s rise and stays still. No per-word pops, no per-word colour. Claude writes the phrases by hand (`captions_edit.json`: word-index ranges + corrected text: product names, commands, misheard words). |
+| "It ends on me looking sideways" (v2) | **Pick the closing frame by eye.** Make a grid of the last seconds and choose a frame looking into the lens. The avatar and any freeze use that frame, never simply the last one. |
+| "The branding is always dark; I love it lighter" (v2) | **Light is the default stage.** `paperSky` (white → cloud with soft pink / violet / orange glows), ink headlines with the gold marker, pink-tinted shadows. Terminals and code stay dark cards on it. Night only when he asks or the topic is night. |
+| "I loved the glow around the circle, I want more" (v2) | **The glow ring is a signature, not a one-off.** `softRing` (conic glow stops as stacked strokes: cheap at 6 subframes) goes around the screen panel, split cards, hero B-roll cards, code chips, the lower third, the MODS-style hero chip, the CTA and the avatar, pulsing softly on the beat. Never on body text or small chips. |
 | "No feeling of 60 fps animation" | **60 fps, 6 subframes, springs everywhere.** Plates morph panel↔full frame. Screen jump cuts push. Face jump cuts punch (1.0/1.12 + an impulse). Scenes grow out of the panel and contract back. Never a fade. |
 
 ## 0. Intake
@@ -81,6 +85,11 @@ ffmpeg -ss <a> -i raw/talk.mp4 -frames:v <n> -q:v 3 -start_number <N0> frames/%0
 
 Check the cut report: every boundary should be ≥ 15 dB under the speech median.
 
+**Captions:**
+- Dump the output-timed words with indices.
+- Write `captions_edit.json` by hand as `[first_word, last_word, "corrected phrase"]`, tiling every word once, in order (example in `references/example-claude-mods/`).
+- Run `scripts/film/captions.py dump` to list the words, then `captions.py apply captions_edit.json` to merge the phrases into `data.json`. Words are counted by their start time, because Whisper stretches ends over pauses.
+
 ## 4. The film (`kit/films/<slug>/film.js`)
 
 Start from `references/example-claude-mods/film.js`. It is a complete, rendered, approved-direction example.
@@ -88,7 +97,7 @@ Start from `references/example-claude-mods/film.js`. It is a complete, rendered,
 ### Plates
 - `plate(x,t)` draws the source frame of the current plate inside a rect.
 - **Screen:**
-  - the rect is the PANEL (1575×886, r 40, on `nightSky`, leaving the caption band free);
+  - the rect is the PANEL (1575×886, r 40, on `paperSky`, with the glow ring, leaving the caption band free);
   - the camera inside it follows `zooms` with critically damped springs, size in log space.
 - **Face:** the rect is FULL, with the plate's punch and anchor.
 - **Screen ↔ face:** the rect springs from one home to the other. That is the transition; no extra effect.

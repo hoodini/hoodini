@@ -48,20 +48,34 @@ zooms = [{'t': round(O(t), 3), 'rect': r or [0, 0, 1, 1]} for t, r in ZOOMS]
 ow = []
 for w in WORDS:
     for a, b in KEEP:
-        if w['s'] >= a - 0.02 and w['e'] <= b + 0.08:
+        if a - 0.02 <= w['s'] < b - 0.05:   # by its START: Whisper often stretches a word's end over the next pause
             ow.append({'w': w['w'], 't0': round(O(max(w['s'], a)), 3), 't1': round(O(min(w['e'], b)), 3)}); break
-# caption chunks: 2-4 words, break on a pause, punctuation or ~20 characters
-chunks, cur = [], []
-for w in ow:
-    if cur and (len(cur) >= 4 or sum(len(x['w']) + 1 for x in cur) + len(w['w']) > 20 or w['t0'] - cur[-1]['t1'] > 0.35
-                or cur[-1]['w'][-1:] in ',.?!'):
-        chunks.append(cur); cur = []
-    cur.append(w)
-if cur: chunks.append(cur)
+# caption phrases (calm, read at a glance): up to 7 words / 34 characters, break on a pause or punctuation,
+# each shown at least 0.9 s and held until the next phrase when the gap is short (no flicker)
+HEAD_WORDS = {'של', 'את', 'עם', 'יש', 'זה', 'כמו', 'אם', 'או', 'כי', 'אבל', 'גם', 'רק', 'על', 'אל', 'מה', 'לי', 'לנו',
+              'אני', 'אנחנו', 'הוא', 'היא', 'כל', 'עוד', 'אז', 'בין', 'בתוך', 'לא', 'the', 'a', 'to', 'of'}
+def cost(c, i):
+    """cost of breaking after word i: prefer a real pause, never leave a function word dangling at the end"""
+    gap = c[i + 1]['t0'] - c[i]['t1']
+    end = c[i]['w'].strip(',.?!').lower()
+    return -gap * 10 + (3 if end in HEAD_WORDS else 0) - (4 if c[i]['w'][-1:] in ',.?!' else 0) + abs(i + 1 - 5) * 0.15
+chunks, rest = [], list(ow)
+while rest:
+    lim = 0
+    while lim < len(rest) and lim < 7 and sum(len(x['w']) + 1 for x in rest[:lim + 1]) <= 34:
+        if lim and rest[lim]['t0'] - rest[lim - 1]['t1'] > 0.45: break
+        lim += 1
+    lim = max(lim, 1)
+    if lim < len(rest) and lim >= 4 and not (rest[lim]['t0'] - rest[lim - 1]['t1'] > 0.45):
+        k = min(range(2, lim), key=lambda i: cost(rest, i)) + 1     # split at the best point (keep >= 3 words)
+    else: k = lim
+    chunks.append(rest[:k]); rest = rest[k:]
 CH = []
 for i, c in enumerate(chunks):
-    nxt = chunks[i + 1][0]['t0'] if i + 1 < len(chunks) else c[-1]['t1'] + 0.4
-    CH.append({'t0': c[0]['t0'], 'end': round(min(nxt, c[-1]['t1'] + 0.6), 3), 'words': c})
+    nxt = chunks[i + 1][0]['t0'] if i + 1 < len(chunks) else c[-1]['t1'] + 0.6
+    end = nxt if nxt - c[-1]['t1'] < 0.6 else c[-1]['t1'] + 0.35
+    end = max(end, min(nxt, c[0]['t0'] + 0.9))
+    CH.append({'t0': c[0]['t0'], 'end': round(end, 3), 'words': c})
 
 # named anchors (source seconds of the spoken word) -> output seconds
 A = {k: round(O(v), 3) for k, v in CFG['anchors'].items()}
