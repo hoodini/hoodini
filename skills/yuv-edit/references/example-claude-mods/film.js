@@ -385,7 +385,10 @@ function browserCard(x, t, a, b, page, url, keys, hls, opt = {}) {
     const fx = sk(t, keys.map(k => [k[0], k[3] ?? R0.W / 2]), 4, 1);   // horizontal focus (source px)
     const sw = R0.W / z, shh = sw * (h - bar) / w, sx = clamp(fx - sw / 2, 0, R0.W - sw), sy = clamp(y, 0, R0.H - shh);
     x.drawImage(im, sx, sy, sw, shh, cx - w / 2, top + bar, w, h - bar);
-    const map = r => [cx - w / 2 + (r[0] - sx) * w / sw, top + bar + (r[1] - sy) * (h - bar) / shh, r[2] * w / sw, r[3] * (h - bar) / shh];
+    const map = r => {   // source rect -> card coords, clamped inside the page area so the ring never crosses the card edge
+      let X = cx - w / 2 + (r[0] - sx) * w / sw, Y = top + bar + (r[1] - sy) * (h - bar) / shh, PW = r[2] * w / sw, PH = r[3] * (h - bar) / shh;
+      const x0 = cx - w / 2 + 24, y0 = top + bar + 16, x1 = cx + w / 2 - 24, y1 = top + h - 24;
+      const X2 = Math.min(X + PW, x1), Y2 = Math.min(Y + PH, y1); X = Math.max(X, x0); Y = Math.max(Y, y0); return [X, Y, X2 - X, Y2 - Y]; };
     const act = hls.filter(hl => t >= hl[0] && t < hl[1]).pop();
     if (act) {
       const [X, Y, PW, PH] = map(act[2]), sp = clamp(spring(t - act[0], 10, 0.9), 0, 1) * (1 - in3(inv(act[1] - 0.2, act[1], t)));
