@@ -286,7 +286,7 @@ function lab(x, t) {
         TOOLS.forEach((tl, i) => {   // tools fly OUT along arrows
           const k = clamp(spring(t - A.tools - i * 0.12, 10, 0.75), 0, 1.05), ang = -Math.PI * 0.9 + i * Math.PI * 0.45;
           if (k <= 0.01) return;
-          const r0 = 200, r1 = 200 + 190 * k, cx = 1390 + Math.cos(ang) * r1 * 1.25, cy = 620 + Math.sin(ang) * r1 * 0.95;
+          const r0 = 200, r1 = 200 + 190 * k, cx = 1390 + Math.cos(ang) * r1 * 1.25, cy = 620 + Math.sin(ang) * r1 * 0.62;   // flattened arc: every chip stays above the caption band
           x.save(); x.strokeStyle = INK.pink; x.lineWidth = 4; x.setLineDash([2, 12]); x.lineCap = 'round';
           x.beginPath(); x.moveTo(1390 + Math.cos(ang) * r0 * 1.05, 620 + Math.sin(ang) * r0 * 0.7); x.lineTo(cx, cy); x.stroke(); x.restore();
           chip(x, t, A.tools + i * 0.12, cx, cy, tl, { size: 26, fill: WHITE, ink: INK.ink });
@@ -318,7 +318,7 @@ function lab(x, t) {
       if (t > A.faces) softRing(x, cx, cy, w + 20, h + 20, 40, t, 1.2);    // "the face of Claude"
     }
     x.restore();
-    if (ph2 < 0.6 && t > A.faces - 0.1) headline(x, t, ['הפנים', 'של', 'Claude'], [A.faces, A.faces + 0.4, A.faces + 0.6], null, { y: 930, size: 90, right: 820, maxW: 600, marker: 0 });
+    if (ph2 < 0.6 && t > A.faces - 0.1) headline(x, t, ['הפנים', 'של', 'Claude'], [A.faces, A.faces + 0.4, A.faces + 0.6], null, { y: 870, size: 78, right: 800, maxW: 560, marker: 0 });   // clear of the caption band
     // ----- phase 2: the three examples, one at a time, in the spotlight -----
     if (ph2 > 0.3) {
       const L = cx - w / 2, T = cy - h / 2, ex = clamp((ph2 - 0.3) / 0.7);

@@ -157,6 +157,17 @@ python3 scripts/film/build_audio.py edit.json && python3 scripts/mix.py audio_ed
 python3 kit/render/pops_mp4.py out.mp4        # 0 single-frame pops
 ```
 
+**A fix after the full render:** re-render only the frames around the fix and splice them in. That takes minutes, not 22:
+
+```
+node scripts/film/render_edit.cjs film.html frames <f0> <f1> patch.mp4 6
+E="-c:v libx264 -preset medium -crf 15 -pix_fmt yuv420p -colorspace bt709 -color_primaries bt709 -color_trc bt709 -an"
+ffmpeg -i build/picture.mp4 -frames:v <f0> $E segA.mp4 && ffmpeg -ss <f1/60> -i build/picture.mp4 $E segC.mp4
+printf "file 'segA.mp4'\nfile 'patch.mp4'\nfile 'segC.mp4'\n" > fix.txt && ffmpeg -f concat -safe 0 -i fix.txt -c copy build/picture_fixed.mp4
+```
+
+Use matching encoder settings so the concat is lossless. Never use one input twice in a filter graph: it buffers the whole film and gets killed.
+
 Speed and environment:
 - About 2.4 fps per worker in the cloud. 4 workers render a 2.5-minute film in about 22 minutes.
 - Use Yuval's PC GPU when it is connected (yuv-motion §4).
