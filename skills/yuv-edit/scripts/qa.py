@@ -19,7 +19,8 @@ def main():
     for c in edl['video']:
         d = (c['out'] - c['in']) / c.get('speed', 1.0); prim.append((t, d, c)); t += d
     D = t
-    changes = sorted({round(p[0], 2) for p in prim[1:]} | {round(c['at'], 2) for c in edl.get('covers', [])}
+    zooms = {round(p[0] + z['t'], 2) for p in prim for z in p[2].get('zooms', [])}  # a screen zoom is a visual change
+    changes = sorted({round(p[0], 2) for p in prim[1:]} | zooms | {round(c['at'], 2) for c in edl.get('covers', [])}
                      | {round(c['at'] + c['dur'], 2) for c in edl.get('covers', [])} | {round(g['at'], 2) for g in edl.get('gfx', [])})
     changes = [x for x in changes if 0 < x < D]
     cpm = len(changes) / (D / 60) if D else 0
