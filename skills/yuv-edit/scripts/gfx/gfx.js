@@ -101,6 +101,19 @@
     return total;
   }
 
+  // In a Hebrew line, consecutive non-Hebrew words ("Claude Code") form one LTR unit, or the RTL word
+  // layout would reverse them. Returns the merged words and the marker index mapped onto them.
+  function bidiWords(words, marker = -1) {
+    if (!isHe(words.join(' '))) return { words, marker };
+    const out = [], map = [];
+    words.forEach((w, i) => {
+      const prev = out.length - 1;
+      if (prev >= 0 && !isHe(w) && !isHe(out[prev])) out[prev] += ' ' + w; else out.push(w);
+      map[i] = out.length - 1;
+    });
+    return { words: out, marker: marker >= 0 ? map[marker] : -1 };
+  }
+
   // ---- templates ----------------------------------------------------------
   const T = {};
 
@@ -108,9 +121,11 @@
   T.title = (ctx, t, p, W, H) => {
     const u = Math.min(W, H) / 1080;
     const { k, out } = life(t, p.dur);
-    const words = String(p.text).split(/\s+/);
+    const bw = bidiWords(String(p.text).split(/ +/), p.marker ?? -1);
+    const words = bw.words; p = { ...p, marker: bw.marker };
     const size = (p.size || 150) * u;
     ctx.save();
+    if (p.shadow !== false) { ctx.shadowColor = 'rgba(14,13,42,.78)'; ctx.shadowBlur = 34 * u; ctx.shadowOffsetY = 6 * u; }
     // exit = shape change: the line is pulled up out of a mask, never faded
     if (out > 0) { const cy = (p.y ?? .5) * H; ctx.beginPath(); ctx.rect(0, 0, W, cy + size * 0.3); ctx.clip(); ctx.translate(0, -out * size * 1.6); }
     if (p.kicker) {
@@ -144,6 +159,30 @@
       slamLine(ctx, idx.map((i) => words[i]), { x: (p.x ?? .92) * W, y: y0 + li * lh, size: sz, align: p.align || 'right',
         t: t - li * 0.12, marker: m, color: p.color === 'paper' ? C.ink : C.onNight });
     });
+    ctx.restore();
+  };
+
+  // Code chip: a command as Yuval types it. Night glass card, JetBrains Mono, pink prompt.
+  // props: {text, x, y (0..1 centre), prompt:'$'|'>'|''}
+  T.code = (ctx, t, p, W, H) => {
+    const u = Math.min(W, H) / 1080;
+    const { out } = life(t, p.dur);
+    const k = spring(t, 22, 0.5) * (1 - out);
+    if (k <= 0.01) return;
+    const f = F.mono(52 * u), pr = p.prompt ?? '$';
+    const tw = measure(ctx, f, (pr ? pr + ' ' : '') + p.text);
+    const w = tw + 96 * u, h = 116 * u, x = (p.x ?? .5) * W - w / 2, y = (p.y ?? .2) * H - h / 2;
+    // typing: characters appear at 28/s after the card lands
+    const n = Math.max(0, Math.min(p.text.length, Math.floor((t - 0.18) * 28)));
+    ctx.save(); ctx.translate(x + w / 2, y + h / 2); ctx.scale(k, k); ctx.translate(-(x + w / 2), -(y + h / 2));
+    card(ctx, x, y, w, h, 40 * u, { fill: 'rgba(20,18,58,.94)', night: true, border: 'rgba(255,255,255,.16)' });
+    ctx.font = f; ctx.textBaseline = 'middle'; ctx.direction = 'ltr'; ctx.textAlign = 'left';
+    let cx = x + 48 * u;
+    if (pr) { ctx.fillStyle = C.pink; ctx.fillText(pr, cx, y + h / 2 + 2 * u); cx += measure(ctx, f, pr + ' '); }
+    ctx.fillStyle = '#FFFFFF'; ctx.fillText(p.text.slice(0, n), cx, y + h / 2 + 2 * u);
+    if (n < p.text.length || Math.floor(t * 2) % 2 === 0) { // caret
+      const cw = measure(ctx, f, p.text.slice(0, n)); ctx.fillStyle = C.gold1; ctx.fillRect(cx + cw + 4 * u, y + h / 2 - 26 * u, 4 * u, 52 * u);
+    }
     ctx.restore();
   };
 
@@ -236,9 +275,9 @@
   T.cta = (ctx, t, p, W, H) => {
     const u = Math.min(W, H) / 1080;
     const { out } = life(t, p.dur);
-    const he = isHe(p.text), f = F.textB(44 * u);
+    const he = isHe(p.text), sc = p.scale || 1.3, f = F.textB(44 * u * sc);
     const tw = measure(ctx, f, p.text + (he ? '  ←' : '  →'));
-    const w = tw + 110 * u, h = 112 * u;
+    const w = tw + 110 * u * sc, h = 112 * u * sc;
     const x = (p.x ?? .5) * W - w / 2, y = (p.y ?? .78) * H - h / 2;
     const k = spring(t, 20, 0.5) * (1 - out);
     if (k <= 0) return;
@@ -247,7 +286,7 @@
     rr(ctx, x, y, w, h, h / 2); ctx.fillStyle = C.pink; ctx.fill();
     ctx.fillStyle = '#fff'; ctx.font = f; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.direction = he ? 'rtl' : 'ltr';
     ctx.fillText(p.text + (he ? '  ←' : '  →'), x + w / 2, y + h / 2 + 2 * u);
-    if (p.sub) { ctx.font = F.text(30 * u); ctx.fillStyle = C.onNight2; ctx.fillText(p.sub, x + w / 2, y + h + 56 * u); }
+    if (p.sub) { ctx.font = F.textB(34 * u * sc); ctx.fillStyle = '#FFFFFF'; ctx.shadowColor = 'rgba(14,13,42,.8)'; ctx.shadowBlur = 24 * u; ctx.fillText(p.sub, x + w / 2, y + h + 50 * u * sc); }
     ctx.restore();
   };
 

@@ -107,6 +107,7 @@ Full recipes by format are in `references/formats.md`. The core treatments:
 |---|---|---|
 | `title` | kinetic headline. Words slam in with overshoot; `marker` = index of the gold-marked word; optional mono `kicker`. | the hook, the promise, the verdict |
 | `title` + `behind_subject: true` | text behind Yuval: the matte (rembg) puts him in front of the words. Big type (size 220–300) in the empty side of frame, with his head covering **20–40%** of a non-marker word; fully hidden text is a failure | **max ~1 per 2 min** — a highlight, not a style |
+| `code` | a command as typed: night glass card, JetBrains Mono, pink prompt, types itself with a caret | whenever he says a command out loud (`claude --update`, `/plugin`) |
 | `lower_third` | name + role, white card, pink bar | once, within the first 15–40 s of long-form |
 | `callout` | chip + dotted connector to a point on screen (spec, button, detail) | when the voice names a thing on screen |
 | `stat` | Anton count-up number + label (gold on night) | any number worth remembering |
@@ -179,6 +180,17 @@ Cost: about 8 frames per second per core at 1080p. A 10-minute video renders in 
 **Deliver:**
 - send the MP4s (re-encode at CRF 21 if over 30 MiB for chat; keep the master), the `.fcpxml` with `captions.srt`, and the edit note;
 - suggest 2–3 title and thumbnail variants for YouTube Test & Compare. It picks winners by watch time, not CTR, so the title must match the opening.
+
+## Gotchas from real edits
+
+- **Footage that was already edited:**
+  - **Baked-in graphics:** if Yuval hands over an already-edited export, find what is burned in before placing anything (an old name tag, a watermark, a PIP). Scan the frames for it (bright text pixels in a band over time). If it clashes, hide it with a punch anchored away from it (`anchor: [0.5, 0.0]` + zoom 1.4 crops the bottom 30%), or cover it, and never place a graphic on top of it.
+  - **Existing pans and zooms:** the old moves change where things are on screen from moment to moment. Check a frame at every zoom time before you set its rect.
+- **A punch moves the face, so re-check every overlay after changing a zoom.** A CTA that was clear at 1.0 can land on his mouth at 1.45.
+- **Hebrew + English in one title:** consecutive English words are merged into one LTR unit automatically ("Claude Code" stays in order), and the marker index refers to the original words.
+- **Titles over terminal or busy footage** get a soft night shadow by default (`shadow: false` turns it off). Keep them in the empty band (y ≈ 0.2) and short: ≤ 4 words, no separator dots that wrap onto their own line.
+- **Screen recording with a burned-in camera PIP:** zooms magnify the PIP too. Keep the zoom ≤ 2.6× and ask for separate screen and camera files next time.
+- **Music in the cloud:** there is no licensed library there. Ship without music, say so, and suggest a Mixkit or Epidemic bed on the PC; synthesized whoosh, pop and riser SFX (ffmpeg noise and sine) are fine.
 
 ## Never (what fails for others)
 
