@@ -1,5 +1,7 @@
 # Recipes by format
 
+All recipes use the kit-film pipeline in SKILL.md: a light stage, the glow ring signature, calm phrase captions.
+
 Each recipe covers the structure, then the picture, graphics and sound for that format. Mix them freely; a real video is often A + C + D together.
 
 ## A. Talking head, long-form (16:9, 6–16 min)
@@ -32,8 +34,9 @@ Each recipe covers the structure, then the picture, graphics and sound for that 
    - the claim as a `title` (y ≈ 0.22, above the face) and motion on frame 1 (punch 1.12 or a cover);
    - no greeting.
 3. **Captions always:**
-   - `captions: {style: "karaoke", y: 0.72, max_words: 3}`;
-   - Karantina, active word on gold;
+   - calm phrases, shorter than long-form: ≤ 4 words per phrase, written by hand (`captions.py`);
+   - the whole phrase at once with one soft rise, no word-by-word pops;
+   - white with a night stroke over footage, ink on the light stage;
    - kept clear of the face and of the bottom 15% (platform UI).
 4. **Pace:** 20–45 changes per minute, a punch on nearly every sentence, a cover every 3–5 s.
 5. **The loop:** the last line should hand back to the first, so the replay feels seamless (`cta` optional, the `endcard` short at 1.5–2 s).
@@ -53,7 +56,7 @@ Each recipe covers the structure, then the picture, graphics and sound for that 
 
 1. **Use `card3d` for every static screenshot:**
    - the default turn is `rot_y −14→6`, `rot_x 8→2`, `z 2.6→1.9`, with a blurred-self backdrop;
-   - for a hero moment use a bigger push (`z 3.2→1.6`) and the `night` backdrop (`bg: "night"`).
+   - for a hero moment use a bigger push (`z 3.2→1.6`) on the light stage, with the glow ring around the card.
 2. **Sequences of screenshots:** alternate the direction of `rot_y` from shot to shot, so the camera feels like it orbits.
 3. **For a long page:** record a smooth scroll and use it as a `screen`, rather than one giant screenshot.
 4. **Photos (product, people, places):** use `parallax` with a depth map for the Z-axis feel. Keep `push` ≤ 0.1, or edges smear.
@@ -69,5 +72,5 @@ Each recipe covers the structure, then the picture, graphics and sound for that 
 ## F. Mixed tutorial / course lesson
 
 - Chapters are lesson steps. Each step gets `chapter` → A-roll (why) → screen (how, with zooms) → `stat` / callout (result).
-- **Captions:** use them in long-form lessons too when he speaks fast or uses dense terms (`style: "karaoke"`, or just the `captions.srt` uploaded to YouTube).
+- **Captions:** always, as calm phrases (`captions.py`); also export the phrases as an SRT for YouTube.
 - **CTA:** the course or the next lesson, never in the first 30 s.

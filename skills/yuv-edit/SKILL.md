@@ -1,6 +1,6 @@
 ---
 name: "yuv-edit"
-description: "Yuval's video editor: his real footage (talking head, screen recordings, screenshots, or a mix) edited into a finished YUV.AI film. The edit is built as a yuv-motion kit film: 60 fps with motion blur, the footage as a plate inside seek(t), transitions that change shape, B-roll drawn in code that explains what he says, kit kinetic captions, Mixkit music and SFX on the beat, cuts snapped to silence, text behind the subject, CTA and a signature end card. Use for: edit my video, ערוך לי את הסרטון, עריכת וידאו, תערוך, ריל מהצילום, סרטון יוטיוב, b-roll, כתוביות, jump cuts, screen recording demo, make this video pop. Not for films made purely from code (yuv-motion) or AI-generated footage (flux3-video)."
+description: "Yuval's video editor: his real footage (talking head, screen recordings, screenshots, or a mix) edited into a finished YUV.AI film. The edit is built as a yuv-motion kit film: 60 fps with motion blur, the footage as a plate inside seek(t), transitions that change shape, B-roll drawn in code that explains what he says, calm phrase captions, a light Phoenix Ink stage with the signature glow ring, Mixkit music and SFX on the beat, cuts snapped to silence, text behind the subject, CTA and a glowing avatar end card. Use for: edit my video, ערוך לי את הסרטון, עריכת וידאו, תערוך, ריל מהצילום, סרטון יוטיוב, b-roll, כתוביות, jump cuts, screen recording demo, make this video pop. Not for films made purely from code (yuv-motion) or AI-generated footage (flux3-video)."
 ---
 
 # YUV.AI Edit: his footage, cut as a motion film
@@ -13,18 +13,27 @@ Yuval hands over footage. You deliver one MP4 per format (16:9, and a 9:16 if as
 - the captions;
 - the CTA and the end card.
 
-That gives 60 fps with 6-subframe motion blur, shared-element transitions, Phoenix Ink type and the kit's edit layer (impulse punches, flashes, kinetic captions, progress bar) for free.
+That gives 60 fps with 6-subframe motion blur, shared-element transitions, Phoenix Ink type and the kit's edit layer (impulse punches, flashes, progress bar) for free.
+
+## Yuval's taste for edits (stated while editing, Oct 2026)
+
+These override generic defaults, and override `yuv-design-system` §6 where it says Night is the default for video. Until that master is updated, this list wins for edits.
+- **Light, not dark.** A bright Paper/Cloud stage with soft pink glows. "I love it lighter."
+- **The glow ring is his signature.** "Stunning, I want more of it": around the plates, hero cards, chips, the CTA and the avatar.
+- **Calm and readable.** Nothing that jumps word by word. Text he can read at a glance, in correct Hebrew, with product names spelled right.
+- **Eye contact.** Never end or freeze on him looking away.
+- **Built on his own tools.** Use his kit and skills (`yuv-motion`, `yuv-design-system`), never a parallel system. "Did you even take the motion skill into account?"
 
 **Read `yuv-motion` and the kit README before you start.** The kit is `github.com/hoodini/motion-in-code/tree/main/kit`; clone it with `add_repo` and run `npm i`. Brand comes only from `yuv-design-system` (Phoenix Ink).
 
 **Story beats effects** (`references/playbook.md`). The winners won on a sharp promise, a thesis-first opening and chapters that argue. Polish multiplies a story; it does not rescue one. The story pass comes before any pixel.
 
-## What Yuval rejected in v1 — never again
+## What Yuval rejected (v1 and v2) — never again
 
 | He said | The rule now |
 |---|---|
 | "Cuts in the wrong places" | **Every cut snaps to measured silence** (`snapcuts.py`). Ranges closer than 0.25 s merge: a 0.1 s micro-cut inside a breath is a stutter. A boundary still flagged after snapping is fixed by hand, never shipped. |
-| "No captions" | **Kit kinetic captions always.** 2–4 words, each word pops as it is spoken, the spoken word is gold. The screen stage leaves a caption band free. |
+| "No captions" | **Captions always**, as calm phrases (the v2 row below). The screen stage leaves a caption band free: ink on the light stage, white with a night stroke over full-frame footage. |
 | "Titles appear in illogical places" | **No title floats over footage.** A headline lives in a layout made for it: a full B-roll scene, a **split** (the plate becomes a card on the left, the headline owns the right), a chapter spread, or text behind the subject. It slams in on the spoken word. |
 | "No B-roll" | **Every named thing is shown.** When there is no footage of it, draw it in code with the kit: the UI he describes, the feature working, a comparison, a counter. A screenshot of a real page is B-roll too. |
 | "No Mixkit audio like the motion skill" | **Mixkit music + Mixkit SFX** (`mixkit.py`), beat grid by `beats.py`, SFX placed by their measured peak, ducked under the voice, mixed to −14 LUFS. Mixkit is reachable from the cloud shell (verified Oct 2026). |
@@ -117,7 +126,7 @@ Start from `references/example-claude-mods/film.js`. It is a complete, rendered,
 - cards bursting (an idea spreading);
 - a chapter spread with a folio numeral.
 
-Components come from the kit: `card`, `slamWords`, `popType`, `neonRing`, `nightSky`, `markerPaint`, `rr`.
+Components come from the kit (`card`, `slamWords`, `popType`, `neonRing`, `markerPaint`, `rr`) and the example (`paperSky`, `softRing`, `terminal`, `statusBar`, `goldChip`, `chip`, `codeChip`). Terminals and code chips stay dark cards on the light stage, with the glow ring.
 
 ### Text over the plate
 - **Code chips:** a command typed in JetBrains Mono on night glass, while he says it.
@@ -130,7 +139,7 @@ headline → person matte composited back on top (`subjectOver`). Big type, his 
 ### Edit layer
 - `camAt` impulses on cuts and scene entrances;
 - `flash` on chapter downbeats;
-- kit `captions`;
+- calm phrase `captions`;
 - RTL `progress` bar.
 
 ### Footage loading
@@ -161,7 +170,10 @@ Speed and environment:
 - a CTA covering the face;
 - a burned-in old graphic left visible;
 - anything grey or washed out;
-- RTL errors.
+- RTL errors;
+- a caption phrase broken between words that belong together, or a misspelled product name or command;
+- a closing frame or avatar where he is not looking into the lens;
+- the glow ring on body text or on small chips.
 
 **Verify the MP4:**
 - 60 fps and frames = ceil(DUR·60);
@@ -178,6 +190,21 @@ Speed and environment:
   - 1440p+ screen recording;
   - the hook on camera.
 - **Offers:** a 9:16 version and title/thumbnail variants.
+
+## How to work with him (lessons from the first edit)
+
+1. **Look before you send.** Each round, the stills gate caught real problems before he saw them:
+   - white on white;
+   - an empty avatar;
+   - a CTA on his mouth;
+   - an old burned-in name tag.
+
+   Never deliver a render you have not looked at.
+2. **Measure, don't assume.** Check the cut loudness, whether a host is reachable (Mixkit is), and whether the source frame exists. The v1 cuts sounded wrong because they were never measured.
+3. **Iterate on stills, render once.** A stills sheet takes about a minute; a full render takes about 22. Settle every visual question on stills.
+4. **Be honest about what you can't check.** You cannot hear: say how the music was chosen, and name the one cut that could not reach silence.
+5. **Every complaint becomes a rule in this file the same day**, so the next edit starts where this one ended.
+6. **The editorial pass is yours.** Phrasing captions, correcting the transcript and choosing frames by eye are editor work, not script output.
 
 ## Quick mode (only if he asks for fast and simple)
 

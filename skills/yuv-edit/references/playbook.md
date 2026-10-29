@@ -82,7 +82,7 @@ This file distils the October 2026 research behind this skill. The full report i
 | 2.5D / Z-axis / DOF on product renders | [not verified] likely in event-day videos made before review units arrive | AE 26.3 depth of field (Advanced 3D, no motion blur) | `card3d`, `parallax` |
 | Punch-in, whip, shake | [not verified; weak source on Mrwhosetheboss's "constant motion"] | presets | `zoom`, `transition: whip`, `shake` (use sparingly) |
 | Screen auto-zoom | general practice | Screen Studio (macOS) | `screen` kind + `screen_zoom.py` |
-| Overlays: light leaks, grain, glow | no 2025–26 source | — | not in the default look (Phoenix Ink is clean); never a default |
+| Overlays: light leaks, grain, glow filters | no 2025–26 source | — | not in the default look (Phoenix Ink is clean). The **glow ring** around plates, cards and the avatar is different: it is Yuval's signature (see SKILL.md) |
 
 **Why text behind the subject works** [inference]: occlusion is a depth cue, so the brain reads the words as part of the 3D scene. **Why it stops working:** everyone can do it now with one click. Scarcity is what keeps it special.
 
