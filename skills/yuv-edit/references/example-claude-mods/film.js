@@ -8,7 +8,8 @@
 import { clamp, lerp, inv, out3, in3, io3, spring, sk, rgba, INK, FT, rr, rrc, circle, nightSky, markerPaint, gradPaint, mountFilm, rnd } from '../../src/core.js';
 import { card, neonRing, slamWords, popType, GLOW } from '../../src/ui.js';
 import D from './data.json';
-import RECT from './rects.json';   // DOM rects of the real pages (device px), captured with the screenshots
+import RECT from './rects.json';
+import { drawPersp, worldOf, toScreen } from './persp.js';   // real 3D perspective (WebGL quad + depth of field)   // DOM rects of the real pages (device px), captured with the screenshots
 
 const A = D.A, B = D.B, DUR = D.DUR, W1 = 1920, H1 = 1080;
 const WHITE = '#FFFFFF', GOLD = INK.gold, PINK = INK.pink, NIGHT = INK.night, NIGHT2 = INK.night2, NIGHT3 = INK.night3;
@@ -31,6 +32,16 @@ function softRing(x, cx, cy, w, h, r, t, power = 1) {
   const g = x.createConicGradient(t * 0.9, cx, cy); GLOW.forEach((c, i) => g.addColorStop(i / (GLOW.length - 1), c));
   x.save(); x.strokeStyle = g;
   [[34, 0.07], [22, 0.12], [13, 0.22], [7, 0.45], [3.5, 1]].forEach(([lw, a]) => { x.globalAlpha = a * power; x.lineWidth = lw; rrc(x, cx, cy, w + 6, h + 6, r + 3); x.stroke(); });
+  x.restore();
+}
+const DEG = Math.PI / 180;
+function polyPath(x, P) { x.beginPath(); P.forEach(([a, b], i) => (i ? x.lineTo(a, b) : x.moveTo(a, b))); x.closePath(); }
+function shadowPoly(x, P, a = 0.24) { x.save(); x.shadowColor = `rgba(255,46,160,${a})`; x.shadowBlur = 90; x.shadowOffsetY = 40; polyPath(x, P); x.fillStyle = 'rgba(255,255,255,.98)'; x.fill(); x.restore(); }
+function glowPoly(x, P, t, power = 1) {   // the glow ring, following the card in perspective
+  const cx = P.reduce((s, p) => s + p[0], 0) / 4, cy = P.reduce((s, p) => s + p[1], 0) / 4, g = x.createConicGradient(t * 0.9, cx, cy);
+  GLOW.forEach((c, i) => g.addColorStop(i / (GLOW.length - 1), c));
+  x.save(); x.strokeStyle = g; x.lineJoin = 'round';
+  [[34, 0.07], [22, 0.12], [13, 0.22], [7, 0.45], [3.5, 1]].forEach(([lw, al]) => { x.globalAlpha = al * power; x.lineWidth = lw; polyPath(x, P); x.stroke(); });
   x.restore();
 }
 const beatPulse = t => Math.exp(-((((t % B) + B) % B) / B) * 5);
@@ -131,8 +142,23 @@ function drawSource(x, p, t, R, opt = {}) {
   if (ra > ca) { const nh = sw / ra; sy += (sh - nh) / 2; sh = nh; } else { const nw = sh * ra; sx += (sw - nw) / 2; sw = nw; }
   x.drawImage(im, sx, sy, sw, sh, R.cx - R.w / 2 + (opt.dx || 0), R.cy - R.h / 2, R.w, R.h);
 }
+// 3D tilt of the screen panel while the camera zooms in (alternating side), flat again when it zooms out
+const TILTK = (() => { const k = [[-1, 0, 0, 1]]; let n = 0;
+  ZK.forEach(z => { const full = z.rect[2] >= 0.99 && z.rect[3] >= 0.99; k.push(full ? [z.t, 0, 0, 1] : [z.t - 0.1, (n++ % 2 ? 8 : -8), 5, 1.16]); }); return k; })();
+const SCV = document.createElement('canvas'); SCV.width = PANEL.w; SCV.height = PANEL.h; const scx = SCV.getContext('2d');
+function plateTilt(t) { return { ry: sk(t, TILTK.map(k => [k[0], k[1]]), 4, 1), rx: sk(t, TILTK.map(k => [k[0], k[2]]), 4, 1), push: sk(t, TILTK.map(k => [k[0], k[3]]), 4, 1) }; }
 function plate(x, t) {
   const k = plateAt(t), p = PL[k], R = plateRect(t);
+  const tl = plateTilt(t), pushing = p.cut && k > 0 && PL[k - 1].kind === 'screen' && t - p.t0 < 0.32;
+  if (p.kind === 'screen' && !pushing && Math.abs(R.w - PANEL.w) < 1 && Math.abs(R.h - PANEL.h) < 1 && (Math.abs(tl.ry) > 0.05 || Math.abs(tl.rx) > 0.05)) {
+    scx.setTransform(1, 0, 0, 1, 0, 0); scx.clearRect(0, 0, PANEL.w, PANEL.h);
+    scx.save(); rr(scx, 0, 0, PANEL.w, PANEL.h, PANEL.r); scx.clip(); scx.fillStyle = NIGHT; scx.fillRect(0, 0, PANEL.w, PANEL.h);
+    drawSource(scx, p, t, { cx: PANEL.w / 2, cy: PANEL.h / 2, w: PANEL.w, h: PANEL.h, r: 0 }); scx.restore();
+    const q = { cx: R.cx, cy: R.cy, w: PANEL.w, h: PANEL.h, rx: tl.rx * DEG, ry: tl.ry * DEG, push: tl.push, dof: 2.2 };
+    const P = [[-q.w / 2, -q.h / 2], [q.w / 2, -q.h / 2], [q.w / 2, q.h / 2], [-q.w / 2, q.h / 2]].map(([a2, b2]) => toScreen(worldOf(q, a2, b2)));
+    shadowPoly(x, P); drawPersp(x, SCV, q); glowPoly(x, P, t, 0.55 + 0.25 * beatPulse(t));
+    return;
+  }
   if (R.w < W1 - 1 || R.h < H1 - 1) {   // a card on the stage: deep night shadow + thin rim
     card(x, R.cx, R.cy, R.w, R.h, R.r, { fill: NIGHT, shadow: 'rgba(255,46,160,.22)', depth: 0.9 });
     softRing(x, R.cx, R.cy, R.w, R.h, R.r, t, 0.55 + 0.25 * beatPulse(t));
@@ -368,36 +394,47 @@ function lab(x, t) {
   }, { w: 10 });
 }
 // REAL B-ROLL: a live capture of the actual page, in a browser card; scroll/zoom keys; spotlight on real DOM rects
-function browserCard(x, t, a, b, page, url, keys, hls, opt = {}) {
+const BCW = 1560, BCH = 790, BC = document.createElement('canvas'); BC.width = BCW; BC.height = BCH; const bx = BC.getContext('2d');
+function browserCard(x, t, a, b, page, url, keys, hls, tilt) {
   scene(x, t, a, b, PANEL, (x, t) => {
     paperSky(x, W1, H1, t, { side: 'right' });
     const im = get(IMG, 'web:' + page), R0 = RECT[page]; if (!im) return;
-    const cx = 960, cy = 476, w = 1560, h = 790, top = cy - h / 2, bar = 62;
-    softRing(x, cx, cy, w, h, 34, t, 0.7 + 0.2 * beatPulse(t));
-    card(x, cx, cy, w, h, 34, { fill: WHITE, shadow: 'rgba(255,46,160,.22)', depth: 1 });
-    x.save(); rrc(x, cx, cy, w, h, 34); x.clip();
-    x.fillStyle = INK.cloud; x.fillRect(cx - w / 2, top, w, bar);
-    ['#FF5F57', '#FEBC2E', '#28C840'].forEach((c, i) => { circle(x, cx - w / 2 + 34 + i * 26, top + bar / 2, 8); x.fillStyle = c; x.fill(); });
-    rr(x, cx - 380, top + 14, 760, bar - 28, (bar - 28) / 2); x.fillStyle = WHITE; x.fill();
-    mono(x, 22, 500); x.fillStyle = INK.ink2; x.direction = 'ltr'; x.textAlign = 'center'; x.fillText(url, cx, top + bar / 2 + 8);
-    // camera on the page: y (source px) and zoom, sprung between keys
+    const w = BCW, h = BCH, bar = 62;
+    // 1. the card, flat, into its own canvas: browser chrome, the live page (scroll + zoom), the spotlight dim
+    bx.setTransform(1, 0, 0, 1, 0, 0); bx.clearRect(0, 0, w, h);
+    bx.save(); rr(bx, 0, 0, w, h, 34); bx.clip(); bx.fillStyle = WHITE; bx.fillRect(0, 0, w, h);
+    bx.fillStyle = INK.cloud; bx.fillRect(0, 0, w, bar);
+    ['#FF5F57', '#FEBC2E', '#28C840'].forEach((c, i) => { circle(bx, 34 + i * 26, bar / 2, 8); bx.fillStyle = c; bx.fill(); });
+    rr(bx, w / 2 - 380, 14, 760, bar - 28, (bar - 28) / 2); bx.fillStyle = WHITE; bx.fill();
+    mono(bx, 22, 500); bx.fillStyle = INK.ink2; bx.direction = 'ltr'; bx.textAlign = 'center'; bx.fillText(url, w / 2, bar / 2 + 8);
     const y = sk(t, keys.map(k => [k[0], k[1]]), 4, 1), z = Math.exp(sk(t, keys.map(k => [k[0], Math.log(k[2] || 1)]), 4, 1));
-    const fx = sk(t, keys.map(k => [k[0], k[3] ?? R0.W / 2]), 4, 1);   // horizontal focus (source px)
+    const fx = sk(t, keys.map(k => [k[0], k[3] ?? R0.W / 2]), 4, 1);
     const sw = R0.W / z, shh = sw * (h - bar) / w, sx = clamp(fx - sw / 2, 0, R0.W - sw), sy = clamp(y, 0, R0.H - shh);
-    x.drawImage(im, sx, sy, sw, shh, cx - w / 2, top + bar, w, h - bar);
-    const map = r => {   // source rect -> card coords, clamped inside the page area so the ring never crosses the card edge
-      let X = cx - w / 2 + (r[0] - sx) * w / sw, Y = top + bar + (r[1] - sy) * (h - bar) / shh, PW = r[2] * w / sw, PH = r[3] * (h - bar) / shh;
-      const x0 = cx - w / 2 + 24, y0 = top + bar + 16, x1 = cx + w / 2 - 24, y1 = top + h - 24;
-      const X2 = Math.min(X + PW, x1), Y2 = Math.min(Y + PH, y1); X = Math.max(X, x0); Y = Math.max(Y, y0); return [X, Y, X2 - X, Y2 - Y]; };
+    bx.drawImage(im, sx, sy, sw, shh, 0, bar, w, h - bar);
+    const map = r => { let X = (r[0] - sx) * w / sw, Y = bar + (r[1] - sy) * (h - bar) / shh, PW = r[2] * w / sw, PH = r[3] * (h - bar) / shh;
+      const X2 = Math.min(X + PW, w - 24), Y2 = Math.min(Y + PH, h - 24); X = Math.max(X, 24); Y = Math.max(Y, bar + 16); return [X, Y, X2 - X, Y2 - Y]; };
     const act = hls.filter(hl => t >= hl[0] && t < hl[1]).pop();
-    if (act) {
-      const [X, Y, PW, PH] = map(act[2]), sp = clamp(spring(t - act[0], 10, 0.9), 0, 1) * (1 - in3(inv(act[1] - 0.2, act[1], t)));
-      x.beginPath(); x.rect(cx - w / 2, top + bar, w, h - bar); x.roundRect(X - 10, Y - 10, PW + 20, PH + 20, 18); x.fillStyle = `rgba(28,26,75,${0.42 * sp})`; x.fill('evenodd');   // rr() would beginPath: use roundRect so the hole survives
-      x.restore();
-      softRing(x, X + PW / 2, Y + PH / 2, PW + 20, PH + 20, 18, t, 1.2 * sp);
-      if (act[3]) chip(x, t, act[0] + 0.15, clamp(X + PW / 2, 300, 1620), clamp(Y - 46, 150, 860), act[3], { size: 30, fill: PINK, ink: WHITE, glow: true, out: act[1] - 0.2 });
-    } else x.restore();
-
+    let sp = 0, HR = null;
+    if (act) { HR = map(act[2]); sp = clamp(spring(t - act[0], 10, 0.9), 0, 1) * (1 - in3(inv(act[1] - 0.2, act[1], t)));
+      bx.beginPath(); bx.rect(0, bar, w, h - bar); bx.roundRect(HR[0] - 10, HR[1] - 10, HR[2] + 20, HR[3] + 20, 18); bx.fillStyle = `rgba(28,26,75,${0.42 * sp})`; bx.fill('evenodd'); }
+    bx.restore();
+    // 2. the 3D move: tilt keys [t, rotY deg, rotX deg, push]; the card turns toward the camera while something is lit
+    const ry = sk(t, tilt.map(k => [k[0], k[1]]), 3.2, 1), rx = sk(t, tilt.map(k => [k[0], k[2]]), 3.2, 1), push = sk(t, tilt.map(k => [k[0], k[3]]), 3.2, 1);
+    const q = { cx: 960, cy: 470, w, h, rx: rx * DEG, ry: ry * DEG, push, dof: 2.6 };
+    const P = [[-w / 2, -h / 2], [w / 2, -h / 2], [w / 2, h / 2], [-w / 2, h / 2]].map(([a2, b2]) => toScreen(worldOf(q, a2, b2)));
+    shadowPoly(x, P); drawPersp(x, BC, q); glowPoly(x, P, t, 0.75 + 0.2 * beatPulse(t));
+    // 3. the lit element lifts off the page toward the camera (its own layer, a little larger), glow + label on it
+    if (HR && sp > 0.01) {
+      const pad = 10, lx = HR[0] - pad + (HR[2] + 2 * pad) / 2 - w / 2, ly = HR[1] - pad + (HR[3] + 2 * pad) / 2 - h / 2, lift = 70 * sp, sc = 1 + 0.05 * sp;
+      const T = worldOf(q, lx, ly, lift), lw = (HR[2] + 2 * pad) * sc, lh = (HR[3] + 2 * pad) * sc;
+      const lq = { ...q, w: lw, h: lh, T, dof: 0 };
+      const sub = [(HR[0] - pad) / w, (HR[1] - pad) / h, (HR[0] + HR[2] + pad) / w, (HR[1] + HR[3] + pad) / h];
+      const LP = [[-lw / 2, -lh / 2], [lw / 2, -lh / 2], [lw / 2, lh / 2], [-lw / 2, lh / 2]].map(([a2, b2]) => toScreen(worldOf(q, lx + a2, ly + b2, lift)));
+      x.save(); x.globalAlpha = sp; shadowPoly(x, LP, 0.3); drawPersp(x, BC, lq, sub); x.restore();
+      glowPoly(x, LP, t, 1.2 * sp);
+      const top = LP.reduce((m, p2) => (p2[1] < m[1] ? p2 : m), LP[0]), mxp = (LP[0][0] + LP[1][0]) / 2;
+      if (act[3]) chip(x, t, act[0] + 0.15, clamp(mxp, 300, 1620), clamp(Math.min(LP[0][1], LP[1][1]) - 44, 130, 860), act[3], { size: 30, fill: PINK, ink: WHITE, glow: true, out: act[1] - 0.2 });
+    }
   });
 }
 function realBroll(x, t) {
@@ -405,15 +442,18 @@ function realBroll(x, t) {
   // "זה העדכון האחרון של Anthropic?" -> the real changelog, the newest version lit up
   browserCard(x, t, A.hook_end, A.not_this - 0.15, 'changelog', 'code.claude.com/docs/en/changelog',
     [[A.hook_end - 1, 0, 1], [A.latest - 0.2, 120, 1.25, 1400]],
-    [[A.latest, A.not_this, [C.h1[0] - 20, C.h1[1] - 14, 1120, C.h1[3] + 28], 'Claude Code changelog'], [A.latest + 0.9, A.not_this, [1700, 250, 430, 70], 'הגרסה האחרונה']]);
+    [[A.latest, A.latest + 0.9, [C.h1[0] - 20, C.h1[1] - 14, 1120, C.h1[3] + 28], 'Claude Code changelog'], [A.latest + 0.9, A.not_this, [1700, 250, 430, 70], 'הגרסה האחרונה']],
+    [[A.hook_end - 0.2, -24, 14, 1.45], [A.hook_end + 0.5, -14, 9, 1.18], [A.latest, -6, 4, 1.06], [A.latest + 0.9, 8, 5, 1.04]]);
   // "API Credits ... מול המנוי" -> the real pricing page: the API tab, then Pro / Max
   browserCard(x, t, A.api - 0.25, A.api_end, 'pricing', 'claude.com/pricing',
-    [[A.api - 1, 300, 1], [A.sub - 0.3, 620, 1]],
-    [[A.api, A.sub - 0.35, [1272, 580, 98, 70], 'API'], [A.sub - 0.3, A.api_end, [P.proCard[0], P.proCard[1], P.maxCard[0] + P.maxCard[2] - P.proCard[0], 900], 'מנוי']]);
+    [[A.api - 1, 330, 1.8, 1320], [A.api + 2.2, 330, 1.8, 1320], [A.sub - 0.3, 620, 1]],
+    [[A.api, A.sub - 0.35, [1272, 580, 98, 70], 'API'], [A.sub - 0.3, A.api_end, [P.proCard[0], P.proCard[1], P.maxCard[0] + P.maxCard[2] - P.proCard[0], 900], 'מנוי']],
+    [[A.api - 0.4, 22, 12, 1.4], [A.api + 0.2, 12, 8, 1.15], [A.sub - 0.5, 4, 4, 1.05], [A.sub + 0.3, -8, 6, 1.06]]);
   // "אז הבנו, זה הרעיון של מודים בתוך Claude" -> the real plugins docs page
   browserCard(x, t, A.idea - 0.05, A.skills - 0.3, 'plugins', 'code.claude.com/docs/en/plugins',
     [[A.idea - 1, 0, 1], [A.skills - 1.4, 380, 1]],
-    [[A.idea + 0.6, A.skills - 0.3, [G.h1[0] - 20, G.h1[1] - 14, 1400, 330], 'Plugins overview']]);
+    [[A.idea + 0.6, A.skills - 0.3, [G.h1[0] - 20, G.h1[1] - 14, 1400, 330], 'Plugins overview']],
+    [[A.idea - 0.2, -22, 13, 1.45], [A.idea + 0.5, -12, 8, 1.15], [A.idea + 1.4, -4, 4, 1.05], [A.skills - 0.6, 10, 7, 1.12]]);
 }
 
 // WHERE: terminal or desktop

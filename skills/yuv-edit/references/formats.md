@@ -46,14 +46,16 @@ Each recipe covers the structure, then the picture, graphics and sound for that 
 
 1. Seed the zooms:
    `python3 scripts/screen_zoom.py raw/screen.mp4 --start <in> --end <out>`. It suggests where the screen changes.
-2. Keep a zoom only when the voice points at that place. Arrive 0.3 s **before** the click or typing, and hold until the result is visible. Zoom out between actions that are far apart, and pan when they are close.
-3. Max 3×. If the text still looks small, the recording was too low-resolution; record at 1440p+ next time (put that in the edit note).
-4. A `callout` on the exact button, a click SFX on the click, and a soft UI tick on result reveals.
-5. **Long waits** (loading, generation): speed-ramp the cover (`speed: 4–8`) with a `stat` or a caption "×6", or cut away to A-roll.
-6. Yuval's face as a picture-in-picture is not built in yet. Alternate full-screen demo with A-roll instead.
+2. **Tilt the panel in 3D while zoomed in** (±8° Y alternating, 5° X), flat on zoom-out.
+3. Keep a zoom only when the voice points at that place. Arrive 0.3 s **before** the click or typing, and hold until the result is visible. Zoom out between actions that are far apart, and pan when they are close.
+4. Max 3×. If the text still looks small, the recording was too low-resolution; record at 1440p+ next time (put that in the edit note).
+5. A `callout` on the exact button, a click SFX on the click, and a soft UI tick on result reveals.
+6. **Long waits** (loading, generation): speed-ramp the cover (`speed: 4–8`) with a `stat` or a caption "×6", or cut away to A-roll.
+7. Yuval's face as a picture-in-picture is not built in yet. Alternate full-screen demo with A-roll instead.
 
 ## D. Screenshots, websites, app UI (Apple-site style)
 
+0. **In a kit film, this is `browserCard` + `persp.js`:** real WebGL perspective, scroll inside the tilted page, the highlight lifting in Z (SKILL.md, the v5 row). Never a flat page.
 1. **Use `card3d` for every static screenshot:**
    - the default turn is `rot_y −14→6`, `rot_x 8→2`, `z 2.6→1.9`, with a blurred-self backdrop;
    - for a hero moment use a bigger push (`z 3.2→1.6`) on the light stage, with the glow ring around the card.
