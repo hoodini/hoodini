@@ -136,11 +136,14 @@ const FLASH = [A.mod - 0.1, A.what, A.explode, A.ch2];
 function flash(x, t) { let a = 0; for (const p of FLASH) { const u = t - p; if (u >= 0 && u < 0.14) a = Math.max(a, 0.45 * Math.exp(-u / 0.032)); } if (a > 0.01) { x.fillStyle = rgba(WHITE, a); x.fillRect(0, 0, W1, H1); } }
 
 /* ---------------- drawing the plate ---------------- */
+const LATE = 128;   // v8 feedback: from here on (and in the end-card circle) the face sat too low in the frame
+let V_INNER = false;   // true while the 16:9 frame is being drawn for the 9:16 cut (it crops the face itself)
+const faceCrop = (p, t) => !V_INNER && (t >= A.end || p.t0 >= LATE) ? [(p.punch || 1) > 1.01 ? 1.4 : 1.28, 0.5, 1] : [p.punch || 1, ...(p.anchor || [0.5, 0.3])];
 function drawSource(x, p, t, R, opt = {}) {
   const im = get(IMG, t >= A.end ? AVATAR : srcIdx(p, t)); if (!im) return;
   let sx, sy, sw, sh;
   if (p.kind === 'screen') { const [zx, zy, s] = zoomAt(t); sx = zx * 1920; sy = zy * 1080; sw = s * 1920; sh = s * 1080; }
-  else { const s = p.punch || 1, [ax, ay] = p.anchor || [0.5, 0.3]; sw = 1920 / s; sh = 1080 / s; sx = ax * (1920 - sw); sy = ay * (1080 - sh); }
+  else { const [s, ax, ay] = faceCrop(p, t); sw = 1920 / s; sh = 1080 / s; sx = ax * (1920 - sw); sy = ay * (1080 - sh); }
   // cover-fit the source crop into R (R can be any aspect while it morphs)
   const ra = R.w / R.h, ca = sw / sh;
   if (ra > ca) { const nh = sw / ra; sy += (sh - nh) / 2; sh = nh; } else { const nw = sh * ra; sx += (sw - nw) / 2; sw = nw; }
@@ -184,7 +187,7 @@ function subjectOver(x, t) {
   const p = PL[plateAt(t)], im = get(IMG, srcIdx(p, t)), mt = get(MAT, srcIdx(p, t)); if (!im || !mt) return;
   mx.setTransform(1, 0, 0, 1, 0, 0); mx.clearRect(0, 0, W1, H1); mx.globalCompositeOperation = 'source-over';
   drawSource(mx, p, t, FULL); mx.globalCompositeOperation = 'destination-in';
-  const s = p.punch || 1, [ax, ay] = p.anchor || [0.5, 0.3], sw = 1920 / s, sh = 1080 / s;
+  const [s, ax, ay] = faceCrop(p, t), sw = 1920 / s, sh = 1080 / s;
   mx.drawImage(mt, ax * (1920 - sw), ay * (1080 - sh), sw, sh, 0, 0, W1, H1); mx.globalCompositeOperation = 'source-over';
   x.drawImage(mcv, 0, 0);
 }
@@ -250,7 +253,9 @@ function codeChip(x, t, t0, tOut, cx, cy, text, prompt = '$') {   // a command a
   x.restore();
 }
 // a full-frame scene that grows out of a seed rect and contracts back into it (shape change, never a fade)
+const SCN = [], SCN_SEEN = new Set();   // every scene window, registered on each call (pure: only its arguments)
 function scene(x, t, a, b, seed, fn, opt = {}) {
+  if (!SCN_SEEN.has(a + '|' + b)) { SCN_SEEN.add(a + '|' + b); SCN.push([a - 0.01, b + 0.6]); }
   if (t < a - 0.01 || t > b + 0.6) return;
   const u = clamp(spring(t - a, opt.w ?? 9, 0.86), 0, 1.03) * (1 - clamp(spring(t - b, 10, 0.95), 0, 1));
   if (u <= 0.002) return;
@@ -268,8 +273,9 @@ function hook(x, t) {
     const push = 1 + 0.05 * clamp(t / A.hook_end);
     x.save(); x.translate(960, 560); x.scale(push, push); x.translate(-960, -560);
     terminal(x, 960, 560, 1300, 560, t, { title: 'Claude Code · v2.1.289', lines: [['● It passed validation. Next I\'m writing a test.'], ['● Both tests pass. Last step is a type-check.'], ['  Ran 3 shell commands'], ['> /plugin-authoring', '#FFFFFF']] });
-    statusBar(x, 340, 740, 1240, 62, t, [xr => goldChip(x, t, A.hook_date, xr, 771, DATE, 30)]);
-    if (t > A.hook_date) neonRing(x, 1330, 771, 290, 58, 18, t * 1.2, { lw: 3, glow: 16, power: 0.5 + 0.5 * beatPulse(t) });
+    let XR = 0; statusBar(x, 340, 740, 1240, 62, t, [xr => (XR = xr, goldChip(x, t, A.hook_date, xr, 771, DATE, 30))]);
+    x.font = FT.textB(30); const dw = x.measureText(DATE).width + 40;          // the ring sits exactly on the date chip
+    if (t > A.hook_date) neonRing(x, XR - dw / 2, 771, dw + 26, 62, 22, t * 1.2, { lw: 3, glow: 16, power: (0.5 + 0.5 * beatPulse(t)) * clamp(spring(t - A.hook_date - 0.15, 9, 0.9), 0, 1) });
     x.restore();
     headline(x, t, ['משהו', 'מוזר', 'קורה'], [A.hook_strange, A.hook_moozar, A.hook_moozar + 0.35], A.hook_date - 0.25, { y: 190, size: 140 });
     headline(x, t, ['תאריך', 'עברי', 'בתוך', 'Claude Code'], [A.hook_date, A.hook_date + 0.3, A.hook_inside, A.hook_inside + 0.25], A.hook_end - 0.6, { y: 190, size: 120, marker: 1 });
@@ -530,6 +536,39 @@ function tokens(x, t) {
   });
 }
 
+// PLUGIN-AUTHORING: "if we stop here for a moment, we see we can create a mod" - the real lines from his screen
+// lifted into 3D (the "Make a mod" line comes toward the camera), and his face from the recording's webcam in a circle
+const DCW = 1640, DCH = 260, DC = document.createElement('canvas'); DC.width = DCW; DC.height = DCH; const dcx = DC.getContext('2d');
+function pluginDesc(x, t) {
+  const a = A.pa + 2.65, b = A.what - 0.1;
+  scene(x, t, a, b, PANEL, (x, t) => {
+    paperSky(x, W1, H1, t, { side: 'left' });
+    const p = PL[plateAt(t)], im = get(IMG, srcIdx(p, t)); if (!im) return;
+    dcx.setTransform(1, 0, 0, 1, 0, 0); dcx.fillStyle = '#0B0A1F'; dcx.fillRect(0, 0, DCW, DCH);
+    dcx.drawImage(im, 150, 628, 1380, 190, 20, 20, 1600, 220);                 // source px: left of the webcam
+    const tilt = [[a - 0.3, -20, 11, 1.35], [a + 0.5, -9, 6, 1.0], [a + 1.4, 3, 3, 0.94], [b, 10, 6, 1.0]];
+    const ry = sk(t, tilt.map(k => [k[0], k[1]]), 3.2, 1), rx = sk(t, tilt.map(k => [k[0], k[2]]), 3.2, 1), push = sk(t, tilt.map(k => [k[0], k[3]]), 3.2, 1);
+    const q = { cx: 960, cy: 380, w: DCW, h: DCH, rx: rx * DEG, ry: ry * DEG, push, dof: 2.2 };
+    const P = [[-DCW / 2, -DCH / 2], [DCW / 2, -DCH / 2], [DCW / 2, DCH / 2], [-DCW / 2, DCH / 2]].map(([u2, v2]) => toScreen(worldOf(q, u2, v2)));
+    shadowPoly(x, P); drawPersp(x, DC, q); glowPoly(x, P, t, 0.8);
+    const t1 = a + 1.0, sp = clamp(spring(t - t1, 10, 0.9), 0, 1) * (1 - in3(inv(b - 0.25, b, t)));
+    if (sp > 0.01) {                                                            // "Make a mod: ..." lifts off
+      const HR = [44, 80, 1592, 60], lw = HR[2] * (1 + 0.05 * sp), lh = HR[3] * (1 + 0.05 * sp), lx = HR[0] + HR[2] / 2 - DCW / 2, ly = HR[1] + HR[3] / 2 - DCH / 2;
+      const T = worldOf(q, lx, ly, 70 * sp), LP = [[-lw / 2, -lh / 2], [lw / 2, -lh / 2], [lw / 2, lh / 2], [-lw / 2, lh / 2]].map(([u2, v2]) => toScreen(worldOf(q, lx + u2, ly + v2, 70 * sp)));
+      x.save(); x.globalAlpha = sp; shadowPoly(x, LP, 0.3); drawPersp(x, DC, { ...q, w: lw, h: lh, T, dof: 0 }, [HR[0] / DCW, HR[1] / DCH, (HR[0] + HR[2]) / DCW, (HR[1] + HR[3]) / DCH]); x.restore();
+      glowPoly(x, LP, t, 1.2 * sp);
+      chip(x, t, t1 + 0.15, 960, clamp(Math.min(LP[0][1], LP[1][1]) - 48, 120, 900), 'Make a mod  =  יוצרים מוד', { size: 34, fill: PINK, ink: WHITE, glow: true, out: b - 0.2 });
+    }
+    // his face, from the webcam corner of the recording, in the signature glow circle
+    const fs = pop(t, a + 0.3, 14, 0.6) * (1 - in3(inv(b - 0.2, b + 0.1, t))), FX = 470, FY = 780, FR = 190 * fs;
+    if (fs > 0.01) {
+      x.save(); circle(x, FX, FY, FR); x.clip(); x.drawImage(im, 1620 - 110, 842 - 110, 220, 220, FX - FR, FY - FR, 2 * FR, 2 * FR); x.restore();
+      neonRing(x, FX, FY, 2 * FR + 18, 2 * FR + 18, FR + 9, t * 1.05, { lw: 5, glow: 26, power: 0.85 + 0.15 * beatPulse(t) });
+      softRing(x, FX, FY, 2 * FR + 40, 2 * FR + 40, FR + 20, t + 1.3, 0.6 * fs);
+    }
+    codeChip(x, t, a + 0.35, b, 1260, 780, '/plugin-authoring', '>');
+  }, { fill: 1 });
+}
 // ATMOSPHERE: licensed stock footage, full bleed, slow push + drift, kinetic chips on top
 function stockShot(x, t, s, top) {
   scene(x, t, s.a, s.b, PANEL, (x, t) => {
@@ -620,7 +659,7 @@ function behindTitles(x, t) {
 function overlays(x, t) {
   updateStats(x, t);
   codeChip(x, t, A.update - 0.1, PL[4].t0 - 0.05, 960, 830, 'claude --update');
-  codeChip(x, t, A.pa - 0.1, A.what - 0.1, 960, 830, '/plugin-authoring', '>');
+  codeChip(x, t, A.pa - 0.1, A.pa + 2.7, 960, 170, '/plugin-authoring', '>');
   chip(x, t, A.hot, 960, 840, '↻  hot-reload · אוטומטי', { size: 30, glow: true, out: PL[6].t0 - 0.2 });
   // lower third (white card, pink bar), above the captions, RTL start = right
   const lt0 = A.lt, lt1 = A.lt + 3.6, s = clamp(spring(t - lt0, 12, 0.7), 0, 1.02) * (1 - in3(inv(lt1 - 0.25, lt1, t)));
@@ -675,15 +714,75 @@ function captions(x, t) {
 function progress(x, t) { const u = clamp(t / DUR); x.fillStyle = 'rgba(28,26,75,.10)'; x.fillRect(0, 0, W1, 6); x.fillStyle = gradPaint(x, W1, 0, 0, 0, [PINK, INK.cyan]); x.fillRect(W1 * (1 - u), 0, W1 * u, 6); }
 
 /* ---------------- the frame ---------------- */
-function draw(x, t, L) {
+function draw(x, t, L) { if (L.name === 'v') drawV(x, t); else drawH(x, t, true); }
+function drawH(x, t, full) {
   paperSky(x, W1, H1, t, { side: 'right' });
   x.save(); camApply(x, camAt(t));
   plate(x, t);
   if (BEHIND.some(([a, b]) => t >= a && t < b)) { behindTitles(x, t); subjectOver(x, t); }
   splitTitles(x, t); overlays(x, t);
-  hook(x, t); modPage(x, t); whatChapter(x, t); lab(x, t); where(x, t); zmanim(x, t); tokens(x, t); realBroll(x, t); atmosphere(x, t); skills(x, t); chapter2(x, t);
+  hook(x, t); modPage(x, t); whatChapter(x, t); pluginDesc(x, t); lab(x, t); where(x, t); zmanim(x, t); tokens(x, t); realBroll(x, t); atmosphere(x, t); skills(x, t); chapter2(x, t);
   endcard(x, t);
   x.restore();
-  flash(x, t); captions(x, t); progress(x, t);
+  flash(x, t); if (full) { captions(x, t); progress(x, t); }
 }
-mountFilm({ layouts: { h: { name: 'h', W: W1, H: H1 } }, draw, dur: DUR, clk: { B, BPM: D.BPM } });
+
+/* ---------------- 9:16: the same film, re-framed ----------------
+   Face shots (no scene, no split title) fill the vertical frame; everything else (screen, 3D cards, scenes) plays as a
+   glowing 16:9 card on the light stage. The two morph into each other. Captions are re-set bigger for the phone. */
+const VW = 1080, VH = 1920, INC = document.createElement('canvas'); INC.width = W1; INC.height = H1; const inx = INC.getContext('2d');
+function faceMode(t) {
+  const p = PL[plateAt(t)];
+  if (p.kind !== 'face' || t >= A.end - 0.3) return false;
+  if (SPLITS.some(([a, b]) => t > a - 0.3 && t < b + 0.5) || BEHIND.some(([a, b]) => t > a - 0.3 && t < b + 0.3)) return false;
+  return !SCN.some(([a, b]) => t > a - 0.25 && t < b);
+}
+let SW = null;
+function modeAt(t) {
+  if (!SW) {   // switch list; face stretches under 0.8 s stay in card mode (no flicker)
+    const seg = []; let prev = null;
+    for (let s = 0; s <= DUR + 1; s += 1 / 60) { const m = faceMode(s); if (m !== prev) { seg.push([s, m]); prev = m; } }
+    SW = seg.filter((g, i) => !(g[1] && (seg[i + 1] ? seg[i + 1][0] : DUR) - g[0] < 0.8));
+    SW = SW.filter((g, i) => i === 0 || g[1] !== SW[i - 1][1]);
+  }
+  let i = SW.length - 1; while (i > 0 && SW[i][0] > t) i--;
+  const [ts, m] = SW[i], from = i > 0 ? SW[i - 1][1] : m;
+  return clamp(lerp(from ? 1 : 0, m ? 1 : 0, clamp(spring(t - ts, 8, 0.95), 0, 1)), 0, 1);
+}
+function wrapLines(x, text, maxW) { const out = []; let line = ''; for (const w of text.split(' ')) { const tl = line ? line + ' ' + w : w; if (x.measureText(tl).width > maxW && line) { out.push(line); line = w; } else line = tl; } if (line) out.push(line); return out; }
+function drawV(x, t) {
+  inx.setTransform(1, 0, 0, 1, 0, 0); V_INNER = true; drawH(inx, t, false); V_INNER = false;
+  const u = modeAt(t), fc = 960;
+  paperSky(x, VW, VH, t, { side: 'right' });
+  // header: brand + topic (card mode)
+  if (u < 0.99) {
+    x.save(); x.globalAlpha = 1 - u;
+    x.font = FT.he(118); x.direction = 'rtl'; x.textAlign = 'center'; x.fillStyle = INK.ink; x.fillText('מודים ב-Claude Code', VW / 2, 300);
+    x.font = FT.textB(40); x.fillStyle = INK.ink2; x.fillText('לשנות את הנראות של Claude', VW / 2, 372);
+    x.direction = 'ltr'; x.font = FT.en(44); x.fillStyle = PINK; x.fillText('YUV.AI', VW / 2, 160); x.restore();
+  }
+  const S = [lerp(0, fc - 304, u), 0, lerp(1920, 608, u), 1080], D = [lerp(16, 0, u), lerp(500, 0, u), lerp(1048, VW, u), lerp(590, VH, u)], r = lerp(30, 0, u);   // card: the whole 16:9 frame, as wide as the phone
+  if (u < 0.98) { softRing(x, D[0] + D[2] / 2, D[1] + D[3] / 2, D[2] + 16, D[3] + 16, r + 8, t, 0.9 * (1 - u)); }
+  x.save(); rr(x, D[0], D[1], D[2], D[3], r); x.clip(); x.drawImage(INC, S[0], S[1], S[2], S[3], D[0], D[1], D[2], D[3]); x.restore();
+  // things the 16:9 face frame carried at its sides, re-placed for the phone
+  if (u > 0.02) {
+    const lt = pop(t, A.lt + 0.1, 16, 0.6) * (1 - in3(inv(A.lt + 3.4, A.lt + 3.7, t)));
+    if (lt > 0.01) { x.save(); x.globalAlpha = u; chip(x, t, A.lt + 0.1, VW / 2, 1240, 'יובל אבידני · AI Builder & Speaker', { size: 36, fill: WHITE, ink: INK.ink, glow: true, out: A.lt + 3.4 }); x.restore(); }
+    if (t > A.read - 0.2) { x.save(); x.globalAlpha = u; chip(x, t, A.read - 0.15, VW / 2, 300, 'ספרו לי בתגובות ←', { size: 44, fill: PINK, ink: WHITE, glow: true, out: A.end - 0.2 }); x.restore(); }
+  }
+  // captions, phone size
+  if (t < A.end - 0.05) {
+    let c = null; for (const ch of CH) { if (t >= ch.t0 - 0.05 && t < ch.end) { c = ch; break; } }
+    if (c) {
+      const text = c.words.map(o => o.w).join(' '), size = 66, k = out3(inv(c.t0 - 0.05, c.t0 + 0.13, t)), light = u < 0.5;
+      x.save(); x.font = FT.textB(size); x.direction = 'rtl'; x.textAlign = 'center'; x.lineJoin = 'round'; x.globalAlpha = k;
+      const lines = wrapLines(x, text, 940), y0 = lerp(1200, 1470, u) + (1 - k) * 10;
+      lines.forEach((ln, i) => { const y = y0 + i * size * 1.25;
+        if (light) { x.fillStyle = INK.ink; x.fillText(ln, VW / 2, y); }
+        else { x.lineWidth = size * 0.16; x.strokeStyle = 'rgba(14,13,42,.85)'; x.strokeText(ln, VW / 2, y); x.fillStyle = WHITE; x.fillText(ln, VW / 2, y); } });
+      x.restore();
+    }
+  }
+  const pu = clamp(t / DUR); x.fillStyle = 'rgba(28,26,75,.10)'; x.fillRect(0, 0, VW, 8); x.fillStyle = gradPaint(x, VW, 0, 0, 0, [PINK, INK.cyan]); x.fillRect(VW * (1 - pu), 0, VW * pu, 8);
+}
+mountFilm({ layouts: { h: { name: 'h', W: W1, H: H1 }, v: { name: 'v', W: VW, H: VH } }, draw, dur: DUR, clk: { B, BPM: D.BPM } });

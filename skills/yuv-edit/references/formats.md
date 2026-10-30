@@ -29,6 +29,7 @@ Each recipe covers the structure, then the picture, graphics and sound for that 
 
 ## B. Reel / Short (9:16, 20–60 s)
 
+0. **In a kit film:** the 9:16 cut is the same film re-framed with `?L=v` (`LAYOUT=v node render_edit.cjs ...`): face shots fill the phone, everything else is a glowing 16:9 card under a brand header, captions re-set for the phone (SKILL.md, v8 row). The steps below are for the quick-mode pipeline.
 1. **Frame:** `width 1080, height 1920`. The face anchor reframes 16:9 A-roll automatically; check the head is not cut off in the stills gate.
 2. **First 1.5 s:**
    - the claim as a `title` (y ≈ 0.22, above the face) and motion on frame 1 (punch 1.12 or a cover);

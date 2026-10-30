@@ -8,9 +8,10 @@ const { spawn } = require('child_process');
 const [, , film, mode, a1, a2, a3, subs] = process.argv;
 (async () => {
   const browser = await chromium.launch({ args: ['--allow-file-access-from-files', '--disable-web-security'] });
-  const page = await browser.newPage({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1 });
+  const LAY = process.env.LAYOUT || 'h', VP = LAY === 'v' ? { width: 1080, height: 1920 } : { width: 1920, height: 1080 };   // LAYOUT=v renders the 9:16 cut
+  const page = await browser.newPage({ viewport: VP, deviceScaleFactor: 1 });
   page.on('pageerror', e => console.error('PAGEERROR', e.message));
-  await page.goto('file://' + path.resolve(film) + '?L=h');
+  await page.goto('file://' + path.resolve(film) + '?L=' + LAY);
   await page.evaluate(() => window.__ready);
   const ok = await page.evaluate(() => ['700 100px Karantina', '700 40px Assistant', '400 100px Anton', '700 30px "JetBrains Mono"', '400 60px "Gveret Levin"'].every(f => document.fonts.check(f, 'אבג abc')));
   if (!ok) { console.error('FONTS NOT LOADED - abort'); process.exit(2); }
