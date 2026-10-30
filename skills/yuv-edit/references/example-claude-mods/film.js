@@ -62,7 +62,10 @@ function plateAt(t) { let lo = 0, hi = PL.length - 1; while (lo < hi) { const m 
 const srcIdx = (p, t) => clamp(Math.round((p.in + clamp(t - p.t0, 0, p.dur)) * 30), Math.round(p.in * 30), Math.min(5423, Math.round((p.in + p.dur) * 30) - 1));  // 5423 = last decodable source frame
 const AVATAR = 5372;   // frame where Yuval looks straight into the lens (picked from a grid of the last 4 s)
 const WEB = Q.get('web') || 'file:///home/user/edit_yuv/v2/web/';
-const PAGES = ['changelog', 'pricing', 'plugins'];
+const PAGES = ['changelog', 'pricing', 'plugins', 'statusline', 'download', 'skills'];
+// licensed Mixkit atmosphere shots (#46635 code in glasses, #43527 RGB keyboard), 30 fps frames
+const STOCK = [{ id: 's46635', a: A.hot - 3.4, b: A.lt - 0.2 }, { id: 's43527', a: A.pray_end + 0.1, b: A.tokens - 0.3 }];
+const stockIdx = (s, t) => clamp(Math.floor((t - s.a + 0.3) * 30), 0, 125) + 1;
 const CANDLE_N = 240;                                   // Mixkit #29425 (Shabbat-like candles), 30 fps frames
 const candleIdx = t => clamp(Math.floor((t - (A.pray - 0.3)) * 30), 0, CANDLE_N - 1) + 1;
 const BEHIND = [[A.mods_now - 0.25, A.mods_now_end]];
@@ -79,6 +82,7 @@ window.prepare = async (t, n = 6, shutter = 0.5, fps = 60) => {
   need.push(load(IMG, FRAMES + pad(AVATAR) + '.jpg', AVATAR));
   for (const pg of PAGES) need.push(load(IMG, WEB + pg + '.png', 'web:' + pg));
   if (t > A.pray - 0.6 && t < A.pray_end + 0.8) for (let i = 0; i < n; i++) { const c = candleIdx(t + (i - n / 2) / 600); need.push(load(IMG, WEB + 'candles/' + pad(c) + '.jpg', 'c:' + c)); }
+  for (const s of STOCK) if (t > s.a - 0.6 && t < s.b + 0.8) for (let i = 0; i < n; i++) { const c = stockIdx(s, t + (i - n / 2) / 600); need.push(load(IMG, WEB + s.id + '/' + pad(c) + '.jpg', s.id + ':' + c)); }
   const last = PL[PL.length - 1]; need.push(load(IMG, FRAMES + pad(srcIdx(last, last.t0 + last.dur)) + '.jpg', srcIdx(last, last.t0 + last.dur)));
   await Promise.all(need);
 };
@@ -447,12 +451,25 @@ function realBroll(x, t) {
     [[A.latest, A.latest + 0.9, [C.h1[0] - 20, C.h1[1] - 14, 1120, C.h1[3] + 28], 'Claude Code changelog'], [A.latest + 0.9, A.not_this, [1700, 250, 430, 70], 'הגרסה האחרונה']],
     [[A.hook_end - 0.2, -24, 14, 1.45], [A.hook_end + 0.5, -14, 9, 1.18], [A.latest, -6, 4, 1.06], [A.latest + 0.9, 8, 5, 1.04]]);
   // "API Credits ... מול המנוי" -> the real pricing page: the API tab, then Pro / Max
+  const SL = RECT.statusline, DL = RECT.download, SK = RECT.skills;
+  browserCard(x, t, A.not_this - 0.1, A.mod - 0.45, 'statusline', 'code.claude.com/docs/en/statusline',
+    [[A.not_this - 1, 140, 1.15, 1080], [A.not_this + 2.4, 1200, 1.05, 1080], [A.mod - 0.6, 1260, 1.05, 1080]],
+    [[A.not_this + 1.4, A.not_this + 3.6, [SL.h1[0] - 20, SL.h1[1] - 14, SL.h1[2] + 40, SL.h1[3] + 28], 'לשנות את הנראות'], [A.not_this + 3.7, A.mod - 0.5, [553, 1383, 1010, 217], 'status line']],
+    [[A.not_this - 0.3, 24, 13, 1.4], [A.not_this + 0.5, 13, 8, 1.12], [A.not_this + 1.5, 5, 4, 1.04], [A.not_this + 3.7, -7, 6, 1.02], [A.mod, -12, 7, 1.1]]);
+  browserCard(x, t, A.desktop - 0.3, A.desktop + 2.7, 'download', 'claude.com/download',
+    [[A.desktop - 1, 0, 1], [A.desktop + 0.9, 840, 1.3, 1080], [A.desktop + 3, 900, 1.3, 1080]],
+    [[A.desktop + 0.2, A.desktop + 1.0, [DL.h1[0] - 20, DL.h1[1] - 14, DL.h1[2] + 40, DL.h1[3] + 28], 'Claude Desktop'], [A.desktop + 1.1, A.desktop + 2.7, [770, 920, 620, 700], 'Desktop']],
+    [[A.desktop - 0.5, -22, 12, 1.4], [A.desktop + 0.3, -11, 7, 1.08], [A.desktop + 1.2, 6, 5, 1.02], [A.desktop + 2.8, 12, 7, 1.1]]);
+  browserCard(x, t, A.skills - 0.35, A.mods_now - 0.35, 'skills', 'claude.com/skills',
+    [[A.skills - 1, 380, 1.1, 1080], [A.explode + 0.2, 900, 1.05, 1080], [A.mods_now, 1000, 1.05, 1080]],
+    [[A.skills, A.explode + 0.1, [SK.h1[0] - 20, SK.h1[1] - 14, SK.h1[2] + 40, SK.h1[3] + 28], 'Skills'], [A.explode + 0.2, A.mods_now - 0.4, [267, 1080, 1626, 907], 'מתפוצצים ברשת']],
+    [[A.skills - 0.5, 22, 12, 1.4], [A.skills + 0.3, 11, 7, 1.08], [A.explode, 4, 4, 1.02], [A.mods_now, -10, 7, 1.1]]);
   browserCard(x, t, A.api - 0.25, A.api_end, 'pricing', 'claude.com/pricing',
     [[A.api - 1, 330, 1.8, 1320], [A.api + 2.2, 330, 1.8, 1320], [A.sub - 0.3, 620, 1]],
     [[A.api, A.sub - 0.35, [1272, 580, 98, 70], 'API'], [A.sub - 0.3, A.api_end, [P.proCard[0], P.proCard[1], P.maxCard[0] + P.maxCard[2] - P.proCard[0], 900], 'מנוי']],
     [[A.api - 0.4, 22, 12, 1.4], [A.api + 0.2, 12, 8, 1.15], [A.sub - 0.5, 4, 4, 1.05], [A.sub + 0.3, -8, 6, 1.06]]);
   // "אז הבנו, זה הרעיון של מודים בתוך Claude" -> the real plugins docs page
-  browserCard(x, t, A.idea - 0.05, A.skills - 0.3, 'plugins', 'code.claude.com/docs/en/plugins',
+  browserCard(x, t, A.idea - 0.05, A.skills - 0.25, 'plugins', 'code.claude.com/docs/en/plugins',
     [[A.idea - 1, 0, 1], [A.skills - 1.4, 380, 1]],
     [[A.idea + 0.6, A.skills - 0.3, [G.h1[0] - 20, G.h1[1] - 14, 1400, 330], 'Plugins overview']],
     [[A.idea - 0.2, -22, 13, 1.45], [A.idea + 0.5, -12, 8, 1.15], [A.idea + 1.4, -4, 4, 1.05], [A.skills - 0.6, 10, 7, 1.12]]);
@@ -493,11 +510,57 @@ function tokens(x, t) {
   const a = A.tokens - 0.25, b = A.tokens_end;
   scene(x, t, a, b, PANEL, (x, t) => {
     paperSky(x, W1, H1, t, { side: 'left' });
-    headline(x, t, ['כמה', 'טוקנים?'], [A.tokens - 0.25, A.tokens], null, { y: 190, size: 150, marker: 1 });
-    terminal(x, 960, 580, 1300, 520, t, { lines: [['> how many tokens would this cost tomorrow?', '#FFFFFF'], ['● Estimating from today\'s sessions…']] });
-    statusBar(x, 330, 760, 1260, 62, t, [xr => { const n = Math.round(lerp(0, 184000, clamp(spring(t - A.tokens - 0.2, 2.2, 1), 0, 1)));
-      mono(x, 28, 700); x.direction = 'ltr'; x.textAlign = 'right'; x.fillStyle = INK.goldFlat; x.fillText(n.toLocaleString('en-US') + ' tokens', xr, 801); return xr - 300; }]);
-    chip(x, t, A.tokens + 0.6, 1680, 900, 'דוגמה בלבד', { size: 24, fill: 'rgba(255,255,255,.1)', ink: INK.onNight2 });
+    headline(x, t, ['כמה', 'טוקנים?'], [A.tokens - 0.25, A.tokens], null, { y: 170, size: 150, marker: 1 });
+    // the counter
+    const n = Math.round(lerp(0, 184000, clamp(spring(t - A.tokens - 0.2, 2.2, 1), 0, 1)));
+    const sc = pop(t, A.tokens + 0.1, 12, 0.6); x.save(); x.translate(560, 560); x.scale(sc, sc);
+    x.font = FT.en(170); x.fillStyle = INK.ink; x.textAlign = 'center'; x.direction = 'ltr'; x.fillText(n.toLocaleString('en-US'), 0, 40);
+    x.font = FT.monoB(34); x.fillStyle = PINK; x.fillText('tokens · מחר (הערכה)', 0, 110); x.restore();
+    // the week as bars, tomorrow as the glowing predicted bar
+    const days = [0.42, 0.55, 0.38, 0.7, 0.61, 0.83, 1], lab = ['א', 'ב', 'ג', 'ד', 'ה', 'ו', 'מחר'], X0 = 1020, BW = 92, GAP = 26, BASE = 820, HMAX = 470;
+    x.fillStyle = 'rgba(28,26,75,.12)'; x.fillRect(X0 - 20, BASE, 7 * (BW + GAP) + 14, 4);
+    days.forEach((v, k) => {
+      const tk = A.tokens + 0.35 + k * 0.16, g = clamp(spring(t - tk, 7, 0.75), 0, 1.06), h = HMAX * v * g; if (g <= 0.001) return;
+      const bx2 = X0 + k * (BW + GAP), last = k === 6;
+      if (last) { softRing(x, bx2 + BW / 2, BASE - h / 2, BW, h, 18, t, 0.9 + 0.3 * beatPulse(t)); }
+      rr(x, bx2, BASE - h, BW, h, 18); x.fillStyle = last ? PINK : 'rgba(28,26,75,.82)'; x.fill();
+      x.font = FT.textB(34); x.fillStyle = last ? PINK : INK.ink2; x.textAlign = 'center'; x.direction = 'rtl'; x.fillText(lab[k], bx2 + BW / 2, BASE + 52);
+    });
+    chip(x, t, A.tokens + 0.6, 1700, 960, 'דוגמה בלבד', { size: 24, fill: 'rgba(28,26,75,.08)', ink: INK.ink2 });
+  });
+}
+
+// ATMOSPHERE: licensed stock footage, full bleed, slow push + drift, kinetic chips on top
+function stockShot(x, t, s, top) {
+  scene(x, t, s.a, s.b, PANEL, (x, t) => {
+    const im = get(IMG, s.id + ':' + stockIdx(s, t)); if (!im) return;
+    const z = 1.04 + 0.12 * clamp((t - s.a) / (s.b - s.a)), dx = 40 * Math.sin((t - s.a) * 0.7);
+    x.save(); x.translate(960 + dx, 540); x.scale(z, z); x.drawImage(im, -960, -540, 1920, 1080); x.restore();
+    const g = x.createLinearGradient(0, 560, 0, 1080); g.addColorStop(0, 'rgba(11,10,31,0)'); g.addColorStop(1, 'rgba(11,10,31,.7)'); x.fillStyle = g; x.fillRect(0, 0, 1920, 1080);
+    top(x, t);
+  }, { fill: 1 });
+}
+function atmosphere(x, t) {
+  const [s1, s2] = STOCK;
+  stockShot(x, t, s1, (x, t) => {
+    chip(x, t, s1.a + 0.35, 960, 300, '↻  Claude מעדכן את המוד לבד', { size: 46, fill: PINK, ink: WHITE, glow: true, out: s1.b - 0.25 });
+    chip(x, t, A.hot + 0.1, 960, 420, 'mods: hot-reloaded ✓', { size: 30, fill: WHITE, ink: INK.ink, out: s1.b - 0.25 });
+  });
+  stockShot(x, t, s2, (x, t) => {
+    [['model', 470, 260], ['context 42%', 1450, 230], ['$0.82', 330, 520], ['git: main', 1590, 500], ['tokens', 640, 760], ['זמני תפילה', 1290, 760]].forEach(([w, cx, cy], i) =>
+      chip(x, t, s2.a + 0.25 + i * 0.22, cx, cy + 10 * Math.sin(t * 1.3 + i), w, { size: 36, fill: i % 2 ? WHITE : PINK, ink: i % 2 ? INK.ink : WHITE, glow: i % 2 === 0, out: s2.b - 0.2 }));
+  });
+}
+// "58 features, 372 bugfixes, 180 other changes": the update's numbers count up over the screen
+function updateStats(x, t) {
+  const a = A.update + 0.9, b = A.update + 5.1; if (t < a - 0.1 || t > b + 0.6) return;
+  [[58, 'features'], [372, 'bugfixes'], [180, 'other changes']].forEach(([n, l], i) => {
+    const t0 = a + i * 0.3, s = pop(t, t0, 14, 0.62) * (1 - in3(inv(b + i * 0.06, b + 0.25 + i * 0.06, t))); if (s < 0.01) return;
+    x.save(); x.translate(540 + i * 420, 600 + 8 * Math.sin(t * 1.4 + i)); x.scale(s, s);
+    softRing(x, 0, 0, 360, 210, 36, t, 0.9); card(x, 0, 0, 360, 210, 36, { fill: WHITE, depth: 0.9 });
+    x.font = FT.en(120); x.fillStyle = i === 1 ? PINK : INK.ink; x.textAlign = 'center'; x.direction = 'ltr';
+    x.fillText(String(Math.round(n * clamp(spring(t - t0, 3.2, 1), 0, 1))), 0, 30);
+    x.font = FT.monoB(26); x.fillStyle = INK.ink2; x.fillText(l, 0, 78); x.restore();
   });
 }
 // API vs SUBSCRIPTION
@@ -555,6 +618,7 @@ function behindTitles(x, t) {
 }
 // chips over the screen plate
 function overlays(x, t) {
+  updateStats(x, t);
   codeChip(x, t, A.update - 0.1, PL[4].t0 - 0.05, 960, 830, 'claude --update');
   codeChip(x, t, A.pa - 0.1, A.what - 0.1, 960, 830, '/plugin-authoring', '>');
   chip(x, t, A.hot, 960, 840, '↻  hot-reload · אוטומטי', { size: 30, glow: true, out: PL[6].t0 - 0.2 });
@@ -617,7 +681,7 @@ function draw(x, t, L) {
   plate(x, t);
   if (BEHIND.some(([a, b]) => t >= a && t < b)) { behindTitles(x, t); subjectOver(x, t); }
   splitTitles(x, t); overlays(x, t);
-  hook(x, t); modPage(x, t); whatChapter(x, t); lab(x, t); where(x, t); zmanim(x, t); tokens(x, t); realBroll(x, t); skills(x, t); chapter2(x, t);
+  hook(x, t); modPage(x, t); whatChapter(x, t); lab(x, t); where(x, t); zmanim(x, t); tokens(x, t); realBroll(x, t); atmosphere(x, t); skills(x, t); chapter2(x, t);
   endcard(x, t);
   x.restore();
   flash(x, t); captions(x, t); progress(x, t);
