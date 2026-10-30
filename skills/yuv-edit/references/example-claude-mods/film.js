@@ -750,6 +750,18 @@ function modeAt(t) {
   return clamp(lerp(from ? 1 : 0, m ? 1 : 0, clamp(spring(t - ts, 8, 0.95), 0, 1)), 0, 1);
 }
 function wrapLines(x, text, maxW) { const out = []; let line = ''; for (const w of text.split(' ')) { const tl = line ? line + ' ' + w : w; if (x.measureText(tl).width > maxW && line) { out.push(line); line = w; } else line = tl; } if (line) out.push(line); return out; }
+// v9 feedback: card mode left the bottom 40% of the phone empty. Fill it with the speaker: the webcam corner of the
+// recording (left or right, measured per plate) or, on face plates, the face itself, in the signature glow circle.
+const CAM_R = new Set([4, 5, 7, 8]), CAM = { l: [30, 738, 216], r: [1472, 738, 216] };
+function vFace(x, t, k) {
+  if (k < 0.01) return;
+  const i = plateAt(t), p = PL[i], im = get(IMG, srcIdx(p, t)); if (!im) return;
+  const [sx, sy, sw] = p.kind === 'face' ? [960 - 300, 200, 600] : CAM[CAM_R.has(i) ? 'r' : 'l'];
+  const FX = VW / 2, FY = 1450, FR = 270 * (0.85 + 0.15 * k);
+  x.save(); x.globalAlpha = k; circle(x, FX, FY, FR); x.clip(); x.drawImage(im, sx, sy, sw, sw, FX - FR, FY - FR, 2 * FR, 2 * FR); x.restore();
+  x.save(); x.globalAlpha = k; neonRing(x, FX, FY, 2 * FR + 20, 2 * FR + 20, FR + 10, t * 1.05, { lw: 6, glow: 30, power: 0.85 + 0.15 * beatPulse(t) }); x.restore();
+  softRing(x, FX, FY, 2 * FR + 44, 2 * FR + 44, FR + 22, t + 1.3, 0.6 * k);
+}
 function drawV(x, t) {
   inx.setTransform(1, 0, 0, 1, 0, 0); V_INNER = true; drawH(inx, t, false); V_INNER = false;
   const u = modeAt(t), fc = 960;
@@ -757,11 +769,13 @@ function drawV(x, t) {
   // header: brand + topic (card mode)
   if (u < 0.99) {
     x.save(); x.globalAlpha = 1 - u;
-    x.font = FT.he(118); x.direction = 'rtl'; x.textAlign = 'center'; x.fillStyle = INK.ink; x.fillText('מודים ב-Claude Code', VW / 2, 300);
-    x.font = FT.textB(40); x.fillStyle = INK.ink2; x.fillText('לשנות את הנראות של Claude', VW / 2, 372);
-    x.direction = 'ltr'; x.font = FT.en(44); x.fillStyle = PINK; x.fillText('YUV.AI', VW / 2, 160); x.restore();
+    x.font = FT.he(104); x.direction = 'rtl'; x.textAlign = 'center'; x.fillStyle = INK.ink; x.fillText('מודים ב-Claude Code', VW / 2, 222);
+    x.font = FT.textB(38); x.fillStyle = INK.ink2; x.fillText('לשנות את הנראות של Claude', VW / 2, 284);
+    x.direction = 'ltr'; x.font = FT.en(44); x.fillStyle = PINK; x.fillText('YUV.AI', VW / 2, 110); x.restore();
   }
-  const S = [lerp(0, fc - 304, u), 0, lerp(1920, 608, u), 1080], D = [lerp(16, 0, u), lerp(500, 0, u), lerp(1048, VW, u), lerp(590, VH, u)], r = lerp(30, 0, u);   // card: the whole 16:9 frame, as wide as the phone
+  const ek = out3(inv(A.end - 0.3, A.end + 0.4, t)), cy0 = lerp(330, 665, ek);   // the end card has its own face circle: card drops to the middle
+  const S = [lerp(0, fc - 304, u), 0, lerp(1920, 608, u), 1080], D = [lerp(16, 0, u), lerp(cy0, 0, u), lerp(1048, VW, u), lerp(590, VH, u)], r = lerp(30, 0, u);   // card: the whole 16:9 frame, as wide as the phone
+  vFace(x, t, (1 - u) * (1 - ek));
   if (u < 0.98) { softRing(x, D[0] + D[2] / 2, D[1] + D[3] / 2, D[2] + 16, D[3] + 16, r + 8, t, 0.9 * (1 - u)); }
   x.save(); rr(x, D[0], D[1], D[2], D[3], r); x.clip(); x.drawImage(INC, S[0], S[1], S[2], S[3], D[0], D[1], D[2], D[3]); x.restore();
   // things the 16:9 face frame carried at its sides, re-placed for the phone
@@ -776,7 +790,7 @@ function drawV(x, t) {
     if (c) {
       const text = c.words.map(o => o.w).join(' '), size = 66, k = out3(inv(c.t0 - 0.05, c.t0 + 0.13, t)), light = u < 0.5;
       x.save(); x.font = FT.textB(size); x.direction = 'rtl'; x.textAlign = 'center'; x.lineJoin = 'round'; x.globalAlpha = k;
-      const lines = wrapLines(x, text, 940), y0 = lerp(1200, 1470, u) + (1 - k) * 10;
+      const lines = wrapLines(x, text, 940), y0 = lerp(1010, 1470, u) + (1 - k) * 10;
       lines.forEach((ln, i) => { const y = y0 + i * size * 1.25;
         if (light) { x.fillStyle = INK.ink; x.fillText(ln, VW / 2, y); }
         else { x.lineWidth = size * 0.16; x.strokeStyle = 'rgba(14,13,42,.85)'; x.strokeText(ln, VW / 2, y); x.fillStyle = WHITE; x.fillText(ln, VW / 2, y); } });
