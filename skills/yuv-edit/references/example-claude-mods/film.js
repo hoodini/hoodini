@@ -85,7 +85,7 @@ window.prepare = async (t, n = 6, shutter = 0.5, fps = 60) => {
 
 /* ---------------- geometry: where the plate lives ---------------- */
 const FULL = { cx: 960, cy: 540, w: 1920, h: 1080, r: 0 };
-const PANEL = { cx: 960, cy: 486, w: 1575, h: 886, r: 40 };          // screen stage, leaves the caption band clear
+const PANEL = { cx: 960, cy: 518, w: 1816, h: 1022, r: 28 };          // screen stage: nearly full frame (v6 feedback: no dead space)          // screen stage, leaves the caption band clear
 const SPLIT = { cx: 660, cy: 486, w: 1080, h: 608, r: 44 };          // plate as a card on the left, headline on the right
 const lerpR = (a, b, u) => ({ cx: lerp(a.cx, b.cx, u), cy: lerp(a.cy, b.cy, u), w: lerp(a.w, b.w, u), h: lerp(a.h, b.h, u), r: lerp(a.r, b.r, u) });
 const home = p => (p.kind === 'face' ? FULL : PANEL);
@@ -144,7 +144,7 @@ function drawSource(x, p, t, R, opt = {}) {
 }
 // 3D tilt of the screen panel while the camera zooms in (alternating side), flat again when it zooms out
 const TILTK = (() => { const k = [[-1, 0, 0, 1]]; let n = 0;
-  ZK.forEach(z => { const full = z.rect[2] >= 0.99 && z.rect[3] >= 0.99; k.push(full ? [z.t, 0, 0, 1] : [z.t - 0.1, (n++ % 2 ? 8 : -8), 5, 1.16]); }); return k; })();
+  ZK.forEach(z => { const full = z.rect[2] >= 0.99 && z.rect[3] >= 0.99; k.push(full ? [z.t, 0, 0, 1] : [z.t - 0.1, (n++ % 2 ? 6 : -6), 4, 1.0]); }); return k; })();
 const SCV = document.createElement('canvas'); SCV.width = PANEL.w; SCV.height = PANEL.h; const scx = SCV.getContext('2d');
 function plateTilt(t) { return { ry: sk(t, TILTK.map(k => [k[0], k[1]]), 4, 1), rx: sk(t, TILTK.map(k => [k[0], k[2]]), 4, 1), push: sk(t, TILTK.map(k => [k[0], k[3]]), 4, 1) }; }
 function plate(x, t) {
@@ -251,7 +251,9 @@ function scene(x, t, a, b, seed, fn, opt = {}) {
   const u = clamp(spring(t - a, opt.w ?? 9, 0.86), 0, 1.03) * (1 - clamp(spring(t - b, 10, 0.95), 0, 1));
   if (u <= 0.002) return;
   const R = lerpR(seed, FULL, u), r = lerp(seed.r ?? 40, 0, u);
-  x.save(); rrc(x, R.cx, R.cy, R.w, R.h, r); x.clip(); fn(x, t, u); x.restore();
+  x.save(); rrc(x, R.cx, R.cy, R.w, R.h, r); x.clip();
+  const F2 = opt.fill ?? 1.1; x.translate(960, 500); x.scale(F2, F2); x.translate(-960, -500);   // content fills the frame
+  fn(x, t, u); x.restore();
 }
 
 /* ---------------- B-roll scenes ---------------- */
@@ -391,10 +393,10 @@ function lab(x, t) {
       });
       mono(x, 28, 700); x.fillStyle = INK.pinkDeep; x.direction = 'ltr'; x.textAlign = 'right'; x.globalAlpha = ex; x.fillText('3 MOD EXAMPLES', 1840, 150); x.globalAlpha = 1;
     }
-  }, { w: 10 });
+  }, { w: 10, fill: 1 });
 }
 // REAL B-ROLL: a live capture of the actual page, in a browser card; scroll/zoom keys; spotlight on real DOM rects
-const BCW = 1560, BCH = 790, BC = document.createElement('canvas'); BC.width = BCW; BC.height = BCH; const bx = BC.getContext('2d');
+const BCW = 1680, BCH = 850, BC = document.createElement('canvas'); BC.width = BCW; BC.height = BCH; const bx = BC.getContext('2d');
 function browserCard(x, t, a, b, page, url, keys, hls, tilt) {
   scene(x, t, a, b, PANEL, (x, t) => {
     paperSky(x, W1, H1, t, { side: 'right' });
@@ -420,7 +422,7 @@ function browserCard(x, t, a, b, page, url, keys, hls, tilt) {
     bx.restore();
     // 2. the 3D move: tilt keys [t, rotY deg, rotX deg, push]; the card turns toward the camera while something is lit
     const ry = sk(t, tilt.map(k => [k[0], k[1]]), 3.2, 1), rx = sk(t, tilt.map(k => [k[0], k[2]]), 3.2, 1), push = sk(t, tilt.map(k => [k[0], k[3]]), 3.2, 1);
-    const q = { cx: 960, cy: 470, w, h, rx: rx * DEG, ry: ry * DEG, push, dof: 2.6 };
+    const q = { cx: 960, cy: 470, w, h, rx: rx * DEG, ry: ry * DEG, push: push * 0.9, dof: 2.6 };
     const P = [[-w / 2, -h / 2], [w / 2, -h / 2], [w / 2, h / 2], [-w / 2, h / 2]].map(([a2, b2]) => toScreen(worldOf(q, a2, b2)));
     shadowPoly(x, P); drawPersp(x, BC, q); glowPoly(x, P, t, 0.75 + 0.2 * beatPulse(t));
     // 3. the lit element lifts off the page toward the camera (its own layer, a little larger), glow + label on it
@@ -435,7 +437,7 @@ function browserCard(x, t, a, b, page, url, keys, hls, tilt) {
       const top = LP.reduce((m, p2) => (p2[1] < m[1] ? p2 : m), LP[0]), mxp = (LP[0][0] + LP[1][0]) / 2;
       if (act[3]) chip(x, t, act[0] + 0.15, clamp(mxp, 300, 1620), clamp(Math.min(LP[0][1], LP[1][1]) - 44, 130, 860), act[3], { size: 30, fill: PINK, ink: WHITE, glow: true, out: act[1] - 0.2 });
     }
-  });
+  }, { fill: 1 });
 }
 function realBroll(x, t) {
   const C = RECT.changelog, P = RECT.pricing, G = RECT.plugins;
@@ -593,7 +595,7 @@ const CH = D.chunks;
 function capOnLight(t) {
   if (t > A.pray - 0.1 && t < A.pray_end) return false;       // over the real candle footage
   const p = PL[plateAt(t)];
-  if (p.kind === 'screen') return true;
+  if (p.kind === 'screen') return false;                   // the screen now fills the frame: white caption with a stroke
   return SPLITS.some(([a, b]) => t > a + 0.2 && t < b);
 }
 function captions(x, t) {
