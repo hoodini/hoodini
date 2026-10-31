@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&family=Assistant:wght@400;500;600;700;800&family=Anton&family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;600;700&family=Gveret+Levin&display=swap" rel="stylesheet">
+<style>html,body{margin:0;background:transparent;overflow:hidden}canvas{display:block}
+/* force-load each face so document.fonts.ready covers them */
+.f{position:absolute;opacity:0;font-size:20px}</style></head>
+<body>
+<span class="f" style="font:700 20px Karantina">א</span><span class="f" style="font:400 20px Karantina">א</span>
+<span class="f" style="font:500 20px Assistant">א</span><span class="f" style="font:700 20px Assistant">א</span>
+<span class="f" style="font:20px Anton">A</span><span class="f" style="font:600 20px 'JetBrains Mono'">A</span>
+<span class="f" style="font:20px 'Gveret Levin'">א</span>
+<canvas id="c"></canvas>
+<script src="gfx.js"></script>
+<script>
+  const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+  window.setup = (W, H) => { cv.width = W; cv.height = H; };
+  window.draw = (template, t, props) => {
+    ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, cv.width, cv.height);
+    YUVGFX.T[template](ctx, t, props, cv.width, cv.height);
+  };
+  window.fontsOk = async () => {
+    // explicitly load the Hebrew + Latin subsets of every face before checking
+    const faces = [['700 20px Karantina', 'אA'], ['400 20px Karantina', 'אA'], ['500 20px Assistant', 'אA'], ['700 20px Assistant', 'אA'],
+      ['20px Anton', 'A1'], ['600 20px "JetBrains Mono"', 'A1'], ['20px "Gveret Levin"', 'א']];
+    await Promise.all(faces.map(([f, s]) => document.fonts.load(f, s).catch(() => null)));
+    await document.fonts.ready;
+    return faces.map(([f, s]) => [f, document.fonts.check(f, s)]);
+  };
+</script></body></html>
