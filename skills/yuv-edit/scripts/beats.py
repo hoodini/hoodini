@@ -46,7 +46,7 @@ def main():
     phase = (phase + 0.8 * (n / 2) / sr) % period
     beats = np.arange(phase, len(y) / sr, period)
     # drop: largest rise of 4-second RMS vs the previous 4 seconds
-    win = int(sr * 4); rms = np.sqrt(np.convolve(y ** 2, np.ones(win) / win, 'valid'))
+    win = int(sr * 4); c = np.concatenate([[0.0], np.cumsum(y.astype(np.float64) ** 2)]); rms = np.sqrt(np.maximum(0, (c[win:] - c[:-win]) / win))   # running mean via cumsum: np.convolve with a 4 s kernel is O(n*win) and hangs on full tracks
     step = int(sr * 0.25); r = rms[::step]
     rise = r[16:] - r[:-16] if len(r) > 16 else np.array([0])
     drop_t = (np.argmax(rise) + 16) * 0.25 if len(r) > 16 else 0.0
