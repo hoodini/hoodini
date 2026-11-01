@@ -86,7 +86,7 @@ A['end'] = round(SPEECH, 3)
 
 # music: Mixkit #623, 124.04 BPM; start it on its first beat so the grid is k * B in film time
 from pathlib import Path
-mb = json.loads(subprocess.run(['python3', str(Path(__file__).resolve().parent.parent / 'beats.py'), CFG['music']['file']],
+mb = json.loads(subprocess.run([sys.executable, str(Path(__file__).resolve().parent.parent / 'beats.py'), CFG['music']['file']],
                                capture_output=True, text=True).stdout)
 B = mb['beat']; M_IN = mb['first_beat']
 

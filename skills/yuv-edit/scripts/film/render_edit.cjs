@@ -11,9 +11,9 @@ const [, , film, mode, a1, a2, a3, subs] = process.argv;
   const LAY = process.env.LAYOUT || 'h', VP = LAY === 'v' ? { width: 1080, height: 1920 } : { width: 1920, height: 1080 };   // LAYOUT=v renders the 9:16 cut
   const page = await browser.newPage({ viewport: VP, deviceScaleFactor: 1 });
   page.on('pageerror', e => console.error('PAGEERROR', e.message));
-  await page.goto('file://' + path.resolve(film) + '?L=' + LAY);
+  await page.goto(require('url').pathToFileURL(path.resolve(film)).href + '?L=' + LAY);
   await page.evaluate(() => window.__ready);
-  const ok = await page.evaluate(() => ['700 100px Karantina', '700 40px Assistant', '400 100px Anton', '700 30px "JetBrains Mono"', '400 60px "Gveret Levin"'].every(f => document.fonts.check(f, 'אבג abc')));
+  const ok = await page.evaluate(() => ['700 100px Karantina', '700 40px Assistant', '400 100px Anton', '700 30px "JetBrains Mono"', '400 60px "Gveret Levin"', '700 60px "Bona Nova SC"', '400 60px "Bona Nova SC"'].every(f => document.fonts.check(f, 'אבג abc')));
   if (!ok) { console.error('FONTS NOT LOADED - abort'); process.exit(2); }
   if (mode === 'stills') {
     fs.mkdirSync(a2, { recursive: true });

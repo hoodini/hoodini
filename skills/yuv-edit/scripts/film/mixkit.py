@@ -29,5 +29,5 @@ for i in ids:
     out = d / (f'mk{i}.mp3' if kind == 'music' else f's{i}.mp3')
     out.write_bytes(urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60).read())
     dur = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', str(out)], capture_output=True, text=True).stdout)
-    info = json.loads(subprocess.run(['python3', beats, str(out)] + ([] if kind == 'music' else ['--sfx']), capture_output=True, text=True).stdout)
+    info = json.loads(subprocess.run([sys.executable, beats, str(out)] + ([] if kind == 'music' else ['--sfx']), capture_output=True, text=True).stdout)
     print(out, f'{dur:6.1f}s', {k: v for k, v in info.items() if k != 'beats'})
