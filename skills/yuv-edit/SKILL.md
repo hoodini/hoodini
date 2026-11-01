@@ -52,11 +52,35 @@ These override generic defaults, and override `yuv-design-system` §6 where it s
 | "Also need a 9:16 version" (v8) | **9:16 is the same film, re-framed (`?L=v`, `LAYOUT=v` for `render_edit.cjs`).** `drawV` draws the 16:9 frame (no captions) into an offscreen canvas and composes the phone frame: face shots with no scene or split title **fill the vertical frame** (a 608-px-wide crop of the face, untightened); everything else plays as a glowing full-width 16:9 card under a brand header (YUV.AI + topic). The two morph into each other (spring), face stretches under 0.8 s stay as a card. Captions are re-set for the phone (66 px, wrapped, above the bottom UI zone); things that lived at the sides of the 16:9 face frame (lower third, CTA) are re-placed centred. Scenes register their windows in `scene()`, which is how `drawV` knows when the face is free. Render it with 4 subframes to keep the time sane. |
 | Self-review of the v9 9:16 (before he saw it) | **A 16:9 card on a phone leaves ~40% of the frame empty: never ship that.** Card mode is the Shorts stack: brand header on top, the card (y≈330), captions under it (y≈1010), and **the speaker in a big glow circle at the bottom** (`vFace`): on screen-recording plates crop the webcam corner of the recording (measure its rect per plate, it moves sides), on face plates crop the face itself. Fade the circle out when the frame morphs to full-face and at the end card (which has its own circle; centre the card there). Check a contact sheet of the 9:16 *before* the full render, not after. |
 | Self-review of the Tanya edit (v10, Nov 2026: a lecture by Rabbi Yoram Abergel zt"l, not Yuval) | **When the speaker is not Yuval, the film is about him.** The lower third, the end-card avatar and the closing name are the speaker's; no "יובל אבידני" signature (YUV.AI stays as a small credit). Keep the source's own watermark and credit it in the end card and the edit note: never crop out someone else's attribution. **Torah content uses Bona Nova SC** for headlines and captions (`FT.torah`), and the edit layer is calmer: small zoom impulses only, no shakes, no white flashes. **A single talking-head camera needs scenes for variety:** real pages of every person and book named (Wikipedia, Sefaria) in 3D, licensed stock for every image in the words (a road, a garden, a river for a verse), A-vs-B cards for a comparison, splits for the key lines. **Behind-the-subject text must sit on empty background:** check the matte on a still; the whole body hides text, not only the head, so it goes in the free wall area above the shoulder, at a size where the head covers 20–40% of the non-marker word. **Headlines auto-fit their layout** (a split headline ran under the plate card). **9:16 face shots need a tracked face x, not one number per plate:** the phone crop is only 608 px of a 1920 frame, so a 100 px error puts the face at the edge. When Haar fails (beard, glasses), track a reliable dark or bright blob (here his black hat, every 0.2 s), smooth it over ~2 s, and map it through the 16:9 crop (`(faceX − sx) · punch`). **Side-placed 16:9 chips must not draw into the 9:16 inner frame** (`if (V_INNER) return`): they leak into the face crop, cut at the edge, next to their re-placed copy. |
+| "Why doesn't it look like the motion graphics I love? Where are the official logos, the beautiful overlays, the 3D?" (v11, GitHub Universe edit, 1.11.2026) | **The edit is a launch film wrapped around his footage, not footage with chips on it.** v1 of that edit had flat 2D cards and text chips ("Cloudflare", "Opus 5.5" as words): rejected. Every edit now ships **the YouTuber layer** (section below): three.js hero scenes (one per act, not one per film), **official logos for every product, model and connector named** (Simple Icons, never a name typed in a pill), callouts on the real UI of the recording, real pages in 3D on stock B-roll, editorial furniture, and the golden-prompt rules (night pages for chapters and the end card, captions in a night pill, the music drop on the cut out of the hook). **Read `GOLDEN_PROMPT-explainer-film.md` before any edit** (on his PC: `C:\Users\User\Documents\yuv-projects\` and `Downloads\`). A memory note pointing to it was skipped in v1 and it cost a full round. |
 | "No feeling of 60 fps animation" | **60 fps, 6 subframes, springs everywhere.** Plates morph panel↔full frame. Screen jump cuts push. Face jump cuts punch (1.0/1.12 + an impulse). Scenes grow out of the panel and contract back. Never a fade. |
+
+## The YouTuber layer (every edit, non-negotiable)
+
+What separates his edit from a captioned recording. Plan it in the story pass, check it in the stills gate. Reference build: `references/example-github-universe/film.js` (a 13-minute screen demo + talking head, Nov 2026).
+
+1. **A 3D studio** (three.js, one renderer with `alpha: true`, `RoomEnvironment` reflections, a pink and a violet point light). Objects hold real material and are drawn over `nightSky`:
+   - **the chapter list as a 3D carousel** (`makeCard3D` per chapter, ring radius ≈ 3.3, snaps on the beat with z ≈ 0.55, the camera dives in, the glow ring follows the projected corners of the active card). It *is* the transition between chapters: the shared element of the whole film;
+   - **a concept made physical** (Fusion = the models' logo tiles orbiting and melting into a clearcoat sphere with a gold torus);
+   - **devices that carry his real screen** (`makeLaptop` with a real frame of the recording as the screen texture; `makePhone` lights up when the session moves to it; an arc of light between them);
+   - **logos flowing into the surfaces they connect** (connector tiles orbit a hub, merge, and beam into Desktop / CLI / VS Code cards).
+   On Windows, render with the GPU flags (§5); with them 3D costs almost nothing.
+2. **Official logos, always.** Fetch the marks from Simple Icons (`https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/<slug>.svg`, CC0), add `width="256" height="256"` to the `<svg>` tag (otherwise the canvas gets no size), and tint them per brand colour with `source-in`. Use them in white app tiles (`logoTile`), inside cards next to titles (`infoCard({logo})`), and on price, repo and verdict cards. Use a product's own mark; if Simple Icons doesn't have it (xAI, Nano Banana), don't fake one.
+3. **Callouts on the real UI (`D.shl`).** When he points at something in the recording (a toggle, a menu row, a price, a log line), dim the rest of the plate, put the glow ring on the element and a pink label chip above it.
+   - Rects are source-normalised and **measured on a gridded frame inside the window**.
+   - The screen recorder pans, so keep each callout in a 2–3 s window where the frame holds still, and check every one on a still (three of eight needed an offset in v11).
+   - Draw them inside `drawSource`, so they follow the zooms and the 3D tilt.
+4. **Real pages on real B-roll.** The browser card in 3D sits on licensed stock that matches the words (a conference hall for "the conference", wiping to the Golden Gate at dusk on "San Francisco"), with a `FIG. n · source` label.
+5. **Editorial furniture.** A night section pill top-left (`01 · COPILOT FUSION`) whenever the screen or a scene is up, `FIG.` labels on evidence, mono kickers, folio numerals.
+6. **Golden-prompt finish.**
+   - Chapter and act pages and the end card on the night stage. The end card grows out of the avatar circle, with the real phoenix mark and the wordmark bottom-right.
+   - Captions are calm whole phrases **in a night pill** (white Assistant on `rgba(14,13,42,.88)`, radius = height / 2).
+   - The music enters under the hook and **its drop lands on the cut out of the hook** (`at = cut − drop_time`), with a whoosh on the drop.
+7. **Density.** Make a contact sheet every 3 s of the cut (`stills` at 1.5 + 3k). No static stretch over ~3–4 s. The fix is a zoom with tilt, a callout, a 3D scene or a real page, never another chip.
 
 ## 0. Intake
 
-1. Run `ffprobe` on every file and make a timestamped contact sheet (`fps=1/3 … tile=10x6`). Look at the sheets.
+1. Read `GOLDEN_PROMPT-explainer-film.md` (see the v11 row). Then run `ffprobe` on every file and make a timestamped contact sheet (`fps=1/3 … tile=10x6`). Look at the sheets.
 2. **Map the picture:**
    - Separate screen and face by measuring colourfulness per second (saturation > 45 = face). This gives the `face` ranges.
    - Detect burned-in graphics (an old name tag, a PIP) and note where and when they appear.
@@ -198,6 +222,8 @@ Speed and environment:
 - Use Yuval's PC GPU when it is connected (yuv-motion §4).
 - Use the preinstalled Playwright, not the kit's `node_modules` copy, in the cloud.
 
+**Windows GPU (measured Nov 2026, RTX 4090):** launch Chromium with `--enable-gpu --ignore-gpu-blocklist --use-angle=d3d11 --enable-gpu-rasterization` (`render_edit.cjs` adds them on win32). Without them, WebGL falls back to SwiftShader at 0.8 fps per worker; with them it runs at ≈ 10 fps per worker. 6 workers render a 13-minute film with 3D cards and three.js scenes in ≈ 15 minutes per layout. Before the full render, compare one WebGL frame from the GPU path with a CPU still.
+
 **Gate failures** — fix before rendering:
 - a title over the plate outside a split;
 - text on his face;
@@ -255,5 +281,6 @@ It is fine for a rough cut or a Resolve hand-off. It is **not** the YUV.AI look,
 ## References
 - `references/playbook.md`: the research and evidence (pacing, hooks, CTAs, sound, rights).
 - `references/formats.md`: recipes for talking head, reels, screen demos, screenshots and product reviews.
+- `references/example-github-universe/film.js`: the YouTuber layer in full (3D carousel, Fusion core, tools and devices in three.js, official logos, UI callouts, night pill captions).
 - `references/example-claude-mods/`: the full worked example: `edit.json` (story-ordered `keep`), `captions_src.json` (hand-written phrases by source time) and `film.js` (`lab()` = concept → examples).
 - `references/edl-schema.md`: the quick-mode EDL.

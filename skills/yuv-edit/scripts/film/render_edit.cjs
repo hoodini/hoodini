@@ -7,7 +7,9 @@ const { chromium } = require('playwright');
 const { spawn } = require('child_process');
 const [, , film, mode, a1, a2, a3, subs] = process.argv;
 (async () => {
-  const browser = await chromium.launch({ args: ['--allow-file-access-from-files', '--disable-web-security'] });
+  // on Windows use the real GPU: without these flags WebGL falls back to SwiftShader (0.8 fps vs ~10 fps per worker, RTX 4090)
+  const GPU = process.platform === 'win32' ? ['--enable-gpu', '--ignore-gpu-blocklist', '--use-angle=d3d11', '--enable-gpu-rasterization', '--disable-renderer-backgrounding'] : [];
+  const browser = await chromium.launch({ args: ['--allow-file-access-from-files', '--disable-web-security', ...GPU] });
   const LAY = process.env.LAYOUT || 'h', VP = LAY === 'v' ? { width: 1080, height: 1920 } : { width: 1920, height: 1080 };   // LAYOUT=v renders the 9:16 cut
   const page = await browser.newPage({ viewport: VP, deviceScaleFactor: 1 });
   page.on('pageerror', e => console.error('PAGEERROR', e.message));
