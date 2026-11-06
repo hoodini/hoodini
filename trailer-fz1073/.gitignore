@@ -1,0 +1,8 @@
+out/*.parts/
+out/silent_*.mp4
+out/render_*.log
+audio/score_raw.wav
+qa/whip/
+qa/v/
+qa/h/
+audio/score.wav

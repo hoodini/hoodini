@@ -1,0 +1,576 @@
+{
+ "fps": 30,
+ "bpm": 128,
+ "beat": 0.46875,
+ "trans": 0.3,
+ "total": 39.45,
+ "frames": 1184,
+ "shots": [
+  {
+   "id": 1,
+   "act": 1,
+   "scene": "Cold open",
+   "text": "30.9.2026",
+   "counter": "",
+   "words": 1,
+   "formula": 0.47,
+   "beats": 5,
+   "hold": 2.3438,
+   "start": 0,
+   "end": 2.3438
+  },
+  {
+   "id": 2,
+   "act": 1,
+   "scene": "Route",
+   "text": "דובאי ← תל אביב",
+   "counter": "FZ1073",
+   "words": 4,
+   "formula": 1.13,
+   "beats": 3,
+   "hold": 1.4063,
+   "start": 2.6437,
+   "end": 4.05
+  },
+  {
+   "id": 3,
+   "act": 1,
+   "scene": "Souls on board",
+   "text": "174 נוסעים",
+   "counter": "",
+   "words": 2,
+   "formula": 0.69,
+   "beats": 2,
+   "hold": 0.9375,
+   "start": 4.35,
+   "end": 5.2875
+  },
+  {
+   "id": 4,
+   "act": 1,
+   "scene": "Souls on board 2",
+   "text": "27 מהם ילדים",
+   "counter": "",
+   "words": 3,
+   "formula": 0.91,
+   "beats": 2,
+   "hold": 0.9375,
+   "start": 5.5875,
+   "end": 6.525
+  },
+  {
+   "id": 5,
+   "act": 1,
+   "scene": "Cruise",
+   "text": "גובה שיוט",
+   "counter": "34,000 רגל",
+   "words": 4,
+   "formula": 1.13,
+   "beats": 3,
+   "hold": 1.4063,
+   "start": 6.825,
+   "end": 8.2312
+  },
+  {
+   "id": 6,
+   "act": 2,
+   "scene": "Silence",
+   "text": "ואז",
+   "counter": "",
+   "words": 1,
+   "formula": 0.47,
+   "beats": 2,
+   "hold": 0.9375,
+   "start": 8.5313,
+   "end": 9.4688
+  },
+  {
+   "id": 7,
+   "act": 2,
+   "scene": "Cockpit",
+   "text": "תא הטייס",
+   "counter": "",
+   "words": 2,
+   "formula": 0.69,
+   "beats": 2,
+   "hold": 0.9375,
+   "start": 9.7688,
+   "end": 10.7063
+  },
+  {
+   "id": 8,
+   "act": 2,
+   "scene": "Attack",
+   "text": "טייס אחד דקר את השני",
+   "counter": "באמצע הטיסה",
+   "words": 7,
+   "formula": 1.79,
+   "beats": 4,
+   "hold": 1.875,
+   "start": 11.0063,
+   "end": 12.8813
+  },
+  {
+   "id": 9,
+   "act": 2,
+   "scene": "Intent",
+   "text": "וניסה להפיל את המטוס",
+   "counter": "החקירה נמשכת",
+   "words": 6,
+   "formula": 1.57,
+   "beats": 4,
+   "hold": 1.875,
+   "start": 13.1813,
+   "end": 15.0563
+  },
+  {
+   "id": 10,
+   "act": 3,
+   "scene": "Dive",
+   "text": "המטוס צולל",
+   "counter": "אלפי רגל בשניות",
+   "words": 5,
+   "formula": 1.35,
+   "beats": 3,
+   "hold": 1.4063,
+   "start": 15.3563,
+   "end": 16.7625
+  },
+  {
+   "id": 11,
+   "act": 3,
+   "scene": "Squawk 1",
+   "text": "7700 מצב חירום",
+   "counter": "קוד מצוקה",
+   "words": 5,
+   "formula": 1.35,
+   "beats": 3,
+   "hold": 1.4063,
+   "start": 17.0625,
+   "end": 18.4688
+  },
+  {
+   "id": 12,
+   "act": 3,
+   "scene": "Squawk 2",
+   "text": "7500 חטיפה",
+   "counter": "הקוד שודר 7 דקות אחרי",
+   "words": 7,
+   "formula": 1.79,
+   "beats": 4,
+   "hold": 1.875,
+   "start": 18.7688,
+   "end": 20.6438
+  },
+  {
+   "id": 13,
+   "act": 3,
+   "scene": "Scramble",
+   "text": "מטוסי קרב באוויר",
+   "counter": "הוזנקו מישראל",
+   "words": 5,
+   "formula": 1.35,
+   "beats": 3,
+   "hold": 1.4063,
+   "start": 20.9438,
+   "end": 22.35
+  },
+  {
+   "id": 14,
+   "act": 4,
+   "scene": "Turn",
+   "text": "הנוסעים לא חיכו",
+   "counter": "",
+   "words": 3,
+   "formula": 0.91,
+   "beats": 2,
+   "hold": 0.9375,
+   "start": 22.65,
+   "end": 23.5875
+  },
+  {
+   "id": 15,
+   "act": 4,
+   "scene": "Breach",
+   "text": "הם נכנסו לתא הטייס",
+   "counter": "הקברניט הפצוע פתח את הדלת",
+   "words": 9,
+   "formula": 2.23,
+   "beats": 5,
+   "hold": 2.3438,
+   "start": 23.8875,
+   "end": 26.2313
+  },
+  {
+   "id": 16,
+   "act": 4,
+   "scene": "Subdue",
+   "text": "והשתלטו על התוקף",
+   "counter": "עם הצוות",
+   "words": 5,
+   "formula": 1.35,
+   "beats": 3,
+   "hold": 1.4063,
+   "start": 26.5313,
+   "end": 27.9375
+  },
+  {
+   "id": 17,
+   "act": 4,
+   "scene": "Control",
+   "text": "אנשי צוות על הסיפון לקחו פיקוד",
+   "counter": "של flydubai",
+   "words": 8,
+   "formula": 2.01,
+   "beats": 5,
+   "hold": 2.3438,
+   "start": 28.2375,
+   "end": 30.5813
+  },
+  {
+   "id": 18,
+   "act": 4,
+   "scene": "Landing",
+   "text": "נחיתה בטוחה בתבוק",
+   "counter": "",
+   "words": 3,
+   "formula": 0.91,
+   "beats": 2,
+   "hold": 0.9375,
+   "start": 30.8813,
+   "end": 31.8188
+  },
+  {
+   "id": 19,
+   "act": 4,
+   "scene": "Hero (extended)",
+   "text": "174 נוסעים נחתו בשלום",
+   "counter": "",
+   "words": 4,
+   "formula": 1.13,
+   "beats": 6,
+   "hold": 2.8125,
+   "start": 32.1188,
+   "end": 34.9313
+  },
+  {
+   "id": 20,
+   "act": 5,
+   "scene": "End card (extended)",
+   "text": "הפרטים עדיין מתבררים",
+   "counter": "",
+   "words": 3,
+   "formula": 0.91,
+   "beats": 9,
+   "hold": 4.2188,
+   "start": 35.2313,
+   "end": 39.45
+  }
+ ],
+ "events": [
+  {
+   "t": 8.2312,
+   "type": "silence_start"
+  },
+  {
+   "t": 8.5313,
+   "type": "silence_end"
+  },
+  {
+   "t": 8.5313,
+   "type": "heartbeat"
+  },
+  {
+   "t": 9.7688,
+   "type": "subhit"
+  },
+  {
+   "t": 11.0063,
+   "type": "subhit"
+  },
+  {
+   "t": 11.9438,
+   "type": "punch"
+  },
+  {
+   "t": 13.1813,
+   "type": "subhit"
+  },
+  {
+   "t": 14.1188,
+   "type": "punch"
+  },
+  {
+   "t": 15.0729,
+   "type": "whoosh",
+   "dur": 0.26666666666666666
+  },
+  {
+   "t": 15.2063,
+   "type": "wind",
+   "dur": 1.60625
+  },
+  {
+   "t": 17.0625,
+   "type": "tick"
+  },
+  {
+   "t": 17.1625,
+   "type": "tick"
+  },
+  {
+   "t": 17.2625,
+   "type": "tick"
+  },
+  {
+   "t": 17.3625,
+   "type": "tick"
+  },
+  {
+   "t": 18.8354,
+   "type": "tick"
+  },
+  {
+   "t": 19.7063,
+   "type": "punch"
+  },
+  {
+   "t": 21.4344,
+   "type": "ping"
+  },
+  {
+   "t": 21.467,
+   "type": "ping"
+  },
+  {
+   "t": 22.0875,
+   "type": "ping"
+  },
+  {
+   "t": 22.1202,
+   "type": "ping"
+  },
+  {
+   "t": 22.3667,
+   "type": "whoosh",
+   "dur": 0.26666666666666666
+  },
+  {
+   "t": 24.825,
+   "type": "punch"
+  },
+  {
+   "t": 29.175,
+   "type": "punch"
+  },
+  {
+   "t": 30.8813,
+   "type": "swell",
+   "dur": 1.2375
+  },
+  {
+   "t": 32.1188,
+   "type": "dropout"
+  },
+  {
+   "t": 35.2313,
+   "type": "resolve"
+  }
+ ],
+ "fit": {
+  "v": {
+   "1": {
+    "font": 135,
+    "counter": 0,
+    "ok": true
+   },
+   "2": {
+    "font": 120,
+    "counter": 54,
+    "ok": true
+   },
+   "3": {
+    "font": 190,
+    "counter": 0,
+    "ok": true
+   },
+   "4": {
+    "font": 153,
+    "counter": 0,
+    "ok": true
+   },
+   "5": {
+    "font": 190,
+    "counter": 68,
+    "ok": true
+   },
+   "6": {
+    "font": 220,
+    "counter": 0,
+    "ok": true
+   },
+   "7": {
+    "font": 190,
+    "counter": 0,
+    "ok": true
+   },
+   "8": {
+    "font": 143,
+    "counter": 54,
+    "ok": true
+   },
+   "9": {
+    "font": 158,
+    "counter": 57,
+    "ok": true
+   },
+   "10": {
+    "font": 173,
+    "counter": 62,
+    "ok": true
+   },
+   "11": {
+    "font": 190,
+    "counter": 68,
+    "ok": true
+   },
+   "12": {
+    "font": 190,
+    "counter": 68,
+    "ok": true
+   },
+   "13": {
+    "font": 190,
+    "counter": 68,
+    "ok": true
+   },
+   "14": {
+    "font": 190,
+    "counter": 0,
+    "ok": true
+   },
+   "15": {
+    "font": 173,
+    "counter": 62,
+    "ok": true
+   },
+   "16": {
+    "font": 190,
+    "counter": 68,
+    "ok": true
+   },
+   "17": {
+    "font": 169,
+    "counter": 61,
+    "ok": true
+   },
+   "18": {
+    "font": 156,
+    "counter": 0,
+    "ok": true
+   },
+   "19": {
+    "font": 175,
+    "counter": 0,
+    "ok": true
+   }
+  },
+  "h": {
+   "1": {
+    "font": 152,
+    "counter": 0,
+    "ok": true
+   },
+   "2": {
+    "font": 115,
+    "counter": 46,
+    "ok": true
+   },
+   "3": {
+    "font": 150,
+    "counter": 0,
+    "ok": true
+   },
+   "4": {
+    "font": 146,
+    "counter": 0,
+    "ok": true
+   },
+   "5": {
+    "font": 150,
+    "counter": 54,
+    "ok": true
+   },
+   "6": {
+    "font": 190,
+    "counter": 0,
+    "ok": true
+   },
+   "7": {
+    "font": 150,
+    "counter": 0,
+    "ok": true
+   },
+   "8": {
+    "font": 190,
+    "counter": 64,
+    "ok": true
+   },
+   "9": {
+    "font": 190,
+    "counter": 64,
+    "ok": true
+   },
+   "10": {
+    "font": 150,
+    "counter": 54,
+    "ok": true
+   },
+   "11": {
+    "font": 150,
+    "counter": 54,
+    "ok": true
+   },
+   "12": {
+    "font": 150,
+    "counter": 54,
+    "ok": true
+   },
+   "13": {
+    "font": 150,
+    "counter": 54,
+    "ok": true
+   },
+   "14": {
+    "font": 150,
+    "counter": 0,
+    "ok": true
+   },
+   "15": {
+    "font": 150,
+    "counter": 54,
+    "ok": true
+   },
+   "16": {
+    "font": 150,
+    "counter": 54,
+    "ok": true
+   },
+   "17": {
+    "font": 154,
+    "counter": 55,
+    "ok": true
+   },
+   "18": {
+    "font": 149,
+    "counter": 0,
+    "ok": true
+   },
+   "19": {
+    "font": 170,
+    "counter": 0,
+    "ok": true
+   }
+  }
+ }
+}
