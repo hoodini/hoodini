@@ -15,7 +15,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 <img src="https://img.shields.io/badge/Repos-142-blue?style=for-the-badge&logo=github" alt="Repositories">
 </td>
 <td align="center">
-<img src="https://img.shields.io/badge/Followers-335-blue?style=for-the-badge&logo=github" alt="Followers">
+<img src="https://img.shields.io/badge/Followers-336-blue?style=for-the-badge&logo=github" alt="Followers">
 </td>
 <td align="center">
 <img src="https://img.shields.io/badge/Following-0-blue?style=for-the-badge&logo=github" alt="Following">
@@ -29,27 +29,26 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
+- 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Nov 03
+- ✨ Created branch in [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Nov 03
 - 🔀 Merged a pull request in [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Nov 03
 - 🔀 Opened a pull request in [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Nov 03
-- 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Nov 01
-- 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Nov 01
-- ✨ Created branch in [hoodini/motion-in-code](https://github.com/hoodini/motion-in-code) - Oct 31
 
 
 
 ### ⭐ Featured Repositories
 
+- 🐍 **[auto-image-captioning-llava-llama](https://github.com/hoodini/auto-image-captioning-llava-llama)** - Auto Image Captioning using local Ollama, Llava and Llama ⭐ 5
+- 💙 **[model-lab](https://github.com/hoodini/model-lab)** - None ⭐ 3
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 12
 - 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 51
 - 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 291
-- 🦀 **[logan-cli](https://github.com/hoodini/logan-cli)** - Logan CLI - terminal AI coding agent by Yuval Avidani (YUV.AI). Fork of xAI Grok Build. ⭐ 10
-- 📦 **[motion-in-code](https://github.com/hoodini/motion-in-code)** - Motion in Code — how Claude Opus 5.5 makes studio-grade launch videos in pure code (the @twoclipping method, taken apart with live labs). YUV.AI ⭐ 2
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-11-05 00:14:39 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-11-06 00:14:56 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
