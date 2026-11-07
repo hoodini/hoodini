@@ -1,0 +1,7 @@
+{
+ "shots": 17,
+ "frames": 2150,
+ "duration": 71.67,
+ "workers": 4,
+ "source": "measured from YA-001-CCM_16x9.mp4 (ffprobe) and build/render_A.json"
+}
