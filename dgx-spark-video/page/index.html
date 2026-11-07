@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>DGX Spark vs RTX 5090</title>
+<link rel="stylesheet" href="fonts/fonts.css"><link rel="stylesheet" href="style.css">
+</head><body>
+<div id="stage"></div>
+<div id="flash"></div>
+<img class="grain" src="grain0.png"><img class="grain" src="grain1.png"><img class="grain" src="grain2.png"><img class="grain" src="grain3.png">
+<div id="cap"></div>
+<script src="vendor/gsap.min.js"></script>
+<script src="timings.js"></script>
+<script src="beats.js"></script>
+<script src="core.js"></script>
+<script src="art.js"></script>
+<script src="scenes.js"></script>
+<script>
+  Promise.all([document.fonts.ready, ...[...document.images].map(i => i.complete ? 1 : new Promise(r => i.onload = i.onerror = r))])
+    .then(() => { window.seek(0, 0); window.READY = true; });
+</script>
+</body></html>

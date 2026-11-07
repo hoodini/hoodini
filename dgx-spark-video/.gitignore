@@ -1,0 +1,9 @@
+render/
+audio/raw/
+audio/vo.wav
+audio/music.wav
+audio/mix_pre.wav
+qa/stills/
+render.log
+__pycache__/
+audio/mix.wav
