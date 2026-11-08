@@ -38,7 +38,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
-- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 292
+- 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 293
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 12
 - 🐍 **[auto-image-captioning-llava-llama](https://github.com/hoodini/auto-image-captioning-llava-llama)** - Auto Image Captioning using local Ollama, Llava and Llama ⭐ 5
 - 💙 **[model-lab](https://github.com/hoodini/model-lab)** - None ⭐ 3
@@ -48,7 +48,7 @@ I'm Hoodini! Welcome to my GitHub profile.
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-11-07 00:12:11 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-11-08 00:15:03 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
