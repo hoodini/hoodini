@@ -1,0 +1,18 @@
+{
+  "name": "github-computer-use-film",
+  "private": true,
+  "type": "module",
+  "description": "GitHub Copilot Computer Use: a 33 s one-take motion film (YUV.AI Phoenix Day), one seek(t) for 16:9 and 9:16.",
+  "scripts": {
+    "build": "node build.mjs",
+    "stills": "node tools/stills.mjs out/film.html sheet h,v 0.25 out/sheet",
+    "beatmap": "node tools/beatmap.mjs analysis/grid.json"
+  },
+  "dependencies": {
+    "@fontsource/anton": "^5.2.0",
+    "@fontsource/inter": "^5.2.0",
+    "@fontsource/jetbrains-mono": "^5.2.0",
+    "@primer/octicons": "19.40.0"
+  },
+  "devDependencies": { "esbuild": "0.24.0", "playwright": "^1.56.0" }
+}
