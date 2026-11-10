@@ -1,0 +1,209 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>GitHub Copilot app — v2 neon</title>
+<script src="../node_modules/gsap/dist/gsap.min.js"></script>
+<script src="../node_modules/gsap/dist/TextPlugin.min.js"></script>
+<script src="data.js"></script>
+<style>
+@font-face{font-family:'Mona Sans';src:url(../assets/fonts/mona-sans-latin-standard-normal.woff2) format('woff2');font-weight:200 900;font-stretch:75% 125%}
+@font-face{font-family:'Mona Sans';font-style:italic;src:url(../assets/fonts/mona-sans-latin-standard-italic.woff2) format('woff2');font-weight:200 900;font-stretch:75% 125%}
+@font-face{font-family:'Hubot Sans';src:url(../assets/fonts/hubot-sans-latin-standard-normal.woff2) format('woff2');font-weight:200 900;font-stretch:75% 125%}
+@font-face{font-family:'Monaspace Neon';src:url(../assets/fonts/monaspace-neon-latin-400-normal.woff2) format('woff2');font-weight:400}
+@font-face{font-family:'Monaspace Neon';src:url(../assets/fonts/monaspace-neon-latin-700-normal.woff2) format('woff2');font-weight:700}
+@font-face{font-family:'Instrument Serif';font-style:italic;src:url(../assets/fonts/instrument-serif-latin-400-italic.woff2) format('woff2')}
+:root{--ink:#07030F;--pu:#A855F7;--pk:#FF2E88;--cy:#22D3EE;--li:#A3E635;--am:#FBBF24;--gr:#3FB950;--rd:#FF4D4D;--wh:#FFFFFF;--bl:#3B82F6}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+body{font-family:'Mona Sans',sans-serif;color:#fff}
+#stage{position:absolute;inset:0;overflow:hidden;background:var(--ink)}
+#mesh{position:absolute;inset:-200px;z-index:0}
+#mesh .blob{position:absolute;width:1300px;height:1300px;border-radius:50%;opacity:.85}
+#rain{position:absolute;inset:0;z-index:1}
+#world{position:absolute;inset:0;z-index:2;transform-origin:50% 50%}
+.shot{position:absolute;inset:0;visibility:hidden;overflow:hidden}
+.punch{position:absolute;inset:0;transform-origin:50% 50%}
+.t-neon,.t-matrix{background:transparent}
+.t-hot{background:var(--pk)}.t-lime{background:var(--li);color:#07030F}.t-cyan{background:var(--cy);color:#07030F}
+.t-purple{background:linear-gradient(135deg,#6D28D9,#A855F7 55%,#FF2E88)}.t-white{background:#fff;color:#07030F}.t-black{background:#000}
+.t-amber{background:var(--am);color:#07030F}
+/* chrome */
+#chrome{position:absolute;inset:0;z-index:60;pointer-events:none;font-family:'Monaspace Neon';font-size:18px;letter-spacing:.08em;text-transform:uppercase}
+#prog{position:absolute;left:0;top:0;height:8px;background:linear-gradient(90deg,var(--li),var(--cy),var(--pu),var(--pk));box-shadow:0 0 18px var(--pk)}
+#chap{position:absolute;right:60px;top:30px;padding:8px 16px;border-radius:999px;background:rgba(0,0,0,.55);border:1.5px solid rgba(255,255,255,.35);color:#fff}
+#tagl{position:absolute;left:60px;top:30px;padding:8px 16px;border-radius:999px;background:rgba(0,0,0,.55);border:1.5px solid rgba(255,255,255,.35);color:#fff;display:flex;gap:10px;align-items:center}
+#tagl .live{width:12px;height:12px;border-radius:50%;background:#FF2E4D;box-shadow:0 0 12px #FF2E4D}
+#byl{position:absolute;right:60px;bottom:30px;color:rgba(255,255,255,.8);font-size:16px;text-shadow:0 1px 4px #000}
+/* captions — kinetic */
+#cap{position:absolute;left:0;right:0;bottom:118px;z-index:62;text-align:center;pointer-events:none}
+#cap .w{display:inline-block;margin:0 .34em;transform-origin:50% 60%;font-family:'Mona Sans';font-weight:900;font-stretch:112%;font-size:58px;line-height:1.05;text-transform:uppercase;color:#fff;
+ -webkit-text-stroke:2px #000;paint-order:stroke fill;text-shadow:0 6px 0 #000,0 0 24px rgba(0,0,0,.6)}
+#cap .w.on{transform:scale(1.12) rotate(-2deg);color:var(--c,#A3E635)}
+#cap .w.fu{opacity:.55}
+.grain{position:absolute;left:0;top:0;z-index:70;opacity:.06;mix-blend-mode:overlay;background-size:960px 540px;display:none;transform:scale(2);transform-origin:0 0;width:960px;height:540px}
+.flash{position:absolute;inset:0;z-index:65;opacity:0;pointer-events:none}
+#vign{position:absolute;inset:0;z-index:64;pointer-events:none;background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.55) 100%)}
+/* type */
+.disp{font-family:'Mona Sans';font-weight:900;font-stretch:125%;letter-spacing:-.02em;line-height:.9}
+.serif{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
+.mono{font-family:'Monaspace Neon',monospace}
+.c{position:absolute;left:0;right:0;text-align:center}
+.mask{display:block;overflow:hidden;padding:.3em .2em;margin:-.3em -.2em}
+.mask>span{display:inline-block}
+.grad{background:linear-gradient(90deg,var(--li),var(--cy),var(--pu),var(--pk));-webkit-background-clip:text;background-clip:text;color:transparent}
+.grad2{background:linear-gradient(90deg,#fff,var(--cy) 40%,var(--pk));-webkit-background-clip:text;background-clip:text;color:transparent}
+.glow{text-shadow:0 0 30px currentColor,0 0 60px currentColor}
+.ext{text-shadow:1px 1px 0 #7C2DD8,2px 2px 0 #7C2DD8,3px 3px 0 #6D28D9,4px 4px 0 #6D28D9,5px 5px 0 #5B21B6,6px 6px 0 #5B21B6,7px 7px 0 #4C1D95,8px 8px 0 #4C1D95,9px 9px 0 #3B0F7A,10px 10px 0 #3B0F7A,14px 18px 40px rgba(0,0,0,.6)}
+.glitch{position:relative;display:inline-block}
+.glitch .gA,.glitch .gB{position:absolute;left:0;top:0;width:100%;mix-blend-mode:screen}
+.glitch .gA{color:#00F0FF}.glitch .gB{color:#FF2E88}
+.kicker{font-family:'Monaspace Neon';font-size:26px;letter-spacing:.16em;text-transform:uppercase}
+.chip{display:inline-flex;align-items:center;gap:10px;padding:10px 22px;border-radius:999px;font-family:'Monaspace Neon';font-size:26px;font-weight:700;background:rgba(0,0,0,.6);border:2px solid currentColor}
+/* 3D */
+.scene{position:absolute;inset:0;perspective:2200px;perspective-origin:50% 45%}
+.rig{position:absolute;transform-style:preserve-3d}
+.mac{position:absolute;border-radius:22px;background:rgba(18,14,32,.92);border:1.5px solid rgba(255,255,255,.18);overflow:hidden;
+ box-shadow:0 60px 120px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.4),0 0 80px rgba(168,85,247,.35)}
+.mbar{height:54px;display:flex;align-items:center;gap:10px;padding:0 20px;background:rgba(255,255,255,.06);border-bottom:1.5px solid rgba(255,255,255,.1);font-family:'Monaspace Neon';font-size:18px;color:rgba(255,255,255,.7)}
+.mbar i{width:15px;height:15px;border-radius:50%;display:inline-block}
+.mbar span{margin-left:14px}
+.side{position:absolute;left:0;top:54px;bottom:0;width:250px;background:rgba(255,255,255,.04);border-right:1.5px solid rgba(255,255,255,.08);padding:20px 14px;font-size:22px}
+.side div{padding:10px 14px;border-radius:10px;color:rgba(255,255,255,.75);display:flex;gap:10px;align-items:center}
+.side div.on{background:linear-gradient(90deg,rgba(168,85,247,.45),rgba(255,46,136,.25));color:#fff;font-weight:700}
+.main{position:absolute;left:250px;right:0;top:54px;bottom:0;padding:24px}
+.card{position:absolute;background:rgba(20,16,36,.92);border:1.5px solid rgba(255,255,255,.16);border-radius:18px;padding:22px 26px;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.ncard{border-radius:16px;padding:16px 18px;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.12);font-family:'Monaspace Neon';font-size:20px}
+.term{font-family:'Monaspace Neon';font-size:26px;line-height:1.5;padding:20px 24px;white-space:pre;color:#E9FFE9}
+.row{display:flex;align-items:center;gap:18px;padding:22px 26px;border-bottom:1.5px solid rgba(255,255,255,.1);font-family:'Monaspace Neon';font-size:34px}
+.ico svg{width:34px;height:34px;fill:currentColor;display:block}
+.lab{font-family:'Monaspace Neon';font-size:18px;padding:4px 12px;border-radius:999px;border:1.5px solid currentColor}
+.sticker{position:absolute;background:#fff;color:#07030F;font-family:'Mona Sans';font-weight:900;font-stretch:110%;font-size:38px;padding:14px 26px;border-radius:18px;box-shadow:7px 7px 0 #000;border:3px solid #000;white-space:nowrap;z-index:20}
+.sticker.pk{background:var(--pk);color:#fff}.sticker.li{background:var(--li)}.sticker.cy{background:var(--cy)}.sticker.am{background:var(--am)}
+.toast{position:absolute;right:170px;top:120px;background:rgba(20,16,36,.95);border:1.5px solid rgba(255,255,255,.2);border-left:8px solid var(--li);border-radius:14px;padding:18px 28px;font-size:30px;font-weight:700;display:flex;gap:14px;align-items:center;z-index:25;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.hand{position:absolute;overflow:visible;z-index:22}
+.hand path{fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+.cursor{position:absolute;width:48px;height:48px;z-index:30}
+.pt{position:absolute;border-radius:50%;z-index:40;pointer-events:none}
+.stamp{position:absolute;border:10px solid var(--pu);color:#fff;background:linear-gradient(135deg,#7C3AED,#FF2E88);font-family:'Mona Sans';font-weight:900;font-stretch:125%;font-size:130px;padding:10px 48px;border-radius:28px;transform:rotate(-8deg);z-index:26;display:flex;gap:26px;align-items:center;box-shadow:0 0 80px rgba(255,46,136,.7)}
+.stamp svg{width:120px;height:120px;fill:#fff}
+.gauge-arc{fill:none;stroke-width:44;stroke-linecap:round}
+.sq{position:absolute;border-radius:10px}
+.orb{position:absolute;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;z-index:10}
+.illus{position:absolute;left:60px;bottom:40px;z-index:61}
+</style></head>
+<body>
+<div id="stage">
+ <div id="mesh"><div class="blob b0"></div><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+ <canvas id="rain" width="1920" height="1080"></canvas>
+ <div id="world"></div>
+ <div id="fx"></div>
+ <div id="vign"></div>
+ <div id="chrome"><div id="prog"></div><div id="tagl"><span class="live"></span><span id="c-sec">GITHUB COPILOT APP</span></div><div id="chap">CH 01/12</div><div id="byl">BY YUVAL AVIDANI · YUV.AI</div></div>
+ <div id="cap"></div>
+ <div class="grain" style="background-image:url(../assets/noise/n0.png)"></div><div class="grain" style="background-image:url(../assets/noise/n1.png)"></div><div class="grain" style="background-image:url(../assets/noise/n2.png)"></div><div class="grain" style="background-image:url(../assets/noise/n3.png)"></div>
+</div>
+<script>
+gsap.registerPlugin(TextPlugin);
+const FPS=30, TLD=window.TL, CUES=[], CUTS=[];
+const tl=gsap.timeline({paused:true});
+const norm=w=>w.toLowerCase().replace(/[^a-z0-9]/g,'');
+function Wd(key,word,n=1){const ws=TLD.words[key];let c=0;for(const x of ws){if(norm(x.w).startsWith(norm(word))&&++c===n)return x}throw Error('W miss '+key+':'+word+'#'+n)}
+const W=(k,w,n)=>Wd(k,w,n).s, WE=(k,w,n)=>Wd(k,w,n).e;
+const L=k=>TLD.lines[k].start, LE=k=>TLD.lines[k].end, END=TLD.total;
+const cue=(t,type,extra={})=>CUES.push(Object.assign({t:+t.toFixed(3),type},extra));
+let seed=42;const rnd=()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296};
+const I=(n,cls='')=>`<span class="ico ${cls}">${ICON[n]}</span>`;
+const world=document.getElementById('world'), fx=document.getElementById('fx');
+const NEON=['#A3E635','#22D3EE','#A855F7','#FF2E88','#FBBF24'];
+let uid=0;
+const SECS={cold:'01',pain:'02',turn:'03',reveal:'04',mywork:'05',worktree:'06',merge:'07',power:'08',honest:'09',next:'10',end:'11'};
+const SECNAME={cold:'2:07 AM',pain:'THE PAIN',turn:'PLOT TWIST',reveal:'GITHUB COPILOT APP',mywork:'MY WORK',worktree:'WORKTREES',merge:'AGENT MERGE',power:'POWER MOVES',honest:'THE CATCH',next:'SHIPPING NEXT',end:'5:00 PM'};
+function SHOT(sec,t0,t1,theme,html,build,opt={}){
+  const id='s'+(++uid);const el=document.createElement('div');el.className='shot t-'+theme;el.id=id;
+  el.innerHTML=`<div class="punch">${html}</div>`;world.appendChild(el);
+  tl.set(el,{visibility:'visible'},t0);tl.set(el,{visibility:'hidden'},t1);
+  tl.fromTo(el.querySelector('.punch'),{scale:opt.zin?1.18:1.0},{scale:opt.zin?1:1.06,ease:opt.zin?'expo.out':'none',duration:opt.zin?.6:t1-t0,immediateRender:false},t0);
+  CUTS.push({t:t0,t1,id,theme,sec,rain:opt.rain||theme==='matrix',mesh:opt.mesh||theme==='neon'||theme==='matrix'});cue(t0,'cut');
+  const q=s=>el.querySelectorAll(s);
+  if(build)build(q,t0,t1,el);
+  const d=t1-t0, soft=!!opt.nojump;if(d>2.2&&!opt.still){const n=Math.floor(d/(soft?1.4:1.3));for(let k=1;k<=n;k++){const tj=t0+d*k/(n+1);const on=k%2===1;
+    tl.set(el,{scale:on?(soft?1.045:1.1):1,rotation:on&&!soft?(k%4===1?-1.2:1.2):0,transformOrigin:'50% 48%'},tj);cue(tj,'cut')}}
+  return el;
+}
+// ---- helpers (one tween per element/property)
+const slam=(t,els,d=.34)=>{tl.fromTo(els,{scale:2.1,opacity:0,rotation:-4},{scale:1,opacity:1,rotation:0,duration:d,ease:'expo.out',stagger:.06,immediateRender:false},t);cue(t,'slam')};
+const pop=(t,els,st=.07,snd=true)=>{tl.fromTo(els,{scale:0,opacity:0},{scale:1,opacity:1,duration:.38,ease:'back.out(2.6)',stagger:st,immediateRender:false},t);if(snd){const n=els.length||1;for(let i=0;i<Math.min(n,6);i++)cue(t+i*st,'pop')}};
+const up=(t,els,st=.06)=>{tl.fromTo(els,{yPercent:120,rotation:6},{yPercent:0,rotation:0,duration:.45,ease:'power4.out',stagger:st,immediateRender:false},t);cue(t,'whoosh')};
+const fade=(t,els,d=.3)=>tl.fromTo(els,{opacity:0},{opacity:1,duration:d,ease:'none',immediateRender:false},t);
+const slideX=(t,els,x=-160,st=.06)=>tl.fromTo(els,{x,opacity:0},{x:0,opacity:1,duration:.45,ease:'power3.out',stagger:st,immediateRender:false},t);
+const fly3d=(t,els,from={},d=.8)=>{tl.fromTo(els,Object.assign({z:-1800,rotationY:-60,rotationX:25,opacity:0},from),{z:0,rotationY:0,rotationX:0,opacity:1,duration:d,ease:'expo.out',stagger:.08,immediateRender:false},t);cue(t,'whoosh')};
+const draw=(t,els,d=.5)=>{tl.fromTo(els,{strokeDashoffset:1},{strokeDashoffset:0,duration:d,ease:'power2.inOut',immediateRender:false},t);cue(t,'scribble')};
+const type=(t,el,text,d)=>{d=d||Math.min(1.4,text.length*.035);tl.fromTo(el,{text:''},{text:{value:text},duration:d,ease:'none',immediateRender:false},t);cue(t,'keys',{d})};
+const count=(t,el,a,b,d,fmt=v=>Math.round(v))=>{const o={v:a};tl.fromTo(o,{v:a},{v:b,duration:d,ease:'power2.out',immediateRender:false,onUpdate:()=>el.textContent=fmt(o.v)},t)};
+const sticker=(t,el,rot=-6)=>{tl.fromTo(el,{scale:0,rotation:rot-30,opacity:0},{scale:1,rotation:rot,opacity:1,duration:.5,ease:'back.out(2.4)',immediateRender:false},t);cue(t,'pop2')};
+const toast=(t,el)=>{tl.fromTo(el,{xPercent:150},{xPercent:0,duration:.45,ease:'expo.out',immediateRender:false},t);cue(t,'toast')};
+const flash=(t,c='#fff',o=.9)=>{const f=document.createElement('div');f.className='flash';f.style.background=c;fx.appendChild(f);tl.fromTo(f,{opacity:o},{opacity:0,duration:.3,ease:'power2.out',immediateRender:false},t)};
+const shake=(t,el,amt=16,d=.4)=>{const o={p:0};tl.fromTo(o,{p:0},{p:1,duration:d,ease:'none',immediateRender:false,onUpdate:()=>{const p=o.p;el.style.translate=`${Math.sin(p*70)*amt*(1-p)}px ${Math.cos(p*53)*amt*.6*(1-p)}px`}},t)};
+// particle burst — deterministic
+function burst(t,x,y,n=36,cols=NEON,spread=520,size=[8,22]){for(let i=0;i<n;i++){const p=document.createElement('div');p.className='pt';const s=size[0]+rnd()*(size[1]-size[0]);const c=cols[i%cols.length];
+  p.style.cssText+=`left:${x}px;top:${y}px;width:${s}px;height:${s}px;background:${c};box-shadow:0 0 ${s}px ${c};opacity:0`;fx.appendChild(p);
+  const a=rnd()*Math.PI*2,r=spread*(.35+rnd()*.65);tl.fromTo(p,{x:0,y:0,opacity:1,scale:1},{x:Math.cos(a)*r,y:Math.sin(a)*r+60,opacity:0,scale:.2,duration:.8+rnd()*.4,ease:'expo.out',immediateRender:false},t)}}
+function confetti(t,n=90){for(let i=0;i<n;i++){const p=document.createElement('div');p.className='pt';const w=10+rnd()*14,h=w*(.4+rnd()*.6),c=NEON[i%5];
+  p.style.cssText+=`left:${rnd()*1920}px;top:-40px;width:${w}px;height:${h}px;border-radius:3px;background:${c};opacity:0`;fx.appendChild(p);
+  tl.fromTo(p,{y:0,rotation:0,opacity:1},{y:1150+rnd()*200,rotation:(rnd()-.5)*900,x:(rnd()-.5)*300,opacity:1,duration:1.6+rnd()*.8,ease:'power1.in',immediateRender:false},t+rnd()*.25);tl.set(p,{opacity:0},t+2.8)}}
+const glitch=(txt)=>`<span class="glitch"><span>${txt}</span><span class="gA">${txt}</span><span class="gB">${txt}</span></span>`;
+function glitchAnim(t,d,q,amt=14){const A=q('.gA'),B=q('.gB');const o={p:0};tl.fromTo(o,{p:0},{p:1,duration:d,ease:'none',immediateRender:false,onUpdate:()=>{const k=Math.floor(o.p*d*24);const j=(Math.sin(k*12.9898)*43758.5453)%1;
+  A.forEach(e=>e.style.transform=`translate(${(j*2-1)*amt}px,${(j*3%1-.5)*amt*.4}px)`);B.forEach(e=>e.style.transform=`translate(${-(j*2-1)*amt}px,${(j*5%1-.5)*amt*.4}px)`)}},t)}
+const circle=(w,h,col='var(--li)')=>`<svg class="hand" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><path pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" stroke="${col}" d="M${w*.52},${h*.06} C${w*.9},${h*.02} ${w*1.0},${h*.45} ${w*.93},${h*.72} C${w*.84},${h*1.0} ${w*.18},${h*1.02} ${w*.05},${h*.66} C${-w*.03},${h*.35} ${w*.2},${h*.03} ${w*.6},${h*.1}"/></svg>`;
+const CURSOR=`<svg viewBox="0 0 24 24"><path d="M3 2l7 19 2.5-7.5L20 11z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg>`;
+const TL3=['#FF5F57','#FEBC2E','#28C840'];
+const MAC=(title,inner,w,h,style='')=>`<div class="mac" style="width:${w}px;height:${h}px;${style}"><div class="mbar">${TL3.map(c=>`<i style="background:${c}"></i>`).join('')}<span>${title}</span></div>${inner}</div>`;
+const SIDE=(on)=>`<div class="side">${[['copilot','My Work'],['git-branch','Sessions'],['issue-opened','Issues'],['git-pull-request','Pull requests'],['check-circle-fill','Automations']].map(([i,n])=>`<div class="${n===on?'on':''}">${I(i)}${n}</div>`).join('')}<div style="margin-top:22px;font-size:16px;color:rgba(255,255,255,.4);font-family:'Monaspace Neon'">REPOS</div>${['org/api','org/web','org/mobile'].map(r=>`<div style="font-size:18px;font-family:'Monaspace Neon'">● ${r}</div>`).join('')}</div>`;
+const beat=60/140;
+</script>
+<script src="shots.js"></script>
+<script>
+// ---- kinetic captions (≤4 words per chunk)
+const CHUNKS=[];
+for(const k of Object.keys(TLD.words)){let cur=[];const ws=TLD.words[k];
+  ws.forEach((w,i)=>{cur.push(w);const brk=/[,.:?!]$/.test(w.w)||cur.length>=4;if(brk||i===ws.length-1){CHUNKS.push({s:cur[0].s,e:cur[cur.length-1].e,ws:cur});cur=[]}})}
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const capEl=document.getElementById('cap');
+function caption(t){let c=null;for(const ch of CHUNKS){if(t>=ch.s-.06&&t<=ch.e+.2)c=ch}
+  if(!c||HIDECAP(t)){capEl.innerHTML='';return}
+  capEl.innerHTML=c.ws.map((w,i)=>{const on=t>=w.s-.03&&t<w.e+.05, fu=t<w.s-.03;const col=NEON[(CHUNKS.indexOf(c)+i)%5];
+   return `<span class="w${on?' on':''}${fu?' fu':''}" style="--c:${col}">${esc(w.w.replace(/\.\.\.$/,'…'))}</span>`}).join('')}
+// ---- matrix rain (deterministic)
+const rc=document.getElementById('rain').getContext('2d');
+const RCH='01{}()<>=;:$#@*+-/\\|constletfnasyncawaitgitPRCIアイウエオカキクケコサシスセソタチツテトナニヌネノ'.split('');
+const COLS=Array.from({length:88},(_,i)=>({x:i*22+6,sp:260+((i*7919)%400),off:(i*104729)%1700,len:14+(i*31)%18,col:NEON[(i*3)%5]}));
+function hsh(a,b){let h=(a*374761393+b*668265263)>>>0;h=(h^(h>>>13))*1274126177>>>0;return h}
+function rain(t,on,mono){rc.clearRect(0,0,1920,1080);if(!on)return;rc.font='700 20px "Monaspace Neon"';
+  for(const c of COLS){const head=((c.off+t*c.sp)%1700)-300;
+    for(let k=0;k<c.len;k++){const y=head-k*24;if(y<-24||y>1100)continue;const ch=RCH[hsh(c.x,Math.floor((head-k*24)/24)*3+k*7+Math.floor(t*(k<2?12:3)))%RCH.length];
+      const a=k===0?1:Math.max(0,1-k/c.len)*.8;rc.fillStyle=k===0?`rgba(255,255,255,${a})`:(mono?`rgba(63,185,80,${a})`:hexA(c.col,a));rc.fillText(ch,c.x,y)}}}
+function hexA(h,a){const n=parseInt(h.slice(1),16);return `rgba(${n>>16},${n>>8&255},${n&255},${a})`}
+// ---- mesh gradient (time-driven)
+const blobs=[...document.querySelectorAll('#mesh .blob')];
+const MESHP={cold:['#1E1B4B','#312E81','#0E7490','#4C1D95'],pain:['#7F1D1D','#831843','#4C1D95','#1E1B4B'],turn:['#0891B2','#7C3AED','#DB2777','#15803D'],reveal:['#7C3AED','#DB2777','#0891B2','#65A30D'],mywork:['#6D28D9','#0891B2','#DB2777','#1D4ED8'],worktree:['#0E7490','#6D28D9','#4D7C0F','#BE185D'],merge:['#7C3AED','#DB2777','#0891B2','#15803D'],power:['#9333EA','#0891B2','#DB2777','#CA8A04'],honest:['#CA8A04','#DB2777','#7C3AED','#0891B2'],next:['#0891B2','#7C3AED','#DB2777','#65A30D'],end:['#EA580C','#DB2777','#7C3AED','#CA8A04']};
+function mesh(t,sec,on){document.getElementById('mesh').style.display=on?'block':'none';if(!on)return;const P=MESHP[sec];
+  blobs.forEach((b,i)=>{const x=560+Math.sin(t*.45+i*1.7)*700+(i%2?500:-300), y=300+Math.cos(t*.38+i*2.3)*420+(i>1?300:-200);
+    b.style.left=x+'px';b.style.top=y+'px';b.style.background=`radial-gradient(circle,${P[i]} 0%,${P[i]}AA 25%,transparent 65%)`})}
+// ---- chrome
+const stageEl=document.getElementById('stage'),grains=[...document.querySelectorAll('.grain')];
+const SECORD=[...new Set(Object.values(SECS))];
+window.seek=function(t,frame){
+  tl.seek(t,false);
+  let cur=CUTS[0];for(const c of CUTS){if(c.t<=t)cur=c}
+  document.getElementById('c-sec').textContent=SECNAME[cur.sec];
+  document.getElementById('chap').textContent='CH '+SECS[cur.sec]+'/11';
+  document.getElementById('prog').style.width=(t/END*1920).toFixed(1)+'px';
+  mesh(t,cur.sec,cur.mesh);rain(t,cur.rain,cur.sec==='worktree'||cur.sec==='merge'||cur.sec==='pain');
+  caption(t);
+  grains.forEach((g,i)=>g.style.display=(i===(frame??Math.round(t*FPS))%4)?'block':'none');
+  const bp=((t-DROP)/beat)%1, on=t>DROP;
+  world.style.transform=`scale(${on?1+.012*Math.exp(-((bp+1)%1)*7):1})`;
+};
+window.CUES=CUES;window.CUTS=CUTS;window.DURATION=END;
+window.META={DROP,MUSIC_T0:DROP-8*beat*4,BREAK0:BREAK0,BREAK1:BREAK1,beat};
+window.READY=document.fonts.ready.then(()=>{seek(0,0);return true});
+</script>
+</body></html>

@@ -1,0 +1,13 @@
+[
+ ["cold","Meet Dana. It's two a.m. Four hundred notifications. Ninety-seven open pull requests. One of them is called quick fix. It has three hundred and forty-seven comments."],
+ ["pain","Tabs everywhere. Two agents, editing the same branch. And git blame? Git blame says it was Dana."],
+ ["turn","Here's the thing. GitHub has seen this movie before. A hundred and eighty million developers. Six hundred and thirty million repositories. Forty-three million pull requests merged, every single month."],
+ ["reveal","So they built the GitHub Copilot app. A desktop home for your agents."],
+ ["mywork","One My Work view. Sessions, issues, pull requests and automations, across every repo. Dana's four hundred tabs? One window."],
+ ["worktree","Every agent gets its own git worktree. Five agents. Five lanes. Zero, who touched my branch."],
+ ["merge","Dana picks an issue. The agent writes the fix and opens the PR. Then Agent Merge babysits CI, fixes the failing checks, and merges when the rules pass. That three hundred comment PR? Merged before lunch."],
+ ["power","Pick your model, or let Auto decide. Plan together on a live canvas. Run it in a sandbox. The cloud agent asks before every write, until you trust it with autopilot."],
+ ["honest","The catch? It's metered in AI credits. Every plan includes monthly credits, and a hard cap keeps your bill boring."],
+ ["next","And GitHub doesn't sit still. Nineteen days after launch, eight new capabilities shipped, with an open feedback thread in GitHub Community. Meanwhile, GitHub Next is already prototyping what comes after."],
+ ["end","Dana logs off at five. Like, actually five. The GitHub Copilot app is in technical preview for Pro, Pro plus, Business and Enterprise. One app. Many agents. Go home on time."]
+]

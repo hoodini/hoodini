@@ -1,0 +1,10 @@
+node_modules
+assets
+out/chunk_*.mp4
+out/video_raw.mp4
+out/chunks.txt
+audio/mix_premaster.wav
+audio/master.wav
+audio/music_only.wav
+qa/shot_*.jpg
+qa/final/

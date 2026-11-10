@@ -1,0 +1,242 @@
+{
+ "audio/take_control_23.wav": {
+  "stoi": 0.999,
+  "pesq": 4.05,
+  "sisdr": 28.6
+ },
+ "audio/take_control_42.wav": {
+  "stoi": 0.998,
+  "pesq": 3.83,
+  "sisdr": 25.9
+ },
+ "audio/take_control_7.wav": {
+  "stoi": 0.999,
+  "pesq": 4.11,
+  "sisdr": 28.0
+ },
+ "audio/take_cta_23.wav": {
+  "stoi": 0.998,
+  "pesq": 4.01,
+  "sisdr": 22.9
+ },
+ "audio/take_cta_42.wav": {
+  "stoi": 0.998,
+  "pesq": 3.79,
+  "sisdr": 26.0
+ },
+ "audio/take_cta_7.wav": {
+  "stoi": 0.996,
+  "pesq": 3.64,
+  "sisdr": 25.6
+ },
+ "audio/take_habit_23.wav": {
+  "stoi": 0.998,
+  "pesq": 4.08,
+  "sisdr": 27.3
+ },
+ "audio/take_habit_42.wav": {
+  "stoi": 0.999,
+  "pesq": 3.99,
+  "sisdr": 24.1
+ },
+ "audio/take_habit_7.wav": {
+  "stoi": 0.999,
+  "pesq": 3.91,
+  "sisdr": 25.9
+ },
+ "audio/take_handoff_23.wav": {
+  "stoi": 0.997,
+  "pesq": 3.79,
+  "sisdr": 24.8
+ },
+ "audio/take_handoff_42.wav": {
+  "stoi": 0.997,
+  "pesq": 3.89,
+  "sisdr": 27.2
+ },
+ "audio/take_handoff_7.wav": {
+  "stoi": 0.998,
+  "pesq": 3.96,
+  "sisdr": 27.4
+ },
+ "audio/take_lanes_23.wav": {
+  "stoi": 0.997,
+  "pesq": 3.6,
+  "sisdr": 27.5
+ },
+ "audio/take_lanes_42.wav": {
+  "stoi": 0.993,
+  "pesq": 3.54,
+  "sisdr": 28.3
+ },
+ "audio/take_lanes_7.wav": {
+  "stoi": 0.995,
+  "pesq": 3.84,
+  "sisdr": 26.6
+ },
+ "audio/take_listen_23.wav": {
+  "stoi": 0.999,
+  "pesq": 3.92,
+  "sisdr": 28.8
+ },
+ "audio/take_listen_42.wav": {
+  "stoi": 0.999,
+  "pesq": 3.95,
+  "sisdr": 29.4
+ },
+ "audio/take_listen_7.wav": {
+  "stoi": 0.999,
+  "pesq": 3.94,
+  "sisdr": 30.1
+ },
+ "audio/take_merge_23.wav": {
+  "stoi": 0.997,
+  "pesq": 3.61,
+  "sisdr": 25.6
+ },
+ "audio/take_merge_42.wav": {
+  "stoi": 0.997,
+  "pesq": 3.85,
+  "sisdr": 25.4
+ },
+ "audio/take_merge_7.wav": {
+  "stoi": 0.997,
+  "pesq": 3.9,
+  "sisdr": 24.7
+ },
+ "audio/take_models_23.wav": {
+  "stoi": 0.999,
+  "pesq": 3.76,
+  "sisdr": 25.5
+ },
+ "audio/take_models_42.wav": {
+  "stoi": 0.999,
+  "pesq": 3.98,
+  "sisdr": 27.5
+ },
+ "audio/take_models_7.wav": {
+  "stoi": 0.998,
+  "pesq": 3.89,
+  "sisdr": 25.1
+ },
+ "audio/take_mywork_23.wav": {
+  "stoi": 0.999,
+  "pesq": 3.99,
+  "sisdr": 30.3
+ },
+ "audio/take_mywork_42.wav": {
+  "stoi": 0.998,
+  "pesq": 4.05,
+  "sisdr": 28.0
+ },
+ "audio/take_mywork_7.wav": {
+  "stoi": 0.996,
+  "pesq": 3.64,
+  "sisdr": 23.4
+ },
+ "audio/take_open_23.wav": {
+  "stoi": 0.999,
+  "pesq": 4.03,
+  "sisdr": 27.2
+ },
+ "audio/take_open_42.wav": {
+  "stoi": 0.997,
+  "pesq": 4.01,
+  "sisdr": 26.3
+ },
+ "audio/take_open_7.wav": {
+  "stoi": 0.999,
+  "pesq": 4.07,
+  "sisdr": 29.5
+ },
+ "audio/take_payoff_23.wav": {
+  "stoi": 0.998,
+  "pesq": 4.3,
+  "sisdr": 26.0
+ },
+ "audio/take_payoff_42.wav": {
+  "stoi": 0.998,
+  "pesq": 4.11,
+  "sisdr": 25.1
+ },
+ "audio/take_payoff_7.wav": {
+  "stoi": 0.997,
+  "pesq": 3.44,
+  "sisdr": 23.7
+ },
+ "audio/take_promise_23.wav": {
+  "stoi": 0.998,
+  "pesq": 3.8,
+  "sisdr": 23.1
+ },
+ "audio/take_promise_42.wav": {
+  "stoi": 0.999,
+  "pesq": 3.71,
+  "sisdr": 25.6
+ },
+ "audio/take_promise_7.wav": {
+  "stoi": 0.999,
+  "pesq": 3.67,
+  "sisdr": 24.9
+ },
+ "audio/take_reveal_23.wav": {
+  "stoi": 0.998,
+  "pesq": 3.82,
+  "sisdr": 27.4
+ },
+ "audio/take_reveal_42.wav": {
+  "stoi": 0.998,
+  "pesq": 3.63,
+  "sisdr": 24.3
+ },
+ "audio/take_reveal_7.wav": {
+  "stoi": 0.996,
+  "pesq": 3.68,
+  "sisdr": 26.5
+ },
+ "audio/take_sandbox_23.wav": {
+  "stoi": 0.998,
+  "pesq": 3.7,
+  "sisdr": 26.8
+ },
+ "audio/take_sandbox_42.wav": {
+  "stoi": 0.999,
+  "pesq": 3.88,
+  "sisdr": 29.5
+ },
+ "audio/take_sandbox_7.wav": {
+  "stoi": 0.999,
+  "pesq": 3.96,
+  "sisdr": 27.4
+ },
+ "audio/take_scale_23.wav": {
+  "stoi": 0.998,
+  "pesq": 3.66,
+  "sisdr": 25.7
+ },
+ "audio/take_scale_42.wav": {
+  "stoi": 0.998,
+  "pesq": 3.85,
+  "sisdr": 26.7
+ },
+ "audio/take_scale_7.wav": {
+  "stoi": 0.998,
+  "pesq": 3.93,
+  "sisdr": 24.5
+ },
+ "audio/take_ships_23.wav": {
+  "stoi": 0.997,
+  "pesq": 3.62,
+  "sisdr": 25.0
+ },
+ "audio/take_ships_42.wav": {
+  "stoi": 0.997,
+  "pesq": 3.87,
+  "sisdr": 24.0
+ },
+ "audio/take_ships_7.wav": {
+  "stoi": 0.998,
+  "pesq": 4.08,
+  "sisdr": 27.9
+ }
+}

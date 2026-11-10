@@ -1,0 +1,15 @@
+[
+ ["hook","Stop scrolling. Fourteen tabs. Three terminals. Two agents... fighting over one branch."],
+ ["promise","Give me ninety seconds. I'll show you the app that ends this, and a build at the end you'll want to steal."],
+ ["reveal","This is the GitHub Copilot app. Your agents finally have a home."],
+ ["mywork","One My Work view: every agent session, issue, pull request and automation, across all your repos. Mission control, for code."],
+ ["worktree","Every session gets its own git worktree. Five agents. Five lanes. Zero collisions."],
+ ["merge","Start from an issue. The agent writes the fix and opens the PR. Then Agent Merge babysits CI, fixes failing checks, and merges when your rules pass. You? Go touch grass."],
+ ["models","Pick a model and reasoning effort, or let Auto decide. Switch mid-task. Or bring your own key."],
+ ["canvas","Canvases are live surfaces you and the agent edit together. Plans, terminals, browsers, deployments. And Azure DevOps plugs straight into My Work."],
+ ["safety","Local or cloud sandbox. The cloud agent asks before every write, until you flip on autopilot."],
+ ["proof","And the world is not waiting. GitHub says commits nearly doubled, to one point four billion a month."],
+ ["demo","So here's the concept build. One weekend. Five agents. Phone capture, a Windows client, a streaming bridge, tests and docs, all in parallel. Boom. Your phone, live on your Windows desktop."],
+ ["money","The catch? It runs on AI credits, metered in tokens. But every plan includes monthly credits, and with a hard cap, your bill can't run away."],
+ ["cta","It's in technical preview right now, for Pro, Pro plus, Business and Enterprise. The devs who start today are already ahead. One app. Many agents. Ship it."]
+]

@@ -1,0 +1,15 @@
+[
+ ["hook","POV: you've got fourteen tabs, three terminals, two agents... and they're fighting over the same branch."],
+ ["reveal","Meet the GitHub Copilot app. The desktop home for your agents."],
+ ["mywork","One My Work view: agent sessions, issues, pull requests and background automations, across your repos. Basically, air-traffic control for agents."],
+ ["worktree","Every session runs in its own git worktree. Parallel agents, separate lanes, zero branch juggling. No more, who touched my branch?"],
+ ["pipeline","Start from an issue, the agent does the work, you review the PR. Then Agent Merge takes over: it watches CI, tracks required reviewers, fixes failing checks, and merges when your conditions pass. It babysits CI, so you don't."],
+ ["models","Pick a model and reasoning effort per session, or let Auto choose. Change it any time, mid-task. Bring your own key, too."],
+ ["canvas","Canvases are shared work surfaces: plans, terminals, browsers, deployments. You edit, the agent edits. Same page, literally."],
+ ["azure","Azure shops: Azure DevOps work items and pull requests show up in My Work, and community canvas extensions bring Functions, Resource Graph, even your Azure costs. Finally, the cloud bill next to the code."],
+ ["safety","Run agents in a local or cloud sandbox. The cloud agent asks before every write, until you flip on autopilot. And slash security review adds a security pass."],
+ ["money","Now, money. Since June first, Copilot runs on GitHub AI Credits. Every plan includes monthly credits, a single dollar-based credit pool across models, with budgets and caps per user, cost center or enterprise. Completions don't burn credits."],
+ ["honest","And yes, it's still tokens underneath. Devs were loud about that. But now you can see it, and cap it."],
+ ["score","Tab-hopping stack versus the Copilot app. Context switching, parallel agents, CI babysitting, cloud visibility, spend control."],
+ ["cta","One app. Many agents. Ship it. It's a technical preview, so check your plan."]
+]
