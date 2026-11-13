@@ -65,7 +65,7 @@ A clean, restrained edit is a **failure** for him. EP18 ("לא לרצות") went
 | Self-review of the v9 9:16 (before he saw it) | **A 16:9 card on a phone leaves ~40% of the frame empty: never ship that.** Card mode is the Shorts stack: brand header on top, the card (y≈330), captions under it (y≈1010), and **the speaker in a big glow circle at the bottom** (`vFace`): on screen-recording plates crop the webcam corner of the recording (measure its rect per plate, it moves sides), on face plates crop the face itself. Fade the circle out when the frame morphs to full-face and at the end card (which has its own circle; centre the card there). Check a contact sheet of the 9:16 *before* the full render, not after. |
 | Self-review of the Tanya edit (v10, Nov 2026: a lecture by Rabbi Yoram Abergel zt"l, not Yuval) | **When the speaker is not Yuval, the film is about him.** The lower third, the end-card avatar and the closing name are the speaker's; no "יובל אבידני" signature (YUV.AI stays as a small credit). Keep the source's own watermark and credit it in the end card and the edit note: never crop out someone else's attribution. **Torah content uses Bona Nova SC** for headlines and captions (`FT.torah`), and the edit layer is calmer: small zoom impulses only, no shakes, no white flashes. **A single talking-head camera needs scenes for variety:** real pages of every person and book named (Wikipedia, Sefaria) in 3D, licensed stock for every image in the words (a road, a garden, a river for a verse), A-vs-B cards for a comparison, splits for the key lines. **Behind-the-subject text must sit on empty background:** check the matte on a still; the whole body hides text, not only the head, so it goes in the free wall area above the shoulder, at a size where the head covers 20–40% of the non-marker word. **Headlines auto-fit their layout** (a split headline ran under the plate card). **9:16 face shots need a tracked face x, not one number per plate:** the phone crop is only 608 px of a 1920 frame, so a 100 px error puts the face at the edge. When Haar fails (beard, glasses), track a reliable dark or bright blob (here his black hat, every 0.2 s), smooth it over ~2 s, and map it through the 16:9 crop (`(faceX − sx) · punch`). **Side-placed 16:9 chips must not draw into the 9:16 inner frame** (`if (V_INNER) return`): they leak into the face crop, cut at the edge, next to their re-placed copy. |
 | "Why doesn't it look like the motion graphics I love? Where are the official logos, the beautiful overlays, the 3D?" (v11, GitHub Universe edit, 1.11.2026) | **The edit is a launch film wrapped around his footage, not footage with chips on it.** v1 of that edit had flat 2D cards and text chips ("Cloudflare", "Opus 5.5" as words): rejected. Every edit now ships **the YouTuber layer** (section below): three.js hero scenes (one per act, not one per film), **official logos for every product, model and connector named** (Simple Icons, never a name typed in a pill), callouts on the real UI of the recording, real pages in 3D on stock B-roll, editorial furniture, and the golden-prompt rules (night pages for chapters and the end card, captions in a night pill, the music drop on the cut out of the hook). **Read `GOLDEN_PROMPT-explainer-film.md` before any edit** (on his PC: `C:\Users\User\Documents\yuv-projects\` and `Downloads\`). A memory note pointing to it was skipped in v1 and it cost a full round. |
-| Self-review plus three independent review rounds of the sponsored "Claude Fable 5.2 + Higgsfield MCP" tutorial (v12, 12–13.11.2026: a 2-hour OBS recording cut to 14:15) | **Frame-level defects only show up in frame-level checks.** Stills every few seconds found none of these: a mini screenshot inside the camera card for 1–2 frames at three screen→camera switches (OBS switches 1–2 frames after the boundary a classifier finds); a framing snap as a card flew in; a 3-frame HUD flash; single black frames from a FIFO texture cache; a privacy blur baked into a camera frame; a black notch in a frame corner at the 1.12 punch-in. Run the frame tools on every final (section "OBS recordings: the stage3d engine") and an **independent review by subagents on every final**: three visual reviewers on thirds of the film, one auditor of the texts against the brief, one checker of the files, each new round given the list of fixes to confirm. **Sponsored videos: read the brief against the raw footage on day one** and tell him at once what editing cannot fix (here: another brand's website as the reference, no sign-up and no trial shown, the required CTA never said aloud), before the edit, not in the delivery note. Put the brief's exact wording on screen (a disclosure chip from the first seconds; the CTA sentence on the end card for 10 s) and in the description. |
+| Self-review plus three independent review rounds of the sponsored "Claude Fable 5.2 + Higgsfield MCP" tutorial (v12, 12–13.11.2026: a 2-hour OBS recording cut to 14:15) | **Frame-level defects only show up in frame-level checks.** Stills every few seconds found none of these: a mini screenshot inside the camera card for 1–2 frames at three screen→camera switches (OBS switches 1–2 frames after the boundary a classifier finds); a framing snap as a card flew in; a 3-frame HUD flash; single black frames from a FIFO texture cache; a privacy blur baked into a camera frame; a black notch in a frame corner at the 1.12 punch-in. Run the frame tools on every final (section "OBS recordings: the stage3d engine") and an **independent review by subagents on every final**: three visual reviewers on thirds of the film, one auditor of the texts against the brief, one checker of the files, each new round given the list of fixes to confirm. **Sponsored videos: the brief has to reach him before he records.** Here the brief was read against the raw footage on day one, and every gap was in the first status report (shots and spoken lines the brief requires that were never recorded, reference material the brief rules out). He answered a generic "continue?", and the gaps reached the delivery note unchanged. Send him the pre-recording checklist (section "Retrospective") the day the brief arrives. When a gap affects approval or payment, ask one explicit decision question with options (re-cut, pickup shot, ask the sponsor, accept the risk), never "continue?", and write down how you read an ambiguous answer. Put the brief's exact wording on screen (a disclosure chip from the first seconds; the CTA sentence on the end card for 10 s) and in the description. |
 | "No feeling of 60 fps animation" | **60 fps, 6 subframes, springs everywhere.** Plates morph panel↔full frame. Screen jump cuts push. Face jump cuts punch (1.0/1.12 + an impulse). Scenes grow out of the panel and contract back. Never a fade. |
 
 ## The YouTuber layer (every edit, non-negotiable)
@@ -95,6 +95,21 @@ What separates his edit from a captioned recording. Plan it in the story pass, c
 
 His long tutorials are OBS recordings: a camera scene, and screen scenes with his camera baked in as a picture-in-picture. For those, do not compose with ffmpeg overlays and do not draw the plate in the kit: one `seek(t)` page (three.js + 2D canvas) is rendered frame by frame on his PC. **The working engine is `C:\Users\User\Videos\grokbot\ep-fable-hf\` on his PC** (`film/main.js`, `film/scenes.js`, `film/gl.js`, `render.mjs`, `run_queue.ps1`, `finalize.py`, `make_master.py`, `mk_blur.py`, `mk_sidebar.py`, `mkshots.py`, `mix.py`, `verify_final.py`, `tools/`). Copy from there, not from the older `yuvwork\stage3d` template.
 
+**Order of work.** Each step gates the next; the retrospective below says why.
+1. Intake: ASCII hardlinks, background ASR, parallel contact sheets.
+2. The brief matrix, and the gap report with one decision question.
+3. Speech blocks → cut spec → EDL snapped to pauses → blind ASR → **lock the cut**.
+4. The master, with privacy masks by category.
+5. The 10 fps OCR index → shots → scenes anchored to words.
+6. **The pre-render gate:**
+   - stills, plus every frame of every transition;
+   - the lints;
+   - the proofreader and the brief auditor on the sources;
+   - visual reviewers on stills.
+7. Full render → `final_chain.sh` → one independent review → deliver.
+
+Update the memory note each time a phase ends.
+
 **Build**
 - **Master time = film time.** Cut the kept pieces into one 30 fps master (GOP 15, no B-frames) and drive the page with film time. Privacy masks are baked into the master per piece (incremental, stamped per piece). Compare every rebuilt master with the previous one (`tools/master_diff.py`): a decode hiccup once baked a broken frame into a rebuild.
 - **Layout model:** camera (`C`) and screen (`S`) segments; camera→screen fly-ins with frozen clean frames while OBS animates its own transition; screen→camera hard cuts where the camera card grows into the frame. Measure where OBS really switches (`tools/lay_switch.py`) and frame a fly-in from its first frame.
@@ -112,9 +127,134 @@ His long tutorials are OBS recordings: a camera scene, and screen scenes with hi
 
 **Render and join.** Playwright Chromium with `--use-angle=d3d11 --force_high_performance_gpu`: without the second flag it renders on the Intel iGPU, so check the `GL ANGLE (...)` line. Render 1000-frame MKV chunks, ~10 workers (a 14-minute film takes ~13 minutes on the 4090). Rewrap every chunk to MP4 at timescale 60 before the concat: MKV millisecond stamps drift. After a local fix, re-render only the touched chunks and prove with `tools/chunk_diff.py` that nothing else changed.
 
-**Deliverables.** Mux the final with `-color_primaries bt709 -color_trc bt709 -colorspace bt709 -movflags +faststart+write_colr`: a stream copy otherwise writes no `colr` box, which QuickTime and Apple players read. The YouTube SRT: no name split across a line or a cue ("ל-Claude" | "Fable 5.2"), a right-to-left mark on a Hebrew line that starts with a Latin word (players take the direction from the first letter; not on an all-English line, whose full stop would jump left), no full stop glued to a URL, no cue under 0.7 s or over 7 s, two lines of up to 42 characters. When a sponsor requires an English first line in a Hebrew description, YouTube may lay out the whole description left-to-right: wrap each Hebrew line in RLI…PDI (U+2067…U+2069), never before a chapter's timestamp or inside the required English lines. Thumbnails under 2 MB (JPG, not a 2560 PNG). For a sponsored video, have the texts auditor read the brief line by line against the cut and the description: it found the keywords in the wrong place, a title not built on the sponsor's search phrases, two trial terms that are never spoken, and part of the workflow filmed on another model.
+**Deliverables.** Mux the final with `-color_primaries bt709 -color_trc bt709 -colorspace bt709 -movflags +faststart+write_colr`: a stream copy otherwise writes no `colr` box, which QuickTime and Apple players read. The YouTube SRT: no name split across a line or a cue ("ל-Claude" | "Fable 5.2"), a right-to-left mark on a Hebrew line that starts with a Latin word (players take the direction from the first letter; not on an all-English line, whose full stop would jump left), no full stop glued to a URL, no cue under 0.7 s or over 7 s, two lines of up to 42 characters. When a sponsor requires an English first line in a Hebrew description, YouTube may lay out the whole description left-to-right: wrap each Hebrew line in RLI…PDI (U+2067…U+2069), never before a chapter's timestamp or inside the required English lines. Thumbnails under 2 MB (JPG, not a 2560 PNG). For a sponsored video, have the texts auditor read the brief line by line against the cut and the description: it found the keywords in the wrong place, a title not built on the sponsor's search phrases, offer terms that are shown but never spoken, and part of the workflow filmed on another model.
 
 **Checks that found real defects** (run all on every final): `verify_final.py` (facts, loudness, black frames, an OCR sweep for private strings, blind transcription against the script); `tools/cut_sync.py` (the frame each cut lands on); `tools/sync_check.py` (sound against the raw recording); `tools/flash_scan.py` + `tools/flash_triage.py` (regions that change for 1–4 frames and come back; the master scan removes what is in the recording); `tools/cut_strip.py`; `tools/final_sheets.py`. Windows OCR (`tools/ocr.ps1`) runs only under `powershell.exe` 5.1.
+
+## Retrospective: the Higgsfield tutorial (Nov 2026)
+
+**The numbers.**
+- A 2-hour OBS recording (52 minutes of speech) became a 14:15 sponsored tutorial.
+- It took about 43 hours of wall clock, of which only 8–9 were work: eight usage-limit stops left the session idle for about 33 hours.
+- It needed six full renders and four partial ones, four review rounds, and the YouTube texts were written twice.
+- A full render costs about 12 minutes plus about 10 of checks. Rendering was never the bottleneck; rework, review and quota were.
+- The first full render turned out to be a draft: more than ten kinds of defects surfaced after it.
+
+**Keep doing (each one paid for itself)**
+1. **Intake in minutes.**
+   - Hardlink the Hebrew-named files to short ASCII names (`t1`, `t1v`).
+   - Start the GPU transcription in the background (ivrit-ai turbo: about 6 minutes for 2 hours).
+   - Build contact sheets with parallel keyframe seeks (736 frames in 104 s), and read them while the ASR runs.
+2. **The cut as data:**
+   1. speech blocks from the voice envelope;
+   2. a word printout with the pauses (`tools/w.py`);
+   3. a cut spec of takes, with the words you intend;
+   4. `build_edl.py` snaps every cut to a pause or a dip, caches the ASR of boundary windows and prints what to check;
+   5. a blind transcription of the voice track and an edge report;
+   6. lock.
+
+   The cut locked before any graphics and never reopened.
+3. **The OBS vertical canvas as the camera reference** for layout detection. A histogram detector found 0 s of screen.
+4. **One 10 fps OCR index of the locked cut** (`build/ocr10/index.pkl`). It answered privacy, zoom targets, text size, labels, the model on screen and the sidebar masks.
+5. **Every beat anchored to a spoken word** (`wt` / `tk`), with the resolver run after every scenes edit. Sound cues are exported from the scenes, so a timing change rebuilds the mix by itself.
+6. **The stills gate:** four rounds, about 140 stills, 12 minutes, ten problems fixed before the first render.
+7. **Measure instead of eyeballing, and report the numbers:**
+   - margins and corners in pixels on rendered stills;
+   - chip-to-hair distance every second;
+   - `volumedetect` on the end of the mix;
+   - Whisper on a doubtful word;
+   - a pitch test for "singing or speech";
+   - OCR for "which model is on screen".
+8. **Extend every finding to its class**, and fix it in the function that makes it. One blurred camera frame led to four spans; one corner notch led to `cornerSafe` on every crop.
+9. **Snapshot, regenerate, diff** every generated file: master, chunks, captions, `data.js`, cues, voice, mix, texts. Patch only with replacements asserted to match once.
+10. **Frame tools on every final, compared with the previous final:** `master_diff`, `flash_scan` + `flash_triage`, `camtrack`, `chunk_diff`, `lay_switch`. Each one found a defect nothing else could.
+11. **One check chain** (`build/final_chain.sh`), with the web copy last.
+    - Never swap the file reviewers are reading.
+    - Write the next review while the render runs.
+    - Resume a dead workflow by its run id.
+12. **Review rounds:** a FIXED list to confirm, new sample offsets, one reviewer per third, a texts-vs-brief auditor and a file checker.
+13. **Work in the waits.** Texts, covers, timeline, the edit note, this skill and the memory notes were all written while renders ran.
+
+**Do differently (where the time went)**
+1. **Quota set the pace, not the GPU (about 33 hours idle).**
+   - Launch multi-agent workflows and full renders at the start of a fresh five-hour window.
+   - Use scripts, not agents, on raw footage. A 22-agent analysis of the raw two hours was thrown away and redone on the cut.
+   - Keep a review round to five agents or fewer. Four of five reviewers died on a credit stop.
+   - Update the memory note after every phase, not at the grace note.
+   - On a limit notice, stop background workflows first.
+   - After a resume, a compaction or a model switch: reread the standing preferences (status lines in Hebrew), and check which background jobs are still alive.
+2. **The first render must be the release candidate.** Here the review and the frame tools ran after it. Before the first full render, run everything that needs no film:
+   - the proofreader and the brief auditor on `scenes.js`, the captions and the texts;
+   - the visual reviewers on stills every 3 s;
+   - `lay_switch`, plus stills at every frame of every transition;
+   - `flash_scan` on a test range after any engine change that holds or reuses frames;
+   - the lints in item 6.
+3. **A brief matrix before the first render.** Map every required sentence, graphic, chip, field and timing to where it lives (speech, screen, description). Grep-check each exact string against the brief, and give it about 3 words per second of screen time. The first render missed the disclosure in the first seconds, two required sentences, the CTA's reading time (end card 8 → 12 s) and exact menu wording; the texts were rewritten twice.
+4. **Privacy by category, not by string.**
+   - The first pass caught links and emails but missed app chrome: the Claude sidebar (other sessions, projects, the host name) and recent-folder popovers.
+   - The OCR sweep searched only for strings already masked, so it passed. Sweep by screen region and category instead.
+   - The fix then leaked masks onto camera frames. Intersect every mask's time span with the camera spans and the transition frames automatically.
+5. **Global rules broke what worked:**
+   - a "park the card on thin strips" rule made the camera card pulse across the film;
+   - a corner guard limited to wide crops missed the punch-in;
+   - margins measured on flat rectangles ignored the tilt;
+   - a prop clamp ignored perspective.
+
+   Fix a local defect per shot. If shared layout logic must change, run `camtrack` over the whole film and diff it with the last render before rendering.
+6. **Lints to automate in `audit`** (each one began as a review finding):
+   - overlay clearance from the person matte over the overlay's whole interval (chips and stamps touched his hair, a face, a kippah);
+   - the caption and camera-card rectangles against the OCR box of the line he reads aloud;
+   - at least 3 s on screen per panel line;
+   - the caption's position per frame, the way `camtrack` tracks the card (it snapped 80 px at every switch);
+   - every position that depends on the layout eased with the layout's spring;
+   - repeated audio across piece joins;
+   - the last music bed covering the end and fading out;
+   - `film/data.js` newer than `captions.json` and `edl.json`;
+   - the bidi order of every on-screen string;
+   - every label (model, version, price) checked against the OCR.
+7. **Derived files went stale.** After any caption or take-text change:
+   1. run `mk_caps.py`;
+   2. run `mkdata.py`;
+   3. grep `scenes.js` for `wt` / `tk` lookups of the changed word;
+   4. diff the cues.
+8. **Delivery basics belong in the first final:**
+   - the `colr` box and colour tags in the mux;
+   - the rewrap to timescale 60, and no `-shortest`;
+   - a `finalize.py` that stops on any CHECK;
+   - the web copy.
+
+   Read the golden-prompt delivery list before writing `finalize.py`.
+9. **Reload `yuv-design-system` right before the graphics pass.** It moved from v4 to v5 mid-session. A copied engine and older rows of this file still use retired words (`paperSky`, the gold marker, a pink CTA, a navy caption pill). Colours come only from `tokens/neon-studio.css`.
+10. **Keep a `NOTES.md` in the project** (file map, engine API, data shapes, commands), and link it from the memory note. Two compactions each cost re-reading a dozen files.
+
+**Before he records a sponsored tutorial** (send it the day the brief arrives):
+- every shot and spoken line the brief requires, CTA included, as a numbered list he ticks off while recording;
+- reference material the brief allows, published and reachable before filming;
+- the whole workflow on the model the video is about;
+- camera and screen as separate OBS sources (no baked picture-in-picture);
+- no zoom tool while recording: the edit zooms;
+- the Claude sidebar hidden, notifications off, a clean browser profile;
+- no known songs while waiting (copyright claims).
+
+**YouTube thumbnails**
+- Generate a text-free GPT Image 2.6 plate, with his reference photos attached, and compose the title on top in HTML. The Hebrew stays exact and the logos stay official.
+- Make a likeness sheet before choosing: each generated face next to reference photos 16, 23 and 20.
+- Make one cover variant per title. The title, the cover and the description make the same claim, and it must be true ("in one chat" only if it all happened in one chat).
+- Export a JPG under 2 MB at 2560 px (0.5 MB at quality 90), never a 2560 PNG.
+- If a cover workflow stops mid-run, write down which concepts are unfinished.
+
+**His PC (each of these cost a retry)**
+- Windows Python takes Windows paths (`C:\...`), never MSYS `/c/...`. Prefix `PYTHONUTF8=1` for Hebrew output, or cp1252 crashes.
+- Python environments:
+  - `C:\Users\User\yuvwork\wenv` has faster-whisper and torch but no cv2;
+  - `C:\Python313` has cv2;
+  - faster-whisper on CUDA needs the `nvidia\cublas\bin`, `cudnn\bin` and `cuda_nvrtc\bin` folders in `PATH` and in `os.add_dll_directory`.
+- Windows OCR runs only under `powershell.exe` 5.1.
+- Close PIL images (`with Image.open(...)`) before deleting the files.
+- Write files that contain backslashes with the Write tool, not a heredoc. Chain a patch and its run with `&&`, so a failed patch stops the run.
+- Fonts: look in `C:\Windows\Fonts` and `film/fonts`; never search the whole disk.
+- Count finished chunks by their DONE markers: an `.mkv` exists as soon as a chunk starts. Wait for the background notification instead of polling.
+- Drive C: runs about 98% full. Check the free space before each render, and delete only intermediates that no script reads.
 
 ## 0. Intake
 
@@ -261,6 +401,13 @@ Speed and environment:
 - Use the preinstalled Playwright, not the kit's `node_modules` copy, in the cloud.
 
 **Windows GPU (measured Nov 2026, RTX 4090):** launch Chromium with `--enable-gpu --ignore-gpu-blocklist --use-angle=d3d11 --enable-gpu-rasterization` (`render_edit.cjs` adds them on win32). Without them, WebGL falls back to SwiftShader at 0.8 fps per worker; with them it runs at ≈ 10 fps per worker. 6 workers render a 13-minute film with 3D cards and three.js scenes in ≈ 15 minutes per layout. Before the full render, compare one WebGL frame from the GPU path with a CPU still.
+
+**Add `--force_high_performance_gpu` as well.** A flag test on the Higgsfield edit (Nov 2026) gave these results:
+- `--use-angle=d3d11` alone picks the Intel UHD 770 iGPU (the first stills ran at 1.9 fps);
+- `--force_high_performance_gpu` alone falls back to SwiftShader;
+- only the two together reach the RTX 4090.
+
+The ≈ 10 fps above may have been measured on the iGPU. Print the `GL ANGLE (...)` renderer line at startup, and stop if it is not the NVIDIA card. A rewrite of the render script once dropped the flag silently.
 
 **Gate failures** — fix before rendering:
 - a title over the plate outside a split;
