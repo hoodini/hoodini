@@ -1,0 +1,28 @@
+h1: POV, you want to run a 120B model at home.
+h2: And your GPU has 32 gigs.
+h3: CUDA Out of Memory, Classic.
+w1: Enter DGX Spark, a tiny box with 128 gigs of memory the GPU can actually use.
+w2: Unified memory. CPU and GPU share one giant pantry. No more tiny GPU mini -fridge.
+w3: Inside, a GB10 Grace Blackwell chip, 20 arm cores, up to a petaflop of sparse FP4.
+f1: So what fits 8B20B? Easy on both.
+f2: 70B, Spark, yes, the 5090, nope.
+f3: 120B Spark only, up to 200B if you quantize.
+q1: Quantizing is zipping the model, way smaller, slightly dumber.
+p1: Now the plot twist. Memory size decides what runs. Bandwidth decides how fast.
+p2: Spark is a huge warehouse with a narrow door, 273 gigabytes per second.
+p3: 5090 is a small garage on a highway, 1792, six and a half times wider.
+r1: Round 1, same 20B model. The 5090 hits 205 tokens a second. Spark, 61.
+r2: On a dense 32B, six times, that's the bandwidth gap.
+r3: Reading your prompt, 5090 again four times faster.
+r4: 70B, Spark runs it at 4 .5 tokens a second. The 5090 can't even fit it.
+r5: 120B, Spark does 42 tokens a second and serves 64 users at once.
+r6: Power, Spark draws just 60 to 90 watts on LLMs, the 5090 card alone, rated 575.
+r7: Price Spark 4699, the 5090 1999 plus a whole PC.
+r8: Software, Spark ships NVIDIA's AI, Stack, the 5090 also games and renders.
+b1: So which one should you buy?
+b2: Big models, agents, fine -tuning, or a silent desk box, Spark.
+b3: Max speed on models under 30B, plus gaming and creative work, 5090.
+b4: Need more? Link to Sparks for 405B.
+c1: Value math dollars per token per second. On 20B, a 5090 build is 17 bucks. Spark 77.
+c2: On 120B, the 5090 can't play.
+v1: Spark equals capacity. 5090 equals speed. Pick your bottleneck.
