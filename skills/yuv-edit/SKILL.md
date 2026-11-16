@@ -17,7 +17,7 @@ That gives 60 fps with 6-subframe motion blur, shared-element transitions, Neon 
 
 ## Yuval's taste for edits (stated while editing, Oct 2026)
 
-**Superseded in part on 11.11.2026.** `yuv-design-system` moved to **Neon Studio (v5)**, and Yuval asked for it in everything he makes, videos included: a near-black studio stage with violet / blue washes, cyan light and a touch of magenta. Colours, type, logos and motion rules come from there (`tokens/neon-studio.css`), never from this file. The "light, not dark" line below is retired; the rest still holds.
+**Superseded in part on 11.11.2026.** `yuv-design-system` moved to **Neon Studio (v5)**, and Yuval asked for it in everything he makes, videos included: a near-black studio stage with violet / blue washes and cyan light, and since 16.11.2026 no pink or magenta of any kind. Colours, type, logos and motion rules come from there (`tokens/neon-studio.css`), never from this file; `scripts/gfx/gfx.js` and the examples still carry the old pink palette, so their pink is recoloured to cyan or violet before a render. The "light, not dark" line below is retired; the rest still holds.
 - ~~**Light, not dark.**~~ Retired by Neon Studio (v5). It was: a bright Paper/Cloud stage with soft pink glows.
 - **The glow ring is his signature.** "Stunning, I want more of it": around the plates, hero cards, chips, the CTA and the avatar.
 - **Calm and readable.** Nothing that jumps word by word. Text he can read at a glance, in correct Hebrew, with product names spelled right.
@@ -72,7 +72,7 @@ A clean, restrained edit is a **failure** for him. EP18 ("לא לרצות") went
 
 What separates his edit from a captioned recording. Plan it in the story pass, check it in the stills gate. Reference build: `references/example-github-universe/film.js` (a 13-minute screen demo + talking head, Nov 2026).
 
-1. **A 3D studio** (three.js, one renderer with `alpha: true`, `RoomEnvironment` reflections, a pink and a violet point light). Objects hold real material and are drawn over `nightSky`:
+1. **A 3D studio** (three.js, one renderer with `alpha: true`, `RoomEnvironment` reflections, a cyan and a violet point light). Objects hold real material and are drawn over `nightSky`:
    - **the chapter list as a 3D carousel** (`makeCard3D` per chapter, ring radius ≈ 3.3, snaps on the beat with z ≈ 0.55, the camera dives in, the glow ring follows the projected corners of the active card). It *is* the transition between chapters: the shared element of the whole film;
    - **a concept made physical** (Fusion = the models' logo tiles orbiting and melting into a clearcoat sphere with a gold torus);
    - **devices that carry his real screen** (`makeLaptop` with a real frame of the recording as the screen texture; `makePhone` lights up when the session moves to it; an arc of light between them);
@@ -357,7 +357,7 @@ Components come from the kit (`card`, `slamWords`, `popType`, `neonRing`, `marke
 ### Text over the plate
 - **Code chips:** a command typed in JetBrains Mono on night glass, while he says it.
 - **Lower third:** once, at his first full-frame appearance.
-- **CTA:** pink, with the glow ring, after the payoff, and never on his face.
+- **CTA:** a white pill with the glow ring (no pink), after the payoff, and never on his face.
 
 ### Text behind the subject
 headline → person matte composited back on top (`subjectOver`). Big type, his head covering 20–40% of a non-marker word.
