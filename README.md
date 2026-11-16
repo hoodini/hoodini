@@ -29,26 +29,26 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### 🚀 Recent Activity
 
+- 📝 Pushed 0 commit(s) to [hoodini/hoodini](https://github.com/hoodini/hoodini) - Nov 13
 - 📝 Pushed 0 commit(s) to [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Nov 03
 - ✨ Created branch in [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Nov 03
 - 🔀 Merged a pull request in [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Nov 03
-- 🔀 Opened a pull request in [hoodini/ai-agents-skills](https://github.com/hoodini/ai-agents-skills) - Nov 03
 
 
 
 ### ⭐ Featured Repositories
 
+- 💙 **[whatsapp-public-logan](https://github.com/hoodini/whatsapp-public-logan)** - Open-source WhatsApp bot with AI capabilities - Logan by YUV.AI ⭐ 90
+- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 57
 - 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 298
 - 💙 **[hoodini](https://github.com/hoodini/hoodini)** - None ⭐ 11
-- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 55
 - 🐍 **[auto-image-captioning-llava-llama](https://github.com/hoodini/auto-image-captioning-llava-llama)** - Auto Image Captioning using local Ollama, Llava and Llama ⭐ 5
-- 💙 **[model-lab](https://github.com/hoodini/model-lab)** - None ⭐ 3
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-11-15 00:15:57 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-11-16 00:17:35 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
