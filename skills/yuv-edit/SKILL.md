@@ -109,18 +109,29 @@ Wherever he is full screen on camera, in openers and in every full video, the ta
    - in the edit, throw the model's audio away and lay his ORIGINAL track under the picture;
    - measure the drift (speech onsets from the energy of both tracks, or DTW) and warp the picture onto the original audio (0.75–1.25× while he speaks, faster through silent camera moves). Never stretch, re-time or regenerate his voice.
    - Silent angles told to "copy the mouth from @Video1" do not match his words. `video_edit` on his real clip is still right when the framing stays his own (a relight, a background), because the mouth stays real.
-3. **References that keep it him.**
+3. **References that keep it him, and the recipe that worked (Short Drama redo, Nov 2026).**
+   - **One angle still per camera**, made first (GPT Image 2.6 with face crops of his likeness set): B = three-quarter medium with the microphone in the foreground, C = close-up 85 mm, D = wide or low wide. It is the generation's `start_image` and carries the set, the light and the shirt.
+   - **His real take of the same range as `video_references`**: silent, cropped TIGHT on him (no shelves, no OBS overlay, no rounded corners). Prompt: "copy his head moves, hand gestures, facial expressions and mouth movements from it at the same moments, seen from this camera's angle; do not copy its framing or its background". The action then matches across the cuts like a real multi-cam shoot, and the lips track his timing closely (p90 residual 4-50 ms).
+   - **His voice of the same range as `audio_references`**, with the Hebrew line as dialogue.
    - Face crops of his likeness set, not the full photos: those carry another t-shirt into the shot.
-   - Real frames of the take for wardrobe and set, with the shirt spelled out in the prompt.
-   - The studio's element images for the new angles.
-   - The kippah line from the design system (§7).
-   - "No figurines, no toys" on the shelves: the real camera may show his collectibles, but a generated angle must not reproduce them.
-   - Check the face, the kippah and the shirt on every take before it goes in.
+   - **Never a full real frame as a reference.** It carries his shelves: 3 of 20 takes copied Mario, Crash and Wolverine, and one copied the front camera's framing.
+   - The kippah line from the design system (§7). "No figurines, no toys, no birds" in every prompt.
+   - Check the face, the kippah, the shirt and the background on every take before it goes in. Pick takes on look plus the lip-sync residual measured inside the window you will use, not over the whole generation.
 4. **Credits first.** Before any generation:
-   - check the balance, then price the plan with `get_cost`. Prices measured Nov 2026 for `seedance_2_5`: 480p draft 3 credits/s, 1080p 16/s, 4K 28/s.
-   - Each generation is 4–30 whole seconds: group adjacent stretches of the same angle into one generation, make 2 draft takes per shot, and finalize only the picks.
+   - check the balance, then price the plan with `get_cost`. Prices measured Nov 2026 for `seedance_2_5`: 480p draft 3 credits/s, direct 1080p 16/s, direct 4K 28/s, and **finalizing a draft to 4K 34/s**.
+   - A finalize must resend the draft's own prompt, medias, duration, aspect ratio and `generate_audio` along with `draft_job_id`. With only the id, the backend rejects it.
+   - Each generation is 4–30 whole seconds: group adjacent stretches of the same angle into one generation, make 2 draft takes per shot, and finalize only the picks. The ten-shot opener cost about 1,900 credits in all.
+   - A batch call that times out may still have submitted: check `transactions` and the generation history before resubmitting.
    - Put the estimate in the status line before starting.
 5. **Light.** The Neon Studio key: a soft key from one side, the violet-blue wash on the wall, a cyan rim, all lights consistent across the angles. Named looks (Neon Noir) only when asked for.
+6. **Where and how to cut it in.**
+   - Angles go where he is full screen. A moment under a side panel or a split card needs none.
+   - Skip moments where something on him moves (his parakeet on his shoulder): it would appear and vanish between angles.
+   - Direct address to the viewer ("write in the comments") stays on the real A camera.
+   - Behind-him texts and props must sit on one camera: end them before the cut, or put the cut on their switch (a 3-2-1 behind him switches exactly on the countdown cuts).
+   - A locked-length piece (an opener inside a cut film) keeps its exact frame count. A shot that has to run past the last word gets its audio reference padded with silence and a longer duration, so the camera move continues instead of freezing.
+   - The warp tool: `ep-shortdrama/tools/mc_warp.py --silmax 3` (DTW + DP; caps catch-up bursts in pauses at 3x so gestures never jump).
+   - In the stage3d engine the angles are laid into the master over the camera frames (make_master.py + build/ai_cam.json) and shown full frame (AICAM).
 
 ## OBS recordings: the stage3d engine (EP18, then the Higgsfield tutorial, Nov 2026)
 
