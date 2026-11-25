@@ -37,17 +37,17 @@ I'm Hoodini! Welcome to my GitHub profile.
 
 ### ⭐ Featured Repositories
 
+- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 61
+- 💙 **[yuv-studio](https://github.com/hoodini/yuv-studio)** - The open-source video editor your AI agent can drive. Cut, caption (Hebrew + English), narrate and export in your browser, or let Claude, Codex or Cursor edit live over 51 MCP tools. Local, free, AGPL-3.0. ⭐ 4
 - 🐍 **[ai-agents-skills](https://github.com/hoodini/ai-agents-skills)** - 🧠 AI Agent Skills Repository - A curated collection of specialized skills for AI coding agents (Claude Code, GitHub Copilot, Cursor, Windsurf). Created by Yuval Avidani using GitHub Copilot via VS Code Insiders. ⭐ 303
-- 💙 **[yuv-studio](https://github.com/hoodini/yuv-studio)** - The open-source video editor your AI agent can drive. Cut, caption (Hebrew + English), narrate and export in your browser, or let Claude, Codex or Cursor edit live over 51 MCP tools. Local, free, AGPL-3.0. ⭐ 2
 - ☕ **[nice-actimize-sida](https://github.com/hoodini/nice-actimize-sida)** - SIDA: Synthetic Identity Defense AI - Next-gen fraud prevention system combining behavioral biometrics, AI/ML, and graph neural networks to detect synthetic identity fraud ⭐ 2
-- 💛 **[3d-extracter](https://github.com/hoodini/3d-extracter)** - Chrome extension to extract and download GLB/GLTF 3D model files from websites ⭐ 60
 - 💙 **[whatsapp-public-logan](https://github.com/hoodini/whatsapp-public-logan)** - Open-source WhatsApp bot with AI capabilities - Logan by YUV.AI ⭐ 90
 
 
 ---
 
 <div align="center">
-<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-11-24 00:13:04 UTC</code></sub>
+<sub>⚡ Auto-updated by GitHub Actions | Last sync: <code>2026-11-25 00:14:13 UTC</code></sub>
 </div>
 
 <!-- DYNAMIC_PROFILE_END -->
