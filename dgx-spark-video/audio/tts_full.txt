@@ -1,0 +1,28 @@
+[excited] POV: you want to run a one-twenty B model at home…
+and your GPU has thirty-two gigs.
+[deadpan] CUDA out of memory. Classic.
+[excited] Enter DGX Spark. A tiny box with a hundred twenty-eight gigs of memory the GPU can actually use.
+Unified memory: CPU and GPU share one giant pantry. No more tiny GPU mini fridge.
+Inside: a G B ten Grace Blackwell chip, twenty Arm cores, up to a petaflop of sparse F P four.
+So what fits? Eight B, twenty B: easy on both.
+Seventy B: Spark, yes. The fifty-ninety? Nope.
+One-twenty B: Spark only. Up to two hundred B if you quantize.
+Quantizing is zipping the model: way smaller, slightly dumber.
+[serious] Now the plot twist. Memory size decides what runs. Bandwidth decides how fast.
+Spark is a huge warehouse with a narrow door: two seventy-three gigabytes per second.
+The fifty-ninety is a small garage on a highway: seventeen ninety-two. Six and a half times wider.
+[excited] Round one: same twenty B model. The fifty-ninety hits two hundred five tokens a second. Spark? Sixty-one.
+On a dense thirty-two B: six times. That's the bandwidth gap.
+Reading your prompt? Fifty-ninety again, four times faster.
+Seventy B: Spark runs it at four and a half tokens a second. The fifty-ninety can't even fit it.
+One-twenty B: Spark does forty-two tokens a second, and serves sixty-four users at once.
+Power: Spark draws just sixty to ninety watts on LLMs. The fifty-ninety card alone? Rated five seventy-five.
+Price: Spark, forty-six ninety-nine. The fifty-ninety, nineteen ninety-nine, plus a whole PC.
+Software: Spark ships NVIDIA's AI stack. The fifty-ninety also games and renders.
+[curious] So which one should you buy?
+Big models, agents, fine-tuning, or a silent desk box: Spark.
+Max speed on models under thirty B, plus gaming and creative work: fifty-ninety.
+Need more? Link two Sparks for four-oh-five B.
+Value math, dollars per token-per-second: on twenty B, a fifty-ninety build is seventeen bucks. Spark, seventy-seven.
+On one-twenty B, the fifty-ninety can't play.
+[confident] Spark equals capacity. Fifty-ninety equals speed. Pick your bottleneck.
